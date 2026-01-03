@@ -53,15 +53,15 @@ export default function HomePage() {
           </div>
 
           <div className="relative z-20 container mx-auto px-4 text-center">
-            <h1 className="text-5xl md:text-8xl font-bold tracking-tighter text-white mb-6 uppercase leading-tight drop-shadow-xl">
+            <h1 className="text-4xl md:text-8xl font-bold tracking-tighter text-white mb-6 uppercase leading-tight drop-shadow-xl">
               The Voice of<br />
               <span className="text-primary">India in USA</span>
             </h1>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-12">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-12 w-full max-w-md md:max-w-none mx-auto">
               <Button
                 size="lg"
-                className="h-16 px-10 text-lg font-bold uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none transition-all hover:scale-105 shadow-2xl"
+                className="h-16 px-10 text-lg font-bold uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none transition-all hover:scale-105 shadow-2xl w-full md:w-auto"
               >
                 <Play className="mr-3 fill-current w-5 h-5" /> Listen Live Now
               </Button>
@@ -69,7 +69,7 @@ export default function HomePage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="h-16 px-10 text-lg font-bold uppercase tracking-widest text-white border-2 border-white bg-transparent hover:bg-white hover:text-black rounded-none transition-all hover:scale-105 shadow-2xl"
+                className="h-16 px-10 text-lg font-bold uppercase tracking-widest text-white border-2 border-white bg-transparent hover:bg-white hover:text-black rounded-none transition-all hover:scale-105 shadow-2xl w-full md:w-auto"
                 asChild
               >
                 <Link href="/schedule">

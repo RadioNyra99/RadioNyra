@@ -4,50 +4,79 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, Radio } from "lucide-react"
 import { showAudioPlayer } from "../lib/audio-player-utils"
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet"
 
 export function Navigation() {
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/#schedule", label: "Schedule" },
+    { href: "/our-team", label: "Our Team" },
+    { href: "/events", label: "Events" },
+    { href: "/contact", label: "Contact" },
+  ];
+
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border/40">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
 
           {/* Navigation - LEFT ALIGNED */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="flex items-center gap-8">
             {/* Mobile Menu Trigger */}
-            <Button variant="ghost" size="icon" className="md:hidden mr-2">
-              <Menu className="h-5 w-5" />
-            </Button>
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden mr-2">
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left" className="w-[300px] sm:w-[400px]">
+                <SheetHeader>
+                  <SheetTitle className="text-left font-bold uppercase tracking-tighter">Menu</SheetTitle>
+                </SheetHeader>
+                <div className="flex flex-col gap-6 mt-8">
+                  {navLinks.map((link) => (
+                    <SheetClose key={link.href} asChild>
+                      <Link
+                        href={link.href}
+                        className="text-lg font-bold text-foreground hover:text-primary transition-colors tracking-widest uppercase"
+                      >
+                        {link.label}
+                      </Link>
+                    </SheetClose>
+                  ))}
+                  <div className="pt-6 border-t border-border">
+                    <SheetClose asChild>
+                      <Button
+                        onClick={showAudioPlayer}
+                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold uppercase tracking-wider rounded-full"
+                      >
+                        Listen Live
+                      </Button>
+                    </SheetClose>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
 
-            <Link
-              href="/"
-              className="text-sm font-extrabold text-foreground hover:text-primary transition-colors tracking-widest uppercase"
-            >
-              Home
-            </Link>
-            <Link
-              href="/#schedule"
-              className="text-sm font-extrabold text-foreground hover:text-primary transition-colors tracking-widest uppercase"
-            >
-              Schedule
-            </Link>
-            <Link
-              href="/our-team"
-              className="text-sm font-extrabold text-foreground hover:text-primary transition-colors tracking-widest uppercase"
-            >
-              Our Team
-            </Link>
-            <Link
-              href="/events"
-              className="text-sm font-extrabold text-foreground hover:text-primary transition-colors tracking-widest uppercase"
-            >
-              Events
-            </Link>
-            <Link
-              href="/contact"
-              className="text-sm font-extrabold text-foreground hover:text-primary transition-colors tracking-widest uppercase"
-            >
-              Contact
-            </Link>
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-extrabold text-foreground hover:text-primary transition-colors tracking-widest uppercase"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Logo - RIGHT ALIGNED */}

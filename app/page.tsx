@@ -1,0 +1,211 @@
+import Link from "next/link"
+import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Play, Calendar, Radio, Users, Mic2, ArrowRight } from "lucide-react"
+import { CountUp } from "@/components/ui/count-up"
+
+export default function HomePage() {
+
+  // Data for Hosts
+  const hosts = [
+    { name: "Arpit Tandon", show: "Idhar Udhar Ki Baatein", image: "/placeholder-user.jpg" },
+    { name: "Raj Persaud", show: "Morning Commute", image: "/placeholder-user.jpg" },
+    { name: "Monika Joshi", show: "Triangle Tunes", image: "/placeholder-user.jpg" },
+    { name: "Vaishnavi Palleda", show: "Hello Vaishnavi", image: "/placeholder-user.jpg" },
+  ];
+
+  // Upcoming Events WITH IMAGES
+  const upcomingEvents = [
+    { title: "Radio Nyra NYE 2026", date: "Dec 31, 2025", location: "Cary, NC", image: "/placeholder-event.jpg" },
+    { title: "Zain Zohaib Live", date: "Sep 28, 2025", location: "Raleigh, NC", image: "/placeholder-event.jpg" },
+    { title: "Community Meetup", date: "Oct 10, 2025", location: "Downtown Park", image: "/placeholder-event.jpg" },
+  ];
+
+  // Past Events SMALL RECTANGLES WITH IMAGES
+  const pastEvents = [
+    { title: "Diwali Gala", date: "Nov 2024", image: "/placeholder-event.jpg" },
+    { title: "Navratri Night", date: "Oct 2024", image: "/placeholder-event.jpg" },
+    { title: "Independence Day", date: "Aug 2024", image: "/placeholder-event.jpg" },
+    { title: "Summer Jam", date: "July 2024", image: "/placeholder-event.jpg" },
+  ];
+
+  return (
+    <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-primary-foreground">
+      <Navigation />
+
+      <main>
+        {/* HERO SECTION */}
+        <section className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black">
+          <div className="absolute inset-0 z-0 opacity-60">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+              poster="/radio-studio-modern.jpg"
+            >
+              <source src="https://assets.mixkit.co/videos/preview/mixkit-sound-waves-in-the-dark-3079-large.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-black/50" />
+          </div>
+
+          <div className="relative z-20 container mx-auto px-4 text-center">
+            <h1 className="text-5xl md:text-8xl font-bold tracking-tighter text-white mb-6 uppercase leading-tight drop-shadow-xl">
+              The Voice of<br />
+              <span className="text-primary">India in USA</span>
+            </h1>
+
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-12">
+              <Button
+                size="lg"
+                className="h-16 px-10 text-lg font-bold uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none transition-all hover:scale-105 shadow-2xl"
+              >
+                <Play className="mr-3 fill-current w-5 h-5" /> Listen Live Now
+              </Button>
+
+              <Button
+                size="lg"
+                variant="outline"
+                className="h-16 px-10 text-lg font-bold uppercase tracking-widest text-white border-2 border-white bg-transparent hover:bg-white hover:text-black rounded-none transition-all hover:scale-105 shadow-2xl"
+                asChild
+              >
+                <Link href="/schedule">
+                  <Calendar className="mr-3 w-5 h-5" /> View Schedule
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* STATS */}
+        <section className="py-20 bg-background border-b border-border/50">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              {[
+                { label: "Active Listeners", end: 100, suffix: "K+", icon: Users },
+                { label: "Live Broadcasting", end: 24, suffix: "/7", icon: Radio },
+                { label: "Professional Hosts", end: 15, suffix: "+", icon: Mic2 }
+              ].map((stat, i) => (
+                <div key={i} className="p-6">
+                  <div className="flex justify-center mb-4">
+                    <stat.icon className="w-10 h-10 text-primary" />
+                  </div>
+                  <div className="text-5xl md:text-6xl font-bold text-foreground mb-2 tracking-tight">
+                    <CountUp end={stat.end} suffix={stat.suffix} duration={2500} />
+                  </div>
+                  <div className="text-sm font-bold uppercase tracking-widest text-muted-foreground">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* HOSTS */}
+        <section className="py-24 bg-muted/20">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center justify-between mb-12">
+              <h2 className="text-3xl font-bold uppercase tracking-tighter border-l-4 border-primary pl-4">On Air Now</h2>
+              <Button variant="link" className="text-primary font-bold uppercase tracking-widest" asChild>
+                <Link href="/our-team">View All Hosts <ArrowRight className="ml-2 w-4 h-4" /></Link>
+              </Button>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {hosts.map((host, i) => (
+                <div key={i} className="group bg-card border border-border/50 hover:shadow-xl transition-all duration-300">
+                  <div className="relative aspect-[4/5] bg-gray-200 overflow-hidden">
+                    <img
+                      src={host.image}
+                      alt={host.name}
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    />
+                    <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                  <div className="p-5 border-t border-border">
+                    <h3 className="text-xl font-bold uppercase tracking-tight text-foreground">{host.name}</h3>
+                    <p className="text-xs font-bold uppercase text-primary mt-1 tracking-wider opacity-80">{host.show}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* UPCOMING EVENTS (WITH IMAGES) */}
+        <section className="py-24 bg-background">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold uppercase tracking-tighter mb-12 border-l-4 border-primary pl-4">Upcoming Events</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {upcomingEvents.map((ev, i) => (
+                <div key={i} className="group bg-card border border-border overflow-hidden hover:border-primary transition-colors">
+                  {/* Event Image */}
+                  <div className="relative h-48 bg-muted overflow-hidden">
+                    <img src={ev.image} alt={ev.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <div className="absolute top-4 left-4">
+                      <Badge className="uppercase tracking-widest text-[10px] bg-primary text-white border-none rounded-none">Upcoming</Badge>
+                    </div>
+                  </div>
+
+                  <div className="p-8">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-sm font-bold text-primary flex items-center gap-2">
+                        <Calendar className="w-4 h-4" /> {ev.date}
+                      </span>
+                    </div>
+                    <h3 className="text-2xl font-bold uppercase tracking-tight mb-2 group-hover:text-primary transition-colors leading-none">{ev.title}</h3>
+                    <p className="text-muted-foreground text-sm font-medium uppercase tracking-wide mb-6">{ev.location}</p>
+                    <Button variant="outline" className="w-full text-xs font-bold uppercase tracking-widest rounded-none">Get Details</Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CLIENTS */}
+        <section className="py-20 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <h3 className="text-center text-sm font-bold uppercase tracking-widest text-muted-foreground mb-12">Trusted Partners</h3>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 opacity-60">
+              {[1, 2, 3, 4, 5].map((p) => (
+                <div key={p} className="h-16 bg-black/10 flex items-center justify-center hover:bg-primary/20 transition-colors grayscale hover:grayscale-0 cursor-default">
+                  <span className="text-[10px] uppercase font-bold text-black/40">Logo {p}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* PAST EVENTS (SMALL RECTANGLES WITH IMAGES) */}
+        <section className="py-16 bg-black text-white border-t border-white/10">
+          <div className="container mx-auto px-4">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-8">Past Events Archive</h4>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {pastEvents.map((ev, i) => (
+                <div key={i} className="group flex items-center gap-4 bg-white/5 p-2 hover:bg-white/10 transition-colors cursor-pointer border border-transparent hover:border-white/20">
+                  {/* Small Thumbnail */}
+                  <div className="w-16 h-16 bg-gray-800 flex-shrink-0 overflow-hidden">
+                    <img src={ev.image} alt={ev.title} className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" />
+                  </div>
+
+                  <div className="overflow-hidden">
+                    <span className="block text-[10px] text-gray-400 mb-0.5 uppercase tracking-wider">{ev.date}</span>
+                    <h5 className="text-sm font-bold text-white uppercase truncate">{ev.title}</h5>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <Footer />
+    </div>
+  )
+}

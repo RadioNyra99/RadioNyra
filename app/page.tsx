@@ -14,6 +14,7 @@ export default function HomePage() {
     { name: "Raj Persaud", show: "Morning Commute", image: "/Images/chai pe charcha.jpg" },
     { name: "Monika Joshi", show: "Triangle Tunes", image: "/Images/Triangle Tune.jpg" },
     { name: "Vaishnavi Palleda", show: "Hello Vaishnavi", image: "/Images/Hello Vaishnavi.jpg" },
+    { name: "Sohail", show: "Non Stop Hungama", image: "/Images/Non stop hungama.jpg" },
   ];
 
   // Upcoming Events WITH IMAGES
@@ -167,14 +168,21 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* CLIENTS */}
-        <section className="py-20 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <h3 className="text-center text-sm font-bold uppercase tracking-widest text-muted-foreground mb-12">Trusted Partners</h3>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 opacity-60">
-              {[1, 2, 3, 4, 5].map((p) => (
-                <div key={p} className="h-16 bg-black/10 flex items-center justify-center hover:bg-primary/20 transition-colors grayscale hover:grayscale-0 cursor-default">
-                  <span className="text-[10px] uppercase font-bold text-black/40">Logo {p}</span>
+        {/* OUR PARTNERS */}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold uppercase tracking-tighter mb-12 border-l-4 border-primary pl-4 text-left text-black">Our Partners</h2>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+              {Array.from({ length: 29 }, (_, i) => i + 2).map((num) => (
+                <div key={`partner-${num}`} className="group border border-gray-100 hover:border-primary/50 transition-all duration-300 bg-white p-4 flex items-center justify-center h-32 hover:shadow-lg">
+                  <div className="relative w-full h-full">
+                    <img
+                      src={`/Images/${num}.jpg`}
+                      alt={`Partner ${num}`}
+                      className="w-full h-full object-contain transition-all duration-500 transform group-hover:scale-110"
+                    />
+                  </div>
                 </div>
               ))}
             </div>

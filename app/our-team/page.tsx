@@ -9,6 +9,13 @@ import { ExternalLink, Mic2, Star } from "lucide-react"
 export default function OurTeamPage() {
   const team = [
     {
+      name: "Sohail",
+      role: "Host, Non Stop Hungama",
+      bio: "Bringing you non-stop entertainment and energy.",
+      featured: true,
+      image: "/Images/Non stop hungama.jpg",
+    },
+    {
       name: "Raj Persaud",
       role: "Host, Morning Commute",
       bio: "Raj started working with Radio Nyra in May 2025. He built most of this website and manages our social media.",

@@ -19,6 +19,10 @@ export function Navigation() {
     { href: "/schedule", label: "Schedule" },
     { href: "/our-team", label: "Our Team" },
     { href: "/events", label: "Events" },
+    { href: "/services", label: "Services" },
+    { href: "/news", label: "News" },
+    { href: "/gallery", label: "Gallery" },
+    { href: "/podcasts", label: "Podcasts" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -93,8 +97,12 @@ export function Navigation() {
                 <h1 className="font-bold text-2xl text-foreground tracking-tighter leading-none">Radio Nyra</h1>
                 <p className="text-[10px] text-muted-foreground font-medium tracking-widest uppercase">Voice of India</p>
               </div>
-              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center group-hover:bg-primary/90 transition-colors">
-                <Radio className="text-primary-foreground h-5 w-5" />
+              <div className="relative w-12 h-12 overflow-hidden rounded-full border-2 border-primary group-hover:border-primary/80 transition-colors">
+                <img
+                  src="/Images/1.jpg"
+                  alt="Radio Nyra Logo"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </Link>
           </div>

@@ -16,7 +16,7 @@ import {
 export function Navigation() {
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/#schedule", label: "Schedule" },
+    { href: "/schedule", label: "Schedule" },
     { href: "/our-team", label: "Our Team" },
     { href: "/events", label: "Events" },
     { href: "/contact", label: "Contact" },

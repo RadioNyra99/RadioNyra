@@ -10,10 +10,10 @@ export default function HomePage() {
 
   // Data for Hosts
   const hosts = [
-    { name: "Arpit Tandon", show: "Idhar Udhar Ki Baatein", image: "/placeholder-user.jpg" },
-    { name: "Raj Persaud", show: "Morning Commute", image: "/placeholder-user.jpg" },
-    { name: "Monika Joshi", show: "Triangle Tunes", image: "/placeholder-user.jpg" },
-    { name: "Vaishnavi Palleda", show: "Hello Vaishnavi", image: "/placeholder-user.jpg" },
+    { name: "Arpit Tandon", show: "Idhar Udhar Ki Baatein", image: "/images/Idhar Udhar Ki Baatein.jpg" },
+    { name: "Raj Persaud", show: "Morning Commute", image: "/images/chai pe charcha.jpg" },
+    { name: "Monika Joshi", show: "Triangle Tunes", image: "/images/Triangle Tune.jpg" },
+    { name: "Vaishnavi Palleda", show: "Hello Vaishnavi", image: "/images/Hello Vaishnavi.jpg" },
   ];
 
   // Upcoming Events WITH IMAGES
@@ -122,7 +122,7 @@ export default function HomePage() {
                     <img
                       src={host.image}
                       alt={host.name}
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                      className="w-full h-full object-cover transition-all duration-500"
                     />
                     <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>

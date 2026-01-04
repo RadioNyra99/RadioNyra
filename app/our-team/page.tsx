@@ -13,57 +13,87 @@ export default function OurTeamPage() {
       role: "Host, Morning Commute",
       bio: "Raj started working with Radio Nyra in May 2025. He built most of this website and manages our social media.",
       featured: true,
+      image: "/images/chai pe charcha.jpg", // Educated guess or placeholder-like usage
     },
     {
       name: "Dr. John Caldwell",
       role: "Host, Geet Bazaar",
       bio: "Co-host of Geet Bazaar, bringing soulful music to the airwaves.",
+      image: "/placeholder-user.jpg",
     },
     {
       name: "Vishal The Khushhal",
       role: "Host, Desh Pradesh",
       bio: "Vishal is here for your afternoon excitement - our vibrant host.",
       featured: true,
+      image: "/images/desh pardesh.jpg",
     },
-    { name: "Shivani", role: "Host, Nirvana Nights", bio: "The voice of your evenings on Nirvana Nights." },
+    {
+      name: "Shivani",
+      role: "Host, Nirvana Nights",
+      bio: "The voice of your evenings on Nirvana Nights.",
+      image: "/images/Nirvana Nights.jpg",
+    },
     {
       name: "Monika Joshi",
       role: "Host, Triangle Tunes & Talks",
       bio: "Catch her vibrant energy every night from 10:00pm - 1:00am.",
+      image: "/images/Triangle Tune.jpg",
     },
-    { name: "Kanthi", role: "Host, Mana Muchatlu", bio: "Our lovely host on the Telugu channel, every Thursday." },
-    { name: "Jyoti", role: "Host, Dil Se Desi", bio: "Your vibrant host of Dil Se Desi, every Friday evening." },
+    {
+      name: "Kanthi",
+      role: "Host, Mana Muchatlu",
+      bio: "Our lovely host on the Telugu channel, every Thursday.",
+      image: "/images/Chinna Mata.jpg",
+    },
+    {
+      name: "Jyoti",
+      role: "Host, Dil Se Desi",
+      bio: "Your vibrant host of Dil Se Desi, every Friday evening.",
+      image: "/images/Dil Se Desi.jpg",
+    },
     {
       name: "Dr. Afroz Taj",
       role: "Host, Geet Bazaar",
       bio: "Partnering with Dr. Caldwell to present the best of Geet Bazaar.",
+      image: "/placeholder-user.jpg",
     },
     {
       name: "Aarav V Bogadapati",
       role: "Marketing & AI Strategy",
       bio: "Focuses on business marketing and leveraging AI to automate workflows.",
+      image: "/placeholder-user.jpg",
     },
     {
       name: "Arpit Tandon",
       role: "Host, Idhar Udhar Ki Baatein",
       bio: "Talks about... vaghera vaghera! Join him on Wednesdays.",
+      image: "/images/Idhar Udhar Ki Baatein.jpg",
     },
     {
       name: "Aayushii Rode",
       role: "Host, Zara Muskurao",
       bio: "Start your weekday mornings with a smile with Aayushii.",
+      image: "/images/Zara Muskurao.jpg",
     },
     {
       name: "Vaishnavi Palleda",
       role: "Vice President & Host",
       bio: "CEO of Vault Productions™ and host of Hello Vaishnavi.",
       featured: true,
+      image: "/images/Hello Vaishnavi.jpg",
     },
-    { name: "Aditi", role: "Host, Unfiltered Gup Shup", bio: "Your gentle Saturday morning wake up show host." },
+    {
+      name: "Aditi",
+      role: "Host, Unfiltered Gup Shup",
+      bio: "Your gentle Saturday morning wake up show host.",
+      image: "/images/Kuch Tum Kaho, Kuch Hum Kahein.jpg",
+    },
     {
       name: "Bharti Rathore",
       role: "Host, Bollywood Bliss",
       bio: "Diving into the latest gossip and drama in the world of Bollywood.",
+      image: "/images/Bollywood Bliss.jpg",
     },
   ]
 
@@ -90,10 +120,10 @@ export default function OurTeamPage() {
                   {/* Image Wrapper */}
                   <div className="relative aspect-square overflow-hidden bg-muted">
                     <Image
-                      src={`/placeholder-user.jpg`} // Using local placeholder
+                      src={member.image || `/placeholder-user.jpg`}
                       alt={member.name}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     {member.featured && (
                       <div className="absolute top-2 left-2 bg-primary text-white text-[10px] font-bold px-2 py-1 uppercase tracking-widest">
@@ -110,9 +140,9 @@ export default function OurTeamPage() {
                       {member.bio}
                     </p>
 
-                    <a href="#" className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-primary hover:text-foreground transition-colors">
-                      Full Profile <ExternalLink className="ml-1 w-3 h-3" />
-                    </a>
+                    <Link href="/schedule" className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-primary hover:text-foreground transition-colors">
+                      View Schedule <ExternalLink className="ml-1 w-3 h-3" />
+                    </Link>
                   </div>
                 </div>
               ))}

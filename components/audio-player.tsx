@@ -1,22 +1,41 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Play, Pause, Volume2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
+  const audioRef = useRef<HTMLAudioElement | null>(null)
+
+  // URL for the radio stream - Replace with your actual stream URL
+  const STREAM_URL = "https://stream.zeno.fm/s5q5036z108uv" // Example stream
 
   useEffect(() => {
     // Listen for custom event to show player
     const handleShowPlayer = () => {
       setIsVisible(true)
+      // Auto-play when opened
+      setIsPlaying(true)
+      if (audioRef.current) {
+        audioRef.current.play().catch(e => console.error("Playback failed:", e))
+      }
     }
 
     window.addEventListener("showAudioPlayer", handleShowPlayer)
     return () => window.removeEventListener("showAudioPlayer", handleShowPlayer)
   }, [])
+
+  useEffect(() => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.play().catch(e => console.error("Playback failed:", e))
+      } else {
+        audioRef.current.pause()
+      }
+    }
+  }, [isPlaying])
 
   const togglePlay = () => {
     setIsPlaying(!isPlaying)
@@ -26,6 +45,7 @@ export function AudioPlayer() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 audio-player-slide-up">
+      <audio ref={audioRef} src={STREAM_URL} preload="none" />
       <div className="relative bg-background/80 text-foreground shadow-[0_-8px_40px_rgba(0,0,0,0.08)] border-t border-border backdrop-blur-2xl overflow-hidden">
         {/* Subtle ambient glows */}
         <div className="absolute top-0 left-1/4 w-32 h-32 bg-primary/5 rounded-full blur-2xl animate-pulse" />
@@ -73,7 +93,10 @@ export function AudioPlayer() {
               </Button>
 
               <Button
-                onClick={() => setIsVisible(false)}
+                onClick={() => {
+                  setIsVisible(false)
+                  setIsPlaying(false) // Stop playing when closed
+                }}
                 variant="ghost"
                 size="sm"
                 className="text-muted-foreground hover:text-foreground hover:bg-muted text-xs border border-border"

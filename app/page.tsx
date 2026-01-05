@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Play, Calendar, Radio, Users, Mic2, ArrowRight } from "lucide-react"
 import { CountUp } from "@/components/ui/count-up"
+import { ListenLiveButton } from "@/components/listen-live-button"
 
 export default function HomePage() {
 
@@ -60,12 +61,7 @@ export default function HomePage() {
             </h1>
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-12 w-full max-w-md md:max-w-none mx-auto">
-              <Button
-                size="lg"
-                className="h-16 px-10 text-lg font-bold uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none transition-all hover:scale-105 shadow-2xl w-full md:w-auto"
-              >
-                <Play className="mr-3 fill-current w-5 h-5" /> Listen Live Now
-              </Button>
+              <ListenLiveButton className="w-full md:w-auto text-lg font-bold uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none transition-all hover:scale-105 shadow-2xl h-16 w-full md:w-auto" />
 
               <Button
                 size="lg"

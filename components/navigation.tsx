@@ -57,7 +57,7 @@ export function Navigation() {
                 <SheetHeader className="flex flex-row items-center gap-4 text-left border-b border-border/50 pb-6">
                   <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary">
                     <img
-                      src="/images/1.jpg"
+                      src="/images/radio-nyra-logo.jpg"
                       alt="Radio Nyra Logo"
                       className="w-full h-full object-cover"
                     />
@@ -161,7 +161,7 @@ export function Navigation() {
               </div>
               <div className="relative w-12 h-12 overflow-hidden rounded-full border-2 border-primary group-hover:border-primary/80 transition-colors">
                 <img
-                  src="/images/1.jpg"
+                  src="/images/radio-nyra-logo.jpg"
                   alt="Radio Nyra Logo"
                   className="w-full h-full object-cover"
                 />

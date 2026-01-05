@@ -11,11 +11,11 @@ export default function HomePage() {
 
   // Data for Hosts
   const hosts = [
-    { name: "Arpit Tandon", show: "Idhar Udhar Ki Baatein", image: "/Images/Idhar Udhar Ki Baatein.jpg" },
-    { name: "Raj Persaud", show: "Morning Commute", image: "/Images/chai pe charcha.jpg" },
-    { name: "Monika Joshi", show: "Triangle Tunes", image: "/Images/Triangle Tune.jpg" },
-    { name: "Vaishnavi Palleda", show: "Hello Vaishnavi", image: "/Images/Hello Vaishnavi.jpg" },
-    { name: "Sohail", show: "Non Stop Hungama", image: "/Images/Non stop hungama.jpg" },
+    { name: "Arpit Tandon", show: "Idhar Udhar Ki Baatein", image: "/images/Idhar Udhar Ki Baatein.jpg" },
+    { name: "Raj Persaud", show: "Morning Commute", image: "/images/chai pe charcha.jpg" },
+    { name: "Monika Joshi", show: "Triangle Tunes", image: "/images/Triangle Tune.jpg" },
+    { name: "Vaishnavi Palleda", show: "Hello Vaishnavi", image: "/images/Hello Vaishnavi.jpg" },
+    { name: "Sohail", show: "Non Stop Hungama", image: "/images/Non stop hungama.jpg" },
   ];
 
   // Upcoming Events WITH IMAGES
@@ -173,7 +173,7 @@ export default function HomePage() {
                 <div key={`partner-${num}`} className="group border border-gray-100 hover:border-primary/50 transition-all duration-300 bg-white p-2 flex items-center justify-center h-20 hover:shadow-lg">
                   <div className="relative w-full h-full">
                     <img
-                      src={`/Images/${num}.jpg`}
+                      src={`/images/${num}.jpg`}
                       alt={`Partner ${num}`}
                       className="w-full h-full object-contain transition-all duration-500 transform group-hover:scale-110"
                     />

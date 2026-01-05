@@ -26,11 +26,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/images/1.jpg",
+        url: "/images/radio-nyra-logo.jpg",
         sizes: "any",
       },
     ],
-    apple: "/images/1.jpg",
+    apple: "/images/radio-nyra-logo.jpg",
   },
 }
 

@@ -10,7 +10,7 @@ export function Footer() {
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-full bg-background overflow-hidden flex items-center justify-center border border-border/20">
               <img
-                src="/images/1.jpg"
+                src="/images/radio-nyra-logo.jpg"
                 alt="Radio Nyra Logo"
                 className="w-full h-full object-cover"
               />

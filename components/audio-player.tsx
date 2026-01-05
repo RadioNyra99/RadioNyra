@@ -61,7 +61,7 @@ export function AudioPlayer() {
               <div className="relative w-16 h-16 rounded-xl overflow-hidden shadow-lg flex-shrink-0 border border-border">
                 <div className="absolute inset-0 bg-muted flex items-center justify-center backdrop-blur-sm">
                   <img
-                    src="/images/1.jpg"
+                    src="/images/radio-nyra-logo.jpg"
                     alt="Radio Nyra Logo"
                     className="w-full h-full object-cover"
                   />

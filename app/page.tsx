@@ -55,12 +55,11 @@ export default function HomePage() {
           </div>
 
           <div className="relative z-20 container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-8xl font-bold tracking-tighter text-white mb-6 uppercase leading-tight drop-shadow-xl">
-              The Voice of<br />
-              <span className="text-primary">India in USA</span>
+            <h1 className="text-4xl md:text-8xl font-bold tracking-tighter text-primary mb-6 uppercase leading-tight drop-shadow-xl">
+              The Voice of India in USA
             </h1>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-12 w-full max-w-md md:max-w-none mx-auto">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-8 w-full max-w-md md:max-w-none mx-auto">
               <ListenLiveButton className="w-full md:w-auto text-lg font-bold uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none transition-all hover:scale-105 shadow-2xl h-16 w-full md:w-auto" />
 
               <Button
@@ -78,22 +77,22 @@ export default function HomePage() {
         </section>
 
         {/* STATS */}
-        <section className="py-20 bg-background border-b border-border/50">
+        <section className="py-6 bg-background border-b border-border/50">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
               {[
                 { label: "Active Listeners", end: 100, suffix: "K+", icon: Users },
                 { label: "Live Broadcasting", end: 24, suffix: "/7", icon: Radio },
                 { label: "Professional Hosts", end: 15, suffix: "+", icon: Mic2 }
               ].map((stat, i) => (
-                <div key={i} className="p-6">
-                  <div className="flex justify-center mb-4">
-                    <stat.icon className="w-10 h-10 text-primary" />
+                <div key={i} className="p-2">
+                  <div className="flex justify-center">
+                    <stat.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <div className="text-5xl md:text-6xl font-bold text-foreground mb-2 tracking-tight">
+                  <div className="text-5xl md:text-6xl font-bold text-foreground tracking-tight leading-none">
                     <CountUp end={stat.end} suffix={stat.suffix} duration={2500} />
                   </div>
-                  <div className="text-sm font-bold uppercase tracking-widest text-muted-foreground">
+                  <div className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mt-1">
                     {stat.label}
                   </div>
                 </div>
@@ -103,16 +102,16 @@ export default function HomePage() {
         </section>
 
         {/* HOSTS */}
-        <section className="py-24 bg-muted/20">
+        <section className="py-8 bg-muted/20">
           <div className="container mx-auto px-4">
-            <div className="flex items-center justify-between mb-12">
-              <h2 className="text-3xl font-bold uppercase tracking-tighter border-l-4 border-primary pl-4">On Air Now</h2>
-              <Button variant="link" className="text-primary font-bold uppercase tracking-widest" asChild>
-                <Link href="/our-team">View All Hosts <ArrowRight className="ml-2 w-4 h-4" /></Link>
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-2xl font-bold uppercase tracking-tighter border-l-4 border-primary pl-4">On Air Now</h2>
+              <Button variant="link" className="text-primary font-bold uppercase tracking-widest text-xs" asChild>
+                <Link href="/our-team">View All Hosts <ArrowRight className="ml-2 w-3 h-3" /></Link>
               </Button>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {hosts.map((host, i) => (
                 <div key={i} className="group bg-card border border-border/50 hover:shadow-xl transition-all duration-300">
                   <div className="relative aspect-[4/5] bg-black overflow-hidden">
@@ -123,9 +122,9 @@ export default function HomePage() {
                     />
                     <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  <div className="p-5 border-t border-border">
-                    <h3 className="text-xl font-bold uppercase tracking-tight text-foreground">{host.name}</h3>
-                    <p className="text-xs font-bold uppercase text-primary mt-1 tracking-wider opacity-80">{host.show}</p>
+                  <div className="p-3 border-t border-border">
+                    <h3 className="text-lg font-bold uppercase tracking-tight text-foreground">{host.name}</h3>
+                    <p className="text-[10px] font-bold uppercase text-primary tracking-wider opacity-80">{host.show}</p>
                   </div>
                 </div>
               ))}
@@ -134,29 +133,29 @@ export default function HomePage() {
         </section>
 
         {/* UPCOMING EVENTS (WITH IMAGES) */}
-        <section className="py-24 bg-background">
+        <section className="py-8 bg-background">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold uppercase tracking-tighter mb-12 border-l-4 border-primary pl-4">Upcoming Events</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <h2 className="text-2xl font-bold uppercase tracking-tighter mb-4 border-l-4 border-primary pl-4">Upcoming Events</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {upcomingEvents.map((ev, i) => (
                 <div key={i} className="group bg-card border border-border overflow-hidden hover:border-primary transition-colors">
                   {/* Event Image */}
-                  <div className="relative h-48 bg-muted overflow-hidden">
+                  <div className="relative h-40 bg-muted overflow-hidden">
                     <img src={ev.image} alt={ev.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                    <div className="absolute top-4 left-4">
-                      <Badge className="uppercase tracking-widest text-[10px] bg-primary text-white border-none rounded-none">Upcoming</Badge>
+                    <div className="absolute top-3 left-3">
+                      <Badge className="uppercase tracking-widest text-[8px] bg-primary text-white border-none rounded-none px-1.5 py-0">Upcoming</Badge>
                     </div>
                   </div>
 
-                  <div className="p-8">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-sm font-bold text-primary flex items-center gap-2">
-                        <Calendar className="w-4 h-4" /> {ev.date}
+                  <div className="p-4">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-xs font-bold text-primary flex items-center gap-1.5">
+                        <Calendar className="w-3 h-3" /> {ev.date}
                       </span>
                     </div>
-                    <h3 className="text-2xl font-bold uppercase tracking-tight mb-2 group-hover:text-primary transition-colors leading-none">{ev.title}</h3>
-                    <p className="text-muted-foreground text-sm font-medium uppercase tracking-wide mb-6">{ev.location}</p>
-                    <Button variant="outline" className="w-full text-xs font-bold uppercase tracking-widest rounded-none">Get Details</Button>
+                    <h3 className="text-xl font-bold uppercase tracking-tight mb-1 group-hover:text-primary transition-colors leading-none">{ev.title}</h3>
+                    <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-wide mb-3">{ev.location}</p>
+                    <Button variant="outline" className="w-full text-[10px] font-bold uppercase tracking-widest rounded-none h-8">Get Details</Button>
                   </div>
                 </div>
               ))}
@@ -165,13 +164,13 @@ export default function HomePage() {
         </section>
 
         {/* OUR PARTNERS */}
-        <section className="py-24 bg-white">
+        <section className="py-8 bg-white">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold uppercase tracking-tighter mb-12 border-l-4 border-primary pl-4 text-left text-black">Our Partners</h2>
+            <h2 className="text-2xl font-bold uppercase tracking-tighter mb-4 border-l-4 border-primary pl-4 text-left text-black">Our Partners</h2>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
               {Array.from({ length: 29 }, (_, i) => i + 2).map((num) => (
-                <div key={`partner-${num}`} className="group border border-gray-100 hover:border-primary/50 transition-all duration-300 bg-white p-4 flex items-center justify-center h-32 hover:shadow-lg">
+                <div key={`partner-${num}`} className="group border border-gray-100 hover:border-primary/50 transition-all duration-300 bg-white p-2 flex items-center justify-center h-20 hover:shadow-lg">
                   <div className="relative w-full h-full">
                     <img
                       src={`/Images/${num}.jpg`}
@@ -186,20 +185,20 @@ export default function HomePage() {
         </section>
 
         {/* PAST EVENTS (SMALL RECTANGLES WITH IMAGES) */}
-        <section className="py-16 bg-black text-white border-t border-white/10">
+        <section className="py-8 bg-black text-white border-t border-white/10">
           <div className="container mx-auto px-4">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-8">Past Events Archive</h4>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <h4 className="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-4">Past Events Archive</h4>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {pastEvents.map((ev, i) => (
-                <div key={i} className="group flex items-center gap-4 bg-white/5 p-2 hover:bg-white/10 transition-colors cursor-pointer border border-transparent hover:border-white/20">
+                <div key={i} className="group flex items-center gap-2 bg-white/5 p-1.5 hover:bg-white/10 transition-colors cursor-pointer border border-transparent hover:border-white/20">
                   {/* Small Thumbnail */}
-                  <div className="w-16 h-16 bg-gray-800 flex-shrink-0 overflow-hidden">
+                  <div className="w-10 h-10 bg-gray-800 flex-shrink-0 overflow-hidden">
                     <img src={ev.image} alt={ev.title} className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" />
                   </div>
 
                   <div className="overflow-hidden">
-                    <span className="block text-[10px] text-gray-400 mb-0.5 uppercase tracking-wider">{ev.date}</span>
-                    <h5 className="text-sm font-bold text-white uppercase truncate">{ev.title}</h5>
+                    <span className="block text-[8px] text-gray-400 uppercase tracking-wider">{ev.date}</span>
+                    <h5 className="text-[10px] font-bold text-white uppercase truncate">{ev.title}</h5>
                   </div>
                 </div>
               ))}

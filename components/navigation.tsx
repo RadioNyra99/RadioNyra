@@ -22,11 +22,10 @@ import { showAudioPlayer } from "../lib/audio-player-utils"
 export function Navigation() {
   const navLinks = [
     { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
     { href: "/schedule", label: "Schedule" },
-    { href: "/our-team", label: "Our Team" },
-    { href: "/events", label: "Events" },
+    { href: "/our-team", label: "The Voice" },
     { href: "/services", label: "Services" },
-    { href: "/news", label: "News" },
     {
       href: "/gallery",
       label: "Gallery",

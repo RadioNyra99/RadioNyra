@@ -110,16 +110,16 @@ export default function OurTeamPage() {
 
       <main>
         {/* Header - GDConf Style */}
-        <section className="bg-foreground text-background py-20 border-b border-border/20">
+        <section className="bg-foreground text-background py-12 border-b border-border/20">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-4">The Talent</h1>
+            <h1 className="text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-2">The Voice</h1>
             <p className="text-xl max-w-2xl mx-auto text-gray-400 font-light">
-              The voices, the personalities, and the energy behind Radio Nyra.
+              The personalities and the energy behind Radio Nyra.
             </p>
           </div>
         </section>
 
-        <section className="py-20">
+        <section className="py-12">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {team.map((member, idx) => (

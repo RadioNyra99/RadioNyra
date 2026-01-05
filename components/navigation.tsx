@@ -2,8 +2,12 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, Radio } from "lucide-react"
-import { showAudioPlayer } from "../lib/audio-player-utils"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 import {
   Sheet,
   SheetContent,
@@ -12,6 +16,8 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet"
+import { ChevronDown, Menu, Radio } from "lucide-react"
+import { showAudioPlayer } from "../lib/audio-player-utils"
 
 export function Navigation() {
   const navLinks = [
@@ -21,7 +27,15 @@ export function Navigation() {
     { href: "/events", label: "Events" },
     { href: "/services", label: "Services" },
     { href: "/news", label: "News" },
-    { href: "/gallery", label: "Gallery" },
+    {
+      href: "/gallery",
+      label: "Gallery",
+      subLinks: [
+        { href: "/gallery/2016", label: "New Year 2016 – Bollywood Bash" },
+        { href: "/gallery/2018", label: "New Year 2018 – Bollywood Bash" },
+        { href: "/gallery/2019", label: "New Year 2019 – Celebrations" },
+      ]
+    },
     { href: "/podcasts", label: "Podcasts" },
     { href: "/contact", label: "Contact" },
   ];
@@ -46,14 +60,30 @@ export function Navigation() {
                 </SheetHeader>
                 <div className="flex flex-col gap-6 mt-8">
                   {navLinks.map((link) => (
-                    <SheetClose key={link.href} asChild>
-                      <Link
-                        href={link.href}
-                        className="text-lg font-bold text-foreground hover:text-primary transition-colors tracking-widest uppercase"
-                      >
-                        {link.label}
-                      </Link>
-                    </SheetClose>
+                    <div key={link.href} className="flex flex-col gap-2">
+                      <SheetClose asChild>
+                        <Link
+                          href={link.href}
+                          className="text-lg font-bold text-foreground hover:text-primary transition-colors tracking-widest uppercase"
+                        >
+                          {link.label}
+                        </Link>
+                      </SheetClose>
+                      {link.subLinks && (
+                        <div className="flex flex-col gap-3 pl-4 border-l-2 border-primary/20">
+                          {link.subLinks.map((subLink) => (
+                            <SheetClose key={subLink.href} asChild>
+                              <Link
+                                href={subLink.href}
+                                className="text-sm font-bold text-muted-foreground hover:text-primary transition-colors tracking-widest uppercase"
+                              >
+                                {subLink.label}
+                              </Link>
+                            </SheetClose>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   ))}
                   <div className="pt-6 border-t border-border">
                     <SheetClose asChild>
@@ -72,13 +102,36 @@ export function Navigation() {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm font-extrabold text-foreground hover:text-primary transition-colors tracking-widest uppercase"
-                >
-                  {link.label}
-                </Link>
+                link.subLinks ? (
+                  <DropdownMenu key={link.href}>
+                    <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-extrabold text-foreground hover:text-primary transition-colors tracking-widest uppercase focus:outline-none">
+                      {link.label}
+                      <ChevronDown className="h-4 w-4" />
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="start" className="bg-background border-border">
+                      <DropdownMenuItem asChild>
+                        <Link href={link.href} className="font-bold uppercase tracking-wider cursor-pointer">
+                          All {link.label}
+                        </Link>
+                      </DropdownMenuItem>
+                      {link.subLinks.map((subLink) => (
+                        <DropdownMenuItem key={subLink.href} asChild>
+                          <Link href={subLink.href} className="font-bold uppercase tracking-wider cursor-pointer">
+                            {subLink.label}
+                          </Link>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-sm font-extrabold text-foreground hover:text-primary transition-colors tracking-widest uppercase"
+                  >
+                    {link.label}
+                  </Link>
+                )
               ))}
             </div>
           </div>
@@ -99,7 +152,7 @@ export function Navigation() {
               </div>
               <div className="relative w-12 h-12 overflow-hidden rounded-full border-2 border-primary group-hover:border-primary/80 transition-colors">
                 <img
-                  src="/Images/1.jpg"
+                  src="/images/1.jpg"
                   alt="Radio Nyra Logo"
                   className="w-full h-full object-cover"
                 />

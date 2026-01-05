@@ -119,11 +119,11 @@ export default function HomePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {hosts.map((host, i) => (
                 <div key={i} className="group bg-card border border-border/50 hover:shadow-xl transition-all duration-300">
-                  <div className="relative aspect-[4/5] bg-gray-200 overflow-hidden">
+                  <div className="relative aspect-[4/5] bg-black overflow-hidden">
                     <img
                       src={host.image}
                       alt={host.name}
-                      className="w-full h-full object-cover transition-all duration-500"
+                      className="w-full h-full object-contain transition-all duration-500"
                     />
                     <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>

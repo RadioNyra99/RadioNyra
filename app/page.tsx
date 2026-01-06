@@ -56,7 +56,7 @@ export default function HomePage() {
 
           <div className="relative z-20 container mx-auto px-4 text-center">
             <h1 className="text-5xl md:text-9xl font-black tracking-tighter mb-8 uppercase leading-[0.8] drop-shadow-2xl italic">
-              <span className="text-white block">Voice of</span>
+              <span className="text-white block">The Voice of</span>
               <span className="text-primary block mt-2">India in USA</span>
             </h1>
 

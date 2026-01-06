@@ -1,20 +1,50 @@
 "use client"
 
+import { useState } from "react"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { Check, Zap, Megaphone, Globe, Monitor, Radio, Award, Star, ZapIcon } from "lucide-react"
+import { Check, Zap, Megaphone, Globe, Monitor, Radio, Award, Star, ZapIcon, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 export default function ServicesPage() {
+    const [submitted, setSubmitted] = useState(false)
+    const [formData, setFormData] = useState({
+        firstName: "",
+        lastName: "",
+        phone: "",
+        email: "",
+        company: "",
+        role: "",
+        businessModel: "",
+        techCompanyDesc: "",
+        primarilyServe: "",
+        operatingTime: "",
+        problemSolved: "",
+        growthOpportunity: "",
+        biggestChallenge: "",
+        mainStory: ""
+    })
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault()
+        setSubmitted(true)
+        window.scrollTo({ top: 300, behavior: 'smooth' })
+    }
+
     return (
         <div className="min-h-screen bg-background font-sans text-foreground">
             <Navigation />
 
             <main>
                 {/* Header Section */}
-                <section className="py-20 bg-primary/5 border-b border-primary/10">
-                    <div className="container mx-auto px-4 text-center">
+                <section className="py-20 bg-primary/5 border-b border-primary/10 text-center">
+                    <div className="container mx-auto px-4">
                         <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6 text-primary">
                             Our Services
                         </h1>
@@ -24,8 +54,160 @@ export default function ServicesPage() {
                     </div>
                 </section>
 
+                <div className="container mx-auto px-4 py-16 max-w-4xl">
+                    {!submitted ? (
+                        <section className="mb-24">
+                            {/* SECTION: PODCAST APPLICATION FORM */}
+                            <div className="bg-card border border-border p-8 md:p-12 shadow-2xl rounded-sm">
+                                <div className="text-center mb-10">
+                                    <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter mb-2">Join Us as a Guest!</h2>
+                                    <p className="text-muted-foreground font-bold uppercase tracking-widest text-xs">Schedule Your Podcast Today!</p>
+                                </div>
+
+                                <form onSubmit={handleSubmit} className="space-y-8">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div className="space-y-2">
+                                            <Label htmlFor="firstName">First Name*</Label>
+                                            <Input id="firstName" required value={formData.firstName} onChange={(e) => setFormData({ ...formData, firstName: e.target.value })} />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <Label htmlFor="lastName">Last Name*</Label>
+                                            <Input id="lastName" required value={formData.lastName} onChange={(e) => setFormData({ ...formData, lastName: e.target.value })} />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <Label htmlFor="phone">Phone Number*</Label>
+                                            <Input id="phone" type="tel" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <Label htmlFor="email">Email*</Label>
+                                            <Input id="email" type="email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-2">
+                                        <Label htmlFor="company">Company*</Label>
+                                        <Input id="company" required value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} />
+                                    </div>
+
+                                    <div className="space-y-3">
+                                        <Label>What’s your role in your business?*</Label>
+                                        <RadioGroup required onValueChange={(v) => setFormData({ ...formData, role: v })}>
+                                            <div className="flex items-center space-x-2">
+                                                <RadioGroupItem value="owner" id="r1" />
+                                                <Label htmlFor="r1">I’m the owner/operator</Label>
+                                            </div>
+                                            <div className="flex items-center space-x-2">
+                                                <RadioGroupItem value="partner" id="r2" />
+                                                <Label htmlFor="r2">I’m a partner or co-owner</Label>
+                                            </div>
+                                            <div className="flex items-center space-x-2">
+                                                <RadioGroupItem value="leadership" id="r3" />
+                                                <Label htmlFor="r3">I’m part of the leadership team</Label>
+                                            </div>
+                                            <div className="flex items-center space-x-2">
+                                                <RadioGroupItem value="lead" id="r4" />
+                                                <Label htmlFor="r4">I’m an acquisitions or operations lead</Label>
+                                            </div>
+                                            <div className="flex items-center space-x-2">
+                                                <RadioGroupItem value="other" id="r5" />
+                                                <Label htmlFor="r5">Other</Label>
+                                            </div>
+                                        </RadioGroup>
+                                    </div>
+
+                                    <div className="space-y-2">
+                                        <Label>What best describes your primary business model?*</Label>
+                                        <Select required onValueChange={(v) => setFormData({ ...formData, businessModel: v })}>
+                                            <SelectTrigger>
+                                                <SelectValue placeholder="Select an option" />
+                                            </SelectTrigger>
+                                            <SelectContent>
+                                                <SelectItem value="sfr">Single Family Residential Real Estate Investing</SelectItem>
+                                                <SelectItem value="commercial">Commercial / Large Multifamily / New Development</SelectItem>
+                                                <SelectItem value="lending">Lending or Private Capital</SelectItem>
+                                                <SelectItem value="construction">Construction or Renovation Services</SelectItem>
+                                                <SelectItem value="title">Title, Insurance, TC, Legal or Compliance Services</SelectItem>
+                                                <SelectItem value="tech">Technology or Software for Real Estate Investing</SelectItem>
+                                                <SelectItem value="lead">Lead Provider (PPL, PPC, Skip Tracing, etc.)</SelectItem>
+                                                <SelectItem value="other">Other</SelectItem>
+                                            </SelectContent>
+                                        </Select>
+                                        {formData.businessModel === "other" && (
+                                            <Input className="mt-2" placeholder="Please specify" onChange={(e) => setFormData({ ...formData, businessModel: e.target.value })} />
+                                        )}
+                                    </div>
+
+                                    <div className="space-y-2">
+                                        <Label htmlFor="techDesc">Which best describes your technology or software company?*</Label>
+                                        <Input id="techDesc" required value={formData.techCompanyDesc} onChange={(e) => setFormData({ ...formData, techCompanyDesc: e.target.value })} />
+                                    </div>
+
+                                    <div className="space-y-2">
+                                        <Label htmlFor="serve">Who do you primarily serve?*</Label>
+                                        <Input id="serve" required value={formData.primarilyServe} onChange={(e) => setFormData({ ...formData, primarilyServe: e.target.value })} />
+                                    </div>
+
+                                    <div className="space-y-2">
+                                        <Label htmlFor="operating">How long has your company been operating?*</Label>
+                                        <Input id="operating" required value={formData.operatingTime} onChange={(e) => setFormData({ ...formData, operatingTime: e.target.value })} />
+                                    </div>
+
+                                    <div className="space-y-2">
+                                        <Label htmlFor="problem">What problem does your product solve for real estate professionals or investors?*</Label>
+                                        <Textarea id="problem" required value={formData.problemSolved} onChange={(e) => setFormData({ ...formData, problemSolved: e.target.value })} />
+                                    </div>
+
+                                    <div className="space-y-2">
+                                        <Label htmlFor="growth">What’s your biggest opportunity for growth right now?*</Label>
+                                        <Textarea id="growth" required value={formData.growthOpportunity} onChange={(e) => setFormData({ ...formData, growthOpportunity: e.target.value })} />
+                                    </div>
+
+                                    <div className="space-y-2">
+                                        <Label htmlFor="challenge">What’s your biggest challenge in the current market?*</Label>
+                                        <Textarea id="challenge" required value={formData.biggestChallenge} onChange={(e) => setFormData({ ...formData, biggestChallenge: e.target.value })} />
+                                    </div>
+
+                                    <div className="space-y-2">
+                                        <Label htmlFor="story">If you were to be featured on our podcast, what’s the main story, strategy, or lesson you’d want to highlight?*</Label>
+                                        <Textarea id="story" required value={formData.mainStory} onChange={(e) => setFormData({ ...formData, mainStory: e.target.value })} />
+                                    </div>
+
+                                    <Button type="submit" className="w-full h-14 text-lg font-bold uppercase tracking-widest bg-primary hover:bg-primary/90">
+                                        Submit Application
+                                    </Button>
+                                </form>
+                            </div>
+                        </section>
+                    ) : (
+                        <section className="text-center py-20 mb-24 animate-in fade-in zoom-in duration-500">
+                            <div className="mb-12">
+                                <CheckCircle2 className="w-20 h-20 text-green-500 mx-auto mb-6" />
+                                <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4">
+                                    ✅ You're Approved!
+                                </h2>
+                                <p className="text-2xl font-bold text-primary uppercase tracking-widest">
+                                    Book Your Podcast Slot Below!!!
+                                </p>
+                            </div>
+
+                            <div className="bg-card border border-border rounded-lg overflow-hidden min-h-[600px] shadow-2xl">
+                                <iframe
+                                    src="https://calendly.com/radionyra/30min"
+                                    width="100%"
+                                    height="600"
+                                    frameBorder="0"
+                                    className="w-full"
+                                ></iframe>
+                            </div>
+                            <Button onClick={() => setSubmitted(false)} variant="link" className="mt-8 text-muted-foreground uppercase tracking-widest text-xs">
+                                Back to Advertisement Options
+                            </Button>
+                        </section>
+                    )}
+                </div>
+
                 {/* SECTION 1: ON-AIR ADVERTISING */}
-                <section id="on-air" className="py-24 bg-background">
+                <section id="on-air" className="py-24 bg-background border-t border-border/50">
                     <div className="container mx-auto px-4">
                         <div className="flex items-center gap-4 mb-12">
                             <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white">

@@ -71,7 +71,7 @@ export default function HomePage() {
                   className="h-16 px-8 text-sm font-bold uppercase tracking-widest text-white border-2 border-white bg-transparent hover:bg-white hover:text-black rounded-none transition-all hover:scale-105 shadow-2xl"
                   asChild
                 >
-                  <Link href="https://radionyra.com/">
+                  <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app&pcampaignid=web_share&pli=1">
                     <Smartphone className="mr-3 w-5 h-5" /> Download on Google Play
                   </Link>
                 </Button>
@@ -81,7 +81,7 @@ export default function HomePage() {
                   className="h-16 px-8 text-sm font-bold uppercase tracking-widest text-white border-2 border-white bg-transparent hover:bg-white hover:text-black rounded-none transition-all hover:scale-105 shadow-2xl"
                   asChild
                 >
-                  <Link href="https://radionyra.com/">
+                  <Link href="https://apps.apple.com/in/app/radio-nyra-raleigh-durham/id6469009980">
                     <Apple className="mr-3 w-5 h-5" /> Download on App Store
                   </Link>
                 </Button>

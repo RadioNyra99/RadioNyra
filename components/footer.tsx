@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Facebook, Instagram, Linkedin, Twitter, Youtube, Radio } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Twitter, Youtube, Radio, Smartphone, Apple } from "lucide-react"
 
 export function Footer() {
   return (
@@ -34,11 +34,14 @@ export function Footer() {
           {/* Socials & Voice Assistant */}
           <div className="flex flex-col items-center md:items-end gap-6">
             <div className="flex items-center gap-4">
-              <Link href="https://facebook.com/radionyrausa" target="_blank" className="text-gray-400 hover:text-white transition-colors"><Facebook className="w-5 h-5" /></Link>
-              <Link href="https://instagram.com/radionyrausa" target="_blank" className="text-gray-400 hover:text-white transition-colors"><Instagram className="w-5 h-5" /></Link>
-              <Link href="https://twitter.com/NyraUsa" target="_blank" className="text-gray-400 hover:text-white transition-colors"><Twitter className="w-5 h-5" /></Link>
-              <Link href="https://youtube.com/c/RadioNyraUSA" target="_blank" className="text-gray-400 hover:text-white transition-colors"><Youtube className="w-5 h-5" /></Link>
-              <Link href="https://radionyra.com/" target="_blank" className="text-gray-400 hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></Link>
+              <Link href="https://facebook.com/radionyrausa" target="_blank" className="text-gray-400 hover:text-white transition-colors" title="Facebook"><Facebook className="w-5 h-5" /></Link>
+              <Link href="https://instagram.com/radionyrausa" target="_blank" className="text-gray-400 hover:text-white transition-colors" title="Instagram"><Instagram className="w-5 h-5" /></Link>
+              <Link href="https://twitter.com/NyraUsa" target="_blank" className="text-gray-400 hover:text-white transition-colors" title="Twitter"><Twitter className="w-5 h-5" /></Link>
+              <Link href="https://youtube.com/c/RadioNyraUSA" target="_blank" className="text-gray-400 hover:text-white transition-colors" title="YouTube"><Youtube className="w-5 h-5" /></Link>
+              <Link href="https://radionyra.com/" target="_blank" className="text-gray-400 hover:text-white transition-colors" title="LinkedIn"><Linkedin className="w-5 h-5" /></Link>
+              <div className="w-px h-4 bg-white/10 mx-2" />
+              <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app&pcampaignid=web_share&pli=1" target="_blank" className="text-primary hover:text-white transition-colors" title="Download on Google Play"><Smartphone className="w-5 h-5" /></Link>
+              <Link href="https://apps.apple.com/in/app/radio-nyra-raleigh-durham/id6469009980" target="_blank" className="text-primary hover:text-white transition-colors" title="Download on App Store"><Apple className="w-5 h-5" /></Link>
             </div>
 
             <div className="text-center md:text-right">

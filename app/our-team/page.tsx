@@ -25,7 +25,7 @@ export default function OurTeamPage() {
             <div className="max-w-5xl mx-auto">
               <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl border border-border bg-card shadow-2xl transition-all duration-500 hover:shadow-primary/10">
                 <Image
-                  src="/Radio Nyra team .jpg"
+                  src="/radio-nyra-team.jpg"
                   alt="Radio Nyra Team"
                   fill
                   className="object-contain"

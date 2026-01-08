@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Play, Pause, Globe, Radio } from "lucide-react"
+import { Play, Pause, Globe, Radio, Volume2, VolumeX, Volume1, Languages } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -31,6 +31,8 @@ export function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
   const [currentLanguage, setCurrentLanguage] = useState<string>("Hindi")
+  const [volume, setVolume] = useState<number>(1)
+  const [isMuted, setIsMuted] = useState(false)
   const [metadata, setMetadata] = useState<{ title: string; artwork: string }>({
     title: "Live Stream",
     artwork: "/images/radio-nyra-logo.jpg"
@@ -83,8 +85,26 @@ export function AudioPlayer() {
     }
   }, [isPlaying, currentLanguage])
 
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = isMuted ? 0 : volume
+    }
+  }, [volume, isMuted])
+
   const togglePlay = () => {
     setIsPlaying(!isPlaying)
+  }
+
+  const toggleMute = () => {
+    setIsMuted(!isMuted)
+  }
+
+  const adjustVolume = (delta: number) => {
+    setVolume(prev => {
+      const next = Math.max(0, Math.min(1, prev + delta))
+      if (next > 0) setIsMuted(false)
+      return next
+    })
   }
 
   const changeLanguage = (lang: string) => {
@@ -153,27 +173,59 @@ export function AudioPlayer() {
             </div>
 
             {/* Middle: Controls - INLINE ON MOBILE */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 md:gap-4">
+              <div className="flex items-center gap-1 md:gap-2 mr-1 md:mr-2">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-8 w-8 md:h-10 md:w-10 rounded-full text-muted-foreground hover:text-primary hover:bg-primary/5 hidden sm:flex"
+                  onClick={() => adjustVolume(-0.1)}
+                >
+                  <Volume1 className="h-4 w-4 md:h-5 md:w-5" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-9 w-9 md:h-11 md:w-11 rounded-full text-foreground hover:bg-muted"
+                  onClick={toggleMute}
+                >
+                  {isMuted || volume === 0 ? <VolumeX className="h-5 w-5 md:h-6 md:w-6 text-red-500" /> : <Volume2 className="h-5 w-5 md:h-6 md:w-6" />}
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-8 w-8 md:h-10 md:w-10 rounded-full text-muted-foreground hover:text-primary hover:bg-primary/5 hidden sm:flex"
+                  onClick={() => adjustVolume(0.1)}
+                >
+                  <Volume2 className="h-4 w-4 md:h-5 md:w-5" />
+                </Button>
+              </div>
+
               <Button
                 onClick={togglePlay}
                 size="icon"
-                className="h-11 w-11 md:h-14 md:w-14 rounded-full bg-primary text-white hover:bg-primary/90 shadow-lg hover:scale-105 active:scale-95 transition-all outline-none ring-primary/20 hover:ring-4 md:hover:ring-8 shrink-0"
+                className="h-12 w-12 md:h-16 md:w-16 rounded-full bg-primary text-white hover:bg-primary/90 shadow-lg hover:scale-105 active:scale-95 transition-all outline-none ring-primary/20 hover:ring-4 md:hover:ring-8 shrink-0"
               >
-                {isPlaying ? <Pause className="h-5 w-5 md:h-7 md:w-7 fill-current" /> : <Play className="h-5 w-5 md:h-7 md:w-7 fill-current ml-0.5 md:ml-1" />}
+                {isPlaying ? <Pause className="h-6 w-6 md:h-8 md:w-8 fill-current" /> : <Play className="h-6 w-6 md:h-8 md:w-8 fill-current ml-0.5 md:ml-1" />}
               </Button>
 
               {/* Mobile Language Switcher - COMPACT TOGGLE */}
-              <div className="md:hidden">
-                <button
-                  onClick={() => {
-                    const nextLangIdx = (languages.indexOf(currentLanguage) + 1) % languages.length;
-                    changeLanguage(languages[nextLangIdx]);
-                  }}
-                  className="flex flex-col items-center justify-center h-10 px-2 rounded-xl bg-muted/50 border border-border/50 text-muted-foreground active:scale-95 transition-transform"
-                >
-                  <Globe className="h-3.5 w-3.5 mb-0.5" />
-                  <span className="text-[7px] font-black uppercase">{currentLanguage.substring(0, 3)}</span>
-                </button>
+              <div className="md:hidden flex items-center gap-1 bg-muted/50 p-1 rounded-full border border-border/50">
+                {languages.map((lang) => (
+                  <button
+                    key={lang}
+                    onClick={() => changeLanguage(lang)}
+                    className={cn(
+                      "w-10 h-10 flex flex-col items-center justify-center rounded-full transition-all",
+                      currentLanguage === lang
+                        ? "bg-primary text-white shadow-sm"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    <Radio className="h-3 w-3 mb-0.5" />
+                    <span className="text-[7px] font-white uppercase">{lang.substring(0, 3)}</span>
+                  </button>
+                ))}
               </div>
             </div>
 
@@ -185,12 +237,13 @@ export function AudioPlayer() {
                     key={lang}
                     onClick={() => changeLanguage(lang)}
                     className={cn(
-                      "px-4 py-1.5 text-[10px] font-black uppercase tracking-tight rounded-full transition-all",
+                      "flex items-center gap-2 px-5 py-2 text-[11px] font-black uppercase tracking-wider rounded-full transition-all duration-300",
                       currentLanguage === lang
-                        ? "bg-primary text-white shadow-md active:scale-95"
-                        : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                        ? "bg-primary text-white shadow-lg active:scale-95"
+                        : "text-muted-foreground hover:text-foreground hover:bg-white/10"
                     )}
                   >
+                    <Radio className={cn("h-3 w-3", currentLanguage === lang ? "animate-pulse" : "")} />
                     {lang}
                   </button>
                 ))}

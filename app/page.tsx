@@ -91,41 +91,41 @@ export default function HomePage() {
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center justify-center gap-8 max-w-4xl mx-auto">
               <div className="flex items-center justify-center gap-8 md:gap-16">
-                <div className="flex flex-col items-center gap-3 group">
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-all border border-white/10">
+                <div className="flex flex-col items-center gap-4 group">
+                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-all border border-white/10 shadow-xl backdrop-blur-sm hover:scale-105 duration-300">
                     <img
                       src="https://www.gstatic.com/images/branding/product/2x/google_assistant_48dp.png"
                       alt="OK Google"
-                      className="w-10 h-10 md:w-12 md:h-12 group-hover:scale-110 transition-transform"
+                      className="w-10 h-10 md:w-12 md:h-12 object-contain"
                     />
                   </div>
-                  <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-white/80 group-hover:text-white transition-colors">
+                  <span className="text-sm font-bold uppercase tracking-widest text-white/60 group-hover:text-white transition-colors">
                     OK GOOGLE
                   </span>
                 </div>
 
-                <div className="flex flex-col items-center gap-3 group">
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-all border border-white/10">
+                <div className="flex flex-col items-center gap-4 group">
+                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-all border border-white/10 shadow-xl backdrop-blur-sm hover:scale-105 duration-300">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Amazon_Alexa_logo.svg"
                       alt="Alexa"
-                      className="w-10 h-10 md:w-12 md:h-12 invert group-hover:scale-110 transition-transform"
+                      className="w-10 h-10 md:w-12 md:h-12 object-contain brightness-0 invert"
                     />
                   </div>
-                  <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-white/80 group-hover:text-white transition-colors">
+                  <span className="text-sm font-bold uppercase tracking-widest text-white/60 group-hover:text-white transition-colors">
                     ALEXA
                   </span>
                 </div>
 
-                <div className="flex flex-col items-center gap-3 group">
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-all border border-white/10">
+                <div className="flex flex-col items-center gap-4 group">
+                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-all border border-white/10 shadow-xl backdrop-blur-sm hover:scale-105 duration-300">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Siri_logo.png"
                       alt="Siri"
-                      className="w-10 h-10 md:w-12 md:h-12 group-hover:scale-110 transition-transform"
+                      className="w-10 h-10 md:w-12 md:h-12 object-contain"
                     />
                   </div>
-                  <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-white/80 group-hover:text-white transition-colors">
+                  <span className="text-sm font-bold uppercase tracking-widest text-white/60 group-hover:text-white transition-colors">
                     SIRI
                   </span>
                 </div>

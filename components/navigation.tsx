@@ -55,57 +55,67 @@ export function Navigation() {
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-                <SheetHeader className="flex flex-row items-center gap-4 text-left border-b border-border/50 pb-6">
-                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary">
-                    <img
-                      src="/images/radio-nyra-logo.jpg"
-                      alt="Radio Nyra Logo"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <SheetTitle className="text-left font-bold uppercase tracking-tighter leading-none">Menu</SheetTitle>
-                    <p className="text-[10px] text-muted-foreground font-medium tracking-widest uppercase mt-1">Radio Nyra</p>
+              <SheetContent side="left" className="w-[300px] sm:w-[400px] flex flex-col p-0 border-r-0 shadow-2xl">
+                <SheetHeader className="p-6 border-b border-border/10 bg-background/95 backdrop-blur sticky top-0 z-10 shrink-0">
+                  <div className="flex flex-row items-center gap-4">
+                    <div className="relative">
+                      <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-primary shrink-0 soft-shadow-primary">
+                        <img
+                          src="/images/radio-nyra-logo.jpg"
+                          alt="Radio Nyra Logo"
+                          className="w-full h-full object-cover scale-110"
+                        />
+                      </div>
+                      <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-primary border-2 border-background rounded-full live-pulse" />
+                    </div>
+                    <div className="flex flex-col">
+                      <SheetTitle className="text-left font-black uppercase tracking-tighter leading-none text-2xl">Menu</SheetTitle>
+                      <p className="text-[10px] text-muted-foreground font-bold tracking-[0.2em] uppercase mt-1">Radio Nyra</p>
+                    </div>
                   </div>
                 </SheetHeader>
-                <div className="flex flex-col gap-6 mt-8">
-                  {navLinks.map((link) => (
-                    <div key={link.href} className="flex flex-col gap-2">
-                      <SheetClose asChild>
-                        <Link
-                          href={link.href}
-                          className="text-lg font-bold text-foreground hover:text-primary transition-colors tracking-widest uppercase"
-                        >
-                          {link.label}
-                        </Link>
-                      </SheetClose>
-                      {link.subLinks && (
-                        <div className="flex flex-col gap-3 pl-4 border-l-2 border-primary/20">
-                          {link.subLinks.map((subLink) => (
-                            <SheetClose key={subLink.href} asChild>
-                              <Link
-                                href={subLink.href}
-                                className="text-sm font-bold text-muted-foreground hover:text-primary transition-colors tracking-widest uppercase"
-                              >
-                                {subLink.label}
-                              </Link>
-                            </SheetClose>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                  <div className="pt-6 border-t border-border">
-                    <SheetClose asChild>
-                      <Button
-                        onClick={showAudioPlayer}
-                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold uppercase tracking-wider rounded-full"
-                      >
-                        Listen Live
-                      </Button>
-                    </SheetClose>
+
+                <div className="flex-1 overflow-y-auto px-8 py-10 custom-scrollbar">
+                  <div className="flex flex-col gap-10">
+                    {navLinks.map((link) => (
+                      <div key={link.href} className="flex flex-col gap-4 group">
+                        <SheetClose asChild>
+                          <Link
+                            href={link.href}
+                            className="text-3xl font-black text-foreground hover:text-primary transition-all duration-300 tracking-tighter uppercase flex items-center gap-2 group-hover:pl-2"
+                          >
+                            {link.label}
+                            <span className="w-2 h-2 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                          </Link>
+                        </SheetClose>
+                        {link.subLinks && (
+                          <div className="flex flex-col gap-5 pl-4 border-l-2 border-primary/5 mt-1 ml-1">
+                            {link.subLinks.map((subLink) => (
+                              <SheetClose key={subLink.href} asChild>
+                                <Link
+                                  href={subLink.href}
+                                  className="text-[14px] font-bold text-muted-foreground hover:text-primary transition-colors tracking-wide uppercase leading-tight"
+                                >
+                                  {subLink.label}
+                                </Link>
+                              </SheetClose>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
                   </div>
+                </div>
+
+                <div className="p-8 border-t border-border/10 bg-muted/20 shrink-0">
+                  <SheetClose asChild>
+                    <Button
+                      onClick={showAudioPlayer}
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-black uppercase tracking-[0.1em] rounded-full py-7 text-lg soft-shadow-primary transition-transform active:scale-95"
+                    >
+                      Listen Live
+                    </Button>
+                  </SheetClose>
                 </div>
               </SheetContent>
             </Sheet>

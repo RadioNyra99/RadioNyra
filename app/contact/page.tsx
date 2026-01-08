@@ -59,35 +59,40 @@ export default function ContactPage() {
               {/* Form */}
               <Card className="border-none shadow-2xl bg-card">
                 <CardContent className="p-10">
-                  <form className="space-y-6 text-left">
+                  <form
+                    action="https://formspree.io/f/fa42a7d8-c45e-4e7d-868c-7861ef21d915"
+                    method="POST"
+                    className="space-y-4 text-left"
+                  >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="name" className="text-[10px] uppercase font-black text-muted-foreground tracking-widest">Name</Label>
-                        <Input id="name" type="text" placeholder="YOUR FULL NAME" className="border-b-2 border-t-0 border-x-0 rounded-none px-0 focus:border-primary bg-transparent text-lg font-bold" required />
+                        <Input id="name" name="name" type="text" placeholder="YOUR FULL NAME" className="border-b-2 border-t-0 border-x-0 rounded-none px-0 focus:border-primary bg-transparent text-lg font-bold" required />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email" className="text-[10px] uppercase font-black text-muted-foreground tracking-widest">Email</Label>
-                        <Input id="email" type="email" placeholder="YOUR EMAIL ADDRESS" className="border-b-2 border-t-0 border-x-0 rounded-none px-0 focus:border-primary bg-transparent text-lg font-bold" required />
+                        <Input id="email" name="email" type="email" placeholder="YOUR EMAIL ADDRESS" className="border-b-2 border-t-0 border-x-0 rounded-none px-0 focus:border-primary bg-transparent text-lg font-bold" required />
                       </div>
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="phone" className="text-[10px] uppercase font-black text-muted-foreground tracking-widest">Phone</Label>
-                      <Input id="phone" type="tel" placeholder="YOUR CONTACT NUMBER" className="border-b-2 border-t-0 border-x-0 rounded-none px-0 focus:border-primary bg-transparent text-lg font-bold" required />
+                      <Input id="phone" name="phone" type="tel" placeholder="YOUR CONTACT NUMBER" className="border-b-2 border-t-0 border-x-0 rounded-none px-0 focus:border-primary bg-transparent text-lg font-bold" required />
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="message" className="text-[10px] uppercase font-black text-muted-foreground tracking-widest">Message</Label>
                       <Textarea
                         id="message"
+                        name="message"
                         placeholder="HOW CAN WE HELP YOU TODAY?"
                         rows={5}
                         className="resize-none border-b-2 border-t-0 border-x-0 rounded-none px-0 focus:border-primary bg-transparent text-lg font-bold"
                         required
                       />
                     </div>
-                    <Button type="submit" size="lg" className="w-full h-16 text-lg font-black uppercase tracking-widest bg-primary hover:bg-primary/90 rounded-none shadow-xl transition-all active:scale-95">
-                      Submit Message
+                    <Button type="submit" size="lg" className="w-full h-12 text-sm font-black uppercase tracking-widest bg-primary hover:bg-primary/90 rounded-none shadow-xl transition-all active:scale-95">
+                      Submit
                     </Button>
                   </form>
                 </CardContent>
@@ -97,17 +102,20 @@ export default function ContactPage() {
               <div className="space-y-12 flex flex-col justify-center">
                 <div className="group">
                   <h3 className="text-xs font-black uppercase text-primary tracking-[0.3em] mb-4">Email Us</h3>
-                  <a href="mailto:info@radionyra.com" className="text-3xl font-black text-foreground hover:text-primary transition-colors">info@radionyra.com</a>
+                  <a href="mailto:Info@radionyra.com" className="text-3xl font-black text-foreground hover:text-primary transition-colors">Info@radionyra.com</a>
                 </div>
                 <div className="group">
                   <h3 className="text-xs font-black uppercase text-secondary tracking-[0.3em] mb-4">Call Us</h3>
-                  <a href="tel:9199998595" className="text-3xl font-black text-foreground hover:text-primary transition-colors">(919) 999-8595</a>
+                  <a href="tel:9199998595" className="text-3xl font-black text-foreground hover:text-primary transition-colors">+1 (919) 999 - 8595</a>
                   <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-2">Mon - Fri, 9am - 6pm EST</p>
                 </div>
                 <div className="group">
                   <h3 className="text-xs font-black uppercase text-accent tracking-[0.3em] mb-4">Visit Us</h3>
-                  <p className="text-3xl font-black text-foreground">Raleigh-Durham, NC</p>
-                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-2">The Heart of North Carolina</p>
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-5 h-5 text-primary" />
+                    <p className="text-3xl font-black text-foreground">Durham, NC</p>
+                  </div>
+                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-2">North Carolina, USA</p>
                 </div>
               </div>
             </div>

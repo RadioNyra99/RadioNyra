@@ -51,7 +51,7 @@ export default function HomePage() {
           <div className="relative z-20 container mx-auto px-4 text-center">
             <h1 className="text-5xl md:text-9xl font-black tracking-tighter mb-8 uppercase leading-[0.8] drop-shadow-2xl italic">
               <span className="text-white block">The Voice of</span>
-              <span className="text-primary block mt-2">India in USA</span>
+              <span className="text-primary block mt-2">India in the USA</span>
             </h1>
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-12 w-full max-w-4xl mx-auto">
@@ -66,7 +66,7 @@ export default function HomePage() {
                   asChild
                 >
                   <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app&pcampaignid=web_share&pli=1">
-                    <Smartphone className="mr-3 w-5 h-5" /> Download on Google Play
+                    <img src="/Android icon.png" alt="Android Icon" className="mr-3 w-6 h-6 object-contain" /> Download on Google Play
                   </Link>
                 </Button>
                 <Button
@@ -76,7 +76,7 @@ export default function HomePage() {
                   asChild
                 >
                   <Link href="https://apps.apple.com/in/app/radio-nyra-raleigh-durham/id6469009980">
-                    <Apple className="mr-3 w-5 h-5" /> Download on App Store
+                    <img src="/Apple icon.png" alt="Apple Icon" className="mr-3 w-6 h-6 object-contain" /> Download on App Store
                   </Link>
                 </Button>
               </div>
@@ -145,17 +145,8 @@ export default function HomePage() {
                         target.src = "https://placehold.co/600x600/000000/FFFFFF?text=" + encodeURIComponent(show.name);
                       }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
-                    <div className="absolute bottom-0 left-0 p-4 w-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                      <h3 className="text-xl font-black uppercase tracking-tighter text-white italic leading-none mb-1">
-                        {show.name}
-                      </h3>
-                      {show.host && (
-                        <p className="text-primary font-bold uppercase tracking-widest text-xs">
-                          {show.host}
-                        </p>
-                      )}
-                    </div>
+                    {/* Text Overlay Removed as per request */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                   </div>
                 </Link>
               ))}
@@ -170,7 +161,7 @@ export default function HomePage() {
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
               {Array.from({ length: 30 }, (_, i) => i + 2).map((num) => (
-                <div key={`partner-${num}`} className="group border border-border/30 hover:border-primary/50 transition-all duration-300 bg-transparent p-4 flex items-center justify-center h-24 hover:shadow-lg">
+                <div key={`partner-${num}`} className="group border border-border/30 hover:border-primary/50 transition-all duration-300 bg-transparent p-4 flex items-center justify-center h-32 hover:shadow-lg">
                   <div className="relative w-full h-full">
                     <img
                       src={`/images/${num}.jpg`}

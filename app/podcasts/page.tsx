@@ -20,6 +20,8 @@ export default function PodcastsPage() {
     ]
 
     const [submitted, setSubmitted] = useState(false)
+    const [step, setStep] = useState(1)
+
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -47,6 +49,18 @@ export default function PodcastsPage() {
         }
     }
 
+    const nextStep = () => {
+        // Basic validation (mostly relying on browser required check for now, but we can do manual)
+        // Since browser required check only works on submit, we might want to manually check empty fields if needed.
+        // For now, allow next. A more robust implementation would check fields.
+        // Let's do a simple check.
+        if (step === 1 && (!formData.firstName || !formData.lastName || !formData.phone || !formData.email)) return alert("Please fill all required fields");
+        if (step === 2 && (!formData.company || !formData.role || !formData.businessModel)) return alert("Please fill all required fields");
+        if (step === 3 && (!formData.techCompanyDesc || !formData.primarilyServe || !formData.operatingTime)) return alert("Please fill all required fields");
+
+        setStep(step + 1);
+    }
+
     return (
         <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-primary-foreground text-foreground">
             <Navigation />
@@ -64,7 +78,135 @@ export default function PodcastsPage() {
                     </div>
                 </section>
 
-                {/* Episodes Section */}
+                {/* Podcast Application Section - Compact Single Form */}
+                <section id="guest-form" className="py-16 bg-muted/20 border-b border-border">
+                    <div className="container mx-auto px-4 max-w-2xl">
+                        {!submitted ? (
+                            <div className="bg-card border border-border p-8 shadow-xl rounded-sm">
+                                <div className="text-center mb-8">
+                                    <h2 className="text-2xl font-black uppercase tracking-tighter mb-1 italic">Join Us as a Guest!</h2>
+                                    <p className="text-muted-foreground font-bold uppercase tracking-widest text-[10px]">Schedule Your Podcast Today!</p>
+                                </div>
+
+                                <form onSubmit={handleSubmit} className="space-y-4">
+                                    {/* Personal Info */}
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                        <div className="space-y-1">
+                                            <Label htmlFor="firstName" className="text-[10px] uppercase tracking-widest text-muted-foreground">First Name*</Label>
+                                            <Input id="firstName" required value={formData.firstName} onChange={(e) => setFormData({ ...formData, firstName: e.target.value })} className="h-9 rounded-none border-border focus:border-primary bg-background text-sm" />
+                                        </div>
+                                        <div className="space-y-1">
+                                            <Label htmlFor="lastName" className="text-[10px] uppercase tracking-widest text-muted-foreground">Last Name*</Label>
+                                            <Input id="lastName" required value={formData.lastName} onChange={(e) => setFormData({ ...formData, lastName: e.target.value })} className="h-9 rounded-none border-border focus:border-primary bg-background text-sm" />
+                                        </div>
+                                    </div>
+
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                        <div className="space-y-1">
+                                            <Label htmlFor="phone" className="text-[10px] uppercase tracking-widest text-muted-foreground">Phone*</Label>
+                                            <Input id="phone" type="tel" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="h-9 rounded-none border-border focus:border-primary bg-background text-sm" />
+                                        </div>
+                                        <div className="space-y-1">
+                                            <Label htmlFor="email" className="text-[10px] uppercase tracking-widest text-muted-foreground">Email*</Label>
+                                            <Input id="email" type="email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="h-9 rounded-none border-border focus:border-primary bg-background text-sm" />
+                                        </div>
+                                    </div>
+
+                                    {/* Company Info */}
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                        <div className="space-y-1">
+                                            <Label htmlFor="company" className="text-[10px] uppercase tracking-widest text-muted-foreground">Company*</Label>
+                                            <Input id="company" required value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} className="h-9 rounded-none border-border focus:border-primary bg-background text-sm" />
+                                        </div>
+                                        <div className="space-y-1">
+                                            <Label className="text-[10px] uppercase tracking-widest text-muted-foreground">Your Role*</Label>
+                                            <Select required onValueChange={(v) => setFormData({ ...formData, role: v })} value={formData.role}>
+                                                <SelectTrigger className="h-9 rounded-none border-border bg-background text-sm">
+                                                    <SelectValue placeholder="Select Role" />
+                                                </SelectTrigger>
+                                                <SelectContent>
+                                                    <SelectItem value="owner">Owner/Operator</SelectItem>
+                                                    <SelectItem value="partner">Partner/Co-owner</SelectItem>
+                                                    <SelectItem value="leadership">Leadership Team</SelectItem>
+                                                    <SelectItem value="lead">Acquisitions/Ops Lead</SelectItem>
+                                                    <SelectItem value="other">Other</SelectItem>
+                                                </SelectContent>
+                                            </Select>
+                                        </div>
+                                    </div>
+
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                        <div className="space-y-1">
+                                            <Label className="text-[10px] uppercase tracking-widest text-muted-foreground">Business Model*</Label>
+                                            <Select required onValueChange={(v) => setFormData({ ...formData, businessModel: v })} value={formData.businessModel}>
+                                                <SelectTrigger className="h-9 rounded-none border-border bg-background text-sm">
+                                                    <SelectValue placeholder="Select Model" />
+                                                </SelectTrigger>
+                                                <SelectContent>
+                                                    <SelectItem value="sfr">SFR Real Estate</SelectItem>
+                                                    <SelectItem value="commercial">Commercial/Multifamily</SelectItem>
+                                                    <SelectItem value="lending">Lending/Private Capital</SelectItem>
+                                                    <SelectItem value="construction">Construction/Renovation</SelectItem>
+                                                    <SelectItem value="title">Legal/Compliance</SelectItem>
+                                                    <SelectItem value="tech">Tech/Software</SelectItem>
+                                                    <SelectItem value="lead">Lead Provider</SelectItem>
+                                                    <SelectItem value="other">Other</SelectItem>
+                                                </SelectContent>
+                                            </Select>
+                                        </div>
+                                        <div className="space-y-1">
+                                            <Label htmlFor="techDesc" className="text-[10px] uppercase tracking-widest text-muted-foreground">Operating Time*</Label>
+                                            <Input id="operating" required value={formData.operatingTime} onChange={(e) => setFormData({ ...formData, operatingTime: e.target.value })} className="h-9 rounded-none border-border bg-background text-sm" placeholder="Years in business" />
+                                        </div>
+                                    </div>
+
+                                    {/* Detailed Questions */}
+                                    <div className="space-y-1">
+                                        <Label htmlFor="techDesc" className="text-[10px] uppercase tracking-widest text-muted-foreground">Who do you primarily serve?*</Label>
+                                        <Input id="serve" required value={formData.primarilyServe} onChange={(e) => setFormData({ ...formData, primarilyServe: e.target.value })} className="h-9 rounded-none border-border bg-background text-sm" />
+                                    </div>
+
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                        <div className="space-y-1">
+                                            <Label htmlFor="problem" className="text-[10px] uppercase tracking-widest text-muted-foreground">Problem Solved*</Label>
+                                            <Textarea id="problem" required value={formData.problemSolved} onChange={(e) => setFormData({ ...formData, problemSolved: e.target.value })} className="min-h-[60px] rounded-none border-border bg-background text-sm" />
+                                        </div>
+                                        <div className="space-y-1">
+                                            <Label htmlFor="growth" className="text-[10px] uppercase tracking-widest text-muted-foreground">Growth Opportunity*</Label>
+                                            <Textarea id="growth" required value={formData.growthOpportunity} onChange={(e) => setFormData({ ...formData, growthOpportunity: e.target.value })} className="min-h-[60px] rounded-none border-border bg-background text-sm" />
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-1">
+                                        <Label htmlFor="story" className="text-[10px] uppercase tracking-widest text-muted-foreground">What story/strategy would you highlight?*</Label>
+                                        <Textarea id="story" required value={formData.mainStory} onChange={(e) => setFormData({ ...formData, mainStory: e.target.value })} className="min-h-[80px] rounded-none border-border bg-background text-sm" placeholder="Briefly tell us what you'd like to discuss..." />
+                                    </div>
+
+                                    <Button type="submit" className="w-full h-11 text-xs font-black uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none shadow-lg transition-all mt-2">
+                                        Submit
+                                    </Button>
+                                </form>
+                            </div>
+                        ) : (
+                            <div className="text-center py-12 animate-in fade-in zoom-in duration-500">
+                                <div className="mb-8">
+                                    <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                                    <h2 className="text-3xl font-black uppercase tracking-tighter mb-2 italic">
+                                        ✅ Application Sent!
+                                    </h2>
+                                    <p className="text-lg font-bold text-primary uppercase tracking-widest">
+                                        We'll be in touch shortly.
+                                    </p>
+                                </div>
+                                <Button onClick={() => setSubmitted(false)} variant="link" className="text-muted-foreground uppercase tracking-widest text-[10px] font-black hover:text-primary transition-colors">
+                                    Submit another application
+                                </Button>
+                            </div>
+                        )}
+                    </div>
+                </section>
+
+                {/* Episodes Section - MOVED TO BOTTOM */}
                 <section className="py-24 bg-background">
                     <div className="container mx-auto px-4 max-w-6xl">
                         <h2 className="text-3xl font-black uppercase tracking-tighter mb-12 border-l-4 border-primary pl-4 italic">Recent Episodes</h2>
@@ -102,158 +244,6 @@ export default function PodcastsPage() {
                                 </div>
                             ))}
                         </div>
-                    </div>
-                </section>
-
-                {/* Podcast Application Section */}
-                <section id="guest-form" className="py-24 bg-muted/20 border-t border-border">
-                    <div className="container mx-auto px-4 max-w-4xl">
-                        {!submitted ? (
-                            <div className="bg-card border border-border p-8 md:p-12 shadow-2xl rounded-sm">
-                                <div className="text-center mb-10">
-                                    <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter mb-2 italic">Join Us as a Guest!</h2>
-                                    <p className="text-muted-foreground font-bold uppercase tracking-widest text-xs">Schedule Your Podcast Today!</p>
-                                </div>
-
-                                <form onSubmit={handleSubmit} className="space-y-8">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        <div className="space-y-2">
-                                            <Label htmlFor="firstName">First Name*</Label>
-                                            <Input id="firstName" required value={formData.firstName} onChange={(e) => setFormData({ ...formData, firstName: e.target.value })} className="rounded-none border-border focus:border-primary bg-background" />
-                                        </div>
-                                        <div className="space-y-2">
-                                            <Label htmlFor="lastName">Last Name*</Label>
-                                            <Input id="lastName" required value={formData.lastName} onChange={(e) => setFormData({ ...formData, lastName: e.target.value })} className="rounded-none border-border focus:border-primary bg-background" />
-                                        </div>
-                                        <div className="space-y-2">
-                                            <Label htmlFor="phone">Phone Number*</Label>
-                                            <Input id="phone" type="tel" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="rounded-none border-border focus:border-primary bg-background" />
-                                        </div>
-                                        <div className="space-y-2">
-                                            <Label htmlFor="email">Email*</Label>
-                                            <Input id="email" type="email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="rounded-none border-border focus:border-primary bg-background" />
-                                        </div>
-                                    </div>
-
-                                    <div className="space-y-2">
-                                        <Label htmlFor="company">Company*</Label>
-                                        <Input id="company" required value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} className="rounded-none border-border focus:border-primary bg-background" />
-                                    </div>
-
-                                    <div className="space-y-3">
-                                        <Label>What’s your role in your business?*</Label>
-                                        <RadioGroup required onValueChange={(v) => setFormData({ ...formData, role: v })}>
-                                            <div className="flex items-center space-x-2">
-                                                <RadioGroupItem value="owner" id="r1" />
-                                                <Label htmlFor="r1">I’m the owner/operator</Label>
-                                            </div>
-                                            <div className="flex items-center space-x-2">
-                                                <RadioGroupItem value="partner" id="r2" />
-                                                <Label htmlFor="r2">I’m a partner or co-owner</Label>
-                                            </div>
-                                            <div className="flex items-center space-x-2">
-                                                <RadioGroupItem value="leadership" id="r3" />
-                                                <Label htmlFor="r3">I’m part of the leadership team</Label>
-                                            </div>
-                                            <div className="flex items-center space-x-2">
-                                                <RadioGroupItem value="lead" id="r4" />
-                                                <Label htmlFor="r4">I’m an acquisitions or operations lead</Label>
-                                            </div>
-                                            <div className="flex items-center space-x-2">
-                                                <RadioGroupItem value="other" id="r5" />
-                                                <Label htmlFor="r5">Other</Label>
-                                            </div>
-                                        </RadioGroup>
-                                    </div>
-
-                                    <div className="space-y-2">
-                                        <Label>What best describes your primary business model?*</Label>
-                                        <Select required onValueChange={(v) => setFormData({ ...formData, businessModel: v })}>
-                                            <SelectTrigger className="rounded-none border-border bg-background">
-                                                <SelectValue placeholder="Select an option" />
-                                            </SelectTrigger>
-                                            <SelectContent>
-                                                <SelectItem value="sfr">Single Family Residential Real Estate Investing</SelectItem>
-                                                <SelectItem value="commercial">Commercial / Large Multifamily / New Development</SelectItem>
-                                                <SelectItem value="lending">Lending or Private Capital</SelectItem>
-                                                <SelectItem value="construction">Construction or Renovation Services</SelectItem>
-                                                <SelectItem value="title">Title, Insurance, TC, Legal or Compliance Services</SelectItem>
-                                                <SelectItem value="tech">Technology or Software for Real Estate Investing</SelectItem>
-                                                <SelectItem value="lead">Lead Provider (PPL, PPC, Skip Tracing, etc.)</SelectItem>
-                                                <SelectItem value="other">Other</SelectItem>
-                                            </SelectContent>
-                                        </Select>
-                                        {formData.businessModel === "other" && (
-                                            <Input className="mt-2 rounded-none border-border bg-background" placeholder="Please specify" onChange={(e) => setFormData({ ...formData, businessModel: e.target.value })} />
-                                        )}
-                                    </div>
-
-                                    <div className="space-y-2">
-                                        <Label htmlFor="techDesc">Which best describes your technology or software company?*</Label>
-                                        <Input id="techDesc" required value={formData.techCompanyDesc} onChange={(e) => setFormData({ ...formData, techCompanyDesc: e.target.value })} className="rounded-none border-border bg-background" />
-                                    </div>
-
-                                    <div className="space-y-2">
-                                        <Label htmlFor="serve">Who do you primarily serve?*</Label>
-                                        <Input id="serve" required value={formData.primarilyServe} onChange={(e) => setFormData({ ...formData, primarilyServe: e.target.value })} className="rounded-none border-border bg-background" />
-                                    </div>
-
-                                    <div className="space-y-2">
-                                        <Label htmlFor="operating">How long has your company been operating?*</Label>
-                                        <Input id="operating" required value={formData.operatingTime} onChange={(e) => setFormData({ ...formData, operatingTime: e.target.value })} className="rounded-none border-border bg-background" />
-                                    </div>
-
-                                    <div className="space-y-2">
-                                        <Label htmlFor="problem">What problem does your product solve for real estate professionals or investors?*</Label>
-                                        <Textarea id="problem" required value={formData.problemSolved} onChange={(e) => setFormData({ ...formData, problemSolved: e.target.value })} className="rounded-none border-border bg-background min-h-[100px]" />
-                                    </div>
-
-                                    <div className="space-y-2">
-                                        <Label htmlFor="growth">What’s your biggest opportunity for growth right now?*</Label>
-                                        <Textarea id="growth" required value={formData.growthOpportunity} onChange={(e) => setFormData({ ...formData, growthOpportunity: e.target.value })} className="rounded-none border-border bg-background min-h-[100px]" />
-                                    </div>
-
-                                    <div className="space-y-2">
-                                        <Label htmlFor="challenge">What’s your biggest challenge in the current market?*</Label>
-                                        <Textarea id="challenge" required value={formData.biggestChallenge} onChange={(e) => setFormData({ ...formData, biggestChallenge: e.target.value })} className="rounded-none border-border bg-background min-h-[100px]" />
-                                    </div>
-
-                                    <div className="space-y-2">
-                                        <Label htmlFor="story">If you were to be featured on our podcast, what’s the main story, strategy, or lesson you’d want to highlight?*</Label>
-                                        <Textarea id="story" required value={formData.mainStory} onChange={(e) => setFormData({ ...formData, mainStory: e.target.value })} className="rounded-none border-border bg-background min-h-[100px]" />
-                                    </div>
-
-                                    <Button type="submit" className="w-full h-16 text-lg font-black uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none shadow-xl transition-all">
-                                        Submit Application
-                                    </Button>
-                                </form>
-                            </div>
-                        ) : (
-                            <div className="text-center py-20 animate-in fade-in zoom-in duration-500">
-                                <div className="mb-12">
-                                    <CheckCircle2 className="w-20 h-20 text-green-500 mx-auto mb-6" />
-                                    <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4 italic">
-                                        ✅ You're Approved!
-                                    </h2>
-                                    <p className="text-2xl font-bold text-primary uppercase tracking-widest">
-                                        Book Your Podcast Slot Below!!!
-                                    </p>
-                                </div>
-
-                                <div className="bg-card border border-border rounded-sm overflow-hidden min-h-[600px] shadow-2xl">
-                                    <iframe
-                                        src="https://calendly.com/radionyra/30min"
-                                        width="100%"
-                                        height="600"
-                                        frameBorder="0"
-                                        className="w-full"
-                                    ></iframe>
-                                </div>
-                                <Button onClick={() => setSubmitted(false)} variant="link" className="mt-8 text-muted-foreground uppercase tracking-widest text-[10px] font-black hover:text-primary transition-colors">
-                                    ← Back to application
-                                </Button>
-                            </div>
-                        )}
                     </div>
                 </section>
 

@@ -56,23 +56,25 @@ export default function ServicesPage() {
                                     delivery: "Inclusions: 10 total 30-second spots across the weekend"
                                 }
                             ].map((item, i) => (
-                                <div key={i} className="group p-8 border border-border bg-card hover:border-primary transition-all rounded-sm shadow-sm">
-                                    <h3 className="text-2xl font-bold uppercase mb-4 text-primary">{item.title}</h3>
-                                    <div className="space-y-4">
+                                <Card key={i} className="group border-border bg-card hover:border-primary hover:shadow-lg transition-all rounded-sm">
+                                    <CardHeader>
+                                        <CardTitle className="text-2xl font-black uppercase text-primary">{item.title}</CardTitle>
+                                    </CardHeader>
+                                    <CardContent className="space-y-4 text-sm">
                                         <div>
-                                            <p className="text-xs font-bold uppercase text-muted-foreground tracking-widest mb-1">Time Slots</p>
+                                            <p className="font-bold uppercase text-muted-foreground tracking-widest mb-1 text-[10px]">Time Slots</p>
                                             <p className="font-semibold">{item.slots}</p>
                                         </div>
                                         <div>
-                                            <p className="text-xs font-bold uppercase text-muted-foreground tracking-widest mb-1">Minimum Purchase</p>
+                                            <p className="font-bold uppercase text-muted-foreground tracking-widest mb-1 text-[10px]">Minimum Purchase</p>
                                             <p className="font-semibold">{item.min}</p>
                                         </div>
                                         <div>
-                                            <p className="text-xs font-bold uppercase text-muted-foreground tracking-widest mb-1">Delivery</p>
+                                            <p className="font-bold uppercase text-muted-foreground tracking-widest mb-1 text-[10px]">Delivery</p>
                                             <p className="text-muted-foreground">{item.delivery}</p>
                                         </div>
-                                    </div>
-                                </div>
+                                    </CardContent>
+                                </Card>
                             ))}
                         </div>
                     </div>
@@ -89,37 +91,45 @@ export default function ServicesPage() {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                            <div className="flex flex-col gap-6 p-8 bg-card border border-border rounded-sm">
-                                <h3 className="text-3xl font-black uppercase text-primary tracking-tight">Show Sponsorship</h3>
-                                <ul className="space-y-4">
-                                    <li className="flex gap-3">
-                                        <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                                        <span>Exclusive mention and branding within a popular show or segment</span>
-                                    </li>
-                                    <li className="flex gap-3">
-                                        <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                                        <span>Frequency: Minimum one mention per airing + segment branding</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="flex flex-col gap-6 p-8 bg-card border border-border rounded-sm">
-                                <h3 className="text-3xl font-black uppercase text-primary tracking-tight">Festival Sponsorship</h3>
-                                <p className="text-muted-foreground font-bold uppercase tracking-widest text-xs">Events: Holi, Diwali, New Year’s, Independence Day, etc.</p>
-                                <ul className="space-y-4">
-                                    <li className="flex gap-3">
-                                        <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                                        <span>Branding in festival-related segments</span>
-                                    </li>
-                                    <li className="flex gap-3">
-                                        <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                                        <span>Online banners on high-traffic pages</span>
-                                    </li>
-                                    <li className="flex gap-3">
-                                        <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                                        <span>Mentions across radio & digital media channels</span>
-                                    </li>
-                                </ul>
-                            </div>
+                            <Card className="border-border bg-card rounded-sm hover:border-primary transition-all">
+                                <CardHeader>
+                                    <CardTitle className="text-3xl font-black uppercase text-primary tracking-tight">Show Sponsorship</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <ul className="space-y-4">
+                                        <li className="flex gap-3">
+                                            <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                                            <span>Exclusive mention and branding within a popular show or segment</span>
+                                        </li>
+                                        <li className="flex gap-3">
+                                            <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                                            <span>Frequency: Minimum one mention per airing + segment branding</span>
+                                        </li>
+                                    </ul>
+                                </CardContent>
+                            </Card>
+                            <Card className="border-border bg-card rounded-sm hover:border-primary transition-all">
+                                <CardHeader>
+                                    <CardTitle className="text-3xl font-black uppercase text-primary tracking-tight">Festival Sponsorship</CardTitle>
+                                    <CardDescription className="font-bold uppercase tracking-widest text-xs">Events: Holi, Diwali, New Year’s, Independence Day, etc.</CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <ul className="space-y-4">
+                                        <li className="flex gap-3">
+                                            <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                                            <span>Branding in festival-related segments</span>
+                                        </li>
+                                        <li className="flex gap-3">
+                                            <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                                            <span>Online banners on high-traffic pages</span>
+                                        </li>
+                                        <li className="flex gap-3">
+                                            <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                                            <span>Mentions across radio & digital media channels</span>
+                                        </li>
+                                    </ul>
+                                </CardContent>
+                            </Card>
                         </div>
                     </div>
                 </section>
@@ -135,33 +145,37 @@ export default function ServicesPage() {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div className="group p-10 border border-border bg-card relative overflow-hidden">
+                            <Card className="group border-border bg-card relative overflow-hidden hover:border-primary transition-all">
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rotate-45 translate-x-12 -translate-y-12" />
-                                <h3 className="text-2xl font-bold uppercase mb-6 flex items-center gap-3">
-                                    <Megaphone className="w-6 h-6 text-primary" /> Sponsored Social Media
-                                </h3>
-                                <div className="space-y-4">
+                                <CardHeader>
+                                    <CardTitle className="text-2xl font-bold uppercase flex items-center gap-3">
+                                        <Megaphone className="w-6 h-6 text-primary" /> Sponsored Social Media
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="space-y-4">
                                     <p className="text-muted-foreground">Platforms: Shared across 60+ platforms</p>
                                     <div className="p-4 bg-muted/50 border-l-4 border-primary">
                                         <p className="text-sm">Inclusions: Image + caption + brand tag/hashtag</p>
                                     </div>
                                     <p className="font-bold text-sm uppercase tracking-widest text-primary">Frequency: Recommended 2 posts per week</p>
-                                </div>
-                            </div>
+                                </CardContent>
+                            </Card>
 
-                            <div className="group p-10 border border-border bg-card relative overflow-hidden">
+                            <Card className="group border-border bg-card relative overflow-hidden hover:border-primary transition-all">
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rotate-45 translate-x-12 -translate-y-12" />
-                                <h3 className="text-2xl font-bold uppercase mb-6 flex items-center gap-3">
-                                    <ZapIcon className="w-6 h-6 text-primary" /> Monthly Email Blast
-                                </h3>
-                                <div className="space-y-4">
+                                <CardHeader>
+                                    <CardTitle className="text-2xl font-bold uppercase flex items-center gap-3">
+                                        <ZapIcon className="w-6 h-6 text-primary" /> Monthly Email Blast
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="space-y-4">
                                     <p className="text-muted-foreground">Audience: 60K+ Subscribers</p>
                                     <div className="p-4 bg-muted/50 border-l-4 border-primary">
                                         <p className="text-sm">Inclusions: One dedicated HTML email sent to full list</p>
                                     </div>
                                     <p className="font-bold text-sm uppercase tracking-widest text-primary">Best for: Event promotions, launches, sales</p>
-                                </div>
-                            </div>
+                                </CardContent>
+                            </Card>
                         </div>
                     </div>
                 </section>

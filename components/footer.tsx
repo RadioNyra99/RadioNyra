@@ -20,10 +20,10 @@ export function Footer() {
 
           {/* Nav Links - Minimal Horizontal */}
           <nav className="flex flex-wrap justify-center gap-8">
-            {["Home", "About", "Events", "The Voice", "Advertise", "Contact"].map((item) => (
+            {["Home", "About", "Services", "Advertise", "Contact"].map((item) => (
               <Link
                 key={item}
-                href={item === "Home" ? "/" : item === "The Voice" ? "/our-team" : `/${item.toLowerCase().replace(" ", "-")}`}
+                href={item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "-")}`}
                 className="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors"
               >
                 {item}
@@ -40,8 +40,12 @@ export function Footer() {
               <Link href="https://youtube.com/c/RadioNyraUSA" target="_blank" className="text-gray-400 hover:text-white transition-colors" title="YouTube"><Youtube className="w-5 h-5" /></Link>
               <Link href="/contact" target="_blank" className="text-gray-400 hover:text-white transition-colors" title="LinkedIn"><Linkedin className="w-5 h-5" /></Link>
               <div className="w-px h-4 bg-white/10 mx-2" />
-              <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app&pcampaignid=web_share&pli=1" target="_blank" className="text-primary hover:text-white transition-colors" title="Download on Google Play"><Smartphone className="w-5 h-5" /></Link>
-              <Link href="https://apps.apple.com/in/app/radio-nyra-raleigh-durham/id6469009980" target="_blank" className="text-primary hover:text-white transition-colors" title="Download on App Store"><Apple className="w-5 h-5" /></Link>
+              <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app&pcampaignid=web_share&pli=1" target="_blank" className="text-primary hover:text-white transition-colors flex items-center" title="Download on Google Play">
+                <img src="/Android icon.png" alt="Android Icon" className="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all" />
+              </Link>
+              <Link href="https://apps.apple.com/in/app/radio-nyra-raleigh-durham/id6469009980" target="_blank" className="text-primary hover:text-white transition-colors flex items-center" title="Download on App Store">
+                <img src="/Apple icon.png" alt="Apple Icon" className="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all" />
+              </Link>
             </div>
 
 

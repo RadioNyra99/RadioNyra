@@ -16,7 +16,7 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet"
-import { ChevronDown, Menu, Radio } from "lucide-react"
+import { ChevronDown, Menu, Apple, Smartphone } from "lucide-react"
 import { showAudioPlayer } from "../lib/audio-player-utils"
 
 export function Navigation() {
@@ -35,8 +35,6 @@ export function Navigation() {
         { href: "/gallery/2019", label: "New Year 2019 – Celebrations" },
       ]
     },
-    { href: "/news", label: "News" },
-    { href: "/our-team", label: "Team" },
     { href: "/advertise", label: "Advertise" },
     { href: "/contact", label: "Contact Us" },
   ];
@@ -44,7 +42,7 @@ export function Navigation() {
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border/40">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
 
           {/* Navigation - LEFT ALIGNED */}
           <div className="flex items-center gap-8">
@@ -107,7 +105,19 @@ export function Navigation() {
                   </div>
                 </div>
 
-                <div className="p-8 border-t border-border/10 bg-muted/20 shrink-0">
+                <div className="p-8 border-t border-border/10 bg-muted/20 shrink-0 flex flex-col gap-4">
+                  <div className="flex gap-2 w-full">
+                    <Button variant="outline" className="flex-1 h-12 rounded-full border-2" asChild>
+                      <Link href="https://apps.apple.com/in/app/radio-nyra-raleigh-durham/id6469009980" target="_blank">
+                        <img src="/Apple icon.png" alt="Apple Icon" className="mr-2 h-5 w-5 object-contain" /> App Store
+                      </Link>
+                    </Button>
+                    <Button variant="outline" className="flex-1 h-12 rounded-full border-2" asChild>
+                      <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app" target="_blank">
+                        <img src="/Android icon.png" alt="Android Icon" className="mr-2 h-5 w-5 object-contain" /> Play Store
+                      </Link>
+                    </Button>
+                  </div>
                   <SheetClose asChild>
                     <Button
                       onClick={showAudioPlayer}
@@ -121,11 +131,11 @@ export function Navigation() {
             </Sheet>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-6 lg:gap-8">
               {navLinks.map((link) => (
                 link.subLinks ? (
                   <DropdownMenu key={link.href}>
-                    <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-extrabold text-foreground hover:text-primary transition-colors tracking-widest uppercase focus:outline-none">
+                    <DropdownMenuTrigger className="flex items-center gap-1 text-xs lg:text-sm font-extrabold text-foreground hover:text-primary transition-colors tracking-widest uppercase focus:outline-none">
                       {link.label}
                       <ChevronDown className="h-4 w-4" />
                     </DropdownMenuTrigger>
@@ -148,7 +158,7 @@ export function Navigation() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-sm font-extrabold text-foreground hover:text-primary transition-colors tracking-widest uppercase"
+                    className="text-xs lg:text-sm font-extrabold text-foreground hover:text-primary transition-colors tracking-widest uppercase"
                   >
                     {link.label}
                   </Link>
@@ -158,7 +168,20 @@ export function Navigation() {
           </div>
 
           {/* Logo - RIGHT ALIGNED */}
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4 lg:gap-6">
+            <div className="hidden lg:flex items-center gap-2 mr-2">
+              <Button variant="ghost" size="icon" className="rounded-full hover:bg-muted p-1" asChild title="Download on App Store">
+                <Link href="https://apps.apple.com/in/app/radio-nyra-raleigh-durham/id6469009980" target="_blank">
+                  <img src="/Apple icon.png" alt="Apple Icon" className="h-6 w-6 object-contain" />
+                </Link>
+              </Button>
+              <Button variant="ghost" size="icon" className="rounded-full hover:bg-muted p-1" asChild title="Get it on Google Play">
+                <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app" target="_blank">
+                  <img src="/Android icon.png" alt="Android Icon" className="h-6 w-6 object-contain" />
+                </Link>
+              </Button>
+            </div>
+
             <Button
               onClick={showAudioPlayer}
               className="hidden md:flex bg-primary hover:bg-primary/90 text-primary-foreground font-bold uppercase tracking-wider rounded-full px-6 transition-all"
@@ -167,11 +190,10 @@ export function Navigation() {
             </Button>
 
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="text-right hidden sm:block">
-                <h1 className="font-bold text-2xl text-foreground tracking-tighter leading-none">Radio Nyra</h1>
-                <p className="text-[10px] text-muted-foreground font-medium tracking-widest uppercase">Voice of India</p>
+              <div className="text-right flex items-center"> {/* Always visible */}
+                <h1 className="font-bold text-xl lg:text-2xl text-foreground tracking-tighter leading-none whitespace-nowrap">Radio Nyra</h1>
               </div>
-              <div className="relative w-12 h-12 overflow-hidden rounded-full border-2 border-primary group-hover:border-primary/80 transition-colors">
+              <div className="relative w-10 h-10 lg:w-12 lg:h-12 overflow-hidden rounded-full border-2 border-primary group-hover:border-primary/80 transition-colors shrink-0">
                 <img
                   src="/images/radio-nyra-logo.jpg"
                   alt="Radio Nyra Logo"
@@ -185,3 +207,4 @@ export function Navigation() {
     </nav>
   )
 }
+

@@ -249,6 +249,16 @@
     @apply border-border outline-ring/50;
   }
 
+  html, body {
+    @apply antialiased overflow-x-hidden;
+    height: auto !important;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
   body {
     @apply bg-background text-foreground;
     /* Subtle dot pattern for white theme */

@@ -29,7 +29,7 @@ const STATIONS: Record<string, Station> = {
 
 export function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false)
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
   const [currentLanguage, setCurrentLanguage] = useState<string>("Hindi")
   const [metadata, setMetadata] = useState<{ title: string; artwork: string }>({
     title: "Live Stream",
@@ -192,22 +192,6 @@ export function AudioPlayer() {
                 </Button>
               </div>
 
-              <div className="h-8 w-[1px] bg-border hidden md:block" />
-
-              <Button
-                onClick={() => {
-                  setIsVisible(false)
-                  setIsPlaying(false)
-                }}
-                variant="ghost"
-                size="icon"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <span className="sr-only">Close Player</span>
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </Button>
             </div>
           </div>
         </div>

@@ -37,6 +37,7 @@ export function Navigation() {
     },
     { href: "/news", label: "News" },
     { href: "/our-team", label: "Team" },
+    { href: "/advertise", label: "Advertise" },
     { href: "/contact", label: "Contact Us" },
   ];
 

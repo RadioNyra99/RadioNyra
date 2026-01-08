@@ -20,7 +20,7 @@ export function Footer() {
 
           {/* Nav Links - Minimal Horizontal */}
           <nav className="flex flex-wrap justify-center gap-8">
-            {["Home", "About", "Events", "The Voice", "Contact"].map((item) => (
+            {["Home", "About", "Events", "The Voice", "Advertise", "Contact"].map((item) => (
               <Link
                 key={item}
                 href={item === "Home" ? "/" : item === "The Voice" ? "/our-team" : `/${item.toLowerCase().replace(" ", "-")}`}

@@ -170,7 +170,7 @@ export default function HomePage() {
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
               {Array.from({ length: 30 }, (_, i) => i + 2).map((num) => (
-                <div key={`partner-${num}`} className="group border border-border hover:border-primary/50 transition-all duration-300 bg-card p-4 flex items-center justify-center h-24 hover:shadow-lg grayscale hover:grayscale-0">
+                <div key={`partner-${num}`} className="group border border-border/30 hover:border-primary/50 transition-all duration-300 bg-transparent p-4 flex items-center justify-center h-24 hover:shadow-lg">
                   <div className="relative w-full h-full">
                     <img
                       src={`/images/${num}.jpg`}

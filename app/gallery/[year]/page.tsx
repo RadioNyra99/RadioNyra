@@ -5,12 +5,12 @@ import { Footer } from "@/components/footer"
 import { notFound, useParams } from "next/navigation"
 import { useState } from "react"
 import { Lightbox } from "@/components/lightbox"
-import { galleryImages2018, galleryImages2019 } from "@/lib/gallery-data"
+import { galleryImages2016, galleryImages2018, galleryImages2019 } from "@/lib/gallery-data"
 
 const galleryMetadata: Record<string, { title: string; images: string[] }> = {
     "2016": {
         title: "New Year 2016 – Bollywood Bash",
-        images: ["/images/new-year-2016-bollywood-bash.jpg"] // Fallback/Placeholder
+        images: galleryImages2016
     },
     "2018": {
         title: "New Year 2018 – Bollywood Bash",

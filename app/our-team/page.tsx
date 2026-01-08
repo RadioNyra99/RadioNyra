@@ -1,101 +1,8 @@
 import Image from "next/image"
-import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { ExternalLink, Mic2, Star } from "lucide-react"
 
 export default function OurTeamPage() {
-  const team = [
-    {
-      name: "Sohail",
-      role: "Host, Non Stop Hungama",
-      bio: "Bringing you non-stop entertainment and energy.",
-      featured: true,
-      image: "/images/hosts/non-stop-hungama.jpg",
-    },
-    {
-      name: "Raj Persaud",
-      role: "Host, Morning Commute",
-      bio: "Raj is the creative force behind our digital presence and manages our social media.",
-      featured: true,
-      image: "/images/hosts/cha-pe-charcha.jpg",
-    },
-    {
-      name: "Vaishnavi Palleda",
-      role: "Vice President & Host",
-      bio: "CEO of Vault Productions™ and host of Hello Vaishnavi.",
-      featured: true,
-      image: "/images/hosts/hello-vaishnavi.jpg",
-    },
-    {
-      name: "Vishal The Khushhal",
-      role: "Host, Desh Pradesh",
-      bio: "Vishal is here for your afternoon excitement - our vibrant host.",
-      featured: true,
-      image: "/images/hosts/desi-pardesi.jpg",
-    },
-    {
-      name: "Shivani",
-      role: "Host, Nirvana Nights",
-      bio: "The voice of your evenings on Nirvana Nights.",
-      image: "/images/hosts/nirvana-nights.jpg",
-    },
-    {
-      name: "Monika Joshi",
-      role: "Host, Triangle Tunes & Talks",
-      bio: "Catch her vibrant energy every night from 10:00pm - 1:00am.",
-      image: "/images/hosts/triangle-tunes.jpg",
-    },
-    {
-      name: "Kanthi",
-      role: "Host, Mana Muchatlu",
-      bio: "Our lovely host on the Telugu channel, every Thursday.",
-      image: "/images/hosts/chinna-mata.jpg",
-    },
-    {
-      name: "Jyoti",
-      role: "Host, Dil Se Desi",
-      bio: "Your vibrant host of Dil Se Desi, every Friday evening.",
-      image: "/images/hosts/dil-se-desi.jpg",
-    },
-    {
-      name: "Arpit Tandon",
-      role: "Host, Idhar Udhar Ki Baatein",
-      bio: "Talks about... vaghera vaghera! Join him on Wednesdays.",
-      image: "/images/hosts/idhar-udhar-ki-baatein.jpg",
-    },
-    {
-      name: "Aayushii Rode",
-      role: "Host, Zara Muskurao",
-      bio: "Start your weekday mornings with a smile with Aayushii.",
-      image: "/images/hosts/zara-muskurao.jpg",
-    },
-    {
-      name: "Aditi",
-      role: "Host, Unfiltered Gup Shup",
-      bio: "Your gentle Saturday morning wake up show host.",
-      image: "/images/hosts/kuch-tum-kaho-kuch-hum-kahein.jpg",
-    },
-    {
-      name: "Bharti Rathore",
-      role: "Host, Bollywood Bliss",
-      bio: "Diving into the latest gossip and drama in the world of Bollywood.",
-      image: "/images/hosts/bollywood-bliss.jpg",
-    },
-    {
-      name: "Dr. John Caldwell",
-      role: "Host, Geet Bazaar",
-      bio: "Co-host of Geet Bazaar, bringing soulful music to the airwaves.",
-      image: "/images/hosts/geet-bazaar.jpg",
-    },
-    {
-      name: "Dr. Afroz Taj",
-      role: "Host, Geet Bazaar",
-      bio: "Partnering with Dr. Caldwell to present the best of Geet Bazaar.",
-      image: "/images/hosts/geet-bazaar.jpg",
-    },
-  ]
-
   return (
     <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-primary-foreground">
       <Navigation />
@@ -115,40 +22,25 @@ export default function OurTeamPage() {
 
         <section className="py-24 bg-background">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {team.map((member, idx) => (
-                <div key={idx} className="group relative bg-card border border-border hover:border-primary transition-all duration-300 rounded-sm overflow-hidden shadow-sm">
-                  {/* Image Wrapper */}
-                  <Link href="/schedule">
-                    <div className="relative aspect-square overflow-hidden bg-black">
-                      <Image
-                        src={member.image || `/placeholder-user.jpg`}
-                        alt={member.name}
-                        fill
-                        className="object-contain transition-transform duration-700 group-hover:scale-110"
-                      />
-                      {member.featured && (
-                        <div className="absolute top-0 left-0 bg-primary text-white text-[10px] font-black px-3 py-1.5 uppercase tracking-widest">
-                          Featured
-                        </div>
-                      )}
-                    </div>
-                  </Link>
-
-                  {/* Content */}
-                  <div className="p-6">
-                    <h3 className="text-2xl font-black uppercase tracking-tight mb-1 group-hover:text-primary transition-colors italic">{member.name}</h3>
-                    <p className="text-[10px] font-black uppercase text-primary tracking-widest mb-4 opacity-80">{member.role}</p>
-                    <p className="text-sm font-medium text-muted-foreground mb-6 line-clamp-3 leading-relaxed">
-                      {member.bio}
-                    </p>
-
-                    <Link href="/schedule" className="inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-foreground hover:text-primary transition-colors border-b-2 border-primary/20 hover:border-primary pb-1">
-                      Full Profile <ExternalLink className="ml-2 w-3 h-3" />
-                    </Link>
-                  </div>
-                </div>
-              ))}
+            <div className="max-w-5xl mx-auto">
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl border border-border bg-card shadow-2xl transition-all duration-500 hover:shadow-primary/10">
+                <Image
+                  src="/Radio Nyra team .jpg"
+                  alt="Radio Nyra Team"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <div className="mt-12 text-center space-y-4">
+                <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight italic text-primary">
+                  The Powerhouses of Radio Nyra
+                </h2>
+                <p className="text-lg text-muted-foreground font-medium max-w-3xl mx-auto leading-relaxed">
+                  Meet the dedicated team that brings you the best music, talk shows, and entertainment every single day.
+                  Our diversity is our strength, and our passion for media is what drives us forward.
+                </p>
+              </div>
             </div>
           </div>
         </section>

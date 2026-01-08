@@ -6,7 +6,7 @@ export default function GalleryPage() {
     const galleryItems = [
         {
             title: "New Year 2016 – Bollywood Bash",
-            image: "/images/new-year-2016-bollywood-bash.jpg",
+            image: "/New Year 2016 - Bollywood Bash/464709626_8497332847002133_547247647108096346_n-1600x700.jpg",
             href: "/gallery/2016"
         },
         {

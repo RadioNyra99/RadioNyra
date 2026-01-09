@@ -12,6 +12,7 @@ export default function EventsPage() {
 
     // Data moved from Home Page
     const upcomingEvents = [
+        { title: "GDC Festival of Gaming", date: "Mar 9-13, 2026", location: "San Francisco, CA", image: "/gdc-event.png" },
         { title: "Radio Nyra NYE 2026", date: "Dec 31, 2025", location: "Cary, NC", image: "/bollywood-event-flyer.jpg" },
         { title: "Zain Zohaib Live", date: "Sep 28, 2025", location: "Raleigh, NC", image: "/placeholder.jpg" },
         { title: "Community Meetup", date: "Oct 10, 2025", location: "Downtown Park", image: "/placeholder.jpg" },

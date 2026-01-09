@@ -111,6 +111,19 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* GDC BANNER */}
+        <section className="py-8 bg-background border-y border-border/50">
+          <div className="container mx-auto px-4">
+            <div className="flex justify-center">
+              <img
+                src="/GDC_1200x300.gif"
+                alt="GDC Banner"
+                className="w-full max-w-[1200px] h-auto object-contain"
+              />
+            </div>
+          </div>
+        </section>
+
         {/* RADIO NYRA SHOWS SECTION */}
         <section id="shows" className="py-20 bg-muted/20">
           <div className="container mx-auto px-4">

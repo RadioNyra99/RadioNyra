@@ -127,7 +127,12 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {shows.map((show, i) => (
-                <div key={i} className="group bg-card border border-border/50 hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
+                <Link
+                  href="/schedule"
+                  key={i}
+                  className="group bg-card border border-border/50 hover:shadow-2xl transition-all duration-300 relative overflow-hidden block"
+                  onClick={() => playStation(show.stationId)}
+                >
                   <div className="relative aspect-square overflow-hidden bg-black">
                     <img
                       src={show.image}
@@ -143,7 +148,7 @@ export default function HomePage() {
                     <h3 className="font-bold uppercase tracking-tight leading-none text-lg truncate">{show.name}</h3>
                     <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-1">{show.host}</p>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

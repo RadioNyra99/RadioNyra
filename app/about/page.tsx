@@ -49,18 +49,15 @@ export default function AboutPage() {
                                 <h2 className="text-3xl font-black uppercase tracking-tight mb-6">Our Mission</h2>
                                 <div className="w-16 h-1 bg-primary mb-8" />
                                 <p className="text-xl text-muted-foreground leading-relaxed italic">
-                                    [Radio Nyra's official mission statement and vision go here. This section will describe our commitment to bridging cultural gaps and providing world-class entertainment and news to the Indian diaspora in the USA.]
+                                    To empower the South Asian community by providing a platform that celebrates our rich culture while fostering connection and growth in the USA.
                                 </p>
                             </div>
 
-                            {/* CEO Section */}
+                            {/* Founder Section */}
                             <div className="bg-gradient-to-r from-primary/10 to-transparent p-10 border-l-4 border-primary rounded-r-sm">
                                 <h2 className="text-3xl font-black uppercase tracking-tight mb-2">Ravi Cherukuri</h2>
-                                <p className="text-sm font-bold uppercase tracking-widest text-primary mb-6">CEO & Founder, Radio Nyra</p>
+                                <p className="text-sm font-bold uppercase tracking-widest text-primary mb-6">Founder, Radio Nyra</p>
 
-                                <blockquote className="text-lg md:text-xl text-foreground font-medium italic leading-relaxed mb-6">
-                                    "To empower the South Asian community by providing a platform that celebrates our rich culture while fostering connection and growth in the USA."
-                                </blockquote>
                                 <p className="text-muted-foreground">
                                     Under Ravi's visionary leadership, Radio Nyra has grown from a single AM station to a multimedia powerhouse. His dedication to community service and passion for high-quality broadcasting have made Radio Nyra a household name in the Triangle area and beyond.
                                 </p>

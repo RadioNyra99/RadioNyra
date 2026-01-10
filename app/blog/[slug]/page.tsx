@@ -1,4 +1,4 @@
-import { getPostBySlug, getAllPostSlugs } from '@/lib/wordpress';
+import { BLOG_POSTS } from '@/lib/blog-data';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
@@ -7,23 +7,13 @@ export const revalidate = 60;
 
 // Generate static paths for all blog posts
 export async function generateStaticParams() {
-    try {
-        const slugs = await getAllPostSlugs();
-        if (slugs && slugs.length > 0) {
-            return slugs.map((slug: string) => ({
-                slug: slug,
-            }));
-        }
-    } catch (error) {
-        console.error('Error generating static params:', error);
-    }
-
-    // Return a fallback slug to prevent build failure
-    return [{ slug: 'placeholder' }];
+    return BLOG_POSTS.map((post) => ({
+        slug: post.slug,
+    }));
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-    const post = await getPostBySlug(params.slug);
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
+    const post = BLOG_POSTS.find(p => p.slug === params.slug);
 
     if (!post) {
         notFound();
@@ -34,11 +24,11 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             <div className="container mx-auto px-4">
                 <article className="max-w-4xl mx-auto">
                     {/* Featured Image */}
-                    {post.featuredImage?.node?.sourceUrl && (
+                    {post.featuredImage?.url && (
                         <div className="relative aspect-video overflow-hidden mb-12 rounded-lg">
                             <Image
-                                src={post.featuredImage.node.sourceUrl}
-                                alt={post.featuredImage.node.altText || post.title}
+                                src={post.featuredImage.url}
+                                alt={post.featuredImage.alt || post.title}
                                 fill
                                 className="object-cover"
                                 priority
@@ -47,14 +37,14 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                     )}
 
                     {/* Categories */}
-                    {post.categories?.nodes && post.categories.nodes.length > 0 && (
+                    {post.categories && post.categories.length > 0 && (
                         <div className="flex gap-3 mb-6">
-                            {post.categories.nodes.map((category: any) => (
+                            {post.categories.map((category) => (
                                 <span
-                                    key={category.slug}
+                                    key={category}
                                     className="text-xs font-bold uppercase tracking-widest text-primary px-3 py-1 bg-primary/10 rounded-full"
                                 >
-                                    {category.name}
+                                    {category}
                                 </span>
                             ))}
                         </div>
@@ -67,8 +57,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
                     {/* Meta Info */}
                     <div className="flex items-center gap-4 text-muted-foreground mb-12 pb-6 border-b border-border">
-                        {post.author?.node?.name && (
-                            <span className="font-medium">By {post.author.node.name}</span>
+                        {post.author?.name && (
+                            <span className="font-medium">By {post.author.name}</span>
                         )}
                         <span>•</span>
                         <time dateTime={post.date}>

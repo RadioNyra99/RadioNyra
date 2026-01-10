@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Radio, Users, Mic2, Smartphone, Apple } from "lucide-react"
+import { Radio, Users, Mic2, Smartphone, Apple, Play } from "lucide-react"
 import { CountUp } from "@/components/ui/count-up"
 import { ListenLiveButton } from "@/components/listen-live-button"
 import { useAudio } from "@/components/audio-context"
@@ -14,19 +14,19 @@ export default function HomePage() {
 
   // Radio Nyra Shows Data
   const shows = [
-    { name: "Non Stop Hungama", host: "Sohail", image: "/images/hosts/non-stop-hungama.jpg" },
-    { name: "Morning Commute", host: "Raj Persaud", image: "/images/hosts/cha-pe-charcha.jpg" },
-    { name: "Hello Vaishnavi", host: "Vaishnavi Palleda", image: "/images/hosts/hello-vaishnavi.jpg" },
-    { name: "Triangle Tunes", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpg" },
-    { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.jpg" },
-    { name: "Desh ParDesh", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg" },
-    { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg" },
-    { name: "Dil Se Desi", host: "Jyoti", image: "/images/hosts/dil-se-desi.jpg" },
-    { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpg" },
-    { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpg" },
-    { name: "Geet Bazaar", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.jpg" },
-    { name: "Chinna Mata", host: "Kanthi", image: "/images/hosts/chinna-mata.jpg" },
-    { name: "Kuch Tum Kaho, Kuch Hum Kahein", host: "Aditi", image: "/images/hosts/kuch-tum-kaho-kuch-hum-kahein.jpg" },
+    { name: "Non Stop Hungama", host: "Sohail", image: "/images/hosts/non-stop-hungama.jpg", stationId: STATIONS.Hindi.id },
+    { name: "Morning Commute", host: "Raj Persaud", image: "/images/hosts/cha-pe-charcha.jpg", stationId: STATIONS.Hindi.id },
+    { name: "Hello Vaishnavi", host: "Vaishnavi Palleda", image: "/images/hosts/hello-vaishnavi.jpg", stationId: STATIONS.Hindi.id },
+    { name: "Triangle Tunes", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpg", stationId: STATIONS.Hindi.id },
+    { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.jpg", stationId: STATIONS.Hindi.id },
+    { name: "Desh ParDesh", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", stationId: STATIONS.Hindi.id },
+    { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", stationId: STATIONS.Hindi.id },
+    { name: "Dil Se Desi", host: "Jyoti", image: "/images/hosts/dil-se-desi.jpg", stationId: STATIONS.Hindi.id },
+    { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpg", stationId: STATIONS.Hindi.id },
+    { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpg", stationId: STATIONS.Hindi.id },
+    { name: "Geet Bazaar", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.jpg", stationId: STATIONS.Hindi.id },
+    { name: "Chinna Mata", host: "Kanthi", image: "/images/hosts/chinna-mata.jpg", stationId: STATIONS.Telugu.id }, // Telugu Show
+    { name: "Kuch Tum Kaho, Kuch Hum Kahein", host: "Aditi", image: "/images/hosts/kuch-tum-kaho-kuch-hum-kahein.jpg", stationId: STATIONS.Hindi.id },
   ];
 
   const { playStation } = useAudio()
@@ -37,7 +37,7 @@ export default function HomePage() {
 
       <main>
         {/* HERO SECTION */}
-        <section className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black">
+        <section className="relative h-auto min-h-[70vh] w-full overflow-hidden flex items-center justify-center bg-black py-20">
           <div className="absolute inset-0 z-0 opacity-60">
             <video
               autoPlay
@@ -151,7 +151,7 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {shows.map((show, i) => (
-                <Link href="/schedule" key={i} className="group bg-card border border-border/50 hover:shadow-2xl transition-all duration-300">
+                <div key={i} className="group bg-card border border-border/50 hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
                   <div className="relative aspect-square overflow-hidden bg-black">
                     <img
                       src={show.image}
@@ -162,10 +162,24 @@ export default function HomePage() {
                         target.src = "https://placehold.co/600x600/000000/FFFFFF?text=" + encodeURIComponent(show.name);
                       }}
                     />
-                    {/* Text Overlay Removed as per request */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                      <Button
+                        size="icon"
+                        className="rounded-full w-12 h-12 bg-primary text-white hover:scale-110 transition-transform shadow-xl"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          playStation(show.stationId);
+                        }}
+                      >
+                        <Play className="w-6 h-6 fill-current pl-1" />
+                      </Button>
+                    </div>
                   </div>
-                </Link>
+                  <div className="p-4">
+                    <h3 className="font-bold uppercase tracking-tight leading-none text-lg truncate">{show.name}</h3>
+                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-1">{show.host}</p>
+                  </div>
+                </div>
               ))}
             </div>
           </div>

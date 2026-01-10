@@ -106,6 +106,11 @@ export function AudioPlayer() {
                     <span className="text-[7px] md:text-[9px] font-black uppercase tracking-widest">Live</span>
                   </div>
                   <span className="text-[8px] md:text-[10px] font-bold text-primary uppercase tracking-[0.1em] md:tracking-[0.2em] truncate">{currentStation.name}</span>
+                  {metadata.listeners > 0 && (
+                    <span className="text-[8px] md:text-[10px] font-bold text-muted-foreground uppercase tracking-widest ml-2">
+                      <Users className="w-3 h-3 inline mr-1" /> {metadata.listeners} Listening
+                    </span>
+                  )}
                 </div>
                 <h3 className="font-bold text-xs md:text-base uppercase tracking-tight truncate leading-tight">
                   {metadata.title}

@@ -43,8 +43,8 @@ export function AudioProvider({ children }: { children: ReactNode }) {
                 setIsPlaying(false)
                 setIsLoading(true)
                 setCurrentStation(station)
-                // Allow state to propagate then play is handled by the player component effect
-                setTimeout(() => setIsPlaying(true), 100)
+                // Immediate play command state
+                setIsPlaying(true)
             } else {
                 if (!isPlaying) setIsPlaying(true)
             }

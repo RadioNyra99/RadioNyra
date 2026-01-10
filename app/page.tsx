@@ -95,11 +95,13 @@ export default function HomePage() {
         <section className="py-8 bg-background border-y border-border/50">
           <div className="container mx-auto px-4">
             <div className="flex justify-center">
-              <img
-                src="/GDC_1200x300.gif"
-                alt="GDC Banner"
-                className="w-full max-w-[1200px] h-auto object-contain"
-              />
+              <Link href="https://gdc.informafestivals.com/2026/registrations/Attendee?_mc=barter_gdcsf_gdcsf_le_x_partn" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/GDC_1200x300.gif"
+                  alt="GDC Banner"
+                  className="w-full max-w-[1200px] h-auto object-contain hover:opacity-90 transition-opacity"
+                />
+              </Link>
             </div>
           </div>
         </section>
@@ -160,7 +162,24 @@ export default function HomePage() {
             <h2 className="text-2xl font-bold uppercase tracking-tighter mb-12 border-l-4 border-primary pl-4 text-left">Our Partners</h2>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {Array.from({ length: 30 }, (_, i) => i + 2).map((num) => (
+              {/* Empowerly Partner */}
+              <Link
+                href="https://start.empowerly.com/radio-nyra"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group border border-border/30 hover:border-primary/50 transition-all duration-300 bg-transparent p-4 flex items-center justify-center h-32 hover:shadow-lg"
+              >
+                <div className="relative w-full h-full">
+                  <img
+                    src="/Empowerly.jpg"
+                    alt="Empowerly"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </Link>
+
+              {/* Other Partners (Placeholders) */}
+              {Array.from({ length: 29 }, (_, i) => i + 2).map((num) => (
                 <div key={`partner-${num}`} className="group border border-border/30 hover:border-primary/50 transition-all duration-300 bg-transparent p-4 flex items-center justify-center h-32 hover:shadow-lg">
                   <div className="relative w-full h-full">
                     <img

@@ -13,7 +13,7 @@ export default function EventsPage() {
     // Data moved from Home Page
     // Data moved from Home Page
     const upcomingEvents = [
-        { title: "GDC Festival of Gaming", date: "Mar 9-13, 2026", location: "San Francisco, CA", image: "/gdc-event.png" },
+        { title: "GDC Festival of Gaming", date: "Mar 9-13, 2026", location: "San Francisco, CA", image: "/gdc-event.png", link: "https://gdc.informafestivals.com/2026/registrations/Attendee?_mc=barter_gdcsf_gdcsf_le_x_partn" },
         { title: "Valentine's Day Special", date: "Feb 14, 2026", location: "Radio Nyra Studios", image: "/Valientiens day.jpg" },
         { title: "Holi Festival Celebration", date: "Mar 25, 2026", location: "City Park", image: "/Holi.jpg" },
         { title: "Community Meetup", date: "Apr 10, 2026", location: "Community Hall", image: "/Community.jpg" },
@@ -77,44 +77,56 @@ export default function EventsPage() {
                     <section className="mb-16">
                         <h2 className="text-2xl font-bold uppercase tracking-tighter mb-8 border-l-4 border-primary pl-4">Upcoming Events</h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            {upcomingEvents.map((ev, i) => (
-                                <div key={i} className="group bg-card border border-border overflow-hidden hover:border-primary transition-colors">
-                                    {/* Event Image - Conditionally Rendered */}
-                                    {ev.image && (
-                                        <div className="relative aspect-[4/5] bg-muted overflow-hidden">
-                                            <img
-                                                src={ev.image}
-                                                alt={ev.title}
-                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                                onError={(e) => {
-                                                    const target = e.target as HTMLImageElement;
-                                                    target.style.display = 'none'; // Hide broken images
-                                                }}
-                                            />
-                                            <div className="absolute top-3 left-3">
-                                                <Badge className="uppercase tracking-widest text-[8px] bg-primary text-white border-none rounded-none px-1.5 py-0">Upcoming</Badge>
-                                            </div>
-                                        </div>
-                                    )}
-
-                                    <div className="p-4">
-                                        {!ev.image && (
-                                            <div className="mb-4">
-                                                <Badge className="uppercase tracking-widest text-[8px] bg-primary text-white border-none rounded-none px-1.5 py-0">Upcoming</Badge>
+                            {upcomingEvents.map((ev: any, i) => {
+                                const EventCard = (
+                                    <div className="group bg-card border border-border overflow-hidden hover:border-primary transition-colors h-full">
+                                        {/* Event Image - Conditionally Rendered */}
+                                        {ev.image && (
+                                            <div className="relative aspect-[4/5] bg-muted overflow-hidden">
+                                                <img
+                                                    src={ev.image}
+                                                    alt={ev.title}
+                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                    onError={(e) => {
+                                                        const target = e.target as HTMLImageElement;
+                                                        target.style.display = 'none'; // Hide broken images
+                                                    }}
+                                                />
+                                                <div className="absolute top-3 left-3">
+                                                    <Badge className="uppercase tracking-widest text-[8px] bg-primary text-white border-none rounded-none px-1.5 py-0">Upcoming</Badge>
+                                                </div>
                                             </div>
                                         )}
-                                        <div className="flex items-center justify-between mb-2">
-                                            <span className="text-xs font-bold text-primary flex items-center gap-1.5">
-                                                <Calendar className="w-3 h-3" /> {ev.date}
-                                            </span>
+
+                                        <div className="p-4">
+                                            {!ev.image && (
+                                                <div className="mb-4">
+                                                    <Badge className="uppercase tracking-widest text-[8px] bg-primary text-white border-none rounded-none px-1.5 py-0">Upcoming</Badge>
+                                                </div>
+                                            )}
+                                            <div className="flex items-center justify-between mb-2">
+                                                <span className="text-xs font-bold text-primary flex items-center gap-1.5">
+                                                    <Calendar className="w-3 h-3" /> {ev.date}
+                                                </span>
+                                            </div>
+                                            <h3 className="text-xl font-bold uppercase tracking-tight mb-2 group-hover:text-primary transition-colors leading-none">{ev.title}</h3>
+                                            <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-wide flex items-center gap-1.5">
+                                                <MapPin className="w-3 h-3" /> {ev.location}
+                                            </p>
                                         </div>
-                                        <h3 className="text-xl font-bold uppercase tracking-tight mb-2 group-hover:text-primary transition-colors leading-none">{ev.title}</h3>
-                                        <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-wide flex items-center gap-1.5">
-                                            <MapPin className="w-3 h-3" /> {ev.location}
-                                        </p>
                                     </div>
-                                </div>
-                            ))}
+                                )
+
+                                return ev.link ? (
+                                    <a key={i} href={ev.link} target="_blank" rel="noopener noreferrer" className="block h-full">
+                                        {EventCard}
+                                    </a>
+                                ) : (
+                                    <div key={i} className="h-full">
+                                        {EventCard}
+                                    </div>
+                                )
+                            })}
                         </div>
                     </section>
 

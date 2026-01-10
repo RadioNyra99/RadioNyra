@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Play, Pause, Radio, Volume2, VolumeX, Volume1 } from "lucide-react"
+import { Play, Pause, Radio, Volume2, VolumeX, Volume1, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { useAudio } from "@/components/audio-context"

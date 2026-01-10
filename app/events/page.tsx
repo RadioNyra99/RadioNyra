@@ -14,6 +14,9 @@ export default function EventsPage() {
     // Data moved from Home Page
     const upcomingEvents = [
         { title: "GDC Festival of Gaming", date: "Mar 9-13, 2026", location: "San Francisco, CA", image: "/gdc-event.png" },
+        { title: "Valentine's Day Special", date: "Feb 14, 2026", location: "Radio Nyra Studios", image: "/images/event_valentines.png" },
+        { title: "Holi Festival Celebration", date: "Mar 25, 2026", location: "City Park", image: "/images/event_holi.png" },
+        { title: "Community Meetup", date: "Apr 10, 2026", location: "Community Hall", image: "/images/event_community.png" },
     ];
 
     const pastEvents = [

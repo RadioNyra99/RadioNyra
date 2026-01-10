@@ -37,7 +37,7 @@ export default function HomePage() {
 
       <main>
         {/* HERO SECTION */}
-        <section className="relative h-auto min-h-[70vh] w-full overflow-hidden flex items-center justify-center bg-black py-20">
+        <section className="relative h-auto min-h-[50vh] w-full overflow-hidden flex items-center justify-center bg-black py-12">
           <div className="absolute inset-0 z-0 opacity-60">
             <video
               autoPlay
@@ -58,32 +58,8 @@ export default function HomePage() {
               <span className="text-primary block mt-2">India in the USA</span>
             </h1>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-12 w-full max-w-4xl mx-auto">
-              <ListenLiveButton className="w-full md:w-auto text-lg font-bold uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none transition-all hover:scale-105 shadow-2xl h-16 px-12" />
-
-              <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto mt-6 md:mt-0">
-                {/* Station List - Replaces Download Buttons */}
-                <div className="flex flex-col gap-3 w-full md:w-auto">
-                  <h3 className="text-white text-sm font-bold uppercase tracking-widest mb-1 text-center md:text-left opacity-80">Select Station</h3>
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <Button
-                      size="lg"
-                      className="h-14 px-8 text-sm font-bold uppercase tracking-widest text-white bg-primary hover:bg-primary/90 rounded-none transition-all hover:scale-105 shadow-xl border border-white/10"
-                      onClick={() => playStation(STATIONS.Hindi.id)}
-                    >
-                      <Radio className="mr-2 h-4 w-4" /> Hindi Station
-                    </Button>
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="h-14 px-8 text-sm font-bold uppercase tracking-widest text-white border-2 border-white bg-transparent hover:bg-white hover:text-black rounded-none transition-all hover:scale-105 shadow-xl"
-                      onClick={() => playStation(STATIONS.Telugu.id)}
-                    >
-                      <Radio className="mr-2 h-4 w-4" /> Telugu Station
-                    </Button>
-                  </div>
-                </div>
-              </div>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-8 w-full max-w-4xl mx-auto">
+              <ListenLiveButton className="w-full md:w-auto text-lg font-bold uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none transition-all hover:scale-105 shadow-2xl h-14 px-10" />
             </div>
 
 

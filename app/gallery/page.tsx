@@ -21,7 +21,7 @@ export default function GalleryPage() {
         },
         {
             title: "2026 Bollywood and Tollywood Bash",
-            image: "/New Year Event - 2026/event.png",
+            image: "/New Year Event-2026/_VAC0129-4.jpg",
             href: "/gallery/2026"
         }
     ];

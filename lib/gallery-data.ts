@@ -132,3 +132,9 @@ export const galleryImages2019 = [
     "49206529_1942180702517413_2743436752894033920_n.jpg",
     "49209682_1942181409184009_562649589178433536_n.jpg",
 ].map(name => `/New Year 2019 -Celebrations/${name}`);
+
+export const galleryImages2026 = [
+    "cover.png",
+    "crowd.png",
+    "stage.png"
+].map(name => `/New Year 2026 - Bollywood and Tollywood Bash/${name}`);

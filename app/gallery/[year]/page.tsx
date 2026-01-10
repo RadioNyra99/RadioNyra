@@ -2,7 +2,7 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { notFound } from "next/navigation"
-import { galleryImages2016, galleryImages2018, galleryImages2019 } from "@/lib/gallery-data"
+import { galleryImages2016, galleryImages2018, galleryImages2019, galleryImages2026 } from "@/lib/gallery-data"
 import GalleryClient from "./gallery-client"
 
 const galleryMetadata: Record<string, { title: string; images: string[] }> = {
@@ -17,6 +17,10 @@ const galleryMetadata: Record<string, { title: string; images: string[] }> = {
     "2019": {
         title: "New Year 2019 – Celebrations",
         images: galleryImages2019
+    },
+    "2026": {
+        title: "New Year Event Bollywood and tollywood Bash 2026",
+        images: galleryImages2026
     }
 }
 
@@ -25,6 +29,7 @@ export async function generateStaticParams() {
         { year: "2016" },
         { year: "2018" },
         { year: "2019" },
+        { year: "2026" },
     ]
 }
 

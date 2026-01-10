@@ -18,6 +18,11 @@ export default function GalleryPage() {
             title: "New Year 2019 – Celebrations",
             image: "/New Year 2019 -Celebrations/48407416_1942179082517575_8863305223121141760_n.jpg",
             href: "/gallery/2019"
+        },
+        {
+            title: "New Year Event Bollywood and tollywood Bash 2026",
+            image: "/New Year 2026 - Bollywood and Tollywood Bash/cover.png",
+            href: "/gallery/2026"
         }
     ];
 

@@ -26,7 +26,6 @@ export function Navigation() {
     { href: "/schedule", label: "Schedule" },
     { href: "/services", label: "Services" },
     { href: "/podcasts", label: "Podcast" },
-    { href: "/blog", label: "Blog" },
     { href: "/events", label: "Events" },
     {
       href: "/gallery",

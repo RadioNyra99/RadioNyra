@@ -81,7 +81,7 @@ export default function EventsPage() {
                                 <div key={i} className="group bg-card border border-border overflow-hidden hover:border-primary transition-colors">
                                     {/* Event Image - Conditionally Rendered */}
                                     {ev.image && (
-                                        <div className="relative h-48 bg-muted overflow-hidden">
+                                        <div className="relative aspect-[4/5] bg-muted overflow-hidden">
                                             <img
                                                 src={ev.image}
                                                 alt={ev.title}

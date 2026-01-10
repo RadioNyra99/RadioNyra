@@ -138,18 +138,6 @@ export default function HomePage() {
                         target.src = "https://placehold.co/600x600/000000/FFFFFF?text=" + encodeURIComponent(show.name);
                       }}
                     />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                      <Button
-                        size="icon"
-                        className="rounded-full w-12 h-12 bg-primary text-white hover:scale-110 transition-transform shadow-xl"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          playStation(show.stationId);
-                        }}
-                      >
-                        <Play className="w-6 h-6 fill-current pl-1" />
-                      </Button>
-                    </div>
                   </div>
                   <div className="p-4">
                     <h3 className="font-bold uppercase tracking-tight leading-none text-lg truncate">{show.name}</h3>

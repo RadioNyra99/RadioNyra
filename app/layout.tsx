@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { AudioPlayer } from "@/components/audio-player"
+import { AudioProvider } from "@/components/audio-context"
 import Scene3D from "@/components/scene-3d"
 import "./globals.css"
 
@@ -60,9 +61,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${_inter.variable} ${_geistMono.variable} bg-background text-foreground font-sans antialiased`}>
-        <Scene3D />
-        <div className="relative z-10">{children}</div>
-        <AudioPlayer />
+        <AudioProvider>
+          <Scene3D />
+          <div className="relative z-10">{children}</div>
+          <AudioPlayer />
+        </AudioProvider>
         <Analytics />
       </body>
     </html>

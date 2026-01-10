@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button"
 import { Radio, Users, Mic2, Smartphone, Apple } from "lucide-react"
 import { CountUp } from "@/components/ui/count-up"
 import { ListenLiveButton } from "@/components/listen-live-button"
+import { useAudio } from "@/components/audio-context"
+import { STATIONS } from "@/lib/stations"
 
 export default function HomePage() {
 
@@ -26,6 +28,8 @@ export default function HomePage() {
     { name: "Chinna Mata", host: "Kanthi", image: "/images/hosts/chinna-mata.jpg" },
     { name: "Kuch Tum Kaho, Kuch Hum Kahein", host: "Aditi", image: "/images/hosts/kuch-tum-kaho-kuch-hum-kahein.jpg" },
   ];
+
+  const { playStation } = useAudio()
 
   return (
     <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-primary-foreground">
@@ -57,28 +61,28 @@ export default function HomePage() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-12 w-full max-w-4xl mx-auto">
               <ListenLiveButton className="w-full md:w-auto text-lg font-bold uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none transition-all hover:scale-105 shadow-2xl h-16 px-12" />
 
-              {/* App Download Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="h-16 px-8 text-sm font-bold uppercase tracking-widest text-white border-2 border-white bg-transparent hover:bg-white hover:text-black rounded-none transition-all hover:scale-105 shadow-2xl"
-                  asChild
-                >
-                  <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app&pcampaignid=web_share&pli=1">
-                    <img src="/Android icon.png" alt="Android Icon" className="mr-3 w-6 h-6 object-contain" /> Download on Google Play
-                  </Link>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="h-16 px-8 text-sm font-bold uppercase tracking-widest text-white border-2 border-white bg-transparent hover:bg-white hover:text-black rounded-none transition-all hover:scale-105 shadow-2xl"
-                  asChild
-                >
-                  <Link href="https://apps.apple.com/in/app/radio-nyra-raleigh-durham/id6469009980">
-                    <img src="/Apple icon.png" alt="Apple Icon" className="mr-3 w-6 h-6 object-contain" /> Download on App Store
-                  </Link>
-                </Button>
+              <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto mt-6 md:mt-0">
+                {/* Station List - Replaces Download Buttons */}
+                <div className="flex flex-col gap-3 w-full md:w-auto">
+                  <h3 className="text-white text-sm font-bold uppercase tracking-widest mb-1 text-center md:text-left opacity-80">Select Station</h3>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Button
+                      size="lg"
+                      className="h-14 px-8 text-sm font-bold uppercase tracking-widest text-white bg-primary hover:bg-primary/90 rounded-none transition-all hover:scale-105 shadow-xl border border-white/10"
+                      onClick={() => playStation(STATIONS.Hindi.id)}
+                    >
+                      <Radio className="mr-2 h-4 w-4" /> Hindi Station
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="h-14 px-8 text-sm font-bold uppercase tracking-widest text-white border-2 border-white bg-transparent hover:bg-white hover:text-black rounded-none transition-all hover:scale-105 shadow-xl"
+                      onClick={() => playStation(STATIONS.Telugu.id)}
+                    >
+                      <Radio className="mr-2 h-4 w-4" /> Telugu Station
+                    </Button>
+                  </div>
+                </div>
               </div>
             </div>
 

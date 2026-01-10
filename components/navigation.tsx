@@ -34,6 +34,7 @@ export function Navigation() {
         { href: "/gallery/2016", label: "New Year 2016 – Bollywood Bash" },
         { href: "/gallery/2018", label: "New Year 2018 – Bollywood Bash" },
         { href: "/gallery/2019", label: "New Year 2019 – Celebrations" },
+        { href: "/gallery/2026", label: "2026 Bollywood and Tollywood Bash" },
       ]
     },
     { href: "/advertise", label: "Advertise" },

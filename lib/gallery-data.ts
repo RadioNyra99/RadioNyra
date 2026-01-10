@@ -134,7 +134,5 @@ export const galleryImages2019 = [
 ].map(name => `/New Year 2019 -Celebrations/${name}`);
 
 export const galleryImages2026 = [
-    "cover.png",
-    "crowd.png",
-    "stage.png"
-].map(name => `/New Year 2026 - Bollywood and Tollywood Bash/${name}`);
+    "event.png"
+].map(name => `/New Year Event - 2026/${name}`);

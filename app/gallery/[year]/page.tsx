@@ -19,7 +19,7 @@ const galleryMetadata: Record<string, { title: string; images: string[] }> = {
         images: galleryImages2019
     },
     "2026": {
-        title: "New Year Event Bollywood and tollywood Bash 2026",
+        title: "2026 Bollywood and Tollywood Bash",
         images: galleryImages2026
     }
 }

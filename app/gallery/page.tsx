@@ -20,8 +20,8 @@ export default function GalleryPage() {
             href: "/gallery/2019"
         },
         {
-            title: "New Year Event Bollywood and tollywood Bash 2026",
-            image: "/New Year 2026 - Bollywood and Tollywood Bash/cover.png",
+            title: "2026 Bollywood and Tollywood Bash",
+            image: "/New Year Event - 2026/event.png",
             href: "/gallery/2026"
         }
     ];

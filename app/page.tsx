@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
+import { FrequencyBar } from "@/components/frequency-bar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Radio, Users, Mic2, Smartphone, Apple, Play } from "lucide-react"
@@ -35,6 +36,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-primary-foreground">
       <Navigation />
+      <FrequencyBar />
 
       <main>
         {/* HERO SECTION */}
@@ -59,13 +61,35 @@ export default function HomePage() {
               <span className="text-primary block mt-2">India in the USA</span>
             </h1>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-8 w-full max-w-4xl mx-auto">
+            <div className="mt-8">
               <ListenLiveButton className="w-full md:w-auto text-lg font-bold uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none transition-all hover:scale-105 shadow-2xl h-14 px-10" />
             </div>
 
-            <div className="mt-8">
-              <p className="text-white/60 text-xs font-bold uppercase tracking-widest mb-2">Available on Voice Assistants</p>
-              <VoiceAssistants />
+            <div className="mt-12">
+              <p className="text-white/60 text-[10px] font-black uppercase tracking-[0.3em] mb-4 drop-shadow-sm">Available on Voice Assistants & Mobile Store</p>
+              <div className="flex flex-wrap items-center justify-center gap-6">
+                <VoiceAssistants />
+
+                {/* Mobile Store Icons Moved Here */}
+                <div className="flex items-center gap-6 py-4">
+                  <Link
+                    href="https://apps.apple.com/in/app/radio-nyra-raleigh-durham/id6469009980"
+                    target="_blank"
+                    className="bg-white p-2 rounded-full h-16 w-16 flex items-center justify-center hover:scale-110 transition-all shadow-xl border-2 border-white/20"
+                    title="Download on App Store"
+                  >
+                    <img src="/Apple icon.png" alt="App Store" className="w-9 h-9 object-contain" />
+                  </Link>
+                  <Link
+                    href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app"
+                    target="_blank"
+                    className="bg-white p-2 rounded-full h-16 w-16 flex items-center justify-center hover:scale-110 transition-all shadow-xl border-2 border-white/20"
+                    title="Get it on Google Play"
+                  >
+                    <img src="/Android icon.png" alt="Google Play" className="w-9 h-9 object-contain" />
+                  </Link>
+                </div>
+              </div>
             </div>
 
 

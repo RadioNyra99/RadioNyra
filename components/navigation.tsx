@@ -38,6 +38,7 @@ export function Navigation() {
       ]
     },
     { href: "/advertise", label: "Advertise" },
+    { href: "/faq", label: "FAQ" },
     { href: "/contact", label: "Contact Us" },
   ];
 
@@ -160,7 +161,7 @@ export function Navigation() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-xs lg:text-sm font-extrabold text-foreground hover:text-primary transition-colors tracking-widest uppercase"
+                    className="text-xs lg:text-sm font-extrabold text-foreground hover:text-primary transition-colors tracking-widest uppercase whitespace-nowrap"
                   >
                     {link.label}
                   </Link>

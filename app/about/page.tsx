@@ -54,13 +54,22 @@ export default function AboutPage() {
                             </div>
 
                             {/* Founder Section */}
-                            <div className="bg-gradient-to-r from-primary/10 to-transparent p-10 border-l-4 border-primary rounded-r-sm">
-                                <h2 className="text-3xl font-black uppercase tracking-tight mb-2">Ravi Cherukuri</h2>
-                                <p className="text-sm font-bold uppercase tracking-widest text-primary mb-6">Founder, Radio Nyra</p>
+                            <div className="bg-gradient-to-r from-primary/10 to-transparent p-10 border-l-4 border-primary rounded-r-sm flex flex-col md:flex-row gap-10 items-center">
+                                <div className="w-40 h-52 md:w-48 md:h-64 shrink-0 overflow-hidden border-4 border-white shadow-xl bg-gray-50 relative">
+                                    <img
+                                        src="/RC Founder.jpeg"
+                                        alt="Ravi Cherukuri"
+                                        className="w-full h-full object-contain"
+                                    />
+                                </div>
+                                <div>
+                                    <h2 className="text-3xl font-black uppercase tracking-tight mb-2">Ravi Cherukuri</h2>
+                                    <p className="text-sm font-bold uppercase tracking-widest text-primary mb-6">Founder, Radio Nyra</p>
 
-                                <p className="text-muted-foreground">
-                                    Under Ravi's visionary leadership, Radio Nyra has grown from a single AM station to a multimedia powerhouse. His dedication to community service and passion for high-quality broadcasting have made Radio Nyra a household name in the Triangle area and beyond.
-                                </p>
+                                    <p className="text-muted-foreground leading-relaxed">
+                                        Under Ravi's visionary leadership, Radio Nyra has grown from a single AM station to a multimedia powerhouse. His dedication to community service and passion for high-quality broadcasting have made Radio Nyra a household name in the Triangle area and beyond.
+                                    </p>
+                                </div>
                             </div>
 
                             {/* Team Image Section */}

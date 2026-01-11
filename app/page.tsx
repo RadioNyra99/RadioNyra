@@ -9,6 +9,7 @@ import { CountUp } from "@/components/ui/count-up"
 import { ListenLiveButton } from "@/components/listen-live-button"
 import { useAudio } from "@/components/audio-context"
 import { STATIONS } from "@/lib/stations"
+import { VoiceAssistants } from "@/components/voice-assistants"
 
 export default function HomePage() {
 
@@ -60,6 +61,11 @@ export default function HomePage() {
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-8 w-full max-w-4xl mx-auto">
               <ListenLiveButton className="w-full md:w-auto text-lg font-bold uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none transition-all hover:scale-105 shadow-2xl h-14 px-10" />
+            </div>
+
+            <div className="mt-8">
+              <p className="text-white/60 text-xs font-bold uppercase tracking-widest mb-2">Available on Voice Assistants</p>
+              <VoiceAssistants />
             </div>
 
 

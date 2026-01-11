@@ -139,6 +139,7 @@ export default function HomePage() {
                     <img
                       src={show.image}
                       alt={show.name}
+                      loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
@@ -173,6 +174,7 @@ export default function HomePage() {
                   <img
                     src="/images/1.jpg"
                     alt="Empowerly"
+                    loading="lazy"
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -185,6 +187,7 @@ export default function HomePage() {
                     <img
                       src={`/images/${num}.jpg`}
                       alt={`Partner ${num}`}
+                      loading="lazy"
                       className="w-full h-full object-contain"
                     />
                   </div>

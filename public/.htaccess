@@ -1,0 +1,16 @@
+
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Set Default Document
+DirectoryIndex index.html
+
+# Prevent Directory Listing
+Options -Indexes
+
+# Custom Error Pages (if they exist)
+ErrorDocument 404 /404.html

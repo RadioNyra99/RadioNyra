@@ -86,6 +86,7 @@ export default function EventsPage() {
                                                 <img
                                                     src={ev.image}
                                                     alt={ev.title}
+                                                    loading="lazy"
                                                     className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${ev.image.includes('GDC') || ev.image.endsWith('.gif') ? 'object-contain bg-black' : 'object-cover'}`}
                                                     onError={(e) => {
                                                         const target = e.target as HTMLImageElement;

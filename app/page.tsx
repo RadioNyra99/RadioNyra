@@ -171,7 +171,7 @@ export default function HomePage() {
               >
                 <div className="relative w-full h-full">
                   <img
-                    src="/Empowerly.jpg"
+                    src="/images/1.jpg"
                     alt="Empowerly"
                     className="w-full h-full object-contain"
                   />

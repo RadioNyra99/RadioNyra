@@ -127,6 +127,7 @@ export function AudioPlayer() {
         ref={audioRef}
         src={currentStation.streamUrl}
         preload="auto"
+        playsInline
         onLoadStart={handleLoadStart}
         onCanPlay={handleCanPlay}
         onPlaying={handlePlaying}

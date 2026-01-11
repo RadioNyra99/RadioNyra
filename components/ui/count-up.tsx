@@ -15,6 +15,8 @@ export function CountUp({ end, duration = 2000, suffix = "", prefix = "" }: Coun
     const hasAnimated = useRef(false)
 
     useEffect(() => {
+        let timer: NodeJS.Timeout | null = null;
+
         const observer = new IntersectionObserver(
             (entries) => {
                 if (entries[0].isIntersecting && !hasAnimated.current) {
@@ -22,11 +24,11 @@ export function CountUp({ end, duration = 2000, suffix = "", prefix = "" }: Coun
                     let start = 0
                     const increment = end / (duration / 16) // 60fps
 
-                    const timer = setInterval(() => {
+                    timer = setInterval(() => {
                         start += increment
                         if (start >= end) {
                             setCount(end)
-                            clearInterval(timer)
+                            if (timer) clearInterval(timer)
                         } else {
                             setCount(Math.floor(start))
                         }
@@ -40,7 +42,10 @@ export function CountUp({ end, duration = 2000, suffix = "", prefix = "" }: Coun
             observer.observe(elementRef.current)
         }
 
-        return () => observer.disconnect()
+        return () => {
+            if (timer) clearInterval(timer)
+            observer.disconnect()
+        }
     }, [end, duration])
 
     return (

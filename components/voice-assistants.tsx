@@ -17,14 +17,14 @@ export function VoiceAssistants() {
         {
             name: "Google",
             image: "/Google Assisstance.jpg",
-            action: null,
-            link: "https://assistant.google.com/services/a/uid/0000000000000000"
+            action: () => setIsOpen(true),
+            link: "#"
         },
         {
             name: "Alexa",
             image: "/Alexa.jpg",
-            action: null,
-            link: "https://www.amazon.com/dp/B08KQF9KZJ"
+            action: () => setIsOpen(true),
+            link: "#"
         }
     ]
 

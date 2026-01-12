@@ -28,6 +28,7 @@ export default function HomePage() {
     { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpg", stationId: STATIONS.Hindi.id },
     { name: "Geet Bazaar", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.jpg", stationId: STATIONS.Hindi.id },
     { name: "Chinna Mata", host: "Kanthi", image: "/images/hosts/chinna-mata.jpg", stationId: STATIONS.Telugu.id }, // Telugu Show
+    { name: "Mana Muchatlu", host: "RJ", image: "/images/hosts/Mana Muchatlu.jpg", stationId: STATIONS.Telugu.id },
     { name: "Kuch Tum Kaho, Kuch Hum Kahein", host: "Aditi", image: "/images/hosts/kuch-tum-kaho-kuch-hum-kahein.jpg", stationId: STATIONS.Hindi.id },
   ];
 

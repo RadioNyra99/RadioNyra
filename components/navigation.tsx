@@ -136,11 +136,11 @@ export function Navigation() {
             </Sheet>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-6 lg:gap-8">
+            <div className="hidden md:flex items-center gap-2 lg:gap-4 xl:gap-5">
               {navLinks.map((link) => (
                 link.subLinks ? (
                   <DropdownMenu key={link.href}>
-                    <DropdownMenuTrigger className="flex items-center gap-1 text-xs lg:text-sm font-extrabold text-foreground hover:text-primary transition-colors tracking-widest uppercase focus:outline-none">
+                    <DropdownMenuTrigger className="flex items-center gap-1 text-[10px] lg:text-xs xl:text-sm font-extrabold text-foreground hover:text-primary transition-colors tracking-wide uppercase focus:outline-none">
                       {link.label}
                       <ChevronDown className="h-4 w-4" />
                     </DropdownMenuTrigger>
@@ -163,7 +163,7 @@ export function Navigation() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-xs lg:text-sm font-extrabold text-foreground hover:text-primary transition-colors tracking-widest uppercase whitespace-nowrap"
+                    className="text-[10px] lg:text-xs xl:text-sm font-extrabold text-foreground hover:text-primary transition-colors tracking-wide uppercase whitespace-nowrap"
                   >
                     {link.label}
                   </Link>
@@ -173,7 +173,7 @@ export function Navigation() {
           </div>
 
           {/* Logo - RIGHT ALIGNED */}
-          <div className="flex items-center gap-4 lg:gap-6">
+          <div className="flex items-center gap-3 lg:gap-4">
             <div className="hidden lg:flex items-center gap-2 mr-2">
               <Button variant="ghost" size="icon" className="rounded-full hover:bg-muted p-1" asChild title="Download on App Store">
                 <Link href="https://apps.apple.com/in/app/radio-nyra-raleigh-durham/id6469009980" target="_blank">

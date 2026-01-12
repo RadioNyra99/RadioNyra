@@ -40,6 +40,7 @@ export function Navigation() {
     { href: "/advertise", label: "Advertise" },
     { href: "/faq", label: "FAQ" },
     { href: "/contact", label: "Contact Us" },
+    { href: "/privacy-policy", label: "Privacy Policy" },
   ];
 
   return (
@@ -109,6 +110,7 @@ export function Navigation() {
                 </div>
 
                 <div className="p-8 border-t border-border/10 bg-muted/20 shrink-0 flex flex-col gap-4">
+
                   <div className="flex gap-2 w-full">
                     <Button variant="outline" className="flex-1 h-12 rounded-full border-2" asChild>
                       <Link href="https://apps.apple.com/in/app/radio-nyra-raleigh-durham/id6469009980" target="_blank">

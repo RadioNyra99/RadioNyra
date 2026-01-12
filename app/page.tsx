@@ -62,6 +62,8 @@ export default function HomePage() {
               <span className="text-primary block mt-2">India in the USA</span>
             </h1>
 
+
+
             <div className="mt-8">
               <ListenLiveButton className="w-full md:w-auto text-lg font-bold uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none transition-all hover:scale-105 shadow-2xl h-14 px-10" />
             </div>
@@ -122,22 +124,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* PONGAL VIBES BANNER */}
-        <section className="py-8 bg-background border-y border-border/50">
-          <div className="container mx-auto px-4">
-            <div className="relative w-full aspect-[21/9] md:aspect-[3/1] overflow-hidden rounded-xl shadow-2xl group">
-              <img
-                src="/images/pongal-vibes.png"
-                alt="Happy Pongal - Festival of Harvest"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-bottom justify-center pb-8 flex-col text-center px-4">
-                <h2 className="text-3xl md:text-6xl font-black text-yellow-400 drop-shadow-lg uppercase tracking-wider mb-2">Happy Pongal</h2>
-                <p className="text-white/90 text-sm md:text-xl font-bold uppercase tracking-[0.2em]">Celebrating the Festival of Harvest</p>
-              </div>
-            </div>
-          </div>
-        </section>
+
 
         {/* GDC BANNER */}
         <section className="py-8 bg-background border-y border-border/50">
@@ -248,6 +235,6 @@ export default function HomePage() {
       </main>
 
       <Footer />
-    </div>
+    </div >
   )
 }

@@ -1,7 +1,7 @@
 "use client"
 
 export function FrequencyBar() {
-    const text = "HINDI 99.9FM HD4 I 101.9FM I 1490 AM I TELUGU 99.9FM HD3 RAELIGH - DURHAM NC USA"
+    const text = "HINDI 99.9FM HD4 I 101.9FM I 1490 AM I TELUGU 99.9FM HD3 RALEIGH - DURHAM NC USA"
 
     return (
         <div className="bg-[#0000FF] border-y border-white/20 overflow-hidden py-3 shadow-lg relative z-40">

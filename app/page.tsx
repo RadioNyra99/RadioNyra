@@ -66,7 +66,7 @@ export default function HomePage() {
             </div>
 
             <div className="mt-12">
-              <p className="text-white/60 text-[10px] font-black uppercase tracking-[0.3em] mb-4 drop-shadow-sm">Available on Voice Assistants & Mobile Store</p>
+              <p className="text-white/60 text-[10px] font-black uppercase tracking-[0.3em] mb-4 drop-shadow-sm">Available on Digital Platforms</p>
               <div className="flex flex-wrap items-center justify-center gap-6">
                 <VoiceAssistants />
 

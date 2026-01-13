@@ -13,19 +13,16 @@ export default function EventsPage() {
     // Data moved from Home Page
     // Data moved from Home Page
     const upcomingEvents = [
+        { title: "Bollywood Night with Radio Nyra", date: "Coming Soon", location: "TBA", image: "/bollywood-event-flyer.jpg" },
         { title: "GDC Festival of Gaming", date: "Mar 9-13, 2026", location: "San Francisco, CA", image: "/GDC_250x250.gif", link: "https://gdc.informafestivals.com/2026/registrations/Attendee?_mc=barter_gdcsf_gdcsf_le_x_partn" },
         { title: "Valentine's Day Special", date: "Feb 14, 2026", location: "Radio Nyra Studios", image: "/Valientiens day.jpg" },
         { title: "Holi Festival Celebration", date: "Mar 25, 2026", location: "City Park", image: "/Holi.jpg" },
-        { title: "Community Meetup", date: "Apr 10, 2026", location: "Community Hall", image: "/Community.jpg" },
     ];
 
     const pastEvents = [
         { id: 1, title: "Zain Zohaib Qawwali Show", image: "/zain zohaib qawwali show.jpeg", date: "2025" },
         { id: 2, title: "Hooky Holiday Showcase Event", image: "/hooky holiday showcase event.jpeg", date: "2025" },
         { id: 3, title: "AR Rahman Concert", image: "/AR rahman concert.jpeg", date: "2025" },
-        { id: 4, title: "Radio Nyra Bollywood NYE 2026", image: "/images/event_nye_2026.jpg", date: "Dec 31, 2025" },
-        { id: 5, title: "Triangle Got Talent", image: "/images/event_triangle_talent.jpg", date: "Nov 23, 2025" },
-        { id: 6, title: "Radio Nyra Diwali Mela", image: "/images/event_diwali_mela.jpg", date: "Nov 11, 2025" },
     ]
 
     const openLightbox = (index: number) => {
@@ -69,7 +66,6 @@ export default function EventsPage() {
                 </section>
 
                 <div className="container mx-auto px-4 mt-20">
-
                     {/* UPCOMING EVENTS */}
                     <section className="mb-16">
                         <h2 className="text-2xl font-bold uppercase tracking-tighter mb-8 border-l-4 border-primary pl-4">Upcoming Events</h2>

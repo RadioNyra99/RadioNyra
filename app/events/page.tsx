@@ -20,12 +20,9 @@ export default function EventsPage() {
     ];
 
     const pastEvents = [
-        { id: 1, title: "Zain Zohaib Qawwali Show", image: "/zain zohaib qawwali show.jpeg", date: "2025" },
-        { id: 2, title: "Hooky Holiday Showcase Event", image: "/hooky holiday showcase event.jpeg", date: "2025" },
-        { id: 3, title: "AR Rahman Concert", image: "/AR rahman concert.jpeg", date: "2025" },
-        { id: 4, title: "Radio Nyra Bollywood NYE 2026", image: "/images/event_nye_2026.jpg", date: "Dec 31, 2025" },
-        { id: 5, title: "Triangle Got Talent", image: "/images/event_triangle_talent.jpg", date: "Nov 23, 2025" },
-        { id: 6, title: "Radio Nyra Diwali Mela", image: "/images/event_diwali_mela.jpg", date: "Nov 11, 2025" },
+        { id: 1, title: "Radio Nyra Bollywood NYE 2026", image: "/images/event_nye_2026.jpg", date: "Dec 31, 2025" },
+        { id: 2, title: "Triangle Got Talent", image: "/images/event_triangle_talent.jpg", date: "Nov 23, 2025" },
+        { id: 3, title: "Radio Nyra Diwali Mela", image: "/images/event_diwali_mela.jpg", date: "Nov 11, 2025" },
     ]
 
     const openLightbox = (index: number) => {

@@ -4,8 +4,10 @@ import { Inter, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { AudioPlayer } from "@/components/audio-player"
 import { AudioProvider } from "@/components/audio-context"
+import { FestiveOverlay } from "@/components/festive-overlay"
 import Scene3D from "@/components/scene-3d"
 import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
 
 const _inter = Inter({
   subsets: ["latin"],
@@ -64,13 +66,21 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${_inter.variable} ${_geistMono.variable} bg-background text-foreground font-sans antialiased`}>
-        <AudioProvider>
-          <Scene3D />
-          <div className="relative z-10">{children}</div>
-          <AudioPlayer />
-        </AudioProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${_inter.variable} ${_geistMono.variable} bg-background text-foreground font-sans antialiased relative`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <AudioProvider>
+            <FestiveOverlay />
+            <Scene3D />
+            <div className="relative z-10">{children}</div>
+            <AudioPlayer />
+          </AudioProvider>
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>

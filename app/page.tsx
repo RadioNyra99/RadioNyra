@@ -27,8 +27,8 @@ export default function HomePage() {
     { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpg", stationId: STATIONS.Hindi.id },
     { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpg", stationId: STATIONS.Hindi.id },
     { name: "Geet Bazaar", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.jpg", stationId: STATIONS.Hindi.id },
-    { name: "Chinna Mata", host: "Kanthi", image: "/images/hosts/chinna-mata.jpg", stationId: STATIONS.Telugu.id }, // Telugu Show
-    { name: "Mana Muchatlu", host: "RJ", image: "/images/hosts/Mana Muchatlu.jpg", stationId: STATIONS.Telugu.id },
+    { name: "Chinna Mata", host: "Priya", image: "/images/hosts/chinna-mata.jpg", stationId: STATIONS.Telugu.id }, // Updated Host
+    { name: "Mana Muchatlu", host: "Kanthi", image: "/images/hosts/Mana Muchatlu.jpg", stationId: STATIONS.Telugu.id }, // Updated Host
     { name: "Kuch Tum Kaho, Kuch Hum Kahein", host: "Aditi", image: "/images/hosts/kuch-tum-kaho-kuch-hum-kahein.jpg", stationId: STATIONS.Hindi.id },
   ];
 
@@ -62,8 +62,6 @@ export default function HomePage() {
               <span className="text-primary block mt-2">India in the USA</span>
             </h1>
 
-
-
             <div className="mt-8">
               <ListenLiveButton className="w-full md:w-auto text-lg font-bold uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none transition-all hover:scale-105 shadow-2xl h-14 px-10" />
             </div>
@@ -94,8 +92,6 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-
-
           </div>
         </section>
 
@@ -123,8 +119,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
-
 
         {/* GDC BANNER */}
         <section className="py-8 bg-background border-y border-border/50">
@@ -232,7 +226,7 @@ export default function HomePage() {
           </div>
         </section>
 
-      </main>
+      </main >
 
       <Footer />
     </div >

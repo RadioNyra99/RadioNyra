@@ -175,7 +175,9 @@ export function AudioPlayer() {
                 <div className="flex items-center gap-2 mb-0.5">
                   <div className="flex items-center gap-1 md:gap-1.5 px-1.5 py-0.5 bg-red-500/10 text-red-500 rounded-full shrink-0">
                     <div className="w-1 h-1 bg-red-500 rounded-full animate-pulse" />
-                    <span className="text-[7px] md:text-[9px] font-black uppercase tracking-widest">Live</span>
+                    <span className="text-[7px] md:text-[9px] font-black uppercase tracking-widest flex items-center gap-1">
+                      Live 🏺
+                    </span>
                   </div>
                   <span className="text-[8px] md:text-[10px] font-bold text-primary uppercase tracking-[0.1em] md:tracking-[0.2em] truncate">{currentStation.name}</span>
                 </div>

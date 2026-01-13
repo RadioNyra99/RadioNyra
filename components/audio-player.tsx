@@ -173,11 +173,9 @@ export function AudioPlayer() {
 
               <div className="min-w-0 flex-1">
                 <div className="flex items-center gap-2 mb-0.5">
-                  <div className="flex items-center gap-1 md:gap-1.5 px-2 py-0.5 pongal-btn rounded-full shrink-0">
-                    <div className="w-1 h-1 bg-white rounded-full animate-pulse" />
-                    <span className="text-[7px] md:text-[9px] font-black uppercase tracking-widest flex items-center gap-1 text-white">
-                      Live 🏺
-                    </span>
+                  <div className="flex items-center gap-1 md:gap-1.5 px-1.5 py-0.5 bg-red-500/10 text-red-500 rounded-full shrink-0">
+                    <div className="w-1 h-1 bg-red-500 rounded-full animate-pulse" />
+                    <span className="text-[7px] md:text-[9px] font-black uppercase tracking-widest">Live</span>
                   </div>
                   <span className="text-[8px] md:text-[10px] font-bold text-primary uppercase tracking-[0.1em] md:tracking-[0.2em] truncate">{currentStation.name}</span>
                 </div>
@@ -227,7 +225,7 @@ export function AudioPlayer() {
               <Button
                 onClick={togglePlay}
                 size="icon"
-                className="h-12 w-12 md:h-16 md:w-16 rounded-full pongal-btn shadow-lg hover:scale-105 active:scale-95 transition-all outline-none ring-primary/20 hover:ring-4 md:hover:ring-8 shrink-0"
+                className="h-12 w-12 md:h-16 md:w-16 rounded-full bg-primary text-white hover:bg-primary/90 shadow-lg hover:scale-105 active:scale-95 transition-all outline-none ring-primary/20 hover:ring-4 md:hover:ring-8 shrink-0"
               >
                 {isLoading ? <Loader2 className="h-6 w-6 md:h-8 md:w-8 animate-spin" /> : (isPlaying ? <Pause className="h-6 w-6 md:h-8 md:w-8 fill-current" /> : <Play className="h-6 w-6 md:h-8 md:w-8 fill-current ml-0.5 md:ml-1" />)}
               </Button>

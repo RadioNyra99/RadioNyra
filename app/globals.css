@@ -103,6 +103,11 @@
   --sidebar-accent-foreground: #000000;
   --sidebar-border: #e0e0e0;
   --sidebar-ring: #ff0000;
+
+  /* Simplified Pongal Colors */
+  --pongal-yellow: #f4c430;
+  --pongal-orange: #ff9f1c;
+  --pongal-green: #2ecc71;
 }
 
 .dark {
@@ -261,9 +266,38 @@
     transform: translateX(0);
   }
 
-  100% {
+  10% {
     transform: translateX(-100%);
   }
+}
+
+/* Simplified Pongal Animations */
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(1deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pongal-float {
+  animation: floatSlow 6s ease-in-out infinite;
 }
 
 .animate-scroll {
@@ -458,6 +492,33 @@
 
   .subtle-glow {
     animation: subtleGlow 3s ease-in-out infinite;
+  }
+
+  /* Simplified Pongal Utilities */
+  .rangoli-bg {
+    filter: drop-shadow(0 0 20px rgba(255, 183, 77, 0.4));
+    animation: spinSlow 60s linear infinite;
+  }
+
+  .pongal-btn {
+    background: linear-gradient(135deg,
+        var(--pongal-yellow),
+        var(--pongal-orange)) !important;
+    box-shadow: 0 0 15px rgba(244, 196, 48, 0.4);
+    border: none !important;
+    color: white !important;
+  }
+
+  /* Magical Glow Utilities */
+  .magical-glow {
+    box-shadow: 0 0 40px oklch(0.85 0.2 85 / 0.15);
+    filter: drop-shadow(0 0 10px oklch(0.85 0.2 85 / 0.2));
+  }
+
+  .holographic-effect {
+    backdrop-filter: blur(4px);
+    background: linear-gradient(135deg, oklch(1 0 0 / 0.1) 0%, oklch(0.85 0.2 85 / 0.05) 100%);
+    border: 1px solid oklch(1 0 0 / 0.1);
   }
 
   /* Stagger delays */

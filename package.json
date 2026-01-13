@@ -52,6 +52,7 @@
     "expo-asset": "latest",
     "expo-file-system": "latest",
     "expo-gl": "latest",
+    "framer-motion": "^12.26.1",
     "graphql": "^16.12.0",
     "graphql-request": "^7.4.0",
     "input-otp": "1.4.1",

@@ -4,7 +4,6 @@ import { Inter, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { AudioPlayer } from "@/components/audio-player"
 import { AudioProvider } from "@/components/audio-context"
-import { FestiveOverlay } from "@/components/festive-overlay"
 import Scene3D from "@/components/scene-3d"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -75,7 +74,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <AudioProvider>
-            <FestiveOverlay />
             <Scene3D />
             <div className="relative z-10">{children}</div>
             <AudioPlayer />

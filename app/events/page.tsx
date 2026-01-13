@@ -20,15 +20,12 @@ export default function EventsPage() {
     ];
 
     const pastEvents = [
-        { id: 1, title: "Radio Nyra Bollywood NYE 2026", image: "/images/event_nye_2026.jpg", date: "Dec 31, 2025" },
-        { id: 2, title: "Triangle Got Talent", image: "/images/event_triangle_talent.jpg", date: "Nov 23, 2025" },
-        { id: 3, title: "Hooky Cary Holiday VIP Showcase", image: "/images/event_hooky_cary.jpg", date: "Nov 18, 2025" },
-        { id: 4, title: "Radio Nyra Diwali Mela", image: "/images/event_diwali_mela.jpg", date: "Nov 11, 2025" },
-        { id: 5, title: "Hum Sub Diwali", image: "/images/event_hum_sub_diwali.jpg", date: "Nov 04, 2025" },
-        { id: 6, title: "Garner India Fest", image: "/images/event_garner_fest.jpg", date: "Nov 04, 2025" },
-        { id: 7, title: "IAFV Diwali Fest", image: "/images/event_iafv_diwali.jpg", date: "Oct 28, 2025" },
-        { id: 8, title: "Zain Zohaib Qawwali Mehfil", image: "/images/event_zain_zohaib.jpg", date: "Nov 02, 2025" },
-        { id: 9, title: "A.R. Rahman Concert in Raleigh", image: "/images/event_ar_rahman.jpg", date: "2025" },
+        { id: 1, title: "Zain Zohaib Qawwali Show", image: "/zain zohaib qawwali show.jpeg", date: "2025" },
+        { id: 2, title: "Hooky Holiday Showcase Event", image: "/hooky holiday showcase event.jpeg", date: "2025" },
+        { id: 3, title: "AR Rahman Concert", image: "/AR rahman concert.jpeg", date: "2025" },
+        { id: 4, title: "Radio Nyra Bollywood NYE 2026", image: "/images/event_nye_2026.jpg", date: "Dec 31, 2025" },
+        { id: 5, title: "Triangle Got Talent", image: "/images/event_triangle_talent.jpg", date: "Nov 23, 2025" },
+        { id: 6, title: "Radio Nyra Diwali Mela", image: "/images/event_diwali_mela.jpg", date: "Nov 11, 2025" },
     ]
 
     const openLightbox = (index: number) => {
@@ -131,13 +128,27 @@ export default function EventsPage() {
                         </div>
                     </section>
 
-                    {/* PAST EVENTS */}
                     <section>
                         <h2 className="text-2xl font-bold uppercase tracking-tighter mb-8 border-l-4 border-primary pl-4">Past Events</h2>
-                        <div className="bg-muted/30 p-12 text-center border border-dashed border-border rounded-lg">
-                            <h3 className="text-xl md:text-2xl font-bold uppercase tracking-widest text-muted-foreground">
-                                Updates coming soon
-                            </h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                            {pastEvents.map((event, index) => (
+                                <div
+                                    key={event.id}
+                                    className="group relative aspect-square bg-muted overflow-hidden cursor-pointer border border-border hover:border-primary transition-all"
+                                    onClick={() => openLightbox(index)}
+                                >
+                                    <img
+                                        src={event.image}
+                                        alt={event.title}
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        loading="lazy"
+                                    />
+                                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                                        <p className="text-[8px] font-bold text-primary uppercase tracking-[0.2em] mb-1">{event.date}</p>
+                                        <h3 className="text-white font-bold uppercase tracking-tight text-sm leading-none">{event.title}</h3>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </section>
                 </div>

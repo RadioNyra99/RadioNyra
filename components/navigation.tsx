@@ -195,8 +195,9 @@ export function Navigation() {
             </Button>
 
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="text-right flex items-center"> {/* Always visible */}
+              <div className="text-right flex flex-col justify-center">
                 <h1 className="font-bold text-xl lg:text-2xl text-foreground tracking-tighter leading-none whitespace-nowrap">Radio Nyra</h1>
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary leading-none mt-1">Raleigh – Durham</p>
               </div>
               <div className="relative w-10 h-10 lg:w-12 lg:h-12 overflow-hidden rounded-full border-2 border-primary group-hover:border-primary/80 transition-colors shrink-0">
                 <img

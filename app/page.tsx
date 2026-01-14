@@ -37,7 +37,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-primary-foreground">
       <Navigation />
-      <FrequencyBar />
+      {/* <FrequencyBar /> */}
 
       <main>
         {/* HERO SECTION */}
@@ -57,9 +57,9 @@ export default function HomePage() {
           </div>
 
           <div className="relative z-20 container mx-auto px-4 text-center">
-            <h1 className="text-5xl md:text-9xl font-black tracking-tighter mb-8 uppercase leading-[0.8] drop-shadow-2xl italic">
-              <span className="text-white block">The Voice of</span>
-              <span className="text-primary block mt-2">India in the USA</span>
+            <h1 className="text-4xl md:text-8xl font-black tracking-tighter mb-8 uppercase leading-[0.9] drop-shadow-2xl italic">
+              <span className="text-white block">The Only Gateway to the Indian</span>
+              <span className="text-primary block mt-2">Subcontinent Communities in the USA</span>
             </h1>
 
 
@@ -68,7 +68,7 @@ export default function HomePage() {
             </div>
 
             <div className="mt-12">
-              <p className="text-white/60 text-[10px] font-black uppercase tracking-[0.3em] mb-4 drop-shadow-sm">Available on Digital Platforms</p>
+              <p className="text-white/60 text-[10px] font-black uppercase tracking-[0.3em] mb-4 drop-shadow-sm">Also Available on Digital Platforms</p>
               <div className="flex flex-wrap items-center justify-center gap-6">
                 <VoiceAssistants />
 
@@ -99,20 +99,20 @@ export default function HomePage() {
         {/* STATS */}
         <section className="py-6 bg-background border-b border-border/50">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+            <div className="flex flex-row flex-nowrap md:grid md:grid-cols-2 gap-2 text-center justify-center items-center overflow-hidden">
               {[
-                { label: "Active Listeners", end: 100, suffix: "K+", icon: Users },
-                { label: "Live Broadcasting", end: 24, suffix: "/7", icon: Radio },
-                { label: "Professional Hosts", end: 15, suffix: "+", icon: Mic2 }
+                { label: "Active listeners per week", end: 100, suffix: "K+", icon: Users },
+                { label: "24/7 Broadcasting", end: 24, suffix: "", icon: Radio },
+                // { label: "Professional Hosts", end: 15, suffix: "+", icon: Mic2 } // Hidden as per request
               ].map((stat, i) => (
-                <div key={i} className="p-2">
+                <div key={i} className="flex-1 p-2">
                   <div className="flex justify-center">
-                    <stat.icon className="w-6 h-6 text-primary" />
+                    <stat.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                   </div>
-                  <div className="text-5xl md:text-6xl font-bold text-foreground tracking-tight leading-none">
+                  <div className="text-3xl md:text-6xl font-bold text-foreground tracking-tight leading-none">
                     <CountUp end={stat.end} suffix={stat.suffix} duration={2500} />
                   </div>
-                  <div className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mt-1">
+                  <div className="text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-muted-foreground mt-1">
                     {stat.label}
                   </div>
                 </div>
@@ -122,7 +122,7 @@ export default function HomePage() {
         </section>
 
         {/* GDC BANNER */}
-        <section className="py-8 bg-background border-y border-border/50">
+        <section className="py-4 bg-background border-y border-border/50">
           <div className="container mx-auto px-4">
             <div className="flex justify-center">
               <Link href="https://gdc.informafestivals.com/2026/registrations/Attendee?_mc=barter_gdcsf_gdcsf_le_x_partn" target="_blank" rel="noopener noreferrer">
@@ -137,7 +137,7 @@ export default function HomePage() {
         </section>
 
         {/* RADIO NYRA SHOWS SECTION */}
-        <section id="shows" className="py-20 bg-muted/20">
+        <section id="shows" className="pt-0 pb-12 bg-muted/20">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
               <div>

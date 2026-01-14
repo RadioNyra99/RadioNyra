@@ -1,13 +1,123 @@
+"use client"
+
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, Clock, Mic2 } from "lucide-react"
+import { Clock, User, Calendar } from "lucide-react"
+import { useState } from "react"
+
+interface ScheduleEntry {
+    time: string;
+    hour: number; // For sorting
+    shows: {
+        [key: string]: {
+            name: string;
+            host?: string;
+            image?: string;
+            color?: string;
+        }
+    }
+}
+
+const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+const SCHEDULE_DATA: ScheduleEntry[] = [
+    {
+        time: "12 AM - 6 AM", hour: 0,
+        shows: { all: { name: "Back-To-Back", color: "bg-muted/30 text-muted-foreground" } }
+    },
+    {
+        time: "6 AM - 7 AM", hour: 6,
+        shows: { all: { name: "Geetanjali", color: "bg-yellow-100 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-400" } }
+    },
+    {
+        time: "7 AM - 8 AM", hour: 7,
+        shows: {
+            weekdays: { name: "Back-To-Back", color: "bg-muted/30 text-muted-foreground" },
+            weekend: { name: "Zara Muskurao", host: "Aayushii", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" }
+        }
+    },
+    {
+        time: "8 AM - 10 AM", hour: 8,
+        shows: {
+            weekdays: { name: "Chai Pe Charcha", host: "Raj Persaud", image: "/images/hosts/cha-pe-charcha.jpg", color: "bg-cyan-100 text-cyan-700" },
+            weekend: { name: "Zara Muskurao", host: "Aayushii", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" }
+        }
+    },
+    {
+        time: "10 AM - 11 AM", hour: 10,
+        shows: {
+            weekdays: { name: "Zara Muskurao", host: "Aayushii", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
+            Saturday: { name: "Kuch Tum Kaho, Kuch Hum Kahein", host: "Aditi", image: "/images/hosts/kuch-tum-kaho-kuch-hum-kahein.jpg", color: "bg-orange-300 text-orange-900" },
+            Sunday: { name: "Geet Bazaar (Live)", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.jpg", color: "bg-purple-100 text-purple-700" }
+        }
+    },
+    {
+        time: "11 AM - 1 PM", hour: 11,
+        shows: {
+            weekdays: { name: "Zara Muskurao", host: "Aayushii", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
+            weekend: { name: "Back-To-Back", color: "bg-muted/30 text-muted-foreground" }
+        }
+    },
+    {
+        time: "1 PM - 2 PM", hour: 13,
+        shows: { all: { name: "Back-To-Back", color: "bg-muted/30 text-muted-foreground" } }
+    },
+    {
+        time: "2 PM - 4 PM", hour: 14,
+        shows: { all: { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpg", color: "bg-purple-50 text-purple-700" } }
+    },
+    {
+        time: "4 PM - 5 PM", hour: 16,
+        shows: {
+            Monday: { name: "Desh Pardesh", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Tuesday: { name: "Desh Pardesh", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Wednesday: { name: "Misc. or Podcast", color: "bg-lime-100 text-lime-800" },
+            Thursday: { name: "Misc. or Podcast", color: "bg-lime-100 text-lime-800" },
+            Friday: { name: "Misc. or Podcast", color: "bg-lime-100 text-lime-800" },
+            Saturday: { name: "Desh Pardesh", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Sunday: { name: "Legends & Leaders", host: "Steve Rao", color: "bg-blue-900 text-white" }
+        }
+    },
+    {
+        time: "5 PM - 7 PM", hour: 17,
+        shows: {
+            Monday: { name: "Desh Pardesh", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Tuesday: { name: "Desh Pardesh", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Wednesday: { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.jpg", color: "bg-blue-400 text-white" },
+            Thursday: { name: "Hello Vaishnavi", host: "Vaishnavi Palleda", image: "/images/hosts/hello-vaishnavi.jpg", color: "bg-yellow-600 text-white" },
+            Friday: { name: "Dil Se Desi", host: "Jyoti", image: "/images/hosts/dil-se-desi.jpg", color: "bg-red-800 text-white" },
+            Saturday: { name: "Desh Pardesh", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Sunday: { name: "Desh Pardesh", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" }
+        }
+    },
+    {
+        time: "7 PM - 10 PM", hour: 19,
+        shows: { all: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", color: "bg-cyan-50 text-cyan-700" } }
+    },
+    {
+        time: "10 PM - 12 AM", hour: 22,
+        shows: {
+            weekdays: { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpg", color: "bg-blue-200 text-blue-800" },
+            Saturday: { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpg", color: "bg-blue-200 text-blue-800" },
+            Sunday: { name: "Geet Bazaar (Repeat) / Mehfil", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.jpg", color: "bg-purple-300 text-purple-900" }
+        }
+    }
+];
 
 export default function SchedulePage() {
-    const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    const [selectedDay, setSelectedDay] = useState<string>(DAYS[new Date().getDay() === 0 ? 6 : new Date().getDay() - 1]);
+
+    const getShowForDay = (entry: ScheduleEntry, day: string) => {
+        if (entry.shows.all) return entry.shows.all;
+        if (entry.shows[day]) return entry.shows[day];
+        const isWeekend = day === "Saturday" || day === "Sunday";
+        if (isWeekend && entry.shows.weekend) return entry.shows.weekend;
+        if (!isWeekend && entry.shows.weekdays) return entry.shows.weekdays;
+        return { name: "--", color: "bg-transparent text-muted-foreground" };
+    };
 
     return (
         <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-primary-foreground text-foreground">
@@ -26,172 +136,90 @@ export default function SchedulePage() {
                     </div>
                 </section>
 
-                <section className="py-24 bg-background">
-                    <div className="container mx-auto px-4 overflow-x-auto">
-                        <div className="min-w-[1000px]">
-                            {/* Header Row */}
-                            <div className="grid grid-cols-[100px_repeat(7,1fr)] bg-primary/5 border border-border text-center font-black uppercase tracking-widest text-sm">
-                                <div className="p-4 border-r border-border">Time</div>
-                                {days.map(day => <div key={day} className="p-4 border-r border-border last:border-r-0 text-primary">{day}</div>)}
-                            </div>
+                <section className="py-12 md:py-24 bg-background">
+                    <div className="container mx-auto px-4">
 
-                            {/* Schedule Rows - Simplified for readability based on image patterns */}
-                            {/* 12 AM - 5 AM: Back-To-Back */}
-                            {[0, 1, 2, 3, 4].map(hour => (
-                                <div key={hour} className="grid grid-cols-[100px_repeat(7,1fr)] border-x border-b border-border text-center text-xs font-bold uppercase tracking-wider">
-                                    <div className="p-3 border-r border-border text-muted-foreground flex items-center justify-center">{hour === 0 ? '12 AM' : `${hour} AM`}</div>
-                                    {days.map(day => <div key={day} className="p-3 border-r border-border last:border-r-0 bg-muted/30 text-muted-foreground flex items-center justify-center">Back-To-Back</div>)}
-                                </div>
-                            ))}
-
-                            {/* 6 AM - 7 AM: Geetanjali (All Days) */}
-                            <div className="grid grid-cols-[100px_repeat(7,1fr)] border-x border-b border-border text-center text-xs font-bold uppercase tracking-wider">
-                                <div className="p-3 border-r border-border text-muted-foreground flex items-center justify-center">6 AM</div>
-                                {days.map(day => <div key={day} className="p-3 border-r border-border last:border-r-0 bg-yellow-100 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-400 flex items-center justify-center">Geetanjali</div>)}
-                            </div>
-
-                            {/* 7 AM: Back To Back */}
-                            <div className="grid grid-cols-[100px_repeat(7,1fr)] border-x border-b border-border text-center text-xs font-bold uppercase tracking-wider">
-                                <div className="p-3 border-r border-border text-muted-foreground flex items-center justify-center">7 AM</div>
-                                {days.map(day => (
-                                    <div key={day} className={`p-3 border-r border-border last:border-r-0 flex items-center justify-center ${day === 'Saturday' || day === 'Sunday' ? "bg-orange-100 dark:bg-orange-900/20 text-orange-700 dark:text-orange-400" : "bg-muted/30 text-muted-foreground"}`}>
-                                        {day === 'Saturday' || day === 'Sunday' ? "Zara Muskurao - Aayushii" : "Back-To-Back"}
-                                    </div>
+                        {/* Mobile View: Day Selector and Vertical List */}
+                        <div className="md:hidden space-y-8">
+                            <div className="flex overflow-x-auto pb-4 gap-2 no-scrollbar scroll-smooth">
+                                {DAYS.map(day => (
+                                    <button
+                                        key={day}
+                                        onClick={() => setSelectedDay(day)}
+                                        className={`px-6 py-2 rounded-full whitespace-nowrap text-sm font-black uppercase tracking-widest transition-all border-2 ${selectedDay === day
+                                                ? "bg-primary border-primary text-white shadow-lg scale-105"
+                                                : "bg-muted/30 border-transparent text-muted-foreground"
+                                            }`}
+                                    >
+                                        {day}
+                                    </button>
                                 ))}
                             </div>
 
-                            {/* 8 AM - 10 AM: Chai Pe Charcha (Mon-Fri) / Zara Muskurao (Sat-Sun) */}
-                            {[8, 9].map(hour => (
-                                <div key={hour} className="grid grid-cols-[100px_repeat(7,1fr)] border-x border-b border-border text-center text-xs font-bold uppercase tracking-wider">
-                                    <div className="p-3 border-r border-border text-muted-foreground flex items-center justify-center">{hour} AM</div>
-                                    {days.map(day => {
-                                        const isWeekend = day === 'Saturday' || day === 'Sunday';
-                                        return (
-                                            <div key={day} className={`p-3 border-r border-border last:border-r-0 flex items-center justify-center ${!isWeekend ? "bg-cyan-100 dark:bg-cyan-900/20 text-cyan-700 dark:text-cyan-400" : "bg-orange-100 dark:bg-orange-900/20 text-orange-700 dark:text-orange-400"}`}>
-                                                {!isWeekend ? "Chai Pe Charcha - Raj" : "Zara Muskurao - Aayushii"}
-                                            </div>
-                                        )
-                                    })}
-                                </div>
-                            ))}
-
-                            {/* 10 AM - 11 AM: Zara Muskurao (Mon-Fri) / Kuch Tum (Sat) / Geet Bazaar (Sun) */}
-                            <div className="grid grid-cols-[100px_repeat(7,1fr)] border-x border-b border-border text-center text-xs font-bold uppercase tracking-wider">
-                                <div className="p-3 border-r border-border text-muted-foreground flex items-center justify-center">10 AM</div>
-                                {days.map(day => {
-                                    let content = "Zara Muskurao - Aayushii";
-                                    let style = "bg-orange-100 dark:bg-orange-900/20 text-orange-700 dark:text-orange-400";
-                                    if (day === 'Saturday') { content = "Kuch Tum Kaho, Kuch Hum Kahein", style = "bg-orange-300 dark:bg-orange-700/30 text-orange-900 dark:text-orange-100" }
-                                    if (day === 'Sunday') { content = "Geet Bazaar (Live)", style = "bg-purple-100 dark:bg-purple-900/20 text-purple-700 dark:text-purple-400" }
+                            <div className="space-y-6">
+                                {SCHEDULE_DATA.sort((a, b) => a.hour - b.hour).map((entry, idx) => {
+                                    const show = getShowForDay(entry, selectedDay);
+                                    if (show.name === "--") return null;
 
                                     return (
-                                        <div key={day} className={`p-3 border-r border-border last:border-r-0 flex items-center justify-center ${style}`}>
-                                            {content}
-                                        </div>
-                                    )
-                                })}
-                            </div>
-
-                            {/* 11 AM - 1 PM: Zara Muskurao (Mon-Fri) / Back-To-Back (Sat-Sun) */}
-                            {[11, 12].map(hour => (
-                                <div key={hour} className="grid grid-cols-[100px_repeat(7,1fr)] border-x border-b border-border text-center text-xs font-bold uppercase tracking-wider">
-                                    <div className="p-3 border-r border-border text-muted-foreground flex items-center justify-center">{hour === 12 ? '12 PM' : `${hour} AM`}</div>
-                                    {days.map(day => {
-                                        const isWeekend = day === 'Saturday' || day === 'Sunday';
-                                        return (
-                                            <div key={day} className={`p-3 border-r border-border last:border-r-0 flex items-center justify-center ${!isWeekend ? "bg-orange-100 dark:bg-orange-900/20 text-orange-700 dark:text-orange-400" : "bg-muted/30 text-muted-foreground"}`}>
-                                                {!isWeekend ? "Zara Muskurao - Aayushii" : "Back-To-Back"}
+                                        <div key={idx} className="bg-card border border-border/50 overflow-hidden flex flex-col shadow-sm">
+                                            {show.image && (
+                                                <div className="aspect-[16/9] w-full overflow-hidden">
+                                                    <img
+                                                        src={show.image}
+                                                        alt={show.host || show.name}
+                                                        className="w-full h-full object-cover"
+                                                    />
+                                                </div>
+                                            )}
+                                            <div className="p-6">
+                                                <div className="flex items-center gap-2 text-primary mb-3">
+                                                    <Clock className="w-4 h-4" />
+                                                    <span className="text-sm font-black uppercase tracking-widest">{entry.time}</span>
+                                                </div>
+                                                <h3 className="text-2xl font-black uppercase tracking-tighter leading-tight mb-2">
+                                                    {show.name}
+                                                </h3>
+                                                {show.host && (
+                                                    <div className="flex items-center gap-2 text-muted-foreground">
+                                                        <User className="w-4 h-4" />
+                                                        <span className="text-xs font-bold uppercase tracking-widest">{show.host}</span>
+                                                    </div>
+                                                )}
+                                                <div className={`mt-4 px-3 py-1 text-[10px] font-black uppercase tracking-widest inline-block ${show.color}`}>
+                                                    Live on Air
+                                                </div>
                                             </div>
-                                        )
-                                    })}
-                                </div>
-                            ))}
-
-                            {/* 1 PM: Back-to-Back (All) */}
-                            <div className="grid grid-cols-[100px_repeat(7,1fr)] border-x border-b border-border text-center text-xs font-bold uppercase tracking-wider">
-                                <div className="p-3 border-r border-border text-muted-foreground flex items-center justify-center">1 PM</div>
-                                {days.map(day => <div key={day} className="p-3 border-r border-border last:border-r-0 bg-muted/30 text-muted-foreground flex items-center justify-center">Back-To-Back</div>)}
-                            </div>
-
-                            {/* 2 PM - 4 PM: Bollywood Bliss (All Days) */}
-                            {[2, 3].map(hour => (
-                                <div key={hour} className="grid grid-cols-[100px_repeat(7,1fr)] border-x border-b border-border text-center text-xs font-bold uppercase tracking-wider">
-                                    <div className="p-3 border-r border-border text-muted-foreground flex items-center justify-center">{hour} PM</div>
-                                    {days.map(day => (
-                                        <div key={day} className="p-3 border-r border-border last:border-r-0 bg-purple-50 dark:bg-purple-900/10 text-purple-700 dark:text-purple-400 flex items-center justify-center">Bollywood Bliss - Bharti</div>
-                                    ))}
-                                </div>
-                            ))}
-
-                            {/* 4 PM: Misc/Podcast (Mon-Fri) / Desh Pardesh (Sat) / Legends (Sun) */}
-                            <div className="grid grid-cols-[100px_repeat(7,1fr)] border-x border-b border-border text-center text-xs font-bold uppercase tracking-wider">
-                                <div className="p-3 border-r border-border text-muted-foreground flex items-center justify-center">4 PM</div>
-                                {days.map(day => {
-                                    let content = "Misc. or Podcast";
-                                    let style = "bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400";
-                                    if (day === 'Saturday') { content = "Desh Pardesh - Vishal" } // Same color
-                                    if (day === 'Sunday') { content = "Legends & Leaders - Steve Rao", style = "bg-blue-800 text-white" }
-                                    if (['Monday', 'Tuesday'].includes(day)) { content = "Desh Pardesh - Vishal", style = "bg-green-200 dark:bg-green-900/30 text-green-800 dark:text-green-300" } // Image shows Desh Pardesh starts at 4/5 PM depending... actually image says 5-6 Desh Pardesh Mon-Tue. 4-5 Misc.
-                                    // Correction from image: 4-5 PM Mon/Tue is Desh Pardesh? Wait, look at image 5-6 row.
-                                    // Image Row 4-5PM: Mon/Tue=Green(Desh Pardesh?), Wed/Thu/Fri=Green(Misc), Sat=Green(Desh), Sun=Blue(Legends). 
-                                    // Actually Mon/Tue 5-6 is Desh Pardesh. 4-5 looks like Green block for Desh Pardesh starts at 5? No, the green block spans 5-7.
-                                    // Let's look at 4-5PM: Mon/Tue empty/green? It says "Desh Pardesh" in the 5-6 block. 4-5 block for Mon/Tue is likely Desh Pardesh too? Or part of the block?
-                                    // The image shows "Desh Pardesh - Vishal" spanning 5-7 PM Mon, Tue, Sat, Sun.
-                                    // 4-5 PM Wed, Thu, Fri says "Misc or Podcast".
-                                    // 4-5 PM Sun says "Legends & Leaders".
-                                    // 4-5 PM Mon, Tue: looks like same color as Desh Pardesh but text is in 5-6 block. Likely separate or extended.
-                                    // I'll put "Desh Pardesh - Vishal" for Mon/Tue 4-5PM based on visual continuity if needed, or leave blank/Misc. 
-                                    // Actually, let's look closer. Row 4-5PM. Mon/Tue Block seems to start at 5. So 4-5 is likely empty or previous show? 
-                                    // Ah, the block "Bollywood Bliss" ends at 4.
-                                    // Row 4-5PM: Wed-Fri "Misc or Podcast". Sun "Legends..".
-                                    // Mon/Tue 4-5PM: Not labeled. Maybe "Desh Pardesh"? Let's assume Misc/Podcast or gap.
-                                    // I will mimic the "Misc or Podcast" for Mon-Fri for simplicity unless I see text.
-                                    // Wait, Mon/Tue at 5PM starts Desh Pardesh.
-
-                                    if (['Wednesday', 'Thursday', 'Friday'].includes(day)) { return <div key={day} className="p-3 border-r border-border last:border-r-0 bg-lime-100 text-lime-800 flex items-center justify-center">Misc. or Podcast</div> }
-                                    if (day === 'Sunday') { return <div key={day} className="p-3 border-r border-border last:border-r-0 bg-blue-900 text-white flex items-center justify-center">Legends & Leaders - Steve Rao</div> }
-                                    if (day === 'Saturday') { return <div key={day} className="p-3 border-r border-border last:border-r-0 bg-green-200 text-green-800 flex items-center justify-center">Desh Pardesh - Vishal</div> } // Image shows match
-
-                                    return <div key={day} className="p-3 border-r border-border last:border-r-0 bg-muted/30 text-muted-foreground flex items-center justify-center">--</div>;
+                                        </div>
+                                    );
                                 })}
                             </div>
+                        </div>
 
-                            {/* 5 PM - 7 PM: Desh Pardesh (Mon, Tue, Sat, Sun) / Shows (Wed-Fri) */}
-                            <div className="grid grid-cols-[100px_repeat(7,1fr)] border-x border-b border-border text-center text-xs font-bold uppercase tracking-wider">
-                                <div className="p-3 border-r border-border text-muted-foreground flex items-center justify-center h-24">5-7 PM</div>
-                                {days.map(day => {
-                                    if (['Monday', 'Tuesday', 'Saturday', 'Sunday'].includes(day)) {
-                                        return <div key={day} className="p-3 border-r border-border last:border-r-0 bg-green-200 dark:bg-green-900/30 text-green-800 dark:text-green-300 flex items-center justify-center">Desh Pardesh - Vishal</div>
-                                    }
-                                    if (day === 'Wednesday') return <div key={day} className="p-3 border-r border-border last:border-r-0 bg-blue-400 text-white flex items-center justify-center">Idhar Udhar Ki Baatein</div>
-                                    if (day === 'Thursday') return <div key={day} className="p-3 border-r border-border last:border-r-0 bg-yellow-600 text-white flex items-center justify-center">Hello Vaishnavi</div>
-                                    if (day === 'Friday') return <div key={day} className="p-3 border-r border-border last:border-r-0 bg-red-800 text-white flex items-center justify-center">Dil Se Desi</div>
-
-                                    return null;
-                                })}
-                            </div>
-
-                            {/* 7 PM - 10 PM: Nirvana Nights (All) */}
-                            {[7, 8, 9].map(hour => (
-                                <div key={hour} className="grid grid-cols-[100px_repeat(7,1fr)] border-x border-b border-border text-center text-xs font-bold uppercase tracking-wider">
-                                    <div className="p-3 border-r border-border text-muted-foreground flex items-center justify-center">{hour} PM</div>
-                                    {days.map(day => (
-                                        <div key={day} className="p-3 border-r border-border last:border-r-0 bg-cyan-50 dark:bg-cyan-900/10 text-cyan-700 dark:text-cyan-400 flex items-center justify-center">Nirvana Nights - Shivani</div>
-                                    ))}
+                        {/* Desktop View: Existing Table Layout */}
+                        <div className="hidden md:block overflow-x-auto">
+                            <div className="min-w-[1000px]">
+                                {/* Header Row */}
+                                <div className="grid grid-cols-[150px_repeat(7,1fr)] bg-primary/5 border border-border text-center font-black uppercase tracking-widest text-sm">
+                                    <div className="p-4 border-r border-border">Time</div>
+                                    {DAYS.map(day => <div key={day} className="p-4 border-r border-border last:border-r-0 text-primary">{day}</div>)}
                                 </div>
-                            ))}
 
-                            {/* 10 PM - 12 AM: Triangle Tunes (Mon-Sat) / Geet Bazaar (Sun) */}
-                            <div className="grid grid-cols-[100px_repeat(7,1fr)] border-x border-b border-border text-center text-xs font-bold uppercase tracking-wider">
-                                <div className="p-3 border-r border-border text-muted-foreground flex items-center justify-center h-24">10 PM - 12 AM</div>
-                                {days.map(day => {
-                                    if (day === 'Sunday') {
-                                        return <div key={day} className="p-3 border-r border-border last:border-r-0 bg-purple-300 dark:bg-purple-900/40 text-purple-900 dark:text-purple-100 flex items-center justify-center">Geet Bazaar (Repeat) / Mehfil</div>
-                                    }
-                                    return <div key={day} className="p-3 border-r border-border last:border-r-0 bg-blue-200 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 flex items-center justify-center">Triangle Tunes and Talks - Monica</div>
-                                })}
+                                {SCHEDULE_DATA.map((entry, idx) => (
+                                    <div key={idx} className="grid grid-cols-[150px_repeat(7,1fr)] border-x border-b border-border text-center text-[10px] font-bold uppercase tracking-widest">
+                                        <div className="p-4 border-r border-border text-muted-foreground flex items-center justify-center font-black">{entry.time}</div>
+                                        {DAYS.map(day => {
+                                            const show = getShowForDay(entry, day);
+                                            return (
+                                                <div key={day} className={`p-4 border-r border-border last:border-r-0 flex flex-col items-center justify-center gap-1 ${show.color}`}>
+                                                    <span className="leading-tight">{show.name}</span>
+                                                    {show.host && <span className="opacity-60 text-[8px]">{show.host}</span>}
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
+                                ))}
                             </div>
-
                         </div>
                     </div>
                 </section>
@@ -203,7 +231,7 @@ export default function SchedulePage() {
                             Radio Nyra is available 24/7. Don't miss out on our special weekend programs and exclusive community segments.
                         </p>
                         <Button className="h-16 px-12 text-lg font-black uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none shadow-xl transition-all" asChild>
-                            <Link href="/schedule">Set Reminder</Link>
+                            <Link href="/">Listen Live Now</Link>
                         </Button>
                     </div>
                 </section>

@@ -14,7 +14,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 export default function PodcastsPage() {
     const podcasts = [
-        { title: "Episode 1: The Beginning", host: "Sohail", show: "Non Stop Hungama", date: "Jan 03, 2026" },
+        { title: "Episode 1: The Beginning", host: "Sohail", show: "Subha Ki Shuruaat", date: "Jan 03, 2026" },
         { title: "Episode 2: Bollywood Talk", host: "Bharti Rathore", show: "Bollywood Bliss", date: "Jan 04, 2026" },
         { title: "Episode 3: Morning Vibes", host: "Raj Persaud", show: "Morning Commute", date: "Jan 05, 2026" },
     ]

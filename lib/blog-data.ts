@@ -52,7 +52,7 @@ export const BLOG_POSTS: BlogPost[] = [
         <li><strong>City Lights</strong> - An upbeat track perfect for your evening drive.</li>
         <li><strong>Retro Rewind</strong> - A remix that does justice to the original classic.</li>
       </ol>
-      <p>Tune in to 'Non Stop Hungama' with Host Sohail to catch these tracks live and participate in our countdown!</p>
+      <p>Tune in to 'Subha Ki Shuruaat' with Host Sohail to catch these tracks live and participate in our countdown!</p>
     `,
         date: "2026-01-08",
         author: {

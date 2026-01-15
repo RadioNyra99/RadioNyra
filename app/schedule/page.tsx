@@ -25,90 +25,48 @@ const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
 
 const SCHEDULE_DATA: ScheduleEntry[] = [
     {
-        time: "12 AM - 6 AM", hour: 0,
-        shows: { all: { name: "Back-To-Back", color: "bg-muted/30 text-muted-foreground" } }
-    },
-    {
-        time: "6 AM - 7 AM", hour: 6,
-        shows: { all: { name: "Geetanjali", color: "bg-yellow-100 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-400" } }
-    },
-    {
         time: "7 AM - 8 AM", hour: 7,
-        shows: {
-            weekdays: { name: "Back-To-Back", color: "bg-muted/30 text-muted-foreground" },
-            weekend: { name: "Zara Muskurao", host: "Aayushii", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" }
-        }
+        shows: { all: { name: "Subha Ki Shuruaat", host: "Sohail", image: "/images/hosts/non-stop-hungama.jpg", color: "bg-blue-100 text-blue-700" } }
     },
     {
         time: "8 AM - 10 AM", hour: 8,
         shows: {
-            weekdays: { name: "Chai Pe Charcha", host: "Raj Persaud", image: "/images/hosts/cha-pe-charcha.jpg", color: "bg-cyan-100 text-cyan-700" },
-            weekend: { name: "Zara Muskurao", host: "Aayushii", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" }
+            weekdays: { name: "Chai Pe Charcha*", host: "Raj", image: "/images/hosts/cha-pe-charcha.jpg", color: "bg-cyan-100 text-cyan-700" },
+            weekend: { name: "Subha Ki Shuruaat", host: "Sohail", image: "/images/hosts/non-stop-hungama.jpg", color: "bg-blue-100 text-blue-700" }
         }
     },
     {
-        time: "10 AM - 11 AM", hour: 10,
+        time: "10 AM - 1 PM", hour: 10,
         shows: {
-            weekdays: { name: "Zara Muskurao", host: "Aayushii", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
-            Saturday: { name: "Kuch Tum Kaho, Kuch Hum Kahein", host: "Aditi", image: "/images/hosts/kuch-tum-kaho-kuch-hum-kahein.jpg", color: "bg-orange-300 text-orange-900" },
-            Sunday: { name: "Geet Bazaar (Live)", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.jpg", color: "bg-purple-100 text-purple-700" }
+            weekdays: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
+            Saturday: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" }
         }
     },
     {
-        time: "11 AM - 1 PM", hour: 11,
-        shows: {
-            weekdays: { name: "Zara Muskurao", host: "Aayushii", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
-            weekend: { name: "Back-To-Back", color: "bg-muted/30 text-muted-foreground" }
-        }
+        time: "1 PM - 4 PM", hour: 13,
+        shows: { all: { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpg", color: "bg-blue-200 text-blue-800" } }
     },
     {
-        time: "1 PM - 2 PM", hour: 13,
-        shows: { all: { name: "Back-To-Back", color: "bg-muted/30 text-muted-foreground" } }
-    },
-    {
-        time: "2 PM - 4 PM", hour: 14,
-        shows: { all: { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpg", color: "bg-purple-50 text-purple-700" } }
-    },
-    {
-        time: "4 PM - 5 PM", hour: 16,
-        shows: {
-            Monday: { name: "Desh Pardesh (Every Day 4-7pm)", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Tuesday: { name: "Desh Pardesh (Every Day 4-7pm)", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Wednesday: { name: "Back-To-Back", color: "bg-muted/30 text-muted-foreground" },
-            Thursday: { name: "Back-To-Back", color: "bg-muted/30 text-muted-foreground" },
-            Friday: { name: "Back-To-Back", color: "bg-muted/30 text-muted-foreground" },
-            Saturday: { name: "Desh Pardesh (Every Day 4-7pm)", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Sunday: { name: "Legends & Leaders", host: "Steve Rao", color: "bg-blue-900 text-white" }
-        }
-    },
-    {
-        time: "5 PM - 7 PM", hour: 17,
-        shows: {
-            Monday: { name: "Desh Pardesh (Every Day 4-7pm)", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Tuesday: { name: "Desh Pardesh (Every Day 4-7pm)", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Wednesday: { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.jpg", color: "bg-blue-400 text-white" },
-            Thursday: { name: "Hello Vaishnavi", host: "Vaishnavi Palleda", image: "/images/hosts/hello-vaishnavi.jpg", color: "bg-yellow-600 text-white" },
-            Friday: { name: "Dil Se Desi", host: "Jyoti", image: "/images/hosts/dil-se-desi.jpg", color: "bg-red-800 text-white" },
-            Saturday: { name: "Desh Pardesh (Every Day 4-7pm)", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Sunday: { name: "Desh Pardesh (Every Day 4-7pm)", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" }
-        }
+        time: "4 PM - 7 PM", hour: 16,
+        shows: { all: { name: "Desh Pardesh", host: "Vishal the Khushal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" } }
     },
     {
         time: "7 PM - 10 PM", hour: 19,
-        shows: { all: { name: "Nirvana Nights (Back-To-Back Music)", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", color: "bg-cyan-50 text-cyan-700" } }
+        shows: { all: { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpg", color: "bg-purple-50 text-purple-700" } }
     },
     {
-        time: "10 PM - 12 AM", hour: 22,
+        time: "10 PM - 1 AM", hour: 22,
         shows: {
-            weekdays: { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpg", color: "bg-blue-200 text-blue-800" },
-            Saturday: { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpg", color: "bg-blue-200 text-blue-800" },
-            Sunday: { name: "Geet Bazaar (Repeat) / Mehfil", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.jpg", color: "bg-purple-300 text-purple-900" }
+            weekdays: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", color: "bg-cyan-50 text-cyan-700" },
+            Saturday: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", color: "bg-cyan-50 text-cyan-700" }
         }
     }
 ];
 
 export default function SchedulePage() {
-    const [selectedDay, setSelectedDay] = useState<string>(DAYS[new Date().getDay() === 0 ? 6 : new Date().getDay() - 1]);
+    const [selectedDay, setSelectedDay] = useState<string>(() => {
+        return new Intl.DateTimeFormat('en-US', { weekday: 'long', timeZone: 'America/New_York' }).format(new Date());
+    });
 
     const getShowForDay = (entry: ScheduleEntry, day: string) => {
         if (entry.shows.all) return entry.shows.all;
@@ -164,11 +122,11 @@ export default function SchedulePage() {
                                     return (
                                         <div key={idx} className="group bg-card border border-border/50 overflow-hidden flex flex-col md:flex-row shadow-sm hover:border-primary/50 transition-all duration-300">
                                             {show.image ? (
-                                                <div className="aspect-[16/9] md:w-1/3 overflow-hidden">
+                                                <div className="aspect-square md:w-1/3 overflow-hidden bg-black flex items-center justify-center">
                                                     <img
                                                         src={show.image}
                                                         alt={show.host || show.name}
-                                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                                                     />
                                                 </div>
                                             ) : (

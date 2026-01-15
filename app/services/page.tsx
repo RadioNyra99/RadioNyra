@@ -10,18 +10,11 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 export default function ServicesPage() {
     return (
         <div className="min-h-screen bg-background font-sans text-foreground relative overflow-hidden">
-            {/* Decorative Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-                <div className="absolute top-[10%] -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
-                <div className="absolute top-[40%] -right-20 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
-                <div className="absolute bottom-[10%] -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
-            </div>
-
             <Navigation />
 
             <main className="relative z-10">
                 {/* Header Section */}
-                <section className="py-16 md:py-20 bg-primary/5 border-b border-primary/10 text-center relative overflow-hidden">
+                <section className="py-8 md:py-10 bg-primary/5 border-b border-primary/10 text-center relative overflow-hidden">
                     <div className="container mx-auto px-4 fade-in-up">
                         <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter mb-8 text-primary italic drop-shadow-sm">
                             Our Services

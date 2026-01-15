@@ -43,16 +43,7 @@ export default function EventsPage() {
 
             <main className="pb-20">
                 {/* Header with Background */}
-                <section className="relative py-16 bg-black overflow-hidden flex items-center justify-center">
-                    <div className="absolute inset-0 z-0 opacity-40">
-                        <img
-                            src="/images/event_nye_2026.jpg"
-                            alt="Background"
-                            className="w-full h-full object-cover blur-sm scale-105"
-                        />
-                    </div>
-                    <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
-
+                <section className="relative py-8 bg-black overflow-hidden flex items-center justify-center">
                     <div className="relative z-10 container mx-auto px-4 text-center">
                         <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter italic text-white leading-none drop-shadow-2xl">
                             Events

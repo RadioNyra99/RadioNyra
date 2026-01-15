@@ -39,7 +39,7 @@ export default function ContactPage() {
 
       <main>
         {/* HEADER - "Contact Us" */}
-        <section className="py-16 bg-primary text-primary-foreground">
+        <section className="py-8 bg-primary text-primary-foreground">
           <div className="container mx-auto px-4 text-center max-w-4xl">
             <h1 className="text-5xl md:text-8xl font-black mb-8 uppercase tracking-tighter italic">Contact Us</h1>
             <p className="text-xl md:text-2xl opacity-90 leading-relaxed font-bold uppercase tracking-widest">

@@ -16,7 +16,7 @@ export default function HomePage() {
 
   // Radio Nyra Shows Data
   const shows = [
-    { name: "Non Stop Hungama", host: "Sohail", image: "/images/hosts/non-stop-hungama.jpg", stationId: STATIONS.Hindi.id },
+    { name: "Subha Ki Shuruaat", host: "Sohail", image: "/images/hosts/non-stop-hungama.jpg", stationId: STATIONS.Hindi.id },
     { name: "Morning Commute", host: "Raj Persaud", image: "/images/hosts/cha-pe-charcha.jpg", stationId: STATIONS.Hindi.id },
     { name: "Hello Vaishnavi", host: "Vaishnavi Palleda", image: "/images/hosts/hello-vaishnavi.jpg", stationId: STATIONS.Hindi.id },
     { name: "Triangle Tunes", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpg", stationId: STATIONS.Hindi.id },

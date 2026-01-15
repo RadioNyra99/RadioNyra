@@ -26,11 +26,11 @@ const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
 const SCHEDULE_DATA: ScheduleEntry[] = [
     {
         time: "12 AM - 6 AM", hour: 0,
-        shows: { all: { name: "Back-To-Back Music", color: "bg-muted/30 text-muted-foreground" } }
+        shows: { all: { name: "Back to Back", image: "/Back to Back.jpg", color: "bg-muted/30 text-muted-foreground" } }
     },
     {
         time: "6 AM - 7 AM", hour: 6,
-        shows: { all: { name: "Geetanjali", color: "bg-yellow-100 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-400" } }
+        shows: { all: { name: "Geetanjali", image: "/Geetanjali.jpg", color: "bg-yellow-100 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-400" } }
     },
     {
         time: "7 AM - 8 AM", hour: 7,
@@ -56,7 +56,7 @@ const SCHEDULE_DATA: ScheduleEntry[] = [
         shows: {
             weekdays: { name: "Zara Muskurao", host: "Aayushii", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
             Saturday: { name: "Zara Muskurao", host: "Aayushii", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
-            Sunday: { name: "Two bros/Dronas Stock Talk", color: "bg-blue-100 text-blue-700" }
+            Sunday: { name: "The Real Returns Show", image: "/The real return show.jpg", color: "bg-blue-100 text-blue-700" }
         }
     },
     {
@@ -72,7 +72,7 @@ const SCHEDULE_DATA: ScheduleEntry[] = [
             Thursday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
             Friday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
             Saturday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Sunday: { name: "Legends & Leaders", host: "Steve Rao", color: "bg-blue-900 text-white" }
+            Sunday: { name: "Legends and Leaders", host: "Steve Rao", image: "/Legends and Leaders.jpg", color: "bg-blue-900 text-white" }
         }
     },
     {
@@ -116,7 +116,7 @@ const SCHEDULE_DATA: ScheduleEntry[] = [
         shows: {
             weekdays: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", color: "bg-cyan-50 text-cyan-700" },
             Saturday: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", color: "bg-cyan-50 text-cyan-700" },
-            Sunday: { name: "Back-To-Back Music", color: "bg-muted/30 text-muted-foreground" }
+            Sunday: { name: "Back to Back", image: "/Back to Back.jpg", color: "bg-muted/30 text-muted-foreground" }
         }
     }
 ];

@@ -11,7 +11,7 @@ export default function AboutPage() {
 
             <main>
                 {/* HERO */}
-                <section className="py-16 bg-primary text-primary-foreground text-left">
+                <section className="py-12 bg-primary text-primary-foreground text-left">
                     <div className="container mx-auto px-4 max-w-5xl">
                         <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-6 italic whitespace-nowrap">About Radio Nyra</h1>
                         <p className="text-lg md:text-xl font-bold uppercase tracking-[0.3em] opacity-80">
@@ -21,7 +21,7 @@ export default function AboutPage() {
                 </section>
 
                 {/* CONTENT */}
-                <section className="py-16 bg-background">
+                <section className="py-12 bg-background">
                     <div className="container mx-auto px-4 max-w-5xl">
                         <div className="space-y-16">
 

@@ -39,9 +39,9 @@ export default function FAQPage() {
         <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-white">
             <Navigation />
 
-            <main className="py-20">
+            <main className="py-16">
                 <div className="container mx-auto px-4 max-w-3xl">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-12">
                         <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4 italic text-primary">
                             Frequently Asked <span className="text-foreground">Questions</span>
                         </h1>
@@ -75,7 +75,7 @@ export default function FAQPage() {
                         ))}
                     </div>
 
-                    <div className="mt-20 p-10 bg-primary/5 border border-primary/10 text-center">
+                    <div className="mt-16 p-10 bg-primary/5 border border-primary/10 text-center">
                         <h2 className="text-2xl font-black uppercase tracking-tight mb-4 italic">Still have questions?</h2>
                         <p className="mb-8 text-muted-foreground">We are here to help you. Reach out to us through our contact page.</p>
                         <a

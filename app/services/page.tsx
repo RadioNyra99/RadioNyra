@@ -21,7 +21,7 @@ export default function ServicesPage() {
 
             <main className="relative z-10">
                 {/* Header Section */}
-                <section className="py-24 md:py-32 bg-primary/5 border-b border-primary/10 text-center relative overflow-hidden">
+                <section className="py-16 md:py-20 bg-primary/5 border-b border-primary/10 text-center relative overflow-hidden">
                     <div className="container mx-auto px-4 fade-in-up">
                         <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter mb-8 text-primary italic drop-shadow-sm">
                             Our Services
@@ -34,7 +34,7 @@ export default function ServicesPage() {
                 </section>
 
                 {/* SECTION 1: ON-AIR ADVERTISING */}
-                <section id="on-air" className="py-24 bg-background border-t border-border/50">
+                <section id="on-air" className="py-16 bg-background border-t border-border/50">
                     <div className="container mx-auto px-4">
                         <div className="flex items-center gap-6 mb-16 fade-in-up">
                             <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white shadow-[0_0_20px_rgba(255,0,0,0.3)]">
@@ -93,7 +93,7 @@ export default function ServicesPage() {
                 </section>
 
                 {/* SECTION 2: SPONSORSHIP PACKAGES */}
-                <section id="sponsorship" className="py-24 bg-muted/30 border-y border-border relative">
+                <section id="sponsorship" className="py-16 bg-muted/30 border-y border-border relative">
                     <div className="container mx-auto px-4">
                         <div className="flex items-center gap-6 mb-16 fade-in-up">
                             <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white shadow-[0_0_20px_rgba(255,0,0,0.3)]">
@@ -147,7 +147,7 @@ export default function ServicesPage() {
                 </section>
 
                 {/* SECTION 3: DIGITAL & SOCIAL MEDIA PROMOTIONS */}
-                <section id="digital" className="py-24 bg-background">
+                <section id="digital" className="py-16 bg-background">
                     <div className="container mx-auto px-4">
                         <div className="flex items-center gap-6 mb-16 fade-in-up">
                             <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white shadow-[0_0_20px_rgba(255,0,0,0.3)]">
@@ -193,7 +193,7 @@ export default function ServicesPage() {
                 </section>
 
                 {/* SECTION 4: IN-STORE DIGITAL DISPLAYS */}
-                <section id="in-store" className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
+                <section id="in-store" className="py-16 bg-primary text-primary-foreground relative overflow-hidden">
                     <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
                     <div className="container mx-auto px-4 relative z-10">
                         <div className="flex flex-col md:flex-row items-center gap-16">
@@ -236,7 +236,7 @@ export default function ServicesPage() {
                 </section>
 
                 {/* SECTION 5: MONTHLY PACKAGES */}
-                <section id="packages" className="py-24 bg-background">
+                <section id="packages" className="py-16 bg-background">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-20 fade-in-up">
                             <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter mb-6 text-primary italic">Monthly Packages</h2>

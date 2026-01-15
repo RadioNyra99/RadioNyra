@@ -137,7 +137,7 @@ export default function HomePage() {
         </section>
 
         {/* RADIO NYRA SHOWS SECTION */}
-        <section id="shows" className="pt-0 pb-12 bg-muted/20">
+        <section id="shows" className="py-12 bg-muted/20">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
               <div>
@@ -188,7 +188,7 @@ export default function HomePage() {
         </section>
 
         {/* OUR PARTNERS */}
-        <section className="py-20 bg-background border-t border-border/50">
+        <section className="py-12 bg-background border-t border-border/50">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-2xl font-bold uppercase tracking-tighter mb-12 border-l-4 border-primary pl-4 text-left">Our Partners</h2>
 

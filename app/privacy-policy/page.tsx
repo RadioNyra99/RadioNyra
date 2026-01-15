@@ -8,7 +8,7 @@ export default function PrivacyPolicyPage() {
         <div className="min-h-screen bg-background font-sans">
             <Navigation />
 
-            <main className="py-16 md:py-24">
+            <main className="py-12 md:py-16">
                 <div className="container mx-auto px-4 max-w-4xl">
                     {/* Header */}
                     <div className="mb-12 border-b border-border/40 pb-8">

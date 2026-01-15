@@ -125,7 +125,7 @@ export default function SchedulePage() {
 
             <main>
                 {/* Header Section */}
-                <section className="py-20 bg-primary/5 border-b border-primary/10 text-center">
+                <section className="py-12 bg-primary/5 border-b border-primary/10 text-center">
                     <div className="container mx-auto px-4">
                         <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-6 text-primary italic">
                             The Schedule
@@ -136,7 +136,7 @@ export default function SchedulePage() {
                     </div>
                 </section>
 
-                <section className="py-12 md:py-24 bg-background">
+                <section className="py-12 md:py-16 bg-background">
                     <div className="container mx-auto px-4">
 
                         {/* Mobile View: Day Selector and Vertical List */}
@@ -147,8 +147,8 @@ export default function SchedulePage() {
                                         key={day}
                                         onClick={() => setSelectedDay(day)}
                                         className={`px-6 py-2 rounded-full whitespace-nowrap text-sm font-black uppercase tracking-widest transition-all border-2 ${selectedDay === day
-                                                ? "bg-primary border-primary text-white shadow-lg scale-105"
-                                                : "bg-muted/30 border-transparent text-muted-foreground"
+                                            ? "bg-primary border-primary text-white shadow-lg scale-105"
+                                            : "bg-muted/30 border-transparent text-muted-foreground"
                                             }`}
                                     >
                                         {day}
@@ -224,7 +224,7 @@ export default function SchedulePage() {
                     </div>
                 </section>
 
-                <section className="py-24 bg-muted/20 border-t border-border">
+                <section className="py-16 bg-muted/20 border-t border-border">
                     <div className="container mx-auto px-4 text-center max-w-2xl">
                         <h2 className="text-4xl font-black uppercase tracking-tighter mb-4 italic">Tune In Anywhere</h2>
                         <p className="text-muted-foreground font-bold uppercase tracking-widest text-xs mb-10 leading-loose">

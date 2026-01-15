@@ -67,7 +67,7 @@ export default function PodcastsPage() {
 
             <main>
                 {/* Header Section */}
-                <section className="py-20 bg-primary/5 border-b border-primary/10 text-center">
+                <section className="py-12 bg-primary/5 border-b border-primary/10 text-center">
                     <div className="container mx-auto px-4">
                         <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-6 text-primary italic">
                             Podcast
@@ -207,7 +207,7 @@ export default function PodcastsPage() {
                 </section>
 
                 {/* Episodes Section - MOVED TO BOTTOM */}
-                <section className="py-24 bg-background">
+                <section className="py-16 bg-background">
                     <div className="container mx-auto px-4 max-w-6xl">
                         <h2 className="text-3xl font-black uppercase tracking-tighter mb-12 border-l-4 border-primary pl-4 italic">Recent Episodes</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -247,7 +247,7 @@ export default function PodcastsPage() {
                     </div>
                 </section>
 
-                <section className="py-24 bg-primary text-white text-center">
+                <section className="py-16 bg-primary text-white text-center">
                     <div className="container mx-auto px-4">
                         <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4 italic">Never Miss an Episode</h2>
                         <p className="text-white/80 font-bold uppercase tracking-widest text-xs mb-10">Subscribe to our newsletter for weekly podcast highlights.</p>

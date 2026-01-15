@@ -14,7 +14,7 @@ export default function AdvertisePage() {
 
             <main>
                 {/* Hero Section */}
-                <section className="relative py-24 md:py-32 overflow-hidden bg-gray-50 border-b border-gray-100">
+                <section className="relative py-16 md:py-20 overflow-hidden bg-gray-50 border-b border-gray-100">
                     <div className="container mx-auto px-4 relative z-10 text-center md:text-left">
                         <div className="max-w-4xl">
                             <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter mb-8 italic leading-none text-gray-900">
@@ -31,7 +31,7 @@ export default function AdvertisePage() {
                 </section>
 
                 {/* Features Section */}
-                <section className="py-24 bg-white border-b border-gray-100">
+                <section className="py-16 bg-white border-b border-gray-100">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {[
@@ -51,7 +51,7 @@ export default function AdvertisePage() {
                 </section>
 
                 {/* Form Section */}
-                <section id="inquiry" className="py-24 bg-white">
+                <section id="inquiry" className="py-16 bg-white">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
                             {/* Content Column */}

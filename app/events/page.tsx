@@ -11,9 +11,7 @@ export default function EventsPage() {
     const [lightbox, setLightbox] = useState({ isOpen: false, index: 0 })
 
     // Data moved from Home Page
-    // Data moved from Home Page
     const upcomingEvents = [
-        { title: "Bollywood Night with Radio Nyra", date: "Coming Soon", location: "TBA", image: "/bollywood-event-flyer.jpg" },
         { title: "GDC Festival of Gaming", date: "Mar 9-13, 2026", location: "San Francisco, CA", image: "/GDC_250x250.gif", link: "https://gdc.informafestivals.com/2026/registrations/Attendee?_mc=barter_gdcsf_gdcsf_le_x_partn" },
         { title: "Valentine's Day Special", date: "Feb 14, 2026", location: "Radio Nyra Studios", image: "/Valientiens day.jpg" },
         { title: "Holi Festival Celebration", date: "Mar 25, 2026", location: "City Park", image: "/Holi.jpg" },
@@ -45,7 +43,7 @@ export default function EventsPage() {
 
             <main className="pb-20">
                 {/* Header with Background */}
-                <section className="relative py-24 bg-black overflow-hidden flex items-center justify-center">
+                <section className="relative py-16 bg-black overflow-hidden flex items-center justify-center">
                     <div className="absolute inset-0 z-0 opacity-40">
                         <img
                             src="/images/event_nye_2026.jpg"
@@ -65,7 +63,7 @@ export default function EventsPage() {
                     </div>
                 </section>
 
-                <div className="container mx-auto px-4 mt-20">
+                <div className="container mx-auto px-4 mt-12">
                     {/* UPCOMING EVENTS */}
                     <section className="mb-16">
                         <h2 className="text-2xl font-bold uppercase tracking-tighter mb-8 border-l-4 border-primary pl-4">Upcoming Events</h2>

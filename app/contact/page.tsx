@@ -39,7 +39,7 @@ export default function ContactPage() {
 
       <main>
         {/* HEADER - "Contact Us" */}
-        <section className="py-24 bg-primary text-primary-foreground">
+        <section className="py-16 bg-primary text-primary-foreground">
           <div className="container mx-auto px-4 text-center max-w-4xl">
             <h1 className="text-5xl md:text-8xl font-black mb-8 uppercase tracking-tighter italic">Contact Us</h1>
             <p className="text-xl md:text-2xl opacity-90 leading-relaxed font-bold uppercase tracking-widest">
@@ -49,7 +49,7 @@ export default function ContactPage() {
         </section>
 
         {/* SECTION 1: CONTACT FORM (Moved to top as requested) */}
-        <section className="py-24 bg-muted/30">
+        <section className="py-16 bg-muted/30">
           <div className="container mx-auto px-4 text-center mb-12">
             <h2 className="text-4xl font-black uppercase tracking-tighter mb-4">Send a Message</h2>
             <p className="text-muted-foreground font-bold uppercase tracking-widest text-xs">Reach out to the Radio Nyra team</p>
@@ -123,7 +123,7 @@ export default function ContactPage() {
         </section>
 
         {/* SECTION 2: SERVICES OVERVIEW */}
-        <section className="py-24 bg-background border-t border-border/50">
+        <section className="py-16 bg-background border-t border-border/50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-black uppercase tracking-tighter text-foreground italic">Our Services Overview</h2>

@@ -43,7 +43,7 @@ export default function MediaKitPage() {
 
             <main>
                 {/* HERO SECTION */}
-                <section className="pt-32 pb-20 bg-gray-50 border-b border-gray-100">
+                <section className="pt-24 pb-16 bg-gray-50 border-b border-gray-100">
                     <div className="container mx-auto px-4 text-center">
                         <h1 className="text-4xl md:text-7xl font-black tracking-tight uppercase italic mb-6">
                             Radio Nyra – <span className="text-primary">Media Kit</span>
@@ -55,7 +55,7 @@ export default function MediaKitPage() {
                 </section>
 
                 {/* MEDIA KIT CONTENT */}
-                <section className="py-20 lg:py-32">
+                <section className="py-16 lg:py-24">
                     <div className="container mx-auto px-4">
                         <div className="grid gap-16 lg:gap-24">
                             {sections.map((section, idx) => (
@@ -96,7 +96,7 @@ export default function MediaKitPage() {
                 </section>
 
                 {/* CALL TO ACTION */}
-                <section className="py-20 bg-black text-white">
+                <section className="py-16 bg-black text-white">
                     <div className="container mx-auto px-4 text-center">
                         <h3 className="text-3xl md:text-5xl font-black uppercase italic mb-8">Need anything else?</h3>
                         <p className="text-gray-400 mb-12 max-w-2xl mx-auto text-lg">

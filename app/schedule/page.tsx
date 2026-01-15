@@ -25,40 +25,98 @@ const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
 
 const SCHEDULE_DATA: ScheduleEntry[] = [
     {
+        time: "12 AM - 6 AM", hour: 0,
+        shows: { all: { name: "Back-To-Back Music", color: "bg-muted/30 text-muted-foreground" } }
+    },
+    {
+        time: "6 AM - 7 AM", hour: 6,
+        shows: { all: { name: "Geetanjali", color: "bg-yellow-100 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-400" } }
+    },
+    {
         time: "7 AM - 8 AM", hour: 7,
         shows: { all: { name: "Subha Ki Shuruaat", host: "Sohail", image: "/images/hosts/non-stop-hungama.jpg", color: "bg-blue-100 text-blue-700" } }
     },
     {
         time: "8 AM - 10 AM", hour: 8,
         shows: {
-            weekdays: { name: "Chai Pe Charcha*", host: "Raj", image: "/images/hosts/cha-pe-charcha.jpg", color: "bg-cyan-100 text-cyan-700" },
+            weekdays: { name: "Chai Pe Charcha", host: "Raj", image: "/images/hosts/cha-pe-charcha.jpg", color: "bg-cyan-100 text-cyan-700" },
             weekend: { name: "Subha Ki Shuruaat", host: "Sohail", image: "/images/hosts/non-stop-hungama.jpg", color: "bg-blue-100 text-blue-700" }
         }
     },
     {
-        time: "10 AM - 1 PM", hour: 10,
+        time: "10 AM - 12 PM", hour: 10,
         shows: {
-            weekdays: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
-            Saturday: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" }
+            weekdays: { name: "Zara Muskurao", host: "Aayushii", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
+            Saturday: { name: "Zara Muskurao", host: "Aayushii", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
+            Sunday: { name: "Geet Bazaar (Live)", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.jpg", color: "bg-purple-100 text-purple-700" }
+        }
+    },
+    {
+        time: "12 PM - 1 PM", hour: 12,
+        shows: {
+            weekdays: { name: "Zara Muskurao", host: "Aayushii", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
+            Saturday: { name: "Zara Muskurao", host: "Aayushii", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
+            Sunday: { name: "Two bros/Dronas Stock Talk", color: "bg-blue-100 text-blue-700" }
         }
     },
     {
         time: "1 PM - 4 PM", hour: 13,
-        shows: { all: { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpg", color: "bg-blue-200 text-blue-800" } }
+        shows: { all: { name: "Triangle Tunes and Talks", host: "Monica", image: "/images/hosts/triangle-tunes.jpg", color: "bg-blue-200 text-blue-800" } }
     },
     {
-        time: "4 PM - 7 PM", hour: 16,
-        shows: { all: { name: "Desh Pardesh", host: "Vishal the Khushal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" } }
+        time: "4 PM - 5 PM", hour: 16,
+        shows: {
+            Monday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Tuesday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Wednesday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Thursday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Friday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Saturday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Sunday: { name: "Legends & Leaders", host: "Steve Rao", color: "bg-blue-900 text-white" }
+        }
+    },
+    {
+        time: "5 PM - 6 PM", hour: 17,
+        shows: {
+            Monday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Tuesday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Wednesday: { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.jpg", color: "bg-blue-400 text-white" },
+            Thursday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Friday: { name: "Dil Se Desi", host: "Jyoti", image: "/images/hosts/dil-se-desi.jpg", color: "bg-red-800 text-white" },
+            Saturday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Sunday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" }
+        }
+    },
+    {
+        time: "6 PM - 7 PM", hour: 18,
+        shows: {
+            Monday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Tuesday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Wednesday: { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.jpg", color: "bg-blue-400 text-white" },
+            Thursday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Friday: { name: "Dil Se Desi", host: "Jyoti", image: "/images/hosts/dil-se-desi.jpg", color: "bg-red-800 text-white" },
+            Saturday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Sunday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" }
+        }
     },
     {
         time: "7 PM - 10 PM", hour: 19,
-        shows: { all: { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpg", color: "bg-purple-50 text-purple-700" } }
+        shows: { all: { name: "Bollywood Bliss", host: "Bharti", image: "/images/hosts/bollywood-bliss.jpg", color: "bg-purple-50 text-purple-700" } }
     },
     {
-        time: "10 PM - 1 AM", hour: 22,
+        time: "10 PM - 11 PM", hour: 22,
         shows: {
             weekdays: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", color: "bg-cyan-50 text-cyan-700" },
-            Saturday: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", color: "bg-cyan-50 text-cyan-700" }
+            Saturday: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", color: "bg-cyan-50 text-cyan-700" },
+            Sunday: { name: "Geet Bazaar (Repeat) / Mehfil", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.jpg", color: "bg-purple-300 text-purple-900" }
+        }
+    },
+    {
+        time: "11 PM - 12 AM", hour: 23,
+        shows: {
+            weekdays: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", color: "bg-cyan-50 text-cyan-700" },
+            Saturday: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", color: "bg-cyan-50 text-cyan-700" },
+            Sunday: { name: "Back-To-Back Music", color: "bg-muted/30 text-muted-foreground" }
         }
     }
 ];
@@ -115,48 +173,71 @@ export default function SchedulePage() {
                             </div>
 
                             <div className="space-y-8">
-                                {SCHEDULE_DATA.sort((a, b) => a.hour - b.hour).map((entry, idx) => {
-                                    const show = getShowForDay(entry, selectedDay);
-                                    if (show.name === "--") return null;
+                                {(() => {
+                                    const sortedData = [...SCHEDULE_DATA].sort((a, b) => a.hour - b.hour);
+                                    const dayShows = sortedData.map(entry => ({
+                                        ...entry,
+                                        activeShow: getShowForDay(entry, selectedDay)
+                                    })).filter(item => item.activeShow.name !== "--");
 
-                                    return (
-                                        <div key={idx} className="group bg-card border border-border/50 overflow-hidden flex flex-col md:flex-row shadow-sm hover:border-primary/50 transition-all duration-300">
-                                            {show.image ? (
-                                                <div className="aspect-square md:w-1/3 overflow-hidden bg-black flex items-center justify-center">
-                                                    <img
-                                                        src={show.image}
-                                                        alt={show.host || show.name}
-                                                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-                                                    />
-                                                </div>
-                                            ) : (
-                                                <div className="md:w-1/3 bg-muted/20 flex items-center justify-center p-8">
-                                                    <Clock className="w-12 h-12 text-muted-foreground/20" />
-                                                </div>
-                                            )}
-                                            <div className="p-8 flex-1 flex flex-col justify-center">
-                                                <div className="flex items-center gap-2 text-primary mb-4">
-                                                    <Clock className="w-4 h-4" />
-                                                    <span className="text-sm font-black uppercase tracking-widest">{entry.time}</span>
-                                                </div>
-                                                <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tighter leading-tight mb-3 italic">
-                                                    {show.name}
-                                                </h3>
-                                                {show.host && (
-                                                    <div className="flex items-center gap-2 text-muted-foreground mb-6">
-                                                        <User className="w-4 h-4" />
-                                                        <span className="text-xs font-bold uppercase tracking-widest">{show.host}</span>
+                                    const groupedShows: any[] = [];
+                                    dayShows.forEach((item) => {
+                                        const lastGroup = groupedShows[groupedShows.length - 1];
+                                        if (lastGroup &&
+                                            lastGroup.activeShow.name === item.activeShow.name &&
+                                            lastGroup.activeShow.host === item.activeShow.host &&
+                                            lastGroup.activeShow.image === item.activeShow.image) {
+
+                                            // Merge time
+                                            const startTime = lastGroup.time.split(' - ')[0];
+                                            const endTime = item.time.split(' - ')[1];
+                                            lastGroup.time = `${startTime} - ${endTime}`;
+                                        } else {
+                                            groupedShows.push({ ...item });
+                                        }
+                                    });
+
+                                    return groupedShows.map((item, idx) => {
+                                        const show = item.activeShow;
+                                        return (
+                                            <div key={idx} className="group bg-card border border-border/50 overflow-hidden flex flex-col md:flex-row shadow-sm hover:border-primary/50 transition-all duration-300">
+                                                {show.image ? (
+                                                    <div className="aspect-square md:w-1/3 overflow-hidden bg-black flex items-center justify-center">
+                                                        <img
+                                                            src={show.image}
+                                                            alt={show.host || show.name}
+                                                            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                                                        />
+                                                    </div>
+                                                ) : (
+                                                    <div className="md:w-1/3 bg-muted/20 flex items-center justify-center p-8">
+                                                        <Clock className="w-12 h-12 text-muted-foreground/20" />
                                                     </div>
                                                 )}
-                                                <div>
-                                                    <div className={`px-4 py-1.5 text-[10px] font-black uppercase tracking-widest inline-block ${show.color}`}>
-                                                        Live on Air
+                                                <div className="p-8 flex-1 flex flex-col justify-center">
+                                                    <div className="flex items-center gap-2 text-primary mb-4">
+                                                        <Clock className="w-4 h-4" />
+                                                        <span className="text-sm font-black uppercase tracking-widest">{item.time}</span>
+                                                    </div>
+                                                    <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tighter leading-tight mb-3 italic">
+                                                        {show.name}
+                                                    </h3>
+                                                    {show.host && (
+                                                        <div className="flex items-center gap-2 text-muted-foreground mb-6">
+                                                            <User className="w-4 h-4" />
+                                                            <span className="text-xs font-bold uppercase tracking-widest">{show.host}</span>
+                                                        </div>
+                                                    )}
+                                                    <div>
+                                                        <div className={`px-4 py-1.5 text-[10px] font-black uppercase tracking-widest inline-block ${show.color}`}>
+                                                            Live on Air
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    );
-                                })}
+                                        );
+                                    });
+                                })()}
                             </div>
                         </div>
                     </div>

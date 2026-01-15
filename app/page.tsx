@@ -210,7 +210,7 @@ export default function HomePage() {
                 </div>
               </Link>
 
-              {/* Other Partners (Placeholders) */}
+              {/* All Other Partners Restored */}
               {Array.from({ length: 29 }, (_, i) => i + 2).map((num) => (
                 <div key={`partner-${num}`} className="group border border-border/30 hover:border-primary/50 transition-all duration-300 bg-transparent p-4 flex items-center justify-center h-32 hover:shadow-lg">
                   <div className="relative w-full h-full">

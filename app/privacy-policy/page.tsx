@@ -21,97 +21,96 @@ export default function PrivacyPolicyPage() {
                     <div className="space-y-12 text-lg text-muted-foreground leading-relaxed">
 
                         <section>
-                            <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
-                                <span className="text-primary">01.</span> Introduction
+                            <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4">
+                                Privacy Policy
                             </h2>
                             <p className="mb-4">
-                                Welcome to Radio Nyra ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about our policy, or our practices with regards to your personal information, please contact us at <a href="mailto:info@radionyra.com" className="text-primary hover:underline">info@radionyra.com</a>.
+                                This Privacy Policy is prepared by Radio Nyra USA and whose registered address is 4819 Emperor Blvd, Durham, NC 27703. (“We”) are committed to protecting and preserving the privacy of our visitors when visiting our site or communicating electronically with us.
                             </p>
                             <p>
-                                When you visit our website <strong>radionyra.com</strong> (the "Website"), use our mobile application (the "App"), and use our services, you trust us with your personal information. We take your privacy very seriously. In this privacy notice, we describe our privacy policy. We seek to explain to you in the clearest way possible what information we collect, how we use it, and what rights you have in relation to it.
+                                This policy sets out how we process any personal data we collect from you or that you provide to us through our website and social media sites. We confirm that we will keep your information secure and that we will comply fully with all applicable United States of America Data Protection legislation and regulations. Please read the following carefully to understand what happens to personal data that you choose to provide to us, or that we collect from you when you visit our sites. By submitting information you are accepting and consenting to the practices described in this policy.
                             </p>
                         </section>
 
                         <section>
-                            <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
-                                <span className="text-primary">02.</span> Information We Collect
+                            <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4">
+                                Types of information we may collect from you
                             </h2>
                             <p className="mb-4">
-                                We collect personal information that you voluntarily provide to us when expressing an interest in obtaining information about us or our products and services, when participating in activities on the Website or App or otherwise contacting us.
+                                We may collect, store and use the following kinds of personal information about individuals who visit and use our website and social media sites:
                             </p>
+                            <p>
+                                <strong>Information you supply to us.</strong> You may supply us with information about you by filling in forms on our website or social media. This includes information you provide when you submit a contact/enquiry form. The information you give us may include, but not limited to, your name, address, e-mail address and phone number.
+                            </p>
+                        </section>
 
-                            <div className="bg-muted/30 p-6 rounded-lg border border-border/50 mt-6">
-                                <h3 className="text-lg font-bold text-foreground uppercase tracking-wide mb-3">Mobile Application Data</h3>
-                                <p className="mb-4 text-sm">When you use our App, we may also process the following information if you grant us access or permission:</p>
-                                <ul className="space-y-4">
+                        <section>
+                            <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4">
+                                How we may use the information we collect
+                            </h2>
+                            <p className="mb-4">
+                                We use the information in the following ways:
+                            </p>
+                            <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
+                                <h3 className="text-lg font-bold text-foreground uppercase tracking-wide mb-3">Information you supply to us</h3>
+                                <p className="mb-4">We will use this information:</p>
+                                <ul className="space-y-3 pl-4">
                                     <li className="flex gap-3">
                                         <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-primary mt-2.5" />
-                                        <span><strong>Mobile Device Access:</strong> We may request access or permission to certain features from your mobile device, including bluetooth, and other features. If you wish to change our access or permissions, you may do so in your device's settings.</span>
+                                        <span>to provide you with information and/or services that you request from us;</span>
                                     </li>
                                     <li className="flex gap-3">
                                         <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-primary mt-2.5" />
-                                        <span><strong>Push Notifications:</strong> We may request to send you push notifications regarding your account or certain features of the App. If you wish to opt-out from receiving these types of communications, you may turn them off in your device's settings.</span>
+                                        <span>To contact you to provide the information requested.</span>
                                     </li>
                                 </ul>
                             </div>
                         </section>
 
                         <section>
-                            <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
-                                <span className="text-primary">03.</span> How We Use Your Information
+                            <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4">
+                                Disclosure of your information
                             </h2>
-                            <p className="mb-6">
-                                We use personal information collected via our Website/App for a variety of business purposes described below. We process your personal information for these purposes in reliance on our legitimate business interests, in order to enter into or perform a contract with you, with your consent, and/or for compliance with our legal obligations.
+                            <p className="mb-4">
+                                Any information you provide to us will either be emailed directly to us or may be stored on a secure server.
                             </p>
-                            <ul className="grid md:grid-cols-2 gap-3 text-sm">
-                                {[
-                                    "Facilitate account creation and logon process",
-                                    "Send marketing and promotional communications",
-                                    "Send administrative information",
-                                    "Fulfill and manage orders",
-                                    "Deliver targeted advertising",
-                                    "Administer surveys and prize draws",
-                                    "Enable user-to-user communications",
-                                    "Enforce terms, conditions and policies"
-                                ].map((item, i) => (
-                                    <li key={i} className="flex items-center gap-2 text-foreground/80 font-medium">
-                                        <span className="text-primary text-xs">●</span> {item}
-                                    </li>
-                                ))}
-                            </ul>
-                        </section>
-
-                        <section>
-                            <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
-                                <span className="text-primary">04.</span> Sharing Your Information
-                            </h2>
-                            <p>
-                                We only share information with your consent, to comply with laws, to provide you with services, to protect your rights, or to fulfill business obligations.
+                            <p className="mb-4">
+                                We do not rent, sell or share personal information about you with other people or non-affiliated companies.
+                            </p>
+                            <p className="mb-4">
+                                We will use all reasonable efforts to ensure that your personal data is not disclosed to regional/national institutions and authorities, unless required by law or other regulations.
+                            </p>
+                            <p className="italic text-sm">
+                                Unfortunately, the transmission of information via the internet is not completely secure. Although we will do our best to protect your personal data, we cannot guarantee the security of your data transmitted to our site; any transmission is at your own risk. Once we have received your information, we will use strict procedures and security features to try to prevent unauthorized access.
                             </p>
                         </section>
 
                         <section>
-                            <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
-                                <span className="text-primary">05.</span> Third-Party Websites
+                            <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4">
+                                Your rights – access to your personal data
+                            </h2>
+                            <p className="mb-4">
+                                You have the right to ensure that your personal data is being processed lawfully (“Subject Access Right”). Your subject access right can be exercised in accordance with data protection laws and regulations. Any subject access request must be made in writing to Ravi Cherukuri. We will provide your personal data to you within the statutory time frames. To enable us to trace any of your personal data that we may be holding, we may need to request further information from you. If you have a complaint about how we have used your information, you have the right to complain to the Information Commissioner’s Office (ICO).
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4">
+                                Changes to our privacy policy
                             </h2>
                             <p>
-                                The Website and App may contain advertisements from third parties that are not affiliated with us and which may link to other websites, online services or mobile applications. We cannot guarantee the safety and privacy of data you provide to any third parties. Any data collected by third parties is not covered by this privacy policy. We are not responsible for the content or privacy and security practices and policies of any third parties, including other websites, services or applications that may be linked to or from the Website or App. You should review the policies of such third parties and contact them directly to respond to your questions.
+                                Any changes we may make to our privacy policy in the future will be posted on this page and, where appropriate, notified to you by email. Please check back frequently to see any updates or changes to our privacy policy.
                             </p>
                         </section>
 
                         <section>
-                            <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
-                                <span className="text-primary">06.</span> Contact Us
+                            <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4">
+                                Contact
                             </h2>
                             <div className="bg-primary/5 border border-primary/20 p-8 rounded-lg mt-6">
                                 <p className="mb-4 font-bold text-foreground">
-                                    If you have questions or comments about this policy, you may email us at <a href="mailto:info@radionyra.com" className="text-primary hover:underline">info@radionyra.com</a> or by post to:
+                                    Questions, comments and requests regarding this privacy policy are welcomed and should be addressed to Radio Nyra Support at <a href="mailto:info@radionyra.com" className="text-primary hover:underline">info@radionyra.com</a>
                                 </p>
-                                <address className="not-italic text-foreground font-mono uppercase tracking-widest text-sm">
-                                    Radio Nyra<br />
-                                    Raleigh - Durham<br />
-                                    NC, USA
-                                </address>
                             </div>
                         </section>
 

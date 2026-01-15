@@ -31,8 +31,8 @@ export default function Scene3D() {
           }}
         />
 
-        {/* Floating Particles (CSS Only) */}
-        <div className="absolute inset-0">
+        {/* Floating Particles Disabled for Phase 1 Diagnosis */}
+        {/* <div className="absolute inset-0">
           {[...Array(12)].map((_, i) => (
             <div
               key={i}
@@ -46,7 +46,7 @@ export default function Scene3D() {
               }}
             />
           ))}
-        </div>
+        </div> */}
       </div>
 
       <style jsx>{`

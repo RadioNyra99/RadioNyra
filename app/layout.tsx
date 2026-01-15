@@ -79,7 +79,7 @@ export default function RootLayout({
             <AudioPlayer />
           </AudioProvider>
         </ThemeProvider>
-        <Analytics />
+        {/* <Analytics /> */}
       </body>
     </html>
   )

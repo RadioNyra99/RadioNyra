@@ -101,7 +101,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
         }
 
         fetchMetadata()
-        const interval = setInterval(fetchMetadata, 30000)
+        const interval = setInterval(fetchMetadata, 120000) // Increased to 120s for Phase 2 Diagnosis
         return () => clearInterval(interval)
     }, [currentStation])
 

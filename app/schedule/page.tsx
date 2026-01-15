@@ -72,30 +72,30 @@ const SCHEDULE_DATA: ScheduleEntry[] = [
     {
         time: "4 PM - 5 PM", hour: 16,
         shows: {
-            Monday: { name: "Desh Pardesh", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Tuesday: { name: "Desh Pardesh", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Wednesday: { name: "Misc. or Podcast", color: "bg-lime-100 text-lime-800" },
-            Thursday: { name: "Misc. or Podcast", color: "bg-lime-100 text-lime-800" },
-            Friday: { name: "Misc. or Podcast", color: "bg-lime-100 text-lime-800" },
-            Saturday: { name: "Desh Pardesh", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Monday: { name: "Desh Pardesh (Every Day 4-7pm)", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Tuesday: { name: "Desh Pardesh (Every Day 4-7pm)", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Wednesday: { name: "Back-To-Back", color: "bg-muted/30 text-muted-foreground" },
+            Thursday: { name: "Back-To-Back", color: "bg-muted/30 text-muted-foreground" },
+            Friday: { name: "Back-To-Back", color: "bg-muted/30 text-muted-foreground" },
+            Saturday: { name: "Desh Pardesh (Every Day 4-7pm)", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
             Sunday: { name: "Legends & Leaders", host: "Steve Rao", color: "bg-blue-900 text-white" }
         }
     },
     {
         time: "5 PM - 7 PM", hour: 17,
         shows: {
-            Monday: { name: "Desh Pardesh", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Tuesday: { name: "Desh Pardesh", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Monday: { name: "Desh Pardesh (Every Day 4-7pm)", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Tuesday: { name: "Desh Pardesh (Every Day 4-7pm)", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
             Wednesday: { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.jpg", color: "bg-blue-400 text-white" },
             Thursday: { name: "Hello Vaishnavi", host: "Vaishnavi Palleda", image: "/images/hosts/hello-vaishnavi.jpg", color: "bg-yellow-600 text-white" },
             Friday: { name: "Dil Se Desi", host: "Jyoti", image: "/images/hosts/dil-se-desi.jpg", color: "bg-red-800 text-white" },
-            Saturday: { name: "Desh Pardesh", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Sunday: { name: "Desh Pardesh", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" }
+            Saturday: { name: "Desh Pardesh (Every Day 4-7pm)", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
+            Sunday: { name: "Desh Pardesh (Every Day 4-7pm)", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" }
         }
     },
     {
         time: "7 PM - 10 PM", hour: 19,
-        shows: { all: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", color: "bg-cyan-50 text-cyan-700" } }
+        shows: { all: { name: "Nirvana Nights (Back-To-Back Music)", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", color: "bg-cyan-50 text-cyan-700" } }
     },
     {
         time: "10 PM - 12 AM", hour: 22,
@@ -139,16 +139,16 @@ export default function SchedulePage() {
                 <section className="py-12 md:py-16 bg-background">
                     <div className="container mx-auto px-4">
 
-                        {/* Mobile View: Day Selector and Vertical List */}
-                        <div className="md:hidden space-y-8">
-                            <div className="flex overflow-x-auto pb-4 gap-2 no-scrollbar scroll-smooth">
+                        {/* Unified Vertical List Layout */}
+                        <div className="max-w-4xl mx-auto space-y-12">
+                            <div className="flex overflow-x-auto pb-4 gap-2 no-scrollbar scroll-smooth justify-center">
                                 {DAYS.map(day => (
                                     <button
                                         key={day}
                                         onClick={() => setSelectedDay(day)}
                                         className={`px-6 py-2 rounded-full whitespace-nowrap text-sm font-black uppercase tracking-widest transition-all border-2 ${selectedDay === day
                                             ? "bg-primary border-primary text-white shadow-lg scale-105"
-                                            : "bg-muted/30 border-transparent text-muted-foreground"
+                                            : "bg-muted/30 border-transparent text-muted-foreground hover:border-primary/30"
                                             }`}
                                     >
                                         {day}
@@ -156,69 +156,49 @@ export default function SchedulePage() {
                                 ))}
                             </div>
 
-                            <div className="space-y-6">
+                            <div className="space-y-8">
                                 {SCHEDULE_DATA.sort((a, b) => a.hour - b.hour).map((entry, idx) => {
                                     const show = getShowForDay(entry, selectedDay);
                                     if (show.name === "--") return null;
 
                                     return (
-                                        <div key={idx} className="bg-card border border-border/50 overflow-hidden flex flex-col shadow-sm">
-                                            {show.image && (
-                                                <div className="aspect-[16/9] w-full overflow-hidden">
+                                        <div key={idx} className="group bg-card border border-border/50 overflow-hidden flex flex-col md:flex-row shadow-sm hover:border-primary/50 transition-all duration-300">
+                                            {show.image ? (
+                                                <div className="aspect-[16/9] md:w-1/3 overflow-hidden">
                                                     <img
                                                         src={show.image}
                                                         alt={show.host || show.name}
-                                                        className="w-full h-full object-cover"
+                                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                                     />
                                                 </div>
+                                            ) : (
+                                                <div className="md:w-1/3 bg-muted/20 flex items-center justify-center p-8">
+                                                    <Clock className="w-12 h-12 text-muted-foreground/20" />
+                                                </div>
                                             )}
-                                            <div className="p-6">
-                                                <div className="flex items-center gap-2 text-primary mb-3">
+                                            <div className="p-8 flex-1 flex flex-col justify-center">
+                                                <div className="flex items-center gap-2 text-primary mb-4">
                                                     <Clock className="w-4 h-4" />
                                                     <span className="text-sm font-black uppercase tracking-widest">{entry.time}</span>
                                                 </div>
-                                                <h3 className="text-2xl font-black uppercase tracking-tighter leading-tight mb-2">
+                                                <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tighter leading-tight mb-3 italic">
                                                     {show.name}
                                                 </h3>
                                                 {show.host && (
-                                                    <div className="flex items-center gap-2 text-muted-foreground">
+                                                    <div className="flex items-center gap-2 text-muted-foreground mb-6">
                                                         <User className="w-4 h-4" />
                                                         <span className="text-xs font-bold uppercase tracking-widest">{show.host}</span>
                                                     </div>
                                                 )}
-                                                <div className={`mt-4 px-3 py-1 text-[10px] font-black uppercase tracking-widest inline-block ${show.color}`}>
-                                                    Live on Air
+                                                <div>
+                                                    <div className={`px-4 py-1.5 text-[10px] font-black uppercase tracking-widest inline-block ${show.color}`}>
+                                                        Live on Air
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     );
                                 })}
-                            </div>
-                        </div>
-
-                        {/* Desktop View: Existing Table Layout */}
-                        <div className="hidden md:block overflow-x-auto">
-                            <div className="min-w-[1000px]">
-                                {/* Header Row */}
-                                <div className="grid grid-cols-[150px_repeat(7,1fr)] bg-primary/5 border border-border text-center font-black uppercase tracking-widest text-sm">
-                                    <div className="p-4 border-r border-border">Time</div>
-                                    {DAYS.map(day => <div key={day} className="p-4 border-r border-border last:border-r-0 text-primary">{day}</div>)}
-                                </div>
-
-                                {SCHEDULE_DATA.map((entry, idx) => (
-                                    <div key={idx} className="grid grid-cols-[150px_repeat(7,1fr)] border-x border-b border-border text-center text-[10px] font-bold uppercase tracking-widest">
-                                        <div className="p-4 border-r border-border text-muted-foreground flex items-center justify-center font-black">{entry.time}</div>
-                                        {DAYS.map(day => {
-                                            const show = getShowForDay(entry, day);
-                                            return (
-                                                <div key={day} className={`p-4 border-r border-border last:border-r-0 flex flex-col items-center justify-center gap-1 ${show.color}`}>
-                                                    <span className="leading-tight">{show.name}</span>
-                                                    {show.host && <span className="opacity-60 text-[8px]">{show.host}</span>}
-                                                </div>
-                                            )
-                                        })}
-                                    </div>
-                                ))}
                             </div>
                         </div>
                     </div>

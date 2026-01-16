@@ -16,20 +16,20 @@ export default function HomePage() {
 
   // Radio Nyra Shows Data
   const shows = [
-    { name: "Subha Ki Shuruaat", host: "Sohail", image: "/images/hosts/non-stop-hungama.jpg", stationId: STATIONS.Hindi.id },
-    { name: "Morning Commute", host: "Raj Persaud", image: "/images/hosts/cha-pe-charcha.jpg", stationId: STATIONS.Hindi.id },
+    { name: "Subha Ki Shuruaat", host: "Sohail", image: "/images/hosts/Subha Ki Shuruaat.jpg", stationId: STATIONS.Hindi.id },
+    { name: "Chai Pe Charcha", host: "Raj Persaud", image: "/images/hosts/cha-pe-charcha.jpg", stationId: STATIONS.Hindi.id },
     { name: "Hello Vaishnavi", host: "Vaishnavi Palleda", image: "/images/hosts/hello-vaishnavi.jpg", stationId: STATIONS.Hindi.id },
-    { name: "Triangle Tunes", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpg", stationId: STATIONS.Hindi.id },
-    { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.jpg", stationId: STATIONS.Hindi.id },
-    { name: "Desh ParDesh", host: "Vishal The Khushhal", image: "/images/hosts/desi-pardesi.jpg", stationId: STATIONS.Hindi.id },
-    { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", stationId: STATIONS.Hindi.id },
-    { name: "Dil Se Desi", host: "Jyoti", image: "/images/hosts/dil-se-desi.jpg", stationId: STATIONS.Hindi.id },
     { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpg", stationId: STATIONS.Hindi.id },
+    { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpg", stationId: STATIONS.Hindi.id },
+    { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.jpg", stationId: STATIONS.Hindi.id },
+    { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", stationId: STATIONS.Hindi.id },
+    { name: "Dil Se Desi", host: "Jyoti", image: "/images/hosts/dil-se-desi.jpg", stationId: STATIONS.Hindi.id },
     { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpg", stationId: STATIONS.Hindi.id },
+    { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", stationId: STATIONS.Hindi.id },
     { name: "Geet Bazaar", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.jpg", stationId: STATIONS.Hindi.id },
-    { name: "Chinna Mata", host: "Priya", image: "/images/hosts/chinna-mata.jpg", stationId: STATIONS.Telugu.id }, // Updated Host
-    { name: "Mana Muchatlu", host: "Kanthi", image: "/images/hosts/Mana Muchatlu.jpg", stationId: STATIONS.Telugu.id }, // Updated Host
-    { name: "Kuch Tum Kaho, Kuch Hum Kahein", host: "Aditi", image: "/images/hosts/kuch-tum-kaho-kuch-hum-kahein.jpg", stationId: STATIONS.Hindi.id },
+    { name: "Chinna Mata", host: "Priya", image: "/images/hosts/chinna-mata.jpg", stationId: STATIONS.Telugu.id },
+    { name: "Mana Muchatlu", host: "Kanthi", image: "/images/hosts/Mana Muchatlu.jpg", stationId: STATIONS.Telugu.id },
+    { name: "Kuch Tum Kaho Kuch Hum Kahein", host: "Aditi", image: "/images/hosts/kuch-tum-kaho-kuch-hum-kahein.jpg", stationId: STATIONS.Hindi.id },
   ];
 
   const { playStation } = useAudio()

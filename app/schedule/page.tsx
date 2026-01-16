@@ -34,34 +34,34 @@ const SCHEDULE_DATA: ScheduleEntry[] = [
     },
     {
         time: "7 AM - 8 AM", hour: 7,
-        shows: { all: { name: "Subha Ki Shuruaat", host: "Sohail", image: "/images/hosts/non-stop-hungama.jpg", color: "bg-blue-100 text-blue-700" } }
+        shows: { all: { name: "Subha Ki Shuruaat", host: "Sohail", image: "/images/hosts/Subha Ki Shuruaat.jpg", color: "bg-blue-100 text-blue-700" } }
     },
     {
         time: "8 AM - 10 AM", hour: 8,
         shows: {
-            weekdays: { name: "Chai Pe Charcha", host: "Raj", image: "/images/hosts/cha-pe-charcha.jpg", color: "bg-cyan-100 text-cyan-700" },
-            weekend: { name: "Subha Ki Shuruaat", host: "Sohail", image: "/images/hosts/non-stop-hungama.jpg", color: "bg-blue-100 text-blue-700" }
+            weekdays: { name: "Chai Pe Charcha", host: "Raj Persaud", image: "/images/hosts/cha-pe-charcha.jpg", color: "bg-cyan-100 text-cyan-700" },
+            weekend: { name: "Subha Ki Shuruaat", host: "Sohail", image: "/images/hosts/Subha Ki Shuruaat.jpg", color: "bg-blue-100 text-blue-700" }
         }
     },
     {
         time: "10 AM - 12 PM", hour: 10,
         shows: {
-            weekdays: { name: "Zara Muskurao", host: "Aayushii", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
-            Saturday: { name: "Zara Muskurao", host: "Aayushii", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
+            weekdays: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
+            Saturday: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
             Sunday: { name: "Geet Bazaar (Live)", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.jpg", color: "bg-purple-100 text-purple-700" }
         }
     },
     {
         time: "12 PM - 1 PM", hour: 12,
         shows: {
-            weekdays: { name: "Zara Muskurao", host: "Aayushii", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
-            Saturday: { name: "Zara Muskurao", host: "Aayushii", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
+            weekdays: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
+            Saturday: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
             Sunday: { name: "The Real Returns Show", image: "/The real return show.jpg", color: "bg-blue-100 text-blue-700" }
         }
     },
     {
         time: "1 PM - 4 PM", hour: 13,
-        shows: { all: { name: "Triangle Tunes and Talks", host: "Monica", image: "/images/hosts/triangle-tunes.jpg", color: "bg-blue-200 text-blue-800" } }
+        shows: { all: { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpg", color: "bg-blue-200 text-blue-800" } }
     },
     {
         time: "4 PM - 5 PM", hour: 16,
@@ -101,7 +101,7 @@ const SCHEDULE_DATA: ScheduleEntry[] = [
     },
     {
         time: "7 PM - 10 PM", hour: 19,
-        shows: { all: { name: "Bollywood Bliss", host: "Bharti", image: "/images/hosts/bollywood-bliss.jpg", color: "bg-purple-50 text-purple-700" } }
+        shows: { all: { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpg", color: "bg-purple-50 text-purple-700" } }
     },
     {
         time: "10 PM - 11 PM", hour: 22,

@@ -11,27 +11,34 @@ import { ListenLiveButton } from "@/components/listen-live-button"
 import { useAudio } from "@/components/audio-context"
 import { STATIONS } from "@/lib/stations"
 import { VoiceAssistants } from "@/components/voice-assistants"
+import { motion, AnimatePresence } from "framer-motion"
 
 export default function HomePage() {
 
   // Radio Nyra Shows Data
   const shows = [
-    { name: "Non stop Hungama", host: "Ssohail", image: "/images/hosts/non-stop-hungama.jpg", stationId: STATIONS.Hindi.id },
-    { name: "Chai Pe Charcha", host: "Raj Persaud", image: "/images/hosts/cha-pe-charcha.jpg", stationId: STATIONS.Hindi.id },
-    { name: "Hello Vaishnavi", host: "Vaishnavi Palleda", image: "/images/hosts/hello-vaishnavi.jpg", stationId: STATIONS.Hindi.id },
-    { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpg", stationId: STATIONS.Hindi.id },
-    { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpg", stationId: STATIONS.Hindi.id },
-    { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.jpg", stationId: STATIONS.Hindi.id },
-    { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.png", stationId: STATIONS.Hindi.id },
-    { name: "Dil Se Desi", host: "Jyoti", image: "/images/hosts/dil-se-desi.png", stationId: STATIONS.Hindi.id },
-    { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.png", stationId: STATIONS.Hindi.id },
-    { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.png", stationId: STATIONS.Hindi.id },
-    { name: "Geet Bazaar", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.jpg", stationId: STATIONS.Hindi.id },
-    { name: "Chinna Mata", host: "Priya", image: "/images/hosts/chinna-mata.jpg", stationId: STATIONS.Telugu.id },
-    { name: "Mana Muchatlu", host: "Kanthi", image: "/images/hosts/Mana Muchatlu.jpg", stationId: STATIONS.Telugu.id },
-  ];
+    // Hindi shows
 
-  const { playStation } = useAudio()
+    { name: "Chai Pe Charcha", host: "Raj Persaud", image: "/images/hosts/cha-pe-charcha.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
+    { name: "Hello Vaishnavi", host: "Vaishnavi Palleda", image: "/images/hosts/hello-vaishnavi.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
+    { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
+    { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
+    { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
+    { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.png", stationId: STATIONS.Hindi.id, language: "hindi" },
+    { name: "Dil Se Desi", host: "Jyoti", image: "/images/hosts/dil-se-desi.png", stationId: STATIONS.Hindi.id, language: "hindi" },
+    { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.png", stationId: STATIONS.Hindi.id, language: "hindi" },
+    { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.png", stationId: STATIONS.Hindi.id, language: "hindi" },
+    { name: "Geet Bazaar", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
+    // Telugu shows (as per requirement)
+    { name: "Non-Stop Hungama", host: "Sohail", image: "/images/hosts/non-stop-hungama.jpg", stationId: STATIONS.Telugu.id, language: "telugu" },
+    { name: "Chinna Mata", host: "Priya", image: "/images/hosts/chinna-mata.jpg", stationId: STATIONS.Telugu.id, language: "telugu" },
+    { name: "Mana Muchatlu", host: "Kanthi", image: "/images/hosts/Mana Muchatlu.jpg", stationId: STATIONS.Telugu.id, language: "telugu" },
+  ];
+  const { playStation, currentStation } = useAudio();
+
+  // Determine selected language from audio player
+  const selectedLanguage = (currentStation.name || "Hindi").toLowerCase() as "hindi" | "telugu";
+  const filteredShows = shows.filter((show) => show.language === selectedLanguage);
 
   return (
     <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-primary-foreground">
@@ -157,31 +164,40 @@ export default function HomePage() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {shows.map((show, i) => (
-                <Link
-                  href="/schedule"
-                  key={i}
-                  className="group bg-card border border-border/50 hover:shadow-2xl transition-all duration-300 relative overflow-hidden block"
-                  onClick={() => playStation(show.stationId)}
-                >
-                  <div className="relative aspect-square overflow-hidden bg-black">
-                    <img
-                      src={show.image}
-                      alt={show.name}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = "https://placehold.co/600x600/000000/FFFFFF?text=" + encodeURIComponent(show.name);
-                      }}
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-bold uppercase tracking-tight leading-none text-lg truncate">{show.name}</h3>
-                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-1">{show.host}</p>
-                  </div>
-                </Link>
-              ))}
+              <AnimatePresence mode="popLayout">
+                {filteredShows.map((show, i) => (
+                  <motion.div
+                    key={`${show.language}-${show.name}`}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.4, delay: i * 0.05 }}
+                  >
+                    <Link
+                      href="/schedule"
+                      className="group bg-card border border-border/50 hover:shadow-2xl transition-all duration-300 relative overflow-hidden block"
+                      onClick={() => playStation(show.stationId)}
+                    >
+                      <div className="relative aspect-square overflow-hidden bg-black">
+                        <img
+                          src={show.image}
+                          alt={show.name}
+                          loading="lazy"
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = "https://placehold.co/600x600/000000/FFFFFF?text=" + encodeURIComponent(show.name);
+                          }}
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="font-bold uppercase tracking-tight leading-none text-lg truncate">{show.name}</h3>
+                        <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-1">{show.host}</p>
+                      </div>
+                    </Link>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
             </div>
           </div>
         </section>

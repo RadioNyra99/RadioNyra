@@ -152,19 +152,21 @@ export default function SchedulePage() {
 
                         {/* Unified Vertical List Layout */}
                         <div className="max-w-4xl mx-auto space-y-12">
-                            <div className="flex overflow-x-auto pb-4 gap-2 no-scrollbar scroll-smooth justify-center">
-                                {DAYS.map(day => (
-                                    <button
-                                        key={day}
-                                        onClick={() => setSelectedDay(day)}
-                                        className={`px-6 py-2 rounded-full whitespace-nowrap text-sm font-black uppercase tracking-widest transition-all border-2 ${selectedDay === day
-                                            ? "bg-primary border-primary text-white shadow-lg scale-105"
-                                            : "bg-muted/30 border-transparent text-muted-foreground hover:border-primary/30"
-                                            }`}
-                                    >
-                                        {day}
-                                    </button>
-                                ))}
+                            <div className="overflow-x-auto pb-6 scroll-smooth [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-track]:bg-muted/10 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:bg-muted-foreground/20 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-muted-foreground/40">
+                                <div className="flex gap-4 px-8 min-w-max justify-start md:justify-center">
+                                    {DAYS.map(day => (
+                                        <button
+                                            key={day}
+                                            onClick={() => setSelectedDay(day)}
+                                            className={`px-8 py-3 rounded-full whitespace-nowrap text-sm font-black uppercase tracking-tighter transition-all ${selectedDay === day
+                                                ? "bg-primary text-white shadow-lg"
+                                                : "bg-muted/50 text-muted-foreground hover:bg-muted"
+                                                }`}
+                                        >
+                                            {day}
+                                        </button>
+                                    ))}
+                                </div>
                             </div>
 
                             <div className="space-y-8">

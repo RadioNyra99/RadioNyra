@@ -44,9 +44,9 @@
             margin: 0 !important;
             padding: 0 !important;
             width: 100% !important;
-            font-family: 'Inter', Helvetica, Arial, sans-serif;
-            background-color: #ffffff;
-            color: #000000;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333333;
         }
 
         /* Media Queries */
@@ -59,6 +59,7 @@
                 display: block !important;
                 width: 100% !important;
                 padding-right: 0 !important;
+                padding-left: 0 !important;
             }
 
             .mobile-padding {
@@ -67,14 +68,8 @@
             }
 
             .hero-text {
-                font-size: 36px !important;
-                line-height: 1.0 !important;
-            }
-
-            .button {
-                width: 100% !important;
-                display: block !important;
-                box-sizing: border-box;
+                font-size: 32px !important;
+                line-height: 1.1 !important;
             }
 
             .show-card {
@@ -85,352 +80,742 @@
     </style>
 </head>
 
-<body style="margin: 0; padding: 0; background-color: #ffffff;">
+<body style="margin: 0; padding: 0; background-color: #f4f4f4;">
     <center>
         <table border="0" cellpadding="0" cellspacing="0" width="100%"
-            style="table-layout: fixed; background-color: #ffffff;">
+            style="table-layout: fixed; background-color: #f4f4f4;">
             <tr>
                 <td align="center">
+                    <!-- HEADER SECTION (Costco Style: White with logo and link) -->
                     <table border="0" cellpadding="0" cellspacing="0" width="600" class="container"
-                        style="background-color: #ffffff;">
-                        <td align="center" style="padding: 40px 20px 20px 20px;">
-                            <img src="https://www.radionyra.com/images/radio-nyra-logo.jpg" alt="Radio Nyra Logo"
-                                width="100"
-                                style="display: block; border-radius: 50%; border: 2px solid #ff0000; margin: 0 auto;" />
-                            <h1
-                                style="margin: 15px 0 0 0; font-size: 28px; font-weight: 900; text-transform: uppercase; letter-spacing: -1.5px; line-height: 1;">
-                                Radio Nyra</h1>
-                            <p
-                                style="margin: 5px 0 0 0; font-size: 11px; font-weight: 900; color: #ff0000; text-transform: uppercase; letter-spacing: 3px;">
-                                Raleigh – Durham, USA</p>
-                        </td>
+                        style="background-color: #ffffff; border-bottom: 3px solid #ff0000;">
+                        <tr>
+                            <td align="left" style="padding: 20px;">
+                                <img src="https://www.radionyra.com/images/radio-nyra-logo.jpg" alt="Radio Nyra"
+                                    width="120" style="display: block; border-radius: 4px;" />
+                            </td>
+                            <td align="right" style="padding: 20px;">
+                                <a href="https://www.radionyra.com" target="_blank"
+                                    style="color: #000000; font-size: 14px; font-weight: bold; text-decoration: none; font-family: Arial, sans-serif;">www.radionyra.com</a>
+                            </td>
+                        </tr>
+                    </table>
 
-                        <!-- HERO SECTION -->
+                    <!-- HERO SECTION -->
+                    <table border="0" cellpadding="0" cellspacing="0" width="600" class="container"
+                        style="background-color: #000000;">
                         <tr>
                             <td align="center"
-                                style="padding: 60px 40px; background-color: #000000; background-image: url('https://www.radionyra.com/radio-studio-modern.jpg'); background-size: cover; background-position: center; position: relative;">
-                                <!-- Dark Overlay for better text readability -->
+                                style="padding: 60px 40px; background-image: url('https://www.radionyra.com/radio-studio-modern.jpg'); background-size: cover; background-position: center; position: relative;">
+                                <!-- Overlay -->
                                 <div
-                                    style="background-color: rgba(0,0,0,0.6); position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1;">
+                                    style="background-color: rgba(0,0,0,0.5); position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
                                 </div>
                                 <div style="position: relative; z-index: 2;">
-                                    <h2 class="hero-text"
-                                        style="margin: 0; color: #ffffff; font-size: 52px; font-weight: 900; text-transform: uppercase; line-height: 0.9; font-style: italic; letter-spacing: -2px;">
-                                        The Only Gateway to the Indian <span style="color: #ff0000;">Subcontinent
-                                            Communities in the USA</span>
-                                    </h2>
-                                    <table border="0" cellpadding="0" cellspacing="0" style="margin-top: 40px;">
+                                    <h1 class="hero-text"
+                                        style="margin: 0; color: #ffffff; font-size: 42px; font-weight: 900; text-transform: uppercase; line-height: 1.0; font-family: 'Helvetica Neue', Arial, sans-serif; letter-spacing: -1px;">
+                                        THE ONLY GATEWAY TO THE <span style="color: #ff0000;">INDIAN COMMUNITIES</span>
+                                        IN THE USA
+                                    </h1>
+                                    <table border="0" cellpadding="0" cellspacing="0" style="margin-top: 35px;">
                                         <tr>
-                                            <td align="center" style="background-color: #ff0000;">
-                                                <a href="https://radionyra.com/" target="_blank" class="button"
-                                                    style="padding: 18px 45px; font-size: 18px; font-weight: 900; color: #ffffff; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; display: inline-block;">▶
-                                                    Listen Live Now</a>
+                                            <td align="center" style="background-color: #ff0000; border-radius: 4px;">
+                                                <a href="https://www.radionyra.com" target="_blank"
+                                                    style="padding: 18px 40px; font-size: 18px; font-weight: 900; color: #ffffff; text-decoration: none; text-transform: uppercase; display: inline-block; font-family: Arial, sans-serif;">Listen
+                                                    Live Now</a>
                                             </td>
                                         </tr>
                                     </table>
-                                    <p
-                                        style="margin: 40px 0 0 0; font-size: 11px; font-weight: 900; color: #ffffff; text-transform: uppercase; letter-spacing: 4px; opacity: 0.8;">
-                                        24/7 Broadcasting | Active Listeners Per Week</p>
                                 </div>
                             </td>
                         </tr>
+                    </table>
 
-                        <!-- RADIO SHOWS SECTION -->
+                    <!-- SUB-HEADER INFO -->
+                    <table border="0" cellpadding="0" cellspacing="0" width="600" class="container"
+                        style="background-color: #ffffff;">
                         <tr>
-                            <td style="padding: 60px 20px 40px 20px; background-color: #ffffff;">
-                                <h2
-                                    style="margin: 0 0 35px 0; font-size: 42px; font-weight: 900; text-transform: uppercase; color: #ff0000; font-style: italic; letter-spacing: -1.5px; line-height: 1;">
-                                    Radio Nyra Shows</h2>
+                            <td style="padding: 25px 30px; border-bottom: 1px solid #eeeeee;">
                                 <p
-                                    style="margin: 0 0 45px 0; font-size: 14px; font-weight: 500; color: #666666; text-transform: uppercase; letter-spacing: 2px; line-height: 1.6;">
-                                    Tune in to the rhythm of your life with our diverse lineup of shows and charismatic
-                                    hosts.</p>
+                                    style="margin: 0; font-size: 14px; font-weight: bold; font-family: Arial, sans-serif; line-height: 1.4;">
+                                    Tune in for this week's featured shows and exclusive segments from across the
+                                    Raleigh-Durham area.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
 
+                    <!-- SHOWS GRID (Costco Style 2-Column Grid) -->
+                    <table border="0" cellpadding="0" cellspacing="0" width="600" class="container"
+                        style="background-color: #ffffff; padding: 30px 20px;">
+                        <tr>
+                            <td style="padding-bottom: 20px;">
+                                <h2
+                                    style="margin: 0; font-size: 24px; font-weight: 900; color: #000000; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                    Radio Nyra Show Schedule</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">
                                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                    <!-- Row 1 -->
+                                    <!-- ROW 1 -->
                                     <tr>
-                                        <td class="stack" width="275" valign="top"
+                                        <!-- Show Card 1 -->
+                                        <td class="stack" width="270" valign="top"
                                             style="padding-bottom: 30px; padding-right: 10px;">
                                             <table border="0" cellpadding="0" cellspacing="0" width="100%"
-                                                style="border: 1px solid #f1f1f1; background-color: #f8f8f8;">
+                                                style="border: 1px solid #eeeeee;">
                                                 <tr>
-                                                    <td><img src="https://www.radionyra.com/images/hosts/cha-pe-charcha.jpg"
-                                                            alt="Chai Pe Charcha" width="275"
-                                                            style="display: block; width: 100%; height: auto;" /></td>
+                                                    <td style="position: relative;">
+                                                        <img src="https://www.radionyra.com/images/hosts/cha-pe-charcha.jpg"
+                                                            alt="Chai Pe Charcha" width="270"
+                                                            style="display: block; width: 100%;" />
+                                                        <!-- Timing Badge -->
+                                                        <div
+                                                            style="background-color: #ff0000; color: #ffffff; padding: 4px 8px; font-size: 11px; font-weight: bold; text-transform: uppercase; position: absolute; bottom: 10px; left: 10px;">
+                                                            8 AM - 10 AM</div>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding: 20px;">
-                                                        <h3
-                                                            style="margin: 0; font-size: 18px; font-weight: 900; text-transform: uppercase;">
-                                                            Chai Pe Charcha</h3>
+                                                    <td style="padding: 15px;">
                                                         <p
-                                                            style="margin: 8px 0 0 0; font-size: 11px; font-weight: 800; color: #666666; text-transform: uppercase;">
+                                                            style="margin: 0; font-size: 16px; font-weight: 900; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            CHAI PE CHARCHA</p>
+                                                        <p
+                                                            style="margin: 5px 0 0 0; font-size: 12px; color: #666666; font-weight: bold; text-transform: uppercase; font-family: Arial, sans-serif;">
                                                             Raj Persaud</p>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </td>
-                                        <td class="stack" width="275" valign="top"
+                                        <!-- Show Card 2 -->
+                                        <td class="stack" width="270" valign="top"
                                             style="padding-bottom: 30px; padding-left: 10px;">
                                             <table border="0" cellpadding="0" cellspacing="0" width="100%"
-                                                style="border: 1px solid #f1f1f1; background-color: #f8f8f8;">
+                                                style="border: 1px solid #eeeeee;">
                                                 <tr>
-                                                    <td><img src="https://www.radionyra.com/images/hosts/hello-vaishnavi.jpg"
-                                                            alt="Hello Vaishnavi" width="275"
-                                                            style="display: block; width: 100%; height: auto;" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="padding: 20px;">
-                                                        <h3
-                                                            style="margin: 0; font-size: 18px; font-weight: 900; text-transform: uppercase;">
-                                                            Hello Vaishnavi</h3>
-                                                        <p
-                                                            style="margin: 8px 0 0 0; font-size: 11px; font-weight: 800; color: #666666; text-transform: uppercase;">
-                                                            Vaishnavi Palleda</p>
+                                                    <td style="position: relative;">
+                                                        <img src="https://www.radionyra.com/images/hosts/zara-muskurao.jpg"
+                                                            alt="Zara Muskurao" width="270"
+                                                            style="display: block; width: 100%;" />
+                                                        <div
+                                                            style="background-color: #ff0000; color: #ffffff; padding: 4px 8px; font-size: 11px; font-weight: bold; text-transform: uppercase; position: absolute; bottom: 10px; left: 10px;">
+                                                            10 AM - 1 PM</div>
                                                     </td>
                                                 </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    <!-- Row 2 -->
-                                    <tr>
-                                        <td class="stack" width="275" valign="top"
-                                            style="padding-bottom: 30px; padding-right: 10px;">
-                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
-                                                style="border: 1px solid #f1f1f1; background-color: #f8f8f8;">
                                                 <tr>
-                                                    <td><img src="https://www.radionyra.com/images/hosts/zara-muskurao.jpg"
-                                                            alt="Zara Muskurao" width="275"
-                                                            style="display: block; width: 100%; height: auto;" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="padding: 20px;">
-                                                        <h3
-                                                            style="margin: 0; font-size: 18px; font-weight: 900; text-transform: uppercase;">
-                                                            Zara Muskurao</h3>
+                                                    <td style="padding: 15px;">
                                                         <p
-                                                            style="margin: 8px 0 0 0; font-size: 11px; font-weight: 800; color: #666666; text-transform: uppercase;">
+                                                            style="margin: 0; font-size: 16px; font-weight: 900; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            ZARA MUSKURAO</p>
+                                                        <p
+                                                            style="margin: 5px 0 0 0; font-size: 12px; color: #666666; font-weight: bold; text-transform: uppercase; font-family: Arial, sans-serif;">
                                                             Aayushii Rode</p>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </td>
-                                        <td class="stack" width="275" valign="top"
-                                            style="padding-bottom: 30px; padding-left: 10px;">
-                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
-                                                style="border: 1px solid #f1f1f1; background-color: #f8f8f8;">
-                                                <tr>
-                                                    <td><img src="https://www.radionyra.com/images/hosts/non-stop-hungama.jpg"
-                                                            alt="Non-Stop Hungama" width="275"
-                                                            style="display: block; width: 100%; height: auto;" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="padding: 20px;">
-                                                        <h3
-                                                            style="margin: 0; font-size: 18px; font-weight: 900; text-transform: uppercase;">
-                                                            Non-Stop Hungama</h3>
-                                                        <p
-                                                            style="margin: 8px 0 0 0; font-size: 11px; font-weight: 800; color: #666666; text-transform: uppercase;">
-                                                            Sohail</p>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
                                     </tr>
-                                    <!-- Row 3 -->
+                                    <!-- ROW 2 -->
                                     <tr>
-                                        <td class="stack" width="275" valign="top"
+                                        <!-- Show Card 3 -->
+                                        <td class="stack" width="270" valign="top"
                                             style="padding-bottom: 30px; padding-right: 10px;">
                                             <table border="0" cellpadding="0" cellspacing="0" width="100%"
-                                                style="border: 1px solid #f1f1f1; background-color: #f8f8f8;">
+                                                style="border: 1px solid #eeeeee;">
                                                 <tr>
-                                                    <td><img src="https://www.radionyra.com/images/hosts/chinna-mata.jpg"
-                                                            alt="Chinna Mata" width="275"
-                                                            style="display: block; width: 100%; height: auto;" /></td>
+                                                    <td style="position: relative;">
+                                                        <img src="https://www.radionyra.com/images/hosts/hello-vaishnavi.jpg"
+                                                            alt="Hello Vaishnavi" width="270"
+                                                            style="display: block; width: 100%;" />
+                                                        <div
+                                                            style="background-color: #ff0000; color: #ffffff; padding: 4px 8px; font-size: 11px; font-weight: bold; text-transform: uppercase; position: absolute; bottom: 10px; left: 10px;">
+                                                            WEEKDAYS</div>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding: 20px;">
-                                                        <h3
-                                                            style="margin: 0; font-size: 18px; font-weight: 900; text-transform: uppercase;">
-                                                            Chinna Mata</h3>
+                                                    <td style="padding: 15px;">
                                                         <p
-                                                            style="margin: 8px 0 0 0; font-size: 11px; font-weight: 800; color: #666666; text-transform: uppercase;">
-                                                            Priya</p>
+                                                            style="margin: 0; font-size: 16px; font-weight: 900; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            HELLO VAISHNAVI</p>
+                                                        <p
+                                                            style="margin: 5px 0 0 0; font-size: 12px; color: #666666; font-weight: bold; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            Vaishnavi Palleda</p>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </td>
-                                        <td class="stack" width="275" valign="top"
+                                        <!-- Show Card 4 -->
+                                        <td class="stack" width="270" valign="top"
                                             style="padding-bottom: 30px; padding-left: 10px;">
                                             <table border="0" cellpadding="0" cellspacing="0" width="100%"
-                                                style="border: 1px solid #f1f1f1; background-color: #f8f8f8;">
+                                                style="border: 1px solid #eeeeee;">
                                                 <tr>
-                                                    <td><img src="https://www.radionyra.com/images/hosts/Mana%20Muchatlu.jpg"
-                                                            alt="Mana Muchatlu" width="275"
-                                                            style="display: block; width: 100%; height: auto;" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="padding: 20px;">
-                                                        <h3
-                                                            style="margin: 0; font-size: 18px; font-weight: 900; text-transform: uppercase;">
-                                                            Mana Muchatlu</h3>
-                                                        <p
-                                                            style="margin: 8px 0 0 0; font-size: 11px; font-weight: 800; color: #666666; text-transform: uppercase;">
-                                                            Kanthi</p>
+                                                    <td style="position: relative;">
+                                                        <img src="https://www.radionyra.com/images/hosts/bollywood-bliss.jpg"
+                                                            alt="Bollywood Bliss" width="270"
+                                                            style="display: block; width: 100%;" />
+                                                        <div
+                                                            style="background-color: #ff0000; color: #ffffff; padding: 4px 8px; font-size: 11px; font-weight: bold; text-transform: uppercase; position: absolute; bottom: 10px; left: 10px;">
+                                                            7 PM - 10 PM</div>
                                                     </td>
                                                 </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    <!-- Row 4 -->
-                                    <tr>
-                                        <td class="stack" width="275" valign="top"
-                                            style="padding-bottom: 30px; padding-right: 10px;">
-                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
-                                                style="border: 1px solid #f1f1f1; background-color: #f8f8f8;">
                                                 <tr>
-                                                    <td><img src="https://www.radionyra.com/images/hosts/bollywood-bliss.png"
-                                                            alt="Bollywood Bliss" width="275"
-                                                            style="display: block; width: 100%; height: auto;" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="padding: 20px;">
-                                                        <h3
-                                                            style="margin: 0; font-size: 18px; font-weight: 900; text-transform: uppercase;">
-                                                            Bollywood Bliss</h3>
+                                                    <td style="padding: 15px;">
                                                         <p
-                                                            style="margin: 8px 0 0 0; font-size: 11px; font-weight: 800; color: #666666; text-transform: uppercase;">
+                                                            style="margin: 0; font-size: 16px; font-weight: 900; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            BOLLYWOOD BLISS</p>
+                                                        <p
+                                                            style="margin: 5px 0 0 0; font-size: 12px; color: #666666; font-weight: bold; text-transform: uppercase; font-family: Arial, sans-serif;">
                                                             Bharti Rathore</p>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </td>
-                                        <td class="stack" width="275" valign="top"
-                                            style="padding-bottom: 30px; padding-left: 10px;">
+                                    </tr>
+                                    <!-- ROW 3 -->
+                                    <tr>
+                                        <!-- Show Card 5 -->
+                                        <td class="stack" width="270" valign="top"
+                                            style="padding-bottom: 30px; padding-right: 10px;">
                                             <table border="0" cellpadding="0" cellspacing="0" width="100%"
-                                                style="border: 1px solid #f1f1f1; background-color: #f8f8f8;">
+                                                style="border: 1px solid #eeeeee;">
                                                 <tr>
-                                                    <td><img src="https://www.radionyra.com/images/hosts/nirvana-nights.png"
-                                                            alt="Nirvana Nights" width="275"
-                                                            style="display: block; width: 100%; height: auto;" /></td>
+                                                    <td style="position: relative;">
+                                                        <img src="https://www.radionyra.com/images/hosts/non-stop-hungama.jpg"
+                                                            alt="Non-Stop Hungama" width="270"
+                                                            style="display: block; width: 100%;" />
+                                                        <div
+                                                            style="background-color: #ff0000; color: #ffffff; padding: 4px 8px; font-size: 11px; font-weight: bold; text-transform: uppercase; position: absolute; bottom: 10px; left: 10px;">
+                                                            TELUGU SHOW</div>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding: 20px;">
-                                                        <h3
-                                                            style="margin: 0; font-size: 18px; font-weight: 900; text-transform: uppercase;">
-                                                            Nirvana Nights</h3>
+                                                    <td style="padding: 15px;">
                                                         <p
-                                                            style="margin: 8px 0 0 0; font-size: 11px; font-weight: 800; color: #666666; text-transform: uppercase;">
-                                                            Shivani</p>
+                                                            style="margin: 0; font-size: 16px; font-weight: 900; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            NON-STOP HUNGAMA</p>
+                                                        <p
+                                                            style="margin: 5px 0 0 0; font-size: 12px; color: #666666; font-weight: bold; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            Sohail</p>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </td>
-                                    </tr>
-                                    <!-- Row 5 -->
-                                    <tr>
-                                        <td class="stack" width="275" valign="top"
-                                            style="padding-bottom: 30px; padding-right: 10px;">
+                                        <!-- Show Card 6 -->
+                                        <td class="stack" width="270" valign="top"
+                                            style="padding-bottom: 30px; padding-left: 10px;">
                                             <table border="0" cellpadding="0" cellspacing="0" width="100%"
-                                                style="border: 1px solid #f1f1f1; background-color: #f8f8f8;">
+                                                style="border: 1px solid #eeeeee;">
                                                 <tr>
-                                                    <td><img src="https://www.radionyra.com/images/hosts/desi-pardesi.png"
-                                                            alt="Desh Pardesh" width="275"
-                                                            style="display: block; width: 100%; height: auto;" /></td>
+                                                    <td style="position: relative;">
+                                                        <img src="https://www.radionyra.com/images/hosts/desi-pardesi.jpg"
+                                                            alt="Desh Pardesh" width="270"
+                                                            style="display: block; width: 100%;" />
+                                                        <div
+                                                            style="background-color: #ff0000; color: #ffffff; padding: 4px 8px; font-size: 11px; font-weight: bold; text-transform: uppercase; position: absolute; bottom: 10px; left: 10px;">
+                                                            4 PM - 7 PM</div>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding: 20px;">
-                                                        <h3
-                                                            style="margin: 0; font-size: 18px; font-weight: 900; text-transform: uppercase;">
-                                                            Desh Pardesh</h3>
+                                                    <td style="padding: 15px;">
                                                         <p
-                                                            style="margin: 8px 0 0 0; font-size: 11px; font-weight: 800; color: #666666; text-transform: uppercase;">
+                                                            style="margin: 0; font-size: 16px; font-weight: 900; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            DESH PARDESH</p>
+                                                        <p
+                                                            style="margin: 5px 0 0 0; font-size: 12px; color: #666666; font-weight: bold; text-transform: uppercase; font-family: Arial, sans-serif;">
                                                             Vishal</p>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </td>
                                     </tr>
+                                    <!-- ROW 4 -->
+                                    <tr>
+                                        <!-- Show Card 7 -->
+                                        <td class="stack" width="270" valign="top"
+                                            style="padding-bottom: 30px; padding-right: 10px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                style="border: 1px solid #eeeeee;">
+                                                <tr>
+                                                    <td style="position: relative;">
+                                                        <img src="https://www.radionyra.com/images/hosts/nirvana-nights.jpg"
+                                                            alt="Nirvana Nights" width="270"
+                                                            style="display: block; width: 100%;" />
+                                                        <div
+                                                            style="background-color: #ff0000; color: #ffffff; padding: 4px 8px; font-size: 11px; font-weight: bold; text-transform: uppercase; position: absolute; bottom: 10px; left: 10px;">
+                                                            10 PM - 12 AM</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 15px;">
+                                                        <p
+                                                            style="margin: 0; font-size: 16px; font-weight: 900; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            NIRVANA NIGHTS</p>
+                                                        <p
+                                                            style="margin: 5px 0 0 0; font-size: 12px; color: #666666; font-weight: bold; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            Shivani</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <!-- Show Card 8 -->
+                                        <td class="stack" width="270" valign="top"
+                                            style="padding-bottom: 30px; padding-left: 10px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                style="border: 1px solid #eeeeee;">
+                                                <tr>
+                                                    <td style="position: relative;">
+                                                        <img src="https://www.radionyra.com/images/hosts/dil-se-desi.jpg"
+                                                            alt="Dil Se Desi" width="270"
+                                                            style="display: block; width: 100%;" />
+                                                        <div
+                                                            style="background-color: #ff0000; color: #ffffff; padding: 4px 8px; font-size: 11px; font-weight: bold; text-transform: uppercase; position: absolute; bottom: 10px; left: 10px;">
+                                                            FRIDAYS</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 15px;">
+                                                        <p
+                                                            style="margin: 0; font-size: 16px; font-weight: 900; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            DIL SE DESI</p>
+                                                        <p
+                                                            style="margin: 5px 0 0 0; font-size: 12px; color: #666666; font-weight: bold; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            Jyoti</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <!-- ROW 5 -->
+                                    <tr>
+                                        <!-- Show Card 9 -->
+                                        <td class="stack" width="270" valign="top"
+                                            style="padding-bottom: 30px; padding-right: 10px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                style="border: 1px solid #eeeeee;">
+                                                <tr>
+                                                    <td style="position: relative;">
+                                                        <img src="https://www.radionyra.com/images/hosts/geet-bazaar.jpg"
+                                                            alt="Geet Bazaar" width="270"
+                                                            style="display: block; width: 100%;" />
+                                                        <div
+                                                            style="background-color: #ff0000; color: #ffffff; padding: 4px 8px; font-size: 11px; font-weight: bold; text-transform: uppercase; position: absolute; bottom: 10px; left: 10px;">
+                                                            SUNDAY SPECIAL</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 15px;">
+                                                        <p
+                                                            style="margin: 0; font-size: 16px; font-weight: 900; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            GEET BAZAAR</p>
+                                                        <p
+                                                            style="margin: 5px 0 0 0; font-size: 12px; color: #666666; font-weight: bold; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            Dr. Taj & Dr. Caldwell</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <!-- Show Card 10 -->
+                                        <td class="stack" width="270" valign="top"
+                                            style="padding-bottom: 30px; padding-left: 10px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                style="border: 1px solid #eeeeee;">
+                                                <tr>
+                                                    <td style="position: relative;">
+                                                        <img src="https://www.radionyra.com/images/hosts/chinna-mata.jpg"
+                                                            alt="Chinna Mata" width="270"
+                                                            style="display: block; width: 100%;" />
+                                                        <div
+                                                            style="background-color: #ff0000; color: #ffffff; padding: 4px 8px; font-size: 11px; font-weight: bold; text-transform: uppercase; position: absolute; bottom: 10px; left: 10px;">
+                                                            TELUGU SHOW</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 15px;">
+                                                        <p
+                                                            style="margin: 0; font-size: 16px; font-weight: 900; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            CHINNA MATA</p>
+                                                        <p
+                                                            style="margin: 5px 0 0 0; font-size: 12px; color: #666666; font-weight: bold; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            Priya</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <!-- ROW 6 -->
+                                    <tr>
+                                        <!-- Show Card 11 -->
+                                        <td class="stack" width="270" valign="top"
+                                            style="padding-bottom: 30px; padding-right: 10px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                style="border: 1px solid #eeeeee;">
+                                                <tr>
+                                                    <td style="position: relative;">
+                                                        <img src="https://www.radionyra.com/images/hosts/Mana%20Muchatlu.jpg"
+                                                            alt="Mana Muchatlu" width="270"
+                                                            style="display: block; width: 100%;" />
+                                                        <div
+                                                            style="background-color: #ff0000; color: #ffffff; padding: 4px 8px; font-size: 11px; font-weight: bold; text-transform: uppercase; position: absolute; bottom: 10px; left: 10px;">
+                                                            TELUGU SHOW</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 15px;">
+                                                        <p
+                                                            style="margin: 0; font-size: 16px; font-weight: 900; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            MANA MUCHATLU</p>
+                                                        <p
+                                                            style="margin: 5px 0 0 0; font-size: 12px; color: #666666; font-weight: bold; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            Kanthi</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <!-- Show Card 12 -->
+                                        <td class="stack" width="270" valign="top"
+                                            style="padding-bottom: 30px; padding-left: 10px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                style="border: 1px solid #eeeeee;">
+                                                <tr>
+                                                    <td style="position: relative;">
+                                                        <img src="https://www.radionyra.com/images/hosts/Subha%20Ki%20Shuruaat.jpg"
+                                                            alt="Subha Ki Shuruaat" width="270"
+                                                            style="display: block; width: 100%;" />
+                                                        <div
+                                                            style="background-color: #ff0000; color: #ffffff; padding: 4px 8px; font-size: 11px; font-weight: bold; text-transform: uppercase; position: absolute; bottom: 10px; left: 10px;">
+                                                            MORNING SHOW</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 15px;">
+                                                        <p
+                                                            style="margin: 0; font-size: 16px; font-weight: 900; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            SUBHA KI SHURUAAT</p>
+                                                        <p
+                                                            style="margin: 5px 0 0 0; font-size: 12px; color: #666666; font-weight: bold; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            Radio Nyra</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <!-- ROW 7 -->
+                                    <tr>
+                                        <!-- Show Card 13 -->
+                                        <td class="stack" width="270" valign="top"
+                                            style="padding-bottom: 30px; padding-right: 10px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                style="border: 1px solid #eeeeee;">
+                                                <tr>
+                                                    <td style="position: relative;">
+                                                        <img src="https://www.radionyra.com/images/hosts/triangle-tunes.jpg"
+                                                            alt="Triangle Tunes" width="270"
+                                                            style="display: block; width: 100%;" />
+                                                        <div
+                                                            style="background-color: #ff0000; color: #ffffff; padding: 4px 8px; font-size: 11px; font-weight: bold; text-transform: uppercase; position: absolute; bottom: 10px; left: 10px;">
+                                                            1 PM - 4 PM</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 15px;">
+                                                        <p
+                                                            style="margin: 0; font-size: 16px; font-weight: 900; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            TRIANGLE TUNES</p>
+                                                        <p
+                                                            style="margin: 5px 0 0 0; font-size: 12px; color: #666666; font-weight: bold; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            Monika Joshi</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <!-- Show Card 14 -->
+                                        <td class="stack" width="270" valign="top"
+                                            style="padding-bottom: 30px; padding-left: 10px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                style="border: 1px solid #eeeeee;">
+                                                <tr>
+                                                    <td style="position: relative;">
+                                                        <img src="https://www.radionyra.com/images/hosts/idhar-udhar-ki-baatein.jpg"
+                                                            alt="Idhar Udhar Ki Baatein" width="270"
+                                                            style="display: block; width: 100%;" />
+                                                        <div
+                                                            style="background-color: #ff0000; color: #ffffff; padding: 4px 8px; font-size: 11px; font-weight: bold; text-transform: uppercase; position: absolute; bottom: 10px; left: 10px;">
+                                                            WEDNESDAYS</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 15px;">
+                                                        <p
+                                                            style="margin: 0; font-size: 16px; font-weight: 900; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            IDHAR UDHAR KI BAATEIN</p>
+                                                        <p
+                                                            style="margin: 5px 0 0 0; font-size: 12px; color: #666666; font-weight: bold; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            Arpit Tandon</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <!-- ROW 8 -->
+                                    <tr>
+                                        <!-- Show Card 15 -->
+                                        <td class="stack" width="270" valign="top"
+                                            style="padding-bottom: 30px; padding-right: 10px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                style="border: 1px solid #eeeeee;">
+                                                <tr>
+                                                    <td style="position: relative;">
+                                                        <img src="https://www.radionyra.com/Geetanjali.jpg"
+                                                            alt="Geetanjali" width="270"
+                                                            style="display: block; width: 100%;" />
+                                                        <div
+                                                            style="background-color: #ff0000; color: #ffffff; padding: 4px 8px; font-size: 11px; font-weight: bold; text-transform: uppercase; position: absolute; bottom: 10px; left: 10px;">
+                                                            6 AM - 7 AM</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 15px;">
+                                                        <p
+                                                            style="margin: 0; font-size: 16px; font-weight: 900; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            GEETANJALI</p>
+                                                        <p
+                                                            style="margin: 5px 0 0 0; font-size: 12px; color: #666666; font-weight: bold; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            Radio Nyra</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <!-- Show Card 16 -->
+                                        <td class="stack" width="270" valign="top"
+                                            style="padding-bottom: 30px; padding-left: 10px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                style="border: 1px solid #eeeeee;">
+                                                <tr>
+                                                    <td style="position: relative;">
+                                                        <img src="https://www.radionyra.com/The%20real%20return%20show.jpg"
+                                                            alt="The Real Returns Show" width="270"
+                                                            style="display: block; width: 100%;" />
+                                                        <div
+                                                            style="background-color: #ff0000; color: #ffffff; padding: 4px 8px; font-size: 11px; font-weight: bold; text-transform: uppercase; position: absolute; bottom: 10px; left: 10px;">
+                                                            SUNDAYS</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 15px;">
+                                                        <p
+                                                            style="margin: 0; font-size: 16px; font-weight: 900; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            THE REAL RETURNS SHOW</p>
+                                                        <p
+                                                            style="margin: 5px 0 0 0; font-size: 12px; color: #666666; font-weight: bold; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            Radio Nyra</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <!-- ROW 9 -->
+                                    <tr>
+                                        <!-- Show Card 17 -->
+                                        <td class="stack" width="270" valign="top"
+                                            style="padding-bottom: 30px; padding-right: 10px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                style="border: 1px solid #eeeeee;">
+                                                <tr>
+                                                    <td style="position: relative;">
+                                                        <img src="https://www.radionyra.com/Legends%20and%20Leaders.jpg"
+                                                            alt="Legends and Leaders" width="270"
+                                                            style="display: block; width: 100%;" />
+                                                        <div
+                                                            style="background-color: #ff0000; color: #ffffff; padding: 4px 8px; font-size: 11px; font-weight: bold; text-transform: uppercase; position: absolute; bottom: 10px; left: 10px;">
+                                                            SUNDAYS</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 15px;">
+                                                        <p
+                                                            style="margin: 0; font-size: 16px; font-weight: 900; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            LEGENDS AND LEADERS</p>
+                                                        <p
+                                                            style="margin: 5px 0 0 0; font-size: 12px; color: #666666; font-weight: bold; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            Steve Rao</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <!-- Show Card 18 -->
+                                        <td class="stack" width="270" valign="top"
+                                            style="padding-bottom: 30px; padding-left: 10px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                style="border: 1px solid #eeeeee;">
+                                                <tr>
+                                                    <td style="position: relative;">
+                                                        <img src="https://www.radionyra.com/Back%20to%20Back.jpg"
+                                                            alt="Back to Back" width="270"
+                                                            style="display: block; width: 100%;" />
+                                                        <div
+                                                            style="background-color: #ff0000; color: #ffffff; padding: 4px 8px; font-size: 11px; font-weight: bold; text-transform: uppercase; position: absolute; bottom: 10px; left: 10px;">
+                                                            24/7 MUSIC</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 15px;">
+                                                        <p
+                                                            style="margin: 0; font-size: 16px; font-weight: 900; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            BACK TO BACK</p>
+                                                        <p
+                                                            style="margin: 5px 0 0 0; font-size: 12px; color: #666666; font-weight: bold; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                                            Radio Nyra</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
                                 </table>
                             </td>
                         </tr>
-
-                        <!-- DIGITAL PLATFORMS -->
                         <tr>
-                            <td align="center" style="padding: 50px 20px; background-color: #f1f1f1;">
+                            <td align="center" style="padding-top: 20px;">
+                                <a href="https://www.radionyra.com/schedule" target="_blank"
+                                    style="color: #ff0000; font-size: 14px; font-weight: bold; text-decoration: none; font-family: Arial, sans-serif; text-transform: uppercase;">View
+                                    Full Weekly Schedule →</a>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- DIGITAL PLATFORMS (Costco Style: Clean icons and callout) -->
+                    <table border="0" cellpadding="0" cellspacing="0" width="600" class="container"
+                        style="background-color: #f9f9f9; border-top: 1px solid #eeeeee;">
+                        <tr>
+                            <td align="center" style="padding: 40px 20px;">
                                 <p
-                                    style="margin: 0 0 30px 0; font-size: 11px; font-weight: 900; color: #666666; text-transform: uppercase; letter-spacing: 4px;">
-                                    Also Available On</p>
+                                    style="margin: 0 0 25px 0; font-size: 11px; font-weight: 900; color: #888888; text-transform: uppercase; letter-spacing: 2px; font-family: Arial, sans-serif;">
+                                    Also Available On Digital Platforms</p>
                                 <table border="0" cellpadding="0" cellspacing="0" width="100%"
-                                    style="max-width: 400px; margin: 0 auto;">
+                                    style="max-width: 450px;">
                                     <tr>
                                         <td align="center" style="padding: 0 10px;">
                                             <img src="https://www.radionyra.com/Alexa.jpg" alt="Alexa" width="60"
-                                                style="display: block; margin: 0 auto;" />
+                                                style="display: block; margin: 0 auto; border-radius: 50%;" />
                                             <p
-                                                style="margin: 10px 0 0 0; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">
+                                                style="margin: 10px 0 0 0; font-size: 10px; font-weight: bold; text-transform: uppercase; font-family: Arial, sans-serif;">
                                                 Alexa</p>
                                         </td>
                                         <td align="center" style="padding: 0 10px;">
                                             <img src="https://www.radionyra.com/Google%20Assisstance.jpg"
-                                                alt="Google Assistant" width="60"
-                                                style="display: block; margin: 0 auto;" />
+                                                alt="Assistant" width="60"
+                                                style="display: block; margin: 0 auto; border-radius: 50%;" />
                                             <p
-                                                style="margin: 10px 0 0 0; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">
+                                                style="margin: 10px 0 0 0; font-size: 10px; font-weight: bold; text-transform: uppercase; font-family: Arial, sans-serif;">
                                                 Assistant</p>
                                         </td>
                                         <td align="center" style="padding: 0 10px;">
                                             <img src="https://www.radionyra.com/Siri.jpg" alt="Siri" width="60"
-                                                style="display: block; margin: 0 auto;" />
+                                                style="display: block; margin: 0 auto; border-radius: 50%;" />
                                             <p
-                                                style="margin: 10px 0 0 0; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">
+                                                style="margin: 10px 0 0 0; font-size: 10px; font-weight: bold; text-transform: uppercase; font-family: Arial, sans-serif;">
                                                 Siri</p>
                                         </td>
                                     </tr>
                                 </table>
                                 <p
-                                    style="margin: 35px 0 0 0; font-size: 18px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #000000;">
+                                    style="margin: 30px 0 0 0; font-size: 18px; font-weight: 900; text-transform: uppercase; color: #000000; font-family: Arial, sans-serif;">
                                     Just say: "Play Radio Nyra"</p>
                             </td>
                         </tr>
+                    </table>
 
-                        <!-- FOOTER -->
+                    <!-- APP ASSETS -->
+                    <table border="0" cellpadding="0" cellspacing="0" width="600" class="container"
+                        style="background-color: #ffffff; border-top: 1px solid #eeeeee;">
                         <tr>
-                            <td align="center" style="padding: 60px 20px; background-color: #000000; color: #ffffff;">
-                                <img src="https://www.radionyra.com/images/radio-nyra-logo.jpg" alt="Radio Nyra"
-                                    width="50"
-                                    style="display: block; border-radius: 50%; border: 1px solid #333333; margin: 0 auto 25px auto;" />
-                                <table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto 35px auto;">
+                            <td align="center" style="padding: 40px 20px;">
+                                <h3
+                                    style="margin: 0 0 20px 0; font-size: 18px; font-weight: 900; text-transform: uppercase; font-family: Arial, sans-serif;">
+                                    Download The Radio Nyra App</h3>
+                                <table border="0" cellpadding="0" cellspacing="0">
                                     <tr>
-                                        <td style="padding: 0 15px;"><a href="https://facebook.com/radionyrausa"
-                                                target="_blank"
-                                                style="color: #ffffff; text-decoration: none; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;">Facebook</a>
+                                        <td style="padding: 0 10px;">
+                                            <a href="https://apps.apple.com/in/app/radio-nyra-raleigh-durham/id6469009980"
+                                                target="_blank">
+                                                <img src="https://www.radionyra.com/Apple icon.png" alt="App Store"
+                                                    width="90" style="display: block;" />
+                                            </a>
                                         </td>
-                                        <td style="padding: 0 15px;"><a href="https://instagram.com/radionyrausa"
-                                                target="_blank"
-                                                style="color: #ffffff; text-decoration: none; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;">Instagram</a>
-                                        </td>
-                                        <td style="padding: 0 15px;"><a href="https://twitter.com/NyraUsa"
-                                                target="_blank"
-                                                style="color: #ffffff; text-decoration: none; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;">Twitter</a>
-                                        </td>
-                                        <td style="padding: 0 15px;"><a href="https://youtube.com/c/RadioNyraUSA"
-                                                target="_blank"
-                                                style="color: #ffffff; text-decoration: none; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;">YouTube</a>
-                                        </td>
-                                        <td style="padding: 0 15px;"><a
-                                                href="https://www.linkedin.com/company/radionyrausa/posts/?feedView=all"
-                                                target="_blank"
-                                                style="color: #ffffff; text-decoration: none; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;">LinkedIn</a>
+                                        <td style="padding: 0 10px;">
+                                            <a href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app"
+                                                target="_blank">
+                                                <img src="https://www.radionyra.com/Android icon.png" alt="Google Play"
+                                                    width="90" style="display: block;" />
+                                            </a>
                                         </td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- FOOTER & SOCIALS (Costco Style: Small icons, detailed legal) -->
+                    <table border="0" cellpadding="0" cellspacing="0" width="600" class="container"
+                        style="background-color: #ffffff; border-top: 1px solid #eeeeee; padding: 50px 20px;">
+                        <tr>
+                            <td align="center">
+                                <!-- Social Icons Circular - Unified Style -->
+                                <table border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 30px;">
+                                    <tr>
+                                        <td style="padding: 0 12px;">
+                                            <a href="https://facebook.com/radionyrausa" target="_blank">
+                                                <img src="https://cdn-icons-png.flaticon.com/512/3670/3670124.png"
+                                                    alt="FB" width="31" style="display: block; border: 0;" />
+                                            </a>
+                                        </td>
+                                        <td style="padding: 0 12px;">
+                                            <a href="https://instagram.com/radionyrausa" target="_blank">
+                                                <img src="https://cdn-icons-png.flaticon.com/512/3955/3955024.png"
+                                                    alt="IG" width="31" style="display: block; border: 0;" />
+                                            </a>
+                                        </td>
+                                        <td style="padding: 0 12px;">
+                                            <a href="https://twitter.com/NyraUsa" target="_blank">
+                                                <img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png"
+                                                    alt="X" width="31" style="display: block; border: 0;" />
+                                            </a>
+                                        </td>
+                                        <td style="padding: 0 12px;">
+                                            <a href="https://youtube.com/c/RadioNyraUSA" target="_blank">
+                                                <img src="https://cdn-icons-png.flaticon.com/512/3670/3670147.png"
+                                                    alt="YT" width="31" style="display: block; border: 0;" />
+                                            </a>
+                                        </td>
+                                        <td style="padding: 0 12px;">
+                                            <a href="https://www.linkedin.com/company/radionyrausa/posts/?feedView=all"
+                                                target="_blank">
+                                                <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png"
+                                                    alt="LI" width="31" style="display: block; border: 0;" />
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <!-- Legal / Costco Style Disclaimer -->
                                 <p
-                                    style="margin: 0 0 12px 0; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #888888;">
-                                    © 2026 Radio Nyra. All rights reserved.</p>
+                                    style="margin: 0 0 15px 0; font-size: 11px; line-height: 1.5; color: #666666; font-family: Arial, sans-serif;">
+                                    Radio Nyra is available 24/7 across the Raleigh-Durham area. Some shows and segments
+                                    may vary by schedule and platform availability. Please visit our website for the
+                                    most current show timings and host information.
+                                </p>
                                 <p
-                                    style="margin: 0; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px;">
-                                    <a href="https://www.radionyra.com" target="_blank"
+                                    style="margin: 0 0 15px 0; font-size: 11px; line-height: 1.5; color: #666666; font-family: Arial, sans-serif;">
+                                    In the past you provided Radio Nyra with your email address. Occasionally, you will
+                                    receive brief announcements regarding special shows, events and services. If you no
+                                    longer want to receive these advertisements, please <a href="#"
+                                        style="color: #ff0000; text-decoration: underline;">unsubscribe</a>.
+                                </p>
+                                <p
+                                    style="margin: 0; font-size: 11px; font-weight: bold; color: #000000; font-family: Arial, sans-serif; text-transform: uppercase; letter-spacing: 1px;">
+                                    © 2026 Radio Nyra. All rights reserved. | <a href="https://www.radionyra.com"
+                                        target="_blank"
                                         style="color: #ff0000; text-decoration: none;">www.radionyra.com</a>
                                 </p>
                             </td>

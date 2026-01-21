@@ -14,9 +14,55 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 export default function PodcastsPage() {
     const podcasts = [
-        { title: "Episode 1: The Beginning", host: "Sohail", show: "Subha Ki Shuruaat", date: "Jan 03, 2026" },
-        { title: "Episode 2: Bollywood Talk", host: "Bharti Rathore", show: "Bollywood Bliss", date: "Jan 04, 2026" },
-        { title: "Episode 3: Morning Vibes", host: "Raj Persaud", show: "Chai Pe Charcha", date: "Jan 05, 2026" },
+        {
+            title: "Confused about U.S.college admissions? We’ve got you covered!",
+            host: "Raj Parsaud",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/Jj3WeE-4Z4A",
+            thumbnail: "https://img.youtube.com/vi/Jj3WeE-4Z4A/maxresdefault.jpg"
+        },
+        {
+            title: "College Admissions Strategy by Empowerly | Episode 2",
+            host: "Raj Persaud",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/CXTOkdIA7Bk",
+            thumbnail: "https://img.youtube.com/vi/CXTOkdIA7Bk/maxresdefault.jpg"
+        },
+        {
+            title: "Leaders & Legends | Featuring Seema Kak, Kiran Inc",
+            host: "Steve Rao",
+            show: "Leaders & Legends",
+            url: "https://youtu.be/uwu0hho9fEg",
+            thumbnail: "https://img.youtube.com/vi/uwu0hho9fEg/maxresdefault.jpg"
+        },
+        {
+            title: "Aventon Cary at Radio Nyra Studio Podcast",
+            host: "Raj Parsaud",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/-kYmBs64DuI",
+            thumbnail: "https://img.youtube.com/vi/-kYmBs64DuI/maxresdefault.jpg"
+        },
+        {
+            title: "Emerging Tech Explained by Industry Veteran Mark R. Hinkle",
+            host: "Steve Rao",
+            show: "Leaders & Legends",
+            url: "https://youtu.be/9am4zK87Tz4",
+            thumbnail: "https://img.youtube.com/vi/9am4zK87Tz4/maxresdefault.jpg"
+        },
+        {
+            title: "Leaders & Legends Podcast | Sachin Joshi",
+            host: "Steve Rao",
+            show: "Leaders & Legends",
+            url: "https://youtu.be/iJ5P669vJZ4",
+            thumbnail: "https://img.youtube.com/vi/iJ5P669vJZ4/maxresdefault.jpg"
+        },
+        {
+            title: "Leaders & Legends | Interview with Himanshu H. Shah",
+            host: "Steve Rao",
+            show: "Leaders & Legends",
+            url: "https://youtu.be/kQulwTLdXr0",
+            thumbnail: "https://img.youtube.com/vi/kQulwTLdXr0/maxresdefault.jpg"
+        },
     ]
 
     const [submitted, setSubmitted] = useState(false)
@@ -212,33 +258,43 @@ export default function PodcastsPage() {
                         <h2 className="text-3xl font-black uppercase tracking-tighter mb-12 border-l-4 border-primary pl-4 italic">Recent Episodes</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {podcasts.map((pod, i) => (
-                                <div key={i} className="group bg-card border border-border overflow-hidden hover:border-primary transition-all duration-300 rounded-sm shadow-sm">
+                                <div key={i} className="group bg-card border border-border overflow-hidden hover:border-primary transition-all duration-300 rounded-sm shadow-sm flex flex-col">
                                     <div className="relative aspect-video bg-black flex items-center justify-center overflow-hidden">
-                                        <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity z-10" />
-                                        <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center group-hover:scale-110 transition-all z-20 shadow-2xl">
+                                        <img
+                                            src={pod.thumbnail}
+                                            alt={pod.title}
+                                            className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                                        />
+                                        <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-30 transition-opacity z-10" />
+                                        <Link
+                                            href={pod.url}
+                                            target="_blank"
+                                            className="w-16 h-16 rounded-full bg-primary flex items-center justify-center group-hover:scale-110 transition-all z-20 shadow-2xl"
+                                        >
                                             <Play className="fill-white text-white ml-1 w-6 h-6" />
-                                        </div>
+                                        </Link>
                                         <div className="absolute bottom-4 left-4 z-20">
-                                            <span className="text-[10px] font-black uppercase tracking-widest text-white/60 bg-black/40 px-2 py-1 backdrop-blur-sm">45:00 MIN</span>
+                                            <span className="text-[10px] font-black uppercase tracking-widest text-white/90 bg-black/60 px-2 py-1 backdrop-blur-sm border border-white/10">WATCH NOW</span>
                                         </div>
                                     </div>
-                                    <div className="p-8">
+                                    <div className="p-8 flex flex-col flex-grow">
                                         <div className="flex items-center justify-between mb-4">
                                             <span className="text-[10px] font-black uppercase tracking-widest text-primary italic">{pod.show}</span>
-                                            <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground flex items-center gap-1.5 opacity-60">
-                                                <Calendar className="w-3 h-3" /> {pod.date}
-                                            </span>
                                         </div>
-                                        <h3 className="text-2xl font-black uppercase tracking-tight mb-4 group-hover:text-primary transition-colors italic leading-tight">{pod.title}</h3>
-                                        <div className="flex items-center gap-2 mb-8">
+                                        <h3 className="text-xl font-black uppercase tracking-tight mb-4 group-hover:text-primary transition-colors italic leading-tight line-clamp-2">{pod.title}</h3>
+                                        <div className="flex items-center gap-2 mb-8 mt-auto">
                                             <div className="w-6 h-6 rounded-full bg-muted flex items-center justify-center">
                                                 <Mic2 className="w-3 h-3 text-muted-foreground" />
                                             </div>
                                             <p className="text-[10px] font-black text-muted-foreground uppercase tracking-widest">Hosted by {pod.host}</p>
                                         </div>
 
-                                        <Link href="/podcasts" className="inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-foreground hover:text-primary transition-colors border-b-2 border-primary/20 hover:border-primary pb-1">
-                                            Watch Now
+                                        <Link
+                                            href={pod.url}
+                                            target="_blank"
+                                            className="inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-foreground hover:text-primary transition-colors border-b-2 border-primary/20 hover:border-primary pb-1 self-start"
+                                        >
+                                            Watch Full Video
                                         </Link>
                                     </div>
                                 </div>

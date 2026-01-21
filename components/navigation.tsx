@@ -37,6 +37,16 @@ export function Navigation() {
         { href: "/gallery/2026", label: "2026 Bollywood and Tollywood Bash" },
       ]
     },
+    {
+      href: "#community",
+      label: "Community",
+      subLinks: [
+        { href: "/community/movies", label: "Upcoming Movies" },
+        { href: "/community/restaurants", label: "Indian Restaurants" },
+        { href: "/community/temples", label: "Temples & Worship" },
+        { href: "/community/ott-adda", label: "OTT Adda" },
+      ]
+    },
     { href: "/advertise", label: "Advertise" },
     { href: "/faq", label: "FAQ" },
     { href: "/contact", label: "Contact Us" },

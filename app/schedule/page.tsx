@@ -75,7 +75,7 @@ const SCHEDULE_DATA: ScheduleEntry[] = [
         shows: {
             Monday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
             Tuesday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Wednesday: { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.jpg", color: "bg-blue-400 text-white" },
+            Wednesday: { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.jpeg", color: "bg-blue-400 text-white" },
             Thursday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
             Friday: { name: "Dil Se Desi", host: "Jyoti", image: "/images/hosts/dil-se-desi.jpg", color: "bg-red-800 text-white" },
             Saturday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
@@ -87,7 +87,7 @@ const SCHEDULE_DATA: ScheduleEntry[] = [
         shows: {
             Monday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
             Tuesday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Wednesday: { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.jpg", color: "bg-blue-400 text-white" },
+            Wednesday: { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.jpeg", color: "bg-blue-400 text-white" },
             Thursday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
             Friday: { name: "Dil Se Desi", host: "Jyoti", image: "/images/hosts/dil-se-desi.jpg", color: "bg-red-800 text-white" },
             Saturday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },

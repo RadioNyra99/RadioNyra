@@ -195,10 +195,25 @@ export default function OTTAddaPage() {
                         </div>
                     </section>
 
-                    <div className="mt-20 text-center">
-                        <p className="text-muted-foreground font-black uppercase tracking-[0.2em] text-sm animate-pulse">
-                            Stay tuned to Radio Nyra for weekly OTT updates!
+                    <div className="mt-32 text-center border-t border-border/50 pt-20">
+                        <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tighter italic mb-6">
+                            Have more <span className="text-primary">Questions?</span>
+                        </h3>
+                        <p className="text-muted-foreground font-bold uppercase tracking-widest mb-10 max-w-md mx-auto">
+                            Check our frequently asked questions for everything you need to know about Radio Nyra.
                         </p>
+                        <a
+                            href="/faq"
+                            className="inline-block bg-primary text-white font-black uppercase tracking-widest px-12 py-4 hover:bg-primary/90 transition-all hover:scale-105 shadow-[0_10px_20px_rgba(235,30,50,0.2)]"
+                        >
+                            Visit FAQ Page
+                        </a>
+
+                        <div className="mt-20">
+                            <p className="text-muted-foreground font-black uppercase tracking-[0.2em] text-sm animate-pulse">
+                                Stay tuned to Radio Nyra for weekly OTT updates!
+                            </p>
+                        </div>
                     </div>
                 </div>
             </main>

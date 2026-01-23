@@ -57,7 +57,7 @@ export default function HomePage() {
               className="w-full h-full object-cover"
               poster="/radio-studio-modern.jpg"
             >
-              <source src="https://assets.mixkit.co/videos/preview/mixkit-sound-waves-in-the-dark-3079-large.mp4" type="video/mp4" />
+              <source src="/home%20page%20video.mp4" type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-black/50" />
           </div>

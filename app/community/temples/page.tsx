@@ -12,21 +12,24 @@ export default function TemplesPage() {
             type: "Hindu Temple",
             description: "A majestic Hindu temple and cultural center dedicated to Lord Venkateshwara, serving as a spiritual cornerstone for the community.",
             location: "Cary, NC",
-            features: ["Traditional Architecture", "Daily Worship", "Cultural Events"]
+            features: ["Traditional Architecture", "Daily Worship", "Cultural Events"],
+            image: "/temples/temples/Sri Venkateswara Temple of North Carolina.jpg"
         },
         {
             name: "Kosala Kadampa Buddhist Center",
             type: "Buddhist Center",
             description: "A peaceful sanctuary offering meditation classes and spiritual teachings in the Kadampa Buddhist tradition.",
             location: "Raleigh, NC",
-            features: ["Meditation Classes", "Spiritual Support", "Quiet Contemplation"]
+            features: ["Meditation Classes", "Spiritual Support", "Quiet Contemplation"],
+            image: "/temples/temples/Kosala Kadampa Buddhist Center.jpg"
         },
         {
             name: "Raleigh North Carolina Temple",
             type: "Spiritual Site",
             description: "A serene and beautiful spiritual site maintained by the Church of Jesus Christ of Latter-day Saints.",
             location: "Raleigh, NC",
-            features: ["Garden Grounds", "Peaceful Atmosphere", "Spiritual Worship"]
+            features: ["Garden Grounds", "Peaceful Atmosphere", "Spiritual Worship"],
+            image: "/temples/temples/Raleigh North Carolina Temple.jpg"
         }
     ];
 
@@ -56,34 +59,45 @@ export default function TemplesPage() {
                                 initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
-                                className="flex flex-col md:flex-row gap-8 bg-card border-b-4 border-primary p-8 hover:bg-muted/10 transition-colors"
+                                className="flex flex-col bg-card border-b-4 border-primary overflow-hidden hover:bg-muted/10 transition-colors"
                             >
-                                <div className="flex-1">
-                                    <div className="flex items-center gap-2 text-primary mb-4 font-black text-xs uppercase tracking-widest">
-                                        <button className="bg-primary text-white p-1 rounded-sm"><Landmark size={14} /></button>
-                                        {place.type}
+                                {place.image && (
+                                    <div className="relative h-72 w-full overflow-hidden bg-muted">
+                                        <img
+                                            src={place.image}
+                                            alt={place.name}
+                                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                        />
                                     </div>
-                                    <h3 className="text-3xl font-black uppercase tracking-tight mb-4">{place.name}</h3>
-                                    <p className="text-muted-foreground font-medium leading-relaxed mb-6">
-                                        {place.description}
-                                    </p>
-                                    <div className="flex flex-wrap gap-2">
-                                        {place.features.map(f => (
-                                            <span key={f} className="text-[10px] font-bold uppercase tracking-widest bg-muted px-3 py-1 rounded-full border border-border/50">
-                                                {f}
-                                            </span>
-                                        ))}
+                                )}
+                                <div className="flex flex-col md:flex-row gap-8 p-8">
+                                    <div className="flex-1">
+                                        <div className="flex items-center gap-2 text-primary mb-4 font-black text-xs uppercase tracking-widest">
+                                            <button className="bg-primary text-white p-1 rounded-sm"><Landmark size={14} /></button>
+                                            {place.type}
+                                        </div>
+                                        <h3 className="text-3xl font-black uppercase tracking-tight mb-4">{place.name}</h3>
+                                        <p className="text-muted-foreground font-medium leading-relaxed mb-6">
+                                            {place.description}
+                                        </p>
+                                        <div className="flex flex-wrap gap-2">
+                                            {place.features.map(f => (
+                                                <span key={f} className="text-[10px] font-bold uppercase tracking-widest bg-muted px-3 py-1 rounded-full border border-border/50">
+                                                    {f}
+                                                </span>
+                                            ))}
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div className="md:w-64 flex flex-col justify-center items-center md:items-end gap-4 p-6 bg-muted/20 md:bg-transparent">
-                                    <div className="flex items-center gap-2 text-muted-foreground font-bold text-sm uppercase tracking-widest">
-                                        <MapPin size={18} className="text-primary" />
-                                        {place.location}
+                                    <div className="md:w-64 flex flex-col justify-center items-center md:items-end gap-4 p-6 bg-muted/20 md:bg-transparent">
+                                        <div className="flex items-center gap-2 text-muted-foreground font-bold text-sm uppercase tracking-widest">
+                                            <MapPin size={18} className="text-primary" />
+                                            {place.location}
+                                        </div>
+                                        <button className="mt-4 md:mt-0 text-xs font-black uppercase tracking-widest text-primary hover:underline flex items-center gap-2">
+                                            Learn More <Heart size={14} />
+                                        </button>
                                     </div>
-                                    <button className="mt-4 md:mt-0 text-xs font-black uppercase tracking-widest text-primary hover:underline flex items-center gap-2">
-                                        Learn More <Heart size={14} />
-                                    </button>
                                 </div>
                             </motion.div>
                         ))}

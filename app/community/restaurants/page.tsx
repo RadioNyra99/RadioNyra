@@ -12,56 +12,64 @@ export default function RestaurantsPage() {
             description: "Highly rated Indian & Asian fusion in Raleigh",
             highlights: "Tandoori, North Indian curries",
             location: "Raleigh",
-            rating: "4.8"
+            rating: "4.8",
+            image: "/restaurant/restaurant/Lime & Lemon Indian Grill & Bar.jpg"
         },
         {
             name: "Bazil Indian Cuisine",
             description: "Modern Indian dining with rich flavors",
             highlights: "Fusion plates, Contemporary Indian",
             location: "Durham",
-            rating: "4.7"
+            rating: "4.7",
+            image: "/restaurant/restaurant/Bazil Indian Cuisine.jpg"
         },
         {
             name: "Saffron Indian Cuisine Cary",
             description: "Popular Indian eatery with classic dishes",
             highlights: "Classic curries, Traditional Tandoor",
             location: "Cary",
-            rating: "4.6"
+            rating: "4.6",
+            image: "/restaurant/restaurant/Saffron Indian Cuisine Cary.jpg"
         },
         {
             name: "Urban Turban Indian Grill and Bar",
             description: "Top-rated Indian restaurant in Durham",
             highlights: "Street food, Modern Indian",
             location: "Durham",
-            rating: "4.8"
+            rating: "4.8",
+            image: "/restaurant/restaurant/Urban Turban Indian Grill and Bar.jpg"
         },
         {
             name: "Bombay Curry",
             description: "Casual Indian comfort food",
             highlights: "North Indian favorites",
             location: "Raleigh",
-            rating: "4.5"
+            rating: "4.5",
+            image: "/restaurant/restaurant/Bombay Curry.jpg"
         },
         {
             name: "Masala House",
             description: "Authentic Indian tastes",
             highlights: "Home-style cooking",
             location: "Cary",
-            rating: "4.4"
+            rating: "4.4",
+            image: "/restaurant/restaurant/Masala House.jpg"
         },
         {
             name: "Amrut: Taste of India",
             description: "Fine-dining Indian choices",
             highlights: "Vegetarian & vegan options",
             location: "Raleigh",
-            rating: "4.7"
+            rating: "4.7",
+            image: "/restaurant/restaurant/Amrut Taste of India.jpg"
         },
         {
             name: "Jalwa Indian Bistro",
             description: "Local favorite for vibrant Indian flavors",
             highlights: "South Indian favorites",
             location: "Durham",
-            rating: "4.6"
+            rating: "4.6",
+            image: "/restaurant/restaurant/Jalwa Indian Bistro.jpg"
         }
     ];
 
@@ -91,8 +99,17 @@ export default function RestaurantsPage() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.05 }}
-                                className="group flex flex-col md:flex-row bg-muted/30 border border-border/50 hover:border-primary/50 transition-all overflow-hidden"
+                                className="group flex flex-col bg-muted/30 border border-border/50 hover:border-primary/50 transition-all overflow-hidden"
                             >
+                                {rest.image && (
+                                    <div className="relative h-64 w-full overflow-hidden bg-muted">
+                                        <img
+                                            src={rest.image}
+                                            alt={rest.name}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        />
+                                    </div>
+                                )}
                                 <div className="p-8 flex-1">
                                     <div className="flex justify-between items-start mb-4">
                                         <div className="flex items-center gap-1 text-primary">

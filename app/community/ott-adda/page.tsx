@@ -8,24 +8,24 @@ import { Badge } from "@/components/ui/badge"
 
 export default function OTTAddaPage() {
     const nowStreaming = [
-        { title: "Tere Ishk Mein", language: "Hindi", platform: "Netflix", type: "Romantic drama", tags: ["Must Watch"] },
-        { title: "Shambhala", language: "Telugu", platform: "Aha", type: "Supernatural thriller", tags: ["Trending"] },
-        { title: "Beauty", language: "Telugu", platform: "ZEE5", type: "Romantic drama", tags: ["New Release"] },
-        { title: "Drive", language: "Telugu", platform: "Prime Video", type: "Thriller", tags: ["Trending"] },
-        { title: "Andhela Ravamidhi", language: "Telugu", platform: "Prime Video", type: "Musical drama", tags: [] },
-        { title: "Jigris", language: "Telugu", platform: "Sun NXT", type: "Comedy drama", tags: ["Family Friendly"] },
-        { title: "Mowgli", language: "Telugu", platform: "ETV Win", type: "Romantic adventure", tags: [] },
-        { title: "12A Railway Colony", language: "Telugu", platform: "Prime Video", type: "Horror thriller", tags: [] },
-        { title: "Raju Weds Rambai", language: "Telugu", platform: "ETV Win", type: "Romantic drama", tags: ["Family Friendly"] },
-        { title: "Nayanam (Series)", language: "Telugu", platform: "ZEE5", type: "Sci-fi web series", tags: [] },
-        { title: "Premante", language: "Telugu", platform: "Netflix", type: "Romantic comedy", tags: ["Must Watch"] },
-        { title: "Jatadhara", language: "Telugu", platform: "Prime Video", type: "Horror comedy", tags: [] },
-        { title: "The Great Pre-Wedding Show", language: "Telugu", platform: "ZEE5", type: "Comedy", tags: ["Family Friendly"] },
-        { title: "3 Roses – Season 2", language: "Telugu", platform: "Aha", type: "Drama series", tags: ["Trending"] },
-        { title: "Kaantha", language: "Telugu", platform: "Netflix", type: "Multilingual", tags: [] },
-        { title: "They Call Him OG", language: "Telugu", platform: "Netflix", type: "Action drama", tags: ["Must Watch"] },
-        { title: "Mithra Mandali", language: "Telugu", platform: "Prime Video", type: "Comedy", tags: [] },
-        { title: "120 Bahadur", language: "Hindi", platform: "Prime Video", type: "War/Action", tags: ["Must Watch"] },
+        { title: "Tere Ishk Mein", language: "Hindi", platform: "Netflix", type: "Romantic drama", tags: ["Must Watch"], image: "/OTT ADDA/OTT ADDA/Tere Ishk Mein.jpg" },
+        { title: "Shambhala", language: "Telugu", platform: "Aha", type: "Supernatural thriller", tags: ["Trending"], image: "/OTT ADDA/OTT ADDA/Shambhala.jpg" },
+        { title: "Beauty", language: "Telugu", platform: "ZEE5", type: "Romantic drama", tags: ["New Release"], image: "/OTT ADDA/OTT ADDA/Beauty.jpg" },
+        { title: "Drive", language: "Telugu", platform: "Prime Video", type: "Thriller", tags: ["Trending"], image: "/OTT ADDA/OTT ADDA/Drive.jpg" },
+        { title: "Andhela Ravamidhi", language: "Telugu", platform: "Prime Video", type: "Musical drama", tags: [], image: "/OTT ADDA/OTT ADDA/Andhela Ravamidhi.jpg" },
+        { title: "Jigris", language: "Telugu", platform: "Sun NXT", type: "Comedy drama", tags: ["Family Friendly"], image: "/OTT ADDA/OTT ADDA/Jigris.jpg" },
+        { title: "Mowgli", language: "Telugu", platform: "ETV Win", type: "Romantic adventure", tags: [], image: "/OTT ADDA/OTT ADDA/Mowgli.jpg" },
+        { title: "12A Railway Colony", language: "Telugu", platform: "Prime Video", type: "Horror thriller", tags: [], image: "/OTT ADDA/OTT ADDA/12A Railway Colony.jpg" },
+        { title: "Raju Weds Rambai", language: "Telugu", platform: "ETV Win", type: "Romantic drama", tags: ["Family Friendly"], image: "/OTT ADDA/OTT ADDA/Raju Weds Rambai.jpg" },
+        { title: "Nayanam (Series)", language: "Telugu", platform: "ZEE5", type: "Sci-fi web series", tags: [], image: "/OTT ADDA/OTT ADDA/Nayanam (Series).jpg" },
+        { title: "Premante", language: "Telugu", platform: "Netflix", type: "Romantic comedy", tags: ["Must Watch"], image: "/OTT ADDA/OTT ADDA/Premante.jpg" },
+        { title: "Jatadhara", language: "Telugu", platform: "Prime Video", type: "Horror comedy", tags: [], image: "/OTT ADDA/OTT ADDA/Jatadhara.jpg" },
+        { title: "The Great Pre-Wedding Show", language: "Telugu", platform: "ZEE5", type: "Comedy", tags: ["Family Friendly"], image: "/OTT ADDA/OTT ADDA/The Great Pre-Wedding Show.jpg" },
+        { title: "3 Roses – Season 2", language: "Telugu", platform: "Aha", type: "Drama series", tags: ["Trending"], image: "/OTT ADDA/OTT ADDA/3 Roses – Season 2.jpg" },
+        { title: "Kaantha", language: "Telugu", platform: "Netflix", type: "Multilingual", tags: [], image: "/OTT ADDA/OTT ADDA/Kaantha.jpg" },
+        { title: "They Call Him OG", language: "Telugu", platform: "Netflix", type: "Action drama", tags: ["Must Watch"], image: "/OTT ADDA/OTT ADDA/They Call Him OG.jpg" },
+        { title: "Mithra Mandali", language: "Telugu", platform: "Prime Video", type: "Comedy", tags: [], image: "/OTT ADDA/OTT ADDA/Mithra Mandali.jpg" },
+        { title: "120 Bahadur", language: "Hindi", platform: "Prime Video", type: "War/Action", tags: ["Must Watch"], image: "/OTT ADDA/OTT ADDA/29.jpg" },
     ];
 
     const upcoming = [
@@ -87,21 +87,32 @@ export default function OTTAddaPage() {
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: i * 0.05 }}
-                                    className="bg-card border border-border/50 p-5 hover:border-primary/50 transition-all group"
+                                    className="bg-card border border-border/50 overflow-hidden hover:border-primary/50 transition-all group"
                                 >
-                                    <div className="flex justify-between items-start mb-2">
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-primary">{item.platform}</span>
-                                        <span className="text-[10px] font-bold text-muted-foreground">{item.language}</span>
-                                    </div>
-                                    <h3 className="text-lg font-black uppercase leading-tight group-hover:text-primary transition-colors">{item.title}</h3>
-                                    <p className="text-xs text-muted-foreground mt-1 mb-4">{item.type}</p>
+                                    {item.image && (
+                                        <div className="relative h-64 w-full overflow-hidden bg-muted">
+                                            <img
+                                                src={item.image}
+                                                alt={item.title}
+                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                            />
+                                        </div>
+                                    )}
+                                    <div className="p-5">
+                                        <div className="flex justify-between items-start mb-2">
+                                            <span className="text-[10px] font-black uppercase tracking-widest text-primary">{item.platform}</span>
+                                            <span className="text-[10px] font-bold text-muted-foreground">{item.language}</span>
+                                        </div>
+                                        <h3 className="text-lg font-black uppercase leading-tight group-hover:text-primary transition-colors">{item.title}</h3>
+                                        <p className="text-xs text-muted-foreground mt-1 mb-4">{item.type}</p>
 
-                                    <div className="flex flex-wrap gap-1">
-                                        {item.tags.map(tag => (
-                                            <Badge key={tag} variant="secondary" className="bg-primary/10 text-primary border-none text-[8px] uppercase tracking-tighter">
-                                                {tag}
-                                            </Badge>
-                                        ))}
+                                        <div className="flex flex-wrap gap-1">
+                                            {item.tags.map(tag => (
+                                                <Badge key={tag} variant="secondary" className="bg-primary/10 text-primary border-none text-[8px] uppercase tracking-tighter">
+                                                    {tag}
+                                                </Badge>
+                                            ))}
+                                        </div>
                                     </div>
                                 </motion.div>
                             ))}

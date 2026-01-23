@@ -14,7 +14,8 @@ export default function MoviesPage() {
             releaseDate: "13 Feb 2026",
             language: "Telugu",
             genre: "Action/Thriller",
-            notes: "Theatrical Release"
+            notes: "Theatrical Release",
+            image: "/Upcoming movies/Upcoming movies/Swayambhu.jpg"
         },
         {
             title: "Mrithunjay",
@@ -22,7 +23,8 @@ export default function MoviesPage() {
             releaseDate: "March 2026",
             language: "Telugu",
             genre: "Action/Drama",
-            notes: "Theatrical Release"
+            notes: "Theatrical Release",
+            image: "/Upcoming movies/Upcoming movies/Mrithunjay.jpg"
         },
         {
             title: "Dacoit",
@@ -30,7 +32,8 @@ export default function MoviesPage() {
             releaseDate: "19 Mar 2026",
             language: "Telugu",
             genre: "Action/Drama",
-            notes: "Theatrical Release"
+            notes: "Theatrical Release",
+            image: "/Upcoming movies/Upcoming movies/Dacoit.jpg"
         },
         {
             title: "The Paradise",
@@ -38,7 +41,8 @@ export default function MoviesPage() {
             releaseDate: "26 Mar 2026",
             language: "Telugu",
             genre: "Action",
-            notes: "Theaters"
+            notes: "Theaters",
+            image: "/Upcoming movies/Upcoming movies/The Paradise.jpg"
         },
         {
             title: "Mardaani 3",
@@ -46,7 +50,8 @@ export default function MoviesPage() {
             releaseDate: "Feb 2026",
             language: "Hindi",
             genre: "Bollywood",
-            notes: "Theatrical Release"
+            notes: "Theatrical Release",
+            image: "/Upcoming movies/Upcoming movies/Mardaani 3.jpg"
         },
         {
             title: "Toxic",
@@ -54,7 +59,8 @@ export default function MoviesPage() {
             releaseDate: "2026",
             language: "Hindi",
             genre: "Bollywood Pan-India",
-            notes: "Theatrical Release"
+            notes: "Theatrical Release",
+            image: "/Upcoming movies/Upcoming movies/Toxic.jpg"
         },
         {
             title: "Dhurandhar 2",
@@ -62,7 +68,8 @@ export default function MoviesPage() {
             releaseDate: "2026",
             language: "Hindi",
             genre: "Bollywood",
-            notes: "Theatrical Release"
+            notes: "Theatrical Release",
+            image: "/Upcoming movies/Upcoming movies/Dhurandhar 2.jpg"
         },
         {
             title: "Rahu Ketu",
@@ -70,7 +77,8 @@ export default function MoviesPage() {
             releaseDate: "Early 2026",
             language: "Hindi",
             genre: "Bollywood",
-            notes: "Theatrical Release"
+            notes: "Theatrical Release",
+            image: "/Upcoming movies/Upcoming movies/Rahu Ketu.jpg"
         },
         {
             title: "Champion",
@@ -78,7 +86,8 @@ export default function MoviesPage() {
             releaseDate: "Post-Theatrical",
             language: "Telugu",
             genre: "Action",
-            notes: "Streaming soon"
+            notes: "Streaming soon",
+            image: "/Upcoming movies/Upcoming movies/Champion.jpg"
         },
         {
             title: "Haq",
@@ -86,7 +95,8 @@ export default function MoviesPage() {
             releaseDate: "Jan 2, 2026",
             language: "Hindi",
             genre: "Bollywood",
-            notes: "Netflix"
+            notes: "Netflix",
+            image: "/Upcoming movies/Upcoming movies/Haq.jpg"
         }
     ];
 
@@ -116,38 +126,49 @@ export default function MoviesPage() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1 }}
-                                className="bg-card border border-border/50 p-6 relative overflow-hidden group hover:shadow-2xl transition-all"
+                                className="bg-card border border-border/50 relative overflow-hidden group hover:shadow-2xl transition-all"
                             >
-                                <div className="flex justify-between items-start mb-4">
-                                    <div className={`p-2 rounded-none ${movie.type === 'Theatre' ? 'bg-primary text-white' : 'bg-black text-white'}`}>
-                                        {movie.type === 'Theatre' ? <Film size={20} /> : <Monitor size={20} />}
+                                {movie.image && (
+                                    <div className="relative h-80 w-full overflow-hidden bg-muted">
+                                        <img
+                                            src={movie.image}
+                                            alt={movie.title}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        />
                                     </div>
-                                    <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground border border-border px-2 py-1">
-                                        {movie.language}
-                                    </span>
-                                </div>
-
-                                <h3 className="text-2xl font-black uppercase tracking-tight mb-2 group-hover:text-primary transition-colors">
-                                    {movie.title}
-                                </h3>
-                                <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-4">
-                                    {movie.genre}
-                                </p>
-
-                                <div className="space-y-2 border-t border-border/50 pt-4">
-                                    <div className="flex items-center gap-2 text-sm">
-                                        <Calendar size={16} className="text-primary" />
-                                        <span className="font-bold">{movie.releaseDate}</span>
+                                )}
+                                <div className="p-6">
+                                    <div className="flex justify-between items-start mb-4">
+                                        <div className={`p-2 rounded-none ${movie.type === 'Theatre' ? 'bg-primary text-white' : 'bg-black text-white'}`}>
+                                            {movie.type === 'Theatre' ? <Film size={20} /> : <Monitor size={20} />}
+                                        </div>
+                                        <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground border border-border px-2 py-1">
+                                            {movie.language}
+                                        </span>
                                     </div>
-                                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                                        <span className="font-bold uppercase text-[10px] tracking-widest">{movie.notes}</span>
-                                    </div>
-                                </div>
 
-                                <div className="mt-6">
-                                    <Button className="w-full rounded-none font-bold uppercase tracking-widest group-hover:bg-primary transition-all">
-                                        {movie.type === 'Theatre' ? 'Book Tickets' : 'Watch Now'}
-                                    </Button>
+                                    <h3 className="text-2xl font-black uppercase tracking-tight mb-2 group-hover:text-primary transition-colors">
+                                        {movie.title}
+                                    </h3>
+                                    <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-4">
+                                        {movie.genre}
+                                    </p>
+
+                                    <div className="space-y-2 border-t border-border/50 pt-4">
+                                        <div className="flex items-center gap-2 text-sm">
+                                            <Calendar size={16} className="text-primary" />
+                                            <span className="font-bold">{movie.releaseDate}</span>
+                                        </div>
+                                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                                            <span className="font-bold uppercase text-[10px] tracking-widest">{movie.notes}</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="mt-6">
+                                        <Button className="w-full rounded-none font-bold uppercase tracking-widest group-hover:bg-primary transition-all">
+                                            {movie.type === 'Theatre' ? 'Book Tickets' : 'Watch Now'}
+                                        </Button>
+                                    </div>
                                 </div>
                             </motion.div>
                         ))}

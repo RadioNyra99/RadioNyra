@@ -8,48 +8,55 @@ import { Badge } from "@/components/ui/badge"
 
 export default function OTTAddaPage() {
     const nowStreaming = [
-        { title: "Tere Ishk Mein", language: "Hindi", platform: "Netflix", type: "Romantic drama", tags: ["Must Watch"], image: "/OTT ADDA/OTT ADDA/Tere Ishk Mein.jpg" },
-        { title: "Shambhala", language: "Telugu", platform: "Aha", type: "Supernatural thriller", tags: ["Trending"], image: "/OTT ADDA/OTT ADDA/Shambhala.jpg" },
-        { title: "Beauty", language: "Telugu", platform: "ZEE5", type: "Romantic drama", tags: ["New Release"], image: "/OTT ADDA/OTT ADDA/Beauty.jpg" },
-        { title: "Drive", language: "Telugu", platform: "Prime Video", type: "Thriller", tags: ["Trending"], image: "/OTT ADDA/OTT ADDA/Drive.jpg" },
-        { title: "Andhela Ravamidhi", language: "Telugu", platform: "Prime Video", type: "Musical drama", tags: [], image: "/OTT ADDA/OTT ADDA/Andhela Ravamidhi.jpg" },
-        { title: "Jigris", language: "Telugu", platform: "Sun NXT", type: "Comedy drama", tags: ["Family Friendly"], image: "/OTT ADDA/OTT ADDA/Jigris.jpg" },
-        { title: "Mowgli", language: "Telugu", platform: "ETV Win", type: "Romantic adventure", tags: [], image: "/OTT ADDA/OTT ADDA/Mowgli.jpg" },
-        { title: "12A Railway Colony", language: "Telugu", platform: "Prime Video", type: "Horror thriller", tags: [], image: "/OTT ADDA/OTT ADDA/12A Railway Colony.jpg" },
-        { title: "Raju Weds Rambai", language: "Telugu", platform: "ETV Win", type: "Romantic drama", tags: ["Family Friendly"], image: "/OTT ADDA/OTT ADDA/Raju Weds Rambai.jpg" },
-        { title: "Nayanam (Series)", language: "Telugu", platform: "ZEE5", type: "Sci-fi web series", tags: [], image: "/OTT ADDA/OTT ADDA/Nayanam (Series).jpg" },
-        { title: "Premante", language: "Telugu", platform: "Netflix", type: "Romantic comedy", tags: ["Must Watch"], image: "/OTT ADDA/OTT ADDA/Premante.jpg" },
-        { title: "Jatadhara", language: "Telugu", platform: "Prime Video", type: "Horror comedy", tags: [], image: "/OTT ADDA/OTT ADDA/Jatadhara.jpg" },
-        { title: "The Great Pre-Wedding Show", language: "Telugu", platform: "ZEE5", type: "Comedy", tags: ["Family Friendly"], image: "/OTT ADDA/OTT ADDA/The Great Pre-Wedding Show.jpg" },
-        { title: "3 Roses – Season 2", language: "Telugu", platform: "Aha", type: "Drama series", tags: ["Trending"], image: "/OTT ADDA/OTT ADDA/3 Roses – Season 2.jpg" },
-        { title: "Kaantha", language: "Telugu", platform: "Netflix", type: "Multilingual", tags: [], image: "/OTT ADDA/OTT ADDA/Kaantha.jpg" },
-        { title: "They Call Him OG", language: "Telugu", platform: "Netflix", type: "Action drama", tags: ["Must Watch"], image: "/OTT ADDA/OTT ADDA/They Call Him OG.jpg" },
-        { title: "Mithra Mandali", language: "Telugu", platform: "Prime Video", type: "Comedy", tags: [], image: "/OTT ADDA/OTT ADDA/Mithra Mandali.jpg" },
-        { title: "120 Bahadur", language: "Hindi", platform: "Prime Video", type: "War/Action", tags: ["Must Watch"], image: "/OTT ADDA/OTT ADDA/29.jpg" },
+        { title: "Cheekatilo", language: "Telugu", platform: "Amazon Prime Video", type: "Horror Thriller", tags: ["New Release"], image: "/OTT%20ADDA/OTT%20ADDA/Cheekatilo.jpg" },
+        { title: "Andhela Ravamidhi", language: "Telugu", platform: "Amazon Prime Video", type: "Drama", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/Andhela Ravamidhi.jpg" },
+        { title: "Jigris", language: "Telugu", platform: "Sun NXT", type: "Comedy Drama", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/Jigris.jpg" },
+        { title: "Drive", language: "Telugu", platform: "Amazon Prime Video", type: "Thriller", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/Drive.jpg" },
+        { title: "Beauty", language: "Telugu", platform: "ZEE5", type: "Romantic Entertainer", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/Beauty.jpg" },
+        { title: "Premante", language: "Telugu", platform: "Netflix", type: "Romantic Comedy", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/Premante.jpg" },
+        { title: "12A Railway Colony", language: "Telugu", platform: "Amazon Prime Video", type: "Horror Thriller", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/12A%20Railway%20Colony.jpg" },
+        { title: "Paanch Minar", language: "Telugu", platform: "Amazon Prime Video", type: "Comedy", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/Paanch%20Minar.jpg" },
+        { title: "Aaryan", language: "Telugu", platform: "Netflix", type: "Psychological Crime", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/Aaryan.jpg" },
+        { title: "Premistunnaa", language: "Telugu", platform: "Aha Video", type: "Romantic Drama", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/Premistunnaa.jpg" },
     ];
 
     const upcoming = [
-        { title: "DalDal (Bhumi Pednekar)", language: "Hindi", platform: "Prime Video", date: "~30 Jan 2026", type: "Thriller" },
-        { title: "Space Jen: Chandrayaan", language: "Hindi", platform: "(Various)", date: "23 Jan 2026", type: "Docu-drama" },
-        { title: "Gustakh Ishq", language: "Hindi", platform: "OTT", date: "23 Jan 2026", type: "Drama" },
-        { title: "HIM", language: "Hindi", platform: "OTT", date: "Jan 2026 (early)", type: "Drama" },
-        { title: "Steal", language: "English", platform: "OTT", date: "21 Jan 2026", type: "Action" },
-        { title: "Finding Her Edge", language: "English", platform: "OTT", date: "22 Jan 2026", type: "Drama" },
-        { title: "MCOCA", language: "Hindi", platform: "KableOne", date: "22 Jan 2026", type: "Crime Drama" },
+        { title: "Trimukha", language: "Telugu", platform: "Theaters", date: "30 Jan 2026", type: "Movie", link: "#" },
+        { title: "Karikaada", language: "Telugu", platform: "Theaters", date: "06 Feb 2026", type: "Movie", link: "#" },
+        { title: "Euphoria", language: "Telugu", platform: "Theaters", date: "06 Feb 2026", type: "Movie", link: "#" },
+        { title: "Erracheera", language: "Telugu", platform: "Theaters", date: "06 Feb 2026", type: "Movie", link: "#" },
+        { title: "Chennai Love Story", language: "Telugu", platform: "Theaters", date: "12 Feb 2026", type: "Movie", link: "#" },
+        { title: "Swayambhu", language: "Telugu", platform: "Theaters", date: "13 Feb 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Swayambhu.jpg" },
+        { title: "Funky", language: "Telugu", platform: "Theaters", date: "13 Feb 2026", type: "Movie", link: "#" },
+        { title: "Pookie", language: "Telugu", platform: "Theaters", date: "13 Feb 2026", type: "Movie", link: "#" },
+        { title: "Premalu 2", language: "Telugu", platform: "Theaters", date: "14 Mar 2026", type: "Movie", link: "#" },
+        { title: "Badass", language: "Telugu", platform: "Theaters", date: "14 Mar 2026", type: "Movie", link: "#" },
+        { title: "Dacoit: A Love Story", language: "Telugu", platform: "Theaters", date: "19 Mar 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Dacoit.jpg" },
+        { title: "The Paradise", language: "Telugu", platform: "Theaters", date: "26 Mar 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/The%20Paradise.jpg" },
+        { title: "Peddi", language: "Telugu", platform: "Theaters", date: "27 Mar 2026", type: "Movie", link: "#" },
+        { title: "Mrithunjay", language: "Telugu", platform: "Theaters", date: "Mar–Apr 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Mrithunjay.jpg" },
+        { title: "Rao Bahadur", language: "Telugu", platform: "Theaters", date: "April 2026", type: "Movie", link: "#" },
+        { title: "Spirit", language: "Telugu", platform: "Theaters", date: "April 2026", type: "Movie", link: "#" },
+        { title: "Pushpa 3", language: "Telugu", platform: "Theaters", date: "Aug 2026 (Expected)", type: "Movie", link: "#" },
+        { title: "Ustaad Bhagat Singh", language: "Telugu", platform: "Theaters", date: "2026 (TBA)", type: "Movie", link: "#" },
+        { title: "Adarsha Kutumbam", language: "Telugu", platform: "Theaters", date: "2026 (TBA)", type: "Movie", link: "#" },
+        { title: "NTR–Neel", language: "Telugu", platform: "Theaters", date: "2026 (TBA)", type: "Movie", link: "#" },
+        { title: "Fauzi", language: "Telugu", platform: "Theaters", date: "2026 (TBA)", type: "Movie", link: "#" },
+        { title: "Rowdy Janardhana", language: "Telugu", platform: "Theaters", date: "2026 (TBA)", type: "Movie", link: "#" },
+        { title: "Jai Hanuman", language: "Telugu", platform: "Theaters", date: "2026 (TBA)", type: "Movie", link: "#" },
     ];
 
-    const highlights = [
-        { title: "Lupin – Season 4", platform: "Netflix", type: "Web series" },
-        { title: "De De Pyaar De 2", platform: "Netflix", type: "Bollywood movie" },
-        { title: "Heer Express", platform: "JioHotstar", type: "Movie" },
-        { title: "Freedom at Midnight – Season 2", platform: "Sony LIV", type: "Series" },
+    const theatricalReleases = [
+        { title: "Anaganaga Oka Raju", language: "Telugu", date: "Trending Hit (Theaters)", type: "Romantic Comedy" },
+        { title: "Dhandoraa", language: "Telugu", date: "OTT Buzz", type: "Social Drama" },
+        { title: "Peddi", language: "Telugu", date: "Upcoming (27 Mar)", type: "Sports Drama" },
     ];
 
-    const communityFavorites = [
-        { title: "Champion", language: "Telugu", note: "Sports drama (Prime Video)" },
-        { title: "Stranger Things – Season 5", language: "English", note: "Netflix" },
-        { title: "Haq", language: "Hindi", note: "Netflix" },
-        { title: "DalDal", language: "Hindi", note: "Upcoming suspense thriller (Prime)" },
+    const trendingBuzz = [
+        { title: "Cheekatilo", industry: "Tollywood", date: "Now Streaming", type: "Horror (OTT)", image: "/OTT%20ADDA/OTT%20ADDA/Cheekatilo.jpg" },
+
+        { title: "Anaganaga Oka Raju", industry: "Tollywood", date: "In Theaters", type: "Box Office Hit" },
+        { title: "Dhandoraa", industry: "Tollywood", date: "Trending", type: "Critically Acclaimed" },
     ];
 
     return (
@@ -77,7 +84,7 @@ export default function OTTAddaPage() {
                             <div className="h-10 w-10 bg-primary flex items-center justify-center text-white">
                                 <Play fill="currentColor" size={24} />
                             </div>
-                            <h2 className="text-3xl font-black uppercase tracking-tight">Now Streaming on OTT</h2>
+                            <h2 className="text-3xl font-black uppercase tracking-tight">OTT – Now Streaming (Telugu)</h2>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -127,7 +134,7 @@ export default function OTTAddaPage() {
                                 <div className="h-10 w-10 bg-black flex items-center justify-center text-white">
                                     <Calendar size={24} />
                                 </div>
-                                <h2 className="text-3xl font-black uppercase tracking-tight">Upcoming on OTT (Coming Soon)</h2>
+                                <h2 className="text-3xl font-black uppercase tracking-tight">Upcoming Telugu Movies</h2>
                             </div>
                             <div className="bg-muted/30 border border-border/50 overflow-hidden">
                                 <table className="w-full text-left">
@@ -142,10 +149,36 @@ export default function OTTAddaPage() {
                                         {upcoming.map(item => (
                                             <tr key={item.title} className="hover:bg-primary/5 transition-colors">
                                                 <td className="p-4">
-                                                    <p className="font-black uppercase">{item.title}</p>
-                                                    <p className="text-[10px] text-muted-foreground">{item.language} • {item.type}</p>
+                                                    <div className="flex items-center gap-3">
+                                                        {/* Optional: Show small thumbnail if available */}
+                                                        {/* @ts-ignore */}
+                                                        {item.image && (
+                                                            <div className="h-10 w-8 bg-gray-200 overflow-hidden rounded-sm flex-shrink-0">
+                                                                <img
+                                                                    // @ts-ignore
+                                                                    src={item.image}
+                                                                    alt={item.title}
+                                                                    className="w-full h-full object-cover"
+                                                                />
+                                                            </div>
+                                                        )}
+                                                        <div>
+                                                            <p className="font-black uppercase">{item.title}</p>
+                                                            <p className="text-[10px] text-muted-foreground">{item.language} • {item.type}</p>
+                                                        </div>
+                                                    </div>
                                                 </td>
-                                                <td className="p-4 text-primary uppercase text-xs font-black">{item.platform}</td>
+                                                <td className="p-4 text-xs font-bold">
+                                                    {/* @ts-ignore */}
+                                                    <a
+                                                        href={item.link || "#"}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-primary hover:underline uppercase font-black"
+                                                    >
+                                                        {item.platform}
+                                                    </a>
+                                                </td>
                                                 <td className="p-4 text-xs font-bold">{item.date}</td>
                                             </tr>
                                         ))}
@@ -160,14 +193,14 @@ export default function OTTAddaPage() {
                                 <div className="h-10 w-10 bg-primary flex items-center justify-center text-white">
                                     <TrendingUp size={24} />
                                 </div>
-                                <h2 className="text-3xl font-black uppercase tracking-tight">Recent Highlights</h2>
+                                <h2 className="text-3xl font-black uppercase tracking-tight">In Theaters & Trending (Telugu)</h2>
                             </div>
                             <div className="space-y-4">
-                                {highlights.map(item => (
+                                {theatricalReleases.map(item => (
                                     <div key={item.title} className="p-4 bg-muted/50 border-l-4 border-primary">
                                         <h4 className="font-black uppercase text-sm">{item.title}</h4>
                                         <p className="text-[10px] text-muted-foreground uppercase tracking-widest mt-1">
-                                            {item.platform} | {item.type}
+                                            {item.language} | {item.date}
                                         </p>
                                     </div>
                                 ))}
@@ -183,22 +216,33 @@ export default function OTTAddaPage() {
 
                         <div className="relative z-10">
                             <div className="flex items-center gap-4 mb-8">
-                                <Heart size={32} className="text-primary fill-current" />
-                                <h2 className="text-4xl font-black uppercase tracking-tighter italic">Community Favorites</h2>
+                                <Star size={32} className="text-primary fill-current" />
+                                <h2 className="text-4xl font-black uppercase tracking-tighter italic">Trending / Buzz</h2>
                             </div>
                             <p className="text-primary font-bold uppercase tracking-widest mb-10 border-l-2 border-primary pl-4">
-                                From Our Viewers – What they are watching!
+                                Popular & Widely Talked About
                             </p>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                {communityFavorites.map(fav => (
-                                    <div key={fav.title} className="flex items-start gap-4">
-                                        <span className="text-primary text-2xl font-black">•</span>
-                                        <div>
-                                            <h4 className="text-xl font-black uppercase italic">{fav.title}</h4>
-                                            <p className="text-sm opacity-60 uppercase tracking-widest mt-1">
-                                                {fav.language} — {fav.note}
-                                            </p>
+                                {trendingBuzz.map(movie => (
+                                    <div key={movie.title} className="bg-white/5 p-6 rounded-lg border border-white/10 flex gap-4 items-center">
+                                        {/* @ts-ignore */}
+                                        {movie.image && (
+                                            <div className="h-16 w-16 bg-gray-800 rounded-md overflow-hidden flex-shrink-0">
+                                                <img
+                                                    // @ts-ignore
+                                                    src={movie.image}
+                                                    alt={movie.title}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            </div>
+                                        )}
+                                        <div className="flex-1">
+                                            <h4 className="text-xl font-black uppercase italic text-primary">{movie.title}</h4>
+                                            <div className="flex justify-between items-center mt-2">
+                                                <span className="text-sm font-bold uppercase">{movie.type}</span>
+                                                <span className="text-xs opacity-60 uppercase tracking-widest">{movie.date}</span>
+                                            </div>
                                         </div>
                                     </div>
                                 ))}
@@ -227,9 +271,9 @@ export default function OTTAddaPage() {
                         </div>
                     </div>
                 </div>
-            </main>
+            </main >
 
             <Footer />
-        </div>
+        </div >
     )
 }

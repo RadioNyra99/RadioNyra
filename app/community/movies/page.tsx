@@ -9,95 +9,248 @@ import { Film, Calendar, Monitor, Ticket } from "lucide-react"
 export default function MoviesPage() {
     const movies = [
         {
+            title: "Trimukha",
+            type: "Theatre",
+            releaseDate: "30 Jan 2026",
+            language: "Telugu",
+            genre: "Action/Drama",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/trimukha.jpg"
+        },
+        {
+            title: "Karikaada",
+            type: "Theatre",
+            releaseDate: "06 Feb 2026",
+            language: "Telugu",
+            genre: "Drama",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/Karikaada.jpg"
+        },
+        {
+            title: "Euphoria",
+            type: "Theatre",
+            releaseDate: "06 Feb 2026",
+            language: "Telugu",
+            genre: "Thriller",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/euphoria.jpg"
+        },
+        {
+            title: "Erracheera",
+            type: "Theatre",
+            releaseDate: "06 Feb 2026",
+            language: "Telugu",
+            genre: "Drama",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/errachira.jpg"
+        },
+        {
+            title: "Chennai Love Story",
+            type: "Theatre",
+            releaseDate: "12 Feb 2026",
+            language: "Telugu",
+            genre: "Romance",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/chennai%20Love%20Story.jpg"
+        },
+        {
             title: "Swayambhu",
             type: "Theatre",
             releaseDate: "13 Feb 2026",
             language: "Telugu",
+            genre: "Action/Period",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/Swayambhu.jpg"
+        },
+        {
+            title: "Funky",
+            type: "Theatre",
+            releaseDate: "13 Feb 2026",
+            language: "Telugu",
+            genre: "Comedy",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/funky.jpg"
+        },
+        {
+            title: "Pookie",
+            type: "Theatre",
+            releaseDate: "13 Feb 2026",
+            language: "Telugu",
+            genre: "Comedy/Drama",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/pookie.jpg"
+        },
+        {
+            title: "Premalu 2",
+            type: "Theatre",
+            releaseDate: "14 Mar 2026",
+            language: "Telugu",
+            genre: "Rom-Com",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/premalu%202.jpg"
+        },
+        {
+            title: "Badass",
+            type: "Theatre",
+            releaseDate: "14 Mar 2026",
+            language: "Telugu",
+            genre: "Action",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/badass.jpg"
+        },
+        {
+            title: "Toxic",
+            type: "Theatre",
+            releaseDate: "10 Apr 2026",
+            language: "Kannada/Telugu",
             genre: "Action/Thriller",
             notes: "Theatrical Release",
-            image: "/Upcoming movies/Upcoming movies/Swayambhu.jpg"
+            image: "/Upcoming%20movies/Upcoming%20movies/Toxic.jpg"
         },
         {
-            title: "Mrithunjay",
-            type: "Theatre",
-            releaseDate: "March 2026",
-            language: "Telugu",
-            genre: "Action/Drama",
-            notes: "Theatrical Release",
-            image: "/Upcoming movies/Upcoming movies/Mrithunjay.jpg"
-        },
-        {
-            title: "Dacoit",
+            title: "Dacoit: A Love Story",
             type: "Theatre",
             releaseDate: "19 Mar 2026",
             language: "Telugu",
-            genre: "Action/Drama",
+            genre: "Action/Romance",
             notes: "Theatrical Release",
-            image: "/Upcoming movies/Upcoming movies/Dacoit.jpg"
+            image: "/Upcoming%20movies/Upcoming%20movies/Dacoit.jpg"
         },
         {
             title: "The Paradise",
             type: "Theatre",
             releaseDate: "26 Mar 2026",
             language: "Telugu",
-            genre: "Action",
-            notes: "Theaters",
-            image: "/Upcoming movies/Upcoming movies/The Paradise.jpg"
+            genre: "Action/Thriller",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/The%20Paradise.jpg"
         },
         {
             title: "Mardaani 3",
             type: "Theatre",
-            releaseDate: "Feb 2026",
-            language: "Hindi",
-            genre: "Bollywood",
-            notes: "Theatrical Release",
-            image: "/Upcoming movies/Upcoming movies/Mardaani 3.jpg"
-        },
-        {
-            title: "Toxic",
-            type: "Theatre",
             releaseDate: "2026",
             language: "Hindi",
-            genre: "Bollywood Pan-India",
+            genre: "Crime/Action",
             notes: "Theatrical Release",
-            image: "/Upcoming movies/Upcoming movies/Toxic.jpg"
+            image: "/Upcoming%20movies/Upcoming%20movies/Mardaani%203.jpg"
+        },
+        {
+            title: "Peddi",
+            type: "Theatre",
+            releaseDate: "27 Mar 2026",
+            language: "Telugu",
+            genre: "Sports Drama",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/peddi.jpg"
+        },
+        {
+            title: "Mrithunjay",
+            type: "Theatre",
+            releaseDate: "Mar–Apr 2026",
+            language: "Telugu",
+            genre: "Action/Thriller",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/Mrithunjay.jpg"
+        },
+        {
+            title: "Rahu Ketu",
+            type: "Theatre",
+            releaseDate: "2026",
+            language: "Telugu",
+            genre: "Thriller",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/Rahu%20Ketu.jpg"
         },
         {
             title: "Dhurandhar 2",
             type: "Theatre",
             releaseDate: "2026",
             language: "Hindi",
-            genre: "Bollywood",
+            genre: "Action",
             notes: "Theatrical Release",
-            image: "/Upcoming movies/Upcoming movies/Dhurandhar 2.jpg"
+            image: "/Upcoming%20movies/Upcoming%20movies/Dhurandhar%202.jpg"
         },
         {
-            title: "Rahu Ketu",
+            title: "Rao Bahadur",
             type: "Theatre",
-            releaseDate: "Early 2026",
-            language: "Hindi",
-            genre: "Bollywood",
+            releaseDate: "April 2026",
+            language: "Telugu",
+            genre: "Drama",
             notes: "Theatrical Release",
-            image: "/Upcoming movies/Upcoming movies/Rahu Ketu.jpg"
+            image: "/Upcoming%20movies/Upcoming%20movies/rao%20bahadur.jpg"
         },
         {
-            title: "Champion",
-            type: "OTT",
-            releaseDate: "Post-Theatrical",
+            title: "Spirit",
+            type: "Theatre",
+            releaseDate: "April 2026",
+            language: "Telugu",
+            genre: "Action/Cop Drama",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/spirit.jpg"
+        },
+        {
+            title: "Pushpa 3",
+            type: "Theatre",
+            releaseDate: "Aug 2026 (Expected)",
             language: "Telugu",
             genre: "Action",
-            notes: "Streaming soon",
-            image: "/Upcoming movies/Upcoming movies/Champion.jpg"
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/pushpa%203.jpg"
         },
         {
-            title: "Haq",
-            type: "OTT",
-            releaseDate: "Jan 2, 2026",
-            language: "Hindi",
-            genre: "Bollywood",
-            notes: "Netflix",
-            image: "/Upcoming movies/Upcoming movies/Haq.jpg"
-        }
+            title: "Ustaad Bhagat Singh",
+            type: "Theatre",
+            releaseDate: "2026 (TBA)",
+            language: "Telugu",
+            genre: "Action/Entertainer",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/ustaad%20bagath%20singh.jpg"
+        },
+        {
+            title: "Adarsha Kutumbam",
+            type: "Theatre",
+            releaseDate: "2026 (TBA)",
+            language: "Telugu",
+            genre: "Family Drama",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/adarsha%20kutumbam.jpg"
+        },
+        {
+            title: "NTR–Neel",
+            type: "Theatre",
+            releaseDate: "2026 (TBA)",
+            language: "Telugu",
+            genre: "Action",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/NTR%20NEEL.jpg"
+        },
+        {
+            title: "Fauzi",
+            type: "Theatre",
+            releaseDate: "2026 (TBA)",
+            language: "Telugu",
+            genre: "Period Drama",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/fauzi.jpg"
+        },
+        {
+            title: "Rowdy Janardhana",
+            type: "Theatre",
+            releaseDate: "2026 (TBA)",
+            language: "Telugu",
+            genre: "Action",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/rowdy%20janardhana.jpg"
+        },
+        {
+            title: "Jai Hanuman",
+            type: "Theatre",
+            releaseDate: "2026 (TBA)",
+            language: "Telugu",
+            genre: "Mythological",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/jai%20hanuman.jpg"
+        },
     ];
 
     return (

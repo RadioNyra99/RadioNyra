@@ -32,7 +32,7 @@ export default function HomePage() {
     // Telugu shows (as per requirement)
     { name: "Non-Stop Hungama", host: "Sohail", image: "/images/hosts/non-stop-hungama.jpg", stationId: STATIONS.Telugu.id, language: "telugu" },
     { name: "Chinna Mata", host: "Priya", image: "/images/hosts/chinna-mata.jpg", stationId: STATIONS.Telugu.id, language: "telugu" },
-    { name: "Mana Muchatlu", host: "Kanthi", image: "/images/hosts/Mana Muchatlu.jpg", stationId: STATIONS.Telugu.id, language: "telugu" },
+    { name: "Mana Muchatlu", host: "Kanthi", image: "/images/hosts/Mana%20Muchatlu.jpg", stationId: STATIONS.Telugu.id, language: "telugu" },
   ];
   const { playStation, currentStation } = useAudio();
 

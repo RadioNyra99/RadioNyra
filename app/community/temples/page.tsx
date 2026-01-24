@@ -13,7 +13,7 @@ export default function TemplesPage() {
             description: "A majestic Hindu temple and cultural center dedicated to Lord Venkateshwara, serving as a spiritual cornerstone for the community.",
             location: "Cary, NC",
             features: ["Traditional Architecture", "Daily Worship", "Cultural Events"],
-            image: "/temples/temples/Sri Venkateswara Temple of North Carolina.jpg"
+            image: "/temples/temples/Sri%20Venkateswara%20Temple%20of%20North%20Carolina.jpg"
         },
         {
             name: "Kosala Kadampa Buddhist Center",
@@ -21,7 +21,7 @@ export default function TemplesPage() {
             description: "A peaceful sanctuary offering meditation classes and spiritual teachings in the Kadampa Buddhist tradition.",
             location: "Raleigh, NC",
             features: ["Meditation Classes", "Spiritual Support", "Quiet Contemplation"],
-            image: "/temples/temples/Kosala Kadampa Buddhist Center.jpg"
+            image: "/temples/temples/Kosala%20Kadampa%20Buddhist%20Center.jpg"
         },
         {
             name: "Raleigh North Carolina Temple",
@@ -29,7 +29,7 @@ export default function TemplesPage() {
             description: "A serene and beautiful spiritual site maintained by the Church of Jesus Christ of Latter-day Saints.",
             location: "Raleigh, NC",
             features: ["Garden Grounds", "Peaceful Atmosphere", "Spiritual Worship"],
-            image: "/temples/temples/Raleigh North Carolina Temple.jpg"
+            image: "/temples/temples/Raleigh%20North%20Carolina%20Temple.jpg"
         }
     ];
 

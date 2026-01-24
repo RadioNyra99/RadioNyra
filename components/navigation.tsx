@@ -124,12 +124,12 @@ export function Navigation() {
                   <div className="flex gap-2 w-full">
                     <Button variant="outline" className="flex-1 h-12 rounded-full border-2" asChild>
                       <Link href="https://apps.apple.com/in/app/radio-nyra-raleigh-durham/id6469009980" target="_blank">
-                        <img src="/Apple icon.png" alt="Apple Icon" className="mr-2 h-5 w-5 object-contain" /> App Store
+                        <img src="/Apple%20icon.png" alt="Apple Icon" className="mr-2 h-5 w-5 object-contain" /> App Store
                       </Link>
                     </Button>
                     <Button variant="outline" className="flex-1 h-12 rounded-full border-2" asChild>
                       <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app" target="_blank">
-                        <img src="/Android icon.png" alt="Android Icon" className="mr-2 h-5 w-5 object-contain" /> Play Store
+                        <img src="/Android%20icon.png" alt="Android Icon" className="mr-2 h-5 w-5 object-contain" /> Play Store
                       </Link>
                     </Button>
                   </div>
@@ -184,12 +184,12 @@ export function Navigation() {
               <div className="flex items-center gap-2 ml-2">
                 <Link href="https://apps.apple.com/in/app/radio-nyra-raleigh-durham/id6469009980" target="_blank" className="hover:scale-110 transition-transform">
                   <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm border border-border/10">
-                    <img src="/Apple icon.png" alt="Apple Icon" className="h-6 w-6 object-contain" />
+                    <img src="/Apple%20icon.png" alt="Apple Icon" className="h-6 w-6 object-contain" />
                   </div>
                 </Link>
                 <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app" target="_blank" className="hover:scale-110 transition-transform">
                   <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm border border-border/10">
-                    <img src="/Android icon.png" alt="Android Icon" className="h-6 w-6 object-contain" />
+                    <img src="/Android%20icon.png" alt="Android Icon" className="h-6 w-6 object-contain" />
                   </div>
                 </Link>
               </div>

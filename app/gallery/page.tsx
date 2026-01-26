@@ -5,6 +5,11 @@ import Link from "next/link"
 export default function GalleryPage() {
     const galleryItems = [
         {
+            title: "Heritage – Since 1963",
+            image: "/OLD Images/P0105_1-01-45-018_0001.jpg",
+            href: "/gallery/heritage"
+        },
+        {
             title: "New Year 2016 – Bollywood Bash",
             image: "/New Year 2016 - Bollywood Bash/464709626_8497332847002133_547247647108096346_n-1600x700.jpg",
             href: "/gallery/2016"

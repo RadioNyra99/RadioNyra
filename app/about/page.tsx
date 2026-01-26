@@ -11,35 +11,109 @@ export default function AboutPage() {
 
             <main>
                 {/* HERO */}
-                <section className="py-12 bg-primary text-primary-foreground text-left">
-                    <div className="container mx-auto px-4 max-w-5xl">
-                        <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-6 italic whitespace-nowrap">About Radio Nyra</h1>
-                        <p className="text-lg md:text-xl font-bold uppercase tracking-[0.3em] opacity-80">
-                            The Voice of India in USA
+                <section className="py-12 bg-primary text-primary-foreground text-left relative overflow-hidden">
+                    <div className="absolute inset-0 opacity-10">
+                        <img
+                            src="/OLD Images/P0105_1-01-45-018_0001.jpg"
+                            alt="Heritage background"
+                            className="w-full h-full object-cover grayscale"
+                        />
+                    </div>
+                    <div className="container mx-auto px-4 max-w-5xl relative z-10">
+                        <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4 italic leading-tight">
+                            The Voice of <br />Continuity
+                        </h1>
+                        <p className="text-base md:text-lg font-bold uppercase tracking-[0.3em] opacity-90">
+                            Since November 16, 1963
                         </p>
                     </div>
                 </section>
 
-                {/* CONTENT */}
-                <section className="py-12 bg-background">
+                {/* HERITAGE SECTION */}
+                <section className="py-24 bg-background">
                     <div className="container mx-auto px-4 max-w-5xl">
-                        <div className="space-y-16">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                            <div>
+                                <h2 className="text-sm font-bold uppercase tracking-[0.4em] text-primary mb-4">Our Heritage</h2>
+                                <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-8 leading-tight">
+                                    A Legacy Born <br />in 1963
+                                </h3>
+                                <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                                    <p>
+                                        It began on a crisp November morning in 1963. A switch was flipped, and a voice entered the homes and hearts of a community for the first time.
+                                    </p>
+                                    <p>
+                                        We don't remember the exact name that was whispered over the airwaves that day, a detail lost to the archives of time, but we remember how it felt. It felt like home. It was the start of a conversation that has never stopped.
+                                    </p>
+                                    <p>
+                                        For over sixty years, that voice has evolved, adapted, and grown. It has been a steady companion through decades of change, technological shifts, and the migration of dreams across oceans.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="relative">
+                                <div className="aspect-[4/5] bg-muted rounded-sm overflow-hidden border-8 border-white shadow-2xl skew-y-2">
+                                    <img
+                                        src="/OLD Images/P0105_1-01-45-018_0003.jpg"
+                                        alt="Historical archives 1963"
+                                        className="w-full h-full object-cover grayscale sepia-[0.2]"
+                                    />
+                                </div>
+                                <div className="absolute -bottom-6 -left-6 aspect-square w-48 bg-muted rounded-sm overflow-hidden border-4 border-white shadow-xl -skew-y-3 hidden md:block">
+                                    <img
+                                        src="/OLD Images/P0105_1-01-45-018_0004.jpg"
+                                        alt="Historical archives 1963 detail"
+                                        className="w-full h-full object-cover grayscale"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* MODERN CONTINUATION */}
+                <section className="py-24 bg-muted/30 border-y border-border">
+                    <div className="container mx-auto px-4 max-w-5xl">
+                        <div className="text-center max-w-3xl mx-auto mb-16">
+                            <h2 className="text-3xl font-black uppercase mb-6">Radio Nyra: The Modern Identity</h2>
+                            <p className="text-xl text-muted-foreground italic">
+                                Today, that original pulse beats through Radio Nyra. We are the modern face of a timeless legacy, a continuation of a journey that started more than half a century ago.
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div className="p-8 bg-background border border-border rounded-sm">
+                                <h4 className="font-bold uppercase tracking-widest text-primary mb-4">1963</h4>
+                                <p className="text-sm text-muted-foreground">The first broadcast is aired, marking the beginning of a lifelong connection with the South Asian community.</p>
+                            </div>
+                            <div className="p-8 bg-background border border-border rounded-sm">
+                                <h4 className="font-bold uppercase tracking-widest text-primary mb-4">Evolution</h4>
+                                <p className="text-sm text-muted-foreground">The station thrives through decades of change, adapting its voice to reflect the community's growth.</p>
+                            </div>
+                            <div className="p-8 bg-background border border-border rounded-sm">
+                                <h4 className="font-bold uppercase tracking-widest text-primary mb-4">Present Day</h4>
+                                <p className="text-sm text-muted-foreground">Radio Nyra emerges as the modern platform, bridging the gap between roots and the future.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* CONTENT (Original) */}
+                <section className="py-24 bg-background">
+                    <div className="container mx-auto px-4 max-w-5xl">
+                        <div className="space-y-24">
 
                             {/* Our Story */}
-                            <div className="bg-muted/30 p-10 border border-border text-left rounded-sm">
-                                <h2 className="text-3xl font-black uppercase tracking-tight mb-8">Our Story</h2>
-                                <div className="max-w-4xl space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed italic">
+                            <div className="text-left">
+                                <h2 className="text-4xl font-black uppercase tracking-tight mb-8">Our NC Journey</h2>
+                                <div className="max-w-4xl space-y-6 text-lg text-muted-foreground leading-relaxed italic">
                                     <p>
-                                        Located in the lovely forest terrain of Durham North Carolina, is our first Radio Station – WDUR 1490 AM where the journey of AROHI MEDIA began in 2014. With our own tower and 1000W non-directional broadcasting channel, we launched 24/7 Desi News, Talk and Music format in Hindi for the rapidly growing South Asian population in Raleigh-Durham area.
+                                        The recent chapter of our story began in 2014 in the forest terrain of Durham, North Carolina. WDUR 1490 AM became the vessel for our mission, launching 24/7 Desi News, Talk, and Music.
                                     </p>
                                     <p>
-                                        In no time we leased the HD-4 Channel of 99.9 WCMC-FM and eventually launched our FM translator on 101.9 FM. By then we had caught the attention of the rapidly expanding, influential Indian Subcontinent population in the Triangle.
+                                        What started as a 1000W broadcasting channel quickly expanded to HD radio and FM translators, catching the attention of the rapidly growing Triangle community.
                                     </p>
-                                    <p>
-                                        We bridge the gap between home and the United States with our quality news, music, entertainment, and cultural programming in Raleigh-Durham, NC.
-                                    </p>
-                                    <p className="font-bold text-primary not-italic">
-                                        In July 2025, we launched our 24/7 Telugu channel on the HD3 Channel of 99.9 FM, right next to our Hindi HD Channel!
+                                    <p className="font-bold text-primary not-italic border-l-4 border-primary pl-6">
+                                        In July 2025, we continued this tradition of growth by launching our 24/7 Telugu channel right alongside our Hindi broadcast.
                                     </p>
                                 </div>
                             </div>

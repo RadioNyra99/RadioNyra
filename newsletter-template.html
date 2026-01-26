@@ -33,10 +33,10 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
+            background-color: #0f172a;
             width: 100% !important;
             height: 100% !important;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
         }
 
         /* Mobile Responsive Media Queries */
@@ -66,12 +66,11 @@
             .nav-link {
                 display: block !important;
                 padding: 12px 0 !important;
-                border-bottom: 1px solid #eee;
+                border: none !important;
+                background-color: rgba(255, 255, 255, 0.05) !important;
+                margin-bottom: 5px !important;
                 text-align: center;
-            }
-
-            .nav-link:last-child {
-                border-bottom: none;
+                border-radius: 4px;
             }
 
             .hide-mobile {
@@ -86,11 +85,22 @@
 
         /* Buttons */
         .button {
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .button:hover {
             background-color: #cc0000 !important;
+            transform: translateY(-2px);
+        }
+
+        /* Modern Utilities */
+        .glass {
+            background-color: rgba(30, 41, 59, 0.7) !important;
+            backdrop-filter: blur(8px);
+        }
+
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
     </style>
 </head>
@@ -98,21 +108,19 @@
 <body
     style="margin: 0; padding: 0; background-color: #ffffff; font-family: Arial, sans-serif; line-height: 1.6; color: #000000;">
 
-    <!-- CENTRAL WRAPPER TABLE -->
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"
-        style="background-color: #ffffff;">
+        style="background-color: #0f172a;">
         <tr>
             <td align="center" style="padding: 0;">
 
                 <!-- MAIN EMAIL CONTAINER (600px Max) -->
-                <!-- No border radius, sharp corners as per GDC style -->
                 <table role="presentation" class="email-container" border="0" cellpadding="0" cellspacing="0"
                     width="600"
-                    style="background-color: #ffffff; border: 1px solid #e0e0e0; margin-top: 20px; margin-bottom: 20px;">
+                    style="background-color: #1e293b; border: 1px solid #334155; margin-top: 20px; margin-bottom: 20px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);">
 
-                    <!-- 1. HEADER SECTION (Matches Navigation.tsx) -->
+                    <!-- 1. HEADER SECTION -->
                     <tr>
-                        <td style="padding: 20px; border-bottom: 1px solid #e0e0e0;">
+                        <td style="padding: 30px 20px; border-bottom: 1px solid #334155;">
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                                 <tr>
                                     <!-- Logo and Text -->
@@ -120,25 +128,24 @@
                                         <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                             <tr>
                                                 <td style="padding-right: 15px;">
-                                                    <!-- Replaced logo placeholder with red circle if image missing -->
                                                     <div
-                                                        style="border: 2px solid #ff0000; border-radius: 50%; width: 48px; height: 48px; overflow: hidden; display: block;">
+                                                        style="border: 2px solid #ff0000; border-radius: 50%; width: 56px; height: 56px; overflow: hidden; display: block; background-color: #000000;">
                                                         <img src="https://radionyra.com/images/radio-nyra-logo.jpg"
-                                                            alt="Radio Nyra" width="48" height="48"
-                                                            style="display: block; width: 48px; height: 48px; object-fit: cover;"
+                                                            alt="Radio Nyra" width="56" height="56"
+                                                            style="display: block; width: 56px; height: 56px; object-fit: cover;"
                                                             border="0" />
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <a href="https://radionyra.com" target="_blank"
-                                                        style="text-decoration: none; color: #000000;">
+                                                        style="text-decoration: none; color: #ffffff;">
                                                         <h1
-                                                            style="margin: 0; font-family: Arial, sans-serif; font-size: 24px; font-weight: 900; letter-spacing: -1px; line-height: 1; text-transform: none;">
+                                                            style="margin: 0; font-family: 'Arial Black', Gadget, sans-serif; font-size: 28px; font-weight: 900; letter-spacing: -1.5px; line-height: 1; text-transform: uppercase;">
                                                             Radio Nyra
                                                         </h1>
                                                         <p
-                                                            style="margin: 4px 0 0; font-size: 10px; font-weight: 900; color: #ff0000; text-transform: uppercase; letter-spacing: 2px;">
-                                                            RALEIGH – DURHAM
+                                                            style="margin: 4px 0 0; font-size: 11px; font-weight: 800; color: #ff0000; text-transform: uppercase; letter-spacing: 3px;">
+                                                            THE BEAT OF YOUR CITY
                                                         </p>
                                                     </a>
                                                 </td>
@@ -166,62 +173,59 @@
                     <!-- 2. NAVIGATION BAR -->
                     <tr>
                         <td align="center"
-                            style="background-color: #ffffff; border-bottom: 1px solid #e0e0e0; padding: 15px 0;">
+                            style="background-color: #1e293b; border-bottom: 1px solid #334155; padding: 10px 0;">
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                                 <tr>
                                     <td align="center"
-                                        style="font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px;">
+                                        style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;">
                                         <a href="https://radionyra.com" class="nav-link"
-                                            style="color: #000000; text-decoration: none; margin: 0 12px; display: inline-block;">Home</a>
+                                            style="color: #cbd5e1; text-decoration: none; margin: 0 10px; display: inline-block; padding: 5px 0;">Home</a>
                                         <a href="https://radionyra.com/about" class="nav-link"
-                                            style="color: #000000; text-decoration: none; margin: 0 12px; display: inline-block;">About</a>
+                                            style="color: #cbd5e1; text-decoration: none; margin: 0 10px; display: inline-block; padding: 5px 0;">About</a>
                                         <a href="https://radionyra.com/schedule" class="nav-link"
-                                            style="color: #000000; text-decoration: none; margin: 0 12px; display: inline-block;">Schedule</a>
-                                        <a href="https://radionyra.com/services" class="nav-link"
-                                            style="color: #000000; text-decoration: none; margin: 0 12px; display: inline-block;">Services</a>
+                                            style="color: #cbd5e1; text-decoration: none; margin: 0 10px; display: inline-block; padding: 5px 0;">Schedule</a>
                                         <a href="https://radionyra.com/podcasts" class="nav-link"
-                                            style="color: #000000; text-decoration: none; margin: 0 12px; display: inline-block;">Podcast</a>
+                                            style="color: #cbd5e1; text-decoration: none; margin: 0 10px; display: inline-block; padding: 5px 0;">Podcast</a>
                                         <a href="https://radionyra.com/events" class="nav-link"
-                                            style="color: #000000; text-decoration: none; margin: 0 12px; display: inline-block;">Events</a>
+                                            style="color: #cbd5e1; text-decoration: none; margin: 0 10px; display: inline-block; padding: 5px 0;">Events</a>
                                         <a href="https://radionyra.com/contact" class="nav-link"
-                                            style="color: #000000; text-decoration: none; margin: 0 12px; display: inline-block;">Contact</a>
+                                            style="color: #cbd5e1; text-decoration: none; margin: 0 10px; display: inline-block; padding: 5px 0;">Contact</a>
                                     </td>
                                 </tr>
                             </table>
                         </td>
                     </tr>
 
-                    <!-- 3. HERO / WELCOME (Overlay) -->
+                    <!-- 3. HERO / WELCOME -->
                     <tr>
                         <td align="center" valign="middle" class="mobile-padding"
                             background="https://radionyra.com/radio-studio-modern.jpg"
-                            style="padding: 100px 30px; background-image: url('https://radionyra.com/radio-studio-modern.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-color: #222222;">
-                            <!-- VML Fallback for Outlook would go here in a production environment, effectively forcing a background image. For now, using standard CSS. -->
+                            style="padding: 100px 30px; background-image: url('https://radionyra.com/radio-studio-modern.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-color: #000000;">
 
-                            <!-- Content Box with semi-transparent background -->
+                            <!-- Content Box with Glass effect -->
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%"
-                                style="max-width: 500px;">
+                                style="max-width: 520px;">
                                 <tr>
-                                    <td align="center"
-                                        style="background-color: rgba(0, 0, 0, 0.7); padding: 40px 30px; border-radius: 8px; backdrop-filter: blur(4px);">
+                                    <td align="center" class="glass"
+                                        style="background-color: rgba(15, 23, 42, 0.85); padding: 50px 40px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
                                         <h2
-                                            style="margin: 0 0 20px; font-family: Arial, sans-serif; font-size: 32px; font-weight: 900; color: #ffffff; text-transform: uppercase; letter-spacing: -1px; line-height: 1.1; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
-                                            THE BEAT OF<br />YOUR CITY.
+                                            style="margin: 0 0 20px; font-family: 'Arial Black', Gadget, sans-serif; font-size: 38px; font-weight: 900; color: #ffffff; text-transform: uppercase; letter-spacing: -1.5px; line-height: 1.1;">
+                                            DIGITAL<br /><span style="color: #ff0000;">MAGAZINE</span>
                                         </h2>
                                         <p
-                                            style="margin: 0; font-size: 14px; font-weight: bold; color: #f0f0f0; text-transform: uppercase; letter-spacing: 1px; line-height: 1.8; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">
-                                            Welcome to Radio Nyra. From Bollywood hits to local community stories, we
-                                            are your 24/7
-                                            destination for music and entertainment.
+                                            style="margin: 0; font-size: 15px; font-weight: 500; color: #cbd5e1; text-transform: none; letter-spacing: 0.5px; line-height: 1.6;">
+                                            Experience the pulse of Raleigh-Durham. From exclusive interviews with
+                                            Bollywood stars to local community deep-dives, we bring you the ultimate
+                                            entertainment experience.
                                         </p>
                                         <!-- Website Button -->
                                         <table role="presentation" border="0" cellpadding="0" cellspacing="0"
-                                            style="margin-top: 25px;">
+                                            style="margin-top: 35px;">
                                             <tr>
-                                                <td style="background-color: #ff0000; border-radius: 4px;">
-                                                    <a href="https://radionyra.com" target="_blank"
-                                                        style="font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; background-color: #ff0000; color: #ffffff; text-decoration: none; padding: 12px 25px; border-radius: 4px; display: inline-block; text-transform: uppercase; letter-spacing: 1px;">Visit
-                                                        Website</a>
+                                                <td style="background-color: #ff0000; border-radius: 6px;">
+                                                    <a href="https://radionyra.com" target="_blank" class="button"
+                                                        style="font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; background-color: #ff0000; color: #ffffff; text-decoration: none; padding: 14px 35px; border-radius: 6px; display: inline-block; text-transform: uppercase; letter-spacing: 1.5px;">Explore
+                                                        Now</a>
                                                 </td>
                                             </tr>
                                         </table>
@@ -231,301 +235,355 @@
                         </td>
                     </tr>
 
-                    <!-- 4. ALL SHOWS GRID (Restored) -->
+                    <!-- 4. ALL SHOWS GRID -->
                     <tr>
-                        <td class="mobile-padding" style="padding: 20px 30px 40px;">
+                        <td class="mobile-padding" style="padding: 40px 30px;">
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                                 <tr>
-                                    <td align="left" style="padding-bottom: 25px; border-bottom: 2px solid #000000;">
+                                    <td align="left" style="padding-bottom: 25px; border-bottom: 2px solid #ff0000;">
                                         <h3
-                                            style="margin: 0; font-size: 20px; font-weight: 900; color: #000000; text-transform: uppercase; letter-spacing: -0.5px; font-style: italic;">
-                                            Our Shows Schedule
+                                            style="margin: 0; font-family: 'Arial Black', Gadget, sans-serif; font-size: 22px; font-weight: 900; color: #ffffff; text-transform: uppercase; letter-spacing: -0.5px;">
+                                            OUR <span style="color: #ff0000;">PARTNERS</span>
                                         </h3>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td height="25" style="font-size: 0; line-height: 0;">&nbsp;</td>
+                                    <td height="30" style="font-size: 0; line-height: 0;">&nbsp;</td>
                                 </tr>
 
-                                <!-- Shows Row 1: Chai Pe Charcha & Hello Vaishnavi -->
+                                <!-- Our Partners List -->
+
+                                <!-- Client 1: Chai Pe Charcha -->
                                 <tr>
-                                    <td valign="top">
+                                    <td align="center" style="padding-bottom: 40px;">
                                         <table role="presentation" border="0" cellpadding="0" cellspacing="0"
-                                            width="100%">
+                                            width="480"
+                                            style="background-color: #0f172a; border: 1px solid #334155; border-radius: 12px; overflow: hidden;"
+                                            class="card-shadow">
                                             <tr>
-                                                <td valign="top" width="48%" class="stack-column"
-                                                    style="padding-bottom: 20px;">
-                                                    <table role="presentation" border="0" cellpadding="0"
-                                                        cellspacing="0" width="100%"
-                                                        style="background-color: #e0f7fa; border: 1px solid #b2ebf2; overflow: hidden;">
-                                                        <tr>
-                                                            <td style="padding: 0;">
-                                                                <img src="https://radionyra.com/images/hosts/cha-pe-charcha.jpg"
-                                                                    alt="Chai Pe Charcha" width="280"
-                                                                    style="width: 100%; height: auto; display: block;"
-                                                                    border="0" />
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="padding: 15px;">
-                                                                <p
-                                                                    style="margin: 0 0 5px; font-size: 10px; font-weight: 900; color: #00acc1; text-transform: uppercase; letter-spacing: 1px;">
-                                                                    Talk</p>
-                                                                <strong
-                                                                    style="font-size: 16px; font-weight: 900; color: #000000; text-transform: uppercase; display: block; margin-bottom: 5px;">Chai
-                                                                    Pe Charcha</strong>
-                                                                <span
-                                                                    style="font-size: 12px; color: #666666; font-weight: bold;">Raj
-                                                                    Persaud</span>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
+                                                <td style="padding: 0;">
+                                                    <a href="https://radionyra.com/schedule" target="_blank"
+                                                        style="text-decoration: none; display: block;">
+                                                        <img src="https://radionyra.com/images/hosts/cha-pe-charcha.jpg"
+                                                            alt="Chai Pe Charcha" width="480"
+                                                            style="width: 100%; height: auto; display: block;"
+                                                            border="0" />
+                                                    </a>
                                                 </td>
-                                                <td valign="top" width="4%" class="stack-column">&nbsp;</td>
-                                                <td valign="top" width="48%" class="stack-column"
-                                                    style="padding-bottom: 20px;">
-                                                    <table role="presentation" border="0" cellpadding="0"
-                                                        cellspacing="0" width="100%"
-                                                        style="background-color: #f3e5f5; border: 1px solid #e1bee7; overflow: hidden;">
-                                                        <tr>
-                                                            <td style="padding: 0;">
-                                                                <img src="https://radionyra.com/images/hosts/hello-vaishnavi.jpg"
-                                                                    alt="Hello Vaishnavi" width="280"
-                                                                    style="width: 100%; height: auto; display: block;"
-                                                                    border="0" />
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="padding: 15px;">
-                                                                <p
-                                                                    style="margin: 0 0 5px; font-size: 10px; font-weight: 900; color: #8e24aa; text-transform: uppercase; letter-spacing: 1px;">
-                                                                    Show</p>
-                                                                <strong
-                                                                    style="font-size: 16px; font-weight: 900; color: #000000; text-transform: uppercase; display: block; margin-bottom: 5px;">Hello
-                                                                    Vaishnavi</strong>
-                                                                <span
-                                                                    style="font-size: 12px; color: #666666; font-weight: bold;">Vaishnavi
-                                                                    Palleda</span>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 20px 25px;">
+                                                    <p
+                                                        style="margin: 0 0 8px; font-size: 10px; font-weight: 800; color: #ff0000; text-transform: uppercase; letter-spacing: 2px;">
+                                                        PREMIUM PARTNER</p>
+                                                    <h4
+                                                        style="margin: 0 0 10px; font-family: 'Arial Black', Gadget, sans-serif; font-size: 20px; font-weight: 900; color: #ffffff; text-transform: uppercase; line-height: 1.2;">
+                                                        <a href="https://radionyra.com/schedule" target="_blank"
+                                                            style="color: #ffffff; text-decoration: none;">Chai Pe
+                                                            Charcha</a>
+                                                    </h4>
+                                                    <p
+                                                        style="margin: 0; font-size: 14px; line-height: 1.5; color: #94a3b8;">
+                                                        Discover the authentic taste of tradition. Hand-picked tea
+                                                        leaves blended for perfection. A moment of reflection in every
+                                                        cup.
+                                                    </p>
                                                 </td>
                                             </tr>
                                         </table>
                                     </td>
                                 </tr>
 
-                                <!-- Shows Row 2: Zara Muskurao & Triangle Tunes -->
+                                <!-- Client 2: Hello Vaishnavi -->
                                 <tr>
-                                    <td valign="top">
+                                    <td align="center" style="padding-bottom: 40px;">
                                         <table role="presentation" border="0" cellpadding="0" cellspacing="0"
-                                            width="100%">
+                                            width="480"
+                                            style="background-color: #0f172a; border: 1px solid #334155; border-radius: 12px; overflow: hidden;"
+                                            class="card-shadow">
                                             <tr>
-                                                <td valign="top" width="48%" class="stack-column"
-                                                    style="padding-bottom: 20px;">
-                                                    <table role="presentation" border="0" cellpadding="0"
-                                                        cellspacing="0" width="100%"
-                                                        style="background-color: #ffe0b2; border: 1px solid #ffcc80; overflow: hidden;">
-                                                        <tr>
-                                                            <td style="padding: 0;">
-                                                                <img src="https://radionyra.com/images/hosts/zara-muskurao.jpg"
-                                                                    alt="Zara Muskurao" width="280"
-                                                                    style="width: 100%; height: auto; display: block;"
-                                                                    border="0" />
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="padding: 15px;">
-                                                                <p
-                                                                    style="margin: 0 0 5px; font-size: 10px; font-weight: 900; color: #fb8c00; text-transform: uppercase; letter-spacing: 1px;">
-                                                                    Morning</p>
-                                                                <strong
-                                                                    style="font-size: 16px; font-weight: 900; color: #000000; text-transform: uppercase; display: block; margin-bottom: 5px;">Zara
-                                                                    Muskurao</strong>
-                                                                <span
-                                                                    style="font-size: 12px; color: #666666; font-weight: bold;">Aayushii
-                                                                    Rode</span>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
+                                                <td style="padding: 0;">
+                                                    <a href="https://radionyra.com/schedule" target="_blank"
+                                                        style="text-decoration: none; display: block;">
+                                                        <img src="https://radionyra.com/images/hosts/hello-vaishnavi.jpg"
+                                                            alt="Hello Vaishnavi" width="480"
+                                                            style="width: 100%; height: auto; display: block;"
+                                                            border="0" />
+                                                    </a>
                                                 </td>
-                                                <td valign="top" width="4%" class="stack-column">&nbsp;</td>
-                                                <td valign="top" width="48%" class="stack-column"
-                                                    style="padding-bottom: 20px;">
-                                                    <table role="presentation" border="0" cellpadding="0"
-                                                        cellspacing="0" width="100%"
-                                                        style="background-color: #e8f5e9; border: 1px solid #c8e6c9; overflow: hidden;">
-                                                        <tr>
-                                                            <td style="padding: 0;">
-                                                                <img src="https://radionyra.com/images/hosts/triangle-tunes.jpg"
-                                                                    alt="Triangle Tunes" width="280"
-                                                                    style="width: 100%; height: auto; display: block;"
-                                                                    border="0" />
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="padding: 15px;">
-                                                                <p
-                                                                    style="margin: 0 0 5px; font-size: 10px; font-weight: 900; color: #43a047; text-transform: uppercase; letter-spacing: 1px;">
-                                                                    Talk</p>
-                                                                <strong
-                                                                    style="font-size: 16px; font-weight: 900; color: #000000; text-transform: uppercase; display: block; margin-bottom: 5px;">Triangle
-                                                                    Tunes</strong>
-                                                                <span
-                                                                    style="font-size: 12px; color: #666666; font-weight: bold;">Monika
-                                                                    Joshi</span>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 20px 25px;">
+                                                    <p
+                                                        style="margin: 0 0 8px; font-size: 10px; font-weight: 800; color: #ff0000; text-transform: uppercase; letter-spacing: 2px;">
+                                                        LIFESTYLE PARTNER</p>
+                                                    <h4
+                                                        style="margin: 0 0 10px; font-family: 'Arial Black', Gadget, sans-serif; font-size: 20px; font-weight: 900; color: #ffffff; text-transform: uppercase; line-height: 1.2;">
+                                                        <a href="https://radionyra.com/schedule" target="_blank"
+                                                            style="color: #ffffff; text-decoration: none;">Hello
+                                                            Vaishnavi</a>
+                                                    </h4>
+                                                    <p
+                                                        style="margin: 0; font-size: 14px; line-height: 1.5; color: #94a3b8;">
+                                                        Elevate your everyday living with wellness tips and home
+                                                        inspiration. Your ultimate guide to a balanced modern lifestyle.
+                                                    </p>
                                                 </td>
                                             </tr>
                                         </table>
                                     </td>
                                 </tr>
 
-                                <!-- Shows Row 3: Idhar Udhar & Desh Pardesh -->
+                                <!-- Client 3: Zara Muskurao -->
                                 <tr>
-                                    <td valign="top">
+                                    <td align="center" style="padding-bottom: 40px;">
                                         <table role="presentation" border="0" cellpadding="0" cellspacing="0"
-                                            width="100%">
+                                            width="480"
+                                            style="background-color: #0f172a; border: 1px solid #334155; border-radius: 12px; overflow: hidden;"
+                                            class="card-shadow">
                                             <tr>
-                                                <td valign="top" width="48%" class="stack-column"
-                                                    style="padding-bottom: 20px;">
-                                                    <table role="presentation" border="0" cellpadding="0"
-                                                        cellspacing="0" width="100%"
-                                                        style="background-color: #fff3e0; border: 1px solid #ffe0b2; overflow: hidden;">
-                                                        <tr>
-                                                            <td style="padding: 0;">
-                                                                <img src="https://radionyra.com/images/hosts/idhar-udhar-ki-baatein.jpeg"
-                                                                    alt="Idhar Udhar" width="280"
-                                                                    style="width: 100%; height: auto; display: block;"
-                                                                    border="0" />
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="padding: 15px;">
-                                                                <p
-                                                                    style="margin: 0 0 5px; font-size: 10px; font-weight: 900; color: #e65100; text-transform: uppercase; letter-spacing: 1px;">
-                                                                    Talk</p>
-                                                                <strong
-                                                                    style="font-size: 16px; font-weight: 900; color: #000000; text-transform: uppercase; display: block; margin-bottom: 5px;">Idhar
-                                                                    Udhar</strong>
-                                                                <span
-                                                                    style="font-size: 12px; color: #666666; font-weight: bold;">Arpit
-                                                                    Tandon</span>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
+                                                <td style="padding: 0;">
+                                                    <a href="https://radionyra.com/schedule" target="_blank"
+                                                        style="text-decoration: none; display: block;">
+                                                        <img src="https://radionyra.com/images/hosts/zara-muskurao.jpg"
+                                                            alt="Zara Muskurao" width="480"
+                                                            style="width: 100%; height: auto; display: block;"
+                                                            border="0" />
+                                                    </a>
                                                 </td>
-                                                <td valign="top" width="4%" class="stack-column">&nbsp;</td>
-                                                <td valign="top" width="48%" class="stack-column"
-                                                    style="padding-bottom: 20px;">
-                                                    <table role="presentation" border="0" cellpadding="0"
-                                                        cellspacing="0" width="100%"
-                                                        style="background-color: #e3f2fd; border: 1px solid #bbdefb; overflow: hidden;">
-                                                        <tr>
-                                                            <td style="padding: 0;">
-                                                                <img src="https://radionyra.com/images/hosts/desi-pardesi.jpg"
-                                                                    alt="Desh Pardesh" width="280"
-                                                                    style="width: 100%; height: auto; display: block;"
-                                                                    border="0" />
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="padding: 15px;">
-                                                                <p
-                                                                    style="margin: 0 0 5px; font-size: 10px; font-weight: 900; color: #1e88e5; text-transform: uppercase; letter-spacing: 1px;">
-                                                                    Talk</p>
-                                                                <strong
-                                                                    style="font-size: 16px; font-weight: 900; color: #000000; text-transform: uppercase; display: block; margin-bottom: 5px;">Desh
-                                                                    Pardesh</strong>
-                                                                <span
-                                                                    style="font-size: 12px; color: #666666; font-weight: bold;">Vishal</span>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 20px 25px;">
+                                                    <p
+                                                        style="margin: 0 0 8px; font-size: 10px; font-weight: 800; color: #ff0000; text-transform: uppercase; letter-spacing: 2px;">
+                                                        MORNING PARTNER</p>
+                                                    <h4
+                                                        style="margin: 0 0 10px; font-family: 'Arial Black', Gadget, sans-serif; font-size: 20px; font-weight: 900; color: #ffffff; text-transform: uppercase; line-height: 1.2;">
+                                                        <a href="https://radionyra.com/schedule" target="_blank"
+                                                            style="color: #ffffff; text-decoration: none;">Zara
+                                                            Muskurao</a>
+                                                    </h4>
+                                                    <p
+                                                        style="margin: 0; font-size: 14px; line-height: 1.5; color: #94a3b8;">
+                                                        Start your morning with a smile. Fresh music, positive vibes,
+                                                        and everything you need to kickstart your day.
+                                                    </p>
                                                 </td>
                                             </tr>
                                         </table>
                                     </td>
                                 </tr>
 
-                                <!-- Shows Row 4: Dil Se Desi & Bollywood Bliss -->
+                                <!-- Client 4: Triangle Tunes -->
                                 <tr>
-                                    <td valign="top">
+                                    <td align="center" style="padding-bottom: 40px;">
                                         <table role="presentation" border="0" cellpadding="0" cellspacing="0"
-                                            width="100%">
+                                            width="480"
+                                            style="background-color: #0f172a; border: 1px solid #334155; border-radius: 12px; overflow: hidden;"
+                                            class="card-shadow">
                                             <tr>
-                                                <td valign="top" width="48%" class="stack-column"
-                                                    style="padding-bottom: 20px;">
-                                                    <table role="presentation" border="0" cellpadding="0"
-                                                        cellspacing="0" width="100%"
-                                                        style="background-color: #fce4ec; border: 1px solid #f8bbd0; overflow: hidden;">
-                                                        <tr>
-                                                            <td style="padding: 0;">
-                                                                <img src="https://radionyra.com/images/hosts/dil-se-desi.jpg"
-                                                                    alt="Dil Se Desi" width="280"
-                                                                    style="width: 100%; height: auto; display: block;"
-                                                                    border="0" />
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="padding: 15px;">
-                                                                <p
-                                                                    style="margin: 0 0 5px; font-size: 10px; font-weight: 900; color: #d81b60; text-transform: uppercase; letter-spacing: 1px;">
-                                                                    Show</p>
-                                                                <strong
-                                                                    style="font-size: 16px; font-weight: 900; color: #000000; text-transform: uppercase; display: block; margin-bottom: 5px;">Dil
-                                                                    Se Desi</strong>
-                                                                <span
-                                                                    style="font-size: 12px; color: #666666; font-weight: bold;">Jyoti</span>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
+                                                <td style="padding: 0;">
+                                                    <a href="https://radionyra.com/schedule" target="_blank"
+                                                        style="text-decoration: none; display: block;">
+                                                        <img src="https://radionyra.com/images/hosts/triangle-tunes.jpg"
+                                                            alt="Triangle Tunes" width="480"
+                                                            style="width: 100%; height: auto; display: block;"
+                                                            border="0" />
+                                                    </a>
                                                 </td>
-                                                <td valign="top" width="4%" class="stack-column">&nbsp;</td>
-                                                <td valign="top" width="48%" class="stack-column"
-                                                    style="padding-bottom: 20px;">
-                                                    <table role="presentation" border="0" cellpadding="0"
-                                                        cellspacing="0" width="100%"
-                                                        style="background-color: #fff8e1; border: 1px solid #ffecb3; overflow: hidden;">
-                                                        <tr>
-                                                            <td style="padding: 0;">
-                                                                <img src="https://radionyra.com/images/hosts/bollywood-bliss.jpg"
-                                                                    alt="Bollywood Bliss" width="280"
-                                                                    style="width: 100%; height: auto; display: block;"
-                                                                    border="0" />
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="padding: 15px;">
-                                                                <p
-                                                                    style="margin: 0 0 5px; font-size: 10px; font-weight: 900; color: #ff6f00; text-transform: uppercase; letter-spacing: 1px;">
-                                                                    Music</p>
-                                                                <strong
-                                                                    style="font-size: 16px; font-weight: 900; color: #000000; text-transform: uppercase; display: block; margin-bottom: 5px;">Bollywood
-                                                                    Bliss</strong>
-                                                                <span
-                                                                    style="font-size: 12px; color: #666666; font-weight: bold;">Bharti
-                                                                    Rathore</span>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 20px 25px;">
+                                                    <p
+                                                        style="margin: 0 0 8px; font-size: 10px; font-weight: 800; color: #ff0000; text-transform: uppercase; letter-spacing: 2px;">
+                                                        COMMUNITY PARTNER</p>
+                                                    <h4
+                                                        style="margin: 0 0 10px; font-family: 'Arial Black', Gadget, sans-serif; font-size: 20px; font-weight: 900; color: #ffffff; text-transform: uppercase; line-height: 1.2;">
+                                                        <a href="https://radionyra.com/schedule" target="_blank"
+                                                            style="color: #ffffff; text-decoration: none;">Triangle
+                                                            Tunes</a>
+                                                    </h4>
+                                                    <p
+                                                        style="margin: 0; font-size: 14px; line-height: 1.5; color: #94a3b8;">
+                                                        The heart of Triangle's community. Local stories, local voices,
+                                                        and the impact that matters to your city.
+                                                    </p>
                                                 </td>
                                             </tr>
                                         </table>
                                     </td>
                                 </tr>
 
-                                <!-- View Full Schedule BUtton -->
+                                <!-- Client 5: Idhar Udhar -->
                                 <tr>
-                                    <td align="center" style="padding-top: 20px;">
+                                    <td align="center" style="padding-bottom: 40px;">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                                            width="480"
+                                            style="background-color: #0f172a; border: 1px solid #334155; border-radius: 12px; overflow: hidden;"
+                                            class="card-shadow">
+                                            <tr>
+                                                <td style="padding: 0;">
+                                                    <a href="https://radionyra.com/schedule" target="_blank"
+                                                        style="text-decoration: none; display: block;">
+                                                        <img src="https://radionyra.com/images/hosts/idhar-udhar-ki-baatein.jpeg"
+                                                            alt="Idhar Udhar" width="480"
+                                                            style="width: 100%; height: auto; display: block;"
+                                                            border="0" />
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 20px 25px;">
+                                                    <p
+                                                        style="margin: 0 0 8px; font-size: 10px; font-weight: 800; color: #ff0000; text-transform: uppercase; letter-spacing: 2px;">
+                                                        ENTERTAINMENT PARTNER</p>
+                                                    <h4
+                                                        style="margin: 0 0 10px; font-family: 'Arial Black', Gadget, sans-serif; font-size: 20px; font-weight: 900; color: #ffffff; text-transform: uppercase; line-height: 1.2;">
+                                                        <a href="https://radionyra.com/schedule" target="_blank"
+                                                            style="color: #ffffff; text-decoration: none;">Idhar
+                                                            Udhar</a>
+                                                    </h4>
+                                                    <p
+                                                        style="margin: 0; font-size: 14px; line-height: 1.5; color: #94a3b8;">
+                                                        Your daily dose of entertainment news and Bollywood gossip. Stay
+                                                        updated with the latest trends.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <!-- Client 6: Desh Pardesh -->
+                                <tr>
+                                    <td align="center" style="padding-bottom: 40px;">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                                            width="480"
+                                            style="background-color: #0f172a; border: 1px solid #334155; border-radius: 12px; overflow: hidden;"
+                                            class="card-shadow">
+                                            <tr>
+                                                <td style="padding: 0;">
+                                                    <a href="https://radionyra.com/schedule" target="_blank"
+                                                        style="text-decoration: none; display: block;">
+                                                        <img src="https://radionyra.com/images/hosts/desi-pardesi.jpg"
+                                                            alt="Desh Pardesh" width="480"
+                                                            style="width: 100%; height: auto; display: block;"
+                                                            border="0" />
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 20px 25px;">
+                                                    <p
+                                                        style="margin: 0 0 8px; font-size: 10px; font-weight: 800; color: #ff0000; text-transform: uppercase; letter-spacing: 2px;">
+                                                        GLOBAL PARTNER</p>
+                                                    <h4
+                                                        style="margin: 0 0 10px; font-family: 'Arial Black', Gadget, sans-serif; font-size: 20px; font-weight: 900; color: #ffffff; text-transform: uppercase; line-height: 1.2;">
+                                                        <a href="https://radionyra.com/schedule" target="_blank"
+                                                            style="color: #ffffff; text-decoration: none;">Desh
+                                                            Pardesh</a>
+                                                    </h4>
+                                                    <p
+                                                        style="margin: 0; font-size: 14px; line-height: 1.5; color: #94a3b8;">
+                                                        Connecting global stories with local hearts. Exploring global
+                                                        trends from a unique Desi perspective.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <!-- Client 7: Dil Se Desi -->
+                                <tr>
+                                    <td align="center" style="padding-bottom: 40px;">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                                            width="480"
+                                            style="background-color: #0f172a; border: 1px solid #334155; border-radius: 12px; overflow: hidden;"
+                                            class="card-shadow">
+                                            <tr>
+                                                <td style="padding: 0;">
+                                                    <a href="https://radionyra.com/schedule" target="_blank"
+                                                        style="text-decoration: none; display: block;">
+                                                        <img src="https://radionyra.com/images/hosts/dil-se-desi.jpg"
+                                                            alt="Dil Se Desi" width="480"
+                                                            style="width: 100%; height: auto; display: block;"
+                                                            border="0" />
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 20px 25px;">
+                                                    <p
+                                                        style="margin: 0 0 8px; font-size: 10px; font-weight: 800; color: #ff0000; text-transform: uppercase; letter-spacing: 2px;">
+                                                        MUSIC PARTNER</p>
+                                                    <h4
+                                                        style="margin: 0 0 10px; font-family: 'Arial Black', Gadget, sans-serif; font-size: 20px; font-weight: 900; color: #ffffff; text-transform: uppercase; line-height: 1.2;">
+                                                        <a href="https://radionyra.com/schedule" target="_blank"
+                                                            style="color: #ffffff; text-decoration: none;">Dil Se
+                                                            Desi</a>
+                                                    </h4>
+                                                    <p
+                                                        style="margin: 0; font-size: 14px; line-height: 1.5; color: #94a3b8;">
+                                                        Pure Desi music that touches the heart. The soul of our culture
+                                                        expressed through sound and melody.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <!-- Client 8: Bollywood Bliss -->
+                                <tr>
+                                    <td align="center" style="padding-bottom: 40px;">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0"
+                                            width="480"
+                                            style="background-color: #0f172a; border: 1px solid #334155; border-radius: 12px; overflow: hidden;"
+                                            class="card-shadow">
+                                            <tr>
+                                                <td style="padding: 0;">
+                                                    <a href="https://radionyra.com/schedule" target="_blank"
+                                                        style="text-decoration: none; display: block;">
+                                                        <img src="https://radionyra.com/images/hosts/bollywood-bliss.jpg"
+                                                            alt="Bollywood Bliss" width="480"
+                                                            style="width: 100%; height: auto; display: block;"
+                                                            border="0" />
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 20px 25px;">
+                                                    <p
+                                                        style="margin: 0 0 8px; font-size: 10px; font-weight: 800; color: #ff0000; text-transform: uppercase; letter-spacing: 2px;">
+                                                        BOLLYWOOD PARTNER</p>
+                                                    <h4
+                                                        style="margin: 0 0 10px; font-family: 'Arial Black', Gadget, sans-serif; font-size: 20px; font-weight: 900; color: #ffffff; text-transform: uppercase; line-height: 1.2;">
+                                                        <a href="https://radionyra.com/schedule" target="_blank"
+                                                            style="color: #ffffff; text-decoration: none;">Bollywood
+                                                            Bliss</a>
+                                                    </h4>
+                                                    <p
+                                                        style="margin: 0; font-size: 14px; line-height: 1.5; color: #94a3b8;">
+                                                        The ultimate Bollyood experience. Exclusive interviews, film
+                                                        updates, and behind-the-scenes magic.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <!-- View Full Partners Button -->
+                                <tr>
+                                    <td align="center" style="padding-top: 10px;">
                                         <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                             <tr>
-                                                <td style="border: 2px solid #000000;">
-                                                    <a href="https://radionyra.com/schedule" target="_blank"
-                                                        style="display: block; padding: 12px 30px; font-family: Arial, sans-serif; font-size: 12px; font-weight: 900; text-transform: uppercase; color: #000000; text-decoration: none; letter-spacing: 2px;">
-                                                        View Full Schedule
+                                                <td style="background-color: #ff0000; border-radius: 6px;">
+                                                    <a href="https://radionyra.com/advertise" target="_blank"
+                                                        class="button"
+                                                        style="display: block; padding: 18px 60px; font-family: Arial, sans-serif; font-size: 14px; font-weight: 800; text-transform: uppercase; color: #ffffff; text-decoration: none; letter-spacing: 2px; border-radius: 6px;">
+                                                        Advertise With Us
                                                     </a>
                                                 </td>
                                             </tr>
@@ -537,15 +595,46 @@
                         </td>
                     </tr>
 
-                    <!-- NEW: OTT ADDA UPDATE SECTION -->
+
+                    <!-- 5. EXPLORE LINKS (Text Based) -->
                     <tr>
-                        <td class="mobile-padding" style="padding: 0 30px 40px;">
+                        <td align="center"
+                            style="padding: 30px 20px; background-color: #0f172a; border-top: 1px solid #334155; border-bottom: 1px solid #334155;">
+                            <p
+                                style="margin: 0; font-size: 11px; line-height: 2.2; font-weight: 800; text-transform: uppercase; letter-spacing: 2px;">
+                                <a href="https://radionyra.com/community/movies"
+                                    style="color: #94a3b8; text-decoration: none; margin: 0 12px; border-bottom: 1px solid transparent; transition: all 0.3s;"
+                                    onmouseover="this.style.color='#ffffff';this.style.borderBottom='1px solid #ff0000'"
+                                    onmouseout="this.style.color='#94a3b8';this.style.borderBottom='1px solid transparent'">Movies</a>
+                                <span style="color: #334155;">|</span>
+                                <a href="https://radionyra.com/community/restaurants"
+                                    style="color: #94a3b8; text-decoration: none; margin: 0 12px; border-bottom: 1px solid transparent; transition: all 0.3s;"
+                                    onmouseover="this.style.color='#ffffff';this.style.borderBottom='1px solid #ff0000'"
+                                    onmouseout="this.style.color='#94a3b8';this.style.borderBottom='1px solid transparent'">Restaurants</a>
+                                <span style="color: #334155;">|</span>
+                                <a href="https://radionyra.com/community/temples"
+                                    style="color: #94a3b8; text-decoration: none; margin: 0 12px; border-bottom: 1px solid transparent; transition: all 0.3s;"
+                                    onmouseover="this.style.color='#ffffff';this.style.borderBottom='1px solid #ff0000'"
+                                    onmouseout="this.style.color='#94a3b8';this.style.borderBottom='1px solid transparent'">Temples</a>
+                                <span style="color: #334155;">|</span>
+                                <a href="https://radionyra.com/community/ott-adda"
+                                    style="color: #94a3b8; text-decoration: none; margin: 0 12px; border-bottom: 1px solid transparent; transition: all 0.3s;"
+                                    onmouseover="this.style.color='#ffffff';this.style.borderBottom='1px solid #ff0000'"
+                                    onmouseout="this.style.color='#94a3b8';this.style.borderBottom='1px solid transparent'">OTT
+                                    Adda</a>
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- 6. OTT ADDA EXCLUSIVE (MOVED TO END) -->
+                    <tr>
+                        <td class="mobile-padding" style="padding: 40px 30px 20px;">
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                                 <tr>
                                     <td align="left" style="padding-bottom: 25px; border-bottom: 2px solid #ff0000;">
                                         <h3
-                                            style="margin: 0; font-size: 20px; font-weight: 900; color: #000000; text-transform: uppercase; letter-spacing: -0.5px; font-style: italic;">
-                                            Latest on OTT Adda
+                                            style="margin: 0; font-family: 'Arial Black', Gadget, sans-serif; font-size: 20px; font-weight: 900; color: #ffffff; text-transform: uppercase; letter-spacing: -0.5px;">
+                                            OTT <span style="color: #ff0000;">ADDA</span> EXCLUSIVE
                                         </h3>
                                     </td>
                                 </tr>
@@ -553,7 +642,7 @@
                                     <td height="25" style="font-size: 0; line-height: 0;">&nbsp;</td>
                                 </tr>
 
-                                <!-- OTT Row 1 (Curated: Kaantha, OG) -->
+                                <!-- OTT Row 1 -->
                                 <tr>
                                     <td valign="top">
                                         <table role="presentation" border="0" cellpadding="0" cellspacing="0"
@@ -563,24 +652,32 @@
                                                     style="padding-bottom: 20px;">
                                                     <table role="presentation" border="0" cellpadding="0"
                                                         cellspacing="0" width="100%"
-                                                        style="background-color: #f8f8f8; border: 1px solid #e0e0e0; overflow: hidden;">
+                                                        style="background-color: #0f172a; border: 1px solid #334155; border-radius: 8px; overflow: hidden;"
+                                                        class="card-shadow">
                                                         <tr>
                                                             <td style="padding: 0;">
-                                                                <img src="https://radionyra.com/OTT%20ADDA/OTT%20ADDA/Kaantha.jpg"
-                                                                    alt="Kaantha" width="280"
-                                                                    style="width: 100%; height: auto; display: block;"
-                                                                    border="0" />
+                                                                <a href="https://www.primevideo.com" target="_blank"
+                                                                    style="text-decoration: none; display: block;">
+                                                                    <img src="https://radionyra.com/OTT%20ADDA/OTT%20ADDA/Cheekatilo.jpg"
+                                                                        alt="Cheekatilo" width="280"
+                                                                        style="width: 100%; height: auto; display: block;"
+                                                                        border="0" />
+                                                                </a>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td style="padding: 15px;">
                                                                 <p
-                                                                    style="margin: 0 0 5px; font-size: 10px; font-weight: 900; color: #E50914; text-transform: uppercase; letter-spacing: 1px;">
-                                                                    Netflix</p>
+                                                                    style="margin: 0 0 5px; font-size: 10px; font-weight: 800; color: #ff0000; text-transform: uppercase; letter-spacing: 1px;">
+                                                                    Prime Video</p>
                                                                 <strong
-                                                                    style="font-size: 16px; font-weight: 900; color: #000000; text-transform: uppercase; display: block; margin-bottom: 5px;">Kaantha</strong>
+                                                                    style="font-size: 16px; font-weight: 800; color: #ffffff; text-transform: uppercase; display: block; margin-bottom: 5px;">
+                                                                    <a href="https://www.primevideo.com" target="_blank"
+                                                                        style="color: #ffffff; text-decoration: none;">Cheekatilo</a>
+                                                                </strong>
                                                                 <span
-                                                                    style="font-size: 12px; color: #666666; font-weight: bold;">Trending</span>
+                                                                    style="font-size: 12px; color: #94a3b8; font-weight: 500;">Horror
+                                                                    Thriller</span>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -590,25 +687,31 @@
                                                     style="padding-bottom: 20px;">
                                                     <table role="presentation" border="0" cellpadding="0"
                                                         cellspacing="0" width="100%"
-                                                        style="background-color: #f8f8f8; border: 1px solid #e0e0e0; overflow: hidden;">
+                                                        style="background-color: #0f172a; border: 1px solid #334155; border-radius: 8px; overflow: hidden;"
+                                                        class="card-shadow">
                                                         <tr>
                                                             <td style="padding: 0;">
-                                                                <img src="https://radionyra.com/OTT%20ADDA/OTT%20ADDA/They%20Call%20Him%20OG.jpg"
-                                                                    alt="They Call Him OG" width="280"
-                                                                    style="width: 100%; height: auto; display: block;"
-                                                                    border="0" />
+                                                                <a href="https://www.sunnxt.com" target="_blank"
+                                                                    style="text-decoration: none; display: block;">
+                                                                    <img src="https://radionyra.com/OTT%20ADDA/OTT%20ADDA/Jigris.jpg"
+                                                                        alt="Jigris" width="280"
+                                                                        style="width: 100%; height: auto; display: block;"
+                                                                        border="0" />
+                                                                </a>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td style="padding: 15px;">
                                                                 <p
-                                                                    style="margin: 0 0 5px; font-size: 10px; font-weight: 900; color: #E50914; text-transform: uppercase; letter-spacing: 1px;">
-                                                                    Netflix</p>
+                                                                    style="margin: 0 0 5px; font-size: 10px; font-weight: 800; color: #ff0000; text-transform: uppercase; letter-spacing: 1px;">
+                                                                    Sun NXT</p>
                                                                 <strong
-                                                                    style="font-size: 16px; font-weight: 900; color: #000000; text-transform: uppercase; display: block; margin-bottom: 5px;">They
-                                                                    Call Him OG</strong>
+                                                                    style="font-size: 16px; font-weight: 800; color: #ffffff; text-transform: uppercase; display: block; margin-bottom: 5px;">
+                                                                    <a href="https://www.sunnxt.com" target="_blank"
+                                                                        style="color: #ffffff; text-decoration: none;">Jigris</a>
+                                                                </strong>
                                                                 <span
-                                                                    style="font-size: 12px; color: #666666; font-weight: bold;">Action
+                                                                    style="font-size: 12px; color: #94a3b8; font-weight: 500;">Comedy
                                                                     Drama</span>
                                                             </td>
                                                         </tr>
@@ -619,82 +722,16 @@
                                     </td>
                                 </tr>
 
-                                <!-- OTT Row 2 (Curated: Premante, 120 Bahadur) -->
-                                <tr>
-                                    <td valign="top">
-                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0"
-                                            width="100%">
-                                            <tr>
-                                                <td valign="top" width="48%" class="stack-column"
-                                                    style="padding-bottom: 20px;">
-                                                    <table role="presentation" border="0" cellpadding="0"
-                                                        cellspacing="0" width="100%"
-                                                        style="background-color: #f8f8f8; border: 1px solid #e0e0e0; overflow: hidden;">
-                                                        <tr>
-                                                            <td style="padding: 0;">
-                                                                <img src="https://radionyra.com/OTT%20ADDA/OTT%20ADDA/Premante.jpg"
-                                                                    alt="Premante" width="280"
-                                                                    style="width: 100%; height: auto; display: block;"
-                                                                    border="0" />
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="padding: 15px;">
-                                                                <p
-                                                                    style="margin: 0 0 5px; font-size: 10px; font-weight: 900; color: #E50914; text-transform: uppercase; letter-spacing: 1px;">
-                                                                    Netflix</p>
-                                                                <strong
-                                                                    style="font-size: 16px; font-weight: 900; color: #000000; text-transform: uppercase; display: block; margin-bottom: 5px;">Premante</strong>
-                                                                <span
-                                                                    style="font-size: 12px; color: #666666; font-weight: bold;">Romantic
-                                                                    Comedy</span>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                                <td valign="top" width="4%" class="stack-column">&nbsp;</td>
-                                                <td valign="top" width="48%" class="stack-column"
-                                                    style="padding-bottom: 20px;">
-                                                    <table role="presentation" border="0" cellpadding="0"
-                                                        cellspacing="0" width="100%"
-                                                        style="background-color: #f8f8f8; border: 1px solid #e0e0e0; overflow: hidden;">
-                                                        <tr>
-                                                            <td style="padding: 0;">
-                                                                <img src="https://radionyra.com/OTT%20ADDA/OTT%20ADDA/29.jpg"
-                                                                    alt="120 Bahadur" width="280"
-                                                                    style="width: 100%; height: auto; display: block;"
-                                                                    border="0" />
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="padding: 15px;">
-                                                                <p
-                                                                    style="margin: 0 0 5px; font-size: 10px; font-weight: 900; color: #00A8E1; text-transform: uppercase; letter-spacing: 1px;">
-                                                                    Prime Video</p>
-                                                                <strong
-                                                                    style="font-size: 16px; font-weight: 900; color: #000000; text-transform: uppercase; display: block; margin-bottom: 5px;">120
-                                                                    Bahadur</strong>
-                                                                <span
-                                                                    style="font-size: 12px; color: #666666; font-weight: bold;">War/Action</span>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-
-                                <!-- View All Link (Full Width) -->
+                                <!-- View All Link -->
                                 <tr>
                                     <td align="center" style="padding-top: 10px;">
                                         <table role="presentation" border="0" cellpadding="0" cellspacing="0"
                                             width="100%">
                                             <tr>
                                                 <td align="center"
-                                                    style="border-top: 1px solid #e0e0e0; padding-top: 20px;">
+                                                    style="border-top: 1px solid #334155; padding-top: 20px;">
                                                     <a href="https://radionyra.com/community/ott-adda"
-                                                        style="color: #ff0000; text-decoration: none; font-weight: 900; text-transform: uppercase; font-size: 14px; letter-spacing: 1px;">View
+                                                        style="color: #ff0000; text-decoration: none; font-weight: 800; text-transform: uppercase; font-size: 14px; letter-spacing: 1.5px;">View
                                                         All OTT Updates &gt;</a>
                                                 </td>
                                             </tr>
@@ -705,31 +742,10 @@
                         </td>
                     </tr>
 
-                    <!-- 5. EXPLORE LINKS (Text Based) -->
+                    <!-- 6. FOOTER -->
                     <tr>
                         <td align="center"
-                            style="padding: 20px; background-color: #f8f8f8; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0;">
-                            <p
-                                style="margin: 0; font-size: 11px; line-height: 2; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
-                                <a href="https://radionyra.com/community/movies"
-                                    style="color: #666666; text-decoration: none; margin: 0 8px;">Movies</a>
-                                •
-                                <a href="https://radionyra.com/community/restaurants"
-                                    style="color: #666666; text-decoration: none; margin: 0 8px;">Restaurants</a>
-                                •
-                                <a href="https://radionyra.com/community/temples"
-                                    style="color: #666666; text-decoration: none; margin: 0 8px;">Temples</a>
-                                •
-                                <a href="https://radionyra.com/community/ott-adda"
-                                    style="color: #666666; text-decoration: none; margin: 0 8px;">OTT
-                                    Adda</a>
-                            </p>
-                        </td>
-                    </tr>
-
-                    <!-- 6. FOOTER (Matches Footer.tsx) -->
-                    <tr>
-                        <td align="center" style="padding: 50px 20px; background-color: #000000; color: #ffffff;">
+                            style="padding: 60px 40px; background-color: #000000; color: #ffffff; border-top: 1px solid #ff0000;">
 
                             <!-- Brand -->
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0"
@@ -737,11 +753,12 @@
                                 <tr>
                                     <td align="center">
                                         <div
-                                            style="border: 1px solid #333; border-radius: 50%; width: 50px; height: 50px; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; background: #000;">
+                                            style="border: 1px solid #334155; border-radius: 50%; width: 64px; height: 64px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; background: #000; overflow: hidden; padding: 2px;">
                                             <img src="https://radionyra.com/images/radio-nyra-logo.jpg" alt="Logo"
-                                                width="50" height="50" style="border-radius: 50%; display: block;" />
+                                                width="60" height="60" style="border-radius: 50%; display: block;" />
                                         </div>
-                                        <span style="font-size: 20px; font-weight: bold; letter-spacing: -0.5px;">Radio
+                                        <span
+                                            style="font-family: 'Arial Black', Gadget, sans-serif; font-size: 24px; font-weight: 900; letter-spacing: -1px; text-transform: uppercase;">Radio
                                             Nyra</span>
                                     </td>
                                 </tr>
@@ -749,57 +766,61 @@
 
                             <!-- Nav Links -->
                             <p
-                                style="margin: 0 0 30px; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">
+                                style="margin: 0 0 35px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2.5px;">
                                 <a href="https://radionyra.com"
-                                    style="color: #9ca3af; text-decoration: none; margin: 0 10px;">Home</a>
+                                    style="color: #94a3b8; text-decoration: none; margin: 0 12px; transition: color 0.3s;"
+                                    onmouseover="this.style.color='#ffffff'"
+                                    onmouseout="this.style.color='#94a3b8'">Home</a>
                                 <a href="https://radionyra.com/about"
-                                    style="color: #9ca3af; text-decoration: none; margin: 0 10px;">About</a>
-                                <a href="https://radionyra.com/services"
-                                    style="color: #9ca3af; text-decoration: none; margin: 0 10px;">Services</a>
+                                    style="color: #94a3b8; text-decoration: none; margin: 0 12px; transition: color 0.3s;"
+                                    onmouseover="this.style.color='#ffffff'"
+                                    onmouseout="this.style.color='#94a3b8'">About</a>
                                 <a href="https://radionyra.com/advertise"
-                                    style="color: #9ca3af; text-decoration: none; margin: 0 10px;">Advertise</a>
+                                    style="color: #94a3b8; text-decoration: none; margin: 0 12px; transition: color 0.3s;"
+                                    onmouseover="this.style.color='#ffffff'"
+                                    onmouseout="this.style.color='#94a3b8'">Advertise</a>
                                 <a href="https://radionyra.com/contact"
-                                    style="color: #9ca3af; text-decoration: none; margin: 0 10px;">Contact</a>
+                                    style="color: #94a3b8; text-decoration: none; margin: 0 12px; transition: color 0.3s;"
+                                    onmouseover="this.style.color='#ffffff'"
+                                    onmouseout="this.style.color='#94a3b8'">Contact</a>
                             </p>
 
                             <!-- Socials -->
-                            <p style="margin: 0 0 40px;">
+                            <p style="margin: 0 0 45px;">
                                 <a href="https://facebook.com/radionyrausa"
-                                    style="text-decoration: none; margin: 0 10px;"><img
-                                        src="https://cdn-icons-png.flaticon.com/32/145/145802.png" width="20"
-                                        height="20" alt="FB" style="filter: invert(1); opacity: 0.6;" /></a>
+                                    style="text-decoration: none; margin: 0 12px;"><img
+                                        src="https://cdn-icons-png.flaticon.com/32/145/145802.png" width="22"
+                                        height="22" alt="FB" style="filter: invert(1); opacity: 0.7;" /></a>
                                 <a href="https://instagram.com/radionyrausa"
-                                    style="text-decoration: none; margin: 0 10px;"><img
-                                        src="https://cdn-icons-png.flaticon.com/32/3955/3955024.png" width="20"
-                                        height="20" alt="IG" style="filter: invert(1); opacity: 0.6;" /></a>
+                                    style="text-decoration: none; margin: 0 12px;"><img
+                                        src="https://cdn-icons-png.flaticon.com/32/3955/3955024.png" width="22"
+                                        height="22" alt="IG" style="filter: invert(1); opacity: 0.7;" /></a>
                                 <a href="https://twitter.com/NyraUsa"
-                                    style="text-decoration: none; margin: 0 10px;"><img
-                                        src="https://cdn-icons-png.flaticon.com/32/3670/3670151.png" width="20"
-                                        height="20" alt="TW" style="filter: invert(1); opacity: 0.6;" /></a>
+                                    style="text-decoration: none; margin: 0 12px;"><img
+                                        src="https://cdn-icons-png.flaticon.com/32/3670/3670151.png" width="22"
+                                        height="22" alt="TW" style="filter: invert(1); opacity: 0.7;" /></a>
                                 <a href="https://youtube.com/c/RadioNyraUSA"
-                                    style="text-decoration: none; margin: 0 10px;"><img
-                                        src="https://cdn-icons-png.flaticon.com/32/1384/1384060.png" width="20"
-                                        height="20" alt="YT" style="filter: invert(1); opacity: 0.6;" /></a>
+                                    style="text-decoration: none; margin: 0 12px;"><img
+                                        src="https://cdn-icons-png.flaticon.com/32/1384/1384060.png" width="22"
+                                        height="22" alt="YT" style="filter: invert(1); opacity: 0.7;" /></a>
                             </p>
 
                             <!-- App Links -->
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0"
-                                style="margin-bottom: 40px;">
+                                style="margin-bottom: 45px;">
                                 <tr>
-                                    <td align="center" style="padding-right: 15px;">
+                                    <td align="center" style="padding-right: 25px;">
                                         <a href="https://apps.apple.com/in/app/radio-nyra-raleigh-durham/id6469009980"
                                             target="_blank"
-                                            style="color: #ff0000; text-decoration: none; font-size: 11px; font-weight: bold; text-transform: uppercase;">
-                                            <span style="border-bottom: 1px solid #ff0000; padding-bottom: 2px;">Apple
-                                                Store</span>
+                                            style="color: #ffffff; text-decoration: none; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; border: 1px solid #334155; padding: 10px 20px; border-radius: 4px; display: inline-block;">
+                                            Apple App Store
                                         </a>
                                     </td>
                                     <td align="center">
                                         <a href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app"
                                             target="_blank"
-                                            style="color: #ff0000; text-decoration: none; font-size: 11px; font-weight: bold; text-transform: uppercase;">
-                                            <span style="border-bottom: 1px solid #ff0000; padding-bottom: 2px;">Google
-                                                Play</span>
+                                            style="color: #ffffff; text-decoration: none; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; border: 1px solid #334155; padding: 10px 20px; border-radius: 4px; display: inline-block;">
+                                            Google Play Store
                                         </a>
                                     </td>
                                 </tr>
@@ -807,12 +828,12 @@
 
                             <!-- Copyright / Bottom -->
                             <p
-                                style="margin: 0; font-size: 10px; color: #6b7280; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; line-height: 1.6;">
+                                style="margin: 0; font-size: 10px; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; line-height: 1.8;">
                                 © 2026 Radio Nyra. All rights reserved.<br>
                                 <a href="https://radionyra.com/privacy-policy"
-                                    style="color: #9ca3af; text-decoration: none;">Privacy Policy</a> | <a
+                                    style="color: #94a3b8; text-decoration: none;">Privacy Policy</a> | <a
                                     href="https://radionyra.com/unsubscribe"
-                                    style="color: #9ca3af; text-decoration: none;">Unsubscribe</a><br>
+                                    style="color: #94a3b8; text-decoration: none;">Unsubscribe</a><br>
                                 Contact: info@radionyra.com
                             </p>
 

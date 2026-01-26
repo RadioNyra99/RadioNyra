@@ -19,14 +19,14 @@ export default function HeritageGalleryPage() {
         <div className="min-h-screen bg-background font-sans">
             <Navigation />
 
-            <main className="py-20">
+            <main className="py-12 md:py-20">
                 <div className="container mx-auto px-4 max-w-6xl">
-                    <Link href="/gallery" className="inline-flex items-center text-primary font-bold uppercase tracking-widest text-sm mb-8 hover:underline gap-2">
+                    <Link href="/gallery" className="inline-flex items-center text-primary font-bold uppercase tracking-widest text-xs sm:text-sm mb-8 hover:underline gap-2">
                         <ArrowLeft className="w-4 h-4" /> Back to Gallery
                     </Link>
 
-                    <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4 italic">The Heritage Collection</h1>
-                    <p className="text-xl text-muted-foreground mb-12 max-w-2xl italic font-serif">A window into our past. These archives represent the original voice that began broadcasting on November 16, 1963.</p>
+                    <h1 className="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4 italic leading-tight">The Heritage Collection</h1>
+                    <p className="text-lg sm:text-xl text-muted-foreground mb-8 md:mb-12 max-w-2xl italic font-serif">A window into our past. These archives represent the original voice that began broadcasting on November 16, 1963.</p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {heritageImages.map((img, idx) => (

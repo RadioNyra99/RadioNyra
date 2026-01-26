@@ -41,7 +41,7 @@ export default function ContactPage() {
         {/* HEADER - "Contact Us" */}
         <section className="py-8 bg-primary text-primary-foreground">
           <div className="container mx-auto px-4 text-center max-w-4xl">
-            <h1 className="text-5xl md:text-8xl font-black mb-8 uppercase tracking-tighter italic">Contact Us</h1>
+            <h1 className="text-3xl sm:text-5xl md:text-8xl font-black mb-8 uppercase tracking-tighter italic">Contact Us</h1>
             <p className="text-xl md:text-2xl opacity-90 leading-relaxed font-bold uppercase tracking-widest">
               Partner with us. Reach the Community.
             </p>
@@ -102,18 +102,18 @@ export default function ContactPage() {
               <div className="space-y-12 flex flex-col justify-center">
                 <div className="group">
                   <h3 className="text-xs font-black uppercase text-primary tracking-[0.3em] mb-4">Email Us</h3>
-                  <a href="mailto:Info@radionyra.com" className="text-3xl font-black text-foreground hover:text-primary transition-colors">Info@radionyra.com</a>
+                  <a href="mailto:Info@radionyra.com" className="text-xl sm:text-3xl font-black text-foreground hover:text-primary transition-colors">Info@radionyra.com</a>
                 </div>
                 <div className="group">
                   <h3 className="text-xs font-black uppercase text-secondary tracking-[0.3em] mb-4">Call Us</h3>
-                  <a href="tel:9199998595" className="text-3xl font-black text-foreground hover:text-primary transition-colors">+1 (919) 999 - 8595</a>
+                  <a href="tel:9199998595" className="text-xl sm:text-3xl font-black text-foreground hover:text-primary transition-colors">+1 (919) 999 - 8595</a>
                   <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-2">Mon - Fri, 9am - 6pm EST</p>
                 </div>
                 <div className="group">
                   <h3 className="text-xs font-black uppercase text-accent tracking-[0.3em] mb-4">Visit Us</h3>
                   <div className="flex items-center gap-2">
                     <MapPin className="w-5 h-5 text-primary" />
-                    <p className="text-3xl font-black text-foreground">Durham, NC</p>
+                    <p className="text-xl sm:text-3xl font-black text-foreground">Durham, NC</p>
                   </div>
                   <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-2">North Carolina, USA</p>
                 </div>

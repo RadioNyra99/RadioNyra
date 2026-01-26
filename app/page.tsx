@@ -63,7 +63,7 @@ export default function HomePage() {
           </div>
 
           <div className="relative z-20 container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-8xl font-black tracking-tighter mb-8 uppercase leading-[0.9] drop-shadow-2xl italic">
+            <h1 className="text-2xl sm:text-4xl md:text-8xl font-black tracking-tighter mb-8 uppercase leading-[0.9] drop-shadow-2xl italic">
               <span className="text-white block">The Only Gateway to the Indian</span>
               <span className="text-primary block mt-2">Subcontinent Communities in the USA</span>
             </h1>
@@ -147,7 +147,7 @@ export default function HomePage() {
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
               <div>
-                <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-primary italic leading-none">
+                <h2 className="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tighter text-primary italic leading-none">
                   Radio Nyra Shows
                 </h2>
                 <p className="mt-4 text-muted-foreground font-medium uppercase tracking-widest text-sm max-w-xl">

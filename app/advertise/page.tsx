@@ -17,7 +17,7 @@ export default function AdvertisePage() {
                 <section className="relative py-16 md:py-20 overflow-hidden bg-gray-50 border-b border-gray-100">
                     <div className="container mx-auto px-4 relative z-10 text-center md:text-left">
                         <div className="max-w-4xl">
-                            <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter mb-8 italic leading-none text-gray-900">
+                            <h1 className="text-4xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter mb-8 italic leading-none text-gray-900">
                                 Grow Your <span className="text-primary">Business</span>
                             </h1>
                             <p className="text-xl md:text-2xl text-gray-600 uppercase tracking-[0.2em] font-bold italic mb-12">

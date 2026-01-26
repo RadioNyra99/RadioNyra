@@ -20,7 +20,7 @@ export default function AboutPage() {
                         />
                     </div>
                     <div className="container mx-auto px-4 max-w-5xl relative z-10">
-                        <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4 italic leading-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4 italic leading-tight">
                             The Voice of <br />Continuity
                         </h1>
                         <p className="text-base md:text-lg font-bold uppercase tracking-[0.3em] opacity-90">
@@ -30,13 +30,13 @@ export default function AboutPage() {
                 </section>
 
                 {/* HERITAGE SECTION */}
-                <section className="py-24 bg-background">
+                <section className="py-16 md:py-24 bg-background">
                     <div className="container mx-auto px-4 max-w-5xl">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                            <div>
-                                <h2 className="text-sm font-bold uppercase tracking-[0.4em] text-primary mb-4">Our Heritage</h2>
-                                <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-8 leading-tight">
-                                    A Legacy Born <br />in 1963
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+                            <div className="text-center md:text-left">
+                                <h2 className="text-xs sm:text-sm font-bold uppercase tracking-[0.4em] text-primary mb-4">Our Heritage</h2>
+                                <h3 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight mb-8 leading-tight">
+                                    A Legacy Born <br className="hidden md:block" />in 1963
                                 </h3>
                                 <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                                     <p>
@@ -71,11 +71,11 @@ export default function AboutPage() {
                 </section>
 
                 {/* MODERN CONTINUATION */}
-                <section className="py-24 bg-muted/30 border-y border-border">
+                <section className="py-16 md:py-24 bg-muted/30 border-y border-border">
                     <div className="container mx-auto px-4 max-w-5xl">
-                        <div className="text-center max-w-3xl mx-auto mb-16">
-                            <h2 className="text-3xl font-black uppercase mb-6">Radio Nyra: The Modern Identity</h2>
-                            <p className="text-xl text-muted-foreground italic">
+                        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+                            <h2 className="text-2xl sm:text-3xl font-black uppercase mb-6">Radio Nyra: The Modern Identity</h2>
+                            <p className="text-lg md:text-xl text-muted-foreground italic">
                                 Today, that original pulse beats through Radio Nyra. We are the modern face of a timeless legacy, a continuation of a journey that started more than half a century ago.
                             </p>
                         </div>
@@ -98,13 +98,13 @@ export default function AboutPage() {
                 </section>
 
                 {/* CONTENT (Original) */}
-                <section className="py-24 bg-background">
+                <section className="py-16 md:py-24 bg-background">
                     <div className="container mx-auto px-4 max-w-5xl">
-                        <div className="space-y-24">
+                        <div className="space-y-16 md:space-y-24">
 
                             {/* Our Story */}
-                            <div className="text-left">
-                                <h2 className="text-4xl font-black uppercase tracking-tight mb-8">Our NC Journey</h2>
+                            <div className="text-center md:text-left">
+                                <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight mb-8">Our NC Journey</h2>
                                 <div className="max-w-4xl space-y-6 text-lg text-muted-foreground leading-relaxed italic">
                                     <p>
                                         The recent chapter of our story began in 2014 in the forest terrain of Durham, North Carolina. WDUR 1490 AM became the vessel for our mission, launching 24/7 Desi News, Talk, and Music.
@@ -119,10 +119,10 @@ export default function AboutPage() {
                             </div>
 
                             {/* Our Mission */}
-                            <div className="text-left">
-                                <h2 className="text-3xl font-black uppercase tracking-tight mb-6">Our Mission</h2>
-                                <div className="w-16 h-1 bg-primary mb-8" />
-                                <p className="text-xl text-muted-foreground leading-relaxed italic">
+                            <div className="text-center md:text-left">
+                                <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight mb-6">Our Mission</h2>
+                                <div className="w-16 h-1 bg-primary mb-8 mx-auto md:mx-0" />
+                                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed italic">
                                     To empower the South Asian community by providing a platform that celebrates our rich culture while fostering connection and growth in the USA.
                                 </p>
                             </div>
@@ -137,18 +137,18 @@ export default function AboutPage() {
                                     />
                                 </div>
                                 <div>
-                                    <h2 className="text-3xl font-black uppercase tracking-tight mb-2">Ravi Cherukuri</h2>
-                                    <p className="text-sm font-bold uppercase tracking-widest text-primary mb-6">Founder, Radio Nyra</p>
+                                    <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight mb-2">Ravi Cherukuri</h2>
+                                    <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-6">Founder, Radio Nyra</p>
 
-                                    <p className="text-muted-foreground leading-relaxed">
+                                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                                         Under Ravi's visionary leadership, Radio Nyra has grown from a single AM station to a multimedia powerhouse. His dedication to community service and passion for high-quality broadcasting have made Radio Nyra a household name in the Triangle area and beyond.
                                     </p>
                                 </div>
                             </div>
 
                             {/* Team Image Section */}
-                            <div className="pt-8">
-                                <h2 className="text-3xl font-black uppercase tracking-tight mb-8 text-left">Meet The Team</h2>
+                            <div className="pt-8 text-center md:text-left">
+                                <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight mb-8">Meet The Team</h2>
                                 <div className="w-full relative rounded-xl overflow-hidden shadow-2xl border-4 border-primary/20">
                                     <img
                                         src="/radio-nyra-team.jpg"

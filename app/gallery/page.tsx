@@ -35,9 +35,9 @@ export default function GalleryPage() {
         <div className="min-h-screen bg-background font-sans">
             <Navigation />
 
-            <main className="py-20">
+            <main className="py-12 md:py-20">
                 <div className="container mx-auto px-4">
-                    <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter mb-12 border-l-8 border-primary pl-6">Photo Gallery</h1>
+                    <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold uppercase tracking-tighter mb-8 md:mb-12 border-l-4 sm:border-l-8 border-primary pl-4 sm:pl-6 leading-tight">Photo Gallery</h1>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {galleryItems.map((item) => (

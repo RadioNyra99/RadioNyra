@@ -7,7 +7,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Radio, Users, Mic2, Smartphone, Apple, Play } from "lucide-react"
 import { CountUp } from "@/components/ui/count-up"
-import { ListenLiveButton } from "@/components/listen-live-button"
+
 import { useAudio } from "@/components/audio-context"
 import { STATIONS } from "@/lib/stations"
 import { VoiceAssistants } from "@/components/voice-assistants"
@@ -70,9 +70,7 @@ export default function HomePage() {
             </h1>
 
 
-            <div className="mt-8">
-              <ListenLiveButton className="w-full md:w-auto text-lg font-bold uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none transition-all hover:scale-105 shadow-2xl h-14 px-10" />
-            </div>
+
 
             <div className="mt-12">
               <p className="text-white/60 text-[10px] font-black uppercase tracking-[0.3em] mb-4 drop-shadow-sm">Also Available on Digital Platforms</p>

@@ -29,6 +29,7 @@ export default function HomePage() {
     { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
     { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
     { name: "Geet Bazaar", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
+    { name: "Raj Kaur Show", host: "Raj Kaur", image: "/images/hosts/raj-kaur.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
     // Telugu shows (as per requirement)
     { name: "Non-Stop Hungama", host: "Sohail", image: "/images/hosts/non-stop-hungama.jpg", stationId: STATIONS.Telugu.id, language: "telugu" },
     { name: "Chinna Mata", host: "Priya", image: "/images/hosts/chinna-mata.jpg", stationId: STATIONS.Telugu.id, language: "telugu" },

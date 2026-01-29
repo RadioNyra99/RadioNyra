@@ -58,7 +58,7 @@ export default function AboutPage() {
                                         className="w-full h-full object-cover grayscale sepia-[0.2]"
                                     />
                                 </div>
-                                <div className="absolute -bottom-6 -left-6 aspect-square w-48 bg-muted rounded-sm overflow-hidden border-4 border-white shadow-xl -skew-y-3 hidden md:block">
+                                <div className="absolute -bottom-4 -left-2 md:-bottom-6 md:-left-6 aspect-square w-32 md:w-48 bg-muted rounded-sm overflow-hidden border-4 border-white shadow-xl -skew-y-3 block">
                                     <img
                                         src="/OLD Images/P0105_1-01-45-018_0004.jpg"
                                         alt="Historical archives 1963 detail"

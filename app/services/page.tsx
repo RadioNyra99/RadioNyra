@@ -16,7 +16,7 @@ export default function ServicesPage() {
                 {/* Header Section */}
                 <section className="py-8 md:py-10 bg-primary/5 border-b border-primary/10 text-center relative overflow-hidden">
                     <div className="container mx-auto px-4 fade-in-up">
-                        <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter mb-8 text-primary italic drop-shadow-sm">
+                        <h1 className="text-4xl md:text-8xl font-black uppercase tracking-tighter mb-8 text-primary italic drop-shadow-sm">
                             Our Services
                         </h1>
                         <p className="text-xl md:text-3xl text-muted-foreground uppercase tracking-[0.3em] max-w-3xl mx-auto font-bold mb-12 italic">
@@ -33,7 +33,7 @@ export default function ServicesPage() {
                             <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white shadow-[0_0_20px_rgba(255,0,0,0.3)]">
                                 <Radio className="w-8 h-8" />
                             </div>
-                            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter italic">On-Air Advertising</h2>
+                            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter italic">On-Air Advertising</h2>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -92,7 +92,7 @@ export default function ServicesPage() {
                             <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white shadow-[0_0_20px_rgba(255,0,0,0.3)]">
                                 <Award className="w-8 h-8" />
                             </div>
-                            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter italic">Sponsorship Packages</h2>
+                            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter italic">Sponsorship Packages</h2>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -146,7 +146,7 @@ export default function ServicesPage() {
                             <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white shadow-[0_0_20px_rgba(255,0,0,0.3)]">
                                 <Globe className="w-8 h-8" />
                             </div>
-                            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter italic">Digital & Social Media</h2>
+                            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter italic">Digital & Social Media</h2>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -195,7 +195,7 @@ export default function ServicesPage() {
                                     <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-md">
                                         <Monitor className="w-8 h-8" />
                                     </div>
-                                    <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter italic">In-Store Digital Displays</h2>
+                                    <h2 className="text-3xl md:text-6xl font-black uppercase tracking-tighter italic">In-Store Digital Displays</h2>
                                 </div>
                                 <h3 className="text-3xl font-black mb-8 italic text-white/90">Static Ad Display</h3>
                                 <ul className="space-y-6 text-xl">
@@ -210,6 +210,10 @@ export default function ServicesPage() {
                                     <li className="flex gap-6 items-start">
                                         <Check className="w-7 h-7 text-white/40 flex-shrink-0 mt-1" />
                                         <span className="font-bold italic">Specs: 1920×1080 static graphic or rotating slide</span>
+                                    </li>
+                                    <li className="flex gap-6 items-start">
+                                        <Check className="w-7 h-7 text-white/40 flex-shrink-0 mt-1" />
+                                        <span className="font-bold italic">Impressions: 400,000+ per month</span>
                                     </li>
                                 </ul>
                             </div>
@@ -232,7 +236,7 @@ export default function ServicesPage() {
                 <section id="packages" className="py-16 bg-background">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-20 fade-in-up">
-                            <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter mb-6 text-primary italic">Monthly Packages</h2>
+                            <h2 className="text-4xl md:text-8xl font-black uppercase tracking-tighter mb-6 text-primary italic">Monthly Packages</h2>
                             <p className="text-muted-foreground uppercase tracking-[0.4em] font-black italic">Select the perfect plan for your growth</p>
                         </div>
 

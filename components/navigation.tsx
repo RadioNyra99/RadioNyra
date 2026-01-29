@@ -50,7 +50,6 @@ export function Navigation() {
     { href: "/advertise", label: "Advertise" },
     { href: "/faq", label: "FAQ" },
     { href: "/contact", label: "Contact Us" },
-    { href: "/privacy-policy", label: "Privacy Policy" },
   ];
 
   return (

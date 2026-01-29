@@ -108,6 +108,11 @@ export default function ContactPage() {
                   <h3 className="text-xs font-black uppercase text-secondary tracking-[0.3em] mb-4">Call Us</h3>
                   <a href="tel:9199998595" className="text-xl sm:text-3xl font-black text-foreground hover:text-primary transition-colors">+1 (919) 999 - 8595</a>
                   <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-2">Mon - Fri, 9am - 6pm EST</p>
+                  <p className="text-[10px] font-black text-muted-foreground/70 uppercase tracking-widest mt-1">Call Only</p>
+                </div>
+                <div className="group">
+                  <h3 className="text-xs font-black uppercase text-[#25D366] tracking-[0.3em] mb-4">WhatsApp</h3>
+                  <a href="https://wa.me/19192944800" target="_blank" className="text-xl sm:text-3xl font-black text-foreground hover:text-[#25D366] transition-colors">+1 (919) 294 - 4800</a>
                 </div>
                 <div className="group">
                   <h3 className="text-xs font-black uppercase text-accent tracking-[0.3em] mb-4">Visit Us</h3>

@@ -70,7 +70,10 @@ export default function HomePage() {
                 <span className="w-2 h-2 bg-primary rounded-full"></span> info@radionyra.com
               </a>
               <a href="tel:+19199998595" className="hover:text-primary transition-colors flex items-center gap-2">
-                <span className="hidden md:inline text-primary">|</span> +1 (919) 999 - 8595
+                <span className="hidden md:inline text-primary">|</span> +1 (919) 999 - 8595 (Call Only)
+              </a>
+              <a href="https://wa.me/19192944800" target="_blank" className="hover:text-[#25D366] transition-colors flex items-center gap-2">
+                <span className="hidden md:inline text-primary">|</span> WhatsApp: +1 (919) 294 - 4800
               </a>
             </div>
 

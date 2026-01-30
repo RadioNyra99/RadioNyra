@@ -15,6 +15,13 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 export default function PodcastsPage() {
     const podcasts = [
         {
+            title: "Interview with Madhavi Lata - Mana Muchatlu",
+            host: "Kanthi",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/6xJRcPWxCJE",
+            thumbnail: "https://img.youtube.com/vi/6xJRcPWxCJE/maxresdefault.jpg"
+        },
+        {
             title: "Confused about U.S.college admissions? We’ve got you covered!",
             host: "Raj Parsaud",
             show: "Radio Nyra Podcast",

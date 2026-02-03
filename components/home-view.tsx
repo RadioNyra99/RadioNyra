@@ -11,6 +11,7 @@ import { CountUp } from "@/components/ui/count-up"
 import { useAudio } from "@/components/audio-context"
 import { STATIONS } from "@/lib/stations"
 import { VoiceAssistants } from "@/components/voice-assistants"
+import { PartnersMarquee } from "@/components/partners-marquee"
 import { motion, AnimatePresence } from "framer-motion"
 
 export function HomeView() {
@@ -77,9 +78,9 @@ export function HomeView() {
                             </a>
                         </div>
 
-                        <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-8 uppercase leading-[0.9] drop-shadow-2xl italic">
+                        <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-4 md:mb-8 uppercase leading-[1.1] md:leading-[0.9] drop-shadow-2xl italic">
                             <span className="text-white block">The Only Gateway to the Indian</span>
-                            <span className="text-primary block mt-2">Subcontinent Communities in the USA</span>
+                            <span className="text-primary block mt-1 md:mt-2">Subcontinent Communities in the USA</span>
                         </h1>
 
 
@@ -217,9 +218,13 @@ export function HomeView() {
                 {/* OUR PARTNERS */}
                 <section className="py-12 bg-background border-t border-border/50">
                     <div className="container mx-auto px-4 text-center">
-                        <h2 className="text-2xl font-bold uppercase tracking-tighter mb-12 border-l-4 border-primary pl-4 text-left">Our Partners</h2>
+                        <h2 className="text-2xl font-bold uppercase tracking-tighter mb-8 md:mb-12 border-l-4 border-primary pl-4 text-left">Our Partners</h2>
 
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                        <div className="md:hidden -mx-4">
+                            <PartnersMarquee partnersCount={30} />
+                        </div>
+
+                        <div className="hidden md:grid grid-cols-2 lg:grid-cols-6 gap-4">
                             {/* Empowerly Partner */}
                             <Link
                                 href="https://start.empowerly.com/radio-nyra"

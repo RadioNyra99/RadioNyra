@@ -93,7 +93,7 @@ export function Navigation() {
                         <SheetClose asChild>
                           <Link
                             href={link.href}
-                            className="text-3xl font-black text-foreground hover:text-primary transition-all duration-300 tracking-tighter uppercase flex items-center gap-2 group-hover:pl-2"
+                            className="text-xl font-black text-foreground hover:text-primary transition-all duration-300 tracking-tighter uppercase flex items-center gap-2 group-hover:pl-2"
                           >
                             {link.label}
                             <span className="w-2 h-2 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />

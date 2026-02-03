@@ -8,55 +8,36 @@ import { Badge } from "@/components/ui/badge"
 
 export default function OTTAddaPage() {
     const nowStreaming = [
-        { title: "Cheekatilo", language: "Telugu", platform: "Amazon Prime Video", type: "Horror Thriller", tags: ["New Release"], image: "/OTT%20ADDA/OTT%20ADDA/Cheekatilo.jpg" },
+        { title: "The Raja Saab", language: "Telugu/Multi", platform: "JioHotstar", type: "Romantic Horror", tags: ["Super Hit"], image: "/OTT%20ADDA/OTT%20ADDA/The%20Raja%20Saab.jpg" },
+        { title: "Nari Nari Naduma Murari", language: "Telugu", platform: "Amazon Prime", type: "Rom-Com", tags: ["Fresh"], image: "/OTT%20ADDA/OTT%20ADDA/Nari%20Nari%20Naduma%20Murari.jpg" },
+        { title: "Psych Siddhartha", language: "Telugu", platform: "Aha Video", type: "Romantic Drama", tags: ["New"], image: "/OTT%20ADDA/OTT%20ADDA/Psych%20Siddhartha.jpg" },
+        { title: "Dhurandhar", language: "Telugu", platform: "Netflix", type: "Action", tags: ["Trending"], image: "/OTT%20ADDA/OTT%20ADDA/Dhurandhar.jpg" },
+        { title: "Jyothi", language: "Telugu", platform: "ETV Win", type: "Family Drama", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/jyothi.jpg" },
+        { title: "Cheekatilo", language: "Telugu", platform: "Amazon Prime Video", type: "Horror Thriller", tags: ["Hit"], image: "/OTT%20ADDA/OTT%20ADDA/Cheekatilo.jpg" },
         { title: "Andhela Ravamidhi", language: "Telugu", platform: "Amazon Prime Video", type: "Drama", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/Andhela Ravamidhi.jpg" },
         { title: "Jigris", language: "Telugu", platform: "Sun NXT", type: "Comedy Drama", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/Jigris.jpg" },
-        { title: "Drive", language: "Telugu", platform: "Amazon Prime Video", type: "Thriller", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/Drive.jpg" },
-        { title: "Beauty", language: "Telugu", platform: "ZEE5", type: "Romantic Entertainer", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/Beauty.jpg" },
-        { title: "Premante", language: "Telugu", platform: "Netflix", type: "Romantic Comedy", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/Premante.jpg" },
-        { title: "12A Railway Colony", language: "Telugu", platform: "Amazon Prime Video", type: "Horror Thriller", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/12A%20Railway%20Colony.jpg" },
-        { title: "Paanch Minar", language: "Telugu", platform: "Amazon Prime Video", type: "Comedy", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/Paanch%20Minar.jpg" },
-        { title: "Aaryan", language: "Telugu", platform: "Netflix", type: "Psychological Crime", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/Aaryan.jpg" },
-        { title: "Premistunnaa", language: "Telugu", platform: "Aha Video", type: "Romantic Drama", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/Premistunnaa.jpg" },
     ];
 
     const upcoming = [
-        { title: "Trimukha", language: "Telugu", platform: "Theaters", date: "30 Jan 2026", type: "Movie", link: "#" },
-        { title: "Karikaada", language: "Telugu", platform: "Theaters", date: "06 Feb 2026", type: "Movie", link: "#" },
-        { title: "Euphoria", language: "Telugu", platform: "Theaters", date: "06 Feb 2026", type: "Movie", link: "#" },
-        { title: "Erracheera", language: "Telugu", platform: "Theaters", date: "06 Feb 2026", type: "Movie", link: "#" },
-        { title: "Chennai Love Story", language: "Telugu", platform: "Theaters", date: "12 Feb 2026", type: "Movie", link: "#" },
+        { title: "Anaganaga Oka Raju", language: "Telugu", platform: "Netflix", date: "13 Feb 2026", type: "Movie", link: "#", image: "/OTT%20ADDA/OTT%20ADDA/Anaganaga%20Oka%20Raju.jpg" },
+        { title: "Bhartha Mahasayulaku Wignyapthi", language: "Telugu", platform: "ZEE5", date: "13 Feb 2026", type: "Movie", link: "#", image: "/OTT%20ADDA/OTT%20ADDA/Bhartha%20Mahasayulaku%20Wignyapthi.jpg" },
+        { title: "Mana Shankar Varaprasad Garu", language: "Telugu", platform: "ZEE5", date: "19 Feb 2026", type: "Movie", link: "#", image: "/OTT%20ADDA/OTT%20ADDA/Mana%20Shankara%20Vara%20Prasad%20Garu.jpg" },
         { title: "Swayambhu", language: "Telugu", platform: "Theaters", date: "13 Feb 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Swayambhu.jpg" },
-        { title: "Funky", language: "Telugu", platform: "Theaters", date: "13 Feb 2026", type: "Movie", link: "#" },
-        { title: "Pookie", language: "Telugu", platform: "Theaters", date: "13 Feb 2026", type: "Movie", link: "#" },
-        { title: "Premalu 2", language: "Telugu", platform: "Theaters", date: "14 Mar 2026", type: "Movie", link: "#" },
-        { title: "Badass", language: "Telugu", platform: "Theaters", date: "14 Mar 2026", type: "Movie", link: "#" },
         { title: "Dacoit: A Love Story", language: "Telugu", platform: "Theaters", date: "19 Mar 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Dacoit.jpg" },
-        { title: "The Paradise", language: "Telugu", platform: "Theaters", date: "26 Mar 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/The%20Paradise.jpg" },
-        { title: "Peddi", language: "Telugu", platform: "Theaters", date: "27 Mar 2026", type: "Movie", link: "#" },
-        { title: "Mrithunjay", language: "Telugu", platform: "Theaters", date: "Mar–Apr 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Mrithunjay.jpg" },
-        { title: "Rao Bahadur", language: "Telugu", platform: "Theaters", date: "April 2026", type: "Movie", link: "#" },
-        { title: "Spirit", language: "Telugu", platform: "Theaters", date: "April 2026", type: "Movie", link: "#" },
-        { title: "Pushpa 3", language: "Telugu", platform: "Theaters", date: "Aug 2026 (Expected)", type: "Movie", link: "#" },
-        { title: "Ustaad Bhagat Singh", language: "Telugu", platform: "Theaters", date: "2026 (TBA)", type: "Movie", link: "#" },
-        { title: "Adarsha Kutumbam", language: "Telugu", platform: "Theaters", date: "2026 (TBA)", type: "Movie", link: "#" },
-        { title: "NTR–Neel", language: "Telugu", platform: "Theaters", date: "2026 (TBA)", type: "Movie", link: "#" },
-        { title: "Fauzi", language: "Telugu", platform: "Theaters", date: "2026 (TBA)", type: "Movie", link: "#" },
-        { title: "Rowdy Janardhana", language: "Telugu", platform: "Theaters", date: "2026 (TBA)", type: "Movie", link: "#" },
-        { title: "Jai Hanuman", language: "Telugu", platform: "Theaters", date: "2026 (TBA)", type: "Movie", link: "#" },
+        { title: "Spirit", language: "Telugu", platform: "Theaters", date: "April 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/spirit.jpg" },
+        { title: "Pushpa 3", language: "Telugu", platform: "Theaters", date: "Aug 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/pushpa%203.jpg" },
     ];
 
     const theatricalReleases = [
-        { title: "Anaganaga Oka Raju", language: "Telugu", date: "Trending Hit (Theaters)", type: "Romantic Comedy" },
+        { title: "The Raja Saab", language: "Telugu/Multi", date: "Blockbuster (Theaters)", type: "Romantic Horror" },
         { title: "Dhandoraa", language: "Telugu", date: "OTT Buzz", type: "Social Drama" },
-        { title: "Peddi", language: "Telugu", date: "Upcoming (27 Mar)", type: "Sports Drama" },
+        { title: "Swayambhu", language: "Telugu", date: "Feb 13", type: "Period Action" },
     ];
 
     const trendingBuzz = [
-        { title: "Cheekatilo", industry: "Tollywood", date: "Now Streaming", type: "Horror (OTT)", image: "/OTT%20ADDA/OTT%20ADDA/Cheekatilo.jpg" },
-
-        { title: "Anaganaga Oka Raju", industry: "Tollywood", date: "In Theaters", type: "Box Office Hit" },
-        { title: "Dhandoraa", industry: "Tollywood", date: "Trending", type: "Critically Acclaimed" },
+        { title: "The Raja Saab", industry: "Tollywood", date: "Blockbuster Hit", type: "In Theaters", image: "/OTT%20ADDA/OTT%20ADDA/The%20Raja%20Saab.jpg" },
+        { title: "Dhurandhar", industry: "Tollywood", date: "Now Streaming", type: "OTT Hit" },
+        { title: "Swayambhu", industry: "Tollywood", date: "In Theaters 13 Feb", type: "Period Action" },
     ];
 
     return (

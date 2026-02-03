@@ -5,7 +5,7 @@ import { Navigation } from "@/components/navigation"
 import { FrequencyBar } from "@/components/frequency-bar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Radio, Users, Mic2, Smartphone, Apple, Play } from "lucide-react"
+import { Users, Smartphone, Apple, Play, Megaphone, Star, Radio } from "lucide-react"
 import { CountUp } from "@/components/ui/count-up"
 
 import { useAudio } from "@/components/audio-context"
@@ -30,7 +30,6 @@ export function HomeView() {
         { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Geet Bazaar", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Raj Kaur Show", host: "Raj Kaur", image: "/images/hosts/raj-kaur.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
         // Telugu shows (as per requirement)
         { name: "Non-Stop Hungama", host: "Sohail", image: "/images/hosts/non-stop-hungama.jpg", stationId: STATIONS.Telugu.id, language: "telugu" },
         { name: "Chinna Mata", host: "Priya", image: "/images/hosts/chinna-mata.jpg", stationId: STATIONS.Telugu.id, language: "telugu" },
@@ -118,11 +117,12 @@ export function HomeView() {
                 {/* STATS */}
                 <section className="py-6 bg-background border-b border-border/50">
                     <div className="container mx-auto px-4">
-                        <div className="grid grid-cols-2 gap-4 text-center justify-center items-center overflow-hidden">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center justify-center items-center overflow-hidden">
                             {[
                                 { label: "Active listeners per week", end: 100, suffix: "K+", icon: Users },
-                                { label: "24/7 Broadcasting", end: 24, suffix: "", icon: Radio },
-                                // { label: "Professional Hosts", end: 15, suffix: "+", icon: Mic2 } // Hidden as per request
+                                { label: "Broadcasting", end: 24, suffix: "/7", icon: Radio },
+                                { label: "Monthly Newsletter", end: 60, suffix: "K+", icon: Megaphone },
+                                { label: "Social Followers", end: 20, suffix: "K+", icon: Star },
                             ].map((stat, i) => (
                                 <div key={i} className="flex-1 p-2">
                                     <div className="flex justify-center">

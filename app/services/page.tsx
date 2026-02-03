@@ -158,7 +158,7 @@ export default function ServicesPage() {
                                     </CardTitle>
                                 </CardHeader>
                                 <CardContent className="space-y-6">
-                                    <p className="text-lg font-bold text-muted-foreground italic">Platforms: Shared across 60+ platforms</p>
+                                    <p className="text-lg font-bold text-muted-foreground italic">Reach: 20K+ Social Media Followers</p>
                                     <div className="p-6 bg-muted/50 border-l-8 border-primary shadow-sm">
                                         <p className="text-base font-medium italic">Inclusions: Image + caption + brand tag/hashtag</p>
                                     </div>

@@ -23,14 +23,14 @@ export const metadata: Metadata = {
   // Updated metadata for Radio Nyra
   title: "Radio Nyra | The Voice of the Indian Subcontinent in the USA",
   description:
-    "Radio Nyra - Broadcasting 24/7 Bollywood & Tollywood news, talk, and music to 100,000+ listeners in Raleigh-Durham. Listen on Alexa, Google Home, and Siri by saying 'Play Radio Nyra'.",
+    "Radio Nyra - Broadcasting 24/7 Bollywood & Tollywood news, talk, and music to 100,000+ listeners in Raleigh-Durham. Listen on Alexa, Google Home, and Siri by saying 'Open Radio Nyra Hindi/Telugu'.",
   generator: "v0.app",
   manifest: "/manifest.json",
   other: {
     "voice-search-enabled": "true", // Custom hint
   },
   // Voice Search Optimization
-  keywords: ["Radio Nyra", "Bollywood Radio", "Hindi Radio", "Listen to Radio Nyra", "Alexa play Radio Nyra", "Siri play Radio Nyra", "Google play Radio Nyra"],
+  keywords: ["Radio Nyra", "Bollywood Radio", "Hindi Radio", "Listen to Radio Nyra", "Alexa open Radio Nyra", "Siri play Radio Nyra", "Google play Radio Nyra"],
   icons: {
     icon: [
       {

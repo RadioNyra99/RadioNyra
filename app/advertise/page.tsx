@@ -63,11 +63,12 @@ export default function AdvertisePage() {
                                     </p>
                                 </div>
 
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
                                     {[
                                         { label: "Daily Listeners", value: "100K+" },
-                                        { label: "Community Events", value: "24/7" },
-                                        { label: "Digital Reach", value: "1M+" },
+                                        { label: "Broadcasting", value: "24/7" },
+                                        { label: "Monthly Newsletter", value: "60K+" },
+                                        { label: "Social Media", value: "20K+" },
                                         { label: "Brand Partners", value: "500+" }
                                     ].map((stat, i) => (
                                         <div key={i} className="p-8 bg-gray-50 border border-gray-100">

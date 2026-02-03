@@ -12,7 +12,7 @@ export function VoiceAssistants() {
             name: "Alexa",
             displayName: "Alexa",
             image: "/Alexa.jpg",
-            command: "Alexa, play Radio Nyra",
+            command: "Alexa, open Radio Nyra Hindi/Telugu",
             popupTitle: "Listen on Alexa"
         },
         {

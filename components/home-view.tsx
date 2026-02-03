@@ -116,22 +116,22 @@ export function HomeView() {
 
                 {/* STATS */}
                 <section className="py-6 bg-background border-b border-border/50">
-                    <div className="container mx-auto px-4">
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center justify-center items-center overflow-hidden">
+                    <div className="container mx-auto px-2">
+                        <div className="grid grid-cols-4 gap-2 md:gap-4 text-center justify-center items-center overflow-hidden">
                             {[
                                 { label: "Active listeners per week", end: 100, suffix: "K+", icon: Users },
                                 { label: "Broadcasting", end: 24, suffix: "/7", icon: Radio },
                                 { label: "Monthly Newsletter", end: 60, suffix: "K+", icon: Megaphone },
                                 { label: "Social Followers", end: 20, suffix: "K+", icon: Star },
                             ].map((stat, i) => (
-                                <div key={i} className="flex-1 p-2">
+                                <div key={i} className="flex-1 p-1 md:p-2">
                                     <div className="flex justify-center">
-                                        <stat.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+                                        <stat.icon className="w-4 h-4 md:w-6 md:h-6 text-primary" />
                                     </div>
-                                    <div className="text-3xl md:text-6xl font-bold text-foreground tracking-tight leading-none">
+                                    <div className="text-xl sm:text-2xl md:text-6xl font-bold text-foreground tracking-tight leading-none">
                                         <CountUp end={stat.end} suffix={stat.suffix} duration={2500} />
                                     </div>
-                                    <div className="text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-muted-foreground mt-1">
+                                    <div className="text-[6px] xs:text-[7px] sm:text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-muted-foreground mt-1">
                                         {stat.label}
                                     </div>
                                 </div>

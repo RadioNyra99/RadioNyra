@@ -83,7 +83,7 @@ export default function EventsPage() {
                                     </div>
                                     <div className="p-8 text-center bg-white">
                                         <p className="text-sm font-medium text-muted-foreground mb-6 uppercase tracking-wider">Secure your spot for the Valentine's Day party!</p>
-                                        <Button className="w-full bg-[#D1410C] hover:bg-[#D1410C]/90 text-white font-bold uppercase tracking-widest py-6 text-lg rounded-sm" asChild>
+                                        <Button className="w-full bg-[#D1410C] hover:bg-[#D1410C]/90 text-white font-bold uppercase tracking-wide md:tracking-widest py-4 md:py-6 text-xs sm:text-sm md:text-lg rounded-sm whitespace-normal h-auto" asChild>
                                             <a href="https://www.eventbrite.com/e/valentine-galentines-dance-night-tickets-1982288757034" target="_blank" rel="noopener noreferrer">
                                                 Buy Tickets on Eventbrite
                                             </a>

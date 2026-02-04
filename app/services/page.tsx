@@ -263,7 +263,7 @@ export default function ServicesPage() {
                                 </CardContent>
                                 <CardFooter className="pb-10">
                                     <Button className="w-full bg-green-600 hover:bg-green-700 font-black uppercase tracking-widest py-8 rounded-none transition-transform active:scale-95" asChild>
-                                        <Link href="/advertise">Get Started</Link>
+                                        <Link href="/advertise#inquiry">Get Started</Link>
                                     </Button>
                                 </CardFooter>
                             </Card>
@@ -291,7 +291,7 @@ export default function ServicesPage() {
                                 </CardContent>
                                 <CardFooter className="pb-10">
                                     <Button className="w-full bg-blue-600 hover:bg-blue-700 font-black uppercase tracking-widest py-8 rounded-none transition-transform active:scale-95" asChild>
-                                        <Link href="/advertise">Choose Growth</Link>
+                                        <Link href="/advertise#inquiry">Choose Growth</Link>
                                     </Button>
                                 </CardFooter>
                             </Card>
@@ -319,7 +319,7 @@ export default function ServicesPage() {
                                 </CardContent>
                                 <CardFooter className="pb-10">
                                     <Button className="w-full bg-purple-600 hover:bg-purple-700 font-black uppercase tracking-widest py-8 rounded-none transition-transform active:scale-95" asChild>
-                                        <Link href="/advertise">Go Premium</Link>
+                                        <Link href="/advertise#inquiry">Go Premium</Link>
                                     </Button>
                                 </CardFooter>
                             </Card>
@@ -348,7 +348,7 @@ export default function ServicesPage() {
                                 </CardContent>
                                 <CardFooter className="pb-10">
                                     <Button className="w-full bg-primary hover:bg-primary/90 font-black uppercase tracking-widest py-8 rounded-none transition-transform active:scale-95" asChild>
-                                        <Link href="/advertise">Request Live</Link>
+                                        <Link href="/advertise#inquiry">Request Live</Link>
                                     </Button>
                                 </CardFooter>
                             </Card>

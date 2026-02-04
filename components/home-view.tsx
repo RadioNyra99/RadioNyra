@@ -308,7 +308,7 @@ export function HomeView() {
                                                         src={partner.image}
                                                         alt={partner.name}
                                                         loading="lazy"
-                                                        className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
+                                                        className="w-full h-full object-contain transition-all duration-500"
                                                     />
                                                 </div>
                                             </Link>
@@ -319,7 +319,7 @@ export function HomeView() {
                                                         src={partner.image}
                                                         alt={partner.name}
                                                         loading="lazy"
-                                                        className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
+                                                        className="w-full h-full object-contain transition-all duration-500"
                                                     />
                                                 </div>
                                             </div>

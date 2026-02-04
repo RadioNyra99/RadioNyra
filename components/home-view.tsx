@@ -11,7 +11,6 @@ import { CountUp } from "@/components/ui/count-up"
 import { useAudio } from "@/components/audio-context"
 import { STATIONS } from "@/lib/stations"
 import { VoiceAssistants } from "@/components/voice-assistants"
-import { PartnersMarquee } from "@/components/partners-marquee"
 import { motion, AnimatePresence } from "framer-motion"
 
 export function HomeView() {
@@ -293,46 +292,40 @@ export function HomeView() {
                             ];
 
                             return (
-                                <>
-                                    <div className="md:hidden -mx-4">
-                                        <PartnersMarquee partnersData={partnersData} />
-                                    </div>
-
-                                    <div className="hidden md:grid grid-cols-2 lg:grid-cols-6 gap-4">
-                                        {partnersData.map((partner, i) => (
-                                            partner.link ? (
-                                                <Link
-                                                    key={i}
-                                                    href={partner.link}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="group border border-border/30 hover:border-primary/50 transition-all duration-300 bg-transparent p-4 flex items-center justify-center h-32 hover:shadow-lg"
-                                                    title={partner.name}
-                                                >
-                                                    <div className="relative w-full h-full">
-                                                        <img
-                                                            src={partner.image}
-                                                            alt={partner.name}
-                                                            loading="lazy"
-                                                            className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
-                                                        />
-                                                    </div>
-                                                </Link>
-                                            ) : (
-                                                <div key={i} className="group border border-border/30 hover:border-primary/50 transition-all duration-300 bg-transparent p-4 flex items-center justify-center h-32 hover:shadow-lg">
-                                                    <div className="relative w-full h-full">
-                                                        <img
-                                                            src={partner.image}
-                                                            alt={partner.name}
-                                                            loading="lazy"
-                                                            className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
-                                                        />
-                                                    </div>
+                                <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+                                    {partnersData.map((partner, i) => (
+                                        partner.link ? (
+                                            <Link
+                                                key={i}
+                                                href={partner.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="group border border-border/30 hover:border-primary/50 transition-all duration-300 bg-transparent p-4 flex items-center justify-center h-32 hover:shadow-lg"
+                                                title={partner.name}
+                                            >
+                                                <div className="relative w-full h-full">
+                                                    <img
+                                                        src={partner.image}
+                                                        alt={partner.name}
+                                                        loading="lazy"
+                                                        className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
+                                                    />
                                                 </div>
-                                            )
-                                        ))}
-                                    </div>
-                                </>
+                                            </Link>
+                                        ) : (
+                                            <div key={i} className="group border border-border/30 hover:border-primary/50 transition-all duration-300 bg-transparent p-4 flex items-center justify-center h-32 hover:shadow-lg">
+                                                <div className="relative w-full h-full">
+                                                    <img
+                                                        src={partner.image}
+                                                        alt={partner.name}
+                                                        loading="lazy"
+                                                        className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
+                                                    />
+                                                </div>
+                                            </div>
+                                        )
+                                    ))}
+                                </div>
                             );
                         })()}
                     </div>

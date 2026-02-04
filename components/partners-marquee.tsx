@@ -2,40 +2,49 @@
 
 import Link from "next/link"
 
-interface PartnersMarqueeProps {
-    partnersCount: number;
+interface Partner {
+    name: string;
+    image: string;
+    link: string | null;
 }
 
-export function PartnersMarquee({ partnersCount }: PartnersMarqueeProps) {
-    const partners = Array.from({ length: partnersCount }, (_, i) => i + 1);
+interface PartnersMarqueeProps {
+    partnersCount?: number;
+    partnersData?: Partner[];
+}
 
-    // Filter to handle the special Empowerly link for partner 1
-    const renderPartner = (num: number) => {
-        const isEmpowerly = num === 1;
-        const href = isEmpowerly ? "https://start.empowerly.com/radio-nyra" : null;
-        const imgSrc = `/images/${num}.jpg`;
-        const alt = isEmpowerly ? "Empowerly" : `Partner ${num}`;
+export function PartnersMarquee({ partnersCount, partnersData }: PartnersMarqueeProps) {
+    const defaultPartners = partnersCount
+        ? Array.from({ length: partnersCount }, (_, i) => ({
+            name: `Partner ${i + 1}`,
+            image: `/images/${i + 1}.jpg`,
+            link: i === 0 ? "https://start.empowerly.com/radio-nyra" : null
+        }))
+        : [];
 
+    const partners = partnersData || defaultPartners;
+
+    const renderPartner = (partner: Partner, index: number) => {
         const content = (
             <div className="flex-shrink-0 w-32 h-20 mx-4 border border-border/30 bg-white/50 backdrop-blur-sm p-2 flex items-center justify-center hover:border-primary/50 transition-all duration-300">
                 <img
-                    src={imgSrc}
-                    alt={alt}
+                    src={partner.image}
+                    alt={partner.name}
                     loading="lazy"
-                    className="max-w-full max-h-full object-contain"
+                    className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-500"
                 />
             </div>
         );
 
-        if (href) {
+        if (partner.link) {
             return (
-                <Link key={`partner-${num}`} href={href} target="_blank" rel="noopener noreferrer">
+                <Link key={`marquee-partner-${index}`} href={partner.link} target="_blank" rel="noopener noreferrer">
                     {content}
                 </Link>
             );
         }
 
-        return <div key={`partner-${num}`}>{content}</div>;
+        return <div key={`marquee-partner-${index}`}>{content}</div>;
     };
 
     return (

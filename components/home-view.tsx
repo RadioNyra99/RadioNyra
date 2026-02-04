@@ -181,7 +181,7 @@ export function HomeView() {
 
                                 <div className="bg-gray-50 p-6 border border-gray-100">
                                     <p className="text-xs font-black uppercase tracking-[0.2em] text-muted-foreground mb-4 text-center">Secure Your Spot</p>
-                                    <Button className="w-full bg-[#D1410C] hover:bg-[#D1410C]/90 text-white font-black uppercase tracking-widest py-6 rounded-sm text-lg shadow-xl hover:scale-102 transition-transform" asChild>
+                                    <Button className="w-full bg-[#D1410C] hover:bg-[#D1410C]/90 text-white font-black uppercase tracking-wide md:tracking-widest py-4 md:py-6 rounded-sm text-xs sm:text-sm md:text-lg shadow-xl hover:scale-102 transition-transform whitespace-normal h-auto" asChild>
                                         <Link href="https://www.eventbrite.com/e/valentine-galentines-dance-night-tickets-1982288757034" target="_blank" rel="noopener noreferrer">
                                             Book Tickets on Eventbrite
                                         </Link>

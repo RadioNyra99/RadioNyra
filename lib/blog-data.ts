@@ -38,13 +38,12 @@ export const BLOG_POSTS: BlogPost[] = [
         },
         categories: ["Station News", "Community"]
     },
-    },
-{
-    id: "3",
+    {
+        id: "3",
         title: "Celebrating Holi 2026: A Festival of Colors",
-            slug: "celebrating-holi-2026",
-                excerpt: "Join us for the biggest Holi celebration in town! Music, dance, food, and colors await you at the Radio Nyra Holi Festival.",
-                    content: `
+        slug: "celebrating-holi-2026",
+        excerpt: "Join us for the biggest Holi celebration in town! Music, dance, food, and colors await you at the Radio Nyra Holi Festival.",
+        content: `
       <p>The festival of colors is around the corner, and Radio Nyra is thrilled to announce our annual 'Holi Festival Celebration'!</p>
       <h2>Event Details</h2>
       <ul>
@@ -55,14 +54,14 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>Expect a day filled with high-energy Bollywood beats, a dedicated rain dance floor, delicious food stalls serving authentic Indian chaat, and of course, plenty of organic colors.</p>
       <p>This is a family-friendly event, so bring your kids and elders along. Let's paint the town red, blue, green, and yellow!</p>
     `,
-                        date: "2026-01-10",
-                            author: {
-        name: "Events Team"
-    },
-    featuredImage: {
-        url: "/Holi.jpg",
+        date: "2026-01-10",
+        author: {
+            name: "Events Team"
+        },
+        featuredImage: {
+            url: "/Holi.jpg",
             alt: "Holi Festival Colors"
-    },
-    categories: ["Events", "Holi"]
-}
+        },
+        categories: ["Events", "Holi"]
+    }
 ];

@@ -38,38 +38,13 @@ export const BLOG_POSTS: BlogPost[] = [
         },
         categories: ["Station News", "Community"]
     },
-    {
-        id: "2",
-        title: "Top 10 Bollywood Hits to Kickstart Your 2026",
-        slug: "top-10-bollywood-hits-2026",
-        excerpt: "Get your playlist ready! Here are the top 10 Bollywood tracks that are ruling the charts and our listeners' hearts this year.",
-        content: `
-      <p>2026 has started with a bang, and the Bollywood music industry is churning out hits that are impossible to ignore. Here is our curated list of the top 10 songs you must have on your playlist right now:</p>
-      <ol>
-        <li><strong>Dil Ka Dariya</strong> - A soulful romantic ballad that pulls at your heartstrings.</li>
-        <li><strong>Nach Le</strong> - The ultimate party anthem of the season.</li>
-        <li><strong>Sufi Soul</strong> - A fusion track that blends traditional Qawwali with modern beats.</li>
-        <li><strong>City Lights</strong> - An upbeat track perfect for your evening drive.</li>
-        <li><strong>Retro Rewind</strong> - A remix that does justice to the original classic.</li>
-      </ol>
-      <p>Tune in to 'Subha Ki Shuruaat' with Host Sohail to catch these tracks live and participate in our countdown!</p>
-    `,
-        date: "2026-01-08",
-        author: {
-            name: "DJ Sohail"
-        },
-        featuredImage: {
-            url: "/images/hosts/non-stop-hungama.jpg",
-            alt: "DJ Music Console"
-        },
-        categories: ["Music", "Top 10"]
     },
-    {
-        id: "3",
+{
+    id: "3",
         title: "Celebrating Holi 2026: A Festival of Colors",
-        slug: "celebrating-holi-2026",
-        excerpt: "Join us for the biggest Holi celebration in town! Music, dance, food, and colors await you at the Radio Nyra Holi Festival.",
-        content: `
+            slug: "celebrating-holi-2026",
+                excerpt: "Join us for the biggest Holi celebration in town! Music, dance, food, and colors await you at the Radio Nyra Holi Festival.",
+                    content: `
       <p>The festival of colors is around the corner, and Radio Nyra is thrilled to announce our annual 'Holi Festival Celebration'!</p>
       <h2>Event Details</h2>
       <ul>
@@ -80,14 +55,14 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>Expect a day filled with high-energy Bollywood beats, a dedicated rain dance floor, delicious food stalls serving authentic Indian chaat, and of course, plenty of organic colors.</p>
       <p>This is a family-friendly event, so bring your kids and elders along. Let's paint the town red, blue, green, and yellow!</p>
     `,
-        date: "2026-01-10",
-        author: {
-            name: "Events Team"
-        },
-        featuredImage: {
-            url: "/Holi.jpg",
+                        date: "2026-01-10",
+                            author: {
+        name: "Events Team"
+    },
+    featuredImage: {
+        url: "/Holi.jpg",
             alt: "Holi Festival Colors"
-        },
-        categories: ["Events", "Holi"]
-    }
+    },
+    categories: ["Events", "Holi"]
+}
 ];

@@ -2,8 +2,6 @@ import { BLOG_POSTS } from '@/lib/blog-data';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
-// Rebuild this page every 60 seconds when there's a request
-export const revalidate = 60;
 
 // Generate static paths for all blog posts
 export async function generateStaticParams() {

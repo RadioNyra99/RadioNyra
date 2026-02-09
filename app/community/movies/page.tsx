@@ -27,49 +27,67 @@ export default function MoviesPage() {
             image: "/Upcoming%20movies/Upcoming%20movies/honey.jpg"
         },
         {
-            title: "Karikaada",
+            title: "Vishnu Vinyasam",
             type: "Theatre",
-            releaseDate: "06 Feb 2026",
+            releaseDate: "14 Feb 2026",
             language: "Telugu",
-            genre: "Romantic Action",
+            genre: "Action Drama",
             notes: "Theatrical Release",
-            image: "/Upcoming%20movies/Upcoming%20movies/Karikaada.jpg"
+            image: "/Upcoming%20movies/Upcoming%20movies/Vishnu%20Vinyasam.jpg"
         },
         {
-            title: "Bhabiji Ghar Par Hain!",
+            title: "Love Insurance Kompany",
             type: "Theatre",
-            releaseDate: "05 Feb 2026",
-            language: "Hindi",
-            genre: "Comedy",
-            notes: "Theatrical Release",
-            image: "/Upcoming%20movies/Upcoming%20movies/Bhabiji%20Ghar%20Par%20Hain!.jpg"
-        },
-        {
-            title: "Vadh 2",
-            type: "Theatre",
-            releaseDate: "05 Feb 2026",
-            language: "Hindi",
-            genre: "Crime Thriller",
-            notes: "Theatrical Release",
-            image: "/Upcoming%20movies/Upcoming%20movies/vadh2.jpg"
-        },
-        {
-            title: "Chennai Love Story",
-            type: "Theatre",
-            releaseDate: "12 Feb 2026",
+            releaseDate: "Feb 2026",
             language: "Telugu",
-            genre: "Romance",
+            genre: "Rom-Com",
             notes: "Theatrical Release",
-            image: "/Upcoming%20movies/Upcoming%20movies/chennai%20Love%20Story.jpg"
+            image: "/Upcoming%20movies/Upcoming%20movies/Love%20Insurance%20Kompany.jpg"
         },
         {
-            title: "O'Romeo",
+            title: "Dacoit: A Love Story",
             type: "Theatre",
-            releaseDate: "12 Feb 2026",
-            language: "Hindi",
-            genre: "Crime Thriller",
+            releaseDate: "19 Mar 2026",
+            language: "Telugu",
+            genre: "Action Romance",
             notes: "Theatrical Release",
-            image: "/Upcoming%20movies/Upcoming%20movies/o'romeo.jpg"
+            image: "/Upcoming%20movies/Upcoming%20movies/Dacoit%20A%20Love%20Story.jpg"
+        },
+        {
+            title: "Toxic: A Fairy Tale for Grown-Ups",
+            type: "Theatre",
+            releaseDate: "19 Mar 2026",
+            language: "Telugu",
+            genre: "Action/Thriller",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/Toxic%20A%20Fairy%20Tale%20for%20Grown-Ups.jpg"
+        },
+        {
+            title: "Peddi",
+            type: "Theatre",
+            releaseDate: "April 2026",
+            language: "Telugu",
+            genre: "Action Drama",
+            notes: "Ram Charan's Next",
+            image: "/Upcoming%20movies/Upcoming%20movies/Peddi.jpg"
+        },
+        {
+            title: "Pushpa 3",
+            type: "Theatre",
+            releaseDate: "Aug 2026 (Expected)",
+            language: "Telugu",
+            genre: "Action",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/pushpa%203.jpg"
+        },
+        {
+            title: "Jai Hanuman",
+            type: "Theatre",
+            releaseDate: "2026 (TBA)",
+            language: "Telugu",
+            genre: "Mythological",
+            notes: "Theatrical Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/jai%20hanuman.jpg"
         },
         {
             title: "Swayambhu",
@@ -117,50 +135,50 @@ export default function MoviesPage() {
             image: "/Upcoming%20movies/Upcoming%20movies/premalu%202.jpg"
         },
         {
-            title: "Toxic",
+            title: "Devara Part 2",
             type: "Theatre",
-            releaseDate: "10 Apr 2026",
-            language: "Kannada/Telugu",
-            genre: "Action/Thriller",
-            notes: "Theatrical Release",
-            image: "/Upcoming%20movies/Upcoming%20movies/Toxic.jpg"
+            releaseDate: "TBA",
+            language: "Telugu",
+            genre: "Action Epic",
+            notes: "Coming Soon",
+            image: "/Upcoming%20movies/Upcoming%20movies/Devara%20Part%202.jpg"
         },
         {
-            title: "Dacoit: A Love Story",
+            title: "Salaar Part 2",
             type: "Theatre",
-            releaseDate: "19 Mar 2026",
+            releaseDate: "TBA",
             language: "Telugu",
-            genre: "Action/Romance",
-            notes: "Theatrical Release",
-            image: "/Upcoming%20movies/Upcoming%20movies/Dacoit.jpg"
+            genre: "Action/Mass",
+            notes: "Coming Soon",
+            image: "/Upcoming%20movies/Upcoming%20movies/Salaar%20Part%202.jpg"
+        },
+        {
+            title: "Kalki 2898 AD Part 2",
+            type: "Theatre",
+            releaseDate: "TBA",
+            language: "Telugu",
+            genre: "Sci-Fi/Mythology",
+            notes: "Coming Soon",
+            image: "/Upcoming%20movies/Upcoming%20movies/Kalki%202898%20AD%20Part%202.jpg"
         },
         {
             title: "Spirit",
             type: "Theatre",
-            releaseDate: "April 2026",
+            releaseDate: "TBA",
             language: "Telugu",
-            genre: "Action/Cop Drama",
-            notes: "Theatrical Release",
+            genre: "Cop Drama",
+            notes: "Prabhas - Sandeep Vanga",
             image: "/Upcoming%20movies/Upcoming%20movies/spirit.jpg"
         },
         {
-            title: "Pushpa 3",
+            title: "SSMB29",
             type: "Theatre",
-            releaseDate: "Aug 2026 (Expected)",
+            releaseDate: "TBA",
             language: "Telugu",
-            genre: "Action",
-            notes: "Theatrical Release",
-            image: "/Upcoming%20movies/Upcoming%20movies/pushpa%203.jpg"
-        },
-        {
-            title: "Jai Hanuman",
-            type: "Theatre",
-            releaseDate: "2026 (TBA)",
-            language: "Telugu",
-            genre: "Mythological",
-            notes: "Theatrical Release",
-            image: "/Upcoming%20movies/Upcoming%20movies/jai%20hanuman.jpg"
-        },
+            genre: "Adventure Epic",
+            notes: "Mahesh Babu + Rajamouli",
+            image: "/Upcoming%20movies/Upcoming%20movies/Toxic.jpg"
+        }
     ];
 
     return (

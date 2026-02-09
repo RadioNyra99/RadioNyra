@@ -9,35 +9,35 @@ import { Badge } from "@/components/ui/badge"
 export default function OTTAddaPage() {
     const nowStreaming = [
         { title: "The Raja Saab", language: "Telugu/Multi", platform: "JioHotstar", type: "Romantic Horror", tags: ["Super Hit"], image: "/OTT%20ADDA/OTT%20ADDA/The%20Raja%20Saab.jpg" },
-        { title: "Nari Nari Naduma Murari", language: "Telugu", platform: "Amazon Prime", type: "Rom-Com", tags: ["Fresh"], image: "/OTT%20ADDA/OTT%20ADDA/Nari%20Nari%20Naduma%20Murari.jpg" },
-        { title: "Psych Siddhartha", language: "Telugu", platform: "Aha Video", type: "Romantic Drama", tags: ["New"], image: "/OTT%20ADDA/OTT%20ADDA/Psych%20Siddhartha.jpg" },
+        { title: "Parasakthi", language: "Telugu", platform: "OTT", type: "Action Drama", tags: ["Fresh"], image: "/Upcoming%20movies/Upcoming%20movies/Karikaada.jpg" },
+        { title: "Nari Nari Naduma Murari", language: "Telugu", platform: "Amazon Prime Video", type: "Rom-Com", tags: ["Hit"], image: "/OTT%20ADDA/OTT%20ADDA/Nari%20Nari%20Naduma%20Murari.jpg" },
+        { title: "Mana Shankara Vara Prasad Garu", language: "Telugu", platform: "OTT", type: "Drama", tags: ["New"], image: "/OTT%20ADDA/OTT%20ADDA/Mana%20Shankara%20Vara%20Prasad%20Garu.jpg" },
+        { title: "Anaganaga Oka Raju", language: "Telugu", platform: "OTT", type: "Social Drama", tags: ["Digital Release"], image: "/OTT%20ADDA/OTT%20ADDA/Anaganaga%20Oka%20Raju.jpg" },
         { title: "Dhurandhar", language: "Telugu", platform: "Netflix", type: "Action", tags: ["Trending"], image: "/OTT%20ADDA/OTT%20ADDA/Dhurandhar.jpg" },
         { title: "Jyothi", language: "Telugu", platform: "ETV Win", type: "Family Drama", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/jyothi.jpg" },
         { title: "Cheekatilo", language: "Telugu", platform: "Amazon Prime Video", type: "Horror Thriller", tags: ["Hit"], image: "/OTT%20ADDA/OTT%20ADDA/Cheekatilo.jpg" },
-        { title: "Andhela Ravamidhi", language: "Telugu", platform: "Amazon Prime Video", type: "Drama", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/Andhela Ravamidhi.jpg" },
-        { title: "Jigris", language: "Telugu", platform: "Sun NXT", type: "Comedy Drama", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/Jigris.jpg" },
     ];
 
     const upcoming = [
-        { title: "Anaganaga Oka Raju", language: "Telugu", platform: "Netflix", date: "13 Feb 2026", type: "Movie", link: "#", image: "/OTT%20ADDA/OTT%20ADDA/Anaganaga%20Oka%20Raju.jpg" },
-        { title: "Bhartha Mahasayulaku Wignyapthi", language: "Telugu", platform: "ZEE5", date: "13 Feb 2026", type: "Movie", link: "#", image: "/OTT%20ADDA/OTT%20ADDA/Bhartha%20Mahasayulaku%20Wignyapthi.jpg" },
-        { title: "Mana Shankar Varaprasad Garu", language: "Telugu", platform: "ZEE5", date: "19 Feb 2026", type: "Movie", link: "#", image: "/OTT%20ADDA/OTT%20ADDA/Mana%20Shankara%20Vara%20Prasad%20Garu.jpg" },
-        { title: "Swayambhu", language: "Telugu", platform: "Theaters", date: "13 Feb 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Swayambhu.jpg" },
-        { title: "Dacoit: A Love Story", language: "Telugu", platform: "Theaters", date: "19 Mar 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Dacoit.jpg" },
-        { title: "Spirit", language: "Telugu", platform: "Theaters", date: "April 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/spirit.jpg" },
-        { title: "Pushpa 3", language: "Telugu", platform: "Theaters", date: "Aug 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/pushpa%203.jpg" },
+        { title: "Chennai Love Story", language: "Telugu", platform: "OTT", date: "12 Feb 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/chennai%20Love%20Story.jpg" },
+        { title: "Pookie", language: "Telugu", platform: "OTT", date: "13 Feb 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/honey.jpg" },
+        { title: "Swayambhu", language: "Telugu", platform: "OTT", date: "13 Feb 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Swayambhu.jpg" },
+        { title: "Couple Friendly", language: "Telugu", platform: "OTT", date: "14 Feb 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/honey.jpg" },
+        { title: "Seetha Payanam", language: "Telugu", platform: "OTT", date: "14 Feb 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/euphoria.jpg" },
+        { title: "Dacoit: A Love Story", language: "Telugu", platform: "Theaters", date: "19 Mar 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Dacoit%20A%20Love%20Story.jpg" },
+        { title: "Peddi", language: "Telugu", platform: "Theaters", date: "April 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Peddi.jpg" },
     ];
 
     const theatricalReleases = [
-        { title: "The Raja Saab", language: "Telugu/Multi", date: "Blockbuster (Theaters)", type: "Romantic Horror" },
-        { title: "Dhandoraa", language: "Telugu", date: "OTT Buzz", type: "Social Drama" },
-        { title: "Swayambhu", language: "Telugu", date: "Feb 13", type: "Period Action" },
+        { title: "Vishnu Vinyasam", language: "Telugu", date: "Feb 14", type: "Action Drama" },
+        { title: "Love Insurance Kompany", language: "Telugu", date: "Feb 2026", type: "Rom-Com" },
+        { title: "Toxic", language: "Telugu", date: "Mar 19", type: "Action Thriller" },
     ];
 
     const trendingBuzz = [
         { title: "The Raja Saab", industry: "Tollywood", date: "Blockbuster Hit", type: "In Theaters", image: "/OTT%20ADDA/OTT%20ADDA/The%20Raja%20Saab.jpg" },
-        { title: "Dhurandhar", industry: "Tollywood", date: "Now Streaming", type: "OTT Hit" },
-        { title: "Swayambhu", industry: "Tollywood", date: "In Theaters 13 Feb", type: "Period Action" },
+        { title: "Dhurandhar", industry: "Tollywood", date: "Now Streaming", type: "OTT Hit", image: "/OTT%20ADDA/OTT%20ADDA/Dhurandhar.jpg" },
+        { title: "Swayambhu", industry: "Tollywood", date: "In Theaters 13 Feb", type: "Period Action", image: "/Upcoming%20movies/Upcoming%20movies/Swayambhu.jpg" },
     ];
 
     return (

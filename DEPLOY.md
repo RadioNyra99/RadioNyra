@@ -70,7 +70,7 @@ git push -u origin main
    - **Framework Preset**: Next.js
    - **Root Directory**: ./
    - **Build Command**: `npm run build`
-   - **Output Directory**: .next
+   - **Output Directory**: `out`
 
 5. Add Environment Variable:
    - **Name**: `NEXT_PUBLIC_WORDPRESS_URL`

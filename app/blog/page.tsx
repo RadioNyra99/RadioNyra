@@ -2,8 +2,6 @@ import { BLOG_POSTS } from '@/lib/blog-data';
 import Image from 'next/image';
 import Link from 'next/link';
 
-// Rebuild this page every 60 seconds when there's a request
-export const revalidate = 60;
 
 export default function BlogPage() {
     const posts = BLOG_POSTS;

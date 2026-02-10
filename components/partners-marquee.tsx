@@ -2,11 +2,7 @@
 
 import Link from "next/link"
 
-interface Partner {
-    name: string;
-    image: string;
-    link: string | null;
-}
+import { PARTNERS, Partner } from "@/lib/partners"
 
 interface PartnersMarqueeProps {
     partnersCount?: number;
@@ -15,12 +11,8 @@ interface PartnersMarqueeProps {
 
 export function PartnersMarquee({ partnersCount, partnersData }: PartnersMarqueeProps) {
     const defaultPartners = partnersCount
-        ? Array.from({ length: partnersCount }, (_, i) => ({
-            name: `Partner ${i + 1}`,
-            image: `/images/${i + 1}.jpg`,
-            link: i === 0 ? "https://start.empowerly.com/radio-nyra" : null
-        }))
-        : [];
+        ? PARTNERS.slice(0, partnersCount)
+        : PARTNERS;
 
     const partners = partnersData || defaultPartners;
 

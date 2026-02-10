@@ -12,7 +12,7 @@ export const PARTNERS: Partner[] = [
     { name: "Sip n Spices", image: "/images/sip-n-spices-logo.png", link: "https://www.sipnspicesnc.com/" },
 
     // New Partners
-    { name: "Jaguar", image: "/images/jaguar.png", link: "https://www.jaguar.com" },
+    { name: "Jaguar", image: "/images/jaguar.jpg", link: "https://www.jaguar.com" },
     { name: "Disney+ Hotstar", image: "/images/hotstar.jpg", link: "https://www.hotstar.com/in/home" },
     { name: "United Community Bank", image: "/images/united-community-bank.jpg", link: "https://www.ucbi.com/" },
     { name: "AOHDC", image: "/images/academy-of-hpe.jpg", link: "https://aohdc.org/" },
@@ -39,7 +39,7 @@ export const PARTNERS: Partner[] = [
     { name: "Aventon Cary", image: "/images/avention-cary.jpg", link: "https://aventoncary.com/" },
     { name: "Gift of Vision", image: "/images/sankara-eye.jpg", link: "https://www.giftofvision.org/" },
     { name: "Hum Sub", image: "/images/hum-sub.jpg", link: "https://humsub.org/" },
-    { name: "Urban Desi USA", image: "/images/urban-desi.png", link: "https://urbandesiusa.com/" },
+    { name: "Urban Desi USA", image: "/images/urban-desi.jpg", link: "https://urbandesiusa.com/" },
     { name: "Senada Inc", image: "/images/senadainc.jpg", link: "https://senadainc.com/" },
     { name: "TJ Cawley", image: "/images/tj-cawley.jpg", link: "https://mayortj.com/" }
 ];

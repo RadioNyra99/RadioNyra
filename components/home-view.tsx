@@ -162,7 +162,7 @@ export function HomeView() {
                                         <span className="bg-white text-primary px-4 py-2 font-bold uppercase tracking-widest text-xs shadow-lg transform -rotate-3">View Details</span>
                                     </div>
                                     <img
-                                        src="/images/VDay 2026 AI Poster.png"
+                                        src="/images/valentine-banner.png?v=1"
                                         alt="Valentine's Day Party"
                                         className="w-full h-auto max-h-[500px] object-contain shadow-lg"
                                     />

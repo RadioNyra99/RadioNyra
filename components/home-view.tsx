@@ -12,6 +12,7 @@ import { useAudio } from "@/components/audio-context"
 import { STATIONS } from "@/lib/stations"
 import { VoiceAssistants } from "@/components/voice-assistants"
 import { motion, AnimatePresence } from "framer-motion"
+import { PARTNERS } from "@/lib/partners"
 
 export function HomeView() {
 
@@ -277,18 +278,7 @@ export function HomeView() {
 
                         {/* Partners Data */}
                         {(() => {
-                            const partnersData = [
-                                { name: "Empowerly", image: "/images/1.jpg", link: "https://start.empowerly.com/radio-nyra" },
-                                { name: "Cloud Divine Custom", image: "/images/Black in white cdc logo.jpg.jpeg", link: "https://www.clouddivinecustom.com/" },
-                                { name: "Sharkey's Cuts for Kids", image: "/images/Sharkey's Logo.png", link: "https://sharkeyscutsforkidsdurham.com/" },
-                                { name: "Sip n Spices", image: "/images/Sip N Spices Logo.png", link: "https://www.sipnspicesnc.com/" },
-                                // Existing partners 2-30 (generic)
-                                ...Array.from({ length: 29 }, (_, i) => ({
-                                    name: `Partner ${i + 2}`,
-                                    image: `/images/${i + 2}.jpg`,
-                                    link: null
-                                }))
-                            ];
+                            const partnersData = PARTNERS;
 
                             return (
                                 <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">

@@ -24,7 +24,7 @@ export function HomeView() {
         { name: "Hello Vaishnavi", host: "Vaishnavi Palleda", image: "/images/hosts/hello-vaishnavi.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
+        { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Dil Se Desi", host: "Jyoti", image: "/images/hosts/dil-se-desi.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
@@ -32,7 +32,7 @@ export function HomeView() {
         { name: "Geet Bazaar", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
         // Telugu shows (as per requirement)
         { name: "Chinna Mata", host: "Priya", image: "/images/hosts/chinna-mata.jpg", stationId: STATIONS.Telugu.id, language: "telugu" },
-        { name: "Mana Muchatlu", host: "Kanthi", image: "/images/hosts/Mana%20Muchatlu.jpg", stationId: STATIONS.Telugu.id, language: "telugu" },
+        { name: "Mana Muchatlu", host: "Kanthi", image: "/images/hosts/mana-muchatlu.jpg", stationId: STATIONS.Telugu.id, language: "telugu" },
     ];
     const { playStation, currentStation } = useAudio();
 

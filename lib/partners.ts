@@ -13,21 +13,21 @@ export const PARTNERS: Partner[] = [
 
     // New Partners
     { name: "Jaguar", image: "/images/jaguar.jpg?v=3", link: "https://www.jaguar.com" },
-    { name: "Disney+ Hotstar", image: "/images/hotstar.jpg?v=3", link: "https://www.hotstar.com/in/home" },
+    { name: "Disney+ Hotstar", image: "/images/hotstar.jpg?v=3", link: "https://www.disneyplus.com/" },
     { name: "United Community Bank", image: "/images/united-community-bank.jpg?v=3", link: "https://www.ucbi.com/" },
     { name: "AOHDC", image: "/images/aohdc.jpg?v=7", link: "https://aohdc.org/" },
-    { name: "Hendrick Subaru Hoover", image: "/images/hendrick.jpg?v=3", link: "https://www.hendricksubaruhoover.com" },
+    { name: "Hendrick Subaru Hoover", image: "/images/hendrick.jpg?v=3", link: "https://www.subarusouthpoint.com/" },
     { name: "Minor League Cricket", image: "/images/minor-league-cricket.jpg?v=3", link: "https://minorleaguecricket.com/" },
     { name: "Major League Cricket", image: "/images/major-league-cricket.jpg?v=3", link: "https://www.majorleaguecricket.com/" },
     { name: "UNC Health", image: "/images/unc-health.jpg?v=3", link: "https://www.unchealth.org/home" },
-    { name: "Allstate", image: "/images/allstate.jpg?v=3", link: "https://www.allstatecorporation.com/" },
+    { name: "Allstate", image: "/images/allstate.jpg?v=3", link: "https://www.allstate.com/" },
     { name: "The Crossings at Apex", image: "/images/the-crossings.jpg?v=3", link: "https://www.thecrossingsatap.com/" },
     { name: "Cortland", image: "/images/cortland.jpg?v=3", link: "https://cortland.com/" },
-    { name: "Angadi", image: "/images/angadi.jpg?v=3", link: "https://angadi.us/" },
+    { name: "Angadi", image: "/images/angadi.jpg?v=3", link: "https://www.facebook.com/angadifv/" },
     { name: "Town of Morrisville", image: "/images/morrisville.jpg?v=3", link: "https://www.morrisvillenc.gov/Our-Community/Connect-with-Us" },
     { name: "Town of Apex", image: "/images/apex.jpg?v=3", link: "https://www.apexnc.org/" },
     { name: "HSNC", image: "/images/hsnc.jpg?v=5", link: "https://hsnctemple.org/" },
-    { name: "Mercedes-Benz India", image: "/images/benz.jpg?v=3", link: "https://www.mercedes-benz.co.in/passengercars.html" },
+    { name: "Mercedes-Benz India", image: "/images/benz.jpg?v=3", link: "https://www.mercedesbenzcary.com/" },
     { name: "Fusion Nine", image: "/images/fusion-nine.jpg?v=3", link: "https://www.fusionninenc.com/" },
     { name: "Amrut", image: "/images/amrut.jpg?v=3", link: "https://amrutnc.com/" },
     { name: "Tanishq", image: "/images/tanishq.jpg?v=3", link: "https://www.tanishq.co.in/shop/jewellery" },
@@ -41,5 +41,6 @@ export const PARTNERS: Partner[] = [
     { name: "Hum Sub", image: "/images/hum-sub.jpg?v=3", link: "https://humsub.org/" },
     { name: "Urban Desi USA", image: "/images/urban-desi.jpg?v=3", link: "https://urbandesiusa.com/" },
     { name: "Senada Inc", image: "/images/senadainc.jpg?v=3", link: "https://senadainc.com/" },
-    { name: "TJ Cawley", image: "/images/tj-cawley.jpg?v=3", link: "https://mayortj.com/" }
+    { name: "TJ Cawley", image: "/images/tj-cawley.jpg?v=3", link: "https://mayortj.com/" },
+    { name: "Radio Nyra", image: "/images/radio-nyra-logo.jpg?v=1", link: "https://www.radionyra.com" }
 ];

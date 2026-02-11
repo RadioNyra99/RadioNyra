@@ -20,6 +20,7 @@ const _geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.radionyra.com'),
   // Updated metadata for Radio Nyra
   title: "Radio Nyra | The Voice of the Indian Subcontinent in the USA",
   description:

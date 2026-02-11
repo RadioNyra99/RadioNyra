@@ -41,6 +41,7 @@ export const PARTNERS: Partner[] = [
     { name: "Hum Sub", image: "/images/hum-sub.jpg?v=3", link: "https://humsub.org/" },
     { name: "Urban Desi USA", image: "/images/urban-desi.jpg?v=3", link: "https://urbandesiusa.com/" },
     { name: "Senada Inc", image: "/images/senadainc.jpg?v=3", link: "https://senadainc.com/" },
-    { name: "TJ Cawley", image: "/images/tj-cawley.jpg?v=3", link: "https://mayortj.com/" },
-    { name: "Radio Nyra", image: "/images/radio-nyra-logo.jpg?v=1", link: "https://www.radionyra.com" }
+    { name: "TJ Cawley", image: "/images/tj-cawley.jpg?v=3", link: "https://mayortj.com/" }
 ];
+
+

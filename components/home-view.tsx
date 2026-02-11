@@ -320,6 +320,8 @@ export function HomeView() {
                     </div>
                 </section>
 
+
+
             </main >
 
             <Footer />

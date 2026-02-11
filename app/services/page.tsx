@@ -6,11 +6,13 @@ import { Footer } from "@/components/footer"
 import { Check, Zap, Megaphone, Globe, Monitor, Radio, Award, Star, ZapIcon, Mic2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { ApolloTracker } from "@/components/apollo-tracker"
 
 export default function ServicesPage() {
     return (
         <div className="min-h-screen bg-background font-sans text-foreground relative overflow-hidden">
             <Navigation />
+            <ApolloTracker />
 
             <main className="relative z-10">
                 {/* Header Section */}

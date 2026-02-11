@@ -13,6 +13,7 @@ import { STATIONS } from "@/lib/stations"
 import { VoiceAssistants } from "@/components/voice-assistants"
 import { motion, AnimatePresence } from "framer-motion"
 import { PARTNERS } from "@/lib/partners"
+import { ApolloTracker } from "@/components/apollo-tracker"
 
 export function HomeView() {
 
@@ -43,6 +44,7 @@ export function HomeView() {
     return (
         <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-primary-foreground">
             <Navigation />
+            <ApolloTracker />
             <FrequencyBar />
 
             <main>

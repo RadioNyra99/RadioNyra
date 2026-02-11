@@ -6,11 +6,13 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Users, Smartphone, Star, Megaphone, Zap } from "lucide-react"
+import { ApolloTracker } from "@/components/apollo-tracker"
 
 export default function AdvertisePage() {
     return (
         <div className="min-h-screen bg-white font-sans selection:bg-primary selection:text-white text-gray-900">
             <Navigation />
+            <ApolloTracker />
 
             <main>
                 {/* Hero Section */}

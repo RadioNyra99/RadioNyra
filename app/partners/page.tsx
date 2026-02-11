@@ -19,7 +19,7 @@ export default function PartnersPage() {
                                 Our <span className="text-primary">Partners</span>
                             </h1>
                             <p className="text-lg md:text-xl text-gray-600 uppercase tracking-[0.15em] font-bold italic max-w-2xl">
-                                The brands and organizations that power Radio Nyra's mission.
+                                The brands and organizations who put their trust in us.
                             </p>
                         </div>
                     </div>

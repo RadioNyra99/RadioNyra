@@ -8,30 +8,29 @@ import { Badge } from "@/components/ui/badge"
 
 export default function OTTAddaPage() {
     const nowStreaming = [
-        { title: "The Raja Saab", language: "Telugu/Multi", platform: "JioHotstar", type: "Romantic Horror", tags: ["Super Hit"], image: "/OTT%20ADDA/OTT%20ADDA/The%20Raja%20Saab.jpg" },
-        { title: "Parasakthi", language: "Telugu", platform: "OTT", type: "Action Drama", tags: ["Fresh"], image: "/Upcoming%20movies/Upcoming%20movies/Karikaada.jpg" },
-        { title: "Nari Nari Naduma Murari", language: "Telugu", platform: "Amazon Prime Video", type: "Rom-Com", tags: ["Hit"], image: "/OTT%20ADDA/OTT%20ADDA/Nari%20Nari%20Naduma%20Murari.jpg" },
-        { title: "Mana Shankara Vara Prasad Garu", language: "Telugu", platform: "OTT", type: "Drama", tags: ["New"], image: "/OTT%20ADDA/OTT%20ADDA/Mana%20Shankara%20Vara%20Prasad%20Garu.jpg" },
-        { title: "Anaganaga Oka Raju", language: "Telugu", platform: "OTT", type: "Social Drama", tags: ["Digital Release"], image: "/OTT%20ADDA/OTT%20ADDA/Anaganaga%20Oka%20Raju.jpg" },
-        { title: "Dhurandhar", language: "Telugu", platform: "Netflix", type: "Action", tags: ["Trending"], image: "/OTT%20ADDA/OTT%20ADDA/Dhurandhar.jpg" },
-        { title: "Jyothi", language: "Telugu", platform: "ETV Win", type: "Family Drama", tags: [], image: "/OTT%20ADDA/OTT%20ADDA/jyothi.jpg" },
-        { title: "Cheekatilo", language: "Telugu", platform: "Amazon Prime Video", type: "Horror Thriller", tags: ["Hit"], image: "/OTT%20ADDA/OTT%20ADDA/Cheekatilo.jpg" },
+        // RELEASED THIS WEEK
+        { title: "Sampradayini Suppini Suddapoosani", language: "Telugu", platform: "OTT", type: "Comedy Drama", tags: ["Released This Week"], image: "/OTT%20ADDA/OTT%20ADDA/Sampradayini%20Suppini%20Suddapoosani.jpg" },
+        { title: "Maruva Tarama", language: "Telugu", platform: "OTT", type: "Romantic Drama", tags: ["Released This Week"], image: "/OTT%20ADDA/OTT%20ADDA/Maruva%20Tarama.jpg" },
+        { title: "Mana Shankara Vara Prasad Garu", language: "Telugu", platform: "OTT", type: "Drama", tags: ["Released This Week"], image: "/OTT%20ADDA/OTT%20ADDA/Mana%20Shankara%20Vara%20Prasad%20Garu.jpg" },
+        { title: "Anaganaga Oka Raju", language: "Telugu", platform: "OTT", type: "Social Drama", tags: ["Released This Week"], image: "/OTT%20ADDA/OTT%20ADDA/Anaganaga%20Oka%20Raju.jpg" },
+
+        // RECENTLY RELEASED
+        { title: "Nilakanta", language: "Telugu", platform: "OTT", type: "Action Thriller", tags: ["Recently Released"], image: "/OTT%20ADDA/OTT%20ADDA/Nilakanta.jpg" },
+        { title: "Parasakthi", language: "Telugu", platform: "OTT", type: "Action Drama", tags: ["Recently Released"], image: "/Upcoming%20movies/Upcoming%20movies/Karikaada.jpg" },
+        { title: "The Raja Saab", language: "Telugu/Multi", platform: "JioHotstar", type: "Romantic Horror", tags: ["Recently Released"], image: "/OTT%20ADDA/OTT%20ADDA/The%20Raja%20Saab.jpg" },
     ];
 
     const upcoming = [
-        { title: "Chennai Love Story", language: "Telugu", platform: "OTT", date: "12 Feb 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/chennai%20Love%20Story.jpg" },
-        { title: "Pookie", language: "Telugu", platform: "OTT", date: "13 Feb 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/honey.jpg" },
-        { title: "Swayambhu", language: "Telugu", platform: "OTT", date: "13 Feb 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Swayambhu.jpg" },
-        { title: "Couple Friendly", language: "Telugu", platform: "OTT", date: "14 Feb 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/honey.jpg" },
-        { title: "Seetha Payanam", language: "Telugu", platform: "OTT", date: "14 Feb 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/euphoria.jpg" },
         { title: "Dacoit: A Love Story", language: "Telugu", platform: "Theaters", date: "19 Mar 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Dacoit%20A%20Love%20Story.jpg" },
+        { title: "The Paradise", language: "Telugu", platform: "Theaters", date: "2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/theparadise.webp" },
+        { title: "Swayambhu", language: "Telugu", platform: "Theaters", date: "Feb 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Swayambhu.jpg" },
         { title: "Peddi", language: "Telugu", platform: "Theaters", date: "April 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Peddi.jpg" },
     ];
 
     const theatricalReleases = [
-        { title: "Vishnu Vinyasam", language: "Telugu", date: "Feb 14", type: "Action Drama" },
-        { title: "Love Insurance Kompany", language: "Telugu", date: "Feb 2026", type: "Rom-Com" },
-        { title: "Toxic", language: "Telugu", date: "Mar 19", type: "Action Thriller" },
+        { title: "Bad Boy Karthik", language: "Telugu", date: "Released", type: "Action Comedy" },
+        { title: "Chennai Love Story", language: "Telugu", date: "Released", type: "Romance" },
+        { title: "Sathi Leelavathi", language: "Telugu", date: "Released", type: "Family Drama" },
     ];
 
     const trendingBuzz = [

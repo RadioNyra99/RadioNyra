@@ -5,7 +5,7 @@ import { Navigation } from "@/components/navigation"
 import { FrequencyBar } from "@/components/frequency-bar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Users, Smartphone, Apple, Play, Megaphone, Star, Radio, Ticket } from "lucide-react"
+import { Users, Smartphone, Apple, Play, Megaphone, Star, Radio } from "lucide-react"
 import { CountUp } from "@/components/ui/count-up"
 
 import { useAudio } from "@/components/audio-context"
@@ -141,62 +141,6 @@ export function HomeView() {
                     </div>
                 </section>
 
-                {/* FEATURED EVENT SECTION */}
-                <section className="py-12 bg-gradient-to-b from-background to-primary/5 border-y border-border/50 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 p-4 opacity-10">
-                        <Ticket className="w-64 h-64 text-primary rotate-12" />
-                    </div>
-                    <div className="container mx-auto px-4 relative z-10">
-                        <div className="text-center mb-8">
-                            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter italic text-primary drop-shadow-sm">
-                                Featured Event
-                            </h2>
-                            <p className="mt-2 text-muted-foreground font-bold uppercase tracking-widest text-xs md:text-sm">
-                                Don't miss out on the biggest night of the year!
-                            </p>
-                        </div>
-
-                        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white p-6 md:p-8 border border-border shadow-2xl">
-                            {/* Event Poster */}
-                            <div className="flex justify-center">
-                                <Link href="https://www.eventbrite.com/e/valentine-galentines-dance-night-tickets-1982288757034" target="_blank" rel="noopener noreferrer" className="w-full relative group">
-                                    <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
-                                        <span className="bg-white text-primary px-4 py-2 font-bold uppercase tracking-widest text-xs shadow-lg transform -rotate-3">View Details</span>
-                                    </div>
-                                    <img
-                                        src="/images/valentine-banner.png?v=1"
-                                        alt="Valentine's Day Party"
-                                        className="w-full h-auto max-h-[500px] object-contain shadow-lg"
-                                    />
-                                </Link>
-                            </div>
-
-                            {/* Event Details & Checkout */}
-                            <div className="flex flex-col gap-6 text-center md:text-left">
-                                <div>
-                                    <h3 className="text-2xl md:text-4xl font-black uppercase tracking-tight italic leading-none mb-2">Valentine's & Galentine's Dance Night</h3>
-                                    <p className="text-primary font-bold uppercase tracking-widest text-sm mb-4">February 14, 2026 • 8 PM Onwards</p>
-                                    <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                                        Join us for an unforgettable evening of music, dance, and celebration featuring <strong>DJ SHIV (Live)</strong>.
-                                    </p>
-                                </div>
-
-                                <div className="bg-gray-50 p-6 border border-gray-100">
-                                    <p className="text-xs font-black uppercase tracking-[0.2em] text-muted-foreground mb-4 text-center">Secure Your Spot</p>
-                                    <Button className="w-full bg-[#D1410C] hover:bg-[#D1410C]/90 text-white font-black uppercase tracking-wide md:tracking-widest py-4 md:py-6 rounded-sm text-xs sm:text-sm md:text-lg shadow-xl hover:scale-102 transition-transform whitespace-normal h-auto" asChild>
-                                        <Link href="https://www.eventbrite.com/e/valentine-galentines-dance-night-tickets-1982288757034" target="_blank" rel="noopener noreferrer">
-                                            Book Tickets on Eventbrite
-                                        </Link>
-                                    </Button>
-                                    <div className="mt-4 flex items-center justify-center gap-2 text-[10px] text-muted-foreground font-bold uppercase tracking-widest opacity-60">
-                                        <Ticket className="w-3 h-3" />
-                                        <span>Instant Confirmation</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
 
                 {/* SPONSORED BANNER SECTION */}
                 <section className="py-8 bg-background border-b border-border/50">

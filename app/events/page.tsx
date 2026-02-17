@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer"
 import { Lightbox } from "@/components/lightbox"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Calendar, MapPin, Ticket } from "lucide-react"
+import { Calendar, MapPin } from "lucide-react"
 
 export default function EventsPage() {
     const [lightbox, setLightbox] = useState({ isOpen: false, index: 0 })
@@ -14,7 +14,6 @@ export default function EventsPage() {
     // Data moved from Home Page
     const upcomingEvents = [
         { title: "GDC Festival of Gaming", date: "Mar 9-13, 2026", location: "San Francisco, CA", image: "/GDC_250x250.gif", link: "https://gdc.informafestivals.com/2026/registrations/Attendee?_mc=barter_gdcsf_gdcsf_le_x_partn" },
-        { title: "Valentine's Day Special", date: "Feb 14, 2026", location: "Radio Nyra Studios", image: "/Valientiens day.jpg" },
         { title: "Holi Festival Celebration", date: "Mar 25, 2026", location: "City Park", image: "/Holi.jpg" },
     ];
 
@@ -56,44 +55,6 @@ export default function EventsPage() {
                 </section>
 
                 <div className="container mx-auto px-4 mt-12">
-                    {/* FEATURED EVENT: VALENTINE'S DAY TICKETS */}
-                    <section className="mb-16">
-                        <div className="bg-primary/5 border border-primary/20 p-8 md:p-12">
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                                <div>
-                                    <Badge className="mb-4 uppercase tracking-[0.2em] bg-primary text-white rounded-none">Featured Event</Badge>
-                                    <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter italic mb-6">Valentine's Day Party</h2>
-                                    <p className="text-xl text-muted-foreground font-medium mb-8 leading-relaxed">
-                                        Join us for the most romantic night of the year! Grab your tickets now for our exclusive Valentine's Day celebration at Radio Nyra Studios.
-                                    </p>
-                                    <div className="space-y-4">
-                                        <div className="flex items-center gap-3 text-lg font-bold italic">
-                                            <Calendar className="text-primary w-6 h-6" /> February 14, 2026
-                                        </div>
-                                        <div className="flex items-center gap-3 text-lg font-bold italic">
-                                            <MapPin className="text-primary w-6 h-6" /> Radio Nyra Studios
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="bg-white shadow-2xl border border-border">
-                                    <div className="p-4 border-b border-border flex items-center justify-between bg-gray-50">
-                                        <span className="font-black uppercase tracking-widest text-xs flex items-center gap-2">
-                                            <Ticket className="w-4 h-4 text-primary" /> Get Your Tickets
-                                        </span>
-                                    </div>
-                                    <div className="p-8 text-center bg-white">
-                                        <p className="text-sm font-medium text-muted-foreground mb-6 uppercase tracking-wider">Secure your spot for the Valentine's Day party!</p>
-                                        <Button className="w-full bg-[#D1410C] hover:bg-[#D1410C]/90 text-white font-bold uppercase tracking-wide md:tracking-widest py-4 md:py-6 text-xs sm:text-sm md:text-lg rounded-sm whitespace-normal h-auto" asChild>
-                                            <a href="https://www.eventbrite.com/e/valentine-galentines-dance-night-tickets-1982288757034" target="_blank" rel="noopener noreferrer">
-                                                Buy Tickets on Eventbrite
-                                            </a>
-                                        </Button>
-                                        <p className="text-[10px] text-muted-foreground mt-4 font-bold uppercase tracking-widest">Transactions processed securely by Eventbrite</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
 
                     {/* UPCOMING EVENTS */}
                     <section className="mb-16">

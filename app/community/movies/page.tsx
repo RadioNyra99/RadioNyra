@@ -8,59 +8,33 @@ import { Film, Calendar, Monitor, Ticket } from "lucide-react"
 
 export default function MoviesPage() {
     const movies = [
+        // UPCOMING (NEXT MONTHS 2026)
         {
-            title: "Euphoria",
-            type: "Theatre",
-            releaseDate: "06 Feb 2026",
-            language: "Telugu",
-            genre: "Drama/Social",
-            notes: "Theatrical Release",
-            image: "/Upcoming%20movies/Upcoming%20movies/euphoria.jpg"
-        },
-        {
-            title: "Honey",
-            type: "Theatre",
-            releaseDate: "06 Feb 2026",
-            language: "Telugu",
-            genre: "Romance",
-            notes: "Theatrical Release",
-            image: "/Upcoming%20movies/Upcoming%20movies/honey.jpg"
-        },
-        {
-            title: "Vishnu Vinyasam",
-            type: "Theatre",
-            releaseDate: "14 Feb 2026",
-            language: "Telugu",
-            genre: "Action Drama",
-            notes: "Theatrical Release",
-            image: "/Upcoming%20movies/Upcoming%20movies/Vishnu%20Vinyasam.jpg"
-        },
-        {
-            title: "Love Insurance Kompany",
-            type: "Theatre",
-            releaseDate: "Feb 2026",
-            language: "Telugu",
-            genre: "Rom-Com",
-            notes: "Theatrical Release",
-            image: "/Upcoming%20movies/Upcoming%20movies/Love%20Insurance%20Kompany.jpg"
-        },
-        {
-            title: "Dacoit: A Love Story",
+            title: "Dacoit",
             type: "Theatre",
             releaseDate: "19 Mar 2026",
             language: "Telugu",
             genre: "Action Romance",
-            notes: "Theatrical Release",
+            notes: "Coming Soon",
             image: "/Upcoming%20movies/Upcoming%20movies/Dacoit%20A%20Love%20Story.jpg"
         },
         {
-            title: "Toxic: A Fairy Tale for Grown-Ups",
+            title: "The Paradise",
             type: "Theatre",
-            releaseDate: "19 Mar 2026",
+            releaseDate: "2026",
             language: "Telugu",
-            genre: "Action/Thriller",
-            notes: "Theatrical Release",
-            image: "/Upcoming%20movies/Upcoming%20movies/Toxic%20A%20Fairy%20Tale%20for%20Grown-Ups.jpg"
+            genre: "Mystery Drama",
+            notes: "Coming Soon",
+            image: "/Upcoming%20movies/Upcoming%20movies/theparadise.webp"
+        },
+        {
+            title: "Swayambhu",
+            type: "Theatre",
+            releaseDate: "13 Feb 2026",
+            language: "Telugu",
+            genre: "Action/Period",
+            notes: "Coming Soon",
+            image: "/Upcoming%20movies/Upcoming%20movies/Swayambhu.jpg"
         },
         {
             title: "Peddi",
@@ -88,51 +62,6 @@ export default function MoviesPage() {
             genre: "Mythological",
             notes: "Theatrical Release",
             image: "/Upcoming%20movies/Upcoming%20movies/jai%20hanuman.jpg"
-        },
-        {
-            title: "Swayambhu",
-            type: "Theatre",
-            releaseDate: "13 Feb 2026",
-            language: "Telugu",
-            genre: "Action/Period",
-            notes: "Theatrical Release",
-            image: "/Upcoming%20movies/Upcoming%20movies/Swayambhu.jpg"
-        },
-        {
-            title: "Funky",
-            type: "Theatre",
-            releaseDate: "13 Feb 2026",
-            language: "Telugu",
-            genre: "Comedy",
-            notes: "Theatrical Release",
-            image: "/Upcoming%20movies/Upcoming%20movies/funky.jpg"
-        },
-        {
-            title: "Alcohol",
-            type: "Theatre",
-            releaseDate: "20 Feb 2026",
-            language: "Telugu",
-            genre: "Comedy/Drama",
-            notes: "Theatrical Release",
-            image: "/Upcoming%20movies/Upcoming%20movies/alcohol.jpg"
-        },
-        {
-            title: "The Kerala Story 2",
-            type: "Theatre",
-            releaseDate: "26 Feb 2026",
-            language: "Hindi",
-            genre: "Social Drama",
-            notes: "Theatrical Release",
-            image: "/Upcoming%20movies/Upcoming%20movies/the%20kerala%20story%202.jpg"
-        },
-        {
-            title: "Premalu 2",
-            type: "Theatre",
-            releaseDate: "14 Mar 2026",
-            language: "Telugu",
-            genre: "Rom-Com",
-            notes: "Theatrical Release",
-            image: "/Upcoming%20movies/Upcoming%20movies/premalu%202.jpg"
         },
         {
             title: "Devara Part 2",

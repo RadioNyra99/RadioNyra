@@ -245,20 +245,30 @@ export function AudioPlayer() {
                     <ChevronUp className="ml-2 h-4 w-4 opacity-50 group-hover:opacity-100" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-56 max-h-[60vh] overflow-y-auto custom-scrollbar bg-background/95 backdrop-blur-xl border-border/50 shadow-2xl p-2 rounded-xl">
+                <DropdownMenuContent align="end" className="w-72 max-h-[70vh] overflow-y-auto custom-scrollbar bg-background/98 backdrop-blur-2xl border-primary/20 shadow-2xl p-3 rounded-2xl">
+                  <div className="px-3 py-2 mb-2 border-b border-border/50">
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/70">Select Radio Station</p>
+                  </div>
                   {stations.map((station) => (
                     <DropdownMenuItem
                       key={station.id}
                       onClick={() => playStation(station.id)}
                       className={cn(
-                        "cursor-pointer font-bold uppercase tracking-wider text-xs py-2.5 px-3 rounded-lg focus:bg-primary/10 focus:text-primary transition-colors mb-1 last:mb-0",
-                        currentStation.id === station.id ? "bg-primary text-white focus:bg-primary focus:text-white" : "text-muted-foreground"
+                        "cursor-pointer font-bold uppercase tracking-wider text-[11px] py-3.5 px-4 rounded-xl transition-all duration-200 mb-1.5 last:mb-0 flex items-center gap-3",
+                        currentStation.id === station.id
+                          ? "bg-primary text-white shadow-md shadow-primary/20 ring-1 ring-primary/50"
+                          : "text-muted-foreground hover:bg-primary/5 hover:text-primary"
                       )}
                     >
-                      <Radio className={cn("mr-2 h-3.5 w-3.5", currentStation.id === station.id ? "animate-pulse" : "opacity-0")} />
-                      {station.name}
+                      <div className={cn(
+                        "w-2 h-2 rounded-full shrink-0",
+                        currentStation.id === station.id ? "bg-white animate-pulse" : "bg-transparent border border-muted-foreground/30"
+                      )} />
+                      <span className="flex-1 truncate">{station.name}</span>
                       {currentStation.id === station.id && metadata.listeners > 0 && (
-                        <span className="ml-auto text-[9px] opacity-70">{metadata.listeners} Listening</span>
+                        <span className="text-[9px] opacity-70 font-black shrink-0">
+                          {metadata.listeners} Live
+                        </span>
                       )}
                     </DropdownMenuItem>
                   ))}

@@ -38,7 +38,7 @@ export function HomeView() {
     const { playStation, currentStation } = useAudio();
 
     // Determine selected language from audio player
-    const selectedLanguage = (currentStation.name || "Hindi").toLowerCase() as "hindi" | "telugu";
+    const selectedLanguage = currentStation.id === STATIONS.Telugu.id ? "telugu" : "hindi";
     const filteredShows = shows.filter((show) => show.language === selectedLanguage);
 
     return (

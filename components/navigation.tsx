@@ -26,6 +26,8 @@ export function Navigation() {
     { href: "/schedule", label: "Schedule" },
     { href: "/services", label: "Services" },
     { href: "/podcasts", label: "Podcast" },
+    { href: "/how-to-tune", label: "How to Tune" },
+    { href: "/testimonials", label: "Testimonials" },
     { href: "/events", label: "Events" },
     {
       href: "/gallery",

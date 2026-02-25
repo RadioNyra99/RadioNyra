@@ -20,10 +20,10 @@ export function Footer() {
 
           {/* Nav Links - Minimal Horizontal */}
           <nav className="flex flex-wrap justify-center gap-8">
-            {["Home", "About", "Services", "Advertise", "Contact"].map((item) => (
+            {["Home", "About", "Services", "Advertise", "Testimonials", "How to Tune", "Contact"].map((item) => (
               <Link
                 key={item}
-                href={item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "-")}`}
+                href={item === "Home" ? "/" : `/${item.toLowerCase().replace(/\s+/g, "-")}`}
                 className="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors"
               >
                 {item}

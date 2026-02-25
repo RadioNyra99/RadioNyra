@@ -15,6 +15,13 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 export default function PodcastsPage() {
     const podcasts = [
         {
+            title: "College Admissions Strategy by Empowerly | Episode 3",
+            host: "Raj Persaud",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/GuEiuNv9hDc",
+            thumbnail: "https://img.youtube.com/vi/GuEiuNv9hDc/maxresdefault.jpg"
+        },
+        {
             title: "Interview with Madhavi Lata - Mana Muchatlu",
             host: "Kanthi",
             show: "Radio Nyra Podcast",
@@ -92,13 +99,27 @@ export default function PodcastsPage() {
         mainStory: ""
     })
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        setSubmitted(true)
-        // Smooth scroll to the success message/calendly
-        const formElement = document.getElementById('guest-form')
-        if (formElement) {
-            formElement.scrollIntoView({ behavior: 'smooth' })
+
+        try {
+            const response = await fetch("https://formspree.io/f/fa42a7d8-c45e-4e7d-868c-7861ef21d915", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                setSubmitted(true)
+                const formElement = document.getElementById('guest-form')
+                if (formElement) {
+                    formElement.scrollIntoView({ behavior: 'smooth' })
+                }
+            } else {
+                alert("There was an error submitting your request. Please try again or contact us directly.");
+            }
+        } catch (error) {
+            alert("An unexpected error occurred. Please try again later.");
         }
     }
 

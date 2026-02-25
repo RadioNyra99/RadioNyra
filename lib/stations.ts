@@ -53,18 +53,6 @@ export const STATIONS: Record<string, Station> = {
         name: "St. Louis 95.5 FM HD2 (Hindi)",
         streamUrl: "https://streams.radio.co/s8d06d0298/listen",
         statusUrl: "https://public.radio.co/stations/s8d06d0298/status"
-    },
-    "India Digital": {
-        id: "india-digital-hindi",
-        name: "India Digital (Hindi)",
-        streamUrl: "https://streams.radio.co/s8d06d0298/listen",
-        statusUrl: "https://public.radio.co/stations/s8d06d0298/status"
-    },
-    "Dubai Digital": {
-        id: "dubai-digital-hindi",
-        name: "Dubai Digital (Hindi)",
-        streamUrl: "https://streams.radio.co/s8d06d0298/listen",
-        statusUrl: "https://public.radio.co/stations/s8d06d0298/status"
     }
 }
 

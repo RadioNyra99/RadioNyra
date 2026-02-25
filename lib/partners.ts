@@ -71,7 +71,7 @@ export const PARTNERS: Partner[] = [
     { name: "ZEE5", image: "/images/partners/ZEE5.jpg", link: "https://www.zee5.com/", category: 'Past and Current Partners' },
     { name: "Indian Association of Fuquay-Varina", image: "/images/partners/indian-association-of-fuquay-varina.jpg", link: "https://www.iafvnc.org/", category: 'Past and Current Partners' },
     { name: "Janaprerana", image: "/images/partners/jana-prerana.jpg", link: "https://janaprerana.org/", category: 'Past and Current Partners' },
-    { name: "Publix", image: "/images/partners/Publix.jpg", link: "https://publix.com/", category: 'Past and Current Partners' },
+    { name: "Publix", image: "/images/partners/Publix.jpg", link: "https://www.publix.com", category: 'Past and Current Partners' },
     { name: "NCAAT", image: "/images/partners/nc-asian-american-together.jpg", link: "https://ncaat.org/", category: 'Past and Current Partners' },
     { name: "A.R. Rahman – The Wonderment Tour", image: "/images/partners/A.R. Rahman – The Wonderment Tour.jpg", link: "https://kashpatelproductions.com/event/ar-rahman-the-wonderment-tour-2025/", category: 'Past and Current Partners' },
     { name: "Shaan – Infinity Tour", image: "/images/partners/Shaan – Infinity Tour.jpg", link: "https://www.facebook.com/events/1038599181574685/?ref_source=newsfeed&ref_mechanism=feed_attachment", category: 'Past and Current Partners' },

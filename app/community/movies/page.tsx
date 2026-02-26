@@ -12,101 +12,101 @@ export default function MoviesPage() {
         {
             title: "Dacoit",
             type: "Theatre",
-            releaseDate: "19 Mar 2026",
+            releaseDate: "19 March 2026",
             language: "Telugu",
             genre: "Action Romance",
             notes: "Coming Soon",
             image: "/Upcoming%20movies/Upcoming%20movies/Dacoit%20A%20Love%20Story.jpg"
         },
         {
-            title: "The Paradise",
-            type: "Theatre",
-            releaseDate: "2026",
-            language: "Telugu",
-            genre: "Mystery Drama",
-            notes: "Coming Soon",
-            image: "/Upcoming%20movies/Upcoming%20movies/theparadise.webp"
-        },
-        {
             title: "Swayambhu",
-            type: "Theatre",
-            releaseDate: "13 Feb 2026",
-            language: "Telugu",
-            genre: "Action/Period",
-            notes: "Coming Soon",
-            image: "/Upcoming%20movies/Upcoming%20movies/Swayambhu.jpg"
-        },
-        {
-            title: "Peddi",
             type: "Theatre",
             releaseDate: "April 2026",
             language: "Telugu",
-            genre: "Action Drama",
-            notes: "Ram Charan's Next",
-            image: "/Upcoming%20movies/Upcoming%20movies/Peddi.jpg"
+            genre: "Action / Period",
+            notes: "Production Delay",
+            image: "/Upcoming%20movies/Upcoming%20movies/Swayambhu.jpg"
         },
         {
-            title: "Pushpa 3",
+            title: "Peddi (Ram Charan)",
             type: "Theatre",
-            releaseDate: "Aug 2026 (Expected)",
+            releaseDate: "August 14, 2026",
             language: "Telugu",
-            genre: "Action",
-            notes: "Theatrical Release",
-            image: "/Upcoming%20movies/Upcoming%20movies/pushpa%203.jpg"
+            genre: "Action Drama",
+            notes: "Major Pan-India Release",
+            image: "/Upcoming%20movies/Upcoming%20movies/Peddi.jpg"
         },
         {
             title: "Jai Hanuman",
             type: "Theatre",
-            releaseDate: "2026 (TBA)",
+            releaseDate: "Diwali 2026",
             language: "Telugu",
-            genre: "Mythological",
-            notes: "Theatrical Release",
+            genre: "Mythological Superhero",
+            notes: "Pre-Production",
             image: "/Upcoming%20movies/Upcoming%20movies/jai%20hanuman.jpg"
         },
         {
-            title: "Devara Part 2",
+            title: "The Paradise",
             type: "Theatre",
-            releaseDate: "TBA",
+            releaseDate: "Late 2026",
             language: "Telugu",
-            genre: "Action Epic",
-            notes: "Coming Soon",
-            image: "/Upcoming%20movies/Upcoming%20movies/Devara%20Part%202.jpg"
+            genre: "Mystery Drama",
+            notes: "Filming Stage",
+            image: "/Upcoming%20movies/Upcoming%20movies/theparadise.webp"
         },
         {
-            title: "Salaar Part 2",
+            title: "Pushpa 3 – The Rampage",
             type: "Theatre",
-            releaseDate: "TBA",
+            releaseDate: "December 2026",
             language: "Telugu",
-            genre: "Action/Mass",
-            notes: "Coming Soon",
-            image: "/Upcoming%20movies/Upcoming%20movies/Salaar%20Part%202.jpg"
-        },
-        {
-            title: "Kalki 2898 AD Part 2",
-            type: "Theatre",
-            releaseDate: "TBA",
-            language: "Telugu",
-            genre: "Sci-Fi/Mythology",
-            notes: "Coming Soon",
-            image: "/Upcoming%20movies/Upcoming%20movies/Kalki%202898%20AD%20Part%202.jpg"
-        },
-        {
-            title: "Spirit",
-            type: "Theatre",
-            releaseDate: "TBA",
-            language: "Telugu",
-            genre: "Cop Drama",
-            notes: "Prabhas - Sandeep Vanga",
-            image: "/Upcoming%20movies/Upcoming%20movies/spirit.jpg"
+            genre: "Action",
+            notes: "Pre-Production",
+            image: "/Upcoming%20movies/Upcoming%20movies/pushpa%203.jpg"
         },
         {
             title: "SSMB29",
             type: "Theatre",
-            releaseDate: "TBA",
+            releaseDate: "Summer 2027",
             language: "Telugu",
-            genre: "Adventure Epic",
-            notes: "Mahesh Babu + Rajamouli",
-            image: "/Upcoming%20movies/Upcoming%20movies/Toxic.jpg"
+            genre: "Adventure Epic / Jungle Action",
+            notes: "Shooting Begins 2026",
+            image: "/Upcoming%20movies/Upcoming%20movies/SSMB29.jpg"
+        },
+        {
+            title: "Spirit",
+            type: "Theatre",
+            releaseDate: "Early 2027",
+            language: "Telugu",
+            genre: "Cop Action Thriller",
+            notes: "Script & Pre-Production",
+            image: "/Upcoming%20movies/Upcoming%20movies/spirit.jpg"
+        },
+        {
+            title: "Salaar Part 2 – Shouryanga Parvam",
+            type: "Theatre",
+            releaseDate: "Mid / Late 2027",
+            language: "Telugu",
+            genre: "Mass Action",
+            notes: "Production Phase",
+            image: "/Upcoming%20movies/Upcoming%20movies/Salaar%20Part%202.jpg"
+        },
+        {
+            title: "Kalki 2898 AD – Part 2",
+            type: "Theatre",
+            releaseDate: "2027 (Expected)",
+            language: "Telugu",
+            genre: "Sci-Fi Mythological",
+            notes: "Writing & Planning",
+            image: "/Upcoming%20movies/Upcoming%20movies/Kalki%202898%20AD%20Part%202.jpg"
+        },
+        {
+            title: "Devara Part 2",
+            type: "Theatre",
+            releaseDate: "Late 2027",
+            language: "Telugu",
+            genre: "Action Epic",
+            notes: "Not officially dated",
+            image: "/Upcoming%20movies/Upcoming%20movies/Devara%20Part%202.jpg"
         }
     ];
 

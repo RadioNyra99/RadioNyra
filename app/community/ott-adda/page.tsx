@@ -22,9 +22,9 @@ export default function OTTAddaPage() {
 
     const upcoming = [
         { title: "Dacoit: A Love Story", language: "Telugu", platform: "Theaters", date: "19 Mar 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Dacoit%20A%20Love%20Story.jpg" },
-        { title: "The Paradise", language: "Telugu", platform: "Theaters", date: "2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/theparadise.webp" },
-        { title: "Swayambhu", language: "Telugu", platform: "Theaters", date: "Feb 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Swayambhu.jpg" },
-        { title: "Peddi", language: "Telugu", platform: "Theaters", date: "April 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Peddi.jpg" },
+        { title: "The Paradise", language: "Telugu", platform: "Theaters", date: "Late 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/theparadise.webp" },
+        { title: "Swayambhu", language: "Telugu", platform: "Theaters", date: "April 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Swayambhu.jpg" },
+        { title: "Peddi", language: "Telugu", platform: "Theaters", date: "August 14, 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Peddi.jpg" },
     ];
 
     const theatricalReleases = [
@@ -36,7 +36,7 @@ export default function OTTAddaPage() {
     const trendingBuzz = [
         { title: "The Raja Saab", industry: "Tollywood", date: "Blockbuster Hit", type: "In Theaters", image: "/OTT%20ADDA/OTT%20ADDA/The%20Raja%20Saab.jpg" },
         { title: "Dhurandhar", industry: "Tollywood", date: "Now Streaming", type: "OTT Hit", image: "/OTT%20ADDA/OTT%20ADDA/Dhurandhar.jpg" },
-        { title: "Swayambhu", industry: "Tollywood", date: "In Theaters 13 Feb", type: "Period Action", image: "/Upcoming%20movies/Upcoming%20movies/Swayambhu.jpg" },
+        { title: "Swayambhu", industry: "Tollywood", date: "In Theaters April 2026", type: "Period Action", image: "/Upcoming%20movies/Upcoming%20movies/Swayambhu.jpg" },
     ];
 
     return (

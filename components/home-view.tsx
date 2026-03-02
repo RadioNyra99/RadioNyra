@@ -14,6 +14,8 @@ import { VoiceAssistants } from "@/components/voice-assistants"
 import { motion, AnimatePresence } from "framer-motion"
 import { PARTNERS } from "@/lib/partners"
 import { ApolloTracker } from "@/components/apollo-tracker"
+import { HoliEffects } from "@/components/holi-effects"
+import { HoliBanner } from "@/components/holi-banner"
 
 export function HomeView() {
 
@@ -48,6 +50,7 @@ export function HomeView() {
             <FrequencyBar />
 
             <main>
+                <HoliEffects />
                 {/* HERO SECTION */}
                 <section className="relative h-auto min-h-[50vh] w-full overflow-hidden flex items-center justify-center bg-black py-12">
                     <div className="absolute inset-0 z-0 opacity-60">

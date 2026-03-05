@@ -14,13 +14,12 @@ export default function EventsPage() {
     // Data moved from Home Page
     const upcomingEvents = [
         { title: "GDC Festival of Gaming", date: "Mar 9-13, 2026", location: "San Francisco, CA", image: "/GDC_250x250.gif", link: "https://gdc.informafestivals.com/2026/registrations/Attendee?_mc=barter_gdcsf_gdcsf_le_x_partn" },
-        { title: "Holi Festival Celebration", date: "Mar 25, 2026", location: "City Park", image: "/holi.jpg.jpeg" },
     ];
 
     const pastEvents = [
-        { id: 1, title: "Zain Zohaib Qawwali Show", image: "/zain zohaib qawwali show.jpeg", date: "2025" },
-        { id: 2, title: "Hooky Holiday Showcase Event", image: "/hooky holiday showcase event.jpeg", date: "2025" },
-        { id: 3, title: "AR Rahman Concert", image: "/AR rahman concert.jpeg", date: "2025" },
+        { id: 1, title: "Zain Zohaib Qawwali Show", image: "/zain-zohaib-qawwali-show.webp", date: "2025" },
+        { id: 2, title: "Hooky Holiday Showcase Event", image: "/hooky-holiday-showcase-event.webp", date: "2025" },
+        { id: 3, title: "AR Rahman Concert", image: "/ar-rahman-concert.webp", date: "2025" },
     ]
 
     const openLightbox = (index: number) => {

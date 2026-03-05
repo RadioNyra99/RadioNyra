@@ -9,22 +9,22 @@ import { Badge } from "@/components/ui/badge"
 export default function OTTAddaPage() {
     const nowStreaming = [
         // RELEASED THIS WEEK
-        { title: "Sampradayini Suppini Suddapoosani", language: "Telugu", platform: "OTT", type: "Comedy Drama", tags: ["Released This Week"], image: "/OTT%20ADDA/OTT%20ADDA/Sampradayini%20Suppini%20Suddapoosani.jpg" },
-        { title: "Maruva Tarama", language: "Telugu", platform: "OTT", type: "Romantic Drama", tags: ["Released This Week"], image: "/OTT%20ADDA/OTT%20ADDA/Maruva%20Tarama.jpg" },
-        { title: "Mana Shankara Vara Prasad Garu", language: "Telugu", platform: "OTT", type: "Drama", tags: ["Released This Week"], image: "/OTT%20ADDA/OTT%20ADDA/Mana%20Shankara%20Vara%20Prasad%20Garu.jpg" },
-        { title: "Anaganaga Oka Raju", language: "Telugu", platform: "OTT", type: "Social Drama", tags: ["Released This Week"], image: "/OTT%20ADDA/OTT%20ADDA/Anaganaga%20Oka%20Raju.jpg" },
+        { title: "Sampradayini Suppini Suddapoosani", language: "Telugu", platform: "OTT", type: "Comedy Drama", tags: ["Released This Week"], image: "/OTT ADDA/OTT ADDA/sampradayini-suppini-suddapoosani.webp" },
+        { title: "Maruva Tarama", language: "Telugu", platform: "OTT", type: "Romantic Drama", tags: ["Released This Week"], image: "/OTT ADDA/OTT ADDA/maruva-tarama.webp" },
+        { title: "Mana Shankara Vara Prasad Garu", language: "Telugu", platform: "OTT", type: "Drama", tags: ["Released This Week"], image: "/OTT ADDA/OTT ADDA/mana-shankara-vara-prasad-garu.webp" },
+        { title: "Anaganaga Oka Raju", language: "Telugu", platform: "OTT", type: "Social Drama", tags: ["Released This Week"], image: "/OTT ADDA/OTT ADDA/anaganaga-oka-raju.webp" },
 
         // RECENTLY RELEASED
-        { title: "Nilakanta", language: "Telugu", platform: "OTT", type: "Action Thriller", tags: ["Recently Released"], image: "/OTT%20ADDA/OTT%20ADDA/Nilakanta.jpg" },
-        { title: "Parasakthi", language: "Telugu", platform: "OTT", type: "Action Drama", tags: ["Recently Released"], image: "/Upcoming%20movies/Upcoming%20movies/Karikaada.jpg" },
-        { title: "The Raja Saab", language: "Telugu/Multi", platform: "JioHotstar", type: "Romantic Horror", tags: ["Recently Released"], image: "/OTT%20ADDA/OTT%20ADDA/The%20Raja%20Saab.jpg" },
+        { title: "Nilakanta", language: "Telugu", platform: "OTT", type: "Action Thriller", tags: ["Recently Released"], image: "/OTT ADDA/OTT ADDA/nilakanta.webp" },
+        { title: "Parasakthi", language: "Telugu", platform: "OTT", type: "Action Drama", tags: ["Recently Released"], image: "/Upcoming movies/Upcoming movies/karikaada.webp" },
+        { title: "The Raja Saab", language: "Telugu/Multi", platform: "JioHotstar", type: "Romantic Horror", tags: ["Recently Released"], image: "/OTT ADDA/OTT ADDA/the-raja-saab.webp" },
     ];
 
     const upcoming = [
-        { title: "Dacoit: A Love Story", language: "Telugu", platform: "Theaters", date: "19 Mar 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Dacoit%20A%20Love%20Story.jpg" },
-        { title: "The Paradise", language: "Telugu", platform: "Theaters", date: "Late 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/theparadise.webp" },
-        { title: "Swayambhu", language: "Telugu", platform: "Theaters", date: "April 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Swayambhu.jpg" },
-        { title: "Peddi", language: "Telugu", platform: "Theaters", date: "August 14, 2026", type: "Movie", link: "#", image: "/Upcoming%20movies/Upcoming%20movies/Peddi.jpg" },
+        { title: "Dacoit: A Love Story", language: "Telugu", platform: "Theaters", date: "19 Mar 2026", type: "Movie", link: "#", image: "/Upcoming movies/Upcoming movies/dacoit-a-love-story.webp" },
+        { title: "The Paradise", language: "Telugu", platform: "Theaters", date: "Late 2026", type: "Movie", link: "#", image: "/Upcoming movies/Upcoming movies/theparadise.webp" },
+        { title: "Swayambhu", language: "Telugu", platform: "Theaters", date: "April 2026", type: "Movie", link: "#", image: "/Upcoming movies/Upcoming movies/swayambhu.webp" },
+        { title: "Peddi", language: "Telugu", platform: "Theaters", date: "August 14, 2026", type: "Movie", link: "#", image: "/Upcoming movies/Upcoming movies/peddi.webp" },
     ];
 
     const theatricalReleases = [
@@ -34,9 +34,9 @@ export default function OTTAddaPage() {
     ];
 
     const trendingBuzz = [
-        { title: "The Raja Saab", industry: "Tollywood", date: "Blockbuster Hit", type: "In Theaters", image: "/OTT%20ADDA/OTT%20ADDA/The%20Raja%20Saab.jpg" },
-        { title: "Dhurandhar", industry: "Tollywood", date: "Now Streaming", type: "OTT Hit", image: "/OTT%20ADDA/OTT%20ADDA/Dhurandhar.jpg" },
-        { title: "Swayambhu", industry: "Tollywood", date: "In Theaters April 2026", type: "Period Action", image: "/Upcoming%20movies/Upcoming%20movies/Swayambhu.jpg" },
+        { title: "The Raja Saab", industry: "Tollywood", date: "Blockbuster Hit", type: "In Theaters", image: "/OTT ADDA/OTT ADDA/the-raja-saab.webp" },
+        { title: "Dhurandhar", industry: "Tollywood", date: "Now Streaming", type: "OTT Hit", image: "/OTT ADDA/OTT ADDA/dhurandhar.webp" },
+        { title: "Swayambhu", industry: "Tollywood", date: "In Theaters April 2026", type: "Period Action", image: "/Upcoming movies/Upcoming movies/swayambhu.webp" },
     ];
 
     return (

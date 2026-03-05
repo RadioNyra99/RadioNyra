@@ -23,19 +23,19 @@ export function HomeView() {
     const shows = [
         // Hindi shows
 
-        { name: "Chai Pe Charcha", host: "Raj Persaud", image: "/images/hosts/cha-pe-charcha.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Hello Vaishnavi", host: "Vaishnavi Palleda", image: "/images/hosts/hello-vaishnavi.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Dil Se Desi", host: "Jyoti", image: "/images/hosts/dil-se-desi.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Geet Bazaar", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.jpg", stationId: STATIONS.Hindi.id, language: "hindi" },
+        { name: "Chai Pe Charcha", host: "Raj Persaud", image: "/images/hosts/cha-pe-charcha.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
+        { name: "Hello Vaishnavi", host: "Vaishnavi Palleda", image: "/images/hosts/hello-vaishnavi.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
+        { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
+        { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
+        { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
+        { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
+        { name: "Dil Se Desi", host: "Jyoti", image: "/images/hosts/dil-se-desi.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
+        { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
+        { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
+        { name: "Geet Bazaar", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
         // Telugu shows (as per requirement)
-        { name: "Chinna Mata", host: "Priya", image: "/images/hosts/chinna-mata.jpg", stationId: STATIONS.Telugu.id, language: "telugu" },
-        { name: "Mana Muchatlu", host: "Kanthi", image: "/images/hosts/mana-muchatlu.jpg", stationId: STATIONS.Telugu.id, language: "telugu" },
+        { name: "Chinna Mata", host: "Priya", image: "/images/hosts/chinna-mata.webp", stationId: STATIONS.Telugu.id, language: "telugu" },
+        { name: "Mana Muchatlu", host: "Kanthi", image: "/images/hosts/mana-muchatlu.webp", stationId: STATIONS.Telugu.id, language: "telugu" },
     ];
     const { playStation, currentStation } = useAudio();
 
@@ -60,7 +60,7 @@ export function HomeView() {
                             loop
                             playsInline
                             className="w-full h-full object-cover"
-                            poster="/radio-studio-modern.jpg"
+                            poster="/radio-studio-modern.webp"
                         >
                             <source src="/home%20page%20video.mp4" type="video/mp4" />
                         </video>
@@ -102,7 +102,7 @@ export function HomeView() {
                                         className="bg-white p-2 rounded-full h-16 w-16 flex items-center justify-center hover:scale-110 transition-all shadow-xl border-2 border-white/20"
                                         title="Download on App Store"
                                     >
-                                        <img src="/Apple icon.png" alt="App Store" className="w-9 h-9 object-contain" />
+                                        <img src="/apple-icon.webp" alt="App Store" className="w-9 h-9 object-contain" />
                                     </Link>
                                     <Link
                                         href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app"
@@ -110,7 +110,7 @@ export function HomeView() {
                                         className="bg-white p-2 rounded-full h-16 w-16 flex items-center justify-center hover:scale-110 transition-all shadow-xl border-2 border-white/20"
                                         title="Get it on Google Play"
                                     >
-                                        <img src="/Android icon.png" alt="Google Play" className="w-9 h-9 object-contain" />
+                                        <img src="/android-icon.webp" alt="Google Play" className="w-9 h-9 object-contain" />
                                     </Link>
                                 </div>
                             </div>

@@ -26,92 +26,92 @@ const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
 const SCHEDULE_DATA: ScheduleEntry[] = [
     {
         time: "12 AM - 6 AM", hour: 0,
-        shows: { all: { name: "Back to Back", image: "/Back to Back.jpg", color: "bg-muted/30 text-muted-foreground" } }
+        shows: { all: { name: "Back to Back", image: "/back-to-back.webp", color: "bg-muted/30 text-muted-foreground" } }
     },
     {
         time: "6 AM - 7 AM", hour: 6,
-        shows: { all: { name: "Geetanjali", image: "/Geetanjali.jpg", color: "bg-yellow-100 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-400" } }
+        shows: { all: { name: "Geetanjali", image: "/geetanjali.webp", color: "bg-yellow-100 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-400" } }
     },
     {
         time: "8 AM - 10 AM", hour: 8,
         shows: {
-            weekdays: { name: "Chai Pe Charcha", host: "Raj Persaud", image: "/images/hosts/cha-pe-charcha.jpg", color: "bg-cyan-100 text-cyan-700" }
+            weekdays: { name: "Chai Pe Charcha", host: "Raj Persaud", image: "/images/hosts/cha-pe-charcha.webp", color: "bg-cyan-100 text-cyan-700" }
         }
     },
     {
         time: "10 AM - 12 PM", hour: 10,
         shows: {
-            weekdays: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
-            Saturday: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
-            Sunday: { name: "Geet Bazaar (Live)", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.jpg", color: "bg-purple-100 text-purple-700" }
+            weekdays: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.webp", color: "bg-orange-100 text-orange-700" },
+            Saturday: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.webp", color: "bg-orange-100 text-orange-700" },
+            Sunday: { name: "Geet Bazaar (Live)", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.webp", color: "bg-purple-100 text-purple-700" }
         }
     },
     {
         time: "12 PM - 1 PM", hour: 12,
         shows: {
-            weekdays: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
-            Saturday: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpg", color: "bg-orange-100 text-orange-700" },
-            Sunday: { name: "The Real Returns Show", image: "/The real return show.jpg", color: "bg-blue-100 text-blue-700" }
+            weekdays: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.webp", color: "bg-orange-100 text-orange-700" },
+            Saturday: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.webp", color: "bg-orange-100 text-orange-700" },
+            Sunday: { name: "The Real Returns Show", image: "/the-real-return-show.webp", color: "bg-blue-100 text-blue-700" }
         }
     },
     {
         time: "1 PM - 4 PM", hour: 13,
-        shows: { all: { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpg", color: "bg-blue-200 text-blue-800" } }
+        shows: { all: { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.webp", color: "bg-blue-200 text-blue-800" } }
     },
     {
         time: "4 PM - 5 PM", hour: 16,
         shows: {
-            Monday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Tuesday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Wednesday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Thursday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Friday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Saturday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Sunday: { name: "Legends and Leaders", host: "Steve Rao", image: "/Legends and Leaders.jpg", color: "bg-blue-900 text-white" }
+            Monday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" },
+            Tuesday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" },
+            Wednesday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" },
+            Thursday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" },
+            Friday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" },
+            Saturday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" },
+            Sunday: { name: "Legends and Leaders", host: "Steve Rao", image: "/legends-and-leaders.webp", color: "bg-blue-900 text-white" }
         }
     },
     {
         time: "5 PM - 6 PM", hour: 17,
         shows: {
-            Monday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Tuesday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Wednesday: { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.jpeg", color: "bg-blue-400 text-white" },
-            Thursday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Friday: { name: "Dil Se Desi", host: "Jyoti", image: "/images/hosts/dil-se-desi.jpg", color: "bg-red-800 text-white" },
-            Saturday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Sunday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" }
+            Monday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" },
+            Tuesday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" },
+            Wednesday: { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.webp", color: "bg-blue-400 text-white" },
+            Thursday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" },
+            Friday: { name: "Dil Se Desi", host: "Jyoti", image: "/images/hosts/dil-se-desi.webp", color: "bg-red-800 text-white" },
+            Saturday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" },
+            Sunday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" }
         }
     },
     {
         time: "6 PM - 7 PM", hour: 18,
         shows: {
-            Monday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Tuesday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Wednesday: { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.jpeg", color: "bg-blue-400 text-white" },
-            Thursday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Friday: { name: "Dil Se Desi", host: "Jyoti", image: "/images/hosts/dil-se-desi.jpg", color: "bg-red-800 text-white" },
-            Saturday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" },
-            Sunday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.jpg", color: "bg-green-200 text-green-800" }
+            Monday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" },
+            Tuesday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" },
+            Wednesday: { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.webp", color: "bg-blue-400 text-white" },
+            Thursday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" },
+            Friday: { name: "Dil Se Desi", host: "Jyoti", image: "/images/hosts/dil-se-desi.webp", color: "bg-red-800 text-white" },
+            Saturday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" },
+            Sunday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" }
         }
     },
     {
         time: "7 PM - 10 PM", hour: 19,
-        shows: { all: { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpg", color: "bg-purple-50 text-purple-700" } }
+        shows: { all: { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.webp", color: "bg-purple-50 text-purple-700" } }
     },
     {
         time: "10 PM - 11 PM", hour: 22,
         shows: {
-            weekdays: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", color: "bg-cyan-50 text-cyan-700" },
-            Saturday: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", color: "bg-cyan-50 text-cyan-700" },
-            Sunday: { name: "Geet Bazaar (Repeat) / Mehfil", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.jpg", color: "bg-purple-300 text-purple-900" }
+            weekdays: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.webp", color: "bg-cyan-50 text-cyan-700" },
+            Saturday: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.webp", color: "bg-cyan-50 text-cyan-700" },
+            Sunday: { name: "Geet Bazaar (Repeat) / Mehfil", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.webp", color: "bg-purple-300 text-purple-900" }
         }
     },
     {
         time: "11 PM - 12 AM", hour: 23,
         shows: {
-            weekdays: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", color: "bg-cyan-50 text-cyan-700" },
-            Saturday: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpg", color: "bg-cyan-50 text-cyan-700" },
-            Sunday: { name: "Back to Back", image: "/Back to Back.jpg", color: "bg-muted/30 text-muted-foreground" }
+            weekdays: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.webp", color: "bg-cyan-50 text-cyan-700" },
+            Saturday: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.webp", color: "bg-cyan-50 text-cyan-700" },
+            Sunday: { name: "Back to Back", image: "/back-to-back.webp", color: "bg-muted/30 text-muted-foreground" }
         }
     }
 ];

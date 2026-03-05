@@ -16,7 +16,7 @@ export default function MoviesPage() {
             language: "Telugu",
             genre: "Action Romance",
             notes: "Coming Soon",
-            image: "/Upcoming%20movies/Upcoming%20movies/Dacoit%20A%20Love%20Story.jpg"
+            image: "/Upcoming movies/Upcoming movies/dacoit-a-love-story.webp"
         },
         {
             title: "Swayambhu",
@@ -25,7 +25,7 @@ export default function MoviesPage() {
             language: "Telugu",
             genre: "Action / Period",
             notes: "Production Delay",
-            image: "/Upcoming%20movies/Upcoming%20movies/Swayambhu.jpg"
+            image: "/Upcoming movies/Upcoming movies/swayambhu.webp"
         },
         {
             title: "Peddi (Ram Charan)",
@@ -34,7 +34,7 @@ export default function MoviesPage() {
             language: "Telugu",
             genre: "Action Drama",
             notes: "Major Pan-India Release",
-            image: "/Upcoming%20movies/Upcoming%20movies/Peddi.jpg"
+            image: "/Upcoming movies/Upcoming movies/peddi.webp"
         },
         {
             title: "Jai Hanuman",
@@ -43,7 +43,7 @@ export default function MoviesPage() {
             language: "Telugu",
             genre: "Mythological Superhero",
             notes: "Pre-Production",
-            image: "/Upcoming%20movies/Upcoming%20movies/jai%20hanuman.jpg"
+            image: "/Upcoming movies/Upcoming movies/jai-hanuman.webp"
         },
         {
             title: "The Paradise",
@@ -52,7 +52,7 @@ export default function MoviesPage() {
             language: "Telugu",
             genre: "Mystery Drama",
             notes: "Filming Stage",
-            image: "/Upcoming%20movies/Upcoming%20movies/theparadise.webp"
+            image: "/Upcoming movies/Upcoming movies/theparadise.webp"
         },
         {
             title: "Pushpa 3 – The Rampage",
@@ -61,7 +61,7 @@ export default function MoviesPage() {
             language: "Telugu",
             genre: "Action",
             notes: "Pre-Production",
-            image: "/Upcoming%20movies/Upcoming%20movies/pushpa%203.jpg"
+            image: "/Upcoming movies/Upcoming movies/pushpa-3.webp"
         },
         {
             title: "SSMB29",
@@ -70,7 +70,7 @@ export default function MoviesPage() {
             language: "Telugu",
             genre: "Adventure Epic / Jungle Action",
             notes: "Shooting Begins 2026",
-            image: "/Upcoming%20movies/Upcoming%20movies/SSMB29.jpg"
+            image: "/Upcoming movies/Upcoming movies/ssmb29.webp"
         },
         {
             title: "Spirit",
@@ -79,7 +79,7 @@ export default function MoviesPage() {
             language: "Telugu",
             genre: "Cop Action Thriller",
             notes: "Script & Pre-Production",
-            image: "/Upcoming%20movies/Upcoming%20movies/spirit.jpg"
+            image: "/Upcoming movies/Upcoming movies/spirit.webp"
         },
         {
             title: "Salaar Part 2 – Shouryanga Parvam",
@@ -88,7 +88,7 @@ export default function MoviesPage() {
             language: "Telugu",
             genre: "Mass Action",
             notes: "Production Phase",
-            image: "/Upcoming%20movies/Upcoming%20movies/Salaar%20Part%202.jpg"
+            image: "/Upcoming movies/Upcoming movies/salaar-part-2.webp"
         },
         {
             title: "Kalki 2898 AD – Part 2",
@@ -97,7 +97,7 @@ export default function MoviesPage() {
             language: "Telugu",
             genre: "Sci-Fi Mythological",
             notes: "Writing & Planning",
-            image: "/Upcoming%20movies/Upcoming%20movies/Kalki%202898%20AD%20Part%202.jpg"
+            image: "/Upcoming movies/Upcoming movies/kalki-2898-ad-part-2.webp"
         },
         {
             title: "Devara Part 2",
@@ -106,7 +106,7 @@ export default function MoviesPage() {
             language: "Telugu",
             genre: "Action Epic",
             notes: "Not officially dated",
-            image: "/Upcoming%20movies/Upcoming%20movies/Devara%20Part%202.jpg"
+            image: "/Upcoming movies/Upcoming movies/devara-part-2.webp"
         }
     ];
 

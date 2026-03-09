@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import Script from "next/script"
 
 export default function PodcastsPage() {
     const podcasts = [
@@ -77,6 +78,58 @@ export default function PodcastsPage() {
             url: "https://youtu.be/kQulwTLdXr0",
             thumbnail: "https://img.youtube.com/vi/kQulwTLdXr0/maxresdefault.jpg"
         },
+    ]
+
+    const geetBazaarEpisodes = [
+        {
+            month: "January 2026",
+            episodes: [
+                { date: "January 18, 2026", target: "geet-bazaar/geet-bazzar-18th-january-2026", src: "https://play.pod.co/geet-bazaar/geet-bazzar-18th-january-2026" },
+                { date: "January 11, 2026", target: "geet-bazaar/geet-bazzar-11th-january-2026", src: "https://play.pod.co/geet-bazaar/geet-bazzar-11th-january-2026" },
+                { date: "January 4, 2026", target: "geet-bazaar/geet-bazzar-4th-january-2026", src: "https://play.pod.co/geet-bazaar/geet-bazzar-4th-january-2026" },
+            ]
+        },
+        {
+            month: "November 2025",
+            episodes: [
+                { date: "November 28, 2025", target: "geet-bazaar/geet-bazzar-28th-november-2025", src: "https://play.pod.co/geet-bazaar/geet-bazzar-28th-november-2025" },
+                { date: "November 16, 2025", target: "geet-bazaar/geet-bazzar-16-11-2025", src: "https://play.pod.co/geet-bazaar/geet-bazzar-16-11-2025" },
+                { date: "November 9, 2025", target: "geet-bazaar/geet-bazzar-9th-november-2025", src: "https://play.pod.co/geet-bazaar/geet-bazzar-9th-november-2025" },
+            ]
+        },
+        {
+            month: "September 2025",
+            episodes: [
+                { date: "September 21, 2025", target: "geet-bazaar/geet-bazzar-21st-september-2025", src: "https://play.pod.co/geet-bazaar/geet-bazzar-21st-september-2025" },
+            ]
+        },
+        {
+            month: "August 2025",
+            episodes: [
+                { date: "August 17, 2025", target: "geet-bazaar/geet-bazzar-17th-august-2025", src: "https://play.pod.co/geet-bazaar/geet-bazzar-17th-august-2025" },
+                { date: "August 10, 2025", target: "geet-bazaar/geet-bazzar-10th-august-2025", src: "https://play.pod.co/geet-bazaar/geet-bazzar-10th-august-2025" },
+                { date: "August 3, 2025", target: "geet-bazaar/geet-bazzar-3rd-august-2025", src: "https://play.pod.co/geet-bazaar/geet-bazzar-3rd-august-2025" },
+            ]
+        },
+        {
+            month: "July 2025",
+            episodes: [
+                { date: "July 27, 2025", target: "geet-bazaar/geet-bazzar-27th-july-2025", src: "https://play.pod.co/geet-bazaar/geet-bazzar-27th-july-2025" },
+                { date: "July 20, 2025", target: "geet-bazaar/geet-bazzar-20th-july-2025", src: "https://play.pod.co/geet-bazaar/geet-bazzar-20th-july-2025" },
+                { date: "July 17, 2025", target: "geet-bazaar/geet-bazzar-17th-july-2025", src: "https://play.pod.co/geet-bazaar/geet-bazzar-17th-july-2025" },
+                { date: "July 6, 2025", target: "geet-bazaar/geet-bazzar-6th-july-2025", src: "https://play.pod.co/geet-bazaar/geet-bazzar-6th-july-2025" },
+            ]
+        },
+        {
+            month: "June 2025",
+            episodes: [
+                { date: "June 29, 2025", target: "geet-bazaar/geet-bazzar-29th-june-2025", src: "https://play.pod.co/geet-bazaar/geet-bazzar-29th-june-2025" },
+                { date: "June 22, 2025", target: "geet-bazaar/geet-bazzar-22nd-june-2025", src: "https://play.pod.co/geet-bazaar/geet-bazzar-22nd-june-2025" },
+                { date: "June 15, 2025", target: "geet-bazaar/geet-bazzar-15th-june-2025", src: "https://play.pod.co/geet-bazaar/geet-bazzar-15th-june-2025" },
+                { date: "June 8, 2025", target: "geet-bazaar/geet-bazzar-8th-june-2025", src: "https://play.pod.co/geet-bazaar/geet-bazzar-8th-june-2025" },
+                { date: "June 1, 2025", target: "geet-bazaar/geet-bazzar-1st-june-2025", src: "https://play.pod.co/geet-bazaar/geet-bazzar-1st-june-2025" },
+            ]
+        }
     ]
 
     const [submitted, setSubmitted] = useState(false)
@@ -279,6 +332,51 @@ export default function PodcastsPage() {
                         )}
                     </div>
                 </section>
+
+                {/* Geet Bazaar Section */}
+                <section className="py-20 bg-muted/30">
+                    <div className="container mx-auto px-4 max-w-6xl">
+                        <div className="mb-16">
+                            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4 text-primary italic border-l-8 border-primary pl-6">
+                                Geet Bazaar
+                            </h2>
+                            <p className="text-lg md:text-xl text-muted-foreground uppercase tracking-widest font-bold opacity-80 decoration-primary decoration-4 underline-offset-8 underline">
+                                Monthly Retro Classics & Stories
+                            </p>
+                        </div>
+
+                        <div className="space-y-16">
+                            {geetBazaarEpisodes.map((group, groupIdx) => (
+                                <div key={groupIdx} className="space-y-8">
+                                    <div className="flex items-center gap-4">
+                                        <h3 className="text-2xl font-black uppercase tracking-tighter text-muted-foreground italic">{group.month}</h3>
+                                        <div className="h-[2px] flex-grow bg-gradient-to-r from-muted-foreground/20 to-transparent" />
+                                    </div>
+                                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
+                                        {group.episodes.map((ep, epIdx) => (
+                                            <div key={epIdx} className="podcastdotco-wrapper group relative overflow-hidden bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-xl p-1">
+                                                <div className="absolute top-2 right-4 z-10">
+                                                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/40 group-hover:text-primary transition-colors">{ep.date}</span>
+                                                </div>
+                                                <iframe
+                                                    data-target={ep.target}
+                                                    src={ep.src}
+                                                    frameBorder="0"
+                                                    width="100%"
+                                                    style={{ overflow: 'hidden', height: '160px' }}
+                                                    className="podcastdotco-player podcastdotco-player--episode"
+                                                    scrolling="no"
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                <Script src="https://play.pod.co/embed/frame-v1.js" strategy="lazyOnload" />
 
                 {/* Episodes Section - MOVED TO BOTTOM */}
                 <section className="py-16 bg-background">

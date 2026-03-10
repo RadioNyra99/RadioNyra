@@ -8,105 +8,175 @@ import { Film, Calendar, Monitor, Ticket } from "lucide-react"
 
 export default function MoviesPage() {
     const movies = [
-        // UPCOMING (NEXT MONTHS 2026)
         {
-            title: "Dacoit",
+            title: "Dhurandhar: The Revenge",
             type: "Theatre",
             releaseDate: "19 March 2026",
             language: "Telugu",
-            genre: "Action Romance",
-            notes: "Coming Soon",
-            image: "/Upcoming movies/Upcoming movies/dacoit-a-love-story.webp"
+            genre: "Action",
+            notes: "In Theaters",
+            image: "/Upcoming movies/Upcoming movies/dhurandhar-the-revenge.webp",
+            bookingUrl: "https://in.bookmyshow.com/explore/movies-national-capital-region-ncr?search=Dhurandhar"
         },
         {
-            title: "Swayambhu",
+            title: "Toxic: A Fairy Tale for Grown-ups",
             type: "Theatre",
-            releaseDate: "April 2026",
-            language: "Telugu",
-            genre: "Action / Period",
-            notes: "Production Delay",
-            image: "/Upcoming movies/Upcoming movies/swayambhu.webp"
-        },
-        {
-            title: "Peddi (Ram Charan)",
-            type: "Theatre",
-            releaseDate: "August 14, 2026",
+            releaseDate: "19 March 2026",
             language: "Telugu",
             genre: "Action Drama",
-            notes: "Major Pan-India Release",
-            image: "/Upcoming movies/Upcoming movies/peddi.webp"
+            notes: "In Theaters",
+            image: "/Upcoming movies/Upcoming movies/toxic-a-fairy-tale-for-grown-ups.webp",
+            bookingUrl: "https://in.bookmyshow.com/movies/toxic-a-fairy-tale-for-grown-ups/ET00378822"
         },
         {
-            title: "Jai Hanuman",
+            title: "Ustaad Bhagat Singh",
             type: "Theatre",
-            releaseDate: "Diwali 2026",
-            language: "Telugu",
-            genre: "Mythological Superhero",
-            notes: "Pre-Production",
-            image: "/Upcoming movies/Upcoming movies/jai-hanuman.webp"
-        },
-        {
-            title: "The Paradise",
-            type: "Theatre",
-            releaseDate: "Late 2026",
-            language: "Telugu",
-            genre: "Mystery Drama",
-            notes: "Filming Stage",
-            image: "/Upcoming movies/Upcoming movies/theparadise.webp"
-        },
-        {
-            title: "Pushpa 3 – The Rampage",
-            type: "Theatre",
-            releaseDate: "December 2026",
+            releaseDate: "19 March 2026",
             language: "Telugu",
             genre: "Action",
-            notes: "Pre-Production",
-            image: "/Upcoming movies/Upcoming movies/pushpa-3.webp"
+            notes: "In Theaters",
+            image: "/Upcoming movies/Upcoming movies/ustaad-bhagat-singh.webp",
+            bookingUrl: "https://in.bookmyshow.com/movies/ustaad-bhagat-singh/ET00355448"
         },
         {
-            title: "SSMB29",
+            title: "Project Hail Mary",
             type: "Theatre",
-            releaseDate: "Summer 2027",
-            language: "Telugu",
-            genre: "Adventure Epic / Jungle Action",
-            notes: "Shooting Begins 2026",
-            image: "/Upcoming movies/Upcoming movies/ssmb29.webp"
+            releaseDate: "20 March 2026",
+            language: "English / Telugu",
+            genre: "Sci-Fi",
+            notes: "In Theaters",
+            image: "/Upcoming movies/Upcoming movies/project-hail-mary.webp",
+            bookingUrl: "https://in.bookmyshow.com/movies/project-hail-mary/ET00399123"
         },
         {
-            title: "Spirit",
+            title: "Rosie: The Saffron Chapter",
             type: "Theatre",
-            releaseDate: "Early 2027",
-            language: "Telugu",
-            genre: "Cop Action Thriller",
-            notes: "Script & Pre-Production",
-            image: "/Upcoming movies/Upcoming movies/spirit.webp"
+            releaseDate: "14 January 2022",
+            language: "Hindi / Telugu",
+            genre: "Horror Thriller",
+            notes: "Released",
+            image: "/Upcoming movies/Upcoming movies/rosie-the-saffron-chapter.webp",
+            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Rosie%20Saffron%20Chapter"
         },
         {
-            title: "Salaar Part 2 – Shouryanga Parvam",
+            title: "Band Melam",
             type: "Theatre",
-            releaseDate: "Mid / Late 2027",
+            releaseDate: "26 March 2026",
             language: "Telugu",
-            genre: "Mass Action",
-            notes: "Production Phase",
-            image: "/Upcoming movies/Upcoming movies/salaar-part-2.webp"
+            genre: "Comedy",
+            notes: "In Theaters",
+            image: "/Upcoming movies/Upcoming movies/band-melam.webp",
+            bookingUrl: "https://in.bookmyshow.com/movies/band-melam/ET00392817"
         },
         {
-            title: "Kalki 2898 AD – Part 2",
-            type: "Theatre",
-            releaseDate: "2027 (Expected)",
+            title: "Kenatha Kanom",
+            type: "OTT",
+            releaseDate: "13 March 2026",
             language: "Telugu",
-            genre: "Sci-Fi Mythological",
-            notes: "Writing & Planning",
-            image: "/Upcoming movies/Upcoming movies/kalki-2898-ad-part-2.webp"
+            genre: "Drama",
+            notes: "JioHotstar Release",
+            image: "/Upcoming movies/Upcoming movies/kenatha-kanom.webp",
+            bookingUrl: "https://www.hotstar.com/in/search?q=Kenatha%20Kanom"
         },
         {
-            title: "Devara Part 2",
+            title: "Theri Meri",
             type: "Theatre",
-            releaseDate: "Late 2027",
+            releaseDate: "28 July 2025",
             language: "Telugu",
-            genre: "Action Epic",
-            notes: "Not officially dated",
-            image: "/Upcoming movies/Upcoming movies/devara-part-2.webp"
+            genre: "Romance",
+            notes: "Released",
+            image: "/Upcoming movies/Upcoming movies/theri-meri.webp",
+            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Theri%20Meri"
+        },
+        {
+            title: "Premalu 2",
+            type: "Theatre",
+            releaseDate: "TBA 2025",
+            language: "Malayalam / Telugu",
+            genre: "Romance Comedy",
+            notes: "Coming Soon",
+            image: "/Upcoming movies/Upcoming movies/premalu-2.webp",
+            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Premalu%202"
+        },
+        {
+            title: "Aadu 3",
+            type: "Theatre",
+            releaseDate: "19 March 2026",
+            language: "Malayalam / Telugu",
+            genre: "Action Comedy",
+            notes: "In Theaters",
+            image: "/Upcoming movies/Upcoming movies/aadu-3.webp",
+            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Aadu%203"
+        },
+        {
+            title: "Bheeshmar",
+            type: "Theatre",
+            releaseDate: "20 March 2026",
+            language: "Telugu",
+            genre: "Action",
+            notes: "In Theaters",
+            image: "/Upcoming movies/Upcoming movies/bheeshmar.webp",
+            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Bheeshmar"
+        },
+        {
+            title: "Kissa Court Kachehari Ka",
+            type: "Theatre",
+            releaseDate: "13 March 2026",
+            language: "Hindi",
+            genre: "Drama",
+            notes: "In Theaters",
+            image: "/Upcoming movies/Upcoming movies/kissa-court-kachehari-ka.webp",
+            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Kissa%20Court%20Kachehari%20Ka"
+        },
+        {
+            title: "Chiranjeevi Hanuman",
+            type: "Theatre",
+            releaseDate: "TBA 2026",
+            language: "Telugu",
+            genre: "Mythological",
+            notes: "Coming Soon",
+            image: "/Upcoming movies/Upcoming movies/chiranjeevi-hanuman.webp",
+            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Chiranjeevi%20Hanuman"
+        },
+        {
+            title: "Awarapan 2",
+            type: "Theatre",
+            releaseDate: "3 April 2026",
+            language: "Hindi",
+            genre: "Action Drama",
+            notes: "In Theaters",
+            image: "/Upcoming movies/Upcoming movies/awarapan-2.webp",
+            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Awarapan%202"
+        },
+        {
+            title: "Bhooth Bangla",
+            type: "Theatre",
+            releaseDate: "15 May 2026",
+            language: "Hindi",
+            genre: "Horror Comedy",
+            notes: "In Theaters",
+            image: "/Upcoming movies/Upcoming movies/bhooth-bangla.webp",
+            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Bhooth%20Bangla"
+        },
+        {
+            title: "Alpha",
+            type: "Theatre",
+            releaseDate: "17 April 2026",
+            language: "Hindi / Telugu",
+            genre: "Action",
+            notes: "In Theaters",
+            image: "/Upcoming movies/Upcoming movies/alpha.webp",
+            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Alpha"
+        },
+        {
+            title: "Battle of Galwan",
+            type: "Theatre",
+            releaseDate: "14 August 2026",
+            language: "Hindi / Telugu",
+            genre: "War Drama",
+            notes: "Reported Date",
+            image: "/Upcoming movies/Upcoming movies/battle-of-galwan.webp",
+            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Battle%20of%20Galwan"
         }
     ];
 
@@ -175,9 +245,21 @@ export default function MoviesPage() {
                                     </div>
 
                                     <div className="mt-6">
-                                        <Button className="w-full rounded-none font-bold uppercase tracking-widest group-hover:bg-primary transition-all">
-                                            {movie.type === 'Theatre' ? 'Book Tickets' : 'Watch Now'}
-                                        </Button>
+                                        <a href={movie.bookingUrl} target="_blank" rel="noopener noreferrer" className="block w-full">
+                                            <Button className="w-full rounded-none font-bold uppercase tracking-widest bg-primary hover:bg-white hover:text-primary border-2 border-primary transition-all duration-300 group/btn flex items-center justify-center gap-2">
+                                                {movie.type === 'Theatre' ? (
+                                                    <>
+                                                        <Ticket size={18} className="group-hover/btn:rotate-12 transition-transform" />
+                                                        Book Tickets
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <Monitor size={18} className="group-hover/btn:scale-110 transition-transform" />
+                                                        Watch Now
+                                                    </>
+                                                )}
+                                            </Button>
+                                        </a>
                                     </div>
                                 </div>
                             </motion.div>

@@ -16,6 +16,41 @@ import Script from "next/script"
 export default function PodcastsPage() {
     const podcasts = [
         {
+            title: "IGF 2026 Finalist Interview | Titanium Court (AP Thomson)",
+            host: "Radio Nyra",
+            show: "The Games Insider",
+            url: "https://youtu.be/5RDaEEQudKA",
+            thumbnail: "https://img.youtube.com/vi/5RDaEEQudKA/maxresdefault.jpg"
+        },
+        {
+            title: "IGF 2026 Excellence in Narrative Nominee | Promise Mascot Agency (Oli Smith)",
+            host: "Radio Nyra",
+            show: "The Games Insider",
+            url: "https://youtu.be/i-vy2MDta1Q",
+            thumbnail: "https://img.youtube.com/vi/i-vy2MDta1Q/maxresdefault.jpg"
+        },
+        {
+            title: "IGF 2026 Nominee Interview | Wednesdays (Pierre Corbinais)",
+            host: "Radio Nyra",
+            show: "The Games Insider",
+            url: "https://youtu.be/2qTyliDT3Mg",
+            thumbnail: "https://img.youtube.com/vi/2qTyliDT3Mg/maxresdefault.jpg"
+        },
+        {
+            title: "IGF 2026 Finalist Interview | Z13: The Zodiac Trials (Edi Torres, Chalit)",
+            host: "Radio Nyra",
+            show: "The Games Insider",
+            url: "https://youtu.be/jgbYHOurgQ0",
+            thumbnail: "https://img.youtube.com/vi/jgbYHOurgQ0/maxresdefault.jpg"
+        },
+        {
+            title: "IGF 2026 Nuovo Award Finalist Interview | Plum Road Tea Dream (Samuel Baidoo)",
+            host: "Radio Nyra",
+            show: "The Games Insider",
+            url: "https://youtu.be/Ar3CeZTMrYk",
+            thumbnail: "https://img.youtube.com/vi/Ar3CeZTMrYk/maxresdefault.jpg"
+        },
+        {
             title: "College Admissions Strategy by Empowerly | Episode 3",
             host: "Raj Persaud",
             show: "Radio Nyra Podcast",

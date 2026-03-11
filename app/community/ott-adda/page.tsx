@@ -9,41 +9,41 @@ import { Badge } from "@/components/ui/badge"
 
 export default function OTTAddaPage() {
     const nowStreaming = [
-        { title: "Subedaar", language: "Hindi", platform: "Prime Video", type: "Action Drama", tags: ["Streaming March 5"], image: "/OTT ADDA/OTT ADDA/subedaar.webp", link: "https://www.primevideo.com/search/ref=atv_nb_sr?phrase=Subedaar" },
-        { title: "Gandhi Talks", language: "Multi", platform: "ZEE5", type: "Silent Film", tags: ["Streaming March 6"], image: "/OTT ADDA/OTT ADDA/gandhi-talks.webp", link: "https://www.zee5.com/movies/details/gandhi-talks/0-0-1z5639145" },
-        { title: "Jab Khuli Kitaab", language: "Hindi", platform: "ZEE5", type: "Romance Drama", tags: ["Streaming March 6"], image: "/OTT ADDA/OTT ADDA/jab-khuli-kitaab.webp", link: "https://www.zee5.com/movies/details/jab-khuli-kitaab/0-0-1z5638123" },
-        { title: "Hello Bachhon", language: "Hindi", platform: "Netflix", type: "Drama", tags: ["Streaming March 6"], image: "/OTT ADDA/OTT ADDA/hello-bachhon.webp", link: "https://www.netflix.com/title/81691123" },
-        { title: "With Love", language: "English", platform: "Netflix", type: "Romance", tags: ["Streaming March 6"], image: "/OTT ADDA/OTT ADDA/with-love.webp", link: "https://www.netflix.com/search?q=With%20Love" },
-        { title: "Bhartha Mahasayulaku Wignyapthi", language: "Telugu", platform: "ZEE5", type: "Drama", tags: ["Streaming March 13"], image: "/OTT ADDA/OTT ADDA/bhartha-mahasayulaku-wignyapthi.webp", link: "https://www.zee5.com/search?q=Bhartha%20Mahasayulaku%20Wignyapthi" },
-        { title: "Nawab Cafe", language: "Telugu", platform: "ETV Win", type: "Drama", tags: ["Streaming March 12"], image: "/OTT ADDA/OTT ADDA/nawab-cafe.webp", link: "https://www.etvwin.com/search?q=Nawab%20Cafe" },
-        { title: "Funky", language: "Telugu", platform: "Netflix", type: "Comedy", tags: ["Streaming March 13"], image: "/OTT ADDA/OTT ADDA/funky.webp", link: "https://www.netflix.com/search?q=Funky" },
-        { title: "Zootopia 2", language: "English", platform: "Disney+", type: "Animation", tags: ["Streaming March 11"], image: "/OTT ADDA/OTT ADDA/zootopia-2.webp", link: "https://www.hotstar.com/in/search?q=Zootopia%202" },
-        { title: "Sankalp", language: "Telugu", platform: "MX Player", type: "Drama", tags: ["Streaming March 11"], image: "/OTT ADDA/OTT ADDA/sankalp.webp", link: "https://www.mxplayer.in/search?q=Sankalp" },
-        { title: "Sitaare Zameen Par", language: "Hindi", platform: "Sony LIV", type: "Drama", tags: ["Coming Soon 2026"], image: "/OTT ADDA/OTT ADDA/sitaare-zameen-par.webp", link: "https://www.sonyliv.com/search?q=Sitaare%20Zameen%20Par" },
-        { title: "Dheeram", language: "Telugu", platform: "Sun NXT", type: "Action", tags: ["TBA"], image: "/OTT ADDA/OTT ADDA/dheeram.webp", link: "https://www.sunnxt.com/search?q=Dheeram" },
-        { title: "One Piece Season 2", language: "Japanese/English", platform: "Netflix", type: "Adventure", tags: ["TBA"], image: "/OTT ADDA/OTT ADDA/one-piece-season-2.webp", link: "https://www.netflix.com/search?q=One%20Piece" },
-        { title: "Jazz City", language: "English", platform: "SonyLIV", type: "Drama", tags: ["Streaming March 19"], image: "/OTT ADDA/OTT ADDA/jazz-city.webp", link: "https://www.sonyliv.com/search?q=Jazz%20City" },
-        { title: "Daredevil: Born Again", language: "English", platform: "JioHotstar", type: "Action", tags: ["Streaming March 24"], image: "/OTT ADDA/OTT ADDA/daredevil-born-again.webp", link: "https://www.hotstar.com/in/search?q=Daredevil%20Born%20Again" },
-        { title: "Sky Force", language: "Hindi", platform: "JioHotstar", type: "Action", tags: ["TBA"], image: "/OTT ADDA/OTT ADDA/sky-force.webp", link: "https://www.hotstar.com/in/search?q=Sky%20Force" },
+        { title: "Subedaar", language: "Hindi", platform: "Prime Video US", type: "Action Drama", tags: ["Available on Prime US"], image: "/OTT ADDA/OTT ADDA/subedaar.webp", link: "https://www.amazon.com/dp/B0D1W5NB7L" },
+        { title: "Gandhi Talks", language: "Multi", platform: "ZEE5 Global", type: "Silent Film", tags: ["Available on ZEE5 Global"], image: "/OTT ADDA/OTT ADDA/gandhi-talks.webp", link: "https://www.zee5.com/global/movies/details/gandhi-talks/0-0-1z5639145" },
+        { title: "Jab Khuli Kitaab", language: "Hindi", platform: "ZEE5 Global", type: "Romance Drama", tags: ["Available on ZEE5 Global"], image: "/OTT ADDA/OTT ADDA/jab-khuli-kitaab.webp", link: "https://www.zee5.com/global/movies/details/jab-khuli-kitaab/0-0-1z5638123" },
+        { title: "Hello Bachhon", language: "Hindi", platform: "Netflix US", type: "Drama", tags: ["Available on Netflix US"], image: "/OTT ADDA/OTT ADDA/hello-bachhon.webp", link: "https://www.netflix.com/title/81691123" },
+        { title: "With Love", language: "English", platform: "Netflix US", type: "Romance", tags: ["Available on Netflix US"], image: "/OTT ADDA/OTT ADDA/with-love.webp", link: "https://www.netflix.com/search?q=With%20Love" },
+        { title: "Bhartha Mahasayulaku Wignyapthi", language: "Telugu", platform: "ZEE5 Global", type: "Drama", tags: ["Available on ZEE5 Global"], image: "/OTT ADDA/OTT ADDA/bhartha-mahasayulaku-wignyapthi.webp", link: "https://www.zee5.com/global/" },
+        { title: "Nawab Cafe", language: "Telugu", platform: "ETV Win", type: "Drama", tags: ["Global Release March 12"], image: "/OTT ADDA/OTT ADDA/nawab-cafe.webp", link: "https://www.etvwin.com/search?q=Nawab%20Cafe" },
+        { title: "Funky", language: "Telugu", platform: "Netflix US", type: "Comedy", tags: ["Available on Netflix US"], image: "/OTT ADDA/OTT ADDA/funky.webp", link: "https://www.netflix.com/search?q=Funky" },
+        { title: "Zootopia 2", language: "English", platform: "Disney+ US", type: "Animation", tags: ["March 11 Global"], image: "/OTT ADDA/OTT ADDA/zootopia-2.webp", link: "https://www.disneyplus.com/search?q=Zootopia%202" },
+        { title: "Sankalp", language: "Telugu", platform: "Amazon MX Player", type: "Drama", tags: ["Global March 11"], image: "/OTT ADDA/OTT ADDA/sankalp.webp", link: "https://www.amazon.com/v/mxplayer" },
+        { title: "Sitaare Zameen Par", language: "Hindi", platform: "Sony LIV US", type: "Drama", tags: ["Coming Soon 2026"], image: "/OTT ADDA/OTT ADDA/sitaare-zameen-par.webp", link: null },
+        { title: "Dheeram", language: "Telugu", platform: "Sun NXT", type: "Action", tags: ["Global TBA"], image: "/OTT ADDA/OTT ADDA/dheeram.webp", link: "https://www.sunnxt.com/search?q=Dheeram" },
+        { title: "One Piece Season 2", language: "Japanese/English", platform: "Netflix US", type: "Adventure", tags: ["TBA US Release"], image: "/OTT ADDA/OTT ADDA/one-piece-season-2.webp", link: "https://www.netflix.com/search?q=One%20Piece" },
+        { title: "Jazz City", language: "English", platform: "SonyLIV US", type: "Drama", tags: ["March 19 US Release"], image: "/OTT ADDA/OTT ADDA/jazz-city.webp", link: "https://www.sonyliv.com/" },
+        { title: "Daredevil: Born Again", language: "English", platform: "Disney+ US", type: "Action", tags: ["March 24 US Release"], image: "/OTT ADDA/OTT ADDA/daredevil-born-again.webp", link: "https://www.disneyplus.com/series/daredevil-born-again/7e1f2031" },
+        { title: "Sky Force", language: "Hindi", platform: "Prime Video US", type: "Action", tags: ["Available on Prime US"], image: "/OTT ADDA/OTT ADDA/sky-force.webp", link: "https://www.amazon.com/dp/B0D7S1T8D7" },
     ];
 
     const upcoming = [
-        { title: "Dhurandhar: The Revenge", language: "Telugu", platform: "Theaters", date: "March 19", type: "Movie", link: "https://in.bookmyshow.com/explore/movies-national-capital-region-ncr?search=Dhurandhar", image: "/Upcoming movies/Upcoming movies/dhurandhar-the-revenge.webp" },
-        { title: "Toxic", language: "Telugu", platform: "Theaters", date: "March 19", type: "Movie", link: "https://in.bookmyshow.com/movies/toxic-a-fairy-tale-for-grown-ups/ET00378822", image: "/Upcoming movies/Upcoming movies/toxic-a-fairy-tale-for-grown-ups.webp" },
-        { title: "Ustaad Bhagat Singh", language: "Telugu", platform: "Theaters", date: "March 19", type: "Movie", link: "https://in.bookmyshow.com/movies/ustaad-bhagat-singh/ET00355448", image: "/Upcoming movies/Upcoming movies/ustaad-bhagat-singh.webp" },
-        { title: "Project Hail Mary", language: "English", platform: "Theaters", date: "March 20", type: "Movie", link: "https://in.bookmyshow.com/movies/project-hail-mary/ET00399123", image: "/Upcoming movies/Upcoming movies/project-hail-mary.webp" },
+        { title: "Dhurandhar: The Revenge", language: "Telugu", platform: "Fandango", date: "March 19", type: "Movie", link: "https://www.fandango.com/search?q=Dhurandhar", image: "/Upcoming movies/Upcoming movies/dhurandhar-the-revenge.webp" },
+        { title: "Toxic", language: "Telugu", platform: "Fandango", date: "March 19", type: "Movie", link: "https://www.fandango.com/toxic-2026-238456/movie-overview", image: "/Upcoming movies/Upcoming movies/toxic-a-fairy-tale-for-grown-ups.webp" },
+        { title: "Ustaad Bhagat Singh", language: "Telugu", platform: "AMC Theatres", date: "March 19", type: "Movie", link: "https://www.amctheatres.com/search?q=Ustaad%20Bhagat%20Singh", image: "/Upcoming movies/Upcoming movies/ustaad-bhagat-singh.webp" },
+        { title: "Project Hail Mary", language: "English", platform: "Fandango", date: "March 20", type: "Movie", link: "https://www.fandango.com/project-hail-mary-2026-235889/movie-overview", image: "/Upcoming movies/Upcoming movies/project-hail-mary.webp" },
     ];
 
     const theatricalReleases = [
-        { title: "Dhurandhar: The Revenge", language: "Telugu", date: "March 19", type: "In Theaters", link: "https://in.bookmyshow.com/explore/movies-national-capital-region-ncr?search=Dhurandhar" },
-        { title: "Toxic", language: "Telugu", date: "March 19", type: "In Theaters", link: "https://in.bookmyshow.com/movies/toxic-a-fairy-tale-for-grown-ups/ET00378822" },
-        { title: "Ustaad Bhagat Singh", language: "Telugu", date: "March 19", type: "In Theaters", link: "https://in.bookmyshow.com/movies/ustaad-bhagat-singh/ET00355448" },
+        { title: "Dhurandhar: The Revenge", language: "Telugu", date: "March 19", type: "In Theaters", link: "https://www.fandango.com/search?q=Dhurandhar" },
+        { title: "Toxic", language: "Telugu", date: "March 19", type: "In Theaters", link: "https://www.fandango.com/toxic-2026-238456/movie-overview" },
+        { title: "Ustaad Bhagat Singh", language: "Telugu", date: "March 19", type: "In Theaters", link: "https://www.amctheatres.com/search?q=Ustaad%20Bhagat%20Singh" },
     ];
 
     const trendingBuzz = [
-        { title: "Subedaar", industry: "Bollywood", date: "March 5", type: "OTT Hit", image: "/OTT ADDA/OTT ADDA/subedaar.webp", link: "https://www.primevideo.com/search/ref=atv_nb_sr?phrase=Subedaar" },
-        { title: "Dhurandhar", industry: "Tollywood", date: "March 19", type: "Highly Anticipated", image: "/Upcoming movies/Upcoming movies/dhurandhar-the-revenge.webp", link: "https://in.bookmyshow.com/explore/movies-national-capital-region-ncr?search=Dhurandhar" },
-        { title: "Daredevil: Born Again", industry: "Hollywood", date: "March 24", type: "Action", image: "/OTT ADDA/OTT ADDA/daredevil-born-again.webp", link: "https://www.hotstar.com/in/search?q=Daredevil%20Born%20Again" },
+        { title: "Subedaar", industry: "Bollywood", date: "Now Streaming", type: "OTT Hit", image: "/OTT ADDA/OTT ADDA/subedaar.webp", link: "https://www.amazon.com/dp/B0D1W5NB7L" },
+        { title: "Dhurandhar", industry: "Tollywood", date: "March 19", type: "Highly Anticipated", image: "/Upcoming movies/Upcoming movies/dhurandhar-the-revenge.webp", link: "https://www.fandango.com/search?q=Dhurandhar" },
+        { title: "Daredevil: Born Again", industry: "Hollywood", date: "March 24", type: "Action", image: "/OTT ADDA/OTT ADDA/daredevil-born-again.webp", link: "https://www.disneyplus.com/series/daredevil-born-again/7e1f2031" },
     ];
 
     return (
@@ -108,12 +108,19 @@ export default function OTTAddaPage() {
                                             ))}
                                         </div>
 
-                                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="block w-full">
-                                            <Button className="w-full rounded-none font-black uppercase tracking-widest bg-primary hover:bg-white hover:text-primary border-2 border-primary transition-all duration-300 group/btn flex items-center justify-center gap-2 text-[10px] py-1 h-auto">
-                                                <Play size={14} className="group-hover/btn:scale-110 transition-transform fill-current" />
-                                                Watch Now
+                                        {item.link ? (
+                                            <a href={item.link} target="_blank" rel="noopener noreferrer" className="block w-full">
+                                                <Button className="w-full rounded-none font-black uppercase tracking-widest bg-primary hover:bg-white hover:text-primary border-2 border-primary transition-all duration-300 group/btn flex items-center justify-center gap-2 text-[10px] py-1 h-auto">
+                                                    <Play size={14} className="group-hover/btn:scale-110 transition-transform fill-current" />
+                                                    Watch Now
+                                                </Button>
+                                            </a>
+                                        ) : (
+                                            <Button disabled className="w-full rounded-none font-black uppercase tracking-widest bg-muted text-muted-foreground border-2 border-muted flex items-center justify-center gap-2 text-[10px] py-1 h-auto cursor-not-allowed">
+                                                <Play size={14} />
+                                                Watch Now (N/A)
                                             </Button>
-                                        </a>
+                                        )}
                                     </div>
                                 </motion.div>
                             ))}
@@ -163,17 +170,24 @@ export default function OTTAddaPage() {
                                                     </div>
                                                 </td>
                                                 <td className="p-4 text-xs font-bold">
-                                                    <a
-                                                        href={item.link || "#"}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="inline-block"
-                                                    >
-                                                        <Button variant="outline" size="sm" className="h-7 text-[9px] uppercase font-black border-primary text-primary hover:bg-primary hover:text-white rounded-none flex items-center gap-1 px-2">
+                                                    {item.link ? (
+                                                        <a
+                                                            href={item.link}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="inline-block"
+                                                        >
+                                                            <Button variant="outline" size="sm" className="h-7 text-[9px] uppercase font-black border-primary text-primary hover:bg-primary hover:text-white rounded-none flex items-center gap-1 px-2">
+                                                                <Monitor size={10} />
+                                                                {item.platform}
+                                                            </Button>
+                                                        </a>
+                                                    ) : (
+                                                        <Button disabled variant="outline" size="sm" className="h-7 text-[9px] uppercase font-black border-muted text-muted-foreground rounded-none flex items-center gap-1 px-2 cursor-not-allowed">
                                                             <Monitor size={10} />
-                                                            {item.platform}
+                                                            {item.platform} (N/A)
                                                         </Button>
-                                                    </a>
+                                                    )}
                                                 </td>
                                                 <td className="p-4 text-xs font-bold">{item.date}</td>
                                             </tr>
@@ -200,10 +214,10 @@ export default function OTTAddaPage() {
                                                 {item.language} | {item.date}
                                             </p>
                                         </div>
-                                        <a href={item.link} target="_blank" rel="noopener noreferrer">
-                                            <Button variant="ghost" size="sm" className="h-8 text-[10px] uppercase font-black hover:bg-primary hover:text-white rounded-none flex items-center gap-1 border border-transparent hover:border-primary transition-all">
+                                        <a href={item.link || "#"} target="_blank" rel="noopener noreferrer">
+                                            <Button variant="ghost" size="sm" className={`h-8 text-[10px] uppercase font-black rounded-none flex items-center gap-1 border border-transparent transition-all ${item.link ? 'hover:bg-primary hover:text-white hover:border-primary' : 'opacity-50 cursor-not-allowed'}`}>
                                                 <Ticket size={12} />
-                                                Book
+                                                {item.link ? 'Book' : 'N/A'}
                                             </Button>
                                         </a>
                                     </div>
@@ -248,12 +262,19 @@ export default function OTTAddaPage() {
                                                     <span className="text-sm font-bold uppercase block">{movie.type}</span>
                                                     <span className="text-xs opacity-60 uppercase tracking-widest">{movie.date}</span>
                                                 </div>
-                                                <a href={movie.link} target="_blank" rel="noopener noreferrer">
-                                                    <Button size="sm" className="h-8 text-[10px] uppercase font-black rounded-none flex items-center gap-2 hover:bg-white hover:text-primary border-2 border-primary transition-all">
+                                                {movie.link ? (
+                                                    <a href={movie.link} target="_blank" rel="noopener noreferrer">
+                                                        <Button size="sm" className="h-8 text-[10px] uppercase font-black rounded-none flex items-center gap-2 hover:bg-white hover:text-primary border-2 border-primary transition-all">
+                                                            <TrendingUp size={12} />
+                                                            Details
+                                                        </Button>
+                                                    </a>
+                                                ) : (
+                                                    <Button disabled size="sm" className="h-8 text-[10px] uppercase font-black rounded-none flex items-center gap-2 bg-muted text-muted-foreground border-2 border-muted cursor-not-allowed">
                                                         <TrendingUp size={12} />
-                                                        Details
+                                                        Details (N/A)
                                                     </Button>
-                                                </a>
+                                                )}
                                             </div>
                                         </div>
                                     </div>

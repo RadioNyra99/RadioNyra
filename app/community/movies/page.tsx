@@ -10,173 +10,158 @@ export default function MoviesPage() {
     const movies = [
         {
             title: "Dhurandhar: The Revenge",
-            type: "Theatre",
-            releaseDate: "19 March 2026",
-            language: "Telugu",
-            genre: "Action",
-            notes: "In Theaters",
             image: "/Upcoming movies/Upcoming movies/dhurandhar-the-revenge.webp",
-            bookingUrl: "https://in.bookmyshow.com/explore/movies-national-capital-region-ncr?search=Dhurandhar"
+            language: "Telugu",
+            releaseDate: "March 19, 2026",
+            description: "High-octane action drama featuring a calculated protagonist in a high-stakes revenge mission.",
+            type: "Theatre",
+            bookingUrl: "https://www.fandango.com/search?q=Dhurandhar"
         },
         {
             title: "Toxic: A Fairy Tale for Grown-ups",
-            type: "Theatre",
-            releaseDate: "19 March 2026",
-            language: "Telugu",
-            genre: "Action Drama",
-            notes: "In Theaters",
             image: "/Upcoming movies/Upcoming movies/toxic-a-fairy-tale-for-grown-ups.webp",
-            bookingUrl: "https://in.bookmyshow.com/movies/toxic-a-fairy-tale-for-grown-ups/ET00378822"
+            language: "Kannada/Multi",
+            releaseDate: "March 19, 2026",
+            description: "A dark action thriller exploring the gritty underworld of illegal mining and complex characters.",
+            type: "Theatre",
+            bookingUrl: "https://www.fandango.com/toxic-2026-238456/movie-overview"
         },
         {
             title: "Ustaad Bhagat Singh",
-            type: "Theatre",
-            releaseDate: "19 March 2026",
-            language: "Telugu",
-            genre: "Action",
-            notes: "In Theaters",
             image: "/Upcoming movies/Upcoming movies/ustaad-bhagat-singh.webp",
-            bookingUrl: "https://in.bookmyshow.com/movies/ustaad-bhagat-singh/ET00355448"
+            language: "Telugu",
+            releaseDate: "March 19, 2026",
+            description: "A powerful action drama starring Pawan Kalyan as a charismatic cop fighting corruption.",
+            type: "Theatre",
+            bookingUrl: "https://www.amctheatres.com/search?q=Ustaad%20Bhagat%20Singh"
         },
         {
             title: "Project Hail Mary",
-            type: "Theatre",
-            releaseDate: "20 March 2026",
-            language: "English / Telugu",
-            genre: "Sci-Fi",
-            notes: "In Theaters",
             image: "/Upcoming movies/Upcoming movies/project-hail-mary.webp",
-            bookingUrl: "https://in.bookmyshow.com/movies/project-hail-mary/ET00399123"
+            language: "English",
+            releaseDate: "March 20, 2026",
+            description: "Science fiction epic starring Ryan Gosling as a scientist on a mission to save the sun.",
+            type: "Theatre",
+            bookingUrl: "https://www.fandango.com/project-hail-mary-2026-235889/movie-overview"
         },
         {
             title: "Rosie: The Saffron Chapter",
-            type: "Theatre",
-            releaseDate: "14 January 2022",
-            language: "Hindi / Telugu",
-            genre: "Horror Thriller",
-            notes: "Released",
             image: "/Upcoming movies/Upcoming movies/rosie-the-saffron-chapter.webp",
-            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Rosie%20Saffron%20Chapter"
+            language: "Hindi",
+            releaseDate: "Released",
+            description: "Horror thriller based on real-life events in Gurugram, exploring supernatural occurrences.",
+            type: "Theatre",
+            bookingUrl: null,
+            notes: "Previously Released"
         },
         {
             title: "Band Melam",
-            type: "Theatre",
-            releaseDate: "26 March 2026",
-            language: "Telugu",
-            genre: "Comedy",
-            notes: "In Theaters",
             image: "/Upcoming movies/Upcoming movies/band-melam.webp",
-            bookingUrl: "https://in.bookmyshow.com/movies/band-melam/ET00392817"
+            language: "Telugu",
+            releaseDate: "March 26, 2026",
+            description: "A fun family entertainer exploring rural traditions and comedic situations.",
+            type: "Theatre",
+            bookingUrl: "https://www.fandango.com/search?q=Band+Melam"
         },
         {
             title: "Kenatha Kanom",
-            type: "OTT",
-            releaseDate: "13 March 2026",
-            language: "Telugu",
-            genre: "Drama",
-            notes: "JioHotstar Release",
             image: "/Upcoming movies/Upcoming movies/kenatha-kanom.webp",
-            bookingUrl: "https://www.hotstar.com/in/search?q=Kenatha%20Kanom"
+            language: "Tamil",
+            releaseDate: "March 13, 2026",
+            description: "A unique social drama addressing village life and traditional folklore.",
+            type: "OTT",
+            bookingUrl: "https://www.hotstar.com/us/search?q=Kenatha%20Kanom"
         },
         {
             title: "Theri Meri",
-            type: "Theatre",
-            releaseDate: "28 July 2025",
-            language: "Telugu",
-            genre: "Romance",
-            notes: "Released",
             image: "/Upcoming movies/Upcoming movies/theri-meri.webp",
-            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Theri%20Meri"
+            language: "Multi",
+            releaseDate: "July 28, 2025",
+            description: "A vibrant romantic comedy set in the picturesque locales of Malaysia.",
+            type: "Theatre",
+            bookingUrl: null,
+            notes: "International Release Only"
         },
         {
             title: "Premalu 2",
-            type: "Theatre",
-            releaseDate: "TBA 2025",
-            language: "Malayalam / Telugu",
-            genre: "Romance Comedy",
-            notes: "Coming Soon",
             image: "/Upcoming movies/Upcoming movies/premalu-2.webp",
-            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Premalu%202"
+            language: "Malayalam",
+            releaseDate: "TBA 2025",
+            description: "The sequel to the massive rom-com hit, following the next chapter of Sachin and Reenu.",
+            type: "Theatre",
+            bookingUrl: null
         },
         {
             title: "Aadu 3",
-            type: "Theatre",
-            releaseDate: "19 March 2026",
-            language: "Malayalam / Telugu",
-            genre: "Action Comedy",
-            notes: "In Theaters",
             image: "/Upcoming movies/Upcoming movies/aadu-3.webp",
-            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Aadu%203"
+            language: "Malayalam",
+            releaseDate: "March 19, 2026",
+            description: "The return of Shaji Pappan in this hilarious third installment of the cult comedy series.",
+            type: "Theatre",
+            bookingUrl: "https://www.fandango.com/search?q=Aadu+3"
         },
         {
             title: "Bheeshmar",
-            type: "Theatre",
-            releaseDate: "20 March 2026",
-            language: "Telugu",
-            genre: "Action",
-            notes: "In Theaters",
             image: "/Upcoming movies/Upcoming movies/bheeshmar.webp",
-            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Bheeshmar"
+            language: "Telugu",
+            releaseDate: "March 20, 2026",
+            description: "A gripping action thriller featuring a high-stakes investigation and intense drama.",
+            type: "Theatre",
+            bookingUrl: "https://www.fandango.com/search?q=Bheeshmar"
         },
         {
             title: "Kissa Court Kachehari Ka",
-            type: "Theatre",
-            releaseDate: "13 March 2026",
-            language: "Hindi",
-            genre: "Drama",
-            notes: "In Theaters",
             image: "/Upcoming movies/Upcoming movies/kissa-court-kachehari-ka.webp",
-            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Kissa%20Court%20Kachehari%20Ka"
+            language: "Hindi",
+            releaseDate: "March 13, 2026",
+            description: "A socially relevant legal drama highlighting the flaws in the judicial system.",
+            type: "Theatre",
+            bookingUrl: "https://www.fandango.com/search?q=Kissa+Court+Kachehari+Ka"
         },
         {
             title: "Chiranjeevi Hanuman",
-            type: "Theatre",
-            releaseDate: "TBA 2026",
-            language: "Telugu",
-            genre: "Mythological",
-            notes: "Coming Soon",
             image: "/Upcoming movies/Upcoming movies/chiranjeevi-hanuman.webp",
-            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Chiranjeevi%20Hanuman"
+            language: "Telugu",
+            releaseDate: "TBA 2026",
+            description: "A mythological action epic exploring the legend of Hanuman in a modern context.",
+            type: "Theatre",
+            bookingUrl: null
         },
         {
             title: "Awarapan 2",
-            type: "Theatre",
-            releaseDate: "3 April 2026",
-            language: "Hindi",
-            genre: "Action Drama",
-            notes: "In Theaters",
             image: "/Upcoming movies/Upcoming movies/awarapan-2.webp",
-            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Awarapan%202"
+            language: "Hindi",
+            releaseDate: "April 3, 2026",
+            description: "The sequel to the intense romantic thriller, continuing the saga of love and redemption.",
+            type: "Theatre",
+            bookingUrl: "https://www.fandango.com/search?q=Awarapan+2"
         },
         {
             title: "Bhooth Bangla",
-            type: "Theatre",
-            releaseDate: "15 May 2026",
-            language: "Hindi",
-            genre: "Horror Comedy",
-            notes: "In Theaters",
             image: "/Upcoming movies/Upcoming movies/bhooth-bangla.webp",
-            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Bhooth%20Bangla"
+            language: "Hindi",
+            releaseDate: "May 15, 2026",
+            description: "Akshay Kumar returns to the horror-comedy genre with this spooky entertainer.",
+            type: "Theatre",
+            bookingUrl: "https://www.fandango.com/search?q=Bhooth+Bangla"
         },
         {
             title: "Alpha",
-            type: "Theatre",
-            releaseDate: "17 April 2026",
-            language: "Hindi / Telugu",
-            genre: "Action",
-            notes: "In Theaters",
             image: "/Upcoming movies/Upcoming movies/alpha.webp",
-            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Alpha"
+            language: "Hindi",
+            releaseDate: "April 17, 2026",
+            description: "The first female-led film in the YRF Spy Universe starring Alia Bhatt and Sharvari.",
+            type: "Theatre",
+            bookingUrl: "https://www.fandango.com/alpha-2026-235887/movie-overview"
         },
         {
             title: "Battle of Galwan",
-            type: "Theatre",
-            releaseDate: "14 August 2026",
-            language: "Hindi / Telugu",
-            genre: "War Drama",
-            notes: "Reported Date",
             image: "/Upcoming movies/Upcoming movies/battle-of-galwan.webp",
-            bookingUrl: "https://in.bookmyshow.com/explore/movies?search=Battle%20of%20Galwan"
+            language: "Hindi",
+            releaseDate: "August 14, 2026",
+            description: "A patriotic war epic depicting the bravery of Indian soldiers in the Galwan Valley.",
+            type: "Theatre",
+            bookingUrl: "https://www.fandango.com/search?q=Battle+of+Galwan"
         }
     ];
 
@@ -245,21 +230,37 @@ export default function MoviesPage() {
                                     </div>
 
                                     <div className="mt-6">
-                                        <a href={movie.bookingUrl} target="_blank" rel="noopener noreferrer" className="block w-full">
-                                            <Button className="w-full rounded-none font-bold uppercase tracking-widest bg-primary hover:bg-white hover:text-primary border-2 border-primary transition-all duration-300 group/btn flex items-center justify-center gap-2">
+                                        {movie.bookingUrl ? (
+                                            <a href={movie.bookingUrl} target="_blank" rel="noopener noreferrer" className="block w-full">
+                                                <Button className="w-full rounded-none font-bold uppercase tracking-widest bg-primary hover:bg-white hover:text-primary border-2 border-primary transition-all duration-300 group/btn flex items-center justify-center gap-2">
+                                                    {movie.type === 'Theatre' ? (
+                                                        <>
+                                                            <Ticket size={18} className="group-hover/btn:rotate-12 transition-transform" />
+                                                            Book Tickets
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <Monitor size={18} className="group-hover/btn:scale-110 transition-transform" />
+                                                            Watch Now
+                                                        </>
+                                                    )}
+                                                </Button>
+                                            </a>
+                                        ) : (
+                                            <Button disabled className="w-full rounded-none font-bold uppercase tracking-widest bg-muted text-muted-foreground border-2 border-muted flex items-center justify-center gap-2 cursor-not-allowed">
                                                 {movie.type === 'Theatre' ? (
                                                     <>
-                                                        <Ticket size={18} className="group-hover/btn:rotate-12 transition-transform" />
-                                                        Book Tickets
+                                                        <Ticket size={18} />
+                                                        Book Tickets (N/A)
                                                     </>
                                                 ) : (
                                                     <>
-                                                        <Monitor size={18} className="group-hover/btn:scale-110 transition-transform" />
-                                                        Watch Now
+                                                        <Monitor size={18} />
+                                                        Watch Now (N/A)
                                                     </>
                                                 )}
                                             </Button>
-                                        </a>
+                                        )}
                                     </div>
                                 </div>
                             </motion.div>

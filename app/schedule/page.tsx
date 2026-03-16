@@ -34,35 +34,35 @@ const SCHEDULE_DATA: ScheduleEntry[] = [
     },
     {
         time: "7 AM - 9 AM", hour: 7,
-        shows: { all: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.webp", color: "bg-orange-100 text-orange-700" } }
+        shows: { all: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpeg", color: "bg-orange-100 text-orange-700" } }
     },
     {
         time: "9 AM - 10 AM", hour: 9,
         shows: {
             weekdays: { name: "Back to Back", image: "/back-to-back.webp", color: "bg-muted/30 text-muted-foreground" },
-            Saturday: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.webp", color: "bg-orange-100 text-orange-700" },
-            Sunday: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.webp", color: "bg-orange-100 text-orange-700" }
+            Saturday: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpeg", color: "bg-orange-100 text-orange-700" },
+            Sunday: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpeg", color: "bg-orange-100 text-orange-700" }
         }
     },
     {
         time: "10 AM - 12 PM", hour: 10,
         shows: {
-            weekdays: { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.webp", color: "bg-blue-200 text-blue-800" },
-            Saturday: { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.webp", color: "bg-blue-200 text-blue-800" },
+            weekdays: { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpeg", color: "bg-blue-200 text-blue-800" },
+            Saturday: { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpeg", color: "bg-blue-200 text-blue-800" },
             Sunday: { name: "Geet Bazaar (Live)", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.webp", color: "bg-purple-100 text-purple-700" }
         }
     },
     {
         time: "12 PM - 1 PM", hour: 12,
         shows: {
-            weekdays: { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.webp", color: "bg-blue-200 text-blue-800" },
+            weekdays: { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpeg", color: "bg-blue-200 text-blue-800" },
             Saturday: { name: "Two Brothers and Their Sports", color: "bg-blue-100 text-blue-700" },
             Sunday: { name: "The Real Returns Show", image: "/the-real-return-show.webp", color: "bg-blue-100 text-blue-700" }
         }
     },
     {
         time: "1 PM - 4 PM", hour: 13,
-        shows: { all: { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.webp", color: "bg-purple-50 text-purple-700" } }
+        shows: { all: { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpeg", color: "bg-purple-50 text-purple-700" } }
     },
     {
         time: "4 PM - 5 PM", hour: 16,
@@ -86,7 +86,7 @@ const SCHEDULE_DATA: ScheduleEntry[] = [
     },
     {
         time: "7 PM - 10 PM", hour: 19,
-        shows: { all: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.webp", color: "bg-cyan-50 text-cyan-700" } }
+        shows: { all: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpeg", color: "bg-cyan-50 text-cyan-700" } }
     },
     {
         time: "10 PM - 11 PM", hour: 22,

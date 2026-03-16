@@ -25,13 +25,13 @@ export function HomeView() {
 
         { name: "Chai Pe Charcha", host: "Raj Persaud", image: "/images/hosts/cha-pe-charcha.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Hello Vaishnavi", host: "Vaishnavi Palleda", image: "/images/hosts/hello-vaishnavi.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
+        { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
+        { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Dil Se Desi", host: "Jyoti", image: "/images/hosts/dil-se-desi.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
+        { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
+        { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Geet Bazaar", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
         // Telugu shows (as per requirement)
         { name: "Chinna Mata", host: "Priya", image: "/images/hosts/chinna-mata.webp", stationId: STATIONS.Telugu.id, language: "telugu" },

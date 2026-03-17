@@ -23,7 +23,6 @@ export function HomeView() {
     const shows = [
         // Hindi shows
 
-        { name: "Chai Pe Charcha", host: "Raj Persaud", image: "/images/hosts/cha-pe-charcha.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Hello Vaishnavi", host: "Vaishnavi Palleda", image: "/images/hosts/hello-vaishnavi.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
@@ -145,20 +144,6 @@ export function HomeView() {
                 </section>
 
 
-                {/* SPONSORED BANNER SECTION */}
-                <section className="py-8 bg-background border-b border-border/50">
-                    <div className="container mx-auto px-4 max-w-5xl">
-                        <div className="flex justify-center">
-                            <Link href="https://gdc.informafestivals.com/2026/registrations/Attendee?_mc=barter_gdcsf_gdcsf_le_x_partn" target="_blank" rel="noopener noreferrer" className="w-full block hover:opacity-95 transition-opacity">
-                                <img
-                                    src="/GDC_1200x300.gif"
-                                    alt="GDC Festival of Gaming"
-                                    className="w-full h-auto object-contain shadow-md border border-border/50"
-                                />
-                            </Link>
-                        </div>
-                    </div>
-                </section>
 
                 {/* RADIO NYRA SHOWS SECTION */}
                 <section id="shows" className="py-12 bg-muted/20">

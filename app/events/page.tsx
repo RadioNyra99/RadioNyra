@@ -12,8 +12,7 @@ export default function EventsPage() {
     const [lightbox, setLightbox] = useState({ isOpen: false, index: 0 })
 
     // Data moved from Home Page
-    const upcomingEvents = [
-        { title: "GDC Festival of Gaming", date: "Mar 9-13, 2026", location: "San Francisco, CA", image: "/GDC_250x250.gif", link: "https://gdc.informafestivals.com/2026/registrations/Attendee?_mc=barter_gdcsf_gdcsf_le_x_partn" },
+    const upcomingEvents: any[] = [
     ];
 
     const pastEvents = [

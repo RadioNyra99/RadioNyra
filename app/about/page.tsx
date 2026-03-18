@@ -151,7 +151,7 @@ export default function AboutPage() {
                                 <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight mb-8">Meet The Team</h2>
                                 <div className="w-full relative rounded-xl overflow-hidden shadow-2xl border-4 border-primary/20">
                                     <img
-                                        src="/radio-nyra-team.jpg"
+                                        src="/images/hosts/team.jpg.jpeg"
                                         alt="Radio Nyra Team"
                                         className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
                                     />

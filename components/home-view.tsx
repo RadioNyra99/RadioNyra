@@ -16,6 +16,8 @@ import { PARTNERS } from "@/lib/partners"
 import { ApolloTracker } from "@/components/apollo-tracker"
 import { HoliEffects } from "@/components/holi-effects"
 import { HoliBanner } from "@/components/holi-banner"
+import { ShowsMarquee } from "@/components/shows-marquee"
+import { PartnersMarquee } from "@/components/partners-marquee"
 
 export function HomeView() {
 
@@ -166,42 +168,7 @@ export function HomeView() {
                             </Button>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            <AnimatePresence mode="popLayout">
-                                {filteredShows.map((show, i) => (
-                                    <motion.div
-                                        key={`${show.language}-${show.name}`}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, scale: 0.95 }}
-                                        transition={{ duration: 0.4, delay: i * 0.05 }}
-                                    >
-                                        <Link
-                                            href="/schedule"
-                                            className="group bg-card border border-border/50 hover:shadow-2xl transition-all duration-300 relative overflow-hidden block"
-                                            onClick={() => playStation(show.stationId)}
-                                        >
-                                            <div className="relative aspect-square overflow-hidden bg-black">
-                                                <img
-                                                    src={show.image}
-                                                    alt={show.name}
-                                                    loading="lazy"
-                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                                    onError={(e) => {
-                                                        const target = e.target as HTMLImageElement;
-                                                        target.src = "https://placehold.co/600x600/000000/FFFFFF?text=" + encodeURIComponent(show.name);
-                                                    }}
-                                                />
-                                            </div>
-                                            <div className="p-4">
-                                                <h3 className="font-bold uppercase tracking-tight leading-none text-lg truncate">{show.name}</h3>
-                                                <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-1">{show.host}</p>
-                                            </div>
-                                        </Link>
-                                    </motion.div>
-                                ))}
-                            </AnimatePresence>
-                        </div>
+                        <ShowsMarquee shows={filteredShows} />
                     </div>
                 </section>
 
@@ -210,47 +177,7 @@ export function HomeView() {
                     <div className="container mx-auto px-4 text-center">
                         <h2 className="text-2xl font-bold uppercase tracking-tighter mb-8 md:mb-12 border-l-4 border-primary pl-4 text-left">Our Partners</h2>
 
-                        {/* Partners Data */}
-                        {(() => {
-                            const partnersData = PARTNERS;
-
-                            return (
-                                <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
-                                    {partnersData.map((partner, i) => (
-                                        partner.link ? (
-                                            <Link
-                                                key={i}
-                                                href={partner.link}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="group border border-border/30 hover:border-primary/50 transition-all duration-300 bg-transparent p-4 flex items-center justify-center h-32 hover:shadow-lg"
-                                                title={partner.name}
-                                            >
-                                                <div className="relative w-full h-full">
-                                                    <img
-                                                        src={partner.image}
-                                                        alt={partner.name}
-                                                        loading="lazy"
-                                                        className="w-full h-full object-contain transition-all duration-500"
-                                                    />
-                                                </div>
-                                            </Link>
-                                        ) : (
-                                            <div key={i} className="group border border-border/30 hover:border-primary/50 transition-all duration-300 bg-transparent p-4 flex items-center justify-center h-32 hover:shadow-lg">
-                                                <div className="relative w-full h-full">
-                                                    <img
-                                                        src={partner.image}
-                                                        alt={partner.name}
-                                                        loading="lazy"
-                                                        className="w-full h-full object-contain transition-all duration-500"
-                                                    />
-                                                </div>
-                                            </div>
-                                        )
-                                    ))}
-                                </div>
-                            );
-                        })()}
+                        <PartnersMarquee />
                     </div>
                 </section>
 

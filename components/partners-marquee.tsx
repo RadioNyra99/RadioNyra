@@ -23,7 +23,7 @@ export function PartnersMarquee({ partnersCount, partnersData }: PartnersMarquee
                     src={partner.image}
                     alt={partner.name}
                     loading="lazy"
-                    className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-500"
+                    className="max-w-full max-h-full object-contain transition-all duration-500"
                 />
             </div>
         );

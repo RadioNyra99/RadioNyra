@@ -335,6 +335,10 @@
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     @apply bg-primary/40;
   }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @layer components {

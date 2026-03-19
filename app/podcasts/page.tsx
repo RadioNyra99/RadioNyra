@@ -16,6 +16,13 @@ import Script from "next/script"
 export default function PodcastsPage() {
     const podcasts = [
         {
+            title: "Future of Gaming | Exclusive Conversation with Dr. Srikar Reddy, Consul General of India",
+            host: "Vaishnavi Palleda",
+            show: "The Games Insider",
+            url: "https://youtu.be/e0mFf8AUrXA",
+            thumbnail: "https://img.youtube.com/vi/e0mFf8AUrXA/maxresdefault.jpg"
+        },
+        {
             title: "IGF 2026 Finalist Interview | Titanium Court (AP Thomson)",
             host: "Radio Nyra",
             show: "The Games Insider",

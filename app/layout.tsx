@@ -75,6 +75,7 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
   },
 }
+import { NyraChat } from "@/components/nyra-chat"
 
 export default function RootLayout({
   children,
@@ -94,6 +95,7 @@ export default function RootLayout({
             <Scene3D />
             <div className="relative z-10">{children}</div>
             <AudioPlayer />
+            <NyraChat />
             <MobileFab />
             <script
               type="application/ld+json"

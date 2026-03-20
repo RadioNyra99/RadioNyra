@@ -24,11 +24,20 @@ const INITIAL_MESSAGES: Message[] = [
   },
 ]
 
+const SUGGESTED_QUESTIONS = [
+  "How can I listen in my car?",
+  "What is the address of the studio?",
+  "Do you have any upcoming events?",
+  "What is the difference between FM and AM and HD radio?",
+]
+
+
 export function NyraChat() {
   const [isOpen, setIsOpen] = React.useState(false)
   const [messages, setMessages] = React.useState<Message[]>(INITIAL_MESSAGES)
   const [inputValue, setInputValue] = React.useState("")
   const [isLoading, setIsLoading] = React.useState(false)
+  const [showSuggestions, setShowSuggestions] = React.useState(true)
   const scrollRef = React.useRef<HTMLDivElement>(null)
 
   const scrollToBottom = () => {
@@ -41,18 +50,21 @@ export function NyraChat() {
     scrollToBottom()
   }, [messages, isOpen])
 
-  const handleSend = async () => {
-    if (!inputValue.trim() || isLoading) return
+  const handleSend = async (text?: string) => {
+    const messageContent = text || inputValue
+    if (!messageContent.trim() || isLoading) return
+
+    if (showSuggestions) setShowSuggestions(false)
 
     const userMessage: Message = {
       id: Date.now().toString(),
       role: "user",
-      content: inputValue,
+      content: messageContent,
       timestamp: new Date(),
     }
 
     setMessages((prev) => [...prev, userMessage])
-    setInputValue("")
+    if (!text) setInputValue("")
     setIsLoading(true)
 
     // Simulate AI response
@@ -60,7 +72,7 @@ export function NyraChat() {
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: "assistant",
-        content: getMockResponse(inputValue),
+        content: getMockResponse(messageContent),
         timestamp: new Date(),
       }
       setMessages((prev) => [...prev, assistantMessage])
@@ -100,6 +112,18 @@ export function NyraChat() {
       {
         keywords: ["hello", "hi", "namaste", "hey", "who are you", "what can you do"],
         response: "Namaste! I'm Nyra, your AI assistant. I can help you with show schedules, station frequencies, advertising info, and more. What's on your mind?"
+      },
+      {
+        keywords: ["car", "automotive", "drive", "listen in car", "bluetooth", "carplay", "android auto"],
+        response: "To listen in your car, you can:\n- Tune to 99.9 FM (Raleigh-Durham area).\n- Use Bluetooth to stream from our app.\n- Connect via Apple CarPlay or Android Auto using our mobile app!\n- Just ask Siri/Google: 'Open Radio Nyra'!"
+      },
+      {
+        keywords: ["events", "upcoming", "happenings", "holi", "concert", "festiv"],
+        response: "We always have exciting events! Currently, we're celebrating the Holi season with special broadcasts and community gatherings. Keep an eye on our 'Events' section on the website for the latest updates!"
+      },
+      {
+        keywords: ["fm", "am", "hd", "difference", "radio technology", "high definition"],
+        response: "Great question! \n- FM (Frequency Modulation): Traditional high-quality analog broadcast.\n- AM (Amplitude Modulation): Older tech, usually for talk/news.\n- HD Radio: Digital technology that allows multiple 'channels' on one FM frequency (like our HD3 Telugu and HD4 Hindi stations) with CD-like crystal clear audio!"
       }
     ]
 
@@ -183,6 +207,24 @@ export function NyraChat() {
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Loader2 size={14} className="animate-spin" />
                   <span className="text-xs italic">Nyra is thinking...</span>
+                </div>
+              )}
+              
+              {showSuggestions && messages.length === 1 && !isLoading && (
+                <div className="pt-2 space-y-2">
+                  <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold mb-2">Suggested Questions:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {SUGGESTED_QUESTIONS.map((q, i) => (
+                      <button
+                        key={i}
+                        onClick={() => handleSend(q)}
+                        className="text-left px-3 py-2 text-xs bg-primary/5 hover:bg-primary/10 border border-primary/20 text-primary transition-all duration-200 hover:translate-x-1"
+                        style={{ borderRadius: "0px" }}
+                      >
+                        {q}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>

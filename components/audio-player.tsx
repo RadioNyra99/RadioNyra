@@ -207,10 +207,10 @@ export function AudioPlayer() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="h-9 w-9 md:h-11 md:w-11 rounded-full text-foreground hover:bg-muted"
+                  className="h-10 w-10 md:h-11 md:w-11 rounded-full text-foreground hover:bg-muted"
                   onClick={toggleMute}
                 >
-                  {isMuted || volume === 0 ? <VolumeX className="h-5 w-5 md:h-6 md:w-6 text-red-500" /> : <Volume2 className="h-5 w-5 md:h-6 md:w-6" />}
+                  {isMuted || volume === 0 ? <VolumeX className="h-6 w-6 text-red-500" /> : <Volume2 className="h-6 w-6" />}
                 </Button>
                 <Button
                   variant="ghost"
@@ -225,9 +225,9 @@ export function AudioPlayer() {
               <Button
                 onClick={togglePlay}
                 size="icon"
-                className="h-12 w-12 md:h-16 md:w-16 rounded-full bg-primary text-white hover:bg-primary/90 shadow-lg hover:scale-105 active:scale-95 transition-all outline-none ring-primary/20 hover:ring-4 md:hover:ring-8 shrink-0"
+                className="h-14 w-14 md:h-16 md:w-16 rounded-full bg-primary text-white hover:bg-primary/90 shadow-lg hover:scale-105 active:scale-95 transition-all outline-none ring-primary/20 hover:ring-4 md:hover:ring-8 shrink-0"
               >
-                {isLoading ? <Loader2 className="h-6 w-6 md:h-8 md:w-8 animate-spin" /> : (isPlaying ? <Pause className="h-6 w-6 md:h-8 md:w-8 fill-current" /> : <Play className="h-6 w-6 md:h-8 md:w-8 fill-current ml-0.5 md:ml-1" />)}
+                {isLoading ? <Loader2 className="h-7 w-7 md:h-8 md:w-8 animate-spin" /> : (isPlaying ? <Pause className="h-7 w-7 md:h-8 md:w-8 fill-current" /> : <Play className="h-7 w-7 md:h-8 md:w-8 fill-current ml-0.5 md:ml-1" />)}
               </Button>
 
             </div>

@@ -5,7 +5,7 @@ import { Navigation } from "@/components/navigation"
 import { FrequencyBar } from "@/components/frequency-bar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Users, Smartphone, Apple, Play, Megaphone, Star, Radio } from "lucide-react"
+import { Users, Smartphone, Apple, Play, Megaphone, Star, Radio, PlayCircle, Headphones, Music2 } from "lucide-react"
 import { CountUp } from "@/components/ui/count-up"
 
 import { useAudio } from "@/components/audio-context"
@@ -83,8 +83,8 @@ export function HomeView() {
                         </div>
 
                         <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-4 md:mb-8 uppercase leading-[1.1] md:leading-[0.9] drop-shadow-2xl italic">
-                            <span className="text-white block">The Only Gateway to the Indian</span>
-                            <span className="text-primary block mt-1 md:mt-2">Subcontinent Communities in the USA</span>
+                            <span className="text-white block">Indian Radio Live</span>
+                            <span className="text-primary block mt-1 md:mt-2">in USA</span>
                         </h1>
 
 
@@ -145,9 +145,74 @@ export function HomeView() {
                     </div>
                 </section>
 
+                {/* LIVE NOW AND TRENDING SECTION */}
+                <section className="py-16 bg-background">
+                    <div className="container mx-auto px-4">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                            {/* LIVE NOW */}
+                            <div className="flex flex-col">
+                                <h2 className="text-3xl font-black uppercase tracking-tighter text-primary mb-6 flex items-center gap-3">
+                                    <span className="w-3 h-3 rounded-full bg-red-500 animate-pulse"></span>
+                                    Live Now On Air
+                                </h2>
+                                <div className="bg-muted border border-border/50 rounded-3xl p-8 relative overflow-hidden group hover:border-primary/50 transition-colors h-full flex flex-col justify-center items-center text-center">
+                                    <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-primary shadow-xl relative group-hover:scale-105 transition-transform cursor-pointer" onClick={() => { playStation(STATIONS.Hindi.id) }}>
+                                        <img src="/images/radio-nyra-logo.jpg" alt="Radio Nyra Hit Station" className="w-full h-full object-cover" />
+                                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <PlayCircle className="text-white w-12 h-12" />
+                                        </div>
+                                    </div>
+                                    <h3 className="text-2xl font-bold mb-2">Radio Nyra Stream</h3>
+                                    <p className="text-muted-foreground mb-6 max-w-sm mx-auto">Broadcasting the biggest Bollywood hits, live talk shows, and local news 24/7.</p>
+                                    <Button size="lg" className="rounded-full px-8 font-bold uppercase tracking-wider bg-primary hover:bg-primary/90 text-white" onClick={() => { playStation(STATIONS.Hindi.id) }}>
+                                        <Headphones className="w-5 h-5 mr-2" /> Listen Live
+                                    </Button>
 
+                                    {/* Animated sound bars */}
+                                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary/20 flex items-end justify-center gap-1 opacity-50">
+                                        <div className="w-2 h-4 bg-primary rounded-t animate-bounce" style={{ animationDelay: "0ms" }}></div>
+                                        <div className="w-2 h-8 bg-primary rounded-t animate-bounce" style={{ animationDelay: "150ms" }}></div>
+                                        <div className="w-2 h-6 bg-primary rounded-t animate-bounce" style={{ animationDelay: "300ms" }}></div>
+                                        <div className="w-2 h-10 bg-primary rounded-t animate-bounce" style={{ animationDelay: "450ms" }}></div>
+                                        <div className="w-2 h-5 bg-primary rounded-t animate-bounce" style={{ animationDelay: "600ms" }}></div>
+                                        <div className="w-2 h-7 bg-primary rounded-t animate-bounce" style={{ animationDelay: "750ms" }}></div>
+                                        <div className="w-2 h-3 bg-primary rounded-t animate-bounce" style={{ animationDelay: "900ms" }}></div>
+                                    </div>
+                                </div>
+                            </div>
 
-                {/* RADIO NYRA SHOWS SECTION */}
+                            {/* TRENDING SONGS */}
+                            <div className="flex flex-col">
+                                <h2 className="text-3xl font-black uppercase tracking-tighter text-primary mb-6 flex items-center gap-3">
+                                    <Music2 className="w-6 h-6" />
+                                    Trending Songs Today
+                                </h2>
+                                <div className="space-y-4">
+                                    {[
+                                        { title: "Chaleya (Jawan)", artist: "Arijit Singh, Shilpa Rao", hits: "2.4M" },
+                                        { title: "Heeriye", artist: "Jasleen Royal, Arijit Singh", hits: "1.8M" },
+                                        { title: "Tum Kya Mile (Rocky Aur Rani)", artist: "Arijit Singh, Shreya Ghoshal", hits: "1.5M" },
+                                        { title: "Naatu Naatu (RRR)", artist: "Rahul Sipligunj, Kaala Bhairava", hits: "5.1M" },
+                                        { title: "Samajavaragamana", artist: "Sid Sriram", hits: "3.2M" },
+                                    ].map((song, i) => (
+                                        <div key={i} className="flex items-center gap-4 bg-card border border-border/50 p-4 rounded-2xl hover:bg-muted/50 transition-colors group cursor-pointer" onClick={() => { playStation(STATIONS.Hindi.id) }}>
+                                            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-black text-xl shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                                                {i + 1}
+                                            </div>
+                                            <div className="flex-1 min-w-0">
+                                                <h4 className="font-bold text-foreground truncate group-hover:text-primary transition-colors">{song.title}</h4>
+                                                <p className="text-sm text-muted-foreground truncate">{song.artist}</p>
+                                            </div>
+                                            <div className="hidden sm:block text-xs font-bold bg-primary/10 text-primary px-3 py-1 rounded-full shrink-0">
+                                                {song.hits} Plays
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <section id="shows" className="py-12 bg-muted/20">
                     <div className="container mx-auto px-4">
                         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">

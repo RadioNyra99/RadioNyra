@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/sheet"
 import { ChevronDown, Menu, Apple, Smartphone } from "lucide-react"
 import { showAudioPlayer } from "../lib/audio-player-utils"
+import { SiteSearch } from "./site-search"
 
 export function Navigation() {
   const navLinks = [
@@ -198,8 +199,8 @@ export function Navigation() {
           </div>
 
           {/* Logo - RIGHT ALIGNED */}
-          <div className="flex items-center gap-3 lg:gap-6">
-
+          <div className="flex items-center gap-1 lg:gap-6">
+            <SiteSearch />
             <Button
               onClick={showAudioPlayer}
               className="hidden md:flex bg-primary hover:bg-primary/90 text-primary-foreground font-black uppercase tracking-tighter rounded-full px-8 h-10 transition-all"

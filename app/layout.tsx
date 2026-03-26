@@ -5,6 +5,8 @@ import { Analytics } from "@vercel/analytics/next"
 import { AudioPlayer } from "@/components/audio-player"
 import { AudioProvider } from "@/components/audio-context"
 import { MobileFab } from "@/components/mobile-fab"
+import { EmailPopup } from "@/components/email-popup"
+import { InstallAppPopup } from "@/components/install-app-popup"
 import Scene3D from "@/components/scene-3d"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -22,11 +24,11 @@ const _geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.radionyra.com'),
   title: {
-    default: "Radio Nyra | The Voice of the Indian Subcontinent in the USA",
+    default: "Indian Radio USA | Telugu Bollywood Live Radio - Radio Nyra",
     template: "%s | Radio Nyra"
   },
   description:
-    "Radio Nyra - Broadcasting 24/7 Bollywood & Tollywood news, talk, and music to 100,000+ listeners in Raleigh-Durham. Listen on Alexa, Google Home, and Siri by saying 'Open Radio Nyra Hindi/Telugu'.",
+    "Listen to Indian radio in USA. Telugu, Bollywood, Tamil live streaming 24/7 on Radio Nyra.",
   generator: "v0.app",
   manifest: "/manifest.json",
   keywords: ["Radio Nyra", "Bollywood Radio", "Hindi Radio", "Indian Radio USA", "Raleigh Radio", "Daily Bollywood News", "Telugu Radio USA"],
@@ -97,6 +99,8 @@ export default function RootLayout({
             <AudioPlayer />
             <NyraChat />
             <MobileFab />
+            <EmailPopup />
+            <InstallAppPopup />
             <script
               type="application/ld+json"
               dangerouslySetInnerHTML={{
@@ -125,6 +129,38 @@ export default function RootLayout({
           </AudioProvider>
         </ThemeProvider>
         {/* <Analytics /> */}
+        
+        {/* Google Analytics 4 (Placeholder ID) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-XXXXXXXXXX');
+            `,
+          }}
+        />
+
+        {/* Hotjar Tracking Code (Placeholder ID) */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(h,o,t,j,a,r){
+                  h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                  h._hjSettings={hjid:YOUR_HOTJAR_ID,hjsv:6};
+                  a=o.getElementsByTagName('head')[0];
+                  r=o.createElement('script');r.async=1;
+                  r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                  a.appendChild(r);
+              })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+            `,
+          }}
+        />
+
+        {/* Google AdSense (Placeholder ID) */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossOrigin="anonymous"></script>
       </body>
     </html>
   )

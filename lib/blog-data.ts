@@ -63,5 +63,68 @@ export const BLOG_POSTS: BlogPost[] = [
             alt: "Holi Festival Colors"
         },
         categories: ["Events", "Holi"]
+    },
+    {
+        id: "4",
+        title: "Top Telugu Songs Today",
+        slug: "top-telugu-songs-today",
+        excerpt: "Discover the latest chart-topping Telugu songs dominating the airwaves today. Tune in to Radio Nyra for non-stop hits.",
+        content: `
+      <p>The Telugu film industry (Tollywood) is churning out some of the biggest musical hits of the year. From foot-tapping dance numbers to soulful romantic melodies, here are the top Telugu songs today that you should definitely have on your playlist.</p>
+      <h2>Trending on Radio Nyra</h2>
+      <p>Whether it's the latest track from Mahesh Babu's blockbuster or a viral sensation from the independent scene, we play them all on our dedicated Telugu stream. Our top Telugu songs today include fan favorites from DSP, Thaman S, and Anirudh Ravichander.</p>
+      <p>Don't forget to listen to our popular shows like 'Chinna Mata' where we discuss these hits in depth!</p>
+    `,
+        date: "2026-03-22",
+        author: {
+            name: "Music Team"
+        },
+        featuredImage: {
+            url: "/images/radio-nyra-logo.jpg",
+            alt: "Top Telugu Songs"
+        },
+        categories: ["Music", "Telugu"]
+    },
+    {
+        id: "5",
+        title: "Latest Bollywood News",
+        slug: "latest-bollywood-news",
+        excerpt: "Get the latest Bollywood news, exclusive celebrity gossip, and upcoming movie releases straight from Mumbai.",
+        content: `
+      <p>Stay updated with the glitz and glamour of the Hindi film industry. Our latest Bollywood news segment covers everything from box office collections to exclusive behind-the-scenes stories.</p>
+      <h2>What's Happening in B-Town</h2>
+      <p>As we head into the summer blockbuster season, several big-budget films are gearing up for release. Rumors are swirling around new casting announcements, and we have all the juicy details right here.</p>
+      <p>Tune in to 'Bollywood Bliss' on Radio Nyra for your daily dose of the latest Bollywood news.</p>
+    `,
+        date: "2026-03-22",
+        author: {
+            name: "Entertainment Desk"
+        },
+        featuredImage: {
+            url: "/images/radio-nyra-logo.jpg",
+            alt: "Latest Bollywood News"
+        },
+        categories: ["News", "Bollywood"]
+    },
+    {
+        id: "6",
+        title: "New Movie Songs 2026",
+        slug: "new-movie-songs-2026",
+        excerpt: "Explore the biggest new movie songs of 2026. From Bollywood pop to Tollywood class, listen to the absolute best.",
+        content: `
+      <p>2026 is already shaping up to be an incredible year for Indian music. With a slate of highly anticipated films, composers are delivering fresh, innovative tracks.</p>
+      <h2>The Best New Movie Songs 2026</h2>
+      <p>We've compiled a list of the most requested tracks this month. The new movie songs of 2026 are blending traditional Indian instruments with modern electronic beats, creating a unique sound that our listeners across the USA love.</p>
+      <p>Listen live to Radio Nyra to catch all these new movie songs of 2026 streaming 24/7.</p>
+    `,
+        date: "2026-03-22",
+        author: {
+            name: "Music Team"
+        },
+        featuredImage: {
+            url: "/images/radio-nyra-logo.jpg",
+            alt: "New Movie Songs 2026"
+        },
+        categories: ["Music", "Releases"]
     }
 ];

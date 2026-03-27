@@ -16,6 +16,13 @@ import Script from "next/script"
 export default function PodcastsPage() {
     const podcasts = [
         {
+            title: "Gaming Data, Growth & Monetization | Stanislav Minasov, CPO at AppMagic",
+            host: "Radio Nyra",
+            show: "The Games Insider",
+            url: "https://youtu.be/0IGi_x381aI",
+            thumbnail: "https://img.youtube.com/vi/0IGi_x381aI/maxresdefault.jpg"
+        },
+        {
             title: "Future of Gaming | Exclusive Conversation with Dr. Srikar Reddy, Consul General of India",
             host: "Vaishnavi Palleda",
             show: "The Games Insider",

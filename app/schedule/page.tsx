@@ -56,7 +56,7 @@ const SCHEDULE_DATA: ScheduleEntry[] = [
         time: "12 PM - 1 PM", hour: 12,
         shows: {
             weekdays: { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpeg", color: "bg-blue-200 text-blue-800" },
-            Saturday: { name: "Dil Se Desi", host: "Jan", image: "/images/hosts/dil-se-desi.jpeg", color: "bg-yellow-100 text-yellow-700" },
+            Saturday: { name: "Dil Se Desi With Van", host: "Van", image: "/images/hosts/dil-se-desi.jpeg", color: "bg-yellow-100 text-yellow-700" },
             Sunday: { name: "The Real Returns Show", image: "/the-real-return-show.webp", color: "bg-blue-100 text-blue-700" }
         }
     },

@@ -16,6 +16,20 @@ import Script from "next/script"
 export default function PodcastsPage() {
     const podcasts = [
         {
+            title: "Tax Talk USA | Chai Pe Charcha with Van ft. CPA Anuradha Aggarwal | Radio Nyra Podcast",
+            host: "Van Bhandari",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/P5jQhU9aXgE",
+            thumbnail: "https://img.youtube.com/vi/P5jQhU9aXgE/maxresdefault.jpg"
+        },
+        {
+            title: "Aura Scanning & Energy Healing Explained | Surya Kiran with Vaishnavi | Radio Nyra Podcast series",
+            host: "Vaishnavi",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/FEg1KpYOD-Q",
+            thumbnail: "https://img.youtube.com/vi/FEg1KpYOD-Q/maxresdefault.jpg"
+        },
+        {
             title: "Gaming Data, Growth & Monetization | Stanislav Minasov, CPO at AppMagic",
             host: "Radio Nyra",
             show: "The Games Insider",

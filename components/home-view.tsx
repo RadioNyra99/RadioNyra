@@ -18,6 +18,7 @@ import { HoliEffects } from "@/components/holi-effects"
 import { HoliBanner } from "@/components/holi-banner"
 import { ShowsMarquee } from "@/components/shows-marquee"
 import { PartnersMarquee } from "@/components/partners-marquee"
+import { TRENDING_SONGS } from "@/lib/trending-songs"
 
 export function HomeView() {
 
@@ -189,13 +190,7 @@ export function HomeView() {
                                     Trending Songs Today
                                 </h2>
                                 <div className="space-y-4">
-                                    {[
-                                        { title: "Chaleya (Jawan)", artist: "Arijit Singh, Shilpa Rao", hits: "2.4M" },
-                                        { title: "Heeriye", artist: "Jasleen Royal, Arijit Singh", hits: "1.8M" },
-                                        { title: "Tum Kya Mile (Rocky Aur Rani)", artist: "Arijit Singh, Shreya Ghoshal", hits: "1.5M" },
-                                        { title: "Naatu Naatu (RRR)", artist: "Rahul Sipligunj, Kaala Bhairava", hits: "5.1M" },
-                                        { title: "Samajavaragamana", artist: "Sid Sriram", hits: "3.2M" },
-                                    ].map((song, i) => (
+                                    {TRENDING_SONGS.map((song, i) => (
                                         <div key={i} className="flex items-center gap-4 bg-card border border-border/50 p-4 rounded-2xl hover:bg-muted/50 transition-colors group cursor-pointer" onClick={() => { playStation(STATIONS.Hindi.id) }}>
                                             <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-black text-xl shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
                                                 {i + 1}

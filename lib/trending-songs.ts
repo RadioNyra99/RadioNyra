@@ -1,7 +1,7 @@
 export const TRENDING_SONGS = [
-    { title: "O Maahi (Dunki)", artist: "Arijit Singh", hits: "4.2M" },
-    { title: "Pehle Bhi Main (Animal)", artist: "Vishal Mishra", hits: "3.8M" },
-    { title: "Kurchi Madathapetti (Guntur Kaaram)", artist: "Sri Krishna, Sahithi Chaganti", hits: "3.5M" },
-    { title: "Husn", artist: "Anuv Jain", hits: "2.9M" },
-    { title: "Sajni (Laapataa Ladies)", artist: "Arijit Singh", hits: "2.1M" },
+    { title: "Aaj Ki Raat (Stree 2)", artist: "Madhuri Dixit, Divya Kumar", hits: "8.5M" },
+    { title: "Mere Mehboob Mere Sanam (Stree 2)", artist: "Udit Narayan, Kumar Sanu", hits: "6.2M" },
+    { title: "Tere Vaaste (Zara Hatke Zara Bachke)", artist: "Varun Jain, Sachin-Jigar", hits: "5.8M" },
+    { title: "Chaleya (Jawan)", artist: "Arijit Singh, Shilpa Rao", hits: "4.9M" },
+    { title: "Nain Tere (Phir Aayi Haseen Dillruba)", artist: "Darshan Raval", hits: "3.7M" },
 ];

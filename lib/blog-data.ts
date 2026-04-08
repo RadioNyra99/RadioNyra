@@ -59,7 +59,7 @@ export const BLOG_POSTS: BlogPost[] = [
             name: "Events Team"
         },
         featuredImage: {
-            url: "/Holi.jpg",
+            url: "/holi.webp",
             alt: "Holi Festival Colors"
         },
         categories: ["Events", "Holi"]

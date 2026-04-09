@@ -1,7 +1,7 @@
 export const TRENDING_SONGS = [
-    { title: "Aaj Ki Raat (Stree 2)", artist: "Madhuri Dixit, Divya Kumar", hits: "8.5M" },
-    { title: "Mere Mehboob Mere Sanam (Stree 2)", artist: "Udit Narayan, Kumar Sanu", hits: "6.2M" },
-    { title: "Tere Vaaste (Zara Hatke Zara Bachke)", artist: "Varun Jain, Sachin-Jigar", hits: "5.8M" },
-    { title: "Chaleya (Jawan)", artist: "Arijit Singh, Shilpa Rao", hits: "4.9M" },
-    { title: "Nain Tere (Phir Aayi Haseen Dillruba)", artist: "Darshan Raval", hits: "3.7M" },
+    { title: "Fitratein", artist: "Arijit Singh, Ronak Phukan", hits: "9.2M" },
+    { title: "Ishq Jalakar (Karvaan)", artist: "Various Artists", hits: "7.5M" },
+    { title: "Gehra Hua (Dhurandhar)", artist: "Arijit Singh, Shashwat Sachdev", hits: "6.8M" },
+    { title: "Barbaad (Saiyaara)", artist: "Jubin Nautiyal", hits: "5.4M" },
+    { title: "Sitaare (Ikkis)", artist: "Arijit Singh", hits: "4.1M" },
 ];

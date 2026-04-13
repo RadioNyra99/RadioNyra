@@ -4,297 +4,357 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
-import { Film, Calendar, Monitor, Ticket } from "lucide-react"
+import { Film, Calendar, Monitor, Ticket, Sparkles, Rocket, Zap } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
 
 export default function MoviesPage() {
-    const movies = [
+    const categories = [
         {
-            title: "Dhurandhar: The Revenge",
-            image: "/Upcoming movies/Upcoming movies/dhurandhar-the-revenge.webp",
-            language: "Telugu",
-            releaseDate: "March 19, 2026",
-            description: "High-octane action drama featuring a calculated protagonist in a high-stakes revenge mission.",
-            type: "Theatre",
-            bookingUrl: "https://www.fandango.com/search?q=Dhurandhar"
+            id: "april",
+            title: "April 2026",
+            subtitle: "Current & Very Soon",
+            icon: <Zap className="text-yellow-400" />,
+            movies: [
+                {
+                    title: "Bhooth Bangla",
+                    image: "/Upcoming movies/Upcoming movies/Bhooth Bangla.jpg",
+                    language: "Hindi",
+                    releaseDate: "April 16, 2026",
+                    description: "A hilarious spin on the horror genre featuring spectral shenanigans and chaotic comedy.",
+                    type: "Theatre",
+                    genre: "Comedy + Horror",
+                    bookingUrl: null
+                },
+                {
+                    title: "Maatrubhumi",
+                    image: "/Upcoming movies/Upcoming movies/Maatrubhumi.jpg",
+                    language: "Hindi",
+                    releaseDate: "April 17, 2026",
+                    description: "An intense war drama focusing on the untold stories of sacrifice and bravery.",
+                    type: "Theatre",
+                    genre: "War drama",
+                    bookingUrl: null
+                },
+                {
+                    title: "Toaster",
+                    image: "/Upcoming movies/Upcoming movies/Toaster.jpg",
+                    language: "Hindi",
+                    releaseDate: "April 15, 2026",
+                    description: "A quirky comedy drama exploring modern relationships and domestic disasters.",
+                    type: "Theatre",
+                    genre: "Comedy drama",
+                    bookingUrl: null
+                },
+                {
+                    title: "Ginny Weds Sunny 2",
+                    image: "/Upcoming movies/Upcoming movies/Ginny weds Sunny 2.jpg",
+                    language: "Hindi",
+                    releaseDate: "April 24, 2026",
+                    description: "The return of the beloved duo in a celebration of love, chaos, and big fat Indian weddings.",
+                    type: "Theatre",
+                    genre: "Romantic comedy",
+                    bookingUrl: null
+                },
+                {
+                    title: "Michael",
+                    image: "/Upcoming movies/Upcoming movies/Michael.jpg",
+                    language: "Multi",
+                    releaseDate: "April end, 2026",
+                    description: "A soul-stirring musical biopic capturing the rise of a legendary performer.",
+                    type: "Theatre",
+                    genre: "Music biopic",
+                    bookingUrl: null
+                },
+                {
+                    title: "Dhoom 4",
+                    image: "/Upcoming movies/Upcoming movies/Dhoom 4.jpg",
+                    language: "Hindi",
+                    releaseDate: "April 25, 2026",
+                    description: "The action franchise returns with higher stakes, faster bikes, and a new mastermind.",
+                    type: "Theatre",
+                    genre: "Action franchise",
+                    bookingUrl: null
+                }
+            ]
         },
         {
-            title: "Toxic: A Fairy Tale for Grown-ups",
-            image: "/Upcoming movies/Upcoming movies/toxic-a-fairy-tale-for-grown-ups.webp",
-            language: "Kannada/Multi",
-            releaseDate: "March 19, 2026",
-            description: "A dark action thriller exploring the gritty underworld of illegal mining and complex characters.",
-            type: "Theatre",
-            bookingUrl: "https://www.fandango.com/toxic-2026-238456/movie-overview"
+            id: "may",
+            title: "May 2026",
+            subtitle: "Big Summer Releases",
+            icon: <Rocket className="text-primary" />,
+            movies: [
+                {
+                    title: "Mortal Kombat II",
+                    image: "/Upcoming movies/Upcoming movies/Mortal Kombat 2.jpg",
+                    language: "English",
+                    releaseDate: "May 8, 2026",
+                    description: "The fight for Earthrealm continues in this high-stakes fantasy action sequel.",
+                    type: "Theatre",
+                    genre: "Action/Fantasy",
+                    bookingUrl: null
+                },
+                {
+                    title: "The Devil Wears Prada 2",
+                    image: "/Upcoming movies/Upcoming movies/The Devil Wears Parada.jpg",
+                    language: "English",
+                    releaseDate: "May 2026",
+                    description: "Fashion, ambition, and heels collide once again in this highly anticipated sequel.",
+                    type: "Theatre",
+                    genre: "Comedy/Drama",
+                    bookingUrl: null
+                },
+                {
+                    title: "Goodachari 2",
+                    image: "/Upcoming movies/Upcoming movies/Goodachari 2.jpg",
+                    language: "Telugu",
+                    releaseDate: "May 2026",
+                    description: "Agent Gopi returns for a global mission involving high-tech espionage and betrayal.",
+                    type: "Theatre",
+                    genre: "Spy thriller",
+                    bookingUrl: null
+                },
+                {
+                    title: "Ek Din",
+                    image: "/Upcoming movies/Upcoming movies/Ek Din.jpg",
+                    language: "Hindi",
+                    releaseDate: "May 1, 2026",
+                    description: "A poignant story told over the course of a single life-changing day.",
+                    type: "Theatre",
+                    genre: "Drama",
+                    bookingUrl: null
+                },
+                {
+                    title: "Pati Patni Aur Woh 2",
+                    image: "/Upcoming movies/Upcoming movies/Pati Patni Aur Woh 2.jpg",
+                    language: "Hindi",
+                    releaseDate: "May 15, 2026",
+                    description: "More confusion, more comedy, and a more complicated web of lies and love.",
+                    type: "Theatre",
+                    genre: "Comedy",
+                    bookingUrl: null
+                }
+            ]
         },
         {
-            title: "Ustaad Bhagat Singh",
-            image: "/Upcoming movies/Upcoming movies/ustaad-bhagat-singh.webp",
-            language: "Telugu",
-            releaseDate: "March 19, 2026",
-            description: "A powerful action drama starring Pawan Kalyan as a charismatic cop fighting corruption.",
-            type: "Theatre",
-            bookingUrl: "https://www.amctheatres.com/search?q=Ustaad%20Bhagat%20Singh"
-        },
-        {
-            title: "Project Hail Mary",
-            image: "/Upcoming movies/Upcoming movies/project-hail-mary.webp",
-            language: "English",
-            releaseDate: "March 20, 2026",
-            description: "Science fiction epic starring Ryan Gosling as a scientist on a mission to save the sun.",
-            type: "Theatre",
-            bookingUrl: "https://www.fandango.com/project-hail-mary-2026-235889/movie-overview"
-        },
-        {
-            title: "Rosie: The Saffron Chapter",
-            image: "/Upcoming movies/Upcoming movies/rosie-the-saffron-chapter.webp",
-            language: "Hindi",
-            releaseDate: "Released",
-            description: "Horror thriller based on real-life events in Gurugram, exploring supernatural occurrences.",
-            type: "Theatre",
-            bookingUrl: null,
-            notes: "Previously Released"
-        },
-        {
-            title: "Band Melam",
-            image: "/Upcoming movies/Upcoming movies/band-melam.webp",
-            language: "Telugu",
-            releaseDate: "March 26, 2026",
-            description: "A fun family entertainer exploring rural traditions and comedic situations.",
-            type: "Theatre",
-            bookingUrl: "https://www.fandango.com/search?q=Band+Melam"
-        },
-        {
-            title: "Kenatha Kanom",
-            image: "/Upcoming movies/Upcoming movies/kenatha-kanom.webp",
-            language: "Tamil",
-            releaseDate: "March 13, 2026",
-            description: "A unique social drama addressing village life and traditional folklore.",
-            type: "OTT",
-            bookingUrl: "https://www.hotstar.com/us/search?q=Kenatha%20Kanom"
-        },
-        {
-            title: "Theri Meri",
-            image: "/Upcoming movies/Upcoming movies/theri-meri.webp",
-            language: "Multi",
-            releaseDate: "July 28, 2025",
-            description: "A vibrant romantic comedy set in the picturesque locales of Malaysia.",
-            type: "Theatre",
-            bookingUrl: null,
-            notes: "International Release Only"
-        },
-        {
-            title: "Premalu 2",
-            image: "/Upcoming movies/Upcoming movies/premalu-2.webp",
-            language: "Malayalam",
-            releaseDate: "TBA 2025",
-            description: "The sequel to the massive rom-com hit, following the next chapter of Sachin and Reenu.",
-            type: "Theatre",
-            bookingUrl: null
-        },
-        {
-            title: "Aadu 3",
-            image: "/Upcoming movies/Upcoming movies/aadu-3.webp",
-            language: "Malayalam",
-            releaseDate: "March 19, 2026",
-            description: "The return of Shaji Pappan in this hilarious third installment of the cult comedy series.",
-            type: "Theatre",
-            bookingUrl: "https://www.fandango.com/search?q=Aadu+3"
-        },
-        {
-            title: "Bheeshmar",
-            image: "/Upcoming movies/Upcoming movies/bheeshmar.webp",
-            language: "Telugu",
-            releaseDate: "March 20, 2026",
-            description: "A gripping action thriller featuring a high-stakes investigation and intense drama.",
-            type: "Theatre",
-            bookingUrl: "https://www.fandango.com/search?q=Bheeshmar"
-        },
-        {
-            title: "Kissa Court Kachehari Ka",
-            image: "/Upcoming movies/Upcoming movies/kissa-court-kachehari-ka.webp",
-            language: "Hindi",
-            releaseDate: "March 13, 2026",
-            description: "A socially relevant legal drama highlighting the flaws in the judicial system.",
-            type: "Theatre",
-            bookingUrl: "https://www.fandango.com/search?q=Kissa+Court+Kachehari+Ka"
-        },
-        {
-            title: "Chiranjeevi Hanuman",
-            image: "/Upcoming movies/Upcoming movies/chiranjeevi-hanuman.webp",
-            language: "Telugu",
-            releaseDate: "TBA 2026",
-            description: "A mythological action epic exploring the legend of Hanuman in a modern context.",
-            type: "Theatre",
-            bookingUrl: null
-        },
-        {
-            title: "Awarapan 2",
-            image: "/Upcoming movies/Upcoming movies/awarapan-2.webp",
-            language: "Hindi",
-            releaseDate: "April 3, 2026",
-            description: "The sequel to the intense romantic thriller, continuing the saga of love and redemption.",
-            type: "Theatre",
-            bookingUrl: "https://www.fandango.com/search?q=Awarapan+2"
-        },
-        {
-            title: "Bhooth Bangla",
-            image: "/Upcoming movies/Upcoming movies/bhooth-bangla.webp",
-            language: "Hindi",
-            releaseDate: "May 15, 2026",
-            description: "Akshay Kumar returns to the horror-comedy genre with this spooky entertainer.",
-            type: "Theatre",
-            bookingUrl: "https://www.fandango.com/search?q=Bhooth+Bangla"
-        },
-        {
-            title: "Alpha",
-            image: "/Upcoming movies/Upcoming movies/alpha.webp",
-            language: "Hindi",
-            releaseDate: "April 17, 2026",
-            description: "The first female-led film in the YRF Spy Universe starring Alia Bhatt and Sharvari.",
-            type: "Theatre",
-            bookingUrl: "https://www.fandango.com/alpha-2026-235887/movie-overview"
-        },
-        {
-            title: "Battle of Galwan",
-            image: "/Upcoming movies/Upcoming movies/battle-of-galwan.webp",
-            language: "Hindi",
-            releaseDate: "August 14, 2026",
-            description: "A patriotic war epic depicting the bravery of Indian soldiers in the Galwan Valley.",
-            type: "Theatre",
-            bookingUrl: "https://www.fandango.com/search?q=Battle+of+Galwan"
+            id: "june",
+            title: "June 2026 & Beyond",
+            subtitle: "Most Anticipated",
+            icon: <Sparkles className="text-purple-400" />,
+            movies: [
+                {
+                    title: "Toxic",
+                    image: "/Upcoming movies/Upcoming movies/Toxic A Fairy Tale for Grown-Ups.jpg",
+                    language: "Kannada/Multi",
+                    releaseDate: "June 4, 2026",
+                    description: "A gritty fairy tale exploring the dark side of ambition and the underworld.",
+                    type: "Theatre",
+                    genre: "A Fairy Tale for Grown-Ups",
+                    bookingUrl: null
+                },
+                {
+                    title: "Cocktail 2",
+                    image: "/Upcoming movies/Upcoming movies/Cocktail 2.jpg",
+                    language: "Hindi",
+                    releaseDate: "June 19, 2026",
+                    description: "A fresh perspective on friendship and love in the modern age.",
+                    type: "Theatre",
+                    genre: "Drama/Romance",
+                    bookingUrl: null
+                },
+                {
+                    title: "Welcome to the Jungle",
+                    image: "/Upcoming movies/Upcoming movies/Welcom to the Jungle.jpg",
+                    language: "Hindi",
+                    releaseDate: "June 26, 2026",
+                    description: "An ensemble comedy adventure set in the wild unknown.",
+                    type: "Theatre",
+                    genre: "Adventure Comedy",
+                    bookingUrl: null
+                },
+                {
+                    title: "Supergirl",
+                    image: "/Upcoming movies/Upcoming movies/SuperGirl.jpg",
+                    language: "English",
+                    releaseDate: "June 26, 2026",
+                    description: "A new hero rises to protect the world in this DC epic.",
+                    type: "Theatre",
+                    genre: "Action/Sci-Fi",
+                    bookingUrl: null
+                },
+                {
+                    title: "Ramayana",
+                    image: "/Upcoming movies/Upcoming movies/Ramayanan.jpg",
+                    language: "Multi",
+                    releaseDate: "Diwali 2026",
+                    description: "The legendary epic visualised on a grand scale like never before.",
+                    type: "Theatre",
+                    genre: "Mythology",
+                    bookingUrl: null
+                },
+                {
+                    title: "King",
+                    image: "/Upcoming movies/Upcoming movies/King.jpg",
+                    language: "Hindi",
+                    releaseDate: "December 2026",
+                    description: "Shah Rukh Khan returns in an action-packed journey of power and destiny.",
+                    type: "Theatre",
+                    genre: "Action thriller",
+                    bookingUrl: null
+                }
+            ]
         }
     ];
 
     return (
-        <div className="min-h-screen bg-background font-sans">
+        <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-primary selection:text-white">
             <Navigation />
 
-            <main className="py-20">
-                <div className="container mx-auto px-4">
+            <main className="relative overflow-hidden">
+                {/* Background Glows */}
+                <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -z-10" />
+                <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[100px] -z-10" />
+
+                <div className="container mx-auto px-4 py-24">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-center mb-16"
+                        className="text-center mb-24"
                     >
-                        <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-primary italic mb-6">
-                            Upcoming Movies
+                        <Badge variant="outline" className="mb-6 border-primary/50 text-primary py-1 px-4 text-xs font-bold uppercase tracking-[0.3em] bg-primary/5">
+                            Radio Nyra Exclusives
+                        </Badge>
+                        <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-none mb-8">
+                            Upcoming <span className="text-primary italic">Movies</span>
                         </h1>
-                        <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-medium uppercase tracking-widest">
-                            Stay updated with the latest Telugu and Hindi movies hitting theaters and OTT platforms!
+                        <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
+                            Your ultimate guide to the biggest blockbusters hitting the silver screen and OTT platforms in 2026.
                         </p>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {movies.map((movie, i) => (
+                    {categories.map((category, catIdx) => (
+                        <section key={category.id} className="mb-32">
                             <motion.div
-                                key={movie.title}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: i * 0.1 }}
-                                className="bg-card border border-border/50 relative overflow-hidden group hover:shadow-2xl transition-all"
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                className="flex items-center gap-6 mb-12 border-b border-white/10 pb-6"
                             >
-                                {movie.image && (
-                                    <div className="relative h-80 w-full overflow-hidden bg-muted">
-                                        <img
-                                            src={movie.image}
-                                            alt={movie.title}
-                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                        />
-                                    </div>
-                                )}
-                                <div className="p-6">
-                                    <div className="flex justify-between items-start mb-4">
-                                        <div className={`p-2 rounded-none ${movie.type === 'Theatre' ? 'bg-primary text-white' : 'bg-black text-white'}`}>
-                                            {movie.type === 'Theatre' ? <Film size={20} /> : <Monitor size={20} />}
-                                        </div>
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground border border-border px-2 py-1">
-                                            {movie.language}
-                                        </span>
-                                    </div>
-
-                                    <h3 className="text-2xl font-black uppercase tracking-tight mb-2 group-hover:text-primary transition-colors">
-                                        {movie.title}
-                                    </h3>
-                                    <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-4">
-                                        {movie.genre}
+                                <div className="p-4 bg-white/5 rounded-2xl flex items-center justify-center text-3xl">
+                                    {category.icon}
+                                </div>
+                                <div>
+                                    <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter italic">
+                                        {category.title}
+                                    </h2>
+                                    <p className="text-primary font-bold uppercase tracking-[0.2em] text-xs mt-1">
+                                        {category.subtitle}
                                     </p>
-
-                                    <div className="space-y-2 border-t border-border/50 pt-4">
-                                        <div className="flex items-center gap-2 text-sm">
-                                            <Calendar size={16} className="text-primary" />
-                                            <span className="font-bold">{movie.releaseDate}</span>
-                                        </div>
-                                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                                            <span className="font-bold uppercase text-[10px] tracking-widest">{movie.notes}</span>
-                                        </div>
-                                    </div>
-
-                                    <div className="mt-6">
-                                        {movie.bookingUrl ? (
-                                            <a href={movie.bookingUrl} target="_blank" rel="noopener noreferrer" className="block w-full">
-                                                <Button className="w-full rounded-none font-bold uppercase tracking-widest bg-primary hover:bg-white hover:text-primary border-2 border-primary transition-all duration-300 group/btn flex items-center justify-center gap-2">
-                                                    {movie.type === 'Theatre' ? (
-                                                        <>
-                                                            <Ticket size={18} className="group-hover/btn:rotate-12 transition-transform" />
-                                                            Book Tickets
-                                                        </>
-                                                    ) : (
-                                                        <>
-                                                            <Monitor size={18} className="group-hover/btn:scale-110 transition-transform" />
-                                                            Watch Now
-                                                        </>
-                                                    )}
-                                                </Button>
-                                            </a>
-                                        ) : (
-                                            <Button disabled className="w-full rounded-none font-bold uppercase tracking-widest bg-muted text-muted-foreground border-2 border-muted flex items-center justify-center gap-2 cursor-not-allowed">
-                                                {movie.type === 'Theatre' ? (
-                                                    <>
-                                                        <Ticket size={18} />
-                                                        Book Tickets (N/A)
-                                                    </>
-                                                ) : (
-                                                    <>
-                                                        <Monitor size={18} />
-                                                        Watch Now (N/A)
-                                                    </>
-                                                )}
-                                            </Button>
-                                        )}
-                                    </div>
                                 </div>
                             </motion.div>
-                        ))}
-                    </div>
+
+                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                                {category.movies.map((movie, i) => (
+                                    <motion.div
+                                        key={movie.title}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: i * 0.1 }}
+                                        className="group"
+                                    >
+                                        <div className="relative aspect-[3/4] overflow-hidden bg-[#111] rounded-2xl border border-white/5 group-hover:border-primary/50 transition-all duration-500 shadow-xl">
+                                            {movie.image ? (
+                                                <img
+                                                    src={movie.image}
+                                                    alt={movie.title}
+                                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full flex items-center justify-center bg-white/5 text-white/20">
+                                                    <Film size={60} />
+                                                </div>
+                                            )}
+                                            
+                                            {/* Overlays */}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-60" />
+                                            
+                                            <div className="absolute top-3 left-3 right-3 flex justify-between items-start">
+                                                <Badge className="bg-white/10 backdrop-blur-md border-white/10 text-white font-bold uppercase text-[8px] tracking-widest px-2 py-1">
+                                                    {movie.language}
+                                                </Badge>
+                                                <div className={`p-1.5 rounded-lg backdrop-blur-md ${movie.type === 'Theatre' ? 'bg-primary/20 text-primary border border-primary/30' : 'bg-blue-500/20 text-blue-400 border border-blue-500/30'}`}>
+                                                    {movie.type === 'Theatre' ? <Film size={12} /> : <Monitor size={12} />}
+                                                </div>
+                                            </div>
+
+                                            <div className="absolute bottom-0 left-0 right-0 p-5 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                                <p className="text-primary font-black uppercase text-[8px] tracking-[0.3em] mb-1.5 drop-shadow-lg">
+                                                    {movie.genre}
+                                                </p>
+                                                <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter leading-none mb-3 group-hover:text-primary transition-colors">
+                                                    {movie.title}
+                                                </h3>
+                                                
+                                                <div className="flex items-center gap-1.5 text-xs font-bold text-gray-300 mb-4">
+                                                    <Calendar size={12} className="text-primary" />
+                                                    <span className="uppercase tracking-widest text-[9px]">{movie.releaseDate}</span>
+                                                </div>
+
+                                                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                                    {movie.bookingUrl ? (
+                                                        <a href={movie.bookingUrl} target="_blank" rel="noopener noreferrer">
+                                                            <Button className="w-full bg-primary hover:bg-white hover:text-primary text-white font-black uppercase tracking-widest rounded-lg h-9 text-[9px] transition-all group/btn">
+                                                                <Ticket size={12} className="mr-1.5 group-hover/btn:rotate-12 transition-transform" />
+                                                                Book Tickets
+                                                            </Button>
+                                                        </a>
+                                                    ) : (
+                                                        <Button disabled className="w-full bg-white/5 border border-white/10 text-white/40 font-black uppercase tracking-widest rounded-lg h-9 text-[9px] cursor-not-allowed">
+                                                            Coming Soon
+                                                        </Button>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </section>
+                    ))}
 
                     <motion.div
                         initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1 }}
-                        className="mt-20 p-8 border-2 border-dashed border-primary/30 text-center bg-primary/5"
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        className="mt-40 p-12 relative overflow-hidden rounded-[3rem] border border-white/10 bg-white/5 backdrop-blur-xl text-center"
                     >
-                        <p className="text-xl font-bold uppercase tracking-tighter italic">
-                            🎟️ Book Tickets | Watch on OTT — Links coming soon!
-                        </p>
-                        <p className="text-muted-foreground mt-2 font-bold uppercase tracking-widest text-sm">
-                            Bookmark this page for weekly updates.
-                        </p>
+                        <div className="absolute -top-24 -left-24 w-64 h-64 bg-primary/20 rounded-full blur-[80px]" />
+                        <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-blue-500/20 rounded-full blur-[80px]" />
+                        
+                        <div className="relative z-10">
+                            <Sparkles className="mx-auto text-primary mb-6" size={40} />
+                            <h3 className="text-4xl md:text-6xl font-black uppercase tracking-tighter italic mb-6 leading-none">
+                                Want to <span className="text-primary">Stay Updated?</span>
+                            </h3>
+                            <p className="text-gray-400 font-bold uppercase tracking-[0.2em] mb-12 max-w-xl mx-auto text-sm">
+                                Join our community for exclusive early access to movie tickets and OTT release alerts.
+                            </p>
+                            <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+                                <a
+                                    href="/community"
+                                    className="px-12 py-5 bg-primary text-white font-black uppercase tracking-widest rounded-2xl hover:scale-105 transition-all shadow-[0_15px_30px_rgba(235,30,50,0.3)]"
+                                >
+                                    Join Community
+                                </a>
+                                <a
+                                    href="/faq"
+                                    className="px-12 py-5 bg-white/5 text-white font-black uppercase tracking-widest rounded-2xl hover:bg-white/10 transition-all border border-white/10"
+                                >
+                                    View FAQ
+                                </a>
+                            </div>
+                        </div>
                     </motion.div>
-
-                    <div className="mt-32 text-center border-t border-border/50 pt-20">
-                        <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tighter italic mb-6">
-                            Have more <span className="text-primary">Questions?</span>
-                        </h3>
-                        <p className="text-muted-foreground font-bold uppercase tracking-widest mb-10 max-w-md mx-auto">
-                            Check our frequently asked questions for everything you need to know about Radio Nyra.
-                        </p>
-                        <a
-                            href="/faq"
-                            className="inline-block bg-primary text-white font-black uppercase tracking-widest px-12 py-4 hover:bg-primary/90 transition-all hover:scale-105 shadow-[0_10px_20px_rgba(235,30,50,0.2)]"
-                        >
-                            Visit FAQ Page
-                        </a>
-                    </div>
                 </div>
             </main>
 

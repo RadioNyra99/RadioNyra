@@ -1,7 +1,7 @@
 export const TRENDING_SONGS = [
-    { title: "Banjaare", artist: "Bairan", hits: "10.5M" },
-    { title: "Jaiye", artist: "Shashwat Sachdev", hits: "9.8M" },
-    { title: "Aakhri Ishq (Dhurandhar)", artist: "Arijit Singh", hits: "8.2M" },
-    { title: "Ban Ke Dikha (Ikkis)", artist: "Arijit Singh", hits: "7.1M" },
-    { title: "Gehra Hua (Dhurandhar)", artist: "Arijit Singh, Shashwat Sachdev", hits: "6.9M" },
+    { title: "Sitaare (Ikkis)", artist: "Arijit Singh", hits: "12.2M" },
+    { title: "Gehra Hua (Dhurandhar)", artist: "Arijit Singh", hits: "11.5M" },
+    { title: "Saiyaara (Saiyaara)", artist: "Faheem Abdullah", hits: "10.8M" },
+    { title: "Ban Ke Dikha (Ikkis)", artist: "Arijit Singh", hits: "9.5M" },
+    { title: "Hum Dono (Tu Meri Main Tera)", artist: "Vishal Dadlani, Shruti Pathak", hits: "8.2M" },
 ];

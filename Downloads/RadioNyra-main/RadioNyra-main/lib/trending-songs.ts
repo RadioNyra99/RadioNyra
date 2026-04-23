@@ -1,7 +1,7 @@
 export const TRENDING_SONGS = [
-    { title: "Tu Meri Main Tera", artist: "Vishal-Sheykhar", hits: "16.1M" },
-    { title: "Barbaad (Saiyaara)", artist: "Jubin Nautiyal", hits: "14.8M" },
-    { title: "Usey Kehna (Tere Ishk Mein)", artist: "A.R. Rahman & Jonita Gandhi", hits: "14.2M" },
-    { title: "CHILLGUM", artist: "Yo Yo Honey Singh & Ragini Vishwakarma", hits: "13.5M" },
-    { title: "Kya Bataun Tujhe (Pagalpan)", artist: "Vishal Mishra", hits: "12.0M" },
+    { title: "Tu Meri Main Tera", artist: "Pritam & Arijit Singh", hits: "25.8M" },
+    { title: "Gehra Hua (Dhurandhar)", artist: "Arijit Singh", hits: "21.4M" },
+    { title: "Sitaare (Ikkis)", artist: "Arijit Singh", hits: "18.2M" },
+    { title: "Usey Kehna (Tere Ishk Mein)", artist: "A.R. Rahman & Jonita Gandhi", hits: "15.9M" },
+    { title: "Chillgum", artist: "Yo Yo Honey Singh & Malaika Arora", hits: "14.5M" },
 ];

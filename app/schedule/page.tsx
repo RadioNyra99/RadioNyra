@@ -96,7 +96,7 @@ const SCHEDULE_DATA: ScheduleEntry[] = [
     },
     {
         time: "7 PM - 10 PM", hour: 19,
-        shows: { all: { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.png", color: "bg-cyan-50 text-cyan-700" } }
+        shows: { all: { name: "Nirvana Nights", host: "Parag", image: "/images/hosts/nirvana-nights.png", color: "bg-cyan-50 text-cyan-700" } }
     },
     {
         time: "10 PM - 12 AM", hour: 22,

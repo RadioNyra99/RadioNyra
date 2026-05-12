@@ -87,7 +87,7 @@ export function NyraChat() {
     const KB = [
       {
         keywords: ["schedule", "shows", "timing", "when", "program"],
-        response: "Our schedule is packed with hits! \n- Morning (7-9 AM): Zara Muskurao with Aayushii Rode \n- Mid-day (10 AM - 1 PM): Triangle Tunes and Talks with Monika Joshi \n- Afternoon (1-4 PM): Bollywood Bliss with Bharti Rathore \n- Evening (7-10 PM): Nirvana Nights with Shivani. \nCheck the full schedule on our Schedule page!"
+        response: "Our schedule is packed with hits! \n- Morning (7-9 AM): Zara Muskurao with Aayushii Rode \n- Mid-day (10 AM - 1 PM): Triangle Tunes and Talks with Monika Joshi \n- Afternoon (1-4 PM): Bollywood Bliss with Bharti Rathore \n- Evening (7-10 PM): Nirvana Nights with Parag. \nCheck the full schedule on our Schedule page!"
       },
       {
         keywords: ["contact", "phone", "email", "reach", "whatsapp", "call", "address", "location"],

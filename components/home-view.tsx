@@ -34,7 +34,7 @@ export function HomeView() {
         { name: "Dil Se Desi With Van", host: "Van", image: "/images/hosts/dil-se-desi.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Aaj Ki Shaam", host: "Jyoti", image: "/images/hosts/Aaj Ki Shaam-jyoti kae naam.png", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
+        { name: "Nirvana Nights", host: "Shivani", image: "/images/hosts/nirvana-nights.png", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Geet Bazaar", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
         // Telugu shows (as per requirement)
         { name: "Chinna Mata", host: "Priya", image: "/images/hosts/chinna-mata.webp", stationId: STATIONS.Telugu.id, language: "telugu" },

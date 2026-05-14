@@ -33,6 +33,7 @@ export function HomeView() {
         { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Dil Se Desi With Van", host: "Van", image: "/images/hosts/dil-se-desi.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Aaj Ki Shaam", host: "Jyoti", image: "/images/hosts/Aaj Ki Shaam-jyoti kae naam.png", stationId: STATIONS.Hindi.id, language: "hindi" },
+        { name: "Prachi", host: "Prachi", image: "/images/hosts/Prachi.png", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Nirvana Nights", host: "Parag", image: "/images/hosts/nirvana-nights.png", stationId: STATIONS.Hindi.id, language: "hindi" },
         { name: "Geet Bazaar", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.webp", stationId: STATIONS.Hindi.id, language: "hindi" },

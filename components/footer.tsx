@@ -52,6 +52,35 @@ export function Footer() {
           </div>
         </div>
 
+        {/* SEO Directory Links */}
+        <div className="border-t border-white/10 pt-8 mb-8">
+          <p className="text-[10px] font-black uppercase tracking-[0.25em] text-gray-500 mb-5">Popular Searches &amp; Regional Stations</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-3">
+            {[
+              { label: "Telugu Radio USA", href: "/telugu-radio-usa" },
+              { label: "Indian Radio USA", href: "/indian-radio-usa" },
+              { label: "Bollywood Radio Online", href: "/bollywood-radio-online" },
+              { label: "Indian Radio in North Carolina", href: "/indian-radio-in-north-carolina" },
+              { label: "Bollywood FM USA", href: "/bollywood-fm-usa" },
+              { label: "Indian Events in Raleigh", href: "/indian-events-in-raleigh" },
+              { label: "Telugu Community Podcasts", href: "/telugu-community-podcasts" },
+              { label: "Indian Business Ads USA", href: "/indian-business-ads-usa" },
+              { label: "Bollywood News Podcast", href: "/bollywood-news-podcast" },
+              { label: "How to Tune In", href: "/how-to-tune" },
+              { label: "Advertise With Us", href: "/advertise" },
+              { label: "Our Podcast Shows", href: "/podcasts" },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-[10px] font-bold text-gray-500 hover:text-primary transition-colors uppercase tracking-wide leading-tight"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] text-gray-500 uppercase tracking-widest font-bold">
           <p>© {new Date().getFullYear()} Radio Nyra. All rights reserved.</p>
           <div className="flex gap-6">

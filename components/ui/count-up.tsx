@@ -7,9 +7,10 @@ interface CountUpProps {
     duration?: number
     suffix?: string
     prefix?: string
+    decimals?: number
 }
 
-export function CountUp({ end, duration = 2000, suffix = "", prefix = "" }: CountUpProps) {
+export function CountUp({ end, duration = 2000, suffix = "", prefix = "", decimals = 0 }: CountUpProps) {
     const [count, setCount] = useState(0)
     const elementRef = useRef<HTMLSpanElement>(null)
     const hasAnimated = useRef(false)
@@ -30,7 +31,7 @@ export function CountUp({ end, duration = 2000, suffix = "", prefix = "" }: Coun
                             setCount(end)
                             if (timer) clearInterval(timer)
                         } else {
-                            setCount(Math.floor(start))
+                            setCount(decimals === 0 ? Math.floor(start) : start)
                         }
                     }, 16)
                 }
@@ -46,11 +47,11 @@ export function CountUp({ end, duration = 2000, suffix = "", prefix = "" }: Coun
             if (timer) clearInterval(timer)
             observer.disconnect()
         }
-    }, [end, duration])
+    }, [end, duration, decimals])
 
     return (
         <span ref={elementRef} className="tabular-nums">
-            {prefix}{count}{suffix}
+            {prefix}{count.toLocaleString(undefined, { minimumFractionDigits: decimals, maximumFractionDigits: decimals })}{suffix}
         </span>
     )
 }

@@ -7,6 +7,8 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Users, Smartphone, Apple, Play, Megaphone, Star, Radio, PlayCircle, Headphones, Music2 } from "lucide-react"
 import { CountUp } from "@/components/ui/count-up"
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu"
+import { ChevronDown } from "lucide-react"
 
 import { useAudio } from "@/components/audio-context"
 import { STATIONS } from "@/lib/stations"
@@ -76,18 +78,44 @@ export function HomeView() {
                             <a href="mailto:info@radionyra.com" className="hover:text-primary transition-colors flex items-center gap-2">
                                 <span className="w-2 h-2 bg-primary rounded-full"></span> info@radionyra.com
                             </a>
-                            <a href="tel:+19199998595" className="hover:text-primary transition-colors flex items-center gap-2">
-                                <span className="hidden md:inline text-primary">|</span> +1 (919) 999 - 8595 (Call Only)
+                            <a href="tel:+19192944800" className="hover:text-primary transition-colors flex items-center gap-2">
+                                <span className="hidden md:inline text-primary">|</span> +1 (919) 294 - 4800 (Call Only)
                             </a>
                             <a href="https://wa.me/19192944800" target="_blank" className="hover:text-[#25D366] transition-colors flex items-center gap-2">
                                 <span className="hidden md:inline text-primary">|</span> WhatsApp: +1 (919) 294 - 4800
                             </a>
                         </div>
 
-                        <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-4 md:mb-8 uppercase leading-[1.1] md:leading-[0.9] drop-shadow-2xl italic">
-                            <span className="text-white block">Indian Radio Live</span>
-                            <span className="text-primary block mt-1 md:mt-2">in USA</span>
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black tracking-tighter mb-4 uppercase leading-[1.1] md:leading-[0.9] drop-shadow-2xl italic">
+                            <span className="text-white block">The Indian Subcontinent</span>
+                            <span className="text-primary block mt-1 md:mt-2">Community Media Network</span>
                         </h1>
+                        <p className="text-white/90 text-sm md:text-lg max-w-3xl mx-auto mb-8 font-medium">
+                            Connecting communities, businesses, and culture through radio, digital media, events, social platforms, and AI-powered marketing.
+                        </p>
+                        <div className="flex flex-wrap justify-center gap-4 mb-8">
+                            <Button onClick={() => playStation(STATIONS.Hindi.id)} className="bg-primary hover:bg-primary/90 text-white rounded-none font-bold uppercase tracking-widest px-8 py-6 text-sm">Listen Hindi</Button>
+                            <Button onClick={() => playStation(STATIONS.Telugu.id)} className="bg-secondary hover:bg-secondary/90 text-white rounded-none font-bold uppercase tracking-widest px-8 py-6 text-sm">Listen Telugu</Button>
+
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <Button className="bg-white text-black hover:bg-gray-100 rounded-none border-2 border-white font-bold uppercase tracking-widest px-8 py-6 text-sm">
+                                        Other Stations <ChevronDown className="ml-2 w-4 h-4" />
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent className="bg-black/90 text-white border-white/20">
+                                    {Object.entries(STATIONS).filter(([key]) => key !== "Hindi" && key !== "Telugu").map(([key, station]) => (
+                                        <DropdownMenuItem key={key} onClick={() => playStation(station.id)} className="cursor-pointer hover:bg-primary/20 hover:text-white font-bold uppercase text-xs tracking-widest">
+                                            {station.name}
+                                        </DropdownMenuItem>
+                                    ))}
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+
+                            <Button asChild className="hidden md:flex bg-white text-black hover:bg-gray-100 rounded-none border-2 border-white font-bold uppercase tracking-widest px-8 py-6 text-sm">
+                                <Link href="/advertise">Advertise With Us</Link>
+                            </Button>
+                        </div>
 
 
 
@@ -122,27 +150,103 @@ export function HomeView() {
                 </section>
 
                 {/* STATS */}
-                <section className="py-6 bg-background border-b border-border/50">
-                    <div className="container mx-auto px-2">
-                        <div className="grid grid-cols-4 gap-2 md:gap-4 text-center justify-center items-center overflow-hidden">
+                <section className="py-12 bg-background border-b border-border/50">
+                    <div className="container mx-auto px-4">
+                        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 text-center justify-center items-start">
                             {[
-                                { label: "Active listeners per week", end: 100, suffix: "K+", icon: Users },
-                                { label: "Broadcasting", end: 24, suffix: "/7", icon: Radio },
-                                { label: "Monthly Newsletter", end: 60, suffix: "K+", icon: Megaphone },
-                                { label: "Social Followers", end: 20, suffix: "K+", icon: Star },
+                                { label: "Weekly Listeners", end: 100, suffix: "K+", icon: Headphones },
+                                { label: "Email Subscribers", end: 60, suffix: "K+", icon: Megaphone },
+                                { label: "WhatsApp Members", end: 12, suffix: "K+", icon: Smartphone },
+                                { label: "Monthly IG Reach", end: 390, suffix: "K+", icon: Users },
+                                { label: "Display Impressions", end: 216, suffix: "K+", icon: Star },
+                                { label: "Years On Air", end: 12, suffix: "", icon: Radio },
+                                { label: "Media Channels", end: 8, suffix: "+", icon: Play },
                             ].map((stat, i) => (
-                                <div key={i} className="flex-1 p-1 md:p-2">
-                                    <div className="flex justify-center">
-                                        <stat.icon className="w-4 h-4 md:w-6 md:h-6 text-primary" />
+                                <div key={i} className="flex flex-col items-center">
+                                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                                        <stat.icon className="w-6 h-6 text-primary" />
                                     </div>
-                                    <div className="text-xl sm:text-2xl md:text-6xl font-bold text-foreground tracking-tight leading-none">
+                                    <div className="text-3xl md:text-4xl font-black text-foreground tracking-tighter mb-2">
                                         <CountUp end={stat.end} suffix={stat.suffix} duration={2500} />
                                     </div>
-                                    <div className="text-[6px] xs:text-[7px] sm:text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-muted-foreground mt-1">
+                                    <div className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground leading-tight">
                                         {stat.label}
                                     </div>
                                 </div>
                             ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* SOCIAL PROOF & TESTIMONIALS */}
+                <section className="py-16 bg-muted/30">
+                    <div className="container mx-auto px-4">
+                        <div className="text-center mb-12 flex flex-col items-center">
+                            <div className="flex items-center gap-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 border border-green-200 dark:border-green-800">
+                                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                Verified Audience Data
+                            </div>
+                            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter italic">Proven Reach & Engagement</h2>
+                        </div>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
+                            <div className="bg-card p-8 border border-border shadow-sm rounded-none text-center">
+                                <h3 className="text-xl font-black uppercase tracking-tighter text-primary mb-4">Instagram</h3>
+                                <div className="space-y-4">
+                                    <div>
+                                        <div className="text-3xl font-black"><CountUp end={10400} duration={2000} suffix="+" /></div>
+                                        <div className="text-xs uppercase tracking-widest text-muted-foreground font-bold mt-1">Followers</div>
+                                    </div>
+                                    <div>
+                                        <div className="text-2xl font-black"><CountUp end={8.4} decimals={1} duration={2000} suffix="%" /></div>
+                                        <div className="text-xs uppercase tracking-widest text-muted-foreground font-bold mt-1">Engagement Rate</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="bg-card p-8 border border-border shadow-sm rounded-none text-center">
+                                <h3 className="text-xl font-black uppercase tracking-tighter text-primary mb-4">Email</h3>
+                                <div className="space-y-4">
+                                    <div>
+                                        <div className="text-3xl font-black"><CountUp end={60000} duration={2000} suffix="+" /></div>
+                                        <div className="text-xs uppercase tracking-widest text-muted-foreground font-bold mt-1">Subscribers</div>
+                                    </div>
+                                    <div>
+                                        <div className="text-2xl font-black"><CountUp end={34.2} decimals={1} duration={2000} suffix="%" /></div>
+                                        <div className="text-xs uppercase tracking-widest text-muted-foreground font-bold mt-1">Open Rate</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="bg-card p-8 border border-border shadow-sm rounded-none text-center">
+                                <h3 className="text-xl font-black uppercase tracking-tighter text-primary mb-4">WhatsApp</h3>
+                                <div className="space-y-4">
+                                    <div>
+                                        <div className="text-3xl font-black"><CountUp end={12000} duration={2000} suffix="+" /></div>
+                                        <div className="text-xs uppercase tracking-widest text-muted-foreground font-bold mt-1">Members</div>
+                                    </div>
+                                    <div>
+                                        <div className="text-2xl font-black"><CountUp end={78} duration={2000} suffix="%" /></div>
+                                        <div className="text-xs uppercase tracking-widest text-muted-foreground font-bold mt-1">Open Rate</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="max-w-4xl mx-auto bg-primary text-primary-foreground p-8 md:p-12 text-center rounded-none shadow-2xl relative overflow-hidden">
+                            <div className="absolute top-0 left-0 text-[120px] font-serif leading-none opacity-10 -translate-x-4 -translate-y-4">"</div>
+                            <div className="relative z-10">
+                                <div className="flex justify-center gap-1 mb-6">
+                                    {[1, 2, 3, 4, 5].map((star) => (
+                                        <Star key={star} className="w-6 h-6 fill-current text-yellow-400" />
+                                    ))}
+                                </div>
+                                <blockquote className="text-2xl md:text-3xl font-bold mb-8 leading-snug italic">
+                                    "Radio Nyra has consistently delivered strong visibility and meaningful engagement for our business."
+                                </blockquote>
+                                <div className="flex flex-col items-center">
+                                    <div className="font-black uppercase tracking-widest text-lg">Mihir Chakraborty</div>
+                                    <div className="text-sm font-bold opacity-80 uppercase tracking-widest mt-1">CEO, MC Construction Co.</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>

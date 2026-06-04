@@ -15,7 +15,10 @@ export function Footer() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <span className="font-bold text-xl tracking-tight">Radio Nyra</span>
+            <div>
+              <span className="font-bold text-xl tracking-tight block">Radio Nyra</span>
+              <span className="text-xs text-gray-400 mt-1 block">The Indian Subcontinent Community Media Network</span>
+            </div>
           </div>
 
           {/* Nav Links - Minimal Horizontal */}
@@ -54,11 +57,18 @@ export function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] text-gray-500 uppercase tracking-widest font-bold">
           <p>© {new Date().getFullYear()} Radio Nyra. All rights reserved.</p>
+          <div className="flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full border border-white/10">
+            <div className="w-2 h-2 rounded-full bg-green-500"></div>
+            <span>Verified by Radio.co Analytics</span>
+          </div>
           <div className="flex gap-6">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/about" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
-          <p>Contact: info@radionyra.com</p>
+          <div className="flex flex-col md:items-end text-right">
+            <p>Email: info@radionyra.com</p>
+            <p>Phone: +1 (919) 294-4800</p>
+          </div>
         </div>
       </div>
     </footer>

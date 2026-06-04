@@ -52,6 +52,119 @@ export default function AdvertisePage() {
                     </div>
                 </section>
 
+                {/* Audience Snapshot */}
+                <section className="py-16 bg-muted/20 border-b border-gray-100">
+                    <div className="container mx-auto px-4">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight italic mb-4">Audience Snapshot</h2>
+                            <p className="text-lg text-gray-600 italic">Who you reach when you advertise with Radio Nyra.</p>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                            <div className="bg-white p-8 border-t-4 border-t-primary shadow-sm">
+                                <h3 className="text-xl font-black uppercase mb-4 text-primary">Demographics</h3>
+                                <ul className="space-y-3 text-gray-700 font-medium">
+                                    <li className="flex justify-between border-b pb-2"><span>Age 25-45</span> <strong>65%</strong></li>
+                                    <li className="flex justify-between border-b pb-2"><span>Age 45+</span> <strong>25%</strong></li>
+                                    <li className="flex justify-between"><span>Under 25</span> <strong>10%</strong></li>
+                                </ul>
+                            </div>
+                            <div className="bg-white p-8 border-t-4 border-t-secondary shadow-sm">
+                                <h3 className="text-xl font-black uppercase mb-4 text-secondary">Purchasing Power</h3>
+                                <ul className="space-y-3 text-gray-700 font-medium">
+                                    <li className="flex justify-between border-b pb-2"><span>HHI $150K+</span> <strong>55%</strong></li>
+                                    <li className="flex justify-between border-b pb-2"><span>HHI $100K - $150K</span> <strong>30%</strong></li>
+                                    <li className="flex justify-between"><span>Homeowners</span> <strong>78%</strong></li>
+                                </ul>
+                            </div>
+                            <div className="bg-white p-8 border-t-4 border-t-green-500 shadow-sm">
+                                <h3 className="text-xl font-black uppercase mb-4 text-green-600">Engagement</h3>
+                                <ul className="space-y-3 text-gray-700 font-medium">
+                                    <li className="flex justify-between border-b pb-2"><span>Daily Listening</span> <strong>2.5 hrs</strong></li>
+                                    <li className="flex justify-between border-b pb-2"><span>Mobile App Usage</span> <strong>45%</strong></li>
+                                    <li className="flex justify-between"><span>Event Attendees</span> <strong>15K+ Yearly</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Packages & Rate Card Overview */}
+                <section className="py-16 bg-white border-b border-gray-100">
+                    <div className="container mx-auto px-4 max-w-6xl">
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight italic mb-4">Media Packages</h2>
+                            <p className="text-lg text-gray-600 italic">Tailored solutions to fit your marketing goals.</p>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {/* Package 1 */}
+                            <div className="border border-gray-200 p-8 flex flex-col">
+                                <h3 className="text-2xl font-black uppercase mb-2">Starter Pulse</h3>
+                                <p className="text-sm text-gray-500 font-bold uppercase tracking-widest mb-6">Local Business Essentials</p>
+                                <ul className="space-y-4 mb-8 flex-1">
+                                    <li className="flex items-start gap-3">
+                                        <Zap className="w-5 h-5 text-primary shrink-0" />
+                                        <span>30-second ROS (Run of Schedule) spots</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <Zap className="w-5 h-5 text-primary shrink-0" />
+                                        <span>Standard App Banner placement</span>
+                                    </li>
+                                </ul>
+                                <Button className="w-full rounded-none uppercase font-bold tracking-widest bg-gray-900 hover:bg-black" asChild>
+                                    <a href="#inquiry">Inquire Now</a>
+                                </Button>
+                            </div>
+                            
+                            {/* Package 2 */}
+                            <div className="border-2 border-primary p-8 flex flex-col relative shadow-xl transform md:-translate-y-4">
+                                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white text-xs font-black uppercase tracking-widest px-4 py-1">Most Popular</div>
+                                <h3 className="text-2xl font-black uppercase mb-2 text-primary">Growth Catalyst</h3>
+                                <p className="text-sm text-gray-500 font-bold uppercase tracking-widest mb-6">Maximum Visibility</p>
+                                <ul className="space-y-4 mb-8 flex-1">
+                                    <li className="flex items-start gap-3">
+                                        <Zap className="w-5 h-5 text-primary shrink-0" />
+                                        <span>60-second Primetime spots</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <Zap className="w-5 h-5 text-primary shrink-0" />
+                                        <span>Live Host Endorsements / Mentions</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <Zap className="w-5 h-5 text-primary shrink-0" />
+                                        <span>Social Media cross-promotion</span>
+                                    </li>
+                                </ul>
+                                <Button className="w-full rounded-none uppercase font-bold tracking-widest bg-primary hover:bg-primary/90 text-white" asChild>
+                                    <a href="#inquiry">Inquire Now</a>
+                                </Button>
+                            </div>
+
+                            {/* Package 3 */}
+                            <div className="border border-gray-200 p-8 flex flex-col">
+                                <h3 className="text-2xl font-black uppercase mb-2">Network Domination</h3>
+                                <p className="text-sm text-gray-500 font-bold uppercase tracking-widest mb-6">Omnichannel Reach</p>
+                                <ul className="space-y-4 mb-8 flex-1">
+                                    <li className="flex items-start gap-3">
+                                        <Zap className="w-5 h-5 text-primary shrink-0" />
+                                        <span>Custom Show Sponsorships</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <Zap className="w-5 h-5 text-primary shrink-0" />
+                                        <span>Dedicated Email Blasts (60K+ list)</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <Zap className="w-5 h-5 text-primary shrink-0" />
+                                        <span>On-ground Event Activation</span>
+                                    </li>
+                                </ul>
+                                <Button className="w-full rounded-none uppercase font-bold tracking-widest bg-gray-900 hover:bg-black" asChild>
+                                    <a href="#inquiry">Inquire Now</a>
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {/* Form Section */}
                 <section id="inquiry" className="py-16 bg-white">
                     <div className="container mx-auto px-4">

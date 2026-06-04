@@ -91,7 +91,7 @@ export function NyraChat() {
       },
       {
         keywords: ["contact", "phone", "email", "reach", "whatsapp", "call", "address", "location"],
-        response: "You can reach us in many ways:\n- Email: Info@radionyra.com\n- Phone: +1-919-999-8595 (Mon-Fri, 9am-6pm EST)\n- WhatsApp: +1-919-294-4800\n- Location: Durham, North Carolina."
+        response: "You can reach us in many ways:\n- Email: Info@radionyra.com\n- Phone: +1 (919) 294-4800 (Mon-Fri, 9am-6pm EST)\n- WhatsApp: +1 (919) 294-4800\n- Location: Durham, North Carolina."
       },
       {
         keywords: ["advertise", "business", "growth", "marketing", "listeners", "stats", "newsletter", "ads"],

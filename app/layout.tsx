@@ -24,14 +24,14 @@ const _geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.radionyra.com'),
   title: {
-    default: "Indian Radio USA | Telugu Bollywood Live Radio - Radio Nyra",
+    default: "Community Media Network | Radio Nyra USA",
     template: "%s | Radio Nyra"
   },
   description:
-    "Listen to Indian radio in USA. Telugu, Bollywood, Tamil live streaming 24/7 on Radio Nyra.",
+    "Radio Nyra is a trusted Indian Subcontinent Community Media Network delivering reach across radio, digital, social, events, and AI-powered marketing.",
   generator: "v0.app",
   manifest: "/manifest.json",
-  keywords: ["Radio Nyra", "Bollywood Radio", "Hindi Radio", "Indian Radio USA", "Raleigh Radio", "Daily Bollywood News", "Telugu Radio USA"],
+  keywords: ["Indian Radio USA", "Indian Community Network", "South Asian Media Network", "Radio Advertising USA", "Telugu Radio USA", "Hindi Radio USA", "Community Media Platform"],
   authors: [{ name: "Radio Nyra" }],
   creator: "Radio Nyra",
   publisher: "Radio Nyra",
@@ -45,21 +45,21 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.radionyra.com",
     siteName: "Radio Nyra",
-    title: "Radio Nyra | The Voice of the Indian Subcontinent in the USA",
-    description: "Broadcasting 24/7 Bollywood & Tollywood news, talk, and music to 100,000+ listeners in Raleigh-Durham.",
+    title: "Radio Nyra | The Indian Subcontinent Community Media Network",
+    description: "Delivering reach across radio, digital, social, events, email, WhatsApp, podcasts, and AI-powered marketing.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Radio Nyra - The Voice of the Indian Subcontinent",
+        alt: "Radio Nyra - Community Media Network",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Radio Nyra | Bollywood & Tollywood Radio",
-    description: "The #1 South Asian Radio Network in the USA. Listen live 24/7.",
+    title: "Radio Nyra | Community Media Network",
+    description: "The leading South Asian community media network in the United States.",
     images: ["/og-image.png"],
   },
   alternates: {
@@ -115,14 +115,14 @@ export default function RootLayout({
                     "https://www.instagram.com/radionyra",
                     "https://www.linkedin.com/company/radionyra"
                   ],
-                  "description": "The Voice of the Indian Subcontinent in the USA. Broadcasting Bollywood & Tollywood 24/7.",
+                  "description": "Radio Nyra is a trusted Indian Subcontinent Community Media Network delivering reach across radio, digital, social, events, and AI-powered marketing.",
                   "address": {
                     "@type": "PostalAddress",
                     "addressLocality": "Raleigh",
                     "addressRegion": "NC",
                     "addressCountry": "US"
                   },
-                  "telephone": "+1-919-999-8595"
+                  "telephone": "+1-919-294-4800"
                 })
               }}
             />

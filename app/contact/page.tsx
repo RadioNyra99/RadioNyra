@@ -106,7 +106,7 @@ export default function ContactPage() {
                 </div>
                 <div className="group">
                   <h3 className="text-xs font-black uppercase text-secondary tracking-[0.3em] mb-4">Call Us</h3>
-                  <a href="tel:9199998595" className="text-xl sm:text-3xl font-black text-foreground hover:text-primary transition-colors">+1 (919) 999 - 8595</a>
+                  <a href="tel:9192944800" className="text-xl sm:text-3xl font-black text-foreground hover:text-primary transition-colors">+1 (919) 294 - 4800</a>
                   <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-2">Mon - Fri, 9am - 6pm EST</p>
                   <p className="text-[10px] font-black text-muted-foreground/70 uppercase tracking-widest mt-1">Call Only</p>
                 </div>
@@ -134,6 +134,27 @@ export default function ContactPage() {
               <h2 className="text-4xl font-black uppercase tracking-tighter text-foreground italic">Our Services Overview</h2>
               <div className="w-16 h-1 bg-primary mx-auto mt-6" />
             </div>
+
+            <Card className="max-w-2xl mx-auto mb-16 border-2 border-primary bg-primary/5 shadow-xl">
+              <CardContent className="p-8 text-center">
+                <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-2">Advertising Inquiries</h3>
+                <h4 className="text-2xl font-black uppercase mb-1">Vaishnavi Palleda</h4>
+                <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-6">Vice President</p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
+                  <a href="mailto:vp@radionyra.com" className="flex items-center gap-2 hover:text-primary transition-colors">
+                    <Mail className="w-5 h-5 text-primary" />
+                    <span className="font-bold text-lg">vp@radionyra.com</span>
+                  </a>
+                  <a href="tel:9192944800" className="flex items-center gap-2 hover:text-primary transition-colors">
+                    <Phone className="w-5 h-5 text-primary" />
+                    <span className="font-bold text-lg">(919) 294 - 4800</span>
+                  </a>
+                </div>
+                <Button className="font-black uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none px-8 py-6" asChild>
+                  <a href="mailto:vp@radionyra.com?subject=Advertising Inquiry">Schedule Advertising Consultation</a>
+                </Button>
+              </CardContent>
+            </Card>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {services.map((service, idx) => (

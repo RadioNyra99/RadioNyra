@@ -1,13 +1,17 @@
 import { BLOG_POSTS } from '@/lib/blog-data';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
 
 
 export default function BlogPage() {
     const posts = BLOG_POSTS;
 
     return (
-        <div className="min-h-screen bg-background py-20">
+        <div className="min-h-screen bg-background font-sans">
+            <Navigation />
+            <div className="py-20">
             <div className="container mx-auto px-4">
                 <div className="max-w-6xl mx-auto">
                     <h1 className="text-5xl md:text-6xl font-black uppercase tracking-tighter text-primary mb-12">
@@ -81,7 +85,9 @@ export default function BlogPage() {
                         </div>
                     )}
                 </div>
+                </div>
             </div>
+            <Footer />
         </div>
     );
 }

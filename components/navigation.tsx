@@ -24,35 +24,48 @@ export function Navigation() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/schedule", label: "Schedule" },
-    { href: "/services", label: "Services" },
-    { href: "/podcasts", label: "Podcast" },
-    { href: "/how-to-tune", label: "How to Tune" },
-    { href: "/testimonials", label: "Testimonials" },
-    { href: "/events", label: "Events" },
     {
-      href: "/gallery",
-      label: "Gallery",
+      href: "#listen",
+      label: "Listen",
       subLinks: [
-        { href: "/gallery/2016", label: "New Year 2016 – Bollywood Bash" },
-        { href: "/gallery/2018", label: "New Year 2018 – Bollywood Bash" },
-        { href: "/gallery/2019", label: "New Year 2019 – Celebrations" },
-        { href: "/gallery/2026", label: "2026 Bollywood and Tollywood Bash" },
+        { href: "/schedule", label: "Schedule" },
+        { href: "/podcasts", label: "Podcasts" },
+        { href: "/how-to-tune", label: "How to Tune In" },
       ]
     },
     {
       href: "#community",
       label: "Community",
       subLinks: [
-        { href: "/community/movies", label: "Upcoming Movies" },
-        { href: "/community/restaurants", label: "Indian Restaurants" },
-        { href: "/community/temples", label: "Temples & Worship" },
-        { href: "/community/ott-adda", label: "OTT Adda" },
+        { href: "/community-impact", label: "Community Impact" },
+        { href: "/partners", label: "Partners" },
+        { href: "/events", label: "Events" },
+        { href: "/gallery", label: "Gallery" },
+        { href: "/festival-calendar", label: "Festival Calendar" },
+      ]
+    },
+    {
+      href: "#media",
+      label: "Media",
+      subLinks: [
+        { href: "/ecosystem", label: "Ecosystem" },
+        { href: "/syndication", label: "Syndication" },
+        { href: "/analytics", label: "Analytics" },
+        { href: "/press", label: "Press" },
+      ]
+    },
+    {
+      href: "#services",
+      label: "Services",
+      subLinks: [
+        { href: "/services", label: "Advertising Services" },
+        { href: "/creative-studio", label: "Creative Studio" },
       ]
     },
     { href: "/advertise", label: "Advertise" },
+    { href: "/blog", label: "Blog" },
     { href: "/faq", label: "FAQ" },
-    { href: "/contact", label: "Contact Us" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (
@@ -211,7 +224,7 @@ export function Navigation() {
             <Link href="/" className="flex items-center gap-3 group">
               <div className="text-right flex flex-col justify-center">
                 <h1 className="font-bold text-xl lg:text-2xl text-foreground tracking-tighter leading-none whitespace-nowrap">Radio Nyra</h1>
-                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary leading-none mt-1">Raleigh – Durham</p>
+                <p className="text-[9px] font-black uppercase tracking-[0.1em] text-primary leading-none mt-1">COMMUNITY MEDIA NETWORK</p>
               </div>
               <div className="relative w-10 h-10 lg:w-12 lg:h-12 overflow-hidden rounded-full border-2 border-primary group-hover:border-primary/80 transition-colors shrink-0">
                 <img

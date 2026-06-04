@@ -21,6 +21,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/community',
         '/faq',
         '/media-kit',
+        '/analytics',
+        '/ecosystem',
+        '/syndication',
+        '/festival-calendar',
+        '/community-impact',
+        '/creative-studio',
+        '/press'
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date().toISOString(),

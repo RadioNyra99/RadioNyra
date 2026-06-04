@@ -102,19 +102,54 @@ export default function AboutPage() {
                     <div className="container mx-auto px-4 max-w-5xl">
                         <div className="space-y-16 md:space-y-24">
 
-                            {/* Our Story */}
+                            {/* Pioneering Since 2014 */}
                             <div className="text-center md:text-left">
-                                <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight mb-8">Our NC Journey</h2>
+                                <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight mb-8">Pioneering Since 2014</h2>
                                 <div className="max-w-4xl space-y-6 text-lg text-muted-foreground leading-relaxed italic">
                                     <p>
-                                        The recent chapter of our story began in 2014 in the forest terrain of Durham, North Carolina. WDUR 1490 AM became the vessel for our mission, launching 24/7 Desi News, Talk, and Music.
+                                        The recent chapter of our story began in 2014 in Durham, North Carolina. WDUR 1490 AM became the vessel for our mission, launching 24/7 Desi News, Talk, and Music.
                                     </p>
                                     <p>
-                                        What started as a 1000W broadcasting channel quickly expanded to HD radio and FM translators, catching the attention of the rapidly growing Triangle community.
+                                        What started as a 1000W broadcasting channel quickly expanded to HD radio, FM translators, and digital media, catching the attention of the rapidly growing Triangle community.
                                     </p>
                                     <p className="font-bold text-primary not-italic border-l-4 border-primary pl-6">
-                                        In July 2025, we continued this tradition of growth by launching our 24/7 Telugu channel right alongside our Hindi broadcast.
+                                        Today, we are more than just a radio station. We are a comprehensive Community Media Network, bridging the gap between local businesses and the South Asian diaspora.
                                     </p>
+                                </div>
+                            </div>
+
+                            {/* Why Radio Nyra */}
+                            <div className="pt-12">
+                                <h2 className="text-3xl font-black uppercase tracking-tight mb-12 text-center">Why Radio Nyra?</h2>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                                    <div className="p-6 bg-card border border-border shadow-sm text-center">
+                                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                                            <Users className="w-6 h-6 text-primary" />
+                                        </div>
+                                        <h3 className="font-bold uppercase tracking-widest text-sm mb-2">Massive Reach</h3>
+                                        <p className="text-sm text-muted-foreground">Connecting with 100K+ weekly listeners and 60K+ email subscribers across the USA.</p>
+                                    </div>
+                                    <div className="p-6 bg-card border border-border shadow-sm text-center">
+                                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                                            <Target className="w-6 h-6 text-primary" />
+                                        </div>
+                                        <h3 className="font-bold uppercase tracking-widest text-sm mb-2">Targeted Impact</h3>
+                                        <p className="text-sm text-muted-foreground">Hyper-local programming allowing businesses to reach specific demographics effectively.</p>
+                                    </div>
+                                    <div className="p-6 bg-card border border-border shadow-sm text-center">
+                                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                                            <Zap className="w-6 h-6 text-primary" />
+                                        </div>
+                                        <h3 className="font-bold uppercase tracking-widest text-sm mb-2">AI-Powered Tech</h3>
+                                        <p className="text-sm text-muted-foreground">Leveraging advanced analytics and AI for hyper-targeted marketing campaigns.</p>
+                                    </div>
+                                    <div className="p-6 bg-card border border-border shadow-sm text-center">
+                                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                                            <Award className="w-6 h-6 text-primary" />
+                                        </div>
+                                        <h3 className="font-bold uppercase tracking-widest text-sm mb-2">Trusted Authority</h3>
+                                        <p className="text-sm text-muted-foreground">Over 12 years of building deep trust and relationships within the community.</p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -151,7 +186,7 @@ export default function AboutPage() {
                                 <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight mb-8">Meet The Team</h2>
                                 <div className="w-full relative rounded-xl overflow-hidden shadow-2xl border-4 border-primary/20">
                                     <img
-                                        src="/radio-nyra-team.jpeg"
+                                        src="/radio-nyra-team.png"
                                         alt="Radio Nyra Team"
                                         className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
                                     />

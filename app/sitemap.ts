@@ -27,7 +27,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/festival-calendar',
         '/community-impact',
         '/creative-studio',
-        '/press'
+        '/press',
+        '/privacy-policy',
+        '/terms-of-service'
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date().toISOString(),

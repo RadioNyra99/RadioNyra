@@ -1,15 +1,10 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Geist_Mono } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import { AudioPlayer } from "@/components/audio-player"
 import { AudioProvider } from "@/components/audio-context"
-import { MobileFab } from "@/components/mobile-fab"
-import { EmailPopup } from "@/components/email-popup"
-import { InstallAppPopup } from "@/components/install-app-popup"
-import Scene3D from "@/components/scene-3d"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { GlobalSiteFeatures } from "@/components/global-site-features"
 
 const _inter = Inter({
   subsets: ["latin"],
@@ -77,7 +72,6 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
   },
 }
-import { NyraChat } from "@/components/nyra-chat"
 
 export default function RootLayout({
   children,
@@ -94,73 +88,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <AudioProvider>
-            <Scene3D />
-            <div className="relative z-10">{children}</div>
-            <AudioPlayer />
-            <NyraChat />
-            <MobileFab />
-            <EmailPopup />
-            <InstallAppPopup />
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                  "@context": "https://schema.org",
-                  "@type": "RadioStation",
-                  "name": "Radio Nyra",
-                  "url": "https://www.radionyra.com",
-                  "logo": "https://www.radionyra.com/logo.png",
-                  "sameAs": [
-                    "https://www.facebook.com/radionyra",
-                    "https://www.instagram.com/radionyra",
-                    "https://www.linkedin.com/company/radionyra"
-                  ],
-                  "description": "Radio Nyra is a trusted Indian Subcontinent Community Media Network delivering reach across radio, digital, social, events, and AI-powered marketing.",
-                  "address": {
-                    "@type": "PostalAddress",
-                    "addressLocality": "Raleigh",
-                    "addressRegion": "NC",
-                    "addressCountry": "US"
-                  },
-                  "telephone": "+1-919-294-4800"
-                })
-              }}
-            />
+            <GlobalSiteFeatures>{children}</GlobalSiteFeatures>
           </AudioProvider>
         </ThemeProvider>
-        {/* <Analytics /> */}
-        
-        {/* Google Analytics 4 (Placeholder ID) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-XXXXXXXXXX');
-            `,
-          }}
-        />
-
-        {/* Hotjar Tracking Code (Placeholder ID) */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(h,o,t,j,a,r){
-                  h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-                  h._hjSettings={hjid:YOUR_HOTJAR_ID,hjsv:6};
-                  a=o.getElementsByTagName('head')[0];
-                  r=o.createElement('script');r.async=1;
-                  r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-                  a.appendChild(r);
-              })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-            `,
-          }}
-        />
-
-        {/* Google AdSense (Placeholder ID) */}
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossOrigin="anonymous"></script>
       </body>
     </html>
   )

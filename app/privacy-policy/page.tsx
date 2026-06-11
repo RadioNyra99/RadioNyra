@@ -1,233 +1,125 @@
-import type { Metadata } from "next"
-import Link from "next/link"
+"use client"
 
-const effectiveDate = "June 8, 2025"
-const contactEmail = "legal@vaultproductions.ai"
-
-export const metadata: Metadata = {
-  metadataBase: new URL("https://vaultgamesstudio.com"),
-  title: {
-    absolute: "Privacy Policy | Vault Productions",
-  },
-  description:
-    "Privacy Policy for Vault Productions games, applications, websites, AI creative tools, and related services.",
-  authors: [{ name: "Vault Productions" }],
-  creator: "Vault Productions",
-  publisher: "Vault Productions",
-  keywords: ["Vault Productions", "Vault Games Studio", "privacy policy", "games", "AI creative studio"],
-  alternates: {
-    canonical: "https://vaultgamesstudio.com/privacy-policy/",
-  },
-  openGraph: {
-    type: "website",
-    url: "https://vaultgamesstudio.com/privacy-policy/",
-    siteName: "Vault Productions",
-    title: "Privacy Policy | Vault Productions",
-    description:
-      "Privacy Policy for Vault Productions games, applications, websites, AI creative tools, and related services.",
-  },
-  twitter: {
-    card: "summary",
-    title: "Privacy Policy | Vault Productions",
-    description:
-      "Privacy Policy for Vault Productions games, applications, websites, AI creative tools, and related services.",
-  },
-}
-
-const providedDirectly = [
-  "Account registration details, including name, email address, username, and password",
-  "Profile information and preferences",
-  "Communications you send us, including support requests and feedback",
-  "Payment and billing information when you make purchases",
-  "Any content you create, upload, or share through our Services",
-]
-
-const collectedAutomatically = [
-  "Device identifiers and technical information, including device type, operating system, and browser type",
-  "Usage data, including gameplay statistics, session duration, features accessed, and in-app actions",
-  "Log data, including IP address, access times, pages viewed, and errors",
-  "Cookies and similar tracking technologies",
-  "Analytics data to understand how users interact with our Services",
-]
-
-const thirdPartySources = [
-  "Social networking platforms, such as Google, Apple, or Facebook, if you choose to connect them",
-  "App stores and platform providers",
-  "Third-party analytics and advertising partners",
-  "Other users who interact with you through our Services",
-]
-
-const uses = [
-  "Provide, operate, and improve our Services and games",
-  "Create and manage your account",
-  "Process transactions and send related information",
-  "Send service-related communications, including updates, security alerts, and support messages",
-  "Personalize your experience and deliver relevant content",
-  "Analyze usage patterns to enhance gameplay and user experience",
-  "Detect, prevent, and respond to fraud, abuse, and security incidents",
-  "Comply with legal obligations and enforce our terms",
-  "Develop new features, products, and services",
-]
-
-function BulletList({ items }: { items: string[] }) {
-  return (
-    <ul className="mt-4 space-y-3 pl-5 text-muted-foreground">
-      {items.map((item) => (
-        <li key={item} className="list-disc leading-7">
-          {item}
-        </li>
-      ))}
-    </ul>
-  )
-}
+import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto max-w-4xl px-5 py-10 sm:px-8 sm:py-14">
-        <header className="border-b border-border pb-8">
-          <Link href="/" className="text-sm font-bold uppercase tracking-widest text-primary">
-            Vault Productions
-          </Link>
-          <h1 className="mt-5 text-4xl font-black tracking-tight sm:text-5xl">
-            Privacy Policy
-          </h1>
-          <p className="mt-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-            Effective Date: {effectiveDate}
-          </p>
-        </header>
+    <div className="min-h-screen bg-background font-sans">
+      <Navigation />
 
-        <div className="space-y-10 py-10 leading-7 text-muted-foreground">
-          <section>
-            <p>
-              This Privacy Policy describes how Vault Productions ("Vault Productions," "we," "us," or "our") collects, uses, and shares information about you when you use our games, applications, websites, and related services (collectively, the "Services"). By accessing or using our Services, you agree to the practices described in this Privacy Policy.
-            </p>
-            <p className="mt-4">
-              Vault Productions is an AI creative studio and game development company headquartered in Cary, North Carolina, USA. Our Services include mobile and PC games, AI-powered creative tools, interactive experiences, and any associated online platforms.
-            </p>
-          </section>
+      <main className="py-12 md:py-16">
+        <div className="container mx-auto px-4 max-w-4xl">
+          {/* Header */}
+          <div className="mb-12 border-b border-border/40 pb-8">
+            <p className="text-primary font-bold uppercase tracking-widest text-sm mb-2">Legal</p>
+            <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-foreground mb-4">Privacy Policy</h1>
+            <p className="text-muted-foreground text-sm font-mono uppercase tracking-wider">Last Updated: June 11, 2026</p>
+          </div>
 
-          <section>
-            <h2 className="text-2xl font-bold tracking-tight text-foreground">1. Information We Collect</h2>
-            <h3 className="mt-6 text-lg font-bold text-foreground">1.1 Information You Provide Directly</h3>
-            <p className="mt-3">We collect information you voluntarily provide, including:</p>
-            <BulletList items={providedDirectly} />
+          {/* Content */}
+          <div className="space-y-12 text-lg text-muted-foreground leading-relaxed">
 
-            <h3 className="mt-6 text-lg font-bold text-foreground">1.2 Information Collected Automatically</h3>
-            <p className="mt-3">When you use our Services, we automatically collect:</p>
-            <BulletList items={collectedAutomatically} />
-
-            <h3 className="mt-6 text-lg font-bold text-foreground">1.3 Information from Third Parties</h3>
-            <p className="mt-3">We may receive information about you from:</p>
-            <BulletList items={thirdPartySources} />
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold tracking-tight text-foreground">2. How We Use Your Information</h2>
-            <p className="mt-3">We use the information we collect to:</p>
-            <BulletList items={uses} />
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold tracking-tight text-foreground">3. How We Share Your Information</h2>
-            <p className="mt-3">
-              We do not sell your personal information. We may share your information in the following circumstances:
-            </p>
-            <h3 className="mt-6 text-lg font-bold text-foreground">3.1 Service Providers</h3>
-            <p className="mt-3">
-              We share information with trusted third-party vendors who assist us in operating our Services, including cloud hosting providers, analytics services, customer support platforms, payment processors, and advertising networks. These parties are contractually obligated to protect your information and may only use it to provide services to us.
-            </p>
-            <h3 className="mt-6 text-lg font-bold text-foreground">3.2 Platform Partners</h3>
-            <p className="mt-3">
-              Our games and applications may integrate with third-party platforms such as app stores, social networks, and streaming services. Please review their privacy policies, as we are not responsible for their data practices.
-            </p>
-            <h3 className="mt-6 text-lg font-bold text-foreground">3.3 Legal Requirements</h3>
-            <p className="mt-3">
-              We may disclose your information if required by law, regulation, legal process, or governmental request, or when we believe disclosure is necessary to protect the rights, property, or safety of Vault Productions, our users, or others.
-            </p>
-            <h3 className="mt-6 text-lg font-bold text-foreground">3.4 Business Transfers</h3>
-            <p className="mt-3">
-              In the event of a merger, acquisition, reorganization, or sale of assets, your information may be transferred as part of that transaction. We will notify you of any such change and any choices you may have.
-            </p>
-            <h3 className="mt-6 text-lg font-bold text-foreground">3.5 With Your Consent</h3>
-            <p className="mt-3">We may share your information for other purposes with your explicit consent.</p>
-          </section>
-
-          {[
-            ["4. Data Retention", "We retain your information for as long as necessary to provide our Services, comply with legal obligations, resolve disputes, and enforce our agreements. When you delete your account, we will delete or anonymize your personal information within a reasonable period, except where retention is required by law."],
-          ].map(([title, body]) => (
-            <section key={title}>
-              <h2 className="text-2xl font-bold tracking-tight text-foreground">{title}</h2>
-              <p className="mt-3">{body}</p>
+            <section>
+              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
+                <span className="text-primary">01.</span> Introduction
+              </h2>
+              <p className="mb-4">
+                Welcome to Radio Nyra ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about our policy, or our practices with regards to your personal information, please contact us at <a href="mailto:info@radionyra.com" className="text-primary hover:underline font-bold">info@radionyra.com</a>.
+              </p>
+              <p>
+                When you visit our website <strong>radionyra.com</strong> (the "Website"), use our mobile application (the "App"), and use our services, you trust us with your personal information. We take your privacy very seriously. In this privacy notice, we describe our privacy policy. We seek to explain to you in the clearest way possible what information we collect, how we use it, and what rights you have in relation to it.
+              </p>
             </section>
-          ))}
 
-          <section>
-            <h2 className="text-2xl font-bold tracking-tight text-foreground">5. Your Rights and Choices</h2>
-            <h3 className="mt-6 text-lg font-bold text-foreground">5.1 Account Information</h3>
-            <p className="mt-3">
-              You may access, update, or correct your account information at any time through your account settings. You may request deletion of your account by contacting us at the details below.
-            </p>
-            <h3 className="mt-6 text-lg font-bold text-foreground">5.2 Communications</h3>
-            <p className="mt-3">
-              You may opt out of marketing communications at any time by following the unsubscribe instructions in any email or by contacting us. You will still receive essential service-related communications.
-            </p>
-            <h3 className="mt-6 text-lg font-bold text-foreground">5.3 Cookies</h3>
-            <p className="mt-3">
-              You may control cookie preferences through your browser settings. Note that disabling cookies may affect some features of our Services.
-            </p>
-            <h3 className="mt-6 text-lg font-bold text-foreground">5.4 California Residents</h3>
-            <p className="mt-3">
-              If you are a California resident, you may have additional rights under the California Consumer Privacy Act (CCPA), including the right to know, delete, and opt out of the sale of personal information. We do not sell personal information. To exercise your rights, contact us at the information below.
-            </p>
-            <h3 className="mt-6 text-lg font-bold text-foreground">5.5 EU/EEA Residents</h3>
-            <p className="mt-3">
-              If you are located in the European Union or European Economic Area, you may have rights under the General Data Protection Regulation (GDPR), including rights of access, rectification, erasure, restriction of processing, data portability, and objection. Contact us to exercise these rights.
-            </p>
-          </section>
+            <section>
+              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
+                <span className="text-primary">02.</span> Information We Collect
+              </h2>
+              <p className="mb-4">
+                We collect personal information that you voluntarily provide to us when expressing an interest in obtaining information about us or our products and services, when participating in activities on the Website or App, or otherwise contacting us.
+              </p>
 
-          {[
-            ["6. Children's Privacy", "Our Services are not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected information from a child under 13, please contact us immediately and we will take steps to delete such information. If you are between 13 and 17, you represent that your parent or legal guardian has reviewed and agreed to this Privacy Policy."],
-            ["7. Data Security", "We implement reasonable technical, administrative, and physical security measures to protect your information from unauthorized access, disclosure, alteration, or destruction. However, no method of transmission over the internet or electronic storage is completely secure, and we cannot guarantee absolute security."],
-            ["8. International Data Transfers", "Vault Productions operates from the United States. If you are located outside the United States, your information will be transferred to and processed in the United States, which may have different data protection laws than your jurisdiction. By using our Services, you consent to this transfer."],
-            ["9. Third-Party Links and Services", "Our Services may contain links to third-party websites, applications, or services. We are not responsible for the privacy practices of these third parties, and we encourage you to review their privacy policies before providing any information to them."],
-            ["10. Changes to This Privacy Policy", "We may update this Privacy Policy from time to time. We will notify you of material changes by posting the revised policy on our website or within our Services, and updating the effective date. Your continued use of the Services after any changes constitutes your acceptance of the updated policy."],
-          ].map(([title, body]) => (
-            <section key={title}>
-              <h2 className="text-2xl font-bold tracking-tight text-foreground">{title}</h2>
-              <p className="mt-3">{body}</p>
+              <div className="bg-muted/35 p-6 rounded-lg border border-border/50 mt-6">
+                <h3 className="text-lg font-bold text-foreground uppercase tracking-wide mb-3">Mobile Application Data</h3>
+                <p className="mb-4 text-sm font-semibold text-foreground/80">When you use our App, we may also process the following information if you grant us access or permission:</p>
+                <ul className="space-y-4">
+                  <li className="flex gap-3">
+                    <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-primary mt-2.5" />
+                    <span className="text-sm"><strong>Mobile Device Access:</strong> We may request access or permission to certain features from your mobile device, including Bluetooth and other features. If you wish to change our access or permissions, you may do so in your device's settings.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-primary mt-2.5" />
+                    <span className="text-sm"><strong>Push Notifications:</strong> We may request to send you push notifications regarding your account or certain features of the App. If you wish to opt-out from receiving these types of communications, you may turn them off in your device's settings.</span>
+                  </li>
+                </ul>
+              </div>
             </section>
-          ))}
 
-          <section className="rounded-lg border border-primary/25 bg-primary/5 p-6">
-            <h2 className="text-2xl font-bold tracking-tight text-foreground">11. Contact Us</h2>
-            <p className="mt-4">
-              If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:
-            </p>
-            <address className="mt-4 not-italic text-foreground">
-              Vault Productions
-              <br />
-              Cary, North Carolina, USA
-              <br />
-              Email:{" "}
-              <a className="font-semibold text-primary underline-offset-4 hover:underline" href={`mailto:${contactEmail}`}>
-                {contactEmail}
-              </a>
-              <br />
-              Website: www.vaultproductions.ai
-            </address>
-          </section>
+            <section>
+              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
+                <span className="text-primary">03.</span> How We Use Your Information
+              </h2>
+              <p className="mb-6">
+                We use personal information collected via our Website/App for a variety of business purposes described below. We process your personal information for these purposes in reliance on our legitimate business interests, in order to enter into or perform a contract with you, with your consent, and/or for compliance with our legal obligations.
+              </p>
+              <ul className="grid md:grid-cols-2 gap-3 text-sm">
+                {[
+                  "Facilitate account creation and logon process",
+                  "Send marketing and promotional communications",
+                  "Send administrative information",
+                  "Fulfill and manage orders",
+                  "Deliver targeted advertising",
+                  "Administer surveys and prize draws",
+                  "Enable user-to-user communications",
+                  "Enforce terms, conditions and policies"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-2 text-foreground/80 font-medium">
+                    <span className="text-primary text-xs">●</span> {item}
+                  </li>
+                ))}
+              </ul>
+            </section>
 
-          <nav className="flex flex-wrap gap-4 border-t border-border pt-8 text-sm font-semibold">
-            <Link href="/" className="text-muted-foreground hover:text-foreground">
-              Home
-            </Link>
-            <Link href="/terms-of-service" className="text-muted-foreground hover:text-foreground">
-              Terms of Service
-            </Link>
-          </nav>
+            <section>
+              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
+                <span className="text-primary">04.</span> Sharing Your Information
+              </h2>
+              <p>
+                We only share information with your consent, to comply with laws, to provide you with services, to protect your rights, or to fulfill business obligations. We do not sell or lease your personal information to third parties.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
+                <span className="text-primary">05.</span> Third-Party Websites
+              </h2>
+              <p>
+                The Website and App may contain advertisements from third parties that are not affiliated with us and which may link to other websites, online services, or mobile applications. We cannot guarantee the safety and privacy of data you provide to any third parties. Any data collected by third parties is not covered by this privacy policy. We are not responsible for the content or privacy and security practices and policies of any third parties, including other websites, services, or applications that may be linked to or from the Website or App. You should review the policies of such third parties and contact them directly to respond to your questions.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
+                <span className="text-primary">06.</span> Contact Us
+              </h2>
+              <div className="bg-primary/5 border border-primary/20 p-8 rounded-lg mt-6">
+                <p className="mb-4 font-bold text-foreground">
+                  If you have questions or comments about this policy, you may email us at <a href="mailto:info@radionyra.com" className="text-primary hover:underline font-bold">info@radionyra.com</a> or by post to:
+                </p>
+                <address className="not-italic text-foreground font-mono uppercase tracking-widest text-sm leading-relaxed">
+                  Radio Nyra<br />
+                  Raleigh - Durham<br />
+                  NC, USA
+                </address>
+              </div>
+            </section>
+
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+
+      <Footer />
+    </div>
   )
 }

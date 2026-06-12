@@ -11,21 +11,21 @@ export function VoiceAssistants() {
         {
             name: "Alexa",
             displayName: "Alexa",
-            image: "/Alexa.jpg",
+            image: "/alexa.jpg",
             command: "Alexa, open Radio Nyra Hindi/Telugu",
             popupTitle: "Listen on Alexa"
         },
         {
             name: "Google",
             displayName: "Google Assistant",
-            image: "/Google Assisstance.jpg",
+            image: "/google-assistance.jpg",
             command: "OK Google, play Radio Nyra",
             popupTitle: "Listen on Google Assistant"
         },
         {
             name: "Siri",
             displayName: "Siri",
-            image: "/Siri.jpg",
+            image: "/siri.jpg",
             command: "Hey Siri, play Radio Nyra",
             popupTitle: "Listen using Siri"
         }
@@ -42,7 +42,7 @@ export function VoiceAssistants() {
                         >
                             <img
                                 src={assistant.image}
-                                alt={assistant.name}
+                                alt={`Listen to Radio Nyra on ${assistant.displayName}`}
                                 className="w-full h-full object-cover"
                             />
                         </button>
@@ -58,7 +58,7 @@ export function VoiceAssistants() {
                             <div className="space-y-4">
                                 <div className="p-6 rounded-2xl bg-gray-50 border border-gray-100 flex flex-col items-center text-center gap-4">
                                     <div className="w-20 h-20 rounded-full overflow-hidden shadow-lg">
-                                        <img src={assistant.image} alt={assistant.name} className="w-full h-full object-cover" />
+                                        <img src={assistant.image} alt={`Listen to Radio Nyra on ${assistant.displayName}`} className="w-full h-full object-cover" />
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-gray-900 text-xl">{assistant.displayName}</h4>

@@ -4,7 +4,7 @@ const nextConfig = {
   turbopack: {
     root: process.cwd(),
   },
-  trailingSlash: true,
+  trailingSlash: false,
   typescript: {
     ignoreBuildErrors: true,
   },

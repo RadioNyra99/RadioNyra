@@ -2,6 +2,7 @@
 
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import Link from "next/link"
 import { Quote, Star, MessageSquare } from "lucide-react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
@@ -34,6 +35,36 @@ const testimonials = [
         role: "Morrisville Resident",
         content: "The support Radio Nyra provides to local cultural events is unparalleled. They are truly the heartbeat of the South Asian community in North Carolina.",
         stars: 5
+    }
+];
+
+const caseStudies = [
+    {
+        slug: "kash-patel-productions",
+        client: "Kash Patel Productions",
+        campaign: "A.R. Rahman – The Wonderment Tour Promotion",
+        increase: "130%",
+        metric: "Concert Ticket Sales",
+        industry: "Live Entertainment & Concerts",
+        summary: "Sold out 15,000+ capacity arenas and increased local Triangle tickets by 45%."
+    },
+    {
+        slug: "mc-construction",
+        client: "MC Construction Co.",
+        campaign: "Triangle Custom Homebuilder Branding",
+        increase: "275%",
+        metric: "Monthly Inbound Leads",
+        industry: "Real Estate & Construction",
+        summary: "Generated 120+ qualified inbound leads and increased brand recall by 35%."
+    },
+    {
+        slug: "royal-spice-restaurant",
+        client: "Royal Spice Indian Restaurant",
+        campaign: "Weekend Buffet & Dining Campaign",
+        increase: "50%",
+        metric: "Weekend Diners Served",
+        industry: "Food & Hospitality",
+        summary: "Boosted weekend dining traffic by 50% and registered 200+ WhatsApp claims."
     }
 ];
 
@@ -112,6 +143,50 @@ export default function TestimonialsPage() {
                                             </span>
                                         )}
                                     </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Case Studies Section */}
+                <section className="py-20 bg-muted/20 border-t border-border">
+                    <div className="container mx-auto px-4 max-w-6xl">
+                        <div className="text-center mb-16">
+                            <span className="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest border border-primary/20">
+                                Advertiser Success Stories
+                            </span>
+                            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mt-6 italic text-foreground">
+                                Marketing Case Studies
+                            </h2>
+                            <p className="text-muted-foreground mt-3 uppercase tracking-widest text-xs font-bold">
+                                See how local and national brands drive measurable results with Radio Nyra
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {caseStudies.map((study) => (
+                                <div key={study.slug} className="bg-card border border-border p-8 rounded-sm shadow-sm flex flex-col hover:border-primary transition-all duration-300">
+                                    <div className="flex justify-between items-start mb-6">
+                                        <span className="text-[10px] font-black uppercase tracking-widest text-primary bg-primary/10 px-2.5 py-1 rounded-full">
+                                            {study.industry}
+                                        </span>
+                                        <span className="text-3xl font-black text-primary">
+                                            +{study.increase}
+                                        </span>
+                                    </div>
+                                    <h3 className="text-xl font-black uppercase tracking-tight text-foreground mb-2 leading-snug">
+                                        {study.client}
+                                    </h3>
+                                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-4">
+                                        {study.campaign}
+                                    </p>
+                                    <p className="text-muted-foreground leading-relaxed text-sm mb-6 flex-1">
+                                        {study.summary}
+                                    </p>
+                                    <Button asChild className="w-full bg-primary hover:bg-primary/90 text-white rounded-none font-bold uppercase tracking-widest text-xs py-5">
+                                        <Link href={`/testimonials/${study.slug}`}>View Case Study</Link>
+                                    </Button>
                                 </div>
                             ))}
                         </div>

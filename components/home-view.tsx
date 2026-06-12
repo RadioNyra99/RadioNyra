@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { FrequencyBar } from "@/components/frequency-bar"
@@ -23,6 +24,10 @@ import { PartnersMarquee } from "@/components/partners-marquee"
 import { TRENDING_SONGS } from "@/lib/trending-songs"
 
 export function HomeView() {
+    const [loadVideo, setLoadVideo] = useState(false);
+    useEffect(() => {
+        setLoadVideo(true);
+    }, []);
 
     // Radio Nyra Shows Data
     const shows = [
@@ -59,16 +64,25 @@ export function HomeView() {
                 {/* HERO SECTION */}
                 <section className="relative h-auto min-h-[50vh] w-full overflow-hidden flex items-center justify-center bg-black py-12">
                     <div className="absolute inset-0 z-0 opacity-60">
-                        <video
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                            className="w-full h-full object-cover"
-                            poster="/radio-studio-modern.webp"
-                        >
-                            <source src="/home%20page%20video.mp4" type="video/mp4" />
-                        </video>
+                        {!loadVideo ? (
+                            <img
+                                src="/radio-studio-modern.webp"
+                                alt="Radio Nyra Modern Studio"
+                                className="w-full h-full object-cover"
+                            />
+                        ) : (
+                            <video
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                className="w-full h-full object-cover"
+                                poster="/radio-studio-modern.webp"
+                                preload="none"
+                            >
+                                <source src="/home-page-video.mp4" type="video/mp4" />
+                            </video>
+                        )}
                         <div className="absolute inset-0 bg-black/50" />
                     </div>
 
@@ -128,12 +142,12 @@ export function HomeView() {
                                 {/* Mobile Store Icons Moved Here */}
                                 <div className="flex items-center gap-6 py-4">
                                     <Link
-                                        href="https://apps.apple.com/in/app/radio-nyra-raleigh-durham/id6469009980"
+                                        href="https://apps.apple.com/us/app/radio-nyra-raleigh-durham/id6469009980"
                                         target="_blank"
                                         className="bg-white p-2 rounded-full h-16 w-16 flex items-center justify-center hover:scale-110 transition-all shadow-xl border-2 border-white/20"
                                         title="Download on App Store"
                                     >
-                                        <img src="/apple-icon.webp" alt="App Store" className="w-9 h-9 object-contain" />
+                                        <img src="/apple-icon.webp" alt="Download Radio Nyra on the Apple App Store" className="w-9 h-9 object-contain" />
                                     </Link>
                                     <Link
                                         href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app"
@@ -141,7 +155,7 @@ export function HomeView() {
                                         className="bg-white p-2 rounded-full h-16 w-16 flex items-center justify-center hover:scale-110 transition-all shadow-xl border-2 border-white/20"
                                         title="Get it on Google Play"
                                     >
-                                        <img src="/android-icon.webp" alt="Google Play" className="w-9 h-9 object-contain" />
+                                        <img src="/android-icon.webp" alt="Get Radio Nyra on the Google Play Store" className="w-9 h-9 object-contain" />
                                     </Link>
                                 </div>
                             </div>
@@ -154,10 +168,10 @@ export function HomeView() {
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 text-center justify-center items-start">
                             {[
-                                { label: "Weekly Listeners", end: 100, suffix: "K+", icon: Headphones },
-                                { label: "Email Subscribers", end: 60, suffix: "K+", icon: Megaphone },
-                                { label: "WhatsApp Members", end: 12, suffix: "K+", icon: Smartphone },
-                                { label: "Monthly IG Reach", end: 390, suffix: "K+", icon: Users },
+                                { label: "Weekly Listeners", end: 250, suffix: "K+", icon: Headphones },
+                                { label: "Email Subscribers", end: 50, suffix: "K+", icon: Megaphone },
+                                { label: "WhatsApp Members", end: 100, suffix: "K+", icon: Smartphone },
+                                { label: "Monthly IG Reach", end: 500, suffix: "K+", icon: Users },
                                 { label: "Display Impressions", end: 216, suffix: "K+", icon: Star },
                                 { label: "Years On Air", end: 12, suffix: "", icon: Radio },
                                 { label: "Media Channels", end: 8, suffix: "+", icon: Play },

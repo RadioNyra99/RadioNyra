@@ -11,11 +11,17 @@ interface CountUpProps {
 }
 
 export function CountUp({ end, duration = 2000, suffix = "", prefix = "", decimals = 0 }: CountUpProps) {
-    const [count, setCount] = useState(0)
+    // Start with the end value as a fallback for SSR or if JS fails/is disabled
+    const [count, setCount] = useState(end)
     const elementRef = useRef<HTMLSpanElement>(null)
     const hasAnimated = useRef(false)
 
     useEffect(() => {
+        // Reset to 0 when mounted to prepare for scroll animation
+        if (!hasAnimated.current) {
+            setCount(0)
+        }
+
         let timer: NodeJS.Timeout | null = null;
 
         const observer = new IntersectionObserver(

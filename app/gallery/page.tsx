@@ -21,7 +21,7 @@ export default function GalleryPage() {
         },
         {
             title: "New Year 2019 – Celebrations",
-            image: "/New Year 2019 -Celebrations/48407416_1942179082517575_8863305223121141760_n.jpg",
+            image: "/New Year 2019 -Celebrations/49161916-1942181802517303-2528377900613238784-n-300x200.webp",
             href: "/gallery/2019"
         },
         {

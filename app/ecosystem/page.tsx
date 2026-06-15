@@ -70,7 +70,7 @@ export default function EcosystemPage() {
                                 <Mic2 className="w-12 h-12 text-primary mb-6" />
                                 <h2 className="text-2xl font-black uppercase tracking-tight mb-4">On-Ground Events</h2>
                                 <p className="text-gray-600 mb-6 leading-relaxed">
-                                    Bridging the gap between the airwaves and the community. We host and sponsor the largest South Asian festivals, concerts, and cultural gatherings in NC.
+                                    Bridging the gap between the airwaves and the community. We host and sponsor the largest Indian Subcontinent festivals, concerts, and cultural gatherings in NC.
                                 </p>
                                 <ul className="space-y-2 text-sm font-bold uppercase tracking-widest text-gray-500">
                                     <li>• Bollywood New Year Bash</li>

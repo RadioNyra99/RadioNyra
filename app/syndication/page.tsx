@@ -31,7 +31,7 @@ export default function SyndicationPage() {
                             <div>
                                 <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight italic mb-6">Our National Footprint</h2>
                                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                                    Radio Nyra has expanded beyond our Raleigh-Durham headquarters to deliver premium South Asian programming to multiple major metropolitan markets across the United States.
+                                    Radio Nyra has expanded beyond our Raleigh-Durham headquarters to deliver premium Indian Subcontinent programming to multiple major metropolitan markets across the United States.
                                 </p>
                                 <p className="text-lg text-gray-600 leading-relaxed">
                                     By syndicating our most popular talk shows, news updates, and music blocks, we provide our advertisers with the unique opportunity to scale their campaigns nationally while maintaining local relevance.

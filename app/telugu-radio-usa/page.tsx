@@ -37,7 +37,7 @@ export default function TeluguRadioUsaPage() {
 
                 <section>
                     <h2 className="text-2xl font-bold mb-4">Join Our Growing Community</h2>
-                    <p>Radio Nyra isn't just a broadcasting station; it's a vibrant community of South Asians across the United States. Participate in our live contests, call in during our interactive sessions, and be a part of the largest Telugu radio network in America.</p>
+                    <p>Radio Nyra isn't just a broadcasting station; it's a vibrant community of Indian Subcontinents across the United States. Participate in our live contests, call in during our interactive sessions, and be a part of the largest Telugu radio network in America.</p>
                 </section>
             </div>
         </SeoPageLayout>

@@ -83,7 +83,7 @@ export default function AboutPage() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             <div className="p-8 bg-background border border-border rounded-sm">
                                 <h4 className="font-bold uppercase tracking-widest text-primary mb-4">1963</h4>
-                                <p className="text-sm text-muted-foreground">The first broadcast is aired, marking the beginning of a lifelong connection with the South Asian community.</p>
+                                <p className="text-sm text-muted-foreground">The first broadcast is aired, marking the beginning of a lifelong connection with the Indian Subcontinent community.</p>
                             </div>
                             <div className="p-8 bg-background border border-border rounded-sm">
                                 <h4 className="font-bold uppercase tracking-widest text-primary mb-4">Evolution</h4>
@@ -113,7 +113,7 @@ export default function AboutPage() {
                                         What started as a 1000W broadcasting channel quickly expanded to HD radio, FM translators, and digital media, catching the attention of the rapidly growing Triangle community.
                                     </p>
                                     <p className="font-bold text-primary not-italic border-l-4 border-primary pl-6">
-                                        Today, we are more than just a radio station. We are a comprehensive Community Media Network, bridging the gap between local businesses and the South Asian diaspora.
+                                        Today, we are more than just a radio station. We are a comprehensive Community Media Network, bridging the gap between local businesses and the Indian Subcontinent diaspora.
                                     </p>
                                 </div>
                             </div>
@@ -158,7 +158,7 @@ export default function AboutPage() {
                                 <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight mb-6">Our Mission</h2>
                                 <div className="w-16 h-1 bg-primary mb-8 mx-auto md:mx-0" />
                                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed italic">
-                                    To empower the South Asian community by providing a platform that celebrates our rich culture while fostering connection and growth in the USA.
+                                    To empower the Indian Subcontinent community by providing a platform that celebrates our rich culture while fostering connection and growth in the USA.
                                 </p>
                             </div>
 
@@ -166,7 +166,7 @@ export default function AboutPage() {
                             <div className="bg-gradient-to-r from-primary/10 to-transparent p-10 border-l-4 border-primary rounded-r-sm flex flex-col md:flex-row gap-10 items-center">
                                 <div className="w-40 h-52 md:w-48 md:h-64 shrink-0 overflow-hidden border-4 border-white shadow-xl bg-gray-50 relative">
                                     <img
-                                        src="/RC Founder.jpeg"
+                                        src="/rc-founder.webp"
                                         alt="Ravi Cherukuri"
                                         className="w-full h-full object-contain"
                                     />

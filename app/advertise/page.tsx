@@ -23,7 +23,7 @@ export default function AdvertisePage() {
                                 Grow Your <span className="text-primary">Business</span>
                             </h1>
                             <p className="text-xl md:text-2xl text-gray-600 uppercase tracking-[0.2em] font-bold italic mb-12">
-                                Advertise with the #1 South Asian Radio Network
+                                Advertise with the #1 Indian Subcontinent Radio Network
                             </p>
                             <Button size="lg" className="h-16 px-12 text-lg font-black uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none transition-all hover:scale-105 shadow-xl" asChild>
                                 <a href="#inquiry">Get Started Now</a>
@@ -39,7 +39,7 @@ export default function AdvertisePage() {
                             {[
                                 { title: "Listener Reach", desc: "100K+ loyal listeners across Raleigh-Durham.", icon: Users },
                                 { title: "Digital + Radio", desc: "FM broadcast, mobile apps, and digital platforms.", icon: Smartphone },
-                                { title: "Targeted Audience", desc: "Reach the affluent South Asian community.", icon: Star },
+                                { title: "Targeted Audience", desc: "Reach the affluent Indian Subcontinent community.", icon: Star },
                                 { title: "Brand Visibility", desc: "High-frequency placements for maximum impact.", icon: Megaphone }
                             ].map((item, i) => (
                                 <div key={i} className="p-8 bg-gray-50 border border-gray-100 hover:border-primary/30 transition-all hover:shadow-lg">
@@ -174,7 +174,7 @@ export default function AdvertisePage() {
                                 <div>
                                     <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight italic mb-6">Why Advertise with us?</h2>
                                     <p className="text-lg text-gray-600 leading-relaxed italic">
-                                        Radio Nyra is the premier destination for the South Asian community in the Raleigh-Durham area. Our listeners are highly engaged, loyal, and possess significant purchasing power.
+                                        Radio Nyra is the premier destination for the Indian Subcontinent community in the Raleigh-Durham area. Our listeners are highly engaged, loyal, and possess significant purchasing power.
                                     </p>
                                 </div>
 

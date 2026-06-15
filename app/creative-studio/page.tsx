@@ -41,7 +41,7 @@ export default function CreativeStudioPage() {
                                 <div>
                                     <h3 className="text-2xl font-black uppercase mb-3">Scriptwriting & Copy</h3>
                                     <p className="text-gray-600 leading-relaxed">
-                                        Our bilingual copywriters understand the cultural nuances needed to resonate with the South Asian audience. We craft scripts in English, Hindi, and Telugu that drive action.
+                                        Our bilingual copywriters understand the cultural nuances needed to resonate with the Indian Subcontinent audience. We craft scripts in English, Hindi, and Telugu that drive action.
                                     </p>
                                 </div>
                             </div>

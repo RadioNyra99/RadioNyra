@@ -95,11 +95,11 @@ export function NyraChat() {
       },
       {
         keywords: ["advertise", "business", "growth", "marketing", "listeners", "stats", "newsletter", "ads"],
-        response: "Advertise with the #1 South Asian Radio Network! We have 100K+ daily listeners, a 60K+ monthly newsletter, and 500+ brand partners. Visit our Advertise page to send an inquiry!"
+        response: "Advertise with the #1 Indian Subcontinent Radio Network! We have 100K+ daily listeners, a 60K+ monthly newsletter, and 500+ brand partners. Visit our Advertise page to send an inquiry!"
       },
       {
         keywords: ["founded", "history", "start", "1963", "ravi", "cherukuri", "founder", "mission"],
-        response: "Radio Nyra has a legacy dating back to November 16, 1963! Our NC journey began in 2014 in Durham. Founded by Ravi Cherukuri, our mission is to empower the South Asian community in the USA."
+        response: "Radio Nyra has a legacy dating back to November 16, 1963! Our NC journey began in 2014 in Durham. Founded by Ravi Cherukuri, our mission is to empower the Indian Subcontinent community in the USA."
       },
       {
         keywords: ["frequency", "fm", "station", "channel", "hindi", "telugu", "99.9", "hd3", "hd4"],

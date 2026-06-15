@@ -53,7 +53,7 @@ export default function CommunityImpactPage() {
                                 <Users className="w-10 h-10 text-gray-900 mb-6" />
                                 <h3 className="text-2xl font-black uppercase mb-4">Local Integration</h3>
                                 <p className="text-gray-600 leading-relaxed">
-                                    We bridge the gap between the South Asian diaspora and the broader local community, partnering with local governments and schools to ensure our listeners are engaged and informed citizens.
+                                    We bridge the gap between the Indian Subcontinent diaspora and the broader local community, partnering with local governments and schools to ensure our listeners are engaged and informed citizens.
                                 </p>
                             </div>
                         </div>

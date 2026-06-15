@@ -2,22 +2,22 @@ import type { Metadata } from "next"
 import { SeoPageLayout } from "@/components/seo-page-layout"
 
 export const metadata: Metadata = {
-  title: "Indian Radio USA | #1 South Asian Live Radio",
+  title: "Indian Radio USA | #1 Indian Subcontinent Live Radio",
   description: "Radio Nyra is the premier Indian radio station in the USA. We bring you Bollywood, Tollywood, diverse programming, and community news 24/7.",
-  keywords: ["Indian Radio USA", "South Asian Radio", "Desi Radio Station", "Hindi Telugu Radio", "Radio Nyra"]
+  keywords: ["Indian Radio USA", "Indian Subcontinent Radio", "Desi Radio Station", "Hindi Telugu Radio", "Radio Nyra"]
 }
 
 export default function IndianRadioUsaPage() {
     return (
         <SeoPageLayout
             title="Indian Radio USA"
-            subtitle="The #1 South Asian Radio Network Bringing Home Closer to You"
+            subtitle="The #1 Indian Subcontinent Radio Network Bringing Home Closer to You"
             stationKey="Hindi"
         >
             <div className="space-y-6">
                 <section>
                     <h2 className="text-2xl font-bold mb-4">The Leading Indian Radio Station in the USA</h2>
-                    <p>Radio Nyra proudly stands as the premier Indian radio network in the United States, keeping the South Asian community connected to their roots. As the top Indian radio USA broadcaster, we deliver an unmatched mix of music, news, and talk programming tailored specifically for the NRI audience.</p>
+                    <p>Radio Nyra proudly stands as the premier Indian radio network in the United States, keeping the Indian Subcontinent community connected to their roots. As the top Indian radio USA broadcaster, we deliver an unmatched mix of music, news, and talk programming tailored specifically for the NRI audience.</p>
                 </section>
                 
                 <section>

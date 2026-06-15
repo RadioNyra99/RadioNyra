@@ -38,7 +38,7 @@ export default function PressPage() {
                                         <p className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2">Press Release • July 2025</p>
                                         <h2 className="text-2xl font-black uppercase tracking-tight mb-3 group-hover:text-primary transition-colors">Radio Nyra Launches 24/7 Telugu Channel on 99.9FM HD3</h2>
                                         <p className="text-gray-600 leading-relaxed mb-4">
-                                            Expanding its commitment to the diverse South Asian community, Radio Nyra announces the launch of a dedicated 24/7 Telugu station, delivering round-the-clock news, talk shows, and Tollywood hits to the Triangle area.
+                                            Expanding its commitment to the diverse Indian Subcontinent community, Radio Nyra announces the launch of a dedicated 24/7 Telugu station, delivering round-the-clock news, talk shows, and Tollywood hits to the Triangle area.
                                         </p>
                                         <a href="#" className="inline-flex items-center text-sm font-black uppercase tracking-widest text-primary hover:text-gray-900 transition-colors">
                                             Read Full Release <ChevronRight className="w-4 h-4 ml-1" />
@@ -56,7 +56,7 @@ export default function PressPage() {
                                         <p className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2">Company News • January 2025</p>
                                         <h2 className="text-2xl font-black uppercase tracking-tight mb-3 group-hover:text-primary transition-colors">Record Growth in Digital Listenership Surpasses 100K Weekly</h2>
                                         <p className="text-gray-600 leading-relaxed mb-4">
-                                            Radio Nyra continues to dominate the South Asian media landscape, hitting a new milestone of 100,000 active weekly listeners across terrestrial and digital streaming platforms combined.
+                                            Radio Nyra continues to dominate the Indian Subcontinent media landscape, hitting a new milestone of 100,000 active weekly listeners across terrestrial and digital streaming platforms combined.
                                         </p>
                                         <a href="#" className="inline-flex items-center text-sm font-black uppercase tracking-widest text-primary hover:text-gray-900 transition-colors">
                                             Read Full Release <ChevronRight className="w-4 h-4 ml-1" />

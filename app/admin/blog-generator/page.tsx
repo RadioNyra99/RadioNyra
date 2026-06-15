@@ -109,7 +109,7 @@ A2: Multiple local Indian restaurants set up food trucks and stalls offering cha
     "concert-guides": {
         title: "US Concert Tour Guide 2026: Indian Subcontinent Artists Performing Near You",
         description: "Don't miss out on concert dates, ticket pre-sales, and venue guides for Indian Subcontinent artists touring the United States in 2026.",
-        outline: `1. Introduction: The Boom of South Asian Concert Tours in USA
+        outline: `1. Introduction: The Boom of Indian Subcontinent Concert Tours in USA
 2. AR Rahman Tour: Cities, Arenas, and Ticket Packages
 3. Shaan Live in Concert: Nostalgic Hits and Locations
 4. Punjabi Pop and Hip-Hop Arena Tours (Diljit, AP Dhillon)

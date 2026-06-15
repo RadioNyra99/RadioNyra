@@ -33,7 +33,7 @@ const SHOW_DATA: Record<string, {
     "geet-bazaar": {
         name: "Geet Bazaar",
         host: "Dr. Taj & Dr. Caldwell",
-        hostBio: "Geet Bazaar has been a staple of South Asian radio broadcasting in the Triangle for over a decade. Hosted by the legendary duo of Dr. Taj and Dr. Caldwell, the show delivers classical tunes, ghazals, and rich historical trivia.",
+        hostBio: "Geet Bazaar has been a staple of Indian Subcontinent radio broadcasting in the Triangle for over a decade. Hosted by the legendary duo of Dr. Taj and Dr. Caldwell, the show delivers classical tunes, ghazals, and rich historical trivia.",
         schedule: "Saturdays and Sundays, 8:00 AM - 11:00 AM (EST)",
         image: "/geet-bazaar.jpg",
         stationKey: "Hindi",

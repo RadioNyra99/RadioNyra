@@ -33,7 +33,7 @@ const testimonials = [
     {
         name: "Community Leader",
         role: "Morrisville Resident",
-        content: "The support Radio Nyra provides to local cultural events is unparalleled. They are truly the heartbeat of the South Asian community in North Carolina.",
+        content: "The support Radio Nyra provides to local cultural events is unparalleled. They are truly the heartbeat of the Indian Subcontinent community in North Carolina.",
         stars: 5
     }
 ];

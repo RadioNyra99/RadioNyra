@@ -29,7 +29,7 @@ export default function FestivalCalendarPage() {
                     <div className="container mx-auto px-4 max-w-5xl">
                         <div className="text-center mb-16">
                             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto italic">
-                                Radio Nyra isn't just on the air—we are on the ground. We proudly host, sponsor, and participate in the largest South Asian cultural events in the region.
+                                Radio Nyra isn't just on the air—we are on the ground. We proudly host, sponsor, and participate in the largest Indian Subcontinent cultural events in the region.
                             </p>
                         </div>
 

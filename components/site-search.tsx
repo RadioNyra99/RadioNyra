@@ -21,6 +21,7 @@ import { BLOG_POSTS } from "@/lib/blog-data"
 
 export function SiteSearch() {
   const [open, setOpen] = React.useState(false)
+  const [posts, setPosts] = React.useState(BLOG_POSTS)
   const router = useRouter()
   const { playStation } = useAudio()
   
@@ -37,6 +38,22 @@ export function SiteSearch() {
     document.addEventListener("keydown", down)
     return () => document.removeEventListener("keydown", down)
   }, [])
+
+  React.useEffect(() => {
+    if (open) {
+      try {
+        const saved = localStorage.getItem('custom_blog_posts');
+        if (saved) {
+          const customPosts = JSON.parse(saved);
+          if (Array.isArray(customPosts)) {
+            setPosts([...customPosts, ...BLOG_POSTS]);
+          }
+        }
+      } catch (e) {
+        console.error("Error loading custom posts for search:", e);
+      }
+    }
+  }, [open]);
 
   const runCommand = React.useCallback((command: () => void) => {
     setOpen(false)
@@ -75,7 +92,7 @@ export function SiteSearch() {
           </CommandGroup>
           <CommandSeparator />
           <CommandGroup heading="Latest Blogs & News">
-            {BLOG_POSTS.map((post) => (
+            {posts.map((post) => (
               <CommandItem
                 key={post.slug}
                 onSelect={() => {

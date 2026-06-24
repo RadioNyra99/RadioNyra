@@ -1,12 +1,28 @@
-import { BLOG_POSTS } from '@/lib/blog-data';
+"use client"
+
+import { useState, useEffect } from 'react';
+import { BLOG_POSTS, BlogPost } from '@/lib/blog-data';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 
-
 export default function BlogPage() {
-    const posts = BLOG_POSTS;
+    const [posts, setPosts] = useState<BlogPost[]>([]);
+
+    useEffect(() => {
+        const staticPosts = BLOG_POSTS;
+        let customPosts: BlogPost[] = [];
+        try {
+            const saved = localStorage.getItem('custom_blog_posts');
+            if (saved) {
+                customPosts = JSON.parse(saved);
+            }
+        } catch (e) {
+            console.error("Error reading custom posts from localStorage:", e);
+        }
+        setPosts([...customPosts, ...staticPosts]);
+    }, []);
 
     return (
         <div className="min-h-screen bg-background font-sans">

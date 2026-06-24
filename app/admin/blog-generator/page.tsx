@@ -158,6 +158,88 @@ export default function BlogGeneratorPage() {
     const [generatedDraft, setGeneratedDraft] = useState<any | null>(null);
     const [copied, setCopied] = useState(false);
     const [saved, setSaved] = useState(false);
+    const [saving, setSaving] = useState(false);
+
+    const handleSave = () => {
+        if (!generatedDraft) return;
+        setSaving(true);
+        try {
+            // Generate a slug from the title
+            const slug = generatedDraft.title
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/(^-|-$)/g, '');
+
+            // Format outline list
+            const outlineHtml = generatedDraft.outline
+                ? `<h3>Article Outline</h3><ul>${generatedDraft.outline
+                    .split('\n')
+                    .map((line: string) => `<li>${line.trim()}</li>`)
+                    .filter((line: string) => line !== '<li></li>')
+                    .join('')}</ul>`
+                : '';
+
+            // Format FAQs
+            const faqHtml = generatedDraft.faqs
+                ? `<h3>Frequently Asked Questions</h3><div class="faq-section">${generatedDraft.faqs
+                    .split('\n\n')
+                    .map((faq: string) => {
+                        const lines = faq.split('\n');
+                        const q = lines[0] || '';
+                        const a = lines.slice(1).join(' ') || '';
+                        return `<div class="faq-item mb-4"><strong>${q}</strong><p>${a}</p></div>`;
+                    })
+                    .join('')}</div>`
+                : '';
+
+            // Format body content
+            const bodyHtml = `<p>${generatedDraft.content.split('\n\n').join('</p><p>')}</p>`;
+
+            // Combine HTML content
+            const fullContent = `
+                ${bodyHtml}
+                ${outlineHtml}
+                ${faqHtml}
+            `.trim();
+
+            const newPost = {
+                id: Date.now().toString(),
+                title: generatedDraft.title,
+                slug: slug,
+                excerpt: generatedDraft.description,
+                content: fullContent,
+                date: new Date().toISOString().split('T')[0],
+                categories: ["AI Generated", topic.replace(/-/g, ' ')],
+                author: { name: "Radio Nyra Admin" },
+                featuredImage: { url: "/images/radio-nyra-logo.jpg", alt: generatedDraft.title }
+            };
+
+            // Read existing posts from localStorage
+            let customPosts = [];
+            const saved = localStorage.getItem('custom_blog_posts');
+            if (saved) {
+                try {
+                    customPosts = JSON.parse(saved);
+                } catch (e) {
+                    customPosts = [];
+                }
+            }
+
+            // Add the new post on top
+            customPosts.unshift(newPost);
+
+            // Save back to localStorage
+            localStorage.setItem('custom_blog_posts', JSON.stringify(customPosts));
+
+            setSaved(true);
+            setTimeout(() => setSaved(false), 3000);
+        } catch (error) {
+            console.error("Error saving draft:", error);
+            alert("An error occurred while saving the draft.");
+        } finally {
+            setSaving(false);
+        }
+    };
 
     const progressTexts = [
         "Analyzing topic parameters...",
@@ -352,9 +434,23 @@ ${generatedDraft.faqs}
                                             <Button variant="ghost" size="sm" onClick={handleDownload} className="rounded-full text-xs font-bold uppercase tracking-widest text-muted-foreground hover:text-primary">
                                                 <Download className="w-4 h-4 mr-1" /> Download .MD
                                             </Button>
-                                            <Button variant="ghost" size="sm" onClick={() => { setSaved(true); setTimeout(() => setSaved(false), 2000) }} className="rounded-full text-xs font-bold uppercase tracking-widest text-muted-foreground hover:text-primary">
-                                                {saved ? <Check className="w-4 h-4 mr-1 text-green-500" /> : <Save className="w-4 h-4 mr-1" />}
-                                                {saved ? "Saved to CMS" : "Save Draft"}
+                                            <Button variant="ghost" size="sm" disabled={saving} onClick={handleSave} className="rounded-full text-xs font-bold uppercase tracking-widest text-muted-foreground hover:text-primary">
+                                                {saving ? (
+                                                    <>
+                                                        <Loader2 className="w-4 h-4 mr-1 animate-spin" />
+                                                        Saving...
+                                                    </>
+                                                ) : saved ? (
+                                                    <>
+                                                        <Check className="w-4 h-4 mr-1 text-green-500" />
+                                                        Saved to CMS
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <Save className="w-4 h-4 mr-1" />
+                                                        Save Draft
+                                                    </>
+                                                )}
                                             </Button>
                                         </div>
                                     </div>

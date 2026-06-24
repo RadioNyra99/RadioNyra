@@ -16,6 +16,62 @@ import Script from "next/script"
 export default function PodcastsPage() {
     const podcasts = [
         {
+            title: "RadioNyra | Aaj Ki Shaam, Jyoti Ke Naam with Jyoti | Uthar Dakshin Partner: Debashree",
+            host: "Jyoti",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/zHoVR1rDCuo",
+            thumbnail: "https://img.youtube.com/vi/zHoVR1rDCuo/maxresdefault.jpg"
+        },
+        {
+            title: "Leaders & Legends RadioNyra podcast I Guest Andrews IV Executive Chairman, Dominion Realty partners.",
+            host: "Steve Rao",
+            show: "Leaders & Legends",
+            url: "https://youtu.be/vSV3n6SHUeQ",
+            thumbnail: "https://img.youtube.com/vi/vSV3n6SHUeQ/maxresdefault.jpg"
+        },
+        {
+            title: "EB5 Visa Explained Simple | RadioNyra Podcast Ep.2 Brown Immigration | Hello Vaishnavi – Radio Nyra",
+            host: "Vaishnavi",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/d_i_OsE3xRQ",
+            thumbnail: "https://img.youtube.com/vi/d_i_OsE3xRQ/maxresdefault.jpg"
+        },
+        {
+            title: "RadioNyra Podcast: Anand Ramakrishna of Sai Mandir Cary on Chai pe Charcha with Van",
+            host: "Van Bhandari",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/YNnL-3oWM_0",
+            thumbnail: "https://img.youtube.com/vi/YNnL-3oWM_0/maxresdefault.jpg"
+        },
+        {
+            title: "RadioNyra Podcast Features Radhesh Reddy Gurrala- Author on Chai pe Charcha with Van I Host Van",
+            host: "Van Bhandari",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/oP1cJPj9sW8",
+            thumbnail: "https://img.youtube.com/vi/oP1cJPj9sW8/maxresdefault.jpg"
+        },
+        {
+            title: "A LIFE OF SERVICE, SURGERY & PATRIOTISM | Dr. Sankar Adusumilli I Radio Nyra Hello Vaishnavi Podcast",
+            host: "Vaishnavi",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/HVbQ7nKkEFo",
+            thumbnail: "https://img.youtube.com/vi/HVbQ7nKkEFo/maxresdefault.jpg"
+        },
+        {
+            title: "RadioNyra Presents: Leaders & Legends Featuring David Crabtree, CEO of PBS Carolinas  host Steve Rao",
+            host: "Steve Rao",
+            show: "Leaders & Legends",
+            url: "https://youtu.be/Kza3P0eABwY",
+            thumbnail: "https://img.youtube.com/vi/Kza3P0eABwY/maxresdefault.jpg"
+        },
+        {
+            title: "RadioNyra presents Leaders & Legends with Krista Covey, CEO of First Flight",
+            host: "Steve Rao",
+            show: "Leaders & Legends",
+            url: "https://youtu.be/OPZ3qkGMOgI",
+            thumbnail: "https://img.youtube.com/vi/OPZ3qkGMOgI/maxresdefault.jpg"
+        },
+        {
             title: "Bhagavad-Gita for Kids & Life Lessons | Amit Kulkarni | Chai Pe Charcha with Van | Radio Nyra",
             host: "Van Bhandari",
             show: "Radio Nyra Podcast",

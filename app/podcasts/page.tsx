@@ -16,46 +16,11 @@ import Script from "next/script"
 export default function PodcastsPage() {
     const podcasts = [
         {
-            title: "RadioNyra | Aaj Ki Shaam, Jyoti Ke Naam with Jyoti | Uthar Dakshin Partner: Debashree",
-            host: "Jyoti",
-            show: "Radio Nyra Podcast",
-            url: "https://youtu.be/zHoVR1rDCuo",
-            thumbnail: "https://img.youtube.com/vi/zHoVR1rDCuo/maxresdefault.jpg"
-        },
-        {
-            title: "Leaders & Legends RadioNyra podcast I Guest Andrews IV Executive Chairman, Dominion Realty partners.",
+            title: "RadioNyra presents Leaders & Legends with Krista Covey, CEO of First Flight",
             host: "Steve Rao",
             show: "Leaders & Legends",
-            url: "https://youtu.be/vSV3n6SHUeQ",
-            thumbnail: "https://img.youtube.com/vi/vSV3n6SHUeQ/maxresdefault.jpg"
-        },
-        {
-            title: "EB5 Visa Explained Simple | RadioNyra Podcast Ep.2 Brown Immigration | Hello Vaishnavi – Radio Nyra",
-            host: "Vaishnavi",
-            show: "Radio Nyra Podcast",
-            url: "https://youtu.be/d_i_OsE3xRQ",
-            thumbnail: "https://img.youtube.com/vi/d_i_OsE3xRQ/maxresdefault.jpg"
-        },
-        {
-            title: "RadioNyra Podcast: Anand Ramakrishna of Sai Mandir Cary on Chai pe Charcha with Van",
-            host: "Van Bhandari",
-            show: "Radio Nyra Podcast",
-            url: "https://youtu.be/YNnL-3oWM_0",
-            thumbnail: "https://img.youtube.com/vi/YNnL-3oWM_0/maxresdefault.jpg"
-        },
-        {
-            title: "RadioNyra Podcast Features Radhesh Reddy Gurrala- Author on Chai pe Charcha with Van I Host Van",
-            host: "Van Bhandari",
-            show: "Radio Nyra Podcast",
-            url: "https://youtu.be/oP1cJPj9sW8",
-            thumbnail: "https://img.youtube.com/vi/oP1cJPj9sW8/maxresdefault.jpg"
-        },
-        {
-            title: "A LIFE OF SERVICE, SURGERY & PATRIOTISM | Dr. Sankar Adusumilli I Radio Nyra Hello Vaishnavi Podcast",
-            host: "Vaishnavi",
-            show: "Radio Nyra Podcast",
-            url: "https://youtu.be/HVbQ7nKkEFo",
-            thumbnail: "https://img.youtube.com/vi/HVbQ7nKkEFo/maxresdefault.jpg"
+            url: "https://youtu.be/OPZ3qkGMOgI",
+            thumbnail: "https://img.youtube.com/vi/OPZ3qkGMOgI/maxresdefault.jpg"
         },
         {
             title: "RadioNyra Presents: Leaders & Legends Featuring David Crabtree, CEO of PBS Carolinas  host Steve Rao",
@@ -65,46 +30,46 @@ export default function PodcastsPage() {
             thumbnail: "https://img.youtube.com/vi/Kza3P0eABwY/maxresdefault.jpg"
         },
         {
-            title: "RadioNyra presents Leaders & Legends with Krista Covey, CEO of First Flight",
-            host: "Steve Rao",
-            show: "Leaders & Legends",
-            url: "https://youtu.be/OPZ3qkGMOgI",
-            thumbnail: "https://img.youtube.com/vi/OPZ3qkGMOgI/maxresdefault.jpg"
-        },
-        {
-            title: "Bhagavad-Gita for Kids & Life Lessons | Amit Kulkarni | Chai Pe Charcha with Van | Radio Nyra",
-            host: "Van Bhandari",
-            show: "Radio Nyra Podcast",
-            url: "https://youtu.be/KekIDPrM_Zc",
-            thumbnail: "https://img.youtube.com/vi/KekIDPrM_Zc/maxresdefault.jpg"
-        },
-        {
-            title: "Leaders & Legends Podcast | Featuring Hon. Randolph Voller",
-            host: "Steve Rao",
-            show: "Leaders & Legends",
-            url: "https://youtu.be/MNb9i9dcnR0",
-            thumbnail: "https://img.youtube.com/vi/MNb9i9dcnR0/maxresdefault.jpg"
-        },
-        {
-            title: "EB-5 Visa vs Myth | Chai Pe Charcha with Van | Radio Nyra",
-            host: "Van Bhandari",
-            show: "Radio Nyra Podcast",
-            url: "https://youtu.be/5_KmiQZityU",
-            thumbnail: "https://img.youtube.com/vi/5_KmiQZityU/maxresdefault.jpg"
-        },
-        {
-            title: "Monday Motivation | Dr. Madhu Sharma",
-            host: "Dr. Madhu Sharma",
-            show: "Radio Nyra Podcast",
-            url: "https://youtu.be/CyTV514isww",
-            thumbnail: "https://img.youtube.com/vi/CyTV514isww/maxresdefault.jpg"
-        },
-        {
-            title: "Hello Vaishnavi Show | Arvind Mahajan, AKM Investments",
+            title: "A LIFE OF SERVICE, SURGERY & PATRIOTISM | Dr. Sankar Adusumilli I Radio Nyra Hello Vaishnavi Podcast",
             host: "Vaishnavi",
             show: "Radio Nyra Podcast",
-            url: "https://youtu.be/TIprZF1bMuM",
-            thumbnail: "https://img.youtube.com/vi/TIprZF1bMuM/maxresdefault.jpg"
+            url: "https://youtu.be/HVbQ7nKkEFo",
+            thumbnail: "https://img.youtube.com/vi/HVbQ7nKkEFo/maxresdefault.jpg"
+        },
+        {
+            title: "RadioNyra Podcast Features Radhesh Reddy Gurrala- Author on Chai pe Charcha with Van I Host Van",
+            host: "Van Bhandari",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/oP1cJPj9sW8",
+            thumbnail: "https://img.youtube.com/vi/oP1cJPj9sW8/maxresdefault.jpg"
+        },
+        {
+            title: "RadioNyra Podcast: Anand Ramakrishna of Sai Mandir Cary on Chai pe Charcha with Van",
+            host: "Van Bhandari",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/YNnL-3oWM_0",
+            thumbnail: "https://img.youtube.com/vi/YNnL-3oWM_0/maxresdefault.jpg"
+        },
+        {
+            title: "EB5 Visa Explained Simple | RadioNyra Podcast Ep.2 Brown Immigration | Hello Vaishnavi – Radio Nyra",
+            host: "Vaishnavi",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/d_i_OsE3xRQ",
+            thumbnail: "https://img.youtube.com/vi/d_i_OsE3xRQ/maxresdefault.jpg"
+        },
+        {
+            title: "Leaders & Legends RadioNyra podcast I Guest Andrews IV Executive Chairman, Dominion Realty partners.",
+            host: "Steve Rao",
+            show: "Leaders & Legends",
+            url: "https://youtu.be/vSV3n6SHUeQ",
+            thumbnail: "https://img.youtube.com/vi/vSV3n6SHUeQ/maxresdefault.jpg"
+        },
+        {
+            title: "RadioNyra | Aaj Ki Shaam, Jyoti Ke Naam with Jyoti | Uthar Dakshin Partner: Debashree",
+            host: "Jyoti",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/zHoVR1rDCuo",
+            thumbnail: "https://img.youtube.com/vi/zHoVR1rDCuo/maxresdefault.jpg"
         },
         {
             title: "H1B Visa Explained Simply | RadioNyra Podcast Ep.1 Brown Immigration",
@@ -114,11 +79,39 @@ export default function PodcastsPage() {
             thumbnail: "https://img.youtube.com/vi/UO9w7zmkHd4/maxresdefault.jpg"
         },
         {
-            title: "Tax Talk USA | Chai Pe Charcha with Van ft. CPA Anuradha Aggarwal | Radio Nyra Podcast",
+            title: "Hello Vaishnavi Show | Arvind Mahajan, AKM Investments",
+            host: "Vaishnavi",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/TIprZF1bMuM",
+            thumbnail: "https://img.youtube.com/vi/TIprZF1bMuM/maxresdefault.jpg"
+        },
+        {
+            title: "Monday Motivation | Dr. Madhu Sharma",
+            host: "Dr. Madhu Sharma",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/CyTV514isww",
+            thumbnail: "https://img.youtube.com/vi/CyTV514isww/maxresdefault.jpg"
+        },
+        {
+            title: "EB-5 Visa vs Myth | Chai Pe Charcha with Van | Radio Nyra",
             host: "Van Bhandari",
             show: "Radio Nyra Podcast",
-            url: "https://youtu.be/P5jQhU9aXgE",
-            thumbnail: "https://img.youtube.com/vi/P5jQhU9aXgE/maxresdefault.jpg"
+            url: "https://youtu.be/5_KmiQZityU",
+            thumbnail: "https://img.youtube.com/vi/5_KmiQZityU/maxresdefault.jpg"
+        },
+        {
+            title: "Leaders & Legends Podcast | Featuring Hon. Randolph Voller",
+            host: "Steve Rao",
+            show: "Leaders & Legends",
+            url: "https://youtu.be/MNb9i9dcnR0",
+            thumbnail: "https://img.youtube.com/vi/MNb9i9dcnR0/maxresdefault.jpg"
+        },
+        {
+            title: "Bhagavad-Gita for Kids & Life Lessons | Amit Kulkarni | Chai Pe Charcha with Van | Radio Nyra",
+            host: "Van Bhandari",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/KekIDPrM_Zc",
+            thumbnail: "https://img.youtube.com/vi/KekIDPrM_Zc/maxresdefault.jpg"
         },
         {
             title: "Aura Scanning & Energy Healing Explained | Surya Kiran with Vaishnavi | Radio Nyra Podcast series",
@@ -126,6 +119,13 @@ export default function PodcastsPage() {
             show: "Radio Nyra Podcast",
             url: "https://youtu.be/FEg1KpYOD-Q",
             thumbnail: "https://img.youtube.com/vi/FEg1KpYOD-Q/maxresdefault.jpg"
+        },
+        {
+            title: "Tax Talk USA | Chai Pe Charcha with Van ft. CPA Anuradha Aggarwal | Radio Nyra Podcast",
+            host: "Van Bhandari",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/P5jQhU9aXgE",
+            thumbnail: "https://img.youtube.com/vi/P5jQhU9aXgE/maxresdefault.jpg"
         },
         {
             title: "Gaming Data, Growth & Monetization | Stanislav Minasov, CPO at AppMagic",
@@ -142,25 +142,11 @@ export default function PodcastsPage() {
             thumbnail: "https://img.youtube.com/vi/e0mFf8AUrXA/maxresdefault.jpg"
         },
         {
-            title: "IGF 2026 Finalist Interview | Titanium Court (AP Thomson)",
+            title: "IGF 2026 Nuovo Award Finalist Interview | Plum Road Tea Dream (Samuel Baidoo)",
             host: "Radio Nyra",
             show: "The Games Insider",
-            url: "https://youtu.be/5RDaEEQudKA",
-            thumbnail: "https://img.youtube.com/vi/5RDaEEQudKA/maxresdefault.jpg"
-        },
-        {
-            title: "IGF 2026 Excellence in Narrative Nominee | Promise Mascot Agency (Oli Smith)",
-            host: "Radio Nyra",
-            show: "The Games Insider",
-            url: "https://youtu.be/i-vy2MDta1Q",
-            thumbnail: "https://img.youtube.com/vi/i-vy2MDta1Q/maxresdefault.jpg"
-        },
-        {
-            title: "IGF 2026 Nominee Interview | Wednesdays (Pierre Corbinais)",
-            host: "Radio Nyra",
-            show: "The Games Insider",
-            url: "https://youtu.be/2qTyliDT3Mg",
-            thumbnail: "https://img.youtube.com/vi/2qTyliDT3Mg/maxresdefault.jpg"
+            url: "https://youtu.be/Ar3CeZTMrYk",
+            thumbnail: "https://img.youtube.com/vi/Ar3CeZTMrYk/maxresdefault.jpg"
         },
         {
             title: "IGF 2026 Finalist Interview | Z13: The Zodiac Trials (Edi Torres, Chalit)",
@@ -170,11 +156,25 @@ export default function PodcastsPage() {
             thumbnail: "https://img.youtube.com/vi/jgbYHOurgQ0/maxresdefault.jpg"
         },
         {
-            title: "IGF 2026 Nuovo Award Finalist Interview | Plum Road Tea Dream (Samuel Baidoo)",
+            title: "IGF 2026 Nominee Interview | Wednesdays (Pierre Corbinais)",
             host: "Radio Nyra",
             show: "The Games Insider",
-            url: "https://youtu.be/Ar3CeZTMrYk",
-            thumbnail: "https://img.youtube.com/vi/Ar3CeZTMrYk/maxresdefault.jpg"
+            url: "https://youtu.be/2qTyliDT3Mg",
+            thumbnail: "https://img.youtube.com/vi/2qTyliDT3Mg/maxresdefault.jpg"
+        },
+        {
+            title: "IGF 2026 Excellence in Narrative Nominee | Promise Mascot Agency (Oli Smith)",
+            host: "Radio Nyra",
+            show: "The Games Insider",
+            url: "https://youtu.be/i-vy2MDta1Q",
+            thumbnail: "https://img.youtube.com/vi/i-vy2MDta1Q/maxresdefault.jpg"
+        },
+        {
+            title: "IGF 2026 Finalist Interview | Titanium Court (AP Thomson)",
+            host: "Radio Nyra",
+            show: "The Games Insider",
+            url: "https://youtu.be/5RDaEEQudKA",
+            thumbnail: "https://img.youtube.com/vi/5RDaEEQudKA/maxresdefault.jpg"
         },
         {
             title: "College Admissions Strategy by Empowerly | Episode 3",
@@ -191,13 +191,6 @@ export default function PodcastsPage() {
             thumbnail: "https://img.youtube.com/vi/6xJRcPWxCJE/maxresdefault.jpg"
         },
         {
-            title: "Confused about U.S.college admissions? We’ve got you covered!",
-            host: "Raj Parsaud",
-            show: "Radio Nyra Podcast",
-            url: "https://youtu.be/Jj3WeE-4Z4A",
-            thumbnail: "https://img.youtube.com/vi/Jj3WeE-4Z4A/maxresdefault.jpg"
-        },
-        {
             title: "College Admissions Strategy by Empowerly | Episode 2",
             host: "Raj Persaud",
             show: "Radio Nyra Podcast",
@@ -205,18 +198,18 @@ export default function PodcastsPage() {
             thumbnail: "https://img.youtube.com/vi/CXTOkdIA7Bk/maxresdefault.jpg"
         },
         {
+            title: "Confused about U.S.college admissions? We’ve got you covered!",
+            host: "Raj Parsaud",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/Jj3WeE-4Z4A",
+            thumbnail: "https://img.youtube.com/vi/Jj3WeE-4Z4A/maxresdefault.jpg"
+        },
+        {
             title: "Leaders & Legends | Featuring Seema Kak, Kiran Inc",
             host: "Steve Rao",
             show: "Leaders & Legends",
             url: "https://youtu.be/uwu0hho9fEg",
             thumbnail: "https://img.youtube.com/vi/uwu0hho9fEg/maxresdefault.jpg"
-        },
-        {
-            title: "Aventon Cary at Radio Nyra Studio Podcast",
-            host: "Raj Parsaud",
-            show: "Radio Nyra Podcast",
-            url: "https://youtu.be/-kYmBs64DuI",
-            thumbnail: "https://img.youtube.com/vi/-kYmBs64DuI/maxresdefault.jpg"
         },
         {
             title: "Emerging Tech Explained by Industry Veteran Mark R. Hinkle",
@@ -233,12 +226,19 @@ export default function PodcastsPage() {
             thumbnail: "https://img.youtube.com/vi/iJ5P669vJZ4/maxresdefault.jpg"
         },
         {
+            title: "Aventon Cary at Radio Nyra Studio Podcast",
+            host: "Raj Parsaud",
+            show: "Radio Nyra Podcast",
+            url: "https://youtu.be/-kYmBs64DuI",
+            thumbnail: "https://img.youtube.com/vi/-kYmBs64DuI/maxresdefault.jpg"
+        },
+        {
             title: "Leaders & Legends | Interview with Himanshu H. Shah",
             host: "Steve Rao",
             show: "Leaders & Legends",
             url: "https://youtu.be/kQulwTLdXr0",
             thumbnail: "https://img.youtube.com/vi/kQulwTLdXr0/maxresdefault.jpg"
-        },
+        }
     ]
 
 

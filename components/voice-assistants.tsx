@@ -11,7 +11,7 @@ export function VoiceAssistants() {
         {
             name: "Alexa",
             displayName: "Alexa",
-            image: "/alexa.jpg",
+            image: "/Alexa.jpg",
             command: "Alexa, open Radio Nyra Hindi/Telugu",
             popupTitle: "Listen on Alexa"
         },
@@ -25,7 +25,7 @@ export function VoiceAssistants() {
         {
             name: "Siri",
             displayName: "Siri",
-            image: "/siri.jpg",
+            image: "/Siri.jpg",
             command: "Hey Siri, play Radio Nyra",
             popupTitle: "Listen using Siri"
         }

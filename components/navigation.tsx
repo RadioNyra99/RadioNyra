@@ -143,12 +143,12 @@ export function Navigation() {
                   <div className="flex gap-2 w-full">
                     <Button variant="outline" className="flex-1 h-12 rounded-full border-2" asChild>
                       <Link href="https://apps.apple.com/us/app/radio-nyra-raleigh-durham/id6469009980" target="_blank">
-                        <img src="/apple-icon.png" alt="Download Radio Nyra on Apple App Store" className="mr-2 h-5 w-5 object-contain" /> App Store
+                        <img src="/apple-icon.png" alt="Download on App Store" className="mr-2 h-5 w-5 object-contain" /> App Store
                       </Link>
                     </Button>
                     <Button variant="outline" className="flex-1 h-12 rounded-full border-2" asChild>
                       <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app" target="_blank">
-                        <img src="/android-icon.png" alt="Download Radio Nyra on Google Play Store" className="mr-2 h-5 w-5 object-contain" /> Play Store
+                        <img src="/android-icon.png" alt="Get it on Google Play" className="mr-2 h-5 w-5 object-contain" /> Play Store
                       </Link>
                     </Button>
                   </div>
@@ -203,12 +203,12 @@ export function Navigation() {
               <div className="flex items-center gap-2 ml-2">
                 <Link href="https://apps.apple.com/us/app/radio-nyra-raleigh-durham/id6469009980" target="_blank" className="hover:scale-110 transition-transform">
                   <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm border border-border/10">
-                    <img src="/apple-icon.png" alt="Download Radio Nyra on Apple App Store" className="h-6 w-6 object-contain" />
+                    <img src="/apple-icon.png" alt="Download on App Store" className="h-6 w-6 object-contain" />
                   </div>
                 </Link>
                 <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app" target="_blank" className="hover:scale-110 transition-transform">
                   <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm border border-border/10">
-                    <img src="/android-icon.png" alt="Download Radio Nyra on Google Play Store" className="h-6 w-6 object-contain" />
+                    <img src="/android-icon.png" alt="Get it on Google Play" className="h-6 w-6 object-contain" />
                   </div>
                 </Link>
               </div>

@@ -58,7 +58,7 @@ export function HomeView() {
         <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-primary-foreground">
             {/* Top Marketing Announcement Bar */}
             <div className="bg-gradient-to-r from-red-600 via-orange-500 to-primary text-white text-xs font-black uppercase tracking-widest py-3.5 px-4 text-center relative z-50 flex flex-col sm:flex-row items-center justify-center gap-2 shadow-inner">
-                <span>🔥 Market Your Business! Reach 250,000+ South Asian Diaspora in the US with Radio Nyra.</span>
+                <span>🔥 Grow Your Business! Reach 250,000+ South Asian listeners across the US.</span>
                 <Link href="/advertise" className="underline hover:text-white/90 transition-colors inline-flex items-center gap-1 font-extrabold cursor-pointer">
                     Get Started Now &rarr;
                 </Link>
@@ -75,7 +75,7 @@ export function HomeView() {
                         {!loadVideo ? (
                             <img
                                 src="/radio-studio-modern.webp"
-                                alt="Radio Nyra Modern Studio"
+                                alt="Modern broadcast studio"
                                 className="w-full h-full object-cover"
                             />
                         ) : (
@@ -113,7 +113,7 @@ export function HomeView() {
                             <span className="text-primary block mt-1 md:mt-2">Community Media Network</span>
                         </h1>
                         <p className="text-white/90 text-sm md:text-lg max-w-3xl mx-auto mb-8 font-medium">
-                            Connecting communities, businesses, and culture through radio, digital media, events, social platforms, and AI-powered marketing.
+                            We connect communities, businesses, and culture through live radio, digital media, events, and smart marketing tools.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4 mb-8">
                             <Button onClick={() => playStation(STATIONS.Hindi.id)} className="bg-primary hover:bg-primary/90 text-white rounded-none font-bold uppercase tracking-widest px-8 py-6 text-sm">Listen Hindi</Button>
@@ -155,7 +155,7 @@ export function HomeView() {
                                         className="bg-white p-2 rounded-full h-16 w-16 flex items-center justify-center hover:scale-110 transition-all shadow-xl border-2 border-white/20"
                                         title="Download on App Store"
                                     >
-                                        <img src="/apple-icon.webp" alt="Download Radio Nyra on the Apple App Store" className="w-9 h-9 object-contain" />
+                                        <img src="/apple-icon.webp" alt="Download on the App Store" className="w-9 h-9 object-contain" />
                                     </Link>
                                     <Link
                                         href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app"
@@ -163,7 +163,7 @@ export function HomeView() {
                                         className="bg-white p-2 rounded-full h-16 w-16 flex items-center justify-center hover:scale-110 transition-all shadow-xl border-2 border-white/20"
                                         title="Get it on Google Play"
                                     >
-                                        <img src="/android-icon.webp" alt="Get Radio Nyra on the Google Play Store" className="w-9 h-9 object-contain" />
+                                        <img src="/android-icon.webp" alt="Get it on Google Play" className="w-9 h-9 object-contain" />
                                     </Link>
                                 </div>
                             </div>
@@ -269,7 +269,7 @@ export function HomeView() {
                                     ))}
                                 </div>
                                 <blockquote className="text-2xl md:text-3xl font-bold mb-8 leading-snug italic">
-                                    "Radio Nyra has consistently delivered strong visibility and meaningful engagement for our business."
+                                    "This platform has helped us reach the right audience and grow our brand in ways we never expected."
                                 </blockquote>
                                 <div className="flex flex-col items-center">
                                     <div className="font-black uppercase tracking-widest text-lg">Mihir Chakraborty</div>
@@ -292,13 +292,13 @@ export function HomeView() {
                                 </h2>
                                 <div className="bg-muted border border-border/50 rounded-3xl p-8 relative overflow-hidden group hover:border-primary/50 transition-colors h-full flex flex-col justify-center items-center text-center">
                                     <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-primary shadow-xl relative group-hover:scale-105 transition-transform cursor-pointer" onClick={() => { playStation(STATIONS.Hindi.id) }}>
-                                        <img src="/images/radio-nyra-logo.jpg" alt="Radio Nyra Hit Station" className="w-full h-full object-cover" />
+                                        <img src="/images/radio-nyra-logo.jpg" alt="Live hit station" className="w-full h-full object-cover" />
                                         <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                                             <PlayCircle className="text-white w-12 h-12" />
                                         </div>
                                     </div>
-                                    <h3 className="text-2xl font-bold mb-2">Radio Nyra Stream</h3>
-                                    <p className="text-muted-foreground mb-6 max-w-sm mx-auto">Broadcasting the biggest Bollywood hits, live talk shows, and local news 24/7.</p>
+                                    <h3 className="text-2xl font-bold mb-2">Live Stream</h3>
+                                    <p className="text-muted-foreground mb-6 max-w-sm mx-auto">The biggest Bollywood hits, live talk shows, and local news — all day, every day.</p>
                                     <Button size="lg" className="rounded-full px-8 font-bold uppercase tracking-wider bg-primary hover:bg-primary/90 text-white" onClick={() => { playStation(STATIONS.Hindi.id) }}>
                                         <Headphones className="w-5 h-5 mr-2" /> Listen Live
                                     </Button>
@@ -355,10 +355,10 @@ export function HomeView() {
                         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
                             <div>
                                 <h2 className="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tighter text-primary italic leading-none">
-                                    Radio Nyra Shows
+                                    Our Shows
                                 </h2>
                                 <p className="mt-4 text-muted-foreground font-medium uppercase tracking-widest text-sm max-w-xl">
-                                    Tune in to the rhythm of your life with our diverse lineup of shows and charismatic hosts.
+                                    Explore our lineup of live shows hosted by talented voices from the community.
                                 </p>
                             </div>
                             <Button

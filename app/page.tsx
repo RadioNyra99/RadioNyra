@@ -4,14 +4,14 @@ import { HomeView } from "@/components/home-view"
 export const metadata: Metadata = {
   title: "Radio Nyra | Indian Radio & Media Network",
   description:
-    "Radio Nyra is a trusted Indian Subcontinent Community Media Network delivering reach across radio, digital, social, events, and AI-powered marketing.",
+    "Listen to live Indian radio, find community news, and grow your brand with our media network.",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://www.radionyra.com",
     siteName: "Radio Nyra",
     title: "Radio Nyra | Indian Radio & Media Network",
-    description: "Radio Nyra is a trusted Indian Subcontinent Community Media Network delivering reach across radio, digital, social, events, and AI-powered marketing.",
+    description: "Listen to live Indian radio, find community news, and grow your brand with our media network.",
     images: [
       {
         url: "/og-image.png",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Radio Nyra | Indian Radio & Media Network",
-    description: "Radio Nyra is a trusted Indian Subcontinent Community Media Network delivering reach across radio, digital, social, events, and AI-powered marketing.",
+    description: "Listen to live Indian radio, find community news, and grow your brand with our media network.",
     images: ["/og-image.png"],
   },
 }

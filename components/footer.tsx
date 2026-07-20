@@ -65,10 +65,10 @@ export function Footer() {
               <Link href="https://linkedin.com/company/radionyrausa" target="_blank" className="text-gray-400 hover:text-white transition-colors" title="LinkedIn"><Linkedin className="w-5 h-5" /></Link>
               <div className="w-px h-4 bg-white/10 mx-2" />
               <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app" target="_blank" className="text-primary hover:text-white transition-colors flex items-center" title="Download Radio Nyra on the Google Play Store">
-                <img src="/android-icon.png" alt="Download Radio Nyra on the Google Play Store" className="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src="/android-icon.png" alt="Get it on Google Play" className="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all" />
               </Link>
               <Link href="https://apps.apple.com/us/app/radio-nyra-raleigh-durham/id6469009980" target="_blank" className="text-primary hover:text-white transition-colors flex items-center" title="Download Radio Nyra on the Apple App Store">
-                <img src="/apple-icon.png" alt="Download Radio Nyra on the Apple App Store" className="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src="/apple-icon.png" alt="Download on App Store" className="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all" />
               </Link>
             </div>
 

@@ -21,29 +21,37 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Nav Links - Minimal Horizontal */}
-          <nav className="flex flex-wrap justify-center gap-8">
-            {["Home", "About", "Services", "Advertise", "Testimonials", "How to Tune", "Contact", "Privacy Policy", "Terms of Service"].map((item) => {
-              let href = "/"
-              if (item === "Home") {
-                href = "/"
-              } else if (item === "Privacy Policy") {
-                href = "/privacy-policy"
-              } else if (item === "Terms of Service") {
-                href = "/terms-services"
-              } else {
-                href = `/${item.toLowerCase().replace(/\s+/g, "-")}`
-              }
-              return (
-                <Link
-                  key={item}
-                  href={href}
-                  className="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors"
-                >
-                  {item}
-                </Link>
-              )
-            })}
+          {/* Nav Links - 4 Column Footer Grid */}
+          <nav className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full md:w-auto">
+            <div className="flex flex-col gap-3">
+              <span className="text-xs font-black uppercase tracking-widest text-white mb-1">Listen</span>
+              <Link href="/fm-stations" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">FM Stations</Link>
+              <Link href="/hosts" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Meet the Hosts</Link>
+              <Link href="/schedule" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Schedule</Link>
+              <Link href="/podcasts" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Podcasts</Link>
+              <Link href="/how-to-tune" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">How to Tune In</Link>
+            </div>
+            <div className="flex flex-col gap-3">
+              <span className="text-xs font-black uppercase tracking-widest text-white mb-1">Community</span>
+              <Link href="/events" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Events</Link>
+              <Link href="/gallery" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Gallery</Link>
+              <Link href="/news" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">News</Link>
+              <Link href="/blog" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Blog</Link>
+              <Link href="/festival-calendar" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Festival Calendar</Link>
+            </div>
+            <div className="flex flex-col gap-3">
+              <span className="text-xs font-black uppercase tracking-widest text-white mb-1">Resources</span>
+              <Link href="/directory" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Business Directory</Link>
+              <Link href="/faq" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">FAQ</Link>
+            </div>
+            <div className="flex flex-col gap-3">
+              <span className="text-xs font-black uppercase tracking-widest text-white mb-1">Company</span>
+              <Link href="/about" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">About</Link>
+              <Link href="/advertise" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Advertise</Link>
+              <Link href="/services" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Services</Link>
+              <Link href="/contact" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Contact</Link>
+              <Link href="/press" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Press</Link>
+            </div>
           </nav>
 
           {/* Socials & Voice Assistant */}

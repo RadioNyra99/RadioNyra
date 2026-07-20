@@ -30,6 +30,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/press',
         '/privacy-policy',
         '/terms-services',
+        '/directory',
+        '/fm-stations',
+        '/hosts',
+        '/news',
         // Market Landing Pages
         '/markets/raleigh-durham',
         '/markets/atlanta',

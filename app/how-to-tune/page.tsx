@@ -155,6 +155,40 @@ export default function HowToTunePage() {
                     </div>
                 </section>
 
+                {/* Global Radio Directories */}
+                <section className="py-16 bg-card border-t border-b border-border">
+                    <div className="container mx-auto px-4 max-w-4xl text-center">
+                        <h2 className="text-3xl font-black uppercase tracking-tighter mb-4 italic">Listen via Global Radio Directories</h2>
+                        <p className="text-muted-foreground font-bold uppercase tracking-widest text-xs mb-10">We are listed on the world's most trusted online radio player directories. Tune in from anywhere.</p>
+                        
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                            {[
+                                { name: "radio.net", link: "https://www.radio.net" },
+                                { name: "zeno.fm", link: "https://zeno.fm" },
+                                { name: "liveonlineradio.net", link: "https://liveonlineradio.net" },
+                                { name: "radioinsight.com", link: "https://radioinsight.com" },
+                                { name: "globalradioplayer.com", link: "https://globalradioplayer.com" },
+                                { name: "openradio.app", link: "https://openradio.app" },
+                                { name: "radioindia.in", link: "https://radioindia.in" },
+                                { name: "365liveradio.com", link: "https://365liveradio.com" },
+                                { name: "fmradios.in", link: "https://fmradios.in" },
+                                { name: "radiostationworld.com", link: "http://radiostationworld.com" },
+                                { name: "radio.pl", link: "https://www.radio.pl" }
+                            ].map((dir, i) => (
+                                <a 
+                                    key={i} 
+                                    href={dir.link} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="p-4 bg-muted hover:bg-primary hover:text-white border border-border text-center transition-all duration-300 font-semibold text-xs tracking-wider text-muted-foreground hover:scale-105"
+                                >
+                                    {dir.name}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
                 {/* Contact support */}
                 <section className="py-20 bg-primary/5 text-center">
                     <div className="container mx-auto px-4 max-w-2xl">

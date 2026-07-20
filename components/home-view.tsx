@@ -22,6 +22,7 @@ import { HoliBanner } from "@/components/holi-banner"
 import { ShowsMarquee } from "@/components/shows-marquee"
 import { PartnersMarquee } from "@/components/partners-marquee"
 import { TRENDING_SONGS } from "@/lib/trending-songs"
+import { AdBanner } from "@/components/ad-banner"
 
 export function HomeView() {
     const [loadVideo, setLoadVideo] = useState(false);
@@ -55,6 +56,13 @@ export function HomeView() {
 
     return (
         <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-primary-foreground">
+            {/* Top Marketing Announcement Bar */}
+            <div className="bg-gradient-to-r from-red-600 via-orange-500 to-primary text-white text-xs font-black uppercase tracking-widest py-3.5 px-4 text-center relative z-50 flex flex-col sm:flex-row items-center justify-center gap-2 shadow-inner">
+                <span>🔥 Market Your Business! Reach 250,000+ South Asian Diaspora in the US with Radio Nyra.</span>
+                <Link href="/advertise" className="underline hover:text-white/90 transition-colors inline-flex items-center gap-1 font-extrabold cursor-pointer">
+                    Get Started Now &rarr;
+                </Link>
+            </div>
             <Navigation />
             <ApolloTracker />
             <FrequencyBar />
@@ -189,6 +197,13 @@ export function HomeView() {
                                 </div>
                             ))}
                         </div>
+                    </div>
+                </section>
+
+                {/* Sponsor Spotlight Ad Slot */}
+                <section className="py-8 bg-background border-b border-border/50">
+                    <div className="container mx-auto px-4 max-w-5xl">
+                        <AdBanner type="horizontal" />
                     </div>
                 </section>
 
@@ -327,6 +342,14 @@ export function HomeView() {
                         </div>
                     </div>
                 </section>
+
+                {/* Shows Ad Slot */}
+                <section className="py-8 bg-background border-b border-border/50">
+                    <div className="container mx-auto px-4 max-w-5xl">
+                        <AdBanner type="horizontal" />
+                    </div>
+                </section>
+
                 <section id="shows" className="py-12 bg-muted/20">
                     <div className="container mx-auto px-4">
                         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">

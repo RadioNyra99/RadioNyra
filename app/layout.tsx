@@ -26,7 +26,18 @@ export const metadata: Metadata = {
     "Radio Nyra is a trusted Indian Subcontinent Community Media Network delivering reach across radio, digital, social, events, and AI-powered marketing.",
   generator: "v0.app",
   manifest: "/manifest.json",
-  keywords: ["Indian Radio USA", "Indian Community Network", "Indian Subcontinent Community Media Network", "Radio Advertising USA", "Telugu Radio USA", "Hindi Radio USA", "Community Media Platform"],
+  keywords: [
+    "Indian Radio USA", "Indian Community Network", "Indian Subcontinent Community Media Network", 
+    "Radio Advertising USA", "Telugu Radio USA", "Hindi Radio USA", "Community Media Platform",
+    "Raleigh FM Radio Stations", "Raleigh Hip Hop Radio Station", "100.3 the beat Raleigh", 
+    "99.9 FM HD3 Raleigh", "99.9 FM HD4 Raleigh", "Radio Nyra frequency", "Raleigh local radio stations", 
+    "95.7 FM Raleigh NC", "local FM radio stations", "listen to radio on phone",
+    "Indian business directory Raleigh", "Indian jobs Raleigh Durham", "desi jobs USA",
+    "Indian scholarships USA", "H1B visa guide", "Indian immigration help",
+    "Indian restaurants near me Raleigh", "Indian grocery Cary NC",
+    "South Asian community radio", "Indian radio Atlanta", "Indian radio Philadelphia",
+    "Bollywood radio live", "Telugu songs radio online", "Hindi songs radio USA"
+  ],
   authors: [{ name: "Radio Nyra" }],
   creator: "Radio Nyra",
   publisher: "Radio Nyra",
@@ -152,6 +163,21 @@ export default function RootLayout({
           { "@type": "AdministrativeArea", "name": "Philadelphia, PA" },
           { "@type": "AdministrativeArea", "name": "St. Louis, MO" }
         ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.radionyra.com/#website",
+        "url": "https://www.radionyra.com",
+        "name": "Radio Nyra",
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://www.radionyra.com/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.radionyra.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
       }
     ]
   };

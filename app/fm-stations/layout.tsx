@@ -1,0 +1,18 @@
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Indian FM Radio Stations USA | Listen Live | Radio Nyra",
+  description: "Tune into Radio Nyra's FM and HD radio stations across 8 US markets including Raleigh, Atlanta, Philadelphia, Baltimore, and more. Listen live online.",
+  alternates: {
+    canonical: "/fm-stations",
+  },
+  openGraph: {
+    title: "Indian FM Radio Stations USA | Listen Live | Radio Nyra",
+    description: "Tune into Radio Nyra's FM and HD radio stations across 8 US markets including Raleigh, Atlanta, Philadelphia, Baltimore, and more. Listen live online.",
+    url: "https://www.radionyra.com/fm-stations",
+  },
+}
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return <>{children}</>
+}

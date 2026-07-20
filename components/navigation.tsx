@@ -31,6 +31,8 @@ export function Navigation() {
         { href: "/schedule", label: "Schedule" },
         { href: "/podcasts", label: "Podcasts" },
         { href: "/how-to-tune", label: "How to Tune In" },
+        { href: "/fm-stations", label: "FM Stations" },
+        { href: "/hosts", label: "Meet the Hosts" },
       ]
     },
     {
@@ -48,12 +50,14 @@ export function Navigation() {
       href: "#media",
       label: "Media",
       subLinks: [
+        { href: "/news", label: "News" },
         { href: "/ecosystem", label: "Ecosystem" },
         { href: "/syndication", label: "Syndication" },
         { href: "/analytics", label: "Analytics" },
         { href: "/press", label: "Press" },
       ]
     },
+    { href: "/directory", label: "Directory" },
     {
       href: "#services",
       label: "Services",

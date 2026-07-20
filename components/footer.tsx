@@ -42,6 +42,7 @@ export function Footer() {
             <div className="flex flex-col gap-3">
               <span className="text-xs font-black uppercase tracking-widest text-white mb-1">Resources</span>
               <Link href="/directory" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Business Directory</Link>
+              <Link href="/write-for-us" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Write For Us</Link>
               <Link href="/faq" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">FAQ</Link>
             </div>
             <div className="flex flex-col gap-3">

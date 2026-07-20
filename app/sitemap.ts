@@ -34,6 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/fm-stations',
         '/hosts',
         '/news',
+        '/write-for-us',
         // Market Landing Pages
         '/markets/raleigh-durham',
         '/markets/atlanta',

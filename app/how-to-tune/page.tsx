@@ -164,6 +164,9 @@ export default function HowToTunePage() {
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
                             {[
                                 { name: "radio.net", link: "https://www.radio.net" },
+                                { name: "getmeradio.com", link: "https://www.getmeradio.com/stations/radionyra-4514/" },
+                                { name: "thenonstopradio.com", link: "https://thenonstopradio.com/radio/radio_nyra_us" },
+                                { name: "radioandpodcast.com", link: "https://radioandpodcast.com/radio/united-states/radio_nyra_us" },
                                 { name: "zeno.fm", link: "https://zeno.fm" },
                                 { name: "liveonlineradio.net", link: "https://liveonlineradio.net" },
                                 { name: "radioinsight.com", link: "https://radioinsight.com" },

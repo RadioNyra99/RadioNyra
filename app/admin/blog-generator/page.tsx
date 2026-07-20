@@ -15,7 +15,49 @@ const TOPICS = [
     { id: "telugu-events-usa", label: "Telugu Events in the USA" },
     { id: "diwali-celebrations", label: "Diwali Celebrations Cary & Morrisville" },
     { id: "concert-guides", label: "Concert Guides: Subcontinent Artists" },
-    { id: "community-news", label: "Community News & Diaspora Spotlight" }
+    { id: "community-news", label: "Community News & Diaspora Spotlight" },
+    
+    // Reddit-derived topics (40 items)
+    { id: "immigrants-find-community", label: "How Do Indian Immigrants Find Community in the USA?" },
+    { id: "listen-indian-radio", label: "Where Can I Listen to Indian Radio Stations in America?" },
+    { id: "best-indian-podcasts", label: "Best Indian Podcasts for the US Diaspora" },
+    { id: "stay-connected-culture", label: "How to Stay Connected to Indian Culture in the USA?" },
+    { id: "community-events-near-me", label: "Indian Community Events Near Me in the USA" },
+    { id: "where-indians-live", label: "Where Do Most Indians Live in the United States?" },
+    { id: "advertise-business-diaspora", label: "How to Advertise Business to Indian Americans?" },
+    { id: "promote-products-immigrants", label: "Best Ways to Promote Products to Indian Immigrants" },
+    { id: "community-news-updates", label: "Indian Community News and Updates for US Residents" },
+    { id: "find-event-listings", label: "How to Find Indian Event Listings in Your City?" },
+    { id: "understanding-population", label: "Understanding the Indian American Population in the USA" },
+    { id: "business-owners-connect", label: "How Do Indian Business Owners Connect with Community?" },
+    { id: "radio-stations-indian-music", label: "What Radio Stations Play Indian Music in America?" },
+    { id: "reach-audiences-digital", label: "How to Reach Indian Audiences Through Digital Ads?" },
+    { id: "find-news-entertainment", label: "Where to Find Indian News & Entertainment Online?" },
+    { id: "best-platforms-advertise", label: "Best Platforms to Advertise to Indian Americans" },
+    { id: "immigrants-share-news", label: "How Indian Immigrants Share News and Updates" },
+    { id: "start-business-diaspora", label: "Starting a Business for the Indian American Market" },
+    { id: "network-professionals", label: "How to Network with Indian Professionals in the USA?" },
+    { id: "community-organizations", label: "Indian Community Organizations & Groups in America" },
+    { id: "best-blogs-content", label: "Best Indian Blogs and Content for the Diaspora" },
+    { id: "sponsor-advertise-events", label: "How to Sponsor or Advertise at Indian Community Events?" },
+    { id: "consumer-behavior", label: "Understanding Indian American Consumer Behavior" },
+    { id: "find-authentic-news", label: "Where to Find Authentic Indian News in the USA?" },
+    { id: "stay-updated-india", label: "How Indian Immigrants Stay Updated on India News" },
+    { id: "build-brand-resonate", label: "Building a Brand That Resonates with Indian Americans" },
+    { id: "magazines-publications", label: "What Magazines & Publications Target Indian Diaspora?" },
+    { id: "join-business-community", label: "How to Join the Indian American Business Community?" },
+    { id: "celebrate-festivals", label: "Best Ways to Celebrate Indian Festivals in the USA" },
+    { id: "access-entertainment-news", label: "How Indian Americans Access Entertainment and News" },
+    { id: "start-podcast-audience", label: "Starting a Podcast for the Indian American Audience" },
+    { id: "market-service-immigrants", label: "How to Market Your Service to Indian Immigrants?" },
+    { id: "get-community-information", label: "Where Do Indian Americans Get Community Information?" },
+    { id: "cultural-preferences", label: "Understanding Cultural Preferences of Indian Diaspora" },
+    { id: "build-trust-customers", label: "How to Build Trust with Indian American Customers" },
+    { id: "best-advertising-strategies", label: "Best Advertising Strategies for Indian Markets in USA" },
+    { id: "share-recommendations", label: "How Indian Communities Share Recommendations & Reviews" },
+    { id: "find-influencers-creators", label: "Finding Indian American Influencers & Content Creators" },
+    { id: "reach-regional-communities", label: "How to Reach Specific Indian Regional Communities" },
+    { id: "build-community-audio", label: "Building Community Through Indian Radio and Podcasts" }
 ];
 
 const TONES = [
@@ -263,8 +305,43 @@ export default function BlogGeneratorPage() {
             setProgressStep(prev => {
                 if (prev >= progressTexts.length - 2) {
                     clearInterval(interval);
-                    // Final generate
-                    const template = GENERATOR_TEMPLATES[topic];
+                    let template = GENERATOR_TEMPLATES[topic];
+                    if (!template) {
+                        const selectedTopic = TOPICS.find(t => t.id === topic);
+                        const label = selectedTopic ? selectedTopic.label : "Indian Diaspora Media Topic";
+                        
+                        const generatedTitle = `${label} - The Ultimate Guide for Indian Americans`;
+                        const generatedDesc = `Explore key insights, community tips, and professional resources regarding ${label.toLowerCase()} for the South Asian diaspora in the United States.`;
+                        
+                        const generatedOutline = `1. Introduction: Understanding ${label}
+2. Key Challenges & Opportunities inside the US Diaspora
+3. Practical Step-by-Step Strategies and Best Practices
+4. Leverage Digital Media, Audio Streams, and Podcasts
+5. How Radio Nyra Promotes Community Connection and Action
+6. Summary & Recommendations`;
+
+                        const generatedContent = `Navigating topics like ${label.toLowerCase()} is increasingly important for members of the South Asian diaspora living and working in the United States. Maintaining a balance between cultural values and professional growth requires access to trusted community platforms and reliable informational channels.
+
+Historically, Indian immigrants have relied on strong word-of-mouth networks, local community groups, and regional media to stay updated. From Raleigh-Durham, NC to Atlanta, GA, regional networks provide support systems that help families and businesses thrive.
+
+This is where digital community media networks like Radio Nyra make a massive difference. By offering 24/7 radio streams in regional languages (Hindi and Telugu) alongside dynamic business directories, local news updates, and event listings, Radio Nyra bridges the distance back to home.
+
+Ultimately, whether you are trying to reach South Asian consumers through advertising, look for regional events, or stay connected with community achievements, having dedicated media hubs ensures that the voice of the diaspora remains strong.`;
+
+                        const generatedFaqs = `Q1: How does this topic help the Indian American community?
+A1: It builds a sense of belonging, opens avenues for professional networking, and helps immigrants navigate daily life in the US.
+
+Q2: How can I leverage Radio Nyra to learn more about this?
+A2: You can download our iOS or Android app, tune in to 99.9 FM, or view our updated business directory at radionyra.com.`;
+
+                        template = {
+                            title: generatedTitle,
+                            description: generatedDesc,
+                            outline: generatedOutline,
+                            content: generatedContent,
+                            faqs: generatedFaqs
+                        };
+                    }
                     setGeneratedDraft(template);
                     setGenerating(false);
                     return progressTexts.length - 1;

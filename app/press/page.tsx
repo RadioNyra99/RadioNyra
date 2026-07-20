@@ -66,6 +66,45 @@ export default function PressPage() {
                             </article>
 
                         </div>
+
+                        {/* Media Coverage Section */}
+                        <div className="mt-16 border-t border-gray-100 pt-16">
+                            <h2 className="text-3xl font-black uppercase tracking-tighter mb-8 italic text-gray-900">Media Coverage</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div className="p-6 bg-gray-50 border border-gray-200 rounded-xl space-y-3">
+                                    <span className="text-[10px] font-bold text-primary uppercase tracking-widest">American Kahani</span>
+                                    <h3 className="font-bold text-gray-900 text-lg uppercase tracking-tight">Indian American Leader Steve Rao Elected to 4th Term</h3>
+                                    <p className="text-xs text-gray-600 leading-relaxed">
+                                        American Kahani features Wake County Commissioner and Radio Nyra host Steve Rao, highlighting the station's role in local diaspora outreach.
+                                    </p>
+                                    <a 
+                                        href="https://americankahani.com/community/indian-american-steve-s-rao-elected-to-a-4th-term/" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        className="inline-flex items-center text-xs font-black uppercase tracking-widest text-primary hover:text-gray-900 transition-colors pt-2"
+                                    >
+                                        View Coverage <ChevronRight className="w-3.5 h-3.5 ml-1" />
+                                    </a>
+                                </div>
+
+                                <div className="p-6 bg-gray-50 border border-gray-200 rounded-xl space-y-3">
+                                    <span className="text-[10px] font-bold text-primary uppercase tracking-widest">Nyra Radio Events</span>
+                                    <h3 className="font-bold text-gray-900 text-lg uppercase tracking-tight">Official Radio Nyra Diwali Event Highlights</h3>
+                                    <p className="text-xs text-gray-600 leading-relaxed">
+                                        Coverage detailing the annual Diwali festivals, ticket booking guidelines, and live cultural stages broadcasted by Radio Nyra.
+                                    </p>
+                                    <a 
+                                        href="https://nyraradio.com/event/radio-nyra-diwali/" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        className="inline-flex items-center text-xs font-black uppercase tracking-widest text-primary hover:text-gray-900 transition-colors pt-2"
+                                    >
+                                        View Event Details <ChevronRight className="w-3.5 h-3.5 ml-1" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
             </main>

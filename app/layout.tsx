@@ -19,7 +19,7 @@ const _geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.radionyra.com'),
   title: {
-    default: "Radio Nyra | Indian Subcontinent Radio & Media Network",
+    default: "Radio Nyra | Indian Radio & Media Network",
     template: "%s | Radio Nyra"
   },
   description:
@@ -27,16 +27,8 @@ export const metadata: Metadata = {
   generator: "v0.app",
   manifest: "/manifest.json",
   keywords: [
-    "Indian Radio USA", "Indian Community Network", "Indian Subcontinent Community Media Network", 
-    "Radio Advertising USA", "Telugu Radio USA", "Hindi Radio USA", "Community Media Platform",
-    "Raleigh FM Radio Stations", "Raleigh Hip Hop Radio Station", "100.3 the beat Raleigh", 
-    "99.9 FM HD3 Raleigh", "99.9 FM HD4 Raleigh", "Radio Nyra frequency", "Raleigh local radio stations", 
-    "95.7 FM Raleigh NC", "local FM radio stations", "listen to radio on phone",
-    "Indian business directory Raleigh", "Indian jobs Raleigh Durham", "desi jobs USA",
-    "Indian scholarships USA", "H1B visa guide", "Indian immigration help",
-    "Indian restaurants near me Raleigh", "Indian grocery Cary NC",
-    "South Asian community radio", "Indian radio Atlanta", "Indian radio Philadelphia",
-    "Bollywood radio live", "Telugu songs radio online", "Hindi songs radio USA"
+    "Radio Nyra", "Indian Radio USA", "Telugu Radio USA", "Hindi Radio USA", 
+    "Raleigh FM Radio Stations", "Indian Diaspora Community Media"
   ],
   authors: [{ name: "Radio Nyra" }],
   creator: "Radio Nyra",

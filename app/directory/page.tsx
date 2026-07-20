@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { 
   Search, MapPin, Phone, Mail, Globe, Sparkles, Building2, 
-  Plus, Utensils, ShoppingBag, Laptop, Landmark, Star, X, Tag 
+  Plus, Utensils, ShoppingBag, Laptop, Landmark, Star, X 
 } from "lucide-react"
 
 interface BusinessListing {
@@ -21,7 +21,7 @@ interface BusinessListing {
   website: string
   rating: number
   featured: boolean
-  coupon?: string
+
   description: string
 }
 
@@ -37,7 +37,7 @@ const INITIAL_LISTINGS: BusinessListing[] = [
     website: "https://apnabazar.com",
     rating: 4.8,
     featured: true,
-    coupon: "NYRA10 - 10% off your next purchase",
+
     description: "The premier South Asian grocery store in Cary offering fresh produce, premium spices, sweets, and fresh meat."
   },
   {
@@ -64,7 +64,7 @@ const INITIAL_LISTINGS: BusinessListing[] = [
     website: "http://fusionninenc.com",
     rating: 4.6,
     featured: true,
-    coupon: "FUSION9LUNCH - Free soft drink with lunch buffet",
+
     description: "Authentic fine dining Indian restaurant specializing in Hyderabadi Biryani, Tandoori items, and South Indian curries."
   },
   {
@@ -91,7 +91,7 @@ const INITIAL_LISTINGS: BusinessListing[] = [
     website: "https://radionyra.com/testimonials/mc-construction",
     rating: 4.9,
     featured: true,
-    coupon: "NYRABUILD - Free consultation & 5% off home remodeling",
+
     description: "Licensed residential and commercial building specialists in NC. Custom homes, framing, and renovations."
   },
   {
@@ -118,7 +118,7 @@ const INITIAL_LISTINGS: BusinessListing[] = [
     website: "https://sipnspices.com",
     rating: 4.7,
     featured: false,
-    coupon: "CHAI2 - Buy one specialty Chai get one free",
+
     description: "Cozy local cafe offering premium Indian Chai varieties, samosas, street food, and fusion desserts."
   }
 ]
@@ -132,7 +132,7 @@ export default function BusinessDirectoryPage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [newBiz, setNewBiz] = useState({
     name: "", category: "restaurants", address: "", phone: "", 
-    email: "", website: "", coupon: "", description: ""
+    email: "", website: "", description: ""
   })
 
   // Filter listings
@@ -160,7 +160,7 @@ export default function BusinessDirectoryPage() {
       website: newBiz.website || "https://radionyra.com",
       rating: 5.0,
       featured: false,
-      coupon: newBiz.coupon || undefined,
+
       description: newBiz.description || "A quality local South Asian business serving North Carolina."
     }
     
@@ -168,7 +168,7 @@ export default function BusinessDirectoryPage() {
     setIsModalOpen(false)
     setNewBiz({
       name: "", category: "restaurants", address: "", phone: "", 
-      email: "", website: "", coupon: "", description: ""
+      email: "", website: "", description: ""
     })
   }
 
@@ -211,7 +211,7 @@ export default function BusinessDirectoryPage() {
                 Indian Business <span className="text-foreground">Directory</span>
               </h1>
               <p className="text-muted-foreground font-bold uppercase tracking-widest text-xs mt-2">
-                Discover local South Asian businesses and active discounts in North America
+                Discover local South Asian businesses in the Raleigh-Durham Triangle and beyond
               </p>
             </div>
             <Button 
@@ -317,15 +317,7 @@ export default function BusinessDirectoryPage() {
                     </div>
                   </div>
 
-                  {/* Coupon Area */}
-                  {item.coupon && (
-                    <div className="mx-6 mb-2 p-3 bg-green-500/5 border border-dashed border-green-500/30 flex items-start gap-2">
-                      <Tag className="w-4 h-4 text-green-600 shrink-0 mt-0.5" />
-                      <div className="text-[10px] text-green-700 font-bold uppercase tracking-wider">
-                        {item.coupon}
-                      </div>
-                    </div>
-                  )}
+
 
                   {/* Actions */}
                   <div className="p-6 pt-2">
@@ -348,7 +340,7 @@ export default function BusinessDirectoryPage() {
             <Sparkles className="w-10 h-10 text-primary mx-auto mb-4" />
             <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight italic mb-4">Want more visibility for your business?</h2>
             <p className="text-muted-foreground leading-relaxed mb-6 font-medium max-w-2xl mx-auto">
-              Get listed in our premium featured categories, display your custom discount coupons, and promote your brand on-air across our 8 major US FM stations. Reach over 250,000 listeners weekly.
+              Get listed in our premium featured categories and promote your brand on-air across our 8 major US FM stations. Reach over 250,000 listeners weekly.
             </p>
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold uppercase tracking-widest rounded-none px-10 py-6" asChild>
               <a href="/advertise">Get Feature Ads Packages</a>
@@ -445,16 +437,7 @@ export default function BusinessDirectoryPage() {
                 </div>
               </div>
 
-              <div>
-                <label className="text-[10px] font-black uppercase tracking-[0.2em] text-primary block mb-1">Active Coupon / Offer</label>
-                <Input 
-                  type="text" 
-                  value={newBiz.coupon} 
-                  onChange={(e) => setNewBiz({...newBiz, coupon: e.target.value})} 
-                  placeholder="e.g. SAVE10 - 10% Off your first bill"
-                  className="rounded-none bg-muted/30"
-                />
-              </div>
+
 
               <div>
                 <label className="text-[10px] font-black uppercase tracking-[0.2em] text-primary block mb-1">Short Description</label>

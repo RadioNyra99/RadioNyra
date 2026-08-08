@@ -29,6 +29,27 @@ export default function AboutPage() {
                     </div>
                 </section>
 
+                <section className="py-16 md:py-24 bg-background border-b border-border">
+                    <div className="container mx-auto px-4 max-w-5xl">
+                        <div className="text-center max-w-4xl mx-auto mb-12">
+                            <h2 className="text-xs sm:text-sm font-bold uppercase tracking-[0.4em] text-primary mb-4">About Radio Nyra</h2>
+                            <p className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight leading-tight">
+                                Radio Nyra is America's leading Indian radio network connecting communities through music, culture, news, podcasts, entertainment, and live events.
+                            </p>
+                            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+                                We deliver premium content while helping businesses connect with one of the most engaged multicultural audiences in North America.
+                            </p>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            {["60+ years of broadcast excellence", "Serving Indian communities across America", "Premium entertainment", "Music", "News", "Culture", "Business", "Community", "Podcasts", "Events"].map((item) => (
+                                <div key={item} className="bg-card border border-border p-5 text-center">
+                                    <h3 className="text-xs font-black uppercase tracking-widest text-primary leading-relaxed">{item}</h3>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
                 {/* HERITAGE SECTION */}
                 <section className="py-16 md:py-24 bg-background">
                     <div className="container mx-auto px-4 max-w-5xl">

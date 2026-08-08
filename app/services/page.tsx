@@ -298,11 +298,11 @@ export default function ServicesPage() {
                                 </CardFooter>
                             </Card>
 
-                            {/* III. Premium Package */}
+                            {/* III. Elite Package */}
                             <Card className="group border-purple-500/20 bg-card hover:shadow-[0_0_50px_rgba(168,85,247,0.15)] transition-all duration-500 rounded-none fade-in-up stagger-3 relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-full h-1 bg-purple-500" />
                                 <CardHeader className="text-center bg-purple-500/5 pb-10 pt-12">
-                                    <div className="text-purple-500 font-black uppercase tracking-[0.2em] mb-4 text-xs">Premium</div>
+                                    <div className="text-purple-500 font-black uppercase tracking-[0.2em] mb-4 text-xs">Elite Tier</div>
                                     <CardTitle className="text-4xl font-black italic">PACKAGE III</CardTitle>
                                 </CardHeader>
                                 <CardContent className="pt-10 space-y-6">
@@ -321,7 +321,7 @@ export default function ServicesPage() {
                                 </CardContent>
                                 <CardFooter className="pb-10">
                                     <Button className="w-full bg-purple-600 hover:bg-purple-700 font-black uppercase tracking-widest py-8 rounded-none transition-transform active:scale-95" asChild>
-                                        <Link href="/advertise#inquiry">Go Premium</Link>
+                                        <Link href="/advertise#inquiry">Choose Elite</Link>
                                     </Button>
                                 </CardFooter>
                             </Card>

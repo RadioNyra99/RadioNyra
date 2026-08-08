@@ -1,0 +1,119 @@
+{"kind":"deck","id":"pr/q4mnl1","name":"Deck"}
+{"kind":"layout","layoutId":"7777a47c-0844-4a96-8676-11acfccd0176","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"ba5171ac-01f6-4a12-9b67-867a08903ff5","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/5b4pst","slide":1,"title":"Radio Nyra","textShapes":3}
+{"kind":"shape","id":"sh/l47ilo3i","slide":1,"bbox":[0,0,760,720]}
+{"kind":"shape","id":"sh/03ehs32x","slide":1,"bbox":[0,0,760,720]}
+{"kind":"textbox","id":"sh/by50felg","slide":1,"text":"Radio Nyra\nWebsite Update","textPreview":"Radio Nyra | Website Update","textChars":25,"textLines":2,"bbox":[72,135,610,145]}
+{"kind":"textbox","id":"sh/qxwzm94v","slide":1,"text":"YouTube Integration Progress","textPreview":"YouTube Integration Progress","textChars":28,"textLines":1,"bbox":[72,305,560,44]}
+{"kind":"textbox","id":"sh/d0niho36","slide":1,"text":"Prepared by:\nVadlapudi Pranab","textPreview":"Prepared by: | Vadlapudi Pranab","textChars":29,"textLines":2,"bbox":[72,455,420,82]}
+{"kind":"image","id":"im/f698bit8","slide":1,"name":"","geometry":"roundRect","alt":"Updated Radio Nyra homepage hero screenshot","bbox":[620,0,660,720]}
+{"kind":"notes","id":"nt/5b4pst","slide":1,"text":"[Sources]\nScreenshot captured from current local website at http://127.0.0.1:3002."}
+{"kind":"slide","id":"sl/8zgeqt","slide":2,"title":"Radio Nyra Website - YouTube Integration Progress Update","textShapes":7}
+{"kind":"textbox","id":"sh/3up83ado","slide":2,"text":"Radio Nyra Website - YouTube Integration Progress Update","textPreview":"Radio Nyra Website - YouTube Integration Progress Update","textChars":56,"textLines":1,"bbox":[54,28,820,24]}
+{"kind":"textbox","id":"sh/ovipcfu9","slide":2,"text":"Homepage now foregrounds listening and watching","textPreview":"Homepage now foregrounds listening and watching","textChars":47,"textLines":1,"bbox":[54,58,940,50]}
+{"kind":"shape","id":"sh/pwrq5kvu","slide":2,"bbox":[54,116,140,5]}
+{"kind":"shape","id":"sh/by987adk","slide":2,"bbox":[96,172,170,40]}
+{"kind":"textbox","id":"sh/czipgfu5","slide":2,"text":"Hero Section","textPreview":"Hero Section","textChars":12,"textLines":1,"bbox":[108,181,146,22]}
+{"kind":"shape","id":"sh/d0rq9kvq","slide":2,"bbox":[370,368,150,40]}
+{"kind":"textbox","id":"sh/yl0ripcb","slide":2,"text":"Listen Live","textPreview":"Listen Live","textChars":11,"textLines":1,"bbox":[382,377,126,22]}
+{"kind":"shape","id":"sh/zm98budw","slide":2,"bbox":[540,620,210,40]}
+{"kind":"textbox","id":"sh/ve947a14","slide":2,"text":"Watch on YouTube","textPreview":"Watch on YouTube","textChars":16,"textLines":1,"bbox":[552,629,186,22]}
+{"kind":"textbox","id":"sh/ud03e5kj","slide":2,"text":"• Hero Section\n• Listen Live\n• Watch on YouTube\n• Latest Videos\n• Navigation Improvements","textPreview":"• Hero Section | • Listen Live | • Watch on YouTube | • Latest Videos | • Navigation Improvements","textChars":89,"textLines":5,"bbox":[920,176,300,260]}
+{"kind":"textbox","id":"sh/hgbm9kja","slide":2,"text":"The top-of-page experience now connects live radio, YouTube viewing, and improved navigation in one clear entry point.","textPreview":"The top-of-page experience now connects live radio, YouTube viewing, and improved navigation in one clear entry point.","textChars":118,"textLines":1,"bbox":[920,488,300,94]}
+{"kind":"image","id":"im/fqp8nahk","slide":2,"name":"","geometry":"roundRect","alt":"Updated homepage hero screenshot","bbox":[54,145,820,462]}
+{"kind":"notes","id":"nt/8zgeqt","slide":2,"text":"[Sources]\nScreenshot captured from the current updated homepage."}
+{"kind":"slide","id":"sl/we1zlj","slide":3,"title":"YouTube Integration Connects the Official Channel","textShapes":5}
+{"kind":"textbox","id":"sh/5cn61or2","slide":3,"text":"YouTube Integration Connects the Official Channel","textPreview":"YouTube Integration Connects the Official Channel","textChars":49,"textLines":1,"bbox":[54,45,850,52]}
+{"kind":"textbox","id":"sh/ipcnq9sr","slide":3,"text":"The website now connects visitors to the official Radio Nyra YouTube channel experience.","textPreview":"The website now connects visitors to the official Radio Nyra YouTube channel experience.","textChars":88,"textLines":1,"bbox":[54,102,860,36]}
+{"kind":"textbox","id":"sh/tgn65ore","slide":3,"text":"• Latest Videos\n• Shorts\n• Featured Videos\n• Subscribe Button\n• Watch Now\n• Playlist Integration","textPreview":"• Latest Videos | • Shorts | • Featured Videos | • Subscribe Button | • Watch Now | • Playlist Integration","textChars":96,"textLines":6,"bbox":[748,478,420,160]}
+{"kind":"shape","id":"sh/6dwnu9sn","slide":3,"bbox":[940,178,210,40]}
+{"kind":"textbox","id":"sh/re5o3e98","slide":3,"text":"Subscribe Button","textPreview":"Subscribe Button","textChars":16,"textLines":1,"bbox":[952,187,186,22]}
+{"kind":"shape","id":"sh/gjy503qp","slide":3,"bbox":[930,405,230,40]}
+{"kind":"textbox","id":"sh/1k7698ra","slide":3,"text":"Playlist Integration","textPreview":"Playlist Integration","textChars":20,"textLines":1,"bbox":[942,414,206,22]}
+{"kind":"image","id":"im/al0vqx0b","slide":3,"name":"","geometry":"roundRect","alt":"YouTube hub top screenshot","bbox":[54,160,650,474]}
+{"kind":"image","id":"im/9krehszq","slide":3,"name":"","geometry":"roundRect","alt":"YouTube playlists screenshot","bbox":[730,160,496,290]}
+{"kind":"notes","id":"nt/we1zlj","slide":3,"text":"[Sources]\nScreenshots captured from the current /youtube page and homepage YouTube integration."}
+{"kind":"slide","id":"sl/odnk46","slide":4,"title":"Radio Nyra Website - YouTube Integration Progress Update","textShapes":6}
+{"kind":"textbox","id":"sh/c3q947m1","slide":4,"text":"Radio Nyra Website - YouTube Integration Progress Update","textPreview":"Radio Nyra Website - YouTube Integration Progress Update","textChars":56,"textLines":1,"bbox":[54,28,820,24]}
+{"kind":"textbox","id":"sh/b2hsv25g","slide":4,"text":"Homepage improvements are visible in the updated site","textPreview":"Homepage improvements are visible in the updated site","textChars":53,"textLines":1,"bbox":[54,58,940,50]}
+{"kind":"shape","id":"sh/q18r2x4v","slide":4,"bbox":[54,116,140,5]}
+{"kind":"textbox","id":"sh/3exsr254","slide":4,"text":"Updated hero and navigation","textPreview":"Updated hero and navigation","textChars":27,"textLines":1,"bbox":[80,515,420,30]}
+{"kind":"textbox","id":"sh/2doryx4j","slide":4,"text":"New YouTube discovery area","textPreview":"New YouTube discovery area","textChars":26,"textLines":1,"bbox":[660,515,420,30]}
+{"kind":"textbox","id":"sh/1cfqpsne","slide":4,"text":"• Better UI\n• Better Layout\n• Improved Navigation\n• Better User Experience","textPreview":"• Better UI | • Better Layout | • Improved Navigation | • Better User Experience","textChars":74,"textLines":4,"bbox":[90,565,1020,80]}
+{"kind":"textbox","id":"sh/gb69wnmt","slide":4,"text":"Before-state screenshots were not available; this slide documents the current updated website only.","textPreview":"Before-state screenshots were not available; this slide documents the current updated website only.","textChars":99,"textLines":1,"bbox":[90,660,850,24]}
+{"kind":"image","id":"im/0vi9sf6l","slide":4,"name":"","geometry":"roundRect","alt":"Current updated homepage desktop screenshot","bbox":[54,154,540,338]}
+{"kind":"image","id":"im/1wra1kn6","slide":4,"name":"","geometry":"roundRect","alt":"Current updated YouTube section screenshot","bbox":[632,154,540,338]}
+{"kind":"notes","id":"nt/odnk46","slide":4,"text":"[Sources]\nCurrent website screenshots only. No before-state screenshot was available in the project artifacts inspected."}
+{"kind":"slide","id":"sl/phoznh","slide":5,"title":"Radio Nyra Website - YouTube Integration Progress Update","textShapes":6}
+{"kind":"textbox","id":"sh/vqp8z6xg","slide":5,"text":"Radio Nyra Website - YouTube Integration Progress Update","textPreview":"Radio Nyra Website - YouTube Integration Progress Update","textChars":56,"textLines":1,"bbox":[54,28,820,24]}
+{"kind":"textbox","id":"sh/gry9sre1","slide":5,"text":"Latest videos now display directly on the homepage","textPreview":"Latest videos now display directly on the homepage","textChars":50,"textLines":1,"bbox":[54,58,940,50]}
+{"kind":"shape","id":"sh/hs7q1wfm","slide":5,"bbox":[54,116,140,5]}
+{"kind":"shape","id":"sh/7m58vmxk","slide":5,"bbox":[858,178,344,246]}
+{"kind":"textbox","id":"sh/8ne9orep","slide":5,"text":"Latest Videos","textPreview":"Latest Videos","textChars":13,"textLines":1,"bbox":[890,208,280,34]}
+{"kind":"textbox","id":"sh/tonqxwfa","slide":5,"text":"The section automatically displays current videos from the official Radio Nyra YouTube channel, helping visitors move from listening to watching without leaving the site.","textPreview":"The section automatically displays current videos from the official Radio Nyra YouTube channel, helping visitors move from listening to w...","textChars":170,"textLines":1,"bbox":[890,268,268,118]}
+{"kind":"shape","id":"sh/yxcrihwn","slide":5,"bbox":[922,465,170,40]}
+{"kind":"textbox","id":"sh/jy58r2x8","slide":5,"text":"Watch Now","textPreview":"Watch Now","textChars":9,"textLines":1,"bbox":[934,474,146,22]}
+{"kind":"shape","id":"sh/3ixc3udg","slide":5,"bbox":[870,525,250,40]}
+{"kind":"textbox","id":"sh/2hovapwv","slide":5,"text":"Official Channel Feed","textPreview":"Official Channel Feed","textChars":21,"textLines":1,"bbox":[882,534,226,22]}
+{"kind":"image","id":"im/7ytwf25s","slide":5,"name":"","geometry":"roundRect","alt":"Homepage latest YouTube videos screenshot","bbox":[54,150,770,505]}
+{"kind":"notes","id":"nt/phoznh","slide":5,"text":"[Sources]\nScreenshot captured from the current homepage YouTube section."}
+{"kind":"slide","id":"sl/jfnect","slide":6,"title":"Responsive Design Works Across Key Viewports","textShapes":5}
+{"kind":"textbox","id":"sh/0bid0jmp","slide":6,"text":"Responsive Design Works Across Key Viewports","textPreview":"Responsive Design Works Across Key Viewports","textChars":44,"textLines":1,"bbox":[54,40,890,50]}
+{"kind":"textbox","id":"sh/cnidwzmd","slide":6,"text":"Desktop","textPreview":"Desktop","textChars":7,"textLines":1,"bbox":[254,505,150,28]}
+{"kind":"textbox","id":"sh/rm9c3u5s","slide":6,"text":"Tablet","textPreview":"Tablet","textChars":6,"textLines":1,"bbox":[702,505,150,28]}
+{"kind":"textbox","id":"sh/qlgvup4n","slide":6,"text":"Mobile","textPreview":"Mobile","textChars":6,"textLines":1,"bbox":[952,505,150,28]}
+{"kind":"textbox","id":"sh/pk7u14n2","slide":6,"text":"The same updated experience adapts from full navigation to compact mobile layout while preserving Listen Live and YouTube access.","textPreview":"The same updated experience adapts from full navigation to compact mobile layout while preserving Listen Live and YouTube access.","textChars":129,"textLines":1,"bbox":[110,590,1030,44]}
+{"kind":"image","id":"im/eh8jexwj","slide":6,"name":"","geometry":"roundRect","alt":"Desktop responsive screenshot","bbox":[54,130,560,350]}
+{"kind":"image","id":"im/fihkn2x4","slide":6,"name":"","geometry":"roundRect","alt":"Tablet responsive screenshot","bbox":[650,130,255,350]}
+{"kind":"image","id":"im/sf61cned","slide":6,"name":"","geometry":"roundRect","alt":"Mobile responsive screenshot","bbox":[940,130,176,350]}
+{"kind":"notes","id":"nt/jfnect","slide":6,"text":"[Sources]\nScreenshots captured from the current homepage at desktop, tablet, and mobile viewport sizes."}
+{"kind":"slide","id":"sl/dgu1xz","slide":7,"title":"Radio Nyra Website - YouTube Integration Progress Update","textShapes":4}
+{"kind":"textbox","id":"sh/1g3ydgrm","slide":7,"text":"Radio Nyra Website - YouTube Integration Progress Update","textPreview":"Radio Nyra Website - YouTube Integration Progress Update","textChars":56,"textLines":1,"bbox":[54,28,820,24]}
+{"kind":"textbox","id":"sh/etcf2l8v","slide":7,"text":"SEO and performance work supports discoverability","textPreview":"SEO and performance work supports discoverability","textChars":49,"textLines":1,"bbox":[54,58,940,50]}
+{"kind":"shape","id":"sh/zelgbq9g","slide":7,"bbox":[54,116,140,5]}
+{"kind":"shape","id":"sh/9knyh0ri","slide":7,"bbox":[700,168,490,310]}
+{"kind":"shape","id":"sh/mhwf6l87","slide":7,"bbox":[72,160,555,410]}
+{"kind":"textbox","id":"sh/ni5gfq9s","slide":7,"text":"• Better SEO through clearer page structure and YouTube routes\n• Faster loading through optimized page sections and reusable components\n• Better structure for homepage, YouTube hub, shorts, and playlists\n• Improved user experience across navigation, media discovery, and responsive layouts","textPreview":"• Better SEO through clearer page structure and YouTube routes | • Faster loading through optimized page sections and reusable components...","textChars":289,"textLines":4,"bbox":[106,198,480,320]}
+{"kind":"textbox","id":"sh/4naxwrqt","slide":7,"text":"The update strengthens both user discovery and search visibility by organizing radio, video, and channel content into clearer entry points.","textPreview":"The update strengthens both user discovery and search visibility by organizing radio, video, and channel content into clearer entry points.","textChars":139,"textLines":1,"bbox":[90,602,640,50]}
+{"kind":"image","id":"im/t8japc7u","slide":7,"name":"","geometry":"roundRect","alt":"Current homepage desktop screenshot","bbox":[700,168,490,310]}
+{"kind":"notes","id":"nt/dgu1xz","slide":7,"text":"[Sources]\nCurrent homepage screenshot used as visual evidence. Claims summarize implemented site structure visible in the current build."}
+{"kind":"slide","id":"sl/6amjhl","slide":8,"title":"Testing Status","textShapes":6}
+{"kind":"textbox","id":"sh/wfu18fax","slide":8,"text":"Testing Status","textPreview":"Testing Status","textChars":14,"textLines":1,"bbox":[64,52,500,56]}
+{"kind":"textbox","id":"sh/be1kzatc","slide":8,"text":"Current Stage","textPreview":"Current Stage","textChars":13,"textLines":1,"bbox":[70,125,300,34]}
+{"kind":"textbox","id":"sh/adsj65sr","slide":8,"text":"✓ Homepage Updated\n✓ YouTube Integrated\n✓ UI Improvements\n✓ Responsive Design","textPreview":"✓ Homepage Updated | ✓ YouTube Integrated | ✓ UI Improvements | ✓ Responsive Design","textChars":77,"textLines":4,"bbox":[110,205,470,190]}
+{"kind":"textbox","id":"sh/l4325kre","slide":8,"text":"↻ Testing\n↻ Debugging\n↻ API Validation\n↻ Performance Testing","textPreview":"↻ Testing | ↻ Debugging | ↻ API Validation | ↻ Performance Testing","textChars":60,"textLines":4,"bbox":[682,205,470,190]}
+{"kind":"shape","id":"sh/k3ulcfat","slide":8,"bbox":[80,480,500,70]}
+{"kind":"textbox","id":"sh/j2lk3at8","slide":8,"text":"Completed implementation items are ready for validation.","textPreview":"Completed implementation items are ready for validation.","textChars":56,"textLines":1,"bbox":[110,502,440,26]}
+{"kind":"shape","id":"sh/yhcja5s3","slide":8,"bbox":[650,480,500,70]}
+{"kind":"textbox","id":"sh/t8n29krq","slide":8,"text":"Testing work remains active before production deployment.","textPreview":"Testing work remains active before production deployment.","textChars":57,"textLines":1,"bbox":[680,502,440,26]}
+{"kind":"notes","id":"nt/6amjhl","slide":8,"text":"[Sources]\nTesting status supplied by the user request."}
+{"kind":"slide","id":"sl/8tfivc","slide":9,"title":"Radio Nyra Website - YouTube Integration Progress Update","textShapes":13}
+{"kind":"textbox","id":"sh/wvupw3ad","slide":9,"text":"Radio Nyra Website - YouTube Integration Progress Update","textPreview":"Radio Nyra Website - YouTube Integration Progress Update","textChars":56,"textLines":1,"bbox":[54,28,820,24]}
+{"kind":"textbox","id":"sh/vul83y9s","slide":9,"text":"Next steps move the update toward production","textPreview":"Next steps move the update toward production","textChars":44,"textLines":1,"bbox":[54,58,940,50]}
+{"kind":"shape","id":"sh/atc7utsn","slide":9,"bbox":[54,116,140,5]}
+{"kind":"shape","id":"sh/50nq98ra","slide":9,"bbox":[82,235,170,170]}
+{"kind":"textbox","id":"sh/kzep0nap","slide":9,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[140,260,54,48]}
+{"kind":"textbox","id":"sh/jy587i94","slide":9,"text":"Complete Testing","textPreview":"Complete Testing","textChars":16,"textLines":1,"bbox":[94,325,146,55]}
+{"kind":"shape","id":"sh/ixc7ydsj","slide":9,"bbox":[307,235,170,170]}
+{"kind":"textbox","id":"sh/tonqdsr6","slide":9,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[365,260,54,48]}
+{"kind":"textbox","id":"sh/sne94nal","slide":9,"text":"Fix Remaining Bugs","textPreview":"Fix Remaining Bugs","textChars":18,"textLines":1,"bbox":[319,325,146,55]}
+{"kind":"shape","id":"sh/epsf2p0z","slide":9,"bbox":[532,235,170,170]}
+{"kind":"textbox","id":"sh/fq1wvu1k","slide":9,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[590,260,54,48]}
+{"kind":"textbox","id":"sh/0bux4zi5","slide":9,"text":"Verify YouTube Statistics","textPreview":"Verify YouTube Statistics","textChars":25,"textLines":1,"bbox":[544,325,146,55]}
+{"kind":"shape","id":"sh/1c3exkjq","slide":9,"bbox":[757,235,170,170]}
+{"kind":"textbox","id":"sh/2dcf6p0b","slide":9,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[815,260,54,48]}
+{"kind":"textbox","id":"sh/nelgzuhg","slide":9,"text":"Final Review","textPreview":"Final Review","textChars":12,"textLines":1,"bbox":[769,325,146,55]}
+{"kind":"shape","id":"sh/ofux8zi1","slide":9,"bbox":[982,235,170,170]}
+{"kind":"textbox","id":"sh/pg3y14zm","slide":9,"text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1040,260,54,48]}
+{"kind":"textbox","id":"sh/ih8fu50r","slide":9,"text":"Production Deployment","textPreview":"Production Deployment","textChars":21,"textLines":1,"bbox":[994,325,146,55]}
+{"kind":"textbox","id":"sh/jihwna1c","slide":9,"text":"The release path is focused on validating data accuracy, confirming performance, and completing final review before deployment.","textPreview":"The release path is focused on validating data accuracy, confirming performance, and completing final review before deployment.","textChars":127,"textLines":1,"bbox":[144,500,990,56]}
+{"kind":"notes","id":"nt/8tfivc","slide":9,"text":"[Sources]\nNext steps supplied by the user request."}
+{"kind":"slide","id":"sl/8eljy6","slide":10,"title":"Thank You","textShapes":4}
+{"kind":"shape","id":"sh/nelwr2hc","slide":10,"bbox":[0,0,760,720]}
+{"kind":"textbox","id":"sh/mdcfyx0r","slide":10,"text":"Thank You","textPreview":"Thank You","textChars":9,"textLines":1,"bbox":[72,160,490,76]}
+{"kind":"textbox","id":"sh/1c3epsz6","slide":10,"text":"Radio Nyra","textPreview":"Radio Nyra","textChars":10,"textLines":1,"bbox":[72,275,420,42]}
+{"kind":"textbox","id":"sh/0buxw7i1","slide":10,"text":"Website Enhancement Project","textPreview":"Website Enhancement Project","textChars":27,"textLines":1,"bbox":[72,335,500,40]}
+{"kind":"textbox","id":"sh/zqlwn21g","slide":10,"text":"Prepared By\nVadlapudi Pranab","textPreview":"Prepared By | Vadlapudi Pranab","textChars":28,"textLines":2,"bbox":[72,470,420,76]}
+{"kind":"image","id":"im/lknetsfq","slide":10,"name":"","geometry":"roundRect","alt":"Radio Nyra YouTube hub screenshot","bbox":[650,0,630,720]}
+{"kind":"notes","id":"nt/8eljy6","slide":10,"text":"[Sources]\nScreenshot captured from the current /youtube page."}

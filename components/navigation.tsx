@@ -24,6 +24,7 @@ export function Navigation() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
+    { href: "/fm-stations", label: "Stations" },
     {
       href: "#listen",
       label: "Listen",
@@ -51,13 +52,18 @@ export function Navigation() {
       label: "Media",
       subLinks: [
         { href: "/news", label: "News" },
+        { href: "/youtube", label: "YouTube Hub" },
+        { href: "/video-library", label: "Video Library" },
+        { href: "/shorts", label: "Trending Shorts" },
+        { href: "/kids-shows", label: "Kids Corner" },
+        { href: "/interviews", label: "Celebrity Interviews" },
+        { href: "/social-hub", label: "Social Hub" },
         { href: "/ecosystem", label: "Ecosystem" },
         { href: "/syndication", label: "Syndication" },
         { href: "/analytics", label: "Analytics" },
         { href: "/press", label: "Press" },
       ]
     },
-    { href: "/directory", label: "Directory" },
     {
       href: "#services",
       label: "Services",
@@ -227,7 +233,7 @@ export function Navigation() {
 
             <Link href="/" className="flex items-center gap-3 group">
               <div className="text-right flex flex-col justify-center">
-                <h1 className="font-bold text-xl lg:text-2xl text-foreground tracking-tighter leading-none whitespace-nowrap">Radio Nyra</h1>
+                <div className="font-bold text-xl lg:text-2xl text-foreground tracking-tighter leading-none whitespace-nowrap">Radio Nyra</div>
                 <p className="text-[9px] font-black uppercase tracking-[0.1em] text-primary leading-none mt-1">COMMUNITY MEDIA NETWORK</p>
               </div>
               <div className="relative w-10 h-10 lg:w-12 lg:h-12 overflow-hidden rounded-full border-2 border-primary group-hover:border-primary/80 transition-colors shrink-0">

@@ -1,0 +1,56 @@
+
+> my-v0-project@0.1.0 dev
+> next dev --hostname 127.0.0.1 --port 3002
+
+   ▲ Next.js 16.0.10 (Turbopack)
+   - Local:         http://127.0.0.1:3002
+   - Network:       http://127.0.0.1:3002
+
+ ✓ Starting...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ ✓ Ready in 1681ms
+ ○ Compiling / ...
+ GET / 200 in 32.7s (compile: 31.9s, render: 854ms)
+ ○ Compiling /youtube ...
+ GET /youtube 200 in 10.8s (compile: 8.2s, render: 2.6s)
+ GET / 200 in 443ms (compile: 13ms, render: 430ms)
+ GET / 200 in 350ms (compile: 11ms, render: 338ms)
+ GET / 200 in 245ms (compile: 7ms, render: 237ms)
+ GET / 200 in 348ms (compile: 11ms, render: 337ms)
+ GET /youtube 200 in 592ms (compile: 25ms, render: 567ms)
+ GET / 200 in 444ms (compile: 15ms, render: 428ms)
+ GET / 200 in 408ms (compile: 19ms, render: 389ms)
+ GET / 200 in 350ms (compile: 15ms, render: 335ms)
+ GET / 200 in 246ms (compile: 12ms, render: 235ms)
+ GET / 200 in 776ms (compile: 17ms, render: 759ms)
+ GET / 200 in 2.1s (compile: 29ms, render: 2.1s)
+ ○ Compiling /hosts ...
+ GET /hosts 200 in 4.8s (compile: 4.7s, render: 143ms)
+ ○ Compiling /_not-found/page ...
+ GET /temp_aohdc_icon.png 404 in 5.5s (compile: 4.8s, render: 694ms)
+ GET /youtube 200 in 383ms (compile: 57ms, render: 326ms)
+ GET /temp_aohdc_icon.png 404 in 561ms (compile: 128ms, render: 433ms)
+ ○ Compiling /video-library ...
+ GET /video-library 200 in 4.5s (compile: 4.1s, render: 348ms)
+ GET /temp_aohdc_icon.png 404 in 514ms (compile: 120ms, render: 393ms)
+ ○ Compiling /creative-studio ...
+ GET /creative-studio 200 in 5.9s (compile: 5.7s, render: 217ms)
+ GET /temp_aohdc_icon.png 404 in 520ms (compile: 97ms, render: 423ms)
+ ○ Compiling /interviews ...
+ GET /interviews 200 in 4.3s (compile: 4.2s, render: 116ms)
+ GET /temp_aohdc_icon.png 404 in 601ms (compile: 155ms, render: 447ms)
+ GET /video-library 200 in 357ms (compile: 36ms, render: 322ms)
+ GET /temp_aohdc_icon.png 404 in 559ms (compile: 93ms, render: 466ms)
+ ○ Compiling /kids-shows ...
+ GET /kids-shows 200 in 4.9s (compile: 4.6s, render: 308ms)
+ GET /temp_aohdc_icon.png 404 in 656ms (compile: 119ms, render: 536ms)
+ ○ Compiling /social-hub ...
+ GET /social-hub 200 in 4.1s (compile: 3.7s, render: 345ms)
+ GET /temp_aohdc_icon.png 404 in 611ms (compile: 114ms, render: 497ms)
+ ○ Compiling /ecosystem ...
+ GET /ecosystem 200 in 4.5s (compile: 4.3s, render: 209ms)
+ GET /temp_aohdc_icon.png 404 in 551ms (compile: 101ms, render: 450ms)
+ ○ Compiling /syndication ...
+ GET /syndication 200 in 5.5s (compile: 5.2s, render: 317ms)
+ GET /temp_aohdc_icon.png 404 in 806ms (compile: 316ms, render: 490ms)
+ GET /temp_aohdc_icon.png 404 in 533ms (compile: 115ms, render: 418ms)

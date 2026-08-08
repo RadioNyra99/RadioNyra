@@ -118,10 +118,45 @@ export default function ContactPage() {
                   <h3 className="text-xs font-black uppercase text-accent tracking-[0.3em] mb-4">Visit Us</h3>
                   <div className="flex items-center gap-2">
                     <MapPin className="w-5 h-5 text-primary" />
-                    <p className="text-xl sm:text-3xl font-black text-foreground">Durham, NC</p>
+                    <p className="text-xl sm:text-3xl font-black text-foreground">Raleigh-Durham Metro</p>
                   </div>
-                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-2">North Carolina, USA</p>
+                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-2">Studio Address: Durham, North Carolina, USA</p>
                 </div>
+                <div className="group">
+                  <h3 className="text-xs font-black uppercase text-primary tracking-[0.3em] mb-4">Website</h3>
+                  <a href="https://www.radionyra.com" target="_blank" rel="noopener noreferrer" className="text-xl sm:text-3xl font-black text-foreground hover:text-primary transition-colors">www.radionyra.com</a>
+                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-2">Business Inquiry - Advertising Inquiry - Studio Contact</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-background border-t border-border/50">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <Card className="border border-border bg-card rounded-sm shadow-sm">
+                <CardContent className="p-8">
+                  <h2 className="text-3xl font-black uppercase tracking-tighter italic mb-6">Business Hours</h2>
+                  <p className="text-muted-foreground font-bold uppercase tracking-widest text-xs mb-8">Monday - Friday, 9:00 AM - 6:00 PM ET</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <Button className="rounded-none font-black uppercase tracking-widest bg-primary hover:bg-primary/90 text-white" asChild>
+                      <a href="mailto:info@radionyra.com?subject=Business Inquiry">Business Inquiry</a>
+                    </Button>
+                    <Button className="rounded-none font-black uppercase tracking-widest bg-foreground text-background hover:bg-primary hover:text-white" asChild>
+                      <a href="mailto:vp@radionyra.com?subject=Advertising Inquiry">Advertising Inquiry</a>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+              <div className="border border-border bg-muted overflow-hidden min-h-[320px]">
+                <iframe
+                  title="Radio Nyra Durham map"
+                  src="https://www.google.com/maps?q=Durham%2C%20NC&output=embed"
+                  className="w-full h-full min-h-[320px] border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </div>
           </div>

@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { AudioPlayer } from "@/components/audio-player"
-import { EmailPopup } from "@/components/email-popup"
+import { AdvertisePopup } from "@/components/advertise-popup"
 import { InstallAppPopup } from "@/components/install-app-popup"
 import { MobileFab } from "@/components/mobile-fab"
 import { NyraChat } from "@/components/nyra-chat"
@@ -16,7 +16,7 @@ export function GlobalSiteFeatures({ children }: { children: React.ReactNode }) 
       <AudioPlayer />
       <NyraChat />
       <MobileFab />
-      <EmailPopup />
+      <AdvertisePopup />
       <InstallAppPopup />
     </>
   )

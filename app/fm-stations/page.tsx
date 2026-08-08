@@ -1,18 +1,35 @@
 "use client"
 
+import { useMemo, useState } from "react"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import { useAudio } from "@/components/audio-context"
-import { STATIONS } from "@/lib/stations"
-import { Radio, Headphones, Play, Volume2, Globe, MapPin } from "lucide-react"
+import { getStationsList, NETWORK_STATS } from "@/lib/stations"
+import { Radio, Headphones, Volume2, Globe, MapPin, Search } from "lucide-react"
+
+const alphabet = ["All", ..."ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")]
 
 export default function FMStationsPage() {
   const { playStation, currentStation } = useAudio()
+  const [query, setQuery] = useState("")
+  const [letter, setLetter] = useState("All")
+  const stations = getStationsList()
+
+  const filteredStations = useMemo(() => {
+    const normalizedQuery = query.trim().toLowerCase()
+    return stations.filter((station) => {
+      const haystack = `${station.name} ${station.city} ${station.state} ${station.frequency} ${station.language}`.toLowerCase()
+      const matchesQuery = !normalizedQuery || haystack.includes(normalizedQuery)
+      const matchesLetter = letter === "All" || station.city?.toUpperCase().startsWith(letter)
+      return matchesQuery && matchesLetter
+    })
+  }, [letter, query, stations])
 
   const schemaMarkup = {
     "@context": "https://schema.org",
-    "@graph": Object.entries(STATIONS).map(([key, station]) => ({
+    "@graph": stations.map((station) => ({
       "@type": "RadioStation",
       "@id": `https://www.radionyra.com/fm-stations#${station.id}`,
       "name": station.name,
@@ -20,7 +37,7 @@ export default function FMStationsPage() {
       "logo": "https://www.radionyra.com/images/radio-nyra-logo.jpg",
       "broadcastFrequency": {
         "@type": "BroadcastFrequencySpecification",
-        "frequencyValue": key.includes("99.9") ? "99.9" : key.includes("107.5") ? "107.5" : key.includes("92.3") ? "92.3" : key.includes("93.1") ? "93.1" : key.includes("103.9") ? "103.9" : "95.5",
+        "frequencyValue": station.frequency,
         "frequencyUnit": "MHz"
       }
     }))
@@ -43,13 +60,39 @@ export default function FMStationsPage() {
               FM Stations <span className="text-foreground">& Frequencies</span>
             </h1>
             <p className="text-muted-foreground font-bold uppercase tracking-widest text-xs mt-3">
-              Tune in to Radio Nyra on high-definition FM dials across North America
+              {NETWORK_STATS.stations} Stations - {NETWORK_STATS.cities} Cities - {NETWORK_STATS.headline}
             </p>
+          </div>
+
+          <div className="mb-10 space-y-5">
+            <div className="relative max-w-3xl mx-auto">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+              <Input
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder="Search by city, frequency, state, or language"
+                className="h-14 rounded-none border-2 border-border bg-background pl-12 font-bold uppercase tracking-widest text-xs"
+                aria-label="Search stations"
+              />
+            </div>
+            <div className="flex max-w-full gap-2 overflow-x-auto pb-1 justify-start md:justify-center" aria-label="Alphabet filter">
+              {alphabet.map((item) => (
+                <button
+                  key={item}
+                  onClick={() => setLetter(item)}
+                  className={`h-9 min-w-9 px-3 text-[10px] font-black uppercase tracking-widest transition-colors ${
+                    letter === item ? "bg-primary text-white" : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary"
+                  }`}
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Grid Layout of Stations */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {Object.entries(STATIONS).map(([key, station]) => {
+            {filteredStations.map((station) => {
               const isCurrentlyPlaying = currentStation.id === station.id
               return (
                 <div 
@@ -62,7 +105,7 @@ export default function FMStationsPage() {
                     <div className="flex items-center justify-between border-b border-border pb-4">
                       <span className="text-[10px] font-black uppercase tracking-widest text-primary flex items-center gap-1.5">
                         <MapPin className="w-3.5 h-3.5" />
-                        {key.split(" ")[0]} Market
+                        {station.city} Market
                       </span>
                       {isCurrentlyPlaying && (
                         <span className="text-[10px] font-black uppercase tracking-widest text-green-500 flex items-center gap-1">
@@ -81,7 +124,7 @@ export default function FMStationsPage() {
 
                   <div className="mt-8 border-t border-border pt-4 flex flex-col sm:flex-row gap-4 items-center justify-between">
                     <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                      Frequency: <strong className="text-foreground text-sm font-black italic">{key.includes("99.9") ? "99.9 FM" : key.includes("107.5") ? "107.5 FM" : key.includes("92.3") ? "92.3 FM" : key.includes("93.1") ? "93.1 FM" : key.includes("103.9") ? "103.9 FM" : "95.5 FM"}</strong>
+                      Frequency: <strong className="text-foreground text-sm font-black italic">{station.frequency}</strong>
                     </div>
 
                     <Button

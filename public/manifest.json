@@ -1,21 +1,24 @@
 {
-  "name": "Radio Nyra",
-  "short_name": "Nyra",
-  "description": "The Voice of the Indian Subcontinent in the USA",
+  "name": "Radio Nyra - Indian Community Media Network",
+  "short_name": "Radio Nyra",
+  "description": "Listen to live Indian radio, watch YouTube streams, find community news, and discover local Indian Subcontinent businesses.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#ff3366",
+  "theme_color": "#ff0000",
+  "orientation": "portrait",
   "icons": [
     {
-      "src": "/favicon-32x32.png",
-      "sizes": "32x32",
-      "type": "image/png"
+      "src": "/temp_aohdc_icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
+      "src": "/temp_hsnc_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

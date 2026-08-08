@@ -58,7 +58,7 @@ export default function WriteForUsPage() {
                 
                 <div className="space-y-4 text-sm text-gray-600 leading-relaxed font-medium">
                   <p>
-                    Radio Nyra welcomes guest contributions from bloggers, journalists, digital marketers, and community leaders. We write about South Asian pop culture, immigrant life in the US, radio broadcasting, local business reviews, and wellness tips.
+                    Radio Nyra welcomes guest contributions from bloggers, journalists, digital marketers, and community leaders. We write about Indian Subcontinent pop culture, immigrant life in the US, radio broadcasting, local business reviews, and wellness tips.
                   </p>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">

@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import { notFound } from 'next/navigation';
-import { AdBanner } from '@/components/ad-banner';
 
 export default function BlogPostClientView({ slug }: { slug: string }) {
     const [post, setPost] = useState<BlogPost | null>(null);
@@ -103,10 +102,6 @@ export default function BlogPostClientView({ slug }: { slug: string }) {
                             </time>
                         </div>
 
-                        {/* Top Ad Unit */}
-                        <div className="mb-10">
-                            <AdBanner type="horizontal" />
-                        </div>
 
                         {/* Content */}
                         <div
@@ -121,10 +116,6 @@ export default function BlogPostClientView({ slug }: { slug: string }) {
                             dangerouslySetInnerHTML={{ __html: post.content }}
                         />
 
-                        {/* Bottom Ad Unit */}
-                        <div className="mt-12">
-                            <AdBanner type="horizontal" />
-                        </div>
 
                         {/* Back Link */}
                         <div className="mt-16 pt-8 border-t border-border">

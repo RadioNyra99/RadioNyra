@@ -6,13 +6,11 @@ import { Navigation } from "@/components/navigation"
 import { FrequencyBar } from "@/components/frequency-bar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Users, Smartphone, Apple, Play, Megaphone, Star, Radio, PlayCircle, Headphones, Music2 } from "lucide-react"
+import { Users, Smartphone, Play, Megaphone, Star, Radio, PlayCircle, Headphones, Music2, Youtube, ChevronDown } from "lucide-react"
 import { CountUp } from "@/components/ui/count-up"
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu"
-import { ChevronDown } from "lucide-react"
-
 import { useAudio } from "@/components/audio-context"
-import { STATIONS } from "@/lib/stations"
+import { getStationsList, NETWORK_STATS, STATIONS } from "@/lib/stations"
 import { VoiceAssistants } from "@/components/voice-assistants"
 import { motion, AnimatePresence } from "framer-motion"
 import { PARTNERS } from "@/lib/partners"
@@ -22,7 +20,12 @@ import { HoliBanner } from "@/components/holi-banner"
 import { ShowsMarquee } from "@/components/shows-marquee"
 import { PartnersMarquee } from "@/components/partners-marquee"
 import { TRENDING_SONGS } from "@/lib/trending-songs"
-import { AdBanner } from "@/components/ad-banner"
+import { AdvertiserSection } from "@/components/advertiser-section"
+import { CommunitySection } from "@/components/community-section"
+import { NewsletterSection } from "@/components/newsletter-section"
+import { YouTubeWatchSection } from "@/components/youtube-watch-section"
+import { CONTACT_INFO, LISTENING_PLATFORMS, SOCIAL_LINKS } from "@/lib/site-data"
+import { OFFICIAL_YOUTUBE_CHANNEL } from "@/lib/youtube-data"
 
 export function HomeView() {
     const [loadVideo, setLoadVideo] = useState(false);
@@ -53,12 +56,14 @@ export function HomeView() {
     // Determine selected language from audio player
     const selectedLanguage = currentStation.id === STATIONS.Telugu.id ? "telugu" : "hindi";
     const filteredShows = shows.filter((show) => show.language === selectedLanguage);
+    const stationList = getStationsList();
+    const featuredStations = stationList.slice(0, 8);
 
     return (
         <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-primary-foreground">
             {/* Top Marketing Announcement Bar */}
             <div className="bg-gradient-to-r from-red-600 via-orange-500 to-primary text-white text-xs font-black uppercase tracking-widest py-3.5 px-4 text-center relative z-50 flex flex-col sm:flex-row items-center justify-center gap-2 shadow-inner">
-                <span>🔥 Grow Your Business! Reach 250,000+ South Asian listeners across the US.</span>
+                <span>Grow Your Business! Reach 250,000+ Indian Subcontinent listeners across the US.</span>
                 <Link href="/advertise" className="underline hover:text-white/90 transition-colors inline-flex items-center gap-1 font-extrabold cursor-pointer">
                     Get Started Now &rarr;
                 </Link>
@@ -97,14 +102,14 @@ export function HomeView() {
                     <div className="relative z-20 container mx-auto px-4 text-center">
                         {/* Added Contact Info */}
                         <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-8 text-white/90 font-bold uppercase tracking-widest text-sm md:text-base">
-                            <a href="mailto:info@radionyra.com" className="hover:text-primary transition-colors flex items-center gap-2">
-                                <span className="w-2 h-2 bg-primary rounded-full"></span> info@radionyra.com
+                            <a href={CONTACT_INFO.emailHref} className="hover:text-primary transition-colors flex items-center gap-2">
+                                <span className="w-2 h-2 bg-primary rounded-full"></span> {CONTACT_INFO.email}
                             </a>
-                            <a href="tel:+19192944800" className="hover:text-primary transition-colors flex items-center gap-2">
-                                <span className="hidden md:inline text-primary">|</span> +1 (919) 294 - 4800 (Call Only)
+                            <a href={CONTACT_INFO.phoneHref} className="hover:text-primary transition-colors flex items-center gap-2">
+                                <span className="hidden md:inline text-primary">|</span> {CONTACT_INFO.phone} (Call Only)
                             </a>
-                            <a href="https://wa.me/19192944800" target="_blank" className="hover:text-[#25D366] transition-colors flex items-center gap-2">
-                                <span className="hidden md:inline text-primary">|</span> WhatsApp: +1 (919) 294 - 4800
+                            <a href={CONTACT_INFO.whatsappHref} target="_blank" className="hover:text-[#25D366] transition-colors flex items-center gap-2">
+                                <span className="hidden md:inline text-primary">|</span> WhatsApp: {CONTACT_INFO.phone}
                             </a>
                         </div>
 
@@ -113,11 +118,18 @@ export function HomeView() {
                             <span className="text-primary block mt-1 md:mt-2">Community Media Network</span>
                         </h1>
                         <p className="text-white/90 text-sm md:text-lg max-w-3xl mx-auto mb-8 font-medium">
-                            We connect communities, businesses, and culture through live radio, digital media, events, and smart marketing tools.
+                            Wherever our listeners go, Radio Nyra goes with them. Listen in your car, at work, on your phone, on the website, on Alexa, and across America.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4 mb-8">
-                            <Button onClick={() => playStation(STATIONS.Hindi.id)} className="bg-primary hover:bg-primary/90 text-white rounded-none font-bold uppercase tracking-widest px-8 py-6 text-sm">Listen Hindi</Button>
-                            <Button onClick={() => playStation(STATIONS.Telugu.id)} className="bg-secondary hover:bg-secondary/90 text-white rounded-none font-bold uppercase tracking-widest px-8 py-6 text-sm">Listen Telugu</Button>
+                            <Button onClick={() => playStation(STATIONS.Hindi.id)} className="bg-primary hover:bg-primary/90 text-white rounded-none font-bold uppercase tracking-widest px-8 py-6 text-sm">Listen Live</Button>
+                            <Button asChild className="bg-secondary hover:bg-secondary/90 text-white rounded-none font-bold uppercase tracking-widest px-8 py-6 text-sm">
+                                <Link href="https://apps.apple.com/us/app/radio-nyra-raleigh-durham/id6469009980" target="_blank">Download App</Link>
+                            </Button>
+                            <Button asChild className="bg-red-600 hover:bg-red-700 text-white rounded-none font-bold uppercase tracking-widest px-8 py-6 text-sm">
+                                <Link href={OFFICIAL_YOUTUBE_CHANNEL.subscribeUrl} target="_blank" className="inline-flex items-center gap-2">
+                                    <Youtube className="w-4 h-4 fill-white" /> Subscribe on YouTube
+                                </Link>
+                            </Button>
 
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
@@ -135,7 +147,10 @@ export function HomeView() {
                             </DropdownMenu>
 
                             <Button asChild className="hidden md:flex bg-white text-black hover:bg-gray-100 rounded-none border-2 border-white font-bold uppercase tracking-widest px-8 py-6 text-sm">
-                                <Link href="/advertise">Advertise With Us</Link>
+                                <Link href="/advertise">Advertise</Link>
+                            </Button>
+                            <Button asChild className="hidden md:flex bg-white text-black hover:bg-gray-100 rounded-none border-2 border-white font-bold uppercase tracking-widest px-8 py-6 text-sm">
+                                <Link href="/contact">Partner With Us</Link>
                             </Button>
                         </div>
 
@@ -200,10 +215,150 @@ export function HomeView() {
                     </div>
                 </section>
 
-                {/* Sponsor Spotlight Ad Slot */}
-                <section className="py-8 bg-background border-b border-border/50">
-                    <div className="container mx-auto px-4 max-w-5xl">
-                        <AdBanner type="horizontal" />
+                {/* YOUTUBE STATISTICS & ANALYTICS SECTION */}
+                <section className="py-12 bg-gradient-to-r from-red-950 via-zinc-950 to-black text-white border-b border-red-900/30">
+                    <div className="container mx-auto px-4">
+                        <div className="text-center max-w-2xl mx-auto mb-8">
+                            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-600/20 text-red-400 border border-red-500/30 text-xs font-black uppercase tracking-widest mb-2">
+                                <Youtube className="w-4 h-4 fill-red-500 text-red-500" /> YouTube Channel Analytics
+                            </span>
+                            <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tight italic text-white">
+                                @RadioNyraUSA on YouTube
+                            </h2>
+                            <p className="text-zinc-400 text-xs sm:text-sm font-medium mt-2">
+                                Streaming Indian Subcontinent content since February 2021
+                            </p>
+                        </div>
+                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
+                            <div className="bg-zinc-900/90 border border-red-500/20 p-5 sm:p-6 rounded-2xl text-center shadow-xl hover:border-red-500/50 transition-all group">
+                                <div className="w-12 h-12 rounded-full bg-red-600/20 text-red-500 flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                                    <Youtube className="w-6 h-6 fill-red-500" />
+                                </div>
+                                <div className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-1">
+                                    <CountUp end={1.01} decimals={2} suffix="K" duration={2500} />
+                                </div>
+                                <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-zinc-400">
+                                    Subscribers
+                                </div>
+                            </div>
+                            <div className="bg-zinc-900/90 border border-red-500/20 p-5 sm:p-6 rounded-2xl text-center shadow-xl hover:border-red-500/50 transition-all group">
+                                <div className="w-12 h-12 rounded-full bg-red-600/20 text-red-500 flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                                    <Play className="w-6 h-6 text-red-500" />
+                                </div>
+                                <div className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-1">
+                                    <CountUp end={270} suffix="+" duration={2500} />
+                                </div>
+                                <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-zinc-400">
+                                    Videos Published
+                                </div>
+                            </div>
+                            <div className="bg-zinc-900/90 border border-red-500/20 p-5 sm:p-6 rounded-2xl text-center shadow-xl hover:border-red-500/50 transition-all group">
+                                <div className="w-12 h-12 rounded-full bg-red-600/20 text-red-500 flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                                    <PlayCircle className="w-6 h-6 text-red-500" />
+                                </div>
+                                <div className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-1">
+                                    <CountUp end={151.3} decimals={1} suffix="K" duration={2500} />
+                                </div>
+                                <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-zinc-400">
+                                    Total Views
+                                </div>
+                            </div>
+                            <div className="bg-zinc-900/90 border border-red-500/20 p-5 sm:p-6 rounded-2xl text-center shadow-xl hover:border-red-500/50 transition-all group">
+                                <div className="w-12 h-12 rounded-full bg-red-600/20 text-red-500 flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                                    <Star className="w-6 h-6 text-red-500" />
+                                </div>
+                                <div className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-1">
+                                    <CountUp end={560} suffix="" duration={2500} />
+                                </div>
+                                <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-zinc-400">
+                                    Avg Views / Video
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* NETWORK FOOTPRINT */}
+                <section className="py-16 bg-muted/20 border-b border-border/50">
+                    <div className="container mx-auto px-4">
+                        <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 items-start">
+                            <div>
+                                <p className="text-[10px] font-black uppercase tracking-[0.35em] text-primary mb-4">About Radio Nyra</p>
+                                <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter italic leading-none mb-6">
+                                    America's Leading Indian Radio Network
+                                </h2>
+                                <p className="text-muted-foreground text-sm md:text-base font-medium leading-relaxed mb-8">
+                                    Radio Nyra is America's leading Indian radio network connecting communities through music, culture, entertainment, podcasts, news, and live events. We deliver premium programming while helping businesses connect with one of North America's most engaged multicultural audiences.
+                                </p>
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div className="bg-card border border-border p-6 text-center">
+                                        <div className="text-4xl font-black text-primary italic">{NETWORK_STATS.stations}</div>
+                                        <div className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mt-2">Stations</div>
+                                    </div>
+                                    <div className="bg-card border border-border p-6 text-center">
+                                        <div className="text-4xl font-black text-primary italic">{NETWORK_STATS.cities}</div>
+                                        <div className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mt-2">Cities</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="bg-card border border-border p-6 md:p-8">
+                                <div className="flex items-center justify-between gap-4 mb-6">
+                                    <h2 className="text-2xl font-black uppercase tracking-tight italic">All Cities & Frequencies</h2>
+                                    <Button variant="outline" className="rounded-none border-2 border-foreground text-xs font-black uppercase tracking-widest" asChild>
+                                        <Link href="/fm-stations">View All</Link>
+                                    </Button>
+                                </div>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    {featuredStations.map((station) => (
+                                        <button
+                                            key={station.id}
+                                            onClick={() => playStation(station.id)}
+                                            className="text-left border border-border bg-background hover:border-primary hover:bg-primary/5 transition-colors p-4"
+                                        >
+                                            <span className="block text-[10px] font-black uppercase tracking-widest text-primary">{station.city}</span>
+                                            <span className="block text-sm font-black uppercase tracking-tight mt-1">{station.frequency}</span>
+                                            <span className="block text-[10px] font-bold uppercase tracking-widest text-muted-foreground mt-1">{station.language}</span>
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* LISTEN EVERYWHERE */}
+                <section className="py-16 bg-background border-b border-border/50">
+                    <div className="container mx-auto px-4">
+                        <div className="text-center max-w-3xl mx-auto mb-12">
+                            <p className="text-[10px] font-black uppercase tracking-[0.35em] text-primary mb-4">The Indian Subcontinent Community Media Network</p>
+                            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter italic leading-none">
+                                Wherever Our Listeners Go, Radio Nyra Goes With Them.
+                            </h2>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                            {LISTENING_PLATFORMS.map((platform) => (
+                                <div key={platform.label} className="bg-card border border-border p-6 text-center hover:border-primary transition-colors">
+                                    <platform.icon className="w-8 h-8 text-primary mx-auto mb-4" />
+                                    <h3 className="text-sm font-black uppercase tracking-tight mb-2">{platform.label}</h3>
+                                    <p className="text-[11px] text-muted-foreground font-medium leading-relaxed">{platform.copy}</p>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="mt-10 flex flex-wrap justify-center gap-3">
+                            {SOCIAL_LINKS.map((social) => (
+                                <Link
+                                    key={social.label}
+                                    href={social.href}
+                                    target="_blank"
+                                    className="h-11 w-11 border border-border bg-card hover:border-primary hover:bg-primary hover:text-white transition-colors flex items-center justify-center"
+                                    title={social.label}
+                                    aria-label={social.label}
+                                >
+                                    <social.icon className="w-5 h-5" />
+                                </Link>
+                            ))}
+                        </div>
                     </div>
                 </section>
 
@@ -343,12 +498,7 @@ export function HomeView() {
                     </div>
                 </section>
 
-                {/* Shows Ad Slot */}
-                <section className="py-8 bg-background border-b border-border/50">
-                    <div className="container mx-auto px-4 max-w-5xl">
-                        <AdBanner type="horizontal" />
-                    </div>
-                </section>
+                <YouTubeWatchSection />
 
                 <section id="shows" className="py-12 bg-muted/20">
                     <div className="container mx-auto px-4">
@@ -374,6 +524,10 @@ export function HomeView() {
                     </div>
                 </section>
 
+                <CommunitySection />
+
+                <AdvertiserSection />
+
                 {/* OUR PARTNERS */}
                 <section className="py-12 bg-background border-t border-border/50">
                     <div className="container mx-auto px-4 text-center">
@@ -382,6 +536,8 @@ export function HomeView() {
                         <PartnersMarquee />
                     </div>
                 </section>
+
+                <NewsletterSection />
 
 
 

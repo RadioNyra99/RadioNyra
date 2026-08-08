@@ -57,7 +57,7 @@ const INITIAL_NEWS: NewsArticle[] = [
     category: "local",
     image: "/holi.webp",
     excerpt: "Over 15,000 Triangle residents celebrated the festival of colors with rain dance, authentic food stalls, and live DJ sets sponsored by Radio Nyra.",
-    content: "The annual Holi festival co-hosted by the Hindu Society of North Carolina (HSNC) and Radio Nyra saw its highest-ever attendance this year. Morrisville Town Park was painted in rainbow colors as families danced to Bollywood and Telugu hits. Local food trucks serving hot samosas, chaat, and sugarcane juice reported sold-out menus, demonstrating the growing cultural footprint of the South Asian community in Wake County.",
+    content: "The annual Holi festival co-hosted by the Hindu Society of North Carolina (HSNC) and Radio Nyra saw its highest-ever attendance this year. Morrisville Town Park was painted in rainbow colors as families danced to Bollywood and Telugu hits. Local food trucks serving hot samosas, chaat, and sugarcane juice reported sold-out menus, demonstrating the growing cultural footprint of the Indian Subcontinent community in Wake County.",
     postedDate: "2026-07-18",
     author: "Community Reporter",
     readTime: "3 min read",

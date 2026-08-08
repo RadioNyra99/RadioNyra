@@ -213,7 +213,7 @@ export default function HostsPage() {
                 Introduction Of <span className="text-primary block md:inline">Our Team</span>
               </h1>
               <p className="text-xs text-gray-600 font-bold uppercase tracking-widest mt-2 max-w-2xl">
-                The official lineup of radio hosts and curators presenting South Asian culture across Raleigh-Durham and beyond.
+                The official lineup of radio hosts and curators presenting Indian Subcontinent culture across Raleigh-Durham and beyond.
               </p>
             </div>
             

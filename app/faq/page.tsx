@@ -4,7 +4,6 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Plus, Minus, HelpCircle, Radio, Music, MessageCircle, BarChart } from "lucide-react"
 import { useState } from "react"
-import { AdBanner } from "@/components/ad-banner"
 
 const faqCategories = [
   {
@@ -49,12 +48,12 @@ const faqCategories = [
       { q: "What is the frequency of the radio Nyra?", a: "In the Raleigh-Durham area, Radio Nyra broadcasts on 99.9 FM HD4 for our Hindi programming and 99.9 FM HD3 for our Telugu programming. For other major markets, please refer to our Frequencies tab (e.g. 107.5 FM HD3 in Atlanta, 92.3 FM HD2 in Baltimore, 95.5 FM HD2 in St. Louis)." },
       { q: "What are my local FM radio stations in Raleigh-Durham?", a: "The Raleigh-Durham, NC market features a variety of FM stations, including: Radio Nyra (99.9 FM HD3/HD4 for Telugu/Hindi hits), WQDR (94.7 FM - Country), G105 (105.1 FM - Top 40), WQOK K97.5 FM (Hip-Hop/Rap), and WNCU (90.7 FM - Jazz). You can stream Radio Nyra live from anywhere via our mobile apps." },
       { q: "What is Raleigh's hip hop radio station and rap radio station?", a: "The leading hip-hop and rap radio station in Raleigh-Durham, NC is WQOK K97.5 FM. Another prominent urban station serving the region is 103.9 FM (DYDY / Light FM). While Radio Nyra (99.9 FM HD3/HD4) specializes in Bollywood and Telugu music, you can tune into K97.5 FM for local hip-hop and rap programming." },
-      { q: "Is 100.3 or 100.5 the Beat hip hop or R&B?", a: "Yes, 100.3 The Beat (WIBT) is a very well-known hip-hop and R&B station in the region, playing contemporary rap, hip-hop, and R&B hits. In some adjacent Carolinas regions, 100.5 FM also plays urban contemporary formats. If you are looking for premier South Asian music, tune to Radio Nyra on 99.9 FM." },
+      { q: "Is 100.3 or 100.5 the Beat hip hop or R&B?", a: "Yes, 100.3 The Beat (WIBT) is a very well-known hip-hop and R&B station in the region, playing contemporary rap, hip-hop, and R&B hits. In some adjacent Carolinas regions, 100.5 FM also plays urban contemporary formats. If you are looking for premier Indian Subcontinent music, tune to Radio Nyra on 99.9 FM." },
       { q: "What radio station is 95.7 in Raleigh NC?", a: "95.7 FM in Raleigh, NC is WCLY, branded as 'THAT Station.' It is a popular adult album alternative (AAA) radio station that plays a mix of indie rock, folk, and alternative music, focusing heavily on local North Carolina artists." },
       { q: "What does the FM in 90.1 FM stand for?", a: "FM stands for Frequency Modulation. It is a method of radio broadcasting where the frequency of the carrier wave is varied to represent the audio signal, offering much higher sound fidelity and less static interference than AM (Amplitude Modulation)." },
       { q: "How can I listen to 98.3 or other FM radio stations on my phone?", a: "You can listen to local stations like 98.3 FM or Radio Nyra on your phone by downloading their official streaming apps, using radio aggregator apps (like TuneIn or iHeartRadio), or using your phone's built-in FM tuner chip (usually requires plugging in wired headphones to act as an antenna)." },
-      { q: "What radio station is Taree on?", a: "Taree is a town in New South Wales, Australia. Local FM/AM stations there include 2RE (1557 AM / 100.1 FM) and Max FM (107.3 FM). If you are looking to stream US-based South Asian stations like Radio Nyra in Taree, you can easily do so online via radionyra.com or our mobile apps." },
-      { q: "What is 98.5 in FM radio and what is 105.4 radio frequency?", a: "These are regional and international frequencies. For example, 98.5 FM is home to stations like Boston's Sports Hub (WBZ-FM) or local regional channels. 105.4 FM is used by stations globally, such as Heart FM in the UK. For premium South Asian hits in the US, tune to Radio Nyra on 99.9 FM." }
+      { q: "What radio station is Taree on?", a: "Taree is a town in New South Wales, Australia. Local FM/AM stations there include 2RE (1557 AM / 100.1 FM) and Max FM (107.3 FM). If you are looking to stream US-based Indian Subcontinent stations like Radio Nyra in Taree, you can easily do so online via radionyra.com or our mobile apps." },
+      { q: "What is 98.5 in FM radio and what is 105.4 radio frequency?", a: "These are regional and international frequencies. For example, 98.5 FM is home to stations like Boston's Sports Hub (WBZ-FM) or local regional channels. 105.4 FM is used by stations globally, such as Heart FM in the UK. For premium Indian Subcontinent hits in the US, tune to Radio Nyra on 99.9 FM." }
     ]
   },
   {
@@ -201,10 +200,6 @@ export default function FAQPage() {
                         ))}
                     </div>
 
-                    {/* Ad Placement */}
-                    <div className="mt-12 max-w-3xl mx-auto">
-                        <AdBanner type="horizontal" />
-                    </div>
 
                     <div className="mt-16 p-10 bg-primary/5 border border-primary/10 text-center max-w-3xl mx-auto">
                         <h2 className="text-2xl font-black uppercase tracking-tight mb-4 italic">Still have questions?</h2>

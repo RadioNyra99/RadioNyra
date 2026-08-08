@@ -311,7 +311,7 @@ export default function BlogGeneratorPage() {
                         const label = selectedTopic ? selectedTopic.label : "Indian Diaspora Media Topic";
                         
                         const generatedTitle = `${label} - The Ultimate Guide for Indian Americans`;
-                        const generatedDesc = `Explore key insights, community tips, and professional resources regarding ${label.toLowerCase()} for the South Asian diaspora in the United States.`;
+                        const generatedDesc = `Explore key insights, community tips, and professional resources regarding ${label.toLowerCase()} for the Indian Subcontinent diaspora in the United States.`;
                         
                         const generatedOutline = `1. Introduction: Understanding ${label}
 2. Key Challenges & Opportunities inside the US Diaspora
@@ -320,13 +320,13 @@ export default function BlogGeneratorPage() {
 5. How Radio Nyra Promotes Community Connection and Action
 6. Summary & Recommendations`;
 
-                        const generatedContent = `Navigating topics like ${label.toLowerCase()} is increasingly important for members of the South Asian diaspora living and working in the United States. Maintaining a balance between cultural values and professional growth requires access to trusted community platforms and reliable informational channels.
+                        const generatedContent = `Navigating topics like ${label.toLowerCase()} is increasingly important for members of the Indian Subcontinent diaspora living and working in the United States. Maintaining a balance between cultural values and professional growth requires access to trusted community platforms and reliable informational channels.
 
 Historically, Indian immigrants have relied on strong word-of-mouth networks, local community groups, and regional media to stay updated. From Raleigh-Durham, NC to Atlanta, GA, regional networks provide support systems that help families and businesses thrive.
 
 This is where digital community media networks like Radio Nyra make a massive difference. By offering 24/7 radio streams in regional languages (Hindi and Telugu) alongside dynamic business directories, local news updates, and event listings, Radio Nyra bridges the distance back to home.
 
-Ultimately, whether you are trying to reach South Asian consumers through advertising, look for regional events, or stay connected with community achievements, having dedicated media hubs ensures that the voice of the diaspora remains strong.`;
+Ultimately, whether you are trying to reach Indian Subcontinent consumers through advertising, look for regional events, or stay connected with community achievements, having dedicated media hubs ensures that the voice of the diaspora remains strong.`;
 
                         const generatedFaqs = `Q1: How does this topic help the Indian American community?
 A1: It builds a sense of belonging, opens avenues for professional networking, and helps immigrants navigate daily life in the US.

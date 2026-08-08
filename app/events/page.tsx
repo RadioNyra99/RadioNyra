@@ -6,13 +6,23 @@ import { Footer } from "@/components/footer"
 import { Lightbox } from "@/components/lightbox"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Calendar, MapPin } from "lucide-react"
+import { Briefcase, Calendar, Handshake, MapPin, Sparkles, Users } from "lucide-react"
+
+const eventTypes = [
+    { title: "Corporate Events", icon: Briefcase, copy: "Brand launches, employee celebrations, and sponsored experiences." },
+    { title: "Community Events", icon: Users, copy: "Programs that connect families, creators, nonprofits, and local leaders." },
+    { title: "Festival Celebrations", icon: Sparkles, copy: "Diwali, Holi, New Year, concerts, and cultural showcases." },
+    { title: "Business Networking", icon: Handshake, copy: "High-trust rooms for entrepreneurs and multicultural brands." },
+]
 
 export default function EventsPage() {
     const [lightbox, setLightbox] = useState({ isOpen: false, index: 0 })
 
     // Data moved from Home Page
     const upcomingEvents: any[] = [
+        { title: "Community Partner Showcase", date: "Coming Soon", location: "Raleigh-Durham, NC", type: "Community Event" },
+        { title: "Festival Broadcast Series", date: "Coming Soon", location: "Across Radio Nyra Markets", type: "Festival Celebration" },
+        { title: "Business Networking Mixer", date: "Coming Soon", location: "Triangle Area", type: "Business Networking" },
     ];
 
     const pastEvents = [
@@ -44,15 +54,26 @@ export default function EventsPage() {
                 <section className="relative py-8 bg-black overflow-hidden flex items-center justify-center">
                     <div className="relative z-10 container mx-auto px-4 text-center">
                         <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter italic text-white leading-none drop-shadow-2xl">
-                            Events
+                            Events That Bring Communities Together
                         </h1>
                         <p className="mt-6 text-primary font-bold uppercase tracking-[0.4em] text-sm md:text-base drop-shadow-md">
-                            Upcoming and Past moments
+                            Upcoming events, past events, corporate events, community events, festival celebrations, and business networking
                         </p>
                     </div>
                 </section>
 
                 <div className="container mx-auto px-4 mt-12">
+                    <section className="mb-16">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {eventTypes.map((item) => (
+                                <div key={item.title} className="bg-card border border-border p-6 hover:border-primary transition-colors">
+                                    <item.icon className="w-8 h-8 text-primary mb-5" />
+                                    <h2 className="text-xl font-black uppercase tracking-tight italic mb-3">{item.title}</h2>
+                                    <p className="text-sm text-muted-foreground leading-relaxed font-medium">{item.copy}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
 
                     {/* UPCOMING EVENTS */}
                     <section className="mb-16">
@@ -92,6 +113,7 @@ export default function EventsPage() {
                                                 </span>
                                             </div>
                                             <h3 className="text-xl font-bold uppercase tracking-tight mb-2 group-hover:text-primary transition-colors leading-none">{ev.title}</h3>
+                                            {ev.type && <p className="text-[9px] font-black uppercase tracking-widest text-primary mb-2">{ev.type}</p>}
                                             <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-wide flex items-center gap-1.5">
                                                 <MapPin className="w-3 h-3" /> {ev.location}
                                             </p>
@@ -133,6 +155,21 @@ export default function EventsPage() {
                                     </div>
                                 </div>
                             ))}
+                        </div>
+                    </section>
+
+                    <section className="mt-16 bg-primary text-white p-8 md:p-12 text-center">
+                        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter italic mb-4">Need help organizing your event?</h2>
+                        <p className="max-w-3xl mx-auto text-white/90 font-bold uppercase tracking-widest text-xs leading-relaxed mb-8">
+                            Radio Nyra helps businesses plan, promote, broadcast and engage audiences through successful events.
+                        </p>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            <Button className="bg-white text-black hover:bg-gray-100 rounded-none font-black uppercase tracking-widest" asChild>
+                                <a href="/contact">Partner With Us</a>
+                            </Button>
+                            <Button className="bg-foreground text-background hover:bg-black/80 rounded-none font-black uppercase tracking-widest" asChild>
+                                <a href="/contact">Host Your Event</a>
+                            </Button>
                         </div>
                     </section>
                 </div>

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Facebook, Instagram, Linkedin, Twitter, Youtube, Radio, Smartphone, Apple } from "lucide-react"
+import { CONTACT_INFO, SOCIAL_LINKS } from "@/lib/site-data"
 
 export function Footer() {
   return (
@@ -41,7 +41,6 @@ export function Footer() {
             </div>
             <div className="flex flex-col gap-3">
               <span className="text-xs font-black uppercase tracking-widest text-white mb-1">Resources</span>
-              <Link href="/directory" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Business Directory</Link>
               <Link href="/write-for-us" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Write For Us</Link>
               <Link href="/faq" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">FAQ</Link>
             </div>
@@ -49,6 +48,7 @@ export function Footer() {
               <span className="text-xs font-black uppercase tracking-widest text-white mb-1">Company</span>
               <Link href="/about" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">About</Link>
               <Link href="/advertise" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Advertise</Link>
+              <Link href="/advertiser-success-stories" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Success Stories</Link>
               <Link href="/services" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Services</Link>
               <Link href="/contact" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Contact</Link>
               <Link href="/press" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Press</Link>
@@ -58,11 +58,18 @@ export function Footer() {
           {/* Socials & Voice Assistant */}
           <div className="flex flex-col items-center md:items-end gap-6">
             <div className="flex items-center gap-4">
-              <Link href="https://facebook.com/radionyrausa" target="_blank" className="text-gray-400 hover:text-white transition-colors" title="Facebook"><Facebook className="w-5 h-5" /></Link>
-              <Link href="https://instagram.com/radionyrausa" target="_blank" className="text-gray-400 hover:text-white transition-colors" title="Instagram"><Instagram className="w-5 h-5" /></Link>
-              <Link href="https://twitter.com/NyraUsa" target="_blank" className="text-gray-400 hover:text-white transition-colors" title="Twitter"><Twitter className="w-5 h-5" /></Link>
-              <Link href="https://youtube.com/c/RadioNyraUSA" target="_blank" className="text-gray-400 hover:text-white transition-colors" title="YouTube"><Youtube className="w-5 h-5" /></Link>
-              <Link href="https://linkedin.com/company/radionyrausa" target="_blank" className="text-gray-400 hover:text-white transition-colors" title="LinkedIn"><Linkedin className="w-5 h-5" /></Link>
+              {SOCIAL_LINKS.map((social) => (
+                <Link
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  className="text-gray-400 hover:text-white transition-colors"
+                  title={social.label}
+                  aria-label={social.label}
+                >
+                  <social.icon className="w-5 h-5" />
+                </Link>
+              ))}
               <div className="w-px h-4 bg-white/10 mx-2" />
               <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app" target="_blank" className="text-primary hover:text-white transition-colors flex items-center" title="Download Radio Nyra on the Google Play Store">
                 <img src="/android-icon.png" alt="Get it on Google Play" className="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all" />
@@ -71,13 +78,16 @@ export function Footer() {
                 <img src="/apple-icon.png" alt="Download on App Store" className="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all" />
               </Link>
             </div>
-
-
           </div>
         </div>
+        <form action="https://formspree.io/f/fa42a7d8-c45e-4e7d-868c-7861ef21d915" method="POST" className="border-t border-white/10 pt-8 mb-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <label htmlFor="footer-email" className="text-xs font-black uppercase tracking-widest text-white">Newsletter Signup</label>
+          <input id="footer-email" name="email" type="email" required placeholder="Email address" className="h-10 w-full sm:w-72 bg-white/10 border border-white/10 px-4 text-xs text-white placeholder:text-gray-500 outline-none focus:border-primary" />
+          <button type="submit" className="h-10 px-6 bg-primary text-white text-xs font-black uppercase tracking-widest hover:bg-primary/90">Join</button>
+        </form>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] text-gray-400 uppercase tracking-widest font-bold">
-          <p>© {new Date().getFullYear()} Radio Nyra. All rights reserved.</p>
+          <p>Copyright {new Date().getFullYear()} Radio Nyra. All rights reserved.</p>
           <div className="flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full border border-white/10">
             <div className="w-2 h-2 rounded-full bg-green-500"></div>
             <span>Verified by Radio.co Analytics</span>
@@ -87,8 +97,9 @@ export function Footer() {
             <Link href="/terms-services" className="text-gray-400 hover:text-white transition-colors underline decoration-primary/50 underline-offset-4">Terms of Service</Link>
           </div>
           <div className="flex flex-col md:items-end text-right">
-            <p>Email: info@radionyra.com</p>
-            <p>Phone: +1 (919) 294-4800</p>
+            <p>Email: {CONTACT_INFO.email}</p>
+            <p>Phone: {CONTACT_INFO.phone}</p>
+            <p>Website: www.radionyra.com</p>
           </div>
         </div>
       </div>

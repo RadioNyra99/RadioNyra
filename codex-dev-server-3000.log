@@ -1,0 +1,85 @@
+
+> my-v0-project@0.1.0 dev
+> next dev --port 3000
+
+   ▲ Next.js 16.0.10 (Turbopack)
+   - Local:         http://localhost:3000
+   - Network:       http://192.168.1.10:3000
+
+ ✓ Starting...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ ✓ Ready in 7.5s
+ ○ Compiling / ...
+ GET / 200 in 5.5s (compile: 4.3s, render: 1204ms)
+ GET / 200 in 16.2s (compile: 14.7s, render: 1516ms)
+ ○ Compiling /fm-stations ...
+ GET /fm-stations 200 in 5.3s (compile: 4.7s, render: 669ms)
+ GET /events 200 in 3.3s (compile: 2.9s, render: 419ms)
+ GET /contact 200 in 3.4s (compile: 3.0s, render: 371ms)
+ GET /advertiser-success-stories 200 in 3.9s (compile: 2.9s, render: 972ms)
+ GET /about 200 in 2.6s (compile: 2.5s, render: 126ms)
+ GET /temp_aohdc_icon.png 404 in 2.8s (compile: 2.6s, render: 255ms)
+ GET /fm-stations 200 in 5.2s (compile: 790ms, render: 4.4s)
+ GET / 200 in 16.2s (compile: 135ms, render: 16.0s)
+ GET /temp_aohdc_icon.png 404 in 180ms (compile: 30ms, render: 150ms)
+ GET /media-kit 200 in 3.5s (compile: 3.0s, render: 501ms)
+ GET /temp_aohdc_icon.png 404 in 368ms (compile: 76ms, render: 292ms)
+ ✓ Compiled in 7.4s
+ GET / 200 in 5.1s (compile: 4.8s, render: 263ms)
+ GET /media-kit 200 in 5.8s (compile: 4.6s, render: 1175ms)
+ GET / 200 in 437ms (compile: 17ms, render: 420ms)
+ GET /media-kit 200 in 800ms (compile: 13ms, render: 787ms)
+ GET /media-kit 200 in 796ms (compile: 15ms, render: 781ms)
+ GET /media-kit 200 in 452ms (compile: 17ms, render: 435ms)
+ GET /temp_aohdc_icon.png 404 in 806ms (compile: 180ms, render: 626ms)
+ GET / 200 in 194ms (compile: 25ms, render: 168ms)
+ GET / 200 in 114ms (compile: 10ms, render: 103ms)
+ ✓ Compiled in 613ms
+ ✓ Compiled in 333ms
+ ✓ Compiled in 288ms
+ ✓ Compiled in 125ms
+ GET / 200 in 1247ms (compile: 468ms, render: 779ms)
+ GET /fm-stations 200 in 992ms (compile: 291ms, render: 701ms)
+ GET /events 200 in 939ms (compile: 361ms, render: 578ms)
+ GET /contact 200 in 1032ms (compile: 443ms, render: 589ms)
+ GET /advertiser-success-stories 200 in 1244ms (compile: 328ms, render: 916ms)
+ ✓ Compiled in 204ms
+ ✓ Compiled in 264ms
+ ✓ Compiled in 603ms
+ GET / 200 in 777ms (compile: 222ms, render: 555ms)
+ GET / 200 in 403ms (compile: 14ms, render: 390ms)
+ GET /about 200 in 1161ms (compile: 1016ms, render: 145ms)
+ GET /temp_aohdc_icon.png 404 in 1419ms (compile: 810ms, render: 610ms)
+ GET /fm-stations 200 in 1000ms (compile: 811ms, render: 189ms)
+ GET /temp_aohdc_icon.png 404 in 248ms (compile: 72ms, render: 176ms)
+ GET /temp_aohdc_icon.png 404 in 240ms (compile: 45ms, render: 195ms)
+ GET /fm-stations 200 in 145ms (compile: 29ms, render: 117ms)
+ GET /temp_aohdc_icon.png 404 in 279ms (compile: 59ms, render: 220ms)
+ GET /schedule 200 in 2.4s (compile: 2.4s, render: 63ms)
+ GET /temp_aohdc_icon.png 404 in 246ms (compile: 52ms, render: 195ms)
+ GET /podcasts 200 in 3.1s (compile: 3.1s, render: 63ms)
+ GET /temp_aohdc_icon.png 404 in 275ms (compile: 64ms, render: 211ms)
+ GET /community-impact 200 in 2.8s (compile: 2.7s, render: 77ms)
+ GET /temp_aohdc_icon.png 404 in 212ms (compile: 46ms, render: 166ms)
+ GET /directory 200 in 2.5s (compile: 2.4s, render: 76ms)
+ GET /temp_aohdc_icon.png 404 in 379ms (compile: 104ms, render: 275ms)
+ GET /media-kit 200 in 1793ms (compile: 1041ms, render: 752ms)
+ GET /temp_aohdc_icon.png 404 in 311ms (compile: 70ms, render: 241ms)
+ GET /media-kit 200 in 433ms (compile: 27ms, render: 406ms)
+ GET /temp_aohdc_icon.png 404 in 263ms (compile: 56ms, render: 207ms)
+ GET /advertise 200 in 2.8s (compile: 2.8s, render: 72ms)
+ GET /temp_aohdc_icon.png 404 in 298ms (compile: 54ms, render: 244ms)
+ ○ Compiling /blog ...
+ GET /blog 200 in 4.3s (compile: 4.2s, render: 100ms)
+ GET /temp_aohdc_icon.png 404 in 353ms (compile: 66ms, render: 287ms)
+ GET /blog 200 in 124ms (compile: 23ms, render: 101ms)
+ GET /temp_aohdc_icon.png 404 in 342ms (compile: 78ms, render: 264ms)
+ GET /faq 200 in 2.9s (compile: 2.8s, render: 117ms)
+ GET /temp_aohdc_icon.png 404 in 275ms (compile: 57ms, render: 217ms)
+ GET /contact 200 in 968ms (compile: 807ms, render: 162ms)
+ GET /temp_aohdc_icon.png 404 in 278ms (compile: 86ms, render: 192ms)
+ GET /fm-stations 200 in 131ms (compile: 24ms, render: 107ms)
+ GET /temp_aohdc_icon.png 404 in 299ms (compile: 132ms, render: 167ms)
+ GET / 200 in 179ms (compile: 29ms, render: 151ms)
+ GET /temp_aohdc_icon.png 404 in 258ms (compile: 54ms, render: 204ms)
+[?25h

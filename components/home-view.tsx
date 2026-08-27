@@ -27,15 +27,9 @@ import { OFFICIAL_YOUTUBE_CHANNEL } from "@/lib/youtube-data"
 
 export function HomeView() {
     const [loadVideo, setLoadVideo] = useState(false);
-    const [showRadioDayPoster, setShowRadioDayPoster] = useState(true);
 
     useEffect(() => {
         setLoadVideo(true);
-        // Automatically hide after tomorrow in EST (end of Aug 21 EST / Aug 22 04:00 UTC)
-        const expiryDate = new Date("2026-08-22T04:00:00Z");
-        if (new Date() > expiryDate) {
-            setShowRadioDayPoster(false);
-        }
     }, []);
 
     // Radio Nyra Shows Data
@@ -177,21 +171,6 @@ export function HomeView() {
                         </div>
                     </div>
                 </section>
-
-                {/* 2ND SECTION: NATIONAL RADIO DAY POSTER */}
-                {showRadioDayPoster && (
-                    <section className="w-full bg-zinc-950 py-4 sm:py-8 border-b border-border/40 overflow-hidden">
-                        <div className="container mx-auto px-4 max-w-5xl">
-                            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl border border-zinc-800 bg-black/40">
-                                <img
-                                    src="/national-radio-day.jpg"
-                                    alt="Happy National Radio Day - Radio Nyra USA"
-                                    className="w-full h-auto object-cover transition-transform duration-500 hover:scale-[1.01]"
-                                />
-                            </div>
-                        </div>
-                    </section>
-                )}
 
                 {/* STATS */}
                 <section className="py-8 bg-background border-b border-border/50">

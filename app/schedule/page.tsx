@@ -70,28 +70,28 @@ const SCHEDULE_DATA: ScheduleEntry[] = [
         time: "3 PM - 4 PM", hour: 15,
         shows: {
             weekdays: { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpeg", color: "bg-purple-50 text-purple-700" },
-            Saturday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" },
+            Saturday: { name: "Back to Back", image: "/back-to-back.webp", color: "bg-muted/30 text-muted-foreground" },
             Sunday: { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpeg", color: "bg-purple-50 text-purple-700" }
         }
     },
     {
         time: "4 PM - 5 PM", hour: 16,
         shows: {
-            weekdays: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" },
-            Saturday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" },
+            weekdays: { name: "Back to Back", image: "/back-to-back.webp", color: "bg-muted/30 text-muted-foreground" },
+            Saturday: { name: "Back to Back", image: "/back-to-back.webp", color: "bg-muted/30 text-muted-foreground" },
             Sunday: { name: "Legends & Leaders", host: "Steve Rao", image: "/legends-and-leaders.webp", color: "bg-blue-900 text-white" }
         }
     },
     {
         time: "5 PM - 7 PM", hour: 17,
         shows: {
-            Monday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" },
-            Tuesday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" },
+            Monday: { name: "Back to Back", image: "/back-to-back.webp", color: "bg-muted/30 text-muted-foreground" },
+            Tuesday: { name: "Back to Back", image: "/back-to-back.webp", color: "bg-muted/30 text-muted-foreground" },
             Wednesday: { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.webp", color: "bg-blue-400 text-white" },
             Thursday: { name: "Hello Vaishnavi", host: "Vaishnavi Palleda", image: "/images/hosts/hello-vaishnavi.jpeg", color: "bg-pink-100 text-pink-700" },
             Friday: { name: "Aaj Ki Shaam", host: "Jyoti", image: "/images/hosts/Aaj Ki Shaam-jyoti kae naam.png", color: "bg-orange-200 text-orange-800" },
-            Saturday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" },
-            Sunday: { name: "Desh Pardesh", host: "Vishal", image: "/images/hosts/desi-pardesi.webp", color: "bg-green-200 text-green-800" }
+            Saturday: { name: "Back to Back", image: "/back-to-back.webp", color: "bg-muted/30 text-muted-foreground" },
+            Sunday: { name: "Back to Back", image: "/back-to-back.webp", color: "bg-muted/30 text-muted-foreground" }
         }
     },
     {
@@ -122,8 +122,43 @@ export default function SchedulePage() {
         return { name: "--", color: "bg-transparent text-muted-foreground" };
     };
 
+    const scheduleSchema = {
+        "@context": "https://schema.org",
+        "@graph": SCHEDULE_DATA.flatMap((entry) =>
+            DAYS.map((day) => {
+                const show = getShowForDay(entry, day);
+                if (show.name === "--") return null;
+                return {
+                    "@type": "BroadcastEvent",
+                    name: `${show.name} on Radio Nyra`,
+                    description: `${show.name}${show.host ? ` hosted by ${show.host}` : ""} airs on Radio Nyra for the Indian and South Asian community.`,
+                    isLiveBroadcast: true,
+                    broadcastOfEvent: {
+                        "@type": "Event",
+                        name: show.name,
+                    },
+                    publishedOn: {
+                        "@type": "BroadcastService",
+                        name: "Radio Nyra",
+                        broadcaster: {
+                            "@type": "RadioStation",
+                            name: "Radio Nyra",
+                            url: "https://www.radionyra.com/",
+                        },
+                    },
+                    startDate: `${day} ${entry.time}`,
+                    url: "https://www.radionyra.com/schedule",
+                };
+            }).filter(Boolean)
+        ),
+    };
+
     return (
         <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-primary-foreground text-foreground">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(scheduleSchema) }}
+            />
             <Navigation />
 
             <main>

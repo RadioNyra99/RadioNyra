@@ -39,7 +39,7 @@ export default function AnalyticsPage() {
           {/* Stats Dashboard Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             {[
-              { label: "Weekly Listeners", end: 250, suffix: "K+", icon: Users },
+              { label: "Weekly Listeners", end: 100, suffix: "K+", icon: Users },
               { label: "App Installations", end: 120, suffix: "K+", icon: Smartphone },
               { label: "Email Open Rate", end: 34, suffix: "%", icon: Target },
               { label: "Partner Ads Impressions", end: 2.1, suffix: "M", icon: Activity }

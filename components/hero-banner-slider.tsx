@@ -15,7 +15,7 @@ const SLIDES = [
         tag: "LIVE ON AIR 99.9 FM HD3 / HD4",
         title: "THE INDIAN SUBCONTINENT",
         subtitle: "COMMUNITY MEDIA NETWORK",
-        description: "Reaching over 250,000+ Indian Subcontinent households across the US through high-definition radio, YouTube streams, community events, and digital media.",
+        description: "Reaching over 100K+ weekly Indian Subcontinent listeners across the US through high-definition radio, YouTube streams, community events, and digital media.",
         bgImage: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1920&q=80",
         badge: "24/7 HD Radio Streaming"
     },

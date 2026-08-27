@@ -58,6 +58,33 @@ export const trackListenLive = (stationName: string, language: string) => {
     });
 };
 
+export const trackAudioPlay = (stationName: string) => {
+    trackEvent({
+        category: 'Audio',
+        action: 'audio_play',
+        label: stationName,
+        metadata: { timestamp: new Date().toISOString() }
+    });
+};
+
+export const trackAudioPause = (stationName: string) => {
+    trackEvent({
+        category: 'Audio',
+        action: 'audio_pause',
+        label: stationName,
+        metadata: { timestamp: new Date().toISOString() }
+    });
+};
+
+export const trackAudioError = (stationName: string, message: string) => {
+    trackEvent({
+        category: 'Audio',
+        action: 'audio_error',
+        label: stationName,
+        metadata: { message, timestamp: new Date().toISOString() }
+    });
+};
+
 export const trackYouTubeSubscribe = (source: string) => {
     trackEvent({
         category: 'YouTube',

@@ -21,7 +21,7 @@ export default function AboutPage() {
                     </div>
                     <div className="container mx-auto px-4 max-w-5xl relative z-10">
                         <h1 className="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4 italic leading-tight">
-                            The Voice of <br />Continuity
+                            RadioNyra — The Voice That Connects
                         </h1>
                         <p className="text-base md:text-lg font-bold uppercase tracking-[0.3em] opacity-90">
                             Since November 16, 1963
@@ -34,7 +34,8 @@ export default function AboutPage() {
                         <div className="text-center max-w-4xl mx-auto mb-12">
                             <h2 className="text-xs sm:text-sm font-bold uppercase tracking-[0.4em] text-primary mb-4">About Radio Nyra</h2>
                             <p className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight leading-tight">
-                                Radio Nyra is America's leading Indian radio network connecting communities through music, culture, news, podcasts, entertainment, and live events.
+                                Radio Nyra is America's leading Indian radio network connecting communities
+                                <br className="hidden md:block" /> through music, culture, news, podcasts, entertainment, and live events.
                             </p>
                             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
                                 We deliver premium content while helping businesses connect with one of the most engaged multicultural audiences in North America.

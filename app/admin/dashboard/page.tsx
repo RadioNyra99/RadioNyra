@@ -13,7 +13,7 @@ import {
 } from "lucide-react"
 
 const quickStats = [
-  { label: "Weekly Listeners", value: "250K+", icon: Users, trend: "+12%", color: "text-blue-500" },
+  { label: "Weekly Listeners", value: "100K+", icon: Users, trend: "+12%", color: "text-blue-500" },
   { label: "Email Subscribers", value: "50K+", icon: FileText, trend: "+8%", color: "text-green-500" },
   { label: "WhatsApp Members", value: "100K+", icon: Globe, trend: "+15%", color: "text-emerald-500" },
   { label: "Instagram Reach", value: "500K+", icon: Eye, trend: "+22%", color: "text-pink-500" },

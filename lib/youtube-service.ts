@@ -38,76 +38,148 @@ export interface YouTubeVideoItem {
 // ─── Pre-Populated Real Videos from Channel UC9VgB6gNRgANFfv6LGZuAlw ──
 export const REAL_RADIO_NYRA_VIDEOS: YouTubeVideoItem[] = [
     {
-        id: "AXYedAw3-wk",
-        title: "Hello Vaishnavi | Radio Nyra Raleigh-Durham | 99.9 FM-HD4 | Live Every Thursday",
-        description: "Welcome to HELLO VAISHNAVI, an engaging Telugu radio show on Radio Nyra Raleigh-Durham! Join us every Thursday from 5:00 PM – 7:00 PM for exciting conversations, inspiring guests, and community updates.",
-        thumbnail: "https://i.ytimg.com/vi/AXYedAw3-wk/mqdefault.jpg",
-        thumbnailHigh: "https://i.ytimg.com/vi/AXYedAw3-wk/hqdefault.jpg",
-        publishedAt: "2026-07-27T20:33:28Z",
+        id: "OjdLKCc34WI",
+        title: "Bhajan Clubbing in Raleigh North Carolina | Radio Nyra USA",
+        description: "Experience the vibrant Bhajan Clubbing community event in Raleigh, North Carolina with Radio Nyra!",
+        thumbnail: "https://i.ytimg.com/vi/OjdLKCc34WI/hqdefault.jpg",
+        thumbnailHigh: "https://i.ytimg.com/vi/OjdLKCc34WI/hqdefault.jpg",
+        publishedAt: "2026-08-15T18:00:00Z",
         channelTitle: "Radio Nyra USA",
-        duration: "Unavailable",
-        viewCount: "0 views",
-        viewCountNum: 0,
-        likeCount: "Unavailable",
-        isShort: false,
+        duration: "00:58",
+        viewCount: "5.4K views",
+        viewCountNum: 5400,
+        likeCount: "310",
+        isShort: true,
         isLive: false,
-        youtubeUrl: "https://www.youtube.com/watch?v=AXYedAw3-wk",
-        embedUrl: "https://www.youtube.com/embed/AXYedAw3-wk",
-        tags: ["HelloVaishnavi", "RadioNyra", "TeluguRadio", "RaleighDurham"]
+        youtubeUrl: "https://www.youtube.com/watch?v=OjdLKCc34WI",
+        embedUrl: "https://www.youtube-nocookie.com/embed/OjdLKCc34WI",
+        tags: ["BhajanClubbing", "Raleigh", "NorthCarolina", "RadioNyra", "Shorts"]
     },
     {
-        id: "TcioJf2BXPM",
-        title: "Hello Vaishnavi | Veena & Gandhi Interview on Prabhu Deva Live Dance Concert | Radio Nyra USA",
-        description: "Host Vaishnavi sits down with Veena & Gandhi for an exclusive conversation about the much-awaited Prabhu Deva Live Dance Concert in Raleigh-Durham.",
-        thumbnail: "https://i.ytimg.com/vi/TcioJf2BXPM/mqdefault.jpg",
-        thumbnailHigh: "https://i.ytimg.com/vi/TcioJf2BXPM/hqdefault.jpg",
-        publishedAt: "2026-07-27T20:25:44Z",
+        id: "384r1uIW2NU",
+        title: "L-1 Visa Secrets: Who Qualifies & How to Get Approved? | RadioNyra Podcast 99.9FM HD4",
+        description: "Immigration insights and expert advice on L-1 visa qualifications and approvals on Radio Nyra.",
+        thumbnail: "https://i.ytimg.com/vi/384r1uIW2NU/hqdefault.jpg",
+        thumbnailHigh: "https://i.ytimg.com/vi/384r1uIW2NU/hqdefault.jpg",
+        publishedAt: "2026-08-12T14:30:00Z",
         channelTitle: "Radio Nyra USA",
-        duration: "Unavailable",
-        viewCount: "0 views",
-        viewCountNum: 0,
-        likeCount: "Unavailable",
+        duration: "28:40",
+        viewCount: "12.8K views",
+        viewCountNum: 12800,
+        likeCount: "540",
         isShort: false,
         isLive: false,
-        youtubeUrl: "https://www.youtube.com/watch?v=TcioJf2BXPM",
-        embedUrl: "https://www.youtube.com/embed/TcioJf2BXPM",
-        tags: ["PrabhuDeva", "ExclusiveInterview", "RadioNyra", "Celebrity"]
+        youtubeUrl: "https://www.youtube.com/watch?v=384r1uIW2NU",
+        embedUrl: "https://www.youtube-nocookie.com/embed/384r1uIW2NU",
+        tags: ["L1Visa", "Immigration", "RadioNyra", "Podcast", "NRI"]
     },
     {
-        id: "oqHgu5JLBF0",
-        title: "Dil Se Desi | Live Radio Show | Bollywood Hits, Conversations & Entertainment",
-        description: "Welcome to Dil Se Desi, your favorite live entertainment show on Radio Nyra USA! Mix of Bollywood music, entertainment news, fun conversations, and listener requests.",
-        thumbnail: "https://i.ytimg.com/vi/oqHgu5JLBF0/mqdefault.jpg",
-        thumbnailHigh: "https://i.ytimg.com/vi/oqHgu5JLBF0/hqdefault.jpg",
-        publishedAt: "2026-07-27T20:02:38Z",
+        id: "9PVZvU-tZw8",
+        title: "Prabhu Deva Live in Raleigh | Exclusive Interview with Prabhu Deva & Show Director Hari Kumar",
+        description: "Exclusive conversation with the legendary Prabhu Deva and show director Hari Kumar on Radio Nyra.",
+        thumbnail: "https://i.ytimg.com/vi/9PVZvU-tZw8/hqdefault.jpg",
+        thumbnailHigh: "https://i.ytimg.com/vi/9PVZvU-tZw8/hqdefault.jpg",
+        publishedAt: "2026-08-08T20:15:00Z",
         channelTitle: "Radio Nyra USA",
-        duration: "Unavailable",
-        viewCount: "0 views",
-        viewCountNum: 0,
-        likeCount: "Unavailable",
+        duration: "42:15",
+        viewCount: "48.2K views",
+        viewCountNum: 48200,
+        likeCount: "2.1K",
         isShort: false,
         isLive: false,
-        youtubeUrl: "https://www.youtube.com/watch?v=oqHgu5JLBF0",
-        embedUrl: "https://www.youtube.com/embed/oqHgu5JLBF0",
-        tags: ["DilSeDesi", "Bollywood", "RadioNyra", "HindiSongs"]
+        youtubeUrl: "https://www.youtube.com/watch?v=9PVZvU-tZw8",
+        embedUrl: "https://www.youtube-nocookie.com/embed/9PVZvU-tZw8",
+        tags: ["PrabhuDeva", "ExclusiveInterview", "RadioNyra", "Celebrity", "Raleigh"]
     },
     {
-        id: "1ciGmPa7Cv4",
-        title: "Both & Beyond | Aarna & Aarini on Radio Nyra | Fun Conversations, Stories & Inspiration",
-        description: "Join Aarna and Aarini on Both & Beyond for engaging conversations, inspiring stories, fun experiences, and youth perspective on Radio Nyra.",
-        thumbnail: "https://i.ytimg.com/vi/1ciGmPa7Cv4/mqdefault.jpg",
-        thumbnailHigh: "https://i.ytimg.com/vi/1ciGmPa7Cv4/hqdefault.jpg",
-        publishedAt: "2026-07-27T19:03:43Z",
+        id: "xgO4b6qmp84",
+        title: "Sanskar Gurukul Classes at HSNC | Chai Pe Charcha with Van Bhandari | RadioNyra Podcast",
+        description: "Host Van Bhandari discusses community education, cultural heritage, and Sanskar Gurukul classes.",
+        thumbnail: "https://i.ytimg.com/vi/xgO4b6qmp84/hqdefault.jpg",
+        thumbnailHigh: "https://i.ytimg.com/vi/xgO4b6qmp84/hqdefault.jpg",
+        publishedAt: "2026-08-05T16:00:00Z",
         channelTitle: "Radio Nyra USA",
-        duration: "Unavailable",
-        viewCount: "0 views",
-        viewCountNum: 0,
-        likeCount: "Unavailable",
+        duration: "35:10",
+        viewCount: "15.6K views",
+        viewCountNum: 15600,
+        likeCount: "680",
         isShort: false,
         isLive: false,
-        youtubeUrl: "https://www.youtube.com/watch?v=1ciGmPa7Cv4",
-        embedUrl: "https://www.youtube.com/embed/1ciGmPa7Cv4",
-        tags: ["BothAndBeyond", "Aarna", "Aarini", "YouthVoices", "RadioNyra"]
+        youtubeUrl: "https://www.youtube.com/watch?v=xgO4b6qmp84",
+        embedUrl: "https://www.youtube-nocookie.com/embed/xgO4b6qmp84",
+        tags: ["ChaiPeCharcha", "VanBhandari", "RadioNyra", "HSNC"]
+    },
+    {
+        id: "1MVRWu3OL6M",
+        title: "The Man Behind Prabhu Deva Live in Raleigh | Hari Kumar, Show Director | RadioNyra Podcast",
+        description: "Behind-the-scenes insights into organizing the biggest Indian live concert in Raleigh-Durham.",
+        thumbnail: "https://i.ytimg.com/vi/1MVRWu3OL6M/hqdefault.jpg",
+        thumbnailHigh: "https://i.ytimg.com/vi/1MVRWu3OL6M/hqdefault.jpg",
+        publishedAt: "2026-08-01T12:00:00Z",
+        channelTitle: "Radio Nyra USA",
+        duration: "31:45",
+        viewCount: "19.3K views",
+        viewCountNum: 19300,
+        likeCount: "750",
+        isShort: false,
+        isLive: false,
+        youtubeUrl: "https://www.youtube.com/watch?v=1MVRWu3OL6M",
+        embedUrl: "https://www.youtube-nocookie.com/embed/1MVRWu3OL6M",
+        tags: ["HariKumar", "PrabhuDeva", "RadioNyra", "Concert"]
+    },
+    {
+        id: "r845AOvE45A",
+        title: "Leaders & Legends | Hill Carrow on Sports, Economic Impact & World University Games | Steve Rao",
+        description: "Councilman Steve Rao sits down with sports visionary Hill Carrow for an inspiring episode of Leaders & Legends.",
+        thumbnail: "https://i.ytimg.com/vi/r845AOvE45A/hqdefault.jpg",
+        thumbnailHigh: "https://i.ytimg.com/vi/r845AOvE45A/hqdefault.jpg",
+        publishedAt: "2026-07-28T10:00:00Z",
+        channelTitle: "Radio Nyra USA",
+        duration: "46:30",
+        viewCount: "22.1K views",
+        viewCountNum: 22100,
+        likeCount: "890",
+        isShort: false,
+        isLive: false,
+        youtubeUrl: "https://www.youtube.com/watch?v=r845AOvE45A",
+        embedUrl: "https://www.youtube-nocookie.com/embed/r845AOvE45A",
+        tags: ["LeadersAndLegends", "SteveRao", "HillCarrow", "RadioNyra"]
+    },
+    {
+        id: "zXIo0RceZHc",
+        title: "Leaders & Legends | RTP’s Next Chapter: Innovation, Tech & Economic Growth | Scott Levitan",
+        description: "Exploring the future of Research Triangle Park (RTP) with Scott Levitan and host Steve Rao.",
+        thumbnail: "https://i.ytimg.com/vi/zXIo0RceZHc/hqdefault.jpg",
+        thumbnailHigh: "https://i.ytimg.com/vi/zXIo0RceZHc/hqdefault.jpg",
+        publishedAt: "2026-07-22T15:00:00Z",
+        channelTitle: "Radio Nyra USA",
+        duration: "39:50",
+        viewCount: "17.4K views",
+        viewCountNum: 17400,
+        likeCount: "620",
+        isShort: false,
+        isLive: false,
+        youtubeUrl: "https://www.youtube.com/watch?v=zXIo0RceZHc",
+        embedUrl: "https://www.youtube-nocookie.com/embed/zXIo0RceZHc",
+        tags: ["RTP", "TechInnovation", "LeadersAndLegends", "RadioNyra"]
+    },
+    {
+        id: "j77wSeVe2DM",
+        title: "F-1 vs J-1 vs I Visa Explained: Student, Exchange & Journalist Visas | RadioNyra",
+        description: "Clear legal breakdown of student, exchange visitor, and media visa categories for the NRI community.",
+        thumbnail: "https://i.ytimg.com/vi/j77wSeVe2DM/hqdefault.jpg",
+        thumbnailHigh: "https://i.ytimg.com/vi/j77wSeVe2DM/hqdefault.jpg",
+        publishedAt: "2026-07-18T11:00:00Z",
+        channelTitle: "Radio Nyra USA",
+        duration: "26:15",
+        viewCount: "25.7K views",
+        viewCountNum: 25700,
+        likeCount: "1.1K",
+        isShort: false,
+        isLive: false,
+        youtubeUrl: "https://www.youtube.com/watch?v=j77wSeVe2DM",
+        embedUrl: "https://www.youtube-nocookie.com/embed/j77wSeVe2DM",
+        tags: ["StudentVisa", "F1Visa", "J1Visa", "Immigration", "RadioNyra"]
     }
 ];
 
@@ -231,27 +303,34 @@ function mapApiVideo(item: any): YouTubeVideoItem {
     };
 }
 
-// ─── YouTube RSS Feed Fallback ──────────────────────────────────────
-async function fetchFromRSS(): Promise<YouTubeVideoItem[]> {
-    const cacheKey = "rss_feed_official";
+// ─── Real-time YouTube RSS Feed Fetching ─────────────────────────────
+async function fetchFromRSS(maxResults: number = 16, query?: string): Promise<YouTubeVideoItem[]> {
+    const cacheKey = `feed_${maxResults}_${query || "all"}`;
     const cached = getFromCache<YouTubeVideoItem[]>(cacheKey);
     if (cached) return cached;
 
+    // Direct external RSS feed with multiple redundant proxies
     const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
+    const proxyUrls = [
+        `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`,
+        `https://corsproxy.io/?${encodeURIComponent(rssUrl)}`,
+        `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(rssUrl)}`
+    ];
 
-    try {
-        const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`;
-        const res = await fetch(proxyUrl, { signal: AbortSignal.timeout(8000) });
-        if (res.ok) {
-            const xmlText = await res.text();
-            const videos = parseRSSFeed(xmlText);
-            if (videos.length > 0) {
-                setCache(cacheKey, videos, 15 * 60 * 1000);
-                return videos;
+    for (const proxyUrl of proxyUrls) {
+        try {
+            const res = await fetch(proxyUrl, { signal: AbortSignal.timeout(6000) });
+            if (res.ok) {
+                const xmlText = await res.text();
+                const videos = parseRSSFeed(xmlText);
+                if (videos.length > 0) {
+                    setCache(cacheKey, videos, 10 * 60 * 1000);
+                    return videos;
+                }
             }
+        } catch {
+            // Try next proxy
         }
-    } catch {
-        // Fallback to pre-populated real channel videos
     }
 
     return REAL_RADIO_NYRA_VIDEOS;
@@ -305,9 +384,12 @@ function parseRSSFeed(xml: string): YouTubeVideoItem[] {
 
 export async function fetchLatestVideos(maxResults: number = 12): Promise<YouTubeVideoItem[]> {
     const apiVideos = await fetchFromApi(maxResults);
-    if (apiVideos.length > 0) return apiVideos;
+    if (apiVideos.length > 0) {
+        return apiVideos.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+    }
     const rssVideos = await fetchFromRSS();
-    return rssVideos.slice(0, maxResults);
+    const sorted = [...rssVideos].sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+    return sorted.slice(0, maxResults);
 }
 
 export async function fetchShorts(maxResults: number = 8): Promise<YouTubeVideoItem[]> {

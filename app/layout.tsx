@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter, Geist_Mono } from "next/font/google"
 import Script from "next/script"
 import { AudioProvider } from "@/components/audio-context"
@@ -17,10 +17,17 @@ const _geistMono = Geist_Mono({
   variable: "--font-mono",
 })
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#ff0000",
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.radionyra.com'),
   title: {
-    default: "Radio Nyra | The Indian Subcontinent Community Media Network",
+    default: "Radio Nyra | The Indian Subcontinent Community Media Network In USA",
     template: "%s | Radio Nyra"
   },
   description:
@@ -29,7 +36,7 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   keywords: [
     "Radio Nyra", "Indian Radio USA", "Telugu Radio USA", "Hindi Radio USA",
-    "Raleigh FM Radio Stations", "Indian Subcontinent Community Media"
+    "Raleigh FM Radio Stations", "Indian Subcontinent Community Media In USA"
   ],
   authors: [{ name: "Radio Nyra" }],
   creator: "Radio Nyra",
@@ -44,7 +51,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.radionyra.com",
     siteName: "Radio Nyra",
-    title: "Radio Nyra | The Indian Subcontinent Community Media Network",
+    title: "Radio Nyra | The Indian Subcontinent Community Media Network In USA",
     description: "Radio Nyra is America's leading Indian Subcontinent Community Media Network for music, culture, news, podcasts, events, and multicultural advertising.",
     images: [
       {
@@ -120,9 +127,24 @@ export default function RootLayout({
         },
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "4819 Emperor Blvd Suite 400",
           "addressLocality": "Durham",
           "addressRegion": "NC",
+          "postalCode": "27703",
           "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "35.8398",
+          "longitude": "-78.8252"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
         },
         "telephone": "+1-919-294-4800",
         "broadcastFrequency": [

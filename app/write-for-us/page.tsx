@@ -108,6 +108,7 @@ export default function WriteForUsPage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
+                    { name: "radio.net Directory", domain: "radio.net", url: "http://radio.net/search?q=radionyra" },
                     { name: "Get Me Radio Player", domain: "getmeradio.com", url: "https://www.getmeradio.com/stations/radionyra-4514/" },
                     { name: "Marketing Marine PR", domain: "marketingmarine.com", url: "https://www.marketingmarine.com/adverts-write-for-us-and-guest-post/" },
                     { name: "Theodore Newsroom", domain: "theodorenewsletter.com", url: "https://theodorenewsletter.com/2014/08/" },

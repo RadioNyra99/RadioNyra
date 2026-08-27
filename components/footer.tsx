@@ -3,9 +3,9 @@ import { CONTACT_INFO, SOCIAL_LINKS } from "@/lib/site-data"
 
 export function Footer() {
   return (
-    <footer className="bg-foreground text-background py-12 border-t border-border/20">
+    <footer className="bg-foreground text-background py-8 border-t border-border/20">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
           {/* Brand */}
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-full bg-background overflow-hidden flex items-center justify-center border border-border/20">
@@ -25,6 +25,7 @@ export function Footer() {
           <nav className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full md:w-auto">
             <div className="flex flex-col gap-3">
               <span className="text-xs font-black uppercase tracking-widest text-white mb-1">Listen</span>
+              <Link href="/markets" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Markets & Coverage</Link>
               <Link href="/fm-stations" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">FM Stations</Link>
               <Link href="/hosts" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Meet the Hosts</Link>
               <Link href="/schedule" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Schedule</Link>
@@ -72,10 +73,10 @@ export function Footer() {
               ))}
               <div className="w-px h-4 bg-white/10 mx-2" />
               <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app" target="_blank" className="text-primary hover:text-white transition-colors flex items-center" title="Download Radio Nyra on the Google Play Store">
-                <img src="/android-icon.png" alt="Get it on Google Play" className="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src="/android-icon.webp" alt="Get it on Google Play" className="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all" />
               </Link>
               <Link href="https://apps.apple.com/us/app/radio-nyra-raleigh-durham/id6469009980" target="_blank" className="text-primary hover:text-white transition-colors flex items-center" title="Download Radio Nyra on the Apple App Store">
-                <img src="/apple-icon.png" alt="Download on App Store" className="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src="/apple-icon.webp" alt="Download on App Store" className="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all" />
               </Link>
             </div>
           </div>
@@ -99,6 +100,7 @@ export function Footer() {
           <div className="flex flex-col md:items-end text-right">
             <p>Email: {CONTACT_INFO.email}</p>
             <p>Phone: {CONTACT_INFO.phone}</p>
+            <p>Office: {CONTACT_INFO.address.full}</p>
             <p>Website: www.radionyra.com</p>
           </div>
         </div>

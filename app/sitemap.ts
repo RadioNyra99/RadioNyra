@@ -41,6 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/news',
         '/write-for-us',
         // Market Landing Pages
+        '/markets',
         '/markets/raleigh-durham',
         '/markets/atlanta',
         '/markets/baltimore',
@@ -48,6 +49,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/markets/columbus',
         '/markets/philadelphia',
         '/markets/st-louis',
+        '/atlanta-radio',
+        '/baltimore-dc-radio',
+        '/cleveland-radio',
+        '/columbus-radio',
+        '/philadelphia-radio',
+        '/st-louis-radio',
         // Show Pages
         '/shows/hello-vaishnavi',
         '/shows/geet-bazaar',

@@ -98,7 +98,7 @@ const faqCategories = [
       { q: "How can I advertise my business on Radio Nyra?", a: "You can submit an inquiry via our 'Advertise' page, email sales at info@radionyra.com, or call our team directly at +1 (919) 294-4800." },
       { q: "What advertising services do you offer?", a: "We offer on-air radio ads, digital banner placements, social media promotions, email newsletter features, WhatsApp community broadcasts, and live event sponsorship opportunities." },
       { q: "Can Radio Nyra produce my radio commercial?", a: "Yes, our Creative Studio provides professional scriptwriting, voiceover talent, and audio engineering services to produce high-impact commercials for your business." },
-      { q: "What is the size of Radio Nyra's audience?", a: "We have over 250K+ weekly listeners, 50K+ email subscribers, 100K+ WhatsApp members, and a monthly Instagram reach exceeding 500K+." },
+      { q: "What is the size of Radio Nyra's audience?", a: "We have over 100K+ weekly listeners, 50K+ email subscribers, 100K+ WhatsApp members, and a monthly Instagram reach exceeding 500K+." },
       { q: "Is radio advertising effective for local businesses?", a: "Yes, ethnic radio advertising provides highly focused demographic targeting, yielding higher conversion rates, trust, and brand recall than broad programmatic ads." },
       { q: "Can I sponsor a specific show or segment?", a: "Yes, you can sponsor popular programs (like Hello Vaishnavi or Geet Bazaar) or segments like local traffic, weather, or community updates." },
       { q: "How do you measure advertising campaign success?", a: "We offer direct tracking options such as dedicated call-tracking numbers, custom landing pages, and coupon codes integrated with our WhatsApp broadcasts." },

@@ -30,16 +30,7 @@ const ROW1_HOSTS: HostProfile[] = [
     stationId: STATIONS.Hindi.id,
     bio: "Bringing energetic morning vibes, traffic updates, weather, and the biggest Bollywood chartbusters to Cary & Raleigh listeners."
   },
-  {
-    id: "2",
-    name: "Vishal the khushal",
-    show: "Desh Pardesh",
-    timings: "Daily 6:00 AM - 9:00 AM EST",
-    image: "/images/hosts/desi-pardesi.webp",
-    language: "hindi",
-    stationId: STATIONS.Hindi.id,
-    bio: "A perfect blend of desi culture, news from home, and lively tunes to kickstart your day in the Triangle."
-  },
+
   {
     id: "3",
     name: "Arpit Tandon",
@@ -229,12 +220,12 @@ export default function HostsPage() {
           </div>
 
           <div className="space-y-12">
-            {/* ROW 1: 5 Columns */}
+            {/* ROW 1: 4 Columns */}
             <div>
               <h2 className="text-xs font-black uppercase tracking-widest text-primary mb-6 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" /> Primetime Show Hosts
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {ROW1_HOSTS.map(renderHostCard)}
               </div>
             </div>
@@ -244,7 +235,7 @@ export default function HostsPage() {
               <h2 className="text-xs font-black uppercase tracking-widest text-primary mb-6 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" /> Specialty & Weekend Programming
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-6">
                 {ROW2_HOSTS.map(renderHostCard)}
               </div>
             </div>

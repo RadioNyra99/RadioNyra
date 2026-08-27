@@ -112,15 +112,15 @@ export default function ContactPage() {
                 </div>
                 <div className="group">
                   <h3 className="text-xs font-black uppercase text-[#25D366] tracking-[0.3em] mb-4">WhatsApp</h3>
-                  <a href="https://wa.me/19192944800" target="_blank" className="text-xl sm:text-3xl font-black text-foreground hover:text-[#25D366] transition-colors">+1 (919) 294 - 4800</a>
+                  <a href="https://wa.me/19192944800" target="_blank" rel="noopener noreferrer" className="text-xl sm:text-3xl font-black text-foreground hover:text-[#25D366] transition-colors">+1 (919) 294 - 4800</a>
                 </div>
                 <div className="group">
                   <h3 className="text-xs font-black uppercase text-accent tracking-[0.3em] mb-4">Visit Us</h3>
                   <div className="flex items-center gap-2">
                     <MapPin className="w-5 h-5 text-primary" />
-                    <p className="text-xl sm:text-3xl font-black text-foreground">Raleigh-Durham Metro</p>
+                    <p className="text-xl sm:text-2xl font-black text-foreground">Durham / Raleigh-Durham</p>
                   </div>
-                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-2">Studio Address: Durham, North Carolina, USA</p>
+                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-2">Office Address: 4819 Emperor Blvd Suite 400, Durham, NC 27703</p>
                 </div>
                 <div className="group">
                   <h3 className="text-xs font-black uppercase text-primary tracking-[0.3em] mb-4">Website</h3>
@@ -151,8 +151,8 @@ export default function ContactPage() {
               </Card>
               <div className="border border-border bg-muted overflow-hidden min-h-[320px]">
                 <iframe
-                  title="Radio Nyra Durham map"
-                  src="https://www.google.com/maps?q=Durham%2C%20NC&output=embed"
+                  title="Radio Nyra office map - 4819 Emperor Blvd Suite 400, Durham, NC 27703"
+                  src="https://www.google.com/maps?q=4819+Emperor+Blvd+Suite+400%2C+Durham%2C+NC+27703&output=embed"
                   className="w-full h-full min-h-[320px] border-0"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -172,9 +172,9 @@ export default function ContactPage() {
 
             <Card className="max-w-2xl mx-auto mb-16 border-2 border-primary bg-primary/5 shadow-xl">
               <CardContent className="p-8 text-center">
-                <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-2">Advertising Inquiries</h3>
-                <h4 className="text-2xl font-black uppercase mb-1">Vaishnavi Palleda</h4>
-                <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-6">Vice President</p>
+                <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-2">Premium Plan</h3>
+                <h4 className="text-2xl font-black uppercase mb-1">Advertising Consultation</h4>
+                <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-6">Radio Nyra Business Team</p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
                   <a href="mailto:vp@radionyra.com" className="flex items-center gap-2 hover:text-primary transition-colors">
                     <Mail className="w-5 h-5 text-primary" />

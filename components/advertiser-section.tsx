@@ -31,7 +31,7 @@ const AD_PACKAGES = [
         ]
     },
     {
-        title: "360° Platinum Media Sponsorship",
+        title: "Premium Plan",
         price: "Full Package",
         tag: "Maximum Impact",
         features: [
@@ -87,68 +87,68 @@ export function AdvertiserSection() {
     };
 
     return (
-        <section id="advertise-section" className="py-20 bg-background text-foreground border-t border-border">
+        <section id="advertise-section" className="py-10 bg-background text-foreground border-t border-border">
             <div className="container mx-auto px-4">
                 {/* Header */}
-                <div className="text-center max-w-4xl mx-auto mb-16">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-600/10 text-red-600 text-xs font-black uppercase tracking-widest mb-4 border border-red-600/20">
+                <div className="text-center max-w-4xl mx-auto mb-8">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/10 text-red-600 text-xs font-black uppercase tracking-widest mb-3 border border-red-600/20">
                         <Megaphone className="w-4 h-4" />
                         Media & Business Advertising Opportunities
                     </div>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight italic text-foreground leading-tight mb-4">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight italic text-foreground leading-tight mb-3">
                         Promote Your Brand Across America's Leading Indian Subcontinent Network
                     </h2>
-                    <p className="text-muted-foreground text-sm sm:text-base md:text-lg font-medium max-w-2xl mx-auto leading-relaxed">
-                        Connect directly with over <strong className="text-foreground">250,000+ engaged, high-income listeners</strong> across terrestrial FM radio, YouTube original video content, digital streams, and premier community events.
+                    <p className="text-muted-foreground text-xs sm:text-sm md:text-base font-medium max-w-2xl mx-auto leading-relaxed">
+                        Connect directly with over <strong className="text-foreground">100,000+ engaged weekly listeners</strong> across terrestrial FM radio, YouTube original video content, digital streams, and premier community events.
                     </p>
                 </div>
 
                 {/* Audience Statistics Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-                    <div className="p-6 rounded-3xl bg-card border border-border/80 text-center shadow-md hover:shadow-xl transition-all">
-                        <Users className="w-8 h-8 text-primary mx-auto mb-3" />
-                        <span className="text-3xl font-black block">250,000+</span>
-                        <span className="text-xs text-muted-foreground font-extrabold uppercase tracking-wider">Monthly Active Listeners</span>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                    <div className="p-4 sm:p-5 rounded-2xl bg-card border border-border/80 text-center shadow-sm hover:shadow-md transition-all">
+                        <Users className="w-6 h-6 text-primary mx-auto mb-2" />
+                        <span className="text-2xl sm:text-3xl font-black block">100K+</span>
+                        <span className="text-[10px] text-muted-foreground font-extrabold uppercase tracking-wider">Weekly Listeners</span>
                     </div>
 
-                    <div className="p-6 rounded-3xl bg-card border border-border/80 text-center shadow-md hover:shadow-xl transition-all">
-                        <TrendingUp className="w-8 h-8 text-cyan-500 mx-auto mb-3" />
-                        <span className="text-3xl font-black block">5.8M+</span>
-                        <span className="text-xs text-muted-foreground font-extrabold uppercase tracking-wider">Digital & Video Impressions</span>
+                    <div className="p-4 sm:p-5 rounded-2xl bg-card border border-border/80 text-center shadow-sm hover:shadow-md transition-all">
+                        <TrendingUp className="w-6 h-6 text-cyan-500 mx-auto mb-2" />
+                        <span className="text-2xl sm:text-3xl font-black block">5.8M+</span>
+                        <span className="text-[10px] text-muted-foreground font-extrabold uppercase tracking-wider">Digital & Video Impressions</span>
                     </div>
 
-                    <div className="p-6 rounded-3xl bg-card border border-border/80 text-center shadow-md hover:shadow-xl transition-all">
-                        <MapPin className="w-8 h-8 text-amber-500 mx-auto mb-3" />
-                        <span className="text-3xl font-black block">7+ Major</span>
-                        <span className="text-xs text-muted-foreground font-extrabold uppercase tracking-wider">US Metro Markets</span>
+                    <div className="p-4 sm:p-5 rounded-2xl bg-card border border-border/80 text-center shadow-sm hover:shadow-md transition-all">
+                        <MapPin className="w-6 h-6 text-amber-500 mx-auto mb-2" />
+                        <span className="text-2xl sm:text-3xl font-black block">7+ Major</span>
+                        <span className="text-[10px] text-muted-foreground font-extrabold uppercase tracking-wider">US Metro Markets</span>
                     </div>
 
-                    <div className="p-6 rounded-3xl bg-card border border-border/80 text-center shadow-md hover:shadow-xl transition-all">
-                        <Radio className="w-8 h-8 text-emerald-500 mx-auto mb-3" />
-                        <span className="text-3xl font-black block">99.9 FM</span>
-                        <span className="text-xs text-muted-foreground font-extrabold uppercase tracking-wider">HD3 & HD4 Channels</span>
+                    <div className="p-4 sm:p-5 rounded-2xl bg-card border border-border/80 text-center shadow-sm hover:shadow-md transition-all">
+                        <Radio className="w-6 h-6 text-emerald-500 mx-auto mb-2" />
+                        <span className="text-2xl sm:text-3xl font-black block">99.9 FM</span>
+                        <span className="text-[10px] text-muted-foreground font-extrabold uppercase tracking-wider">HD3 & HD4 Channels</span>
                     </div>
                 </div>
 
                 {/* Why Advertise With Us - Benefits Grid */}
-                <div className="mb-20">
-                    <div className="text-center mb-12">
-                        <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight italic">
+                <div className="mb-10">
+                    <div className="text-center mb-6">
+                        <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight italic">
                             Why Brands Choose Radio Nyra
                         </h3>
-                        <p className="text-muted-foreground text-xs md:text-sm font-semibold uppercase tracking-widest mt-1">
+                        <p className="text-muted-foreground text-[10px] md:text-xs font-semibold uppercase tracking-widest mt-1">
                             Proven results for multicultural media marketing
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                         {AD_BENEFITS.map((benefit, bIdx) => (
-                            <div key={bIdx} className="bg-card border border-border/80 p-6 rounded-3xl shadow-sm hover:shadow-md hover:border-primary/40 transition-all flex flex-col justify-between">
+                            <div key={bIdx} className="bg-card border border-border/80 p-5 rounded-2xl shadow-sm hover:shadow-md hover:border-primary/40 transition-all flex flex-col justify-between">
                                 <div>
-                                    <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4">
-                                        <benefit.icon className="w-6 h-6" />
+                                    <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-3">
+                                        <benefit.icon className="w-5 h-5" />
                                     </div>
-                                    <h4 className="font-black text-lg text-foreground mb-2 leading-tight">{benefit.title}</h4>
+                                    <h4 className="font-black text-base text-foreground mb-1 leading-tight">{benefit.title}</h4>
                                     <p className="text-xs text-muted-foreground leading-relaxed font-medium">{benefit.desc}</p>
                                 </div>
                             </div>
@@ -157,16 +157,21 @@ export function AdvertiserSection() {
                 </div>
 
                 {/* Ad Packages Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+                <div className="text-center mb-6">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight italic">
+                        Premium Plans
+                    </h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
                     {AD_PACKAGES.map((pkg, idx) => (
-                        <div key={idx} className="relative rounded-3xl bg-card border border-border/80 p-8 shadow-lg hover:shadow-2xl transition-all flex flex-col justify-between">
+                        <div key={idx} className="relative rounded-xl bg-card border border-border/80 p-6 shadow-lg hover:shadow-2xl transition-all flex flex-col justify-between">
                             <div>
                                 <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-black uppercase tracking-wider inline-block mb-4">
                                     {pkg.tag}
                                 </span>
                                 <h3 className="text-xl font-black text-foreground mb-2">{pkg.title}</h3>
-                                <p className="text-2xl font-extrabold text-primary mb-6">{pkg.price}</p>
-                                <ul className="space-y-3 mb-8">
+                                <p className="text-2xl font-extrabold text-primary mb-5">{pkg.price}</p>
+                                <ul className="space-y-2.5 mb-6">
                                     {pkg.features.map((feat, fIdx) => (
                                         <li key={fIdx} className="flex items-center gap-3 text-xs text-muted-foreground font-medium">
                                             <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0" />
@@ -180,7 +185,7 @@ export function AdvertiserSection() {
                                     const element = document.getElementById("lead-form-anchor");
                                     element?.scrollIntoView({ behavior: "smooth" });
                                 }}
-                                className="w-full bg-foreground text-background hover:bg-foreground/90 font-black text-xs uppercase tracking-widest h-12 rounded-xl cursor-pointer"
+                                className="w-full bg-foreground text-background hover:bg-foreground/90 font-black text-xs uppercase tracking-widest h-11 rounded-lg cursor-pointer"
                             >
                                 Request Advertising Information
                             </Button>
@@ -257,7 +262,7 @@ export function AdvertiserSection() {
                                     </span>
                                 ) : (
                                     <span className="flex items-center gap-2">
-                                        <Send className="w-4 h-4" /> Advertise Now & Request Plan
+                                        <Send className="w-4 h-4" /> Submit
                                     </span>
                                 )}
                             </Button>

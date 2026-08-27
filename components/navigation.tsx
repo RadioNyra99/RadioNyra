@@ -16,7 +16,7 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet"
-import { ChevronDown, Menu, Apple, Smartphone } from "lucide-react"
+import { ChevronDown, Menu } from "lucide-react"
 import { showAudioPlayer } from "../lib/audio-player-utils"
 import { SiteSearch } from "./site-search"
 
@@ -26,44 +26,32 @@ export function Navigation() {
     { href: "/about", label: "About" },
     { href: "/fm-stations", label: "Stations" },
     {
-      href: "#listen",
+      href: "/how-to-tune",
       label: "Listen",
       subLinks: [
         { href: "/schedule", label: "Schedule" },
-        { href: "/podcasts", label: "Podcasts" },
         { href: "/how-to-tune", label: "How to Tune In" },
         { href: "/fm-stations", label: "FM Stations" },
-        { href: "/hosts", label: "Meet the Hosts" },
       ]
     },
     {
-      href: "#community",
+      href: "/community-impact",
       label: "Community",
       subLinks: [
-        { href: "/community-impact", label: "Community Impact" },
-        { href: "/partners", label: "Partners" },
         { href: "/events", label: "Events" },
         { href: "/gallery", label: "Gallery" },
         { href: "/festival-calendar", label: "Festival Calendar" },
       ]
     },
     {
-      href: "#media",
+      href: "/youtube",
       label: "Media",
       subLinks: [
-        { href: "/news", label: "News" },
-        { href: "/youtube", label: "YouTube Hub" },
-        { href: "/video-library", label: "Video Library" },
-        { href: "/shorts", label: "Trending Shorts" },
-        { href: "/kids-shows", label: "Kids Corner" },
-        { href: "/interviews", label: "Celebrity Interviews" },
-        { href: "/social-hub", label: "Social Hub" },
         { href: "/ecosystem", label: "Ecosystem" },
-        { href: "/syndication", label: "Syndication" },
-        { href: "/analytics", label: "Analytics" },
         { href: "/press", label: "Press" },
       ]
     },
+    { href: "/podcasts", label: "Podcasts" },
     {
       href: "#services",
       label: "Services",
@@ -88,50 +76,49 @@ export function Navigation() {
             {/* Mobile Menu Trigger */}
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden mr-2">
+                <Button variant="ghost" size="icon" className="md:hidden mr-2 cursor-pointer" aria-label="Open navigation menu">
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-[300px] sm:w-[400px] flex flex-col p-0 border-r-0 shadow-2xl">
+              <SheetContent side="left" className="w-[300px] sm:w-[400px] flex flex-col p-0 border-r-0 shadow-2xl bg-background text-foreground">
                 <SheetHeader className="p-6 border-b border-border/10 bg-background/95 backdrop-blur sticky top-0 z-10 shrink-0">
                   <div className="flex flex-row items-center gap-4">
                     <div className="relative">
-                      <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-primary shrink-0 soft-shadow-primary">
+                      <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary shrink-0">
                         <img
                           src="/images/radio-nyra-logo.jpg"
                           alt="Radio Nyra Logo"
                           className="w-full h-full object-cover scale-110"
                         />
                       </div>
-                      <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-primary border-2 border-background rounded-full live-pulse" />
+                      <div className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-primary border-2 border-background rounded-full animate-pulse" />
                     </div>
                     <div className="flex flex-col">
-                      <SheetTitle className="text-left font-black uppercase tracking-tighter leading-none text-2xl">Menu</SheetTitle>
-                      <p className="text-[10px] text-muted-foreground font-bold tracking-[0.2em] uppercase mt-1">Radio Nyra</p>
+                      <SheetTitle className="text-left font-black uppercase tracking-tighter leading-none text-xl">Menu</SheetTitle>
+                      <p className="text-[9px] text-muted-foreground font-bold tracking-[0.2em] uppercase mt-1">Radio Nyra</p>
                     </div>
                   </div>
                 </SheetHeader>
 
-                <div className="flex-1 overflow-y-auto px-8 py-10 custom-scrollbar">
-                  <div className="flex flex-col gap-10">
+                <div className="flex-1 overflow-y-auto px-6 py-8 custom-scrollbar">
+                  <div className="flex flex-col gap-6">
                     {navLinks.map((link) => (
-                      <div key={link.href} className="flex flex-col gap-4 group">
+                      <div key={link.href} className="flex flex-col gap-2 group">
                         <SheetClose asChild>
                           <Link
                             href={link.href}
-                            className="text-xl font-black text-foreground hover:text-primary transition-all duration-300 tracking-tighter uppercase flex items-center gap-2 group-hover:pl-2"
+                            className="text-lg font-black text-foreground hover:text-primary transition-all duration-300 tracking-tighter uppercase flex items-center gap-2"
                           >
                             {link.label}
-                            <span className="w-2 h-2 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                           </Link>
                         </SheetClose>
                         {link.subLinks && (
-                          <div className="flex flex-col gap-5 pl-4 border-l-2 border-primary/5 mt-1 ml-1">
+                          <div className="flex flex-col gap-3.5 pl-4 border-l border-primary/20 mt-1">
                             {link.subLinks.map((subLink) => (
                               <SheetClose key={subLink.href} asChild>
                                 <Link
                                   href={subLink.href}
-                                  className="text-[14px] font-bold text-muted-foreground hover:text-primary transition-colors tracking-wide uppercase leading-tight"
+                                  className="text-[12px] font-bold text-muted-foreground hover:text-primary transition-colors tracking-wide uppercase leading-tight"
                                 >
                                   {subLink.label}
                                 </Link>
@@ -144,24 +131,23 @@ export function Navigation() {
                   </div>
                 </div>
 
-                <div className="p-8 border-t border-border/10 bg-muted/20 shrink-0 flex flex-col gap-4">
-
+                <div className="p-6 border-t border-border/10 bg-muted/20 shrink-0 flex flex-col gap-4">
                   <div className="flex gap-2 w-full">
-                    <Button variant="outline" className="flex-1 h-12 rounded-full border-2" asChild>
-                      <Link href="https://apps.apple.com/us/app/radio-nyra-raleigh-durham/id6469009980" target="_blank">
-                        <img src="/apple-icon.png" alt="Download on App Store" className="mr-2 h-5 w-5 object-contain" /> App Store
+                    <Button variant="outline" className="flex-1 h-11 rounded-full border-2 text-xs" asChild>
+                      <Link href="https://apps.apple.com/us/app/radio-nyra-raleigh-durham/id6469009980" target="_blank" rel="noopener noreferrer">
+                        <img src="/apple-icon.webp" alt="Download on App Store" className="mr-1.5 h-4 w-4 object-contain" /> App Store
                       </Link>
                     </Button>
-                    <Button variant="outline" className="flex-1 h-12 rounded-full border-2" asChild>
-                      <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app" target="_blank">
-                        <img src="/android-icon.png" alt="Get it on Google Play" className="mr-2 h-5 w-5 object-contain" /> Play Store
+                    <Button variant="outline" className="flex-1 h-11 rounded-full border-2 text-xs" asChild>
+                      <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app" target="_blank" rel="noopener noreferrer">
+                        <img src="/android-icon.webp" alt="Get it on Google Play" className="mr-1.5 h-4 w-4 object-contain" /> Play Store
                       </Link>
                     </Button>
                   </div>
                   <SheetClose asChild>
                     <Button
                       onClick={showAudioPlayer}
-                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-black uppercase tracking-[0.1em] rounded-full py-7 text-lg soft-shadow-primary transition-transform active:scale-95"
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-black uppercase tracking-[0.1em] rounded-full py-5 text-sm soft-shadow-primary transition-transform active:scale-95 cursor-pointer"
                     >
                       Listen Live
                     </Button>
@@ -180,11 +166,6 @@ export function Navigation() {
                       <ChevronDown className="h-4 w-4" />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="start" className="bg-background border-border">
-                      <DropdownMenuItem asChild>
-                        <Link href={link.href} className="font-bold uppercase tracking-wider cursor-pointer">
-                          All {link.label}
-                        </Link>
-                      </DropdownMenuItem>
                       {link.subLinks.map((subLink) => (
                         <DropdownMenuItem key={subLink.href} asChild>
                           <Link href={subLink.href} className="font-bold uppercase tracking-wider cursor-pointer">
@@ -205,38 +186,38 @@ export function Navigation() {
                 )
               ))}
 
-              {/* App Icons Integrated into Flow */}
+              {/* App Icons */}
               <div className="flex items-center gap-2 ml-2">
-                <Link href="https://apps.apple.com/us/app/radio-nyra-raleigh-durham/id6469009980" target="_blank" className="hover:scale-110 transition-transform">
-                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm border border-border/10">
-                    <img src="/apple-icon.png" alt="Download on App Store" className="h-6 w-6 object-contain" />
+                <Link href="https://apps.apple.com/us/app/radio-nyra-raleigh-durham/id6469009980" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+                  <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-sm border border-border/10">
+                    <img src="/apple-icon.webp" alt="Download on App Store" className="h-5 w-5 object-contain" />
                   </div>
                 </Link>
-                <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app" target="_blank" className="hover:scale-110 transition-transform">
-                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm border border-border/10">
-                    <img src="/android-icon.png" alt="Get it on Google Play" className="h-6 w-6 object-contain" />
+                <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+                  <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-sm border border-border/10">
+                    <img src="/android-icon.webp" alt="Get it on Google Play" className="h-5 w-5 object-contain" />
                   </div>
                 </Link>
               </div>
             </div>
           </div>
 
-          {/* Logo - RIGHT ALIGNED */}
-          <div className="flex items-center gap-1 lg:gap-6">
+          {/* Logo & Right Actions */}
+          <div className="flex items-center gap-1.5 sm:gap-4 lg:gap-6">
             <SiteSearch />
             <Button
               onClick={showAudioPlayer}
-              className="hidden md:flex bg-primary hover:bg-primary/90 text-primary-foreground font-black uppercase tracking-tighter rounded-full px-8 h-10 transition-all"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-black uppercase tracking-tighter rounded-full px-3.5 sm:px-6 h-8 sm:h-10 text-[10px] sm:text-xs transition-all cursor-pointer shrink-0"
             >
               Listen Live
             </Button>
 
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="text-right flex flex-col justify-center">
-                <div className="font-bold text-xl lg:text-2xl text-foreground tracking-tighter leading-none whitespace-nowrap">Radio Nyra</div>
-                <p className="text-[9px] font-black uppercase tracking-[0.1em] text-primary leading-none mt-1">COMMUNITY MEDIA NETWORK</p>
+            <Link href="/" className="flex items-center gap-2 sm:gap-3 group shrink-0">
+              <div className="text-right flex flex-col justify-center hidden sm:flex">
+                <div className="font-bold text-base sm:text-xl lg:text-2xl text-foreground tracking-tighter leading-none whitespace-nowrap">Radio Nyra</div>
+                <p className="text-[8px] sm:text-[9px] font-black uppercase tracking-[0.1em] text-primary leading-none mt-1">COMMUNITY MEDIA NETWORK</p>
               </div>
-              <div className="relative w-10 h-10 lg:w-12 lg:h-12 overflow-hidden rounded-full border-2 border-primary group-hover:border-primary/80 transition-colors shrink-0">
+              <div className="relative w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 overflow-hidden rounded-full border-2 border-primary group-hover:border-primary/80 transition-colors shrink-0">
                 <img
                   src="/images/radio-nyra-logo.jpg"
                   alt="Radio Nyra Logo"
@@ -250,4 +231,3 @@ export function Navigation() {
     </nav>
   )
 }
-

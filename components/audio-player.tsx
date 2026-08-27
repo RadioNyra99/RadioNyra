@@ -1,11 +1,12 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Play, Pause, Radio, Volume2, VolumeX, Volume1, Users, ChevronUp, Loader2, AlertCircle } from "lucide-react"
+import { Play, Pause, Volume2, VolumeX, Volume1, Users, ChevronUp, Loader2, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { useAudio } from "@/components/audio-context"
 import { getStationsList } from "@/lib/stations"
+import { trackAudioError } from "@/lib/analytics"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -33,9 +34,50 @@ export function AudioPlayer() {
   const [isVisible, setIsVisible] = useState(true)
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const retryTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const retryCountRef = useRef(0)
 
   // Get stations list for UI
   const stations = getStationsList()
+
+  // Media Session API integration for background/lock-screen controls
+  useEffect(() => {
+    if (typeof window !== "undefined" && "mediaSession" in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: metadata.title || `${currentStation.name} Live`,
+        artist: "Radio Nyra",
+        album: `${currentStation.name} - 99.9 FM HD4/HD3`,
+        artwork: [
+          { src: metadata.artwork || "/images/radio-nyra-logo.jpg", sizes: "96x96", type: "image/jpeg" },
+          { src: metadata.artwork || "/images/radio-nyra-logo.jpg", sizes: "128x128", type: "image/jpeg" },
+          { src: metadata.artwork || "/images/radio-nyra-logo.jpg", sizes: "192x192", type: "image/jpeg" },
+          { src: metadata.artwork || "/images/radio-nyra-logo.jpg", sizes: "512x512", type: "image/jpeg" },
+        ],
+      })
+
+      navigator.mediaSession.playbackState = isPlaying ? "playing" : "paused"
+
+      navigator.mediaSession.setActionHandler("play", () => {
+        if (!isPlaying) togglePlay()
+      })
+      navigator.mediaSession.setActionHandler("pause", () => {
+        if (isPlaying) togglePlay()
+      })
+      navigator.mediaSession.setActionHandler("stop", () => {
+        if (isPlaying) togglePlay()
+      })
+
+      // Next / Previous Station Switching
+      const currentIdx = stations.findIndex(s => s.id === currentStation.id)
+      navigator.mediaSession.setActionHandler("nexttrack", () => {
+        const nextStation = stations[(currentIdx + 1) % stations.length]
+        if (nextStation) playStation(nextStation.id)
+      })
+      navigator.mediaSession.setActionHandler("previoustrack", () => {
+        const prevStation = stations[(currentIdx - 1 + stations.length) % stations.length]
+        if (prevStation) playStation(prevStation.id)
+      })
+    }
+  }, [currentStation, metadata, isPlaying, stations, togglePlay, playStation])
 
   useEffect(() => {
     // Listen for custom event to show player
@@ -57,8 +99,6 @@ export function AudioPlayer() {
         if (playPromise !== undefined) {
           playPromise.catch(e => {
             console.error("Playback failed (likely autoplay policy):", e)
-            // If autoplay failed, we might need user interaction.
-            // But if it's a stream error, onError will catch it.
           })
         }
       } else {
@@ -83,6 +123,7 @@ export function AudioPlayer() {
   const handleCanPlay = () => {
     setIsLoading(false)
     setError(null)
+    retryCountRef.current = 0
     if (isPlaying && audioRef.current?.paused) {
       audioRef.current.play().catch(() => { })
     }
@@ -91,25 +132,30 @@ export function AudioPlayer() {
   const handlePlaying = () => {
     setIsLoading(false)
     setError(null)
+    retryCountRef.current = 0
   }
 
   const handleWaiting = () => setIsLoading(true)
 
   const handleError = (e: React.SyntheticEvent<HTMLAudioElement, Event>) => {
     console.error("Audio Error:", e)
-    setError("Connection lost. Reconnecting...")
+    retryCountRef.current += 1
+    const delay = Math.min(1000 * Math.pow(2, retryCountRef.current - 1), 16000)
+    const message = `Connection interrupted. Reconnecting in ${(delay / 1000).toFixed(0)}s...`
+    setError(message)
+    trackAudioError(currentStation.name, message)
     setIsLoading(true)
 
-    // Auto-reconnection logic
+    // Exponential backoff auto-reconnection logic
     if (retryTimeoutRef.current) clearTimeout(retryTimeoutRef.current)
 
     retryTimeoutRef.current = setTimeout(() => {
       if (audioRef.current) {
-        console.log("Retrying stream connection...")
+        console.log(`Retrying stream connection (attempt ${retryCountRef.current})...`)
         audioRef.current.load() // Reloads the source
         if (isPlaying) audioRef.current.play().catch(() => { })
       }
-    }, 3000) // Retry after 3 seconds
+    }, delay)
   }
 
   // Cleanup retry timeout
@@ -141,12 +187,12 @@ export function AudioPlayer() {
           <div className={cn("h-full bg-primary transition-all duration-300", isPlaying && !isLoading ? "w-full animate-pulse" : "w-0")} />
         </div>
 
-        <div className="container mx-auto px-4 py-3 md:py-4">
-          <div className="flex items-center justify-between gap-3 md:gap-6">
+        <div className="container mx-auto px-2 sm:px-4 py-2.5 sm:py-3 md:py-4">
+          <div className="flex items-center justify-between gap-2 sm:gap-3 md:gap-6">
 
             {/* Left: Station & Metadata Info */}
-            <div className="flex items-center gap-3 min-w-0 flex-1 md:flex-initial">
-              <div className="relative w-11 h-11 md:w-14 md:h-14 rounded-lg overflow-hidden border border-primary/10 flex-shrink-0 group bg-muted shadow-sm">
+            <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+              <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-lg overflow-hidden border border-primary/10 flex-shrink-0 group bg-muted shadow-sm">
                 <img
                   src={metadata.artwork}
                   alt="Now Playing"
@@ -156,7 +202,7 @@ export function AudioPlayer() {
                 {/* Loading / Playing Overlays */}
                 {isLoading && (
                   <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                    <Loader2 className="w-5 h-5 text-white animate-spin" />
+                    <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 text-white animate-spin" />
                   </div>
                 )}
 
@@ -172,20 +218,20 @@ export function AudioPlayer() {
               </div>
 
               <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-2 mb-0.5">
-                  <div className="flex items-center gap-1 md:gap-1.5 px-1.5 py-0.5 bg-red-500/10 text-red-500 rounded-full shrink-0">
+                <div className="flex items-center gap-1.5 mb-0.5">
+                  <div className="flex items-center gap-1 px-1.5 py-0.5 bg-red-500/10 text-red-500 rounded-full shrink-0">
                     <div className="w-1 h-1 bg-red-500 rounded-full animate-pulse" />
                     <span className="text-[7px] md:text-[9px] font-black uppercase tracking-widest">Live</span>
                   </div>
-                  <span className="text-[8px] md:text-[10px] font-bold text-primary uppercase tracking-[0.1em] md:tracking-[0.2em] truncate">{currentStation.name}</span>
+                  <span className="text-[8px] md:text-[10px] font-bold text-primary uppercase tracking-[0.1em] truncate">{currentStation.name}</span>
                 </div>
 
-                <h3 className="font-bold text-xs md:text-base uppercase tracking-tight truncate leading-tight">
+                <h3 className="font-bold text-[11px] sm:text-xs md:text-base uppercase tracking-tight truncate leading-tight">
                   {error ? <span className="text-red-500 flex items-center gap-1"><AlertCircle className="w-3 h-3" /> {error}</span> : metadata.title}
                 </h3>
 
                 {metadata.listeners > 0 && !error && (
-                  <p className="text-[8px] md:text-[10px] font-bold text-muted-foreground uppercase tracking-widest mt-0.5">
+                  <p className="text-[7px] sm:text-[8px] md:text-[10px] font-bold text-muted-foreground uppercase tracking-widest mt-0.5 hidden xs:block">
                     <Users className="w-3 h-3 inline mr-1" /> {metadata.listeners} Listening
                   </p>
                 )}
@@ -193,7 +239,7 @@ export function AudioPlayer() {
             </div>
 
             {/* Middle: Controls */}
-            <div className="flex items-center gap-2 md:gap-4">
+            <div className="flex items-center gap-1.5 sm:gap-2 md:gap-4 shrink-0">
               {/* Volume Controls (Desktop) */}
               <div className="flex items-center gap-1 md:gap-2 mr-1 md:mr-2">
                 <Button
@@ -201,22 +247,25 @@ export function AudioPlayer() {
                   size="icon"
                   className="h-8 w-8 md:h-10 md:w-10 rounded-full text-muted-foreground hover:text-primary hover:bg-primary/5 hidden sm:flex"
                   onClick={() => adjustVolume(-0.1)}
+                  aria-label="Decrease volume"
                 >
                   <Volume1 className="h-4 w-4 md:h-5 md:w-5" />
                 </Button>
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="h-10 w-10 md:h-11 md:w-11 rounded-full text-foreground hover:bg-muted"
+                  className="h-8 w-8 sm:h-10 sm:w-10 md:h-11 md:w-11 rounded-full text-foreground hover:bg-muted hidden sm:flex"
                   onClick={toggleMute}
+                  aria-label={isMuted || volume === 0 ? "Unmute audio" : "Mute audio"}
                 >
-                  {isMuted || volume === 0 ? <VolumeX className="h-6 w-6 text-red-500" /> : <Volume2 className="h-6 w-6" />}
+                  {isMuted || volume === 0 ? <VolumeX className="h-5 w-5 sm:h-6 sm:w-6 text-red-500" /> : <Volume2 className="h-5 w-5 sm:h-6 sm:w-6" />}
                 </Button>
                 <Button
                   variant="ghost"
                   size="icon"
                   className="h-8 w-8 md:h-10 md:w-10 rounded-full text-muted-foreground hover:text-primary hover:bg-primary/5 hidden sm:flex"
                   onClick={() => adjustVolume(0.1)}
+                  aria-label="Increase volume"
                 >
                   <Volume2 className="h-4 w-4 md:h-5 md:w-5" />
                 </Button>
@@ -225,27 +274,29 @@ export function AudioPlayer() {
               <Button
                 onClick={togglePlay}
                 size="icon"
-                className="h-14 w-14 md:h-16 md:w-16 rounded-full bg-primary text-white hover:bg-primary/90 shadow-lg hover:scale-105 active:scale-95 transition-all outline-none ring-primary/20 hover:ring-4 md:hover:ring-8 shrink-0"
+                className="h-11 w-11 sm:h-14 sm:w-14 md:h-16 md:w-16 rounded-full bg-primary text-white hover:bg-primary/90 shadow-lg hover:scale-105 active:scale-95 transition-all outline-none ring-primary/20 hover:ring-4 md:hover:ring-8 shrink-0 cursor-pointer"
+                aria-label={isPlaying ? "Pause Radio Nyra live stream" : "Play Radio Nyra live stream"}
               >
-                {isLoading ? <Loader2 className="h-7 w-7 md:h-8 md:w-8 animate-spin" /> : (isPlaying ? <Pause className="h-7 w-7 md:h-8 md:w-8 fill-current" /> : <Play className="h-7 w-7 md:h-8 md:w-8 fill-current ml-0.5 md:ml-1" />)}
+                {isLoading ? <Loader2 className="h-5 w-5 sm:h-7 sm:w-7 md:h-8 md:w-8 animate-spin" /> : (isPlaying ? <Pause className="h-5 w-5 sm:h-7 sm:w-7 md:h-8 md:w-8 fill-current" /> : <Play className="h-5 w-5 sm:h-7 sm:w-7 md:h-8 md:w-8 fill-current ml-0.5 md:ml-1" />)}
               </Button>
 
             </div>
 
             {/* Right: Language Dropdown (Menu Style) */}
-            <div className="flex items-center">
+            <div className="flex items-center shrink-0">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
                     variant="outline"
-                    className="h-10 px-4 md:px-6 rounded-full border-border/50 bg-background/50 hover:bg-primary hover:text-white transition-all duration-300 font-bold uppercase tracking-wider text-xs md:text-sm shadow-sm group"
+                    className="h-9 sm:h-10 px-2.5 sm:px-4 md:px-6 rounded-full border-border/50 bg-background/50 hover:bg-primary hover:text-white transition-all duration-300 font-bold uppercase tracking-wider text-[10px] sm:text-xs md:text-sm shadow-sm group"
+                    aria-label="Select Radio Nyra station"
                   >
                     <span className="mr-2 hidden md:inline opacity-70 group-hover:opacity-100">Language:</span>
-                    {currentStation.name}
-                    <ChevronUp className="ml-2 h-4 w-4 opacity-50 group-hover:opacity-100" />
+                    <span className="truncate max-w-[80px] sm:max-w-none">{currentStation.name}</span>
+                    <ChevronUp className="ml-1 sm:ml-2 h-3.5 w-3.5 sm:h-4 sm:w-4 opacity-50 group-hover:opacity-100 shrink-0" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-72 max-h-[70vh] overflow-y-auto custom-scrollbar bg-background/98 backdrop-blur-2xl border-primary/20 shadow-2xl p-3 rounded-2xl">
+                <DropdownMenuContent align="end" className="w-64 sm:w-72 max-w-[calc(100vw-2rem)] max-h-[70vh] overflow-y-auto custom-scrollbar bg-background/98 backdrop-blur-2xl border-primary/20 shadow-2xl p-3 rounded-2xl">
                   <div className="px-3 py-2 mb-2 border-b border-border/50">
                     <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/70">Select Radio Station</p>
                   </div>

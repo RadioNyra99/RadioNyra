@@ -79,7 +79,7 @@ export const PARTNERS: Partner[] = [
     { name: "HumSub", image: "/images/partners/hum-sub.jpg", link: "https://www.facebook.com/humsubinc/", category: 'Past and Current Partners' },
     { name: "Sankara Eye Foundation", image: "/images/partners/sankara-eye.jpg", link: "https://give.giftofvision.org/campaign/757230/donate?c_src=", category: 'Past and Current Partners' },
     { name: "Humera Jumani", image: "/images/partners/Humera Jumani.jpg", link: null, category: 'Past and Current Partners' },
-    { name: "Morrisville Mayor TJ Cawley", image: "/images/partners/tj-cawley.jpg", link: "https://mayortj.com/lander?oref=https%3A%2F%2Fnyraradio.com/", category: 'Past and Current Partners' },
+    { name: "Morrisville Mayor TJ Cawley", image: "/images/partners/tj-cawley.jpg", link: "https://mayortj.com/lander?oref=https%3A%2F%2Fwww.radionyra.com%2F", category: 'Past and Current Partners' },
     { name: "Rachabanda", image: "/images/partners/Rachabanda.jpeg", link: null, category: 'Past and Current Partners' }
 ];
 

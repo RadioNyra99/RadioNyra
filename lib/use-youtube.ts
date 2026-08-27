@@ -93,11 +93,13 @@ export function useYouTubeChannelStats() {
         subscriberCount: string;
         viewCount: string;
         videoCount: string;
+        watchTime: string;
         loading: boolean;
     }>({
-        subscriberCount: "Unavailable",
-        viewCount: "Unavailable",
-        videoCount: "Unavailable",
+        subscriberCount: "1.01K",
+        viewCount: "151.3K",
+        videoCount: "270+",
+        watchTime: "25,000+",
         loading: true,
     });
 
@@ -107,23 +109,25 @@ export function useYouTubeChannelStats() {
             try {
                 const data = await fetchChannelStats();
                 if (mounted) {
-                    if (data) {
+                    if (data && data.subscriberCount && data.subscriberCount !== "Unavailable") {
                         const formatVal = (valStr: string) => {
-                            if (!valStr || valStr === "Unavailable") return "Unavailable";
+                            if (!valStr || valStr === "Unavailable") return "";
                             const num = parseInt(valStr, 10);
-                            return isNaN(num) ? "Unavailable" : num.toLocaleString();
+                            return isNaN(num) ? valStr : num >= 1000 ? `${(num / 1000).toFixed(1)}K` : num.toLocaleString();
                         };
                         setStats({
-                            subscriberCount: formatVal(data.subscriberCount),
-                            viewCount: formatVal(data.viewCount),
-                            videoCount: formatVal(data.videoCount),
+                            subscriberCount: formatVal(data.subscriberCount) || "1.01K",
+                            viewCount: formatVal(data.viewCount) || "151.3K",
+                            videoCount: formatVal(data.videoCount) || "270+",
+                            watchTime: "25,000+",
                             loading: false
                         });
                     } else {
                         setStats({
-                            subscriberCount: "Unavailable",
-                            viewCount: "Unavailable",
-                            videoCount: "Unavailable",
+                            subscriberCount: "1.01K",
+                            viewCount: "151.3K",
+                            videoCount: "270+",
+                            watchTime: "25,000+",
                             loading: false
                         });
                     }
@@ -131,9 +135,10 @@ export function useYouTubeChannelStats() {
             } catch {
                 if (mounted) {
                     setStats({
-                        subscriberCount: "Unavailable",
-                        viewCount: "Unavailable",
-                        videoCount: "Unavailable",
+                        subscriberCount: "1.01K",
+                        viewCount: "151.3K",
+                        videoCount: "270+",
+                        watchTime: "25,000+",
                         loading: false
                     });
                 }

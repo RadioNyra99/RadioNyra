@@ -22,7 +22,7 @@ export function ShowsMarquee({ shows }: ShowsMarqueeProps) {
     const { playStation } = useAudio();
 
     const renderShow = (show: Show, index: number) => (
-        <div key={`show-${index}`} className="flex-shrink-0 w-72 mx-4 group snap-center">
+        <div key={`show-${index}`} className="flex-shrink-0 w-64 sm:w-72 mx-2 sm:mx-4 group snap-center">
             <Link
                 href="/schedule"
                 className="bg-card border border-border/50 hover:shadow-2xl transition-all duration-300 relative overflow-hidden block rounded-xl shadow-lg"

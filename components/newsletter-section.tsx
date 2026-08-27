@@ -26,33 +26,33 @@ export function NewsletterSection() {
     };
 
     return (
-        <section className="py-16 bg-gradient-to-br from-zinc-950 via-zinc-900 to-black text-white border-t border-zinc-800">
+        <section className="py-8 md:py-10 bg-gradient-to-br from-zinc-950 via-zinc-900 to-black text-white border-t border-zinc-800">
             <div className="container mx-auto px-4 max-w-4xl text-center">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-600/20 text-red-400 border border-red-500/30 text-xs font-black uppercase tracking-widest mb-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/20 text-red-400 border border-red-500/30 text-xs font-black uppercase tracking-widest mb-3">
                     <Mail className="w-4 h-4" />
                     Radio Nyra VIP Newsletter
                 </div>
 
-                <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight italic">
+                <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tight italic">
                     Stay Connected With Indian Subcontinent Media
                 </h2>
 
-                <p className="text-zinc-300 text-sm md:text-base font-medium mt-3 max-w-2xl mx-auto">
+                <p className="text-zinc-300 text-xs md:text-sm font-medium mt-2 max-w-2xl mx-auto">
                     Get weekly highlights of live radio shows, trending YouTube celeb interviews, and local Indian community events delivered to your inbox.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8 text-xs font-bold uppercase tracking-wider text-zinc-300">
-                    <div className="flex items-center justify-center gap-2 bg-white/5 p-3 rounded-2xl border border-white/10">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 my-5 text-xs font-bold uppercase tracking-wider text-zinc-300">
+                    <div className="flex items-center justify-center gap-2 bg-white/5 p-2.5 rounded-xl border border-white/10">
                         <Radio className="w-4 h-4 text-red-500" />
                         <span>Weekly Live Show Schedules</span>
                     </div>
 
-                    <div className="flex items-center justify-center gap-2 bg-white/5 p-3 rounded-2xl border border-white/10">
+                    <div className="flex items-center justify-center gap-2 bg-white/5 p-2.5 rounded-xl border border-white/10">
                         <Youtube className="w-4 h-4 text-red-500" />
                         <span>Top 10 Video Countdown</span>
                     </div>
 
-                    <div className="flex items-center justify-center gap-2 bg-white/5 p-3 rounded-2xl border border-white/10">
+                    <div className="flex items-center justify-center gap-2 bg-white/5 p-2.5 rounded-xl border border-white/10">
                         <Calendar className="w-4 h-4 text-red-500" />
                         <span>Local Festival Guides</span>
                     </div>

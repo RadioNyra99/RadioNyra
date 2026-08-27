@@ -9,19 +9,15 @@ export function AdvertisePopup() {
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
-    // Show popup once per session after 2.5 seconds
-    const hasSeenPopup = sessionStorage.getItem("hasSeenAdvertisePopup")
-    if (!hasSeenPopup) {
-      const timer = setTimeout(() => {
-        setIsOpen(true)
-      }, 2500)
-      return () => clearTimeout(timer)
-    }
+    // Show advertising popup shortly after opening the website
+    const timer = setTimeout(() => {
+      setIsOpen(true)
+    }, 1200)
+    return () => clearTimeout(timer)
   }, [])
 
   const handleClose = () => {
     setIsOpen(false)
-    sessionStorage.setItem("hasSeenAdvertisePopup", "true")
   }
 
   if (!isOpen) return null
@@ -54,18 +50,14 @@ export function AdvertisePopup() {
         {/* Content Body */}
         <div className="p-6 sm:p-8 text-center">
           <p className="text-zinc-300 text-sm sm:text-base font-medium mb-6 leading-relaxed">
-            Promote your brand to over <strong className="text-white font-bold">250,000+ affluent Indian Subcontinent listeners</strong> across 8 US FM stations, digital radio, YouTube, and live community events.
+            Promote your brand to over <strong className="text-white font-bold">100K+ weekly Indian Subcontinent listeners</strong> across digital radio, YouTube, and live community events.
           </p>
 
           {/* Quick Metrics Badge Row */}
-          <div className="grid grid-cols-3 gap-3 mb-8 bg-zinc-900/80 p-4 rounded-2xl border border-zinc-800">
-            <div className="text-center">
-              <span className="text-lg font-black text-red-500 block">250K+</span>
+          <div className="grid grid-cols-2 gap-3 mb-8 bg-zinc-900/80 p-4 rounded-2xl border border-zinc-800">
+            <div className="text-center border-r border-zinc-800">
+              <span className="text-lg font-black text-red-500 block">100K+</span>
               <span className="text-[9px] text-zinc-400 font-extrabold uppercase tracking-wider block">Weekly Reach</span>
-            </div>
-            <div className="text-center border-x border-zinc-800">
-              <span className="text-lg font-black text-white block">8</span>
-              <span className="text-[9px] text-zinc-400 font-extrabold uppercase tracking-wider block">US FM Stations</span>
             </div>
             <div className="text-center">
               <span className="text-lg font-black text-cyan-400 block">1.01K</span>

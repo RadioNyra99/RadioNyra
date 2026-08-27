@@ -24,6 +24,14 @@ export const CONTACT_INFO = {
   website: "https://www.radionyra.com",
   businessInquiryHref: "/advertise#inquiry",
   whatsappHref: "https://wa.me/19192944800",
+  address: {
+    street: "4819 Emperor Blvd Suite 400",
+    city: "Durham",
+    state: "NC",
+    zip: "27703",
+    full: "4819 Emperor Blvd Suite 400, Durham, NC 27703",
+  },
+  mapEmbedUrl: "https://www.google.com/maps?q=4819+Emperor+Blvd+Suite+400%2C+Durham%2C+NC+27703&output=embed",
 }
 
 export const SOCIAL_LINKS = [

@@ -41,9 +41,16 @@ export function generateRadioStationSchema() {
         "telephone": "+1-919-294-4800",
         "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Durham",
+            "streetAddress": "10966 Chapel Hill Rd #144",
+            "addressLocality": "Morrisville",
             "addressRegion": "NC",
+            "postalCode": "27560",
             "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "35.8398",
+            "longitude": "-78.8252"
         },
         "broadcastFrequency": [
             {
@@ -141,11 +148,16 @@ export function generateLocalBusinessSchema() {
         "email": "info@radionyra.com",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Raleigh-Durham Metro",
-            "addressLocality": "Durham",
+            "streetAddress": "10966 Chapel Hill Rd #144",
+            "addressLocality": "Morrisville",
             "addressRegion": "NC",
-            "postalCode": "27701",
+            "postalCode": "27560",
             "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "35.8398",
+            "longitude": "-78.8252"
         },
         "priceRange": "$$",
         "openingHours": "Mo-Fr 09:00-18:00"

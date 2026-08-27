@@ -6,23 +6,24 @@ import { Footer } from "@/components/footer"
 import { Lightbox } from "@/components/lightbox"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Briefcase, Calendar, Handshake, MapPin, Sparkles, Users } from "lucide-react"
-
-const eventTypes = [
-    { title: "Corporate Events", icon: Briefcase, copy: "Brand launches, employee celebrations, and sponsored experiences." },
-    { title: "Community Events", icon: Users, copy: "Programs that connect families, creators, nonprofits, and local leaders." },
-    { title: "Festival Celebrations", icon: Sparkles, copy: "Diwali, Holi, New Year, concerts, and cultural showcases." },
-    { title: "Business Networking", icon: Handshake, copy: "High-trust rooms for entrepreneurs and multicultural brands." },
-]
+import { Calendar, MapPin } from "lucide-react"
 
 export default function EventsPage() {
     const [lightbox, setLightbox] = useState({ isOpen: false, index: 0 })
 
     // Data moved from Home Page
-    const upcomingEvents: any[] = [
-        { title: "Community Partner Showcase", date: "Coming Soon", location: "Raleigh-Durham, NC", type: "Community Event" },
-        { title: "Festival Broadcast Series", date: "Coming Soon", location: "Across Radio Nyra Markets", type: "Festival Celebration" },
-        { title: "Business Networking Mixer", date: "Coming Soon", location: "Triangle Area", type: "Business Networking" },
+    const upcomingEvents = [
+        {
+            title: "Bhajan Clubbing",
+            date: "September 5, 2026",
+            location: "Hooky Entertainment, Cary, NC",
+            type: "Krishna Janmashtami Special",
+            image: "/bhajan-clubbing-janmashtami.webp",
+            link: "https://www.eventbrite.com/e/bhajan-clubbing-krishna-janmashtami-special-ft-aj-the-dj-cary-nc-tickets-1998490272202",
+            startDate: "2026-09-05",
+        },
+        { title: "Diwali Mela", date: "Coming Soon", location: "Raleigh-Durham, NC", type: "Festival Celebration", startDate: "2026" },
+        { title: "New Year Event", date: "Coming Soon", location: "Raleigh-Durham, NC", type: "Festival Celebration", startDate: "2026" },
     ];
 
     const pastEvents = [
@@ -45,8 +46,52 @@ export default function EventsPage() {
 
     const images = pastEvents.map(e => e.image)
 
+    const eventSchema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            ...upcomingEvents.map((event) => ({
+                "@type": "Event",
+                name: event.title,
+                eventStatus: "https://schema.org/EventScheduled",
+                eventAttendanceMode: "https://schema.org/MixedEventAttendanceMode",
+                startDate: event.startDate,
+                location: {
+                    "@type": "Place",
+                    name: event.location,
+                    address: event.location,
+                },
+                organizer: {
+                    "@type": "Organization",
+                    name: "Radio Nyra",
+                    url: "https://www.radionyra.com/",
+                },
+                description: `${event.title} is a ${event.type} promoted by Radio Nyra for Indian and South Asian communities.`,
+                image: event.image ? `https://www.radionyra.com${event.image}` : undefined,
+                url: event.link || "https://www.radionyra.com/events",
+            })),
+            ...pastEvents.map((event) => ({
+                "@type": "Event",
+                name: event.title,
+                eventStatus: "https://schema.org/EventCompleted",
+                eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+                startDate: event.date,
+                image: `https://www.radionyra.com${event.image}`,
+                organizer: {
+                    "@type": "Organization",
+                    name: "Radio Nyra",
+                    url: "https://www.radionyra.com/",
+                },
+                url: "https://www.radionyra.com/events",
+            })),
+        ],
+    }
+
     return (
         <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-white">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
+            />
             <Navigation />
 
             <main className="pb-20">
@@ -62,19 +107,7 @@ export default function EventsPage() {
                     </div>
                 </section>
 
-                <div className="container mx-auto px-4 mt-12">
-                    <section className="mb-16">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                            {eventTypes.map((item) => (
-                                <div key={item.title} className="bg-card border border-border p-6 hover:border-primary transition-colors">
-                                    <item.icon className="w-8 h-8 text-primary mb-5" />
-                                    <h2 className="text-xl font-black uppercase tracking-tight italic mb-3">{item.title}</h2>
-                                    <p className="text-sm text-muted-foreground leading-relaxed font-medium">{item.copy}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </section>
-
+                <div className="container mx-auto px-4 mt-10">
                     {/* UPCOMING EVENTS */}
                     <section className="mb-16">
                         <h2 className="text-2xl font-bold uppercase tracking-tighter mb-8 border-l-4 border-primary pl-4">Upcoming Events</h2>

@@ -1,7 +1,8 @@
 "use client"
 
-import React, { createContext, useContext, useState, useRef, useEffect, ReactNode, useCallback } from "react"
+import React, { createContext, useContext, useState, useEffect, ReactNode, useCallback } from "react"
 import { STATIONS, Station } from "@/lib/stations"
+import { trackAudioPause, trackAudioPlay, trackListenLive } from "@/lib/analytics"
 
 interface AudioContextType {
     isPlaying: boolean
@@ -39,6 +40,8 @@ export function AudioProvider({ children }: { children: ReactNode }) {
         const station = Object.values(STATIONS).find(s => s.id === stationId)
         if (station) {
             setError(null)
+            trackListenLive(station.name, station.language ?? "Unknown")
+            trackAudioPlay(station.name)
             if (currentStation.id !== station.id) {
                 setIsPlaying(false)
                 setIsLoading(true)
@@ -51,7 +54,17 @@ export function AudioProvider({ children }: { children: ReactNode }) {
         }
     }, [currentStation, isPlaying])
 
-    const togglePlay = useCallback(() => setIsPlaying(prev => !prev), [])
+    const togglePlay = useCallback(() => {
+        setIsPlaying(prev => {
+            const next = !prev
+            if (next) {
+                trackAudioPlay(currentStation.name)
+            } else {
+                trackAudioPause(currentStation.name)
+            }
+            return next
+        })
+    }, [currentStation.name])
 
     const toggleMute = useCallback(() => setIsMuted(prev => !prev), [])
 

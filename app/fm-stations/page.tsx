@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useAudio } from "@/components/audio-context"
 import { getStationsList, NETWORK_STATS } from "@/lib/stations"
+import { CITY_RADIO_MARKETS } from "@/lib/market-radio-data"
 import { Radio, Headphones, Volume2, Globe, MapPin, Search } from "lucide-react"
 
 const alphabet = ["All", ..."ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")]
@@ -145,6 +146,28 @@ export default function FMStationsPage() {
           </div>
 
           {/* Interactive coverage information */}
+          <section className="mt-16 bg-muted/20 border border-border p-8 md:p-12 max-w-4xl mx-auto">
+            <div className="text-center">
+              <MapPin className="w-10 h-10 text-primary mx-auto mb-4" />
+              <h2 className="text-2xl font-black uppercase tracking-tight italic mb-2">Local Market Landing Pages</h2>
+              <p className="text-xs text-muted-foreground max-w-2xl leading-relaxed mb-6 font-medium mx-auto">
+                Explore dedicated Radio Nyra market pages for local frequency information, host programming notes, and advertiser opportunities.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {CITY_RADIO_MARKETS.map((market) => (
+                <a
+                  key={market.path}
+                  href={market.path}
+                  className="border border-border bg-background p-4 hover:border-primary transition-colors"
+                >
+                  <span className="block text-[10px] font-black uppercase tracking-widest text-primary">{market.frequency}</span>
+                  <span className="mt-2 block text-sm font-black uppercase tracking-tight text-foreground">{market.city} Radio</span>
+                </a>
+              ))}
+            </div>
+          </section>
+
           <div className="mt-16 bg-muted/20 border border-border p-8 md:p-12 text-center max-w-4xl mx-auto">
             <Globe className="w-10 h-10 text-primary mx-auto mb-4" />
             <h3 className="text-2xl font-black uppercase tracking-tight italic mb-2">Can't receive the FM signal?</h3>

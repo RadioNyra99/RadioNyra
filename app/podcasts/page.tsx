@@ -5,13 +5,12 @@ import { useState } from "react"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Play, Mic2, Calendar, CheckCircle2 } from "lucide-react"
+import { Play, Mic2, CheckCircle2 } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import Script from "next/script"
 
 export default function PodcastsPage() {
     const podcasts = [
@@ -443,66 +442,6 @@ export default function PodcastsPage() {
                         )}
                     </div>
                 </section>
-
-                {/* Geet Bazaar Section */}
-                <section className="py-20 bg-muted/30">
-                    <div className="container mx-auto px-4 max-w-6xl">
-                        <div className="mb-16">
-                            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4 text-primary italic border-l-8 border-primary pl-6">
-                                Geet Bazaar
-                            </h2>
-                            <p className="text-lg md:text-xl text-muted-foreground uppercase tracking-widest font-bold opacity-80 decoration-primary decoration-4 underline-offset-8 underline mb-8">
-                                Monthly Retro Classics & Stories
-                            </p>
-                        </div>
-
-                        <Link href="https://pod.co/geet-bazaar" target="_blank" rel="noopener noreferrer" className="group block w-full bg-card rounded-2xl shadow-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-500 hover:shadow-2xl relative">
-                            <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                            
-                            <div className="flex flex-col md:flex-row items-center p-8 md:p-16 gap-8 relative z-10 w-full">
-                                {/* Large faux cover art */}
-                                <div className="w-64 h-64 md:w-80 md:h-80 flex-shrink-0 rounded-xl overflow-hidden relative shadow-2xl group-hover:scale-[1.02] transition-transform duration-500">
-                                    <img 
-                                        src="/geet-bazaar.jpg" 
-                                        alt="Geet Bazaar Podcast Poster"
-                                        className="w-full h-full object-cover"
-                                        onError={(e) => {
-                                            // Fallback to logo if needed
-                                            e.currentTarget.src = "/nyra-logo.png"
-                                        }}
-                                    />
-                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
-                                    <div className="absolute inset-0 flex items-center justify-center z-20">
-                                        <div className="w-24 h-24 bg-primary/90 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(var(--primary),0.3)] group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                                            <Play className="w-12 h-12 text-white fill-white ml-2" />
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div className="flex flex-col items-center md:items-start text-center md:text-left flex-grow">
-                                    <span className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-6 bg-primary/10 px-4 py-2 rounded-full inline-block">
-                                        Podcast Channel
-                                    </span>
-                                    <h3 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6 italic text-foreground group-hover:text-primary transition-colors">
-                                        Geet Bazaar
-                                    </h3>
-                                    <p className="text-xl md:text-2xl text-muted-foreground font-bold mb-10 max-w-2xl leading-relaxed">
-                                        Immerse yourself in our monthly retro classics and stories. Click here to listen to the full catalog of episodes directly on Pod.co!
-                                    </p>
-                                    
-                                    <div className="flex items-center gap-4 text-sm md:text-base font-black uppercase tracking-widest text-foreground group-hover:text-primary transition-colors">
-                                        <span>Play on Pod.co</span>
-                                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
-                                            <Play className="w-5 h-5 ml-1" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </div>
-                </section>
-
-                <Script src="https://play.pod.co/embed/frame-v1.js" strategy="lazyOnload" />
 
                 {/* Episodes Section - MOVED TO BOTTOM */}
                 <section className="py-16 bg-background">

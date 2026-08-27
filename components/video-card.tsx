@@ -69,14 +69,6 @@ export function VideoCard({ video }: VideoCardProps) {
                         </div>
                     )}
 
-                    {/* Duration Badge */}
-                    {video.duration && (
-                        <div className="absolute bottom-3 right-3 z-10 flex items-center gap-1 px-2 py-0.5 rounded bg-black/80 text-white text-[11px] font-bold backdrop-blur">
-                            <Clock className="w-3 h-3 text-white/80" />
-                            <span>{video.duration}</span>
-                        </div>
-                    )}
-
                     {/* Play Hover Overlay Button */}
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 backdrop-blur-xs">
                         <div className="w-14 h-14 rounded-full bg-red-600 text-white flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform">
@@ -88,21 +80,6 @@ export function VideoCard({ video }: VideoCardProps) {
                 {/* Content Details */}
                 <div className="p-5 flex flex-col flex-1 justify-between gap-4">
                     <div>
-                        <div className="flex items-center gap-3 text-muted-foreground text-xs font-semibold mb-2">
-                            {video.viewCount && (
-                                <span className="flex items-center gap-1">
-                                    <Eye className="w-3.5 h-3.5 text-primary" />
-                                    {video.viewCount}
-                                </span>
-                            )}
-                            {displayDate && (
-                                <>
-                                    <span>•</span>
-                                    <span>{displayDate}</span>
-                                </>
-                            )}
-                        </div>
-
                         <h3 className="font-extrabold text-foreground text-base sm:text-lg leading-snug line-clamp-2 group-hover:text-primary transition-colors cursor-pointer" onClick={handleWatch}>
                             {video.title}
                         </h3>
@@ -144,24 +121,24 @@ export function VideoCard({ video }: VideoCardProps) {
                             {video.title}
                         </DialogTitle>
                     </DialogHeader>
-                    <div className="relative aspect-video w-full">
+                    <div className="relative aspect-video w-full bg-black">
                         <iframe
-                            src={`${video.embedUrl}?autoplay=1`}
+                            src={`${video.embedUrl}?autoplay=1&rel=0`}
                             title={video.title}
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen
                             className="w-full h-full border-0"
                         />
                     </div>
                     <div className="p-4 bg-zinc-950 flex justify-between items-center text-xs text-zinc-400">
-                        <span>{video.viewCount}{displayDate ? ` • ${displayDate}` : ""}</span>
+                        <span className="text-zinc-500 font-semibold">{video.viewCount} • {video.duration}</span>
                         <a
                             href={video.youtubeUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-red-400 hover:underline font-bold"
+                            className="text-red-400 hover:text-red-300 hover:underline font-bold flex items-center gap-1.5"
                         >
-                            Open on YouTube &rarr;
+                            <Youtube className="w-4 h-4 text-red-500" /> Watch on YouTube &rarr;
                         </a>
                     </div>
                 </DialogContent>

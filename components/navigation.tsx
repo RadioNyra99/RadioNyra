@@ -24,14 +24,13 @@ export function Navigation() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/fm-stations", label: "Stations" },
     {
       href: "/how-to-tune",
       label: "Listen",
       subLinks: [
         { href: "/schedule", label: "Schedule" },
         { href: "/how-to-tune", label: "How to Tune In" },
-        { href: "/fm-stations", label: "FM Stations" },
+        { href: "/markets", label: "Markets & Coverage" },
       ]
     },
     {

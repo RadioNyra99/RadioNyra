@@ -152,9 +152,6 @@ export default async function CityRadioPage({ params }: { params: Params }) {
                 ))}
               </div>
               <div className="mt-10 flex flex-wrap gap-3">
-                <Link className="text-sm font-black uppercase tracking-widest text-primary hover:underline" href="/fm-stations">
-                  View all FM stations
-                </Link>
                 <Link className="text-sm font-black uppercase tracking-widest text-primary hover:underline" href="/markets">
                   Explore market coverage
                 </Link>

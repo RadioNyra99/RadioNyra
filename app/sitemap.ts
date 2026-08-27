@@ -36,7 +36,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/press',
         '/privacy-policy',
         '/terms-services',
-        '/fm-stations',
         '/hosts',
         '/news',
         '/write-for-us',

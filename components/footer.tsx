@@ -26,7 +26,6 @@ export function Footer() {
             <div className="flex flex-col gap-3">
               <span className="text-xs font-black uppercase tracking-widest text-white mb-1">Listen</span>
               <Link href="/markets" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Markets & Coverage</Link>
-              <Link href="/fm-stations" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">FM Stations</Link>
               <Link href="/hosts" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Meet the Hosts</Link>
               <Link href="/schedule" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Schedule</Link>
               <Link href="/podcasts" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Podcasts</Link>

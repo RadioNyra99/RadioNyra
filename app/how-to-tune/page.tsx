@@ -2,7 +2,7 @@
 
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { Play, Car, Info, ChevronRight, Radio, Globe, Smartphone, Volume2, ExternalLink, Sparkles, CheckCircle2 } from "lucide-react"
+import { Play, Car, Info, ChevronRight, Radio, Globe, Smartphone, Volume2, ExternalLink, Sparkles, CheckCircle2, ArrowLeft } from "lucide-react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 
@@ -230,6 +230,14 @@ export default function HowToTunePage() {
     return (
         <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-white pb-20">
             <Navigation />
+
+            <div className="bg-background border-b border-border/50">
+                <div className="container mx-auto px-4 py-3">
+                    <a href="/" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors">
+                        <ArrowLeft className="h-4 w-4" /> Back to Home
+                    </a>
+                </div>
+            </div>
 
             <main>
                 {/* Hero section */}

@@ -6,7 +6,7 @@ import { Navigation } from "@/components/navigation"
 import { FrequencyBar } from "@/components/frequency-bar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Users, Smartphone, Play, Megaphone, Star, Radio, PlayCircle, Headphones, Music2, Youtube, ChevronDown } from "lucide-react"
+import { Users, Smartphone, Play, Megaphone, Star, Radio, PlayCircle, Headphones, Music2, Youtube, ChevronDown, Calendar, MapPin, ExternalLink } from "lucide-react"
 import { CountUp } from "@/components/ui/count-up"
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu"
 import { useAudio } from "@/components/audio-context"
@@ -50,6 +50,14 @@ export function HomeView() {
         { name: "Mana Muchatlu", host: "Kanthi", image: "/images/hosts/mana-muchatlu.webp", stationId: STATIONS.Telugu.id, language: "telugu" },
     ];
     const { playStation, currentStation } = useAudio();
+    const featuredEvent = {
+        title: "Bhajan Clubbing",
+        date: "September 5, 2026",
+        location: "Hooky Entertainment, Cary, NC",
+        type: "Krishna Janmashtami Special",
+        image: "/bhajan-clubbing-janmashtami.webp",
+        link: "https://www.eventbrite.com/e/bhajan-clubbing-krishna-janmashtami-special-ft-aj-the-dj-cary-nc-tickets-1998490272202",
+    };
 
     // Determine selected language from audio player
     const selectedLanguage = currentStation.id === STATIONS.Telugu.id ? "telugu" : "hindi";
@@ -198,6 +206,67 @@ export function HomeView() {
                                 </div>
                             ))}
                         </div>
+                    </div>
+                </section>
+                {/* UPCOMING EVENT */}
+                <section className="py-10 bg-background border-b border-border/50">
+                    <div className="container mx-auto px-4">
+                        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+                            <div>
+                                <p className="text-[10px] font-black uppercase tracking-[0.35em] text-primary mb-2">Upcoming Event</p>
+                                <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter italic leading-none">
+                                    {featuredEvent.title}
+                                </h2>
+                            </div>
+                            <Button
+                                variant="outline"
+                                className="text-foreground hover:bg-primary hover:text-white font-bold uppercase tracking-widest rounded-none border-2 border-foreground hover:border-primary transition-all h-10 px-6 text-xs"
+                                asChild
+                            >
+                                <Link href="/events">View All Events</Link>
+                            </Button>
+                        </div>
+
+                        <Link
+                            href={featuredEvent.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group grid grid-cols-1 lg:grid-cols-[minmax(0,0.95fr)_minmax(280px,0.55fr)] border border-border bg-card hover:border-primary transition-colors overflow-hidden"
+                        >
+                            <div className="relative bg-muted aspect-[4/5] sm:aspect-[16/9] lg:aspect-auto lg:min-h-[420px] overflow-hidden">
+                                <img
+                                    src={featuredEvent.image}
+                                    alt={`${featuredEvent.title} flyer`}
+                                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                />
+                                <div className="absolute top-4 left-4 bg-primary text-white px-2 py-1 text-[9px] font-black uppercase tracking-widest">
+                                    Upcoming
+                                </div>
+                            </div>
+
+                            <div className="p-6 md:p-8 flex flex-col justify-center">
+                                <div className="flex flex-wrap gap-3 mb-5">
+                                    <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-primary">
+                                        <Calendar className="h-4 w-4" /> {featuredEvent.date}
+                                    </span>
+                                    <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-muted-foreground">
+                                        <MapPin className="h-4 w-4" /> {featuredEvent.location}
+                                    </span>
+                                </div>
+                                <p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary mb-3">
+                                    {featuredEvent.type}
+                                </p>
+                                <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tighter italic leading-none mb-4 group-hover:text-primary transition-colors">
+                                    Krishna Janmashtami Special
+                                </h3>
+                                <p className="text-sm md:text-base text-muted-foreground font-medium leading-relaxed mb-6">
+                                    An evening of divine beats featuring AJ The DJ, presented for the Radio Nyra community in Cary.
+                                </p>
+                                <span className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-widest text-foreground group-hover:text-primary transition-colors">
+                                    Get Tickets <ExternalLink className="h-4 w-4" />
+                                </span>
+                            </div>
+                        </Link>
                     </div>
                 </section>
 

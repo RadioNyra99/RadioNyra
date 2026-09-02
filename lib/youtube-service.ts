@@ -281,7 +281,6 @@ async function fetchFromApi(
         if (!detailsRes.ok) return [];
         const detailsData = await detailsRes.json();
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const videos: YouTubeVideoItem[] = (detailsData.items || []).map((item: any) => mapApiVideo(item));
 
         setCache(cacheKey, videos, 10 * 60 * 1000);
@@ -291,7 +290,6 @@ async function fetchFromApi(
     }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function mapApiVideo(item: any): YouTubeVideoItem {
     const snippet = item.snippet || {};
     const stats = item.statistics || {};
@@ -327,12 +325,20 @@ async function fetchFromRSS(maxResults: number = 16, query?: string): Promise<Yo
     const cached = getFromCache<YouTubeVideoItem[]>(cacheKey);
     if (cached) return cached;
 
-    // Direct external RSS feed with multiple redundant proxies
     const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
+    const rssUrlWithCacheBust = `${rssUrl}&_=${Date.now()}`;
+
+    const rssJsonVideos = await fetchFromRSSJson(rssUrl, maxResults);
+    if (rssJsonVideos.length > 0) {
+        setCache(cacheKey, rssJsonVideos, 5 * 60 * 1000);
+        return rssJsonVideos;
+    }
+
+    // Direct external RSS feed with multiple redundant proxies
     const proxyUrls = [
-        `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`,
-        `https://corsproxy.io/?${encodeURIComponent(rssUrl)}`,
-        `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(rssUrl)}`
+        `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrlWithCacheBust)}`,
+        `https://corsproxy.io/?url=${encodeURIComponent(rssUrlWithCacheBust)}`,
+        `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(rssUrlWithCacheBust)}`
     ];
 
     for (const proxyUrl of proxyUrls) {
@@ -342,7 +348,7 @@ async function fetchFromRSS(maxResults: number = 16, query?: string): Promise<Yo
                 const xmlText = await res.text();
                 const videos = parseRSSFeed(xmlText);
                 if (videos.length > 0) {
-                    setCache(cacheKey, videos, 10 * 60 * 1000);
+                    setCache(cacheKey, videos, 5 * 60 * 1000);
                     return videos;
                 }
             }
@@ -352,6 +358,51 @@ async function fetchFromRSS(maxResults: number = 16, query?: string): Promise<Yo
     }
 
     return REAL_RADIO_NYRA_VIDEOS;
+}
+
+async function fetchFromRSSJson(rssUrl: string, maxResults: number): Promise<YouTubeVideoItem[]> {
+    try {
+        const res = await fetch(
+            `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`,
+            { cache: "no-store", signal: AbortSignal.timeout(6000) }
+        );
+        if (!res.ok) return [];
+
+        const data = await res.json();
+        if (data.status !== "ok" || !Array.isArray(data.items)) return [];
+
+        return data.items
+            .slice(0, maxResults)
+            .map((item: any) => {
+                const id = extractVideoId(item.guid || item.link || "");
+                if (!id) return null;
+
+                const title = decodeHtmlEntities(item.title || "");
+                const description = stripHtml(decodeHtmlEntities(item.description || item.content || ""));
+
+                return {
+                    id,
+                    title,
+                    description: description.substring(0, 200),
+                    thumbnail: item.thumbnail || `https://i.ytimg.com/vi/${id}/mqdefault.jpg`,
+                    thumbnailHigh: `https://i.ytimg.com/vi/${id}/hqdefault.jpg`,
+                    publishedAt: item.pubDate ? new Date(item.pubDate).toISOString() : "",
+                    channelTitle: "Radio Nyra USA",
+                    duration: "",
+                    viewCount: "0 views",
+                    viewCountNum: 0,
+                    likeCount: "0",
+                    isShort: title.toLowerCase().includes("#short") || title.toLowerCase().includes("shorts"),
+                    isLive: false,
+                    youtubeUrl: `https://www.youtube.com/watch?v=${id}`,
+                    embedUrl: `https://www.youtube.com/embed/${id}`,
+                    tags: Array.isArray(item.categories) ? item.categories : [],
+                } satisfies YouTubeVideoItem;
+            })
+            .filter((video: YouTubeVideoItem | null): video is YouTubeVideoItem => video !== null);
+    } catch {
+        return [];
+    }
 }
 
 function parseRSSFeed(xml: string): YouTubeVideoItem[] {
@@ -398,6 +449,38 @@ function parseRSSFeed(xml: string): YouTubeVideoItem[] {
     }
 }
 
+function extractVideoId(value: string): string {
+    const guidMatch = value.match(/yt:video:([a-zA-Z0-9_-]+)/);
+    if (guidMatch) return guidMatch[1];
+
+    try {
+        const url = new URL(value);
+        return url.searchParams.get("v") || "";
+    } catch {
+        return "";
+    }
+}
+
+function stripHtml(value: string): string {
+    return value.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function decodeHtmlEntities(value: string): string {
+    if (!value) return "";
+    if (typeof document !== "undefined") {
+        const textarea = document.createElement("textarea");
+        textarea.innerHTML = value;
+        return textarea.value;
+    }
+
+    return value
+        .replace(/&amp;/g, "&")
+        .replace(/&quot;/g, "\"")
+        .replace(/&#39;/g, "'")
+        .replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">");
+}
+
 // ─── Public API Methods ─────────────────────────────────────────────
 
 export async function fetchLatestVideos(maxResults: number = 12): Promise<YouTubeVideoItem[]> {
@@ -441,7 +524,6 @@ export async function fetchPlaylists(): Promise<{ id: string; title: string; thu
         if (!res.ok) return [];
         const data = await res.json();
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         return (data.items || []).map((item: any) => ({
             id: item.id,
             title: item.snippet?.title || "",

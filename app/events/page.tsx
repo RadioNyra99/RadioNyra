@@ -7,7 +7,7 @@ import { Lightbox } from "@/components/lightbox"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Calendar, Clock, ExternalLink, MapPin, Ticket } from "lucide-react"
-import { upcomingEvents } from "@/lib/event-data"
+import { getEventTimingLabel, upcomingEvents } from "@/lib/event-data"
 
 export default function EventsPage() {
     const [lightbox, setLightbox] = useState({ isOpen: false, index: 0 })
@@ -114,7 +114,7 @@ export default function EventsPage() {
                                                     }}
                                                 />
                                                 <div className="absolute top-3 left-3">
-                                                    <Badge className="uppercase tracking-widest text-[8px] bg-primary text-white border-none rounded-none px-1.5 py-0">Upcoming</Badge>
+                                                    <Badge className="uppercase tracking-widest text-[8px] bg-primary text-white border-none rounded-none px-1.5 py-0">{getEventTimingLabel(ev.startDate)}</Badge>
                                                 </div>
                                             </div>
                                         )}

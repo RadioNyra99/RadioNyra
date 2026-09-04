@@ -24,7 +24,7 @@ import { NewsletterSection } from "@/components/newsletter-section"
 import { YouTubeWatchSection } from "@/components/youtube-watch-section"
 import { CONTACT_INFO, LISTENING_PLATFORMS, SOCIAL_LINKS } from "@/lib/site-data"
 import { OFFICIAL_YOUTUBE_CHANNEL } from "@/lib/youtube-data"
-import { upcomingEvents } from "@/lib/event-data"
+import { getEventTimingLabel, upcomingEvents } from "@/lib/event-data"
 
 export function HomeView() {
     const [loadVideo, setLoadVideo] = useState(false);
@@ -237,7 +237,7 @@ export function HomeView() {
                                             className="h-full w-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
                                         />
                                         <div className="absolute top-4 left-4 bg-primary text-white px-2 py-1 text-[9px] font-black uppercase tracking-widest">
-                                            Upcoming
+                                            {getEventTimingLabel(event.startDate)}
                                         </div>
                                     </div>
 

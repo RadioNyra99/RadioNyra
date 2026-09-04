@@ -6,25 +6,11 @@ import { Footer } from "@/components/footer"
 import { Lightbox } from "@/components/lightbox"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Calendar, MapPin } from "lucide-react"
+import { Calendar, Clock, ExternalLink, MapPin, Ticket } from "lucide-react"
+import { upcomingEvents } from "@/lib/event-data"
 
 export default function EventsPage() {
     const [lightbox, setLightbox] = useState({ isOpen: false, index: 0 })
-
-    // Data moved from Home Page
-    const upcomingEvents = [
-        {
-            title: "Bhajan Clubbing",
-            date: "September 5, 2026",
-            location: "Hooky Entertainment, Cary, NC",
-            type: "Krishna Janmashtami Special",
-            image: "/bhajan-clubbing-janmashtami.webp",
-            link: "https://www.eventbrite.com/e/bhajan-clubbing-krishna-janmashtami-special-ft-aj-the-dj-cary-nc-tickets-1998490272202",
-            startDate: "2026-09-05",
-        },
-        { title: "Diwali Mela", date: "Coming Soon", location: "Raleigh-Durham, NC", type: "Festival Celebration", startDate: "2026" },
-        { title: "New Year Event", date: "Coming Soon", location: "Raleigh-Durham, NC", type: "Festival Celebration", startDate: "2026" },
-    ];
 
     const pastEvents = [
         { id: 1, title: "Zain Zohaib Qawwali Show", image: "/zain-zohaib-qawwali-show.webp", date: "2025" },
@@ -58,16 +44,16 @@ export default function EventsPage() {
                 location: {
                     "@type": "Place",
                     name: event.location,
-                    address: event.location,
+                    address: event.venue,
                 },
                 organizer: {
                     "@type": "Organization",
                     name: "Radio Nyra",
                     url: "https://www.radionyra.com/",
                 },
-                description: `${event.title} is a ${event.type} promoted by Radio Nyra for Indian and South Asian communities.`,
+                description: event.description,
                 image: event.image ? `https://www.radionyra.com${event.image}` : undefined,
-                url: event.link || "https://www.radionyra.com/events",
+                url: event.link,
             })),
             ...pastEvents.map((event) => ({
                 "@type": "Event",
@@ -111,21 +97,20 @@ export default function EventsPage() {
                     {/* UPCOMING EVENTS */}
                     <section className="mb-16">
                         <h2 className="text-2xl font-bold uppercase tracking-tighter mb-8 border-l-4 border-primary pl-4">Upcoming Events</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                             {upcomingEvents.map((ev: any, i) => {
                                 const EventCard = (
                                     <div className="group bg-card border border-border overflow-hidden hover:border-primary transition-colors h-full">
-                                        {/* Event Image - Conditionally Rendered */}
                                         {ev.image && (
-                                            <div className="relative aspect-[4/5] bg-muted overflow-hidden">
+                                            <div className={`relative bg-muted overflow-hidden ${ev.imageAspect === "landscape" ? "aspect-[16/10]" : "aspect-[4/5]"}`}>
                                                 <img
                                                     src={ev.image}
-                                                    alt={ev.title}
+                                                    alt={`${ev.title} flyer`}
                                                     loading="lazy"
-                                                    className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${ev.image.includes('GDC') || ev.image.endsWith('.gif') ? 'object-contain bg-black' : 'object-cover'}`}
+                                                    className="w-full h-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
                                                     onError={(e) => {
                                                         const target = e.target as HTMLImageElement;
-                                                        target.style.display = 'none'; // Hide broken images
+                                                        target.style.display = 'none';
                                                     }}
                                                 />
                                                 <div className="absolute top-3 left-3">
@@ -134,22 +119,29 @@ export default function EventsPage() {
                                             </div>
                                         )}
 
-                                        <div className="p-4">
-                                            {!ev.image && (
-                                                <div className="mb-4">
-                                                    <Badge className="uppercase tracking-widest text-[8px] bg-primary text-white border-none rounded-none px-1.5 py-0">Upcoming</Badge>
-                                                </div>
-                                            )}
-                                            <div className="flex items-center justify-between mb-2">
-                                                <span className="text-xs font-bold text-primary flex items-center gap-1.5">
-                                                    <Calendar className="w-3 h-3" /> {ev.date}
+                                        <div className="p-5 md:p-6">
+                                            <div className="flex flex-wrap gap-3 mb-4">
+                                                <span className="text-xs font-black text-primary uppercase tracking-wider flex items-center gap-1.5">
+                                                    <Calendar className="w-4 h-4" /> {ev.date}
+                                                </span>
+                                                <span className="text-xs font-black text-muted-foreground uppercase tracking-wider flex items-center gap-1.5">
+                                                    <Clock className="w-4 h-4" /> {ev.time}
                                                 </span>
                                             </div>
                                             <h3 className="text-xl font-bold uppercase tracking-tight mb-2 group-hover:text-primary transition-colors leading-none">{ev.title}</h3>
                                             {ev.type && <p className="text-[9px] font-black uppercase tracking-widest text-primary mb-2">{ev.type}</p>}
-                                            <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-wide flex items-center gap-1.5">
+                                            <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-wide flex items-center gap-1.5 mb-3">
                                                 <MapPin className="w-3 h-3" /> {ev.location}
                                             </p>
+                                            <p className="text-sm text-muted-foreground font-medium leading-relaxed mb-4">{ev.description}</p>
+                                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-t border-border pt-4">
+                                                <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-foreground">
+                                                    <Ticket className="h-4 w-4 text-primary" /> {ev.price}
+                                                </span>
+                                                <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-primary">
+                                                    {ev.cta} <ExternalLink className="h-4 w-4" />
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 )

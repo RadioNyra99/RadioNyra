@@ -24,6 +24,7 @@ import { NewsletterSection } from "@/components/newsletter-section"
 import { YouTubeWatchSection } from "@/components/youtube-watch-section"
 import { CONTACT_INFO, LISTENING_PLATFORMS, SOCIAL_LINKS } from "@/lib/site-data"
 import { OFFICIAL_YOUTUBE_CHANNEL } from "@/lib/youtube-data"
+import { upcomingEvents } from "@/lib/event-data"
 
 export function HomeView() {
     const [loadVideo, setLoadVideo] = useState(false);
@@ -50,14 +51,7 @@ export function HomeView() {
         { name: "Mana Muchatlu", host: "Kanthi", image: "/images/hosts/mana-muchatlu.webp", stationId: STATIONS.Telugu.id, language: "telugu" },
     ];
     const { playStation, currentStation } = useAudio();
-    const featuredEvent = {
-        title: "Bhajan Clubbing",
-        date: "September 5, 2026",
-        location: "Hooky Entertainment, Cary, NC",
-        type: "Krishna Janmashtami Special",
-        image: "/bhajan-clubbing-janmashtami.webp",
-        link: "https://www.eventbrite.com/e/bhajan-clubbing-krishna-janmashtami-special-ft-aj-the-dj-cary-nc-tickets-1998490272202",
-    };
+    const featuredEvents = upcomingEvents;
 
     // Determine selected language from audio player
     const selectedLanguage = currentStation.id === STATIONS.Telugu.id ? "telugu" : "hindi";
@@ -208,14 +202,14 @@ export function HomeView() {
                         </div>
                     </div>
                 </section>
-                {/* UPCOMING EVENT */}
+                {/* UPCOMING EVENTS */}
                 <section className="py-10 bg-background border-b border-border/50">
                     <div className="container mx-auto px-4">
                         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
                             <div>
-                                <p className="text-[10px] font-black uppercase tracking-[0.35em] text-primary mb-2">Upcoming Event</p>
+                                <p className="text-[10px] font-black uppercase tracking-[0.35em] text-primary mb-2">Upcoming Events</p>
                                 <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter italic leading-none">
-                                    {featuredEvent.title}
+                                    Garba Nights For The Community
                                 </h2>
                             </div>
                             <Button
@@ -227,46 +221,56 @@ export function HomeView() {
                             </Button>
                         </div>
 
-                        <Link
-                            href={featuredEvent.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group grid grid-cols-1 lg:grid-cols-[minmax(0,0.95fr)_minmax(280px,0.55fr)] border border-border bg-card hover:border-primary transition-colors overflow-hidden"
-                        >
-                            <div className="relative bg-muted aspect-[4/5] sm:aspect-[16/9] lg:aspect-auto lg:min-h-[420px] overflow-hidden">
-                                <img
-                                    src={featuredEvent.image}
-                                    alt={`${featuredEvent.title} flyer`}
-                                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                />
-                                <div className="absolute top-4 left-4 bg-primary text-white px-2 py-1 text-[9px] font-black uppercase tracking-widest">
-                                    Upcoming
-                                </div>
-                            </div>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            {featuredEvents.map((event) => (
+                                <Link
+                                    key={event.title}
+                                    href={event.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group border border-border bg-card hover:border-primary transition-colors overflow-hidden"
+                                >
+                                    <div className={`relative bg-muted overflow-hidden ${event.imageAspect === "landscape" ? "aspect-[16/10]" : "aspect-[4/5]"}`}>
+                                        <img
+                                            src={event.image}
+                                            alt={`${event.title} flyer`}
+                                            className="h-full w-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
+                                        />
+                                        <div className="absolute top-4 left-4 bg-primary text-white px-2 py-1 text-[9px] font-black uppercase tracking-widest">
+                                            Upcoming
+                                        </div>
+                                    </div>
 
-                            <div className="p-6 md:p-8 flex flex-col justify-center">
-                                <div className="flex flex-wrap gap-3 mb-5">
-                                    <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-primary">
-                                        <Calendar className="h-4 w-4" /> {featuredEvent.date}
-                                    </span>
-                                    <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-muted-foreground">
-                                        <MapPin className="h-4 w-4" /> {featuredEvent.location}
-                                    </span>
-                                </div>
-                                <p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary mb-3">
-                                    {featuredEvent.type}
-                                </p>
-                                <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tighter italic leading-none mb-4 group-hover:text-primary transition-colors">
-                                    Krishna Janmashtami Special
-                                </h3>
-                                <p className="text-sm md:text-base text-muted-foreground font-medium leading-relaxed mb-6">
-                                    An evening of divine beats featuring AJ The DJ, presented for the Radio Nyra community in Cary.
-                                </p>
-                                <span className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-widest text-foreground group-hover:text-primary transition-colors">
-                                    Get Tickets <ExternalLink className="h-4 w-4" />
-                                </span>
-                            </div>
-                        </Link>
+                                    <div className="p-5 md:p-6">
+                                        <div className="flex flex-wrap gap-3 mb-4">
+                                            <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-primary">
+                                                <Calendar className="h-4 w-4" /> {event.date}
+                                            </span>
+                                            <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-muted-foreground">
+                                                <MapPin className="h-4 w-4" /> {event.location}
+                                            </span>
+                                        </div>
+                                        <p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary mb-3">
+                                            {event.type}
+                                        </p>
+                                        <h3 className="text-2xl md:text-4xl font-black uppercase tracking-tighter italic leading-none mb-4 group-hover:text-primary transition-colors">
+                                            {event.title}
+                                        </h3>
+                                        <p className="text-sm text-muted-foreground font-medium leading-relaxed mb-5">
+                                            {event.description}
+                                        </p>
+                                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-t border-border pt-4">
+                                            <span className="text-xs font-black uppercase tracking-wider text-foreground">
+                                                {event.time}
+                                            </span>
+                                            <span className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-widest text-primary">
+                                                {event.cta} <ExternalLink className="h-4 w-4" />
+                                            </span>
+                                        </div>
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
                     </div>
                 </section>
 

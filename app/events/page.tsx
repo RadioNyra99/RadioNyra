@@ -53,7 +53,7 @@ export default function EventsPage() {
                 },
                 description: event.description,
                 image: event.image ? `https://www.radionyra.com${event.image}` : undefined,
-                url: event.link,
+                url: event.link || "https://www.radionyra.com/events",
             })),
             ...pastEvents.map((event) => ({
                 "@type": "Event",

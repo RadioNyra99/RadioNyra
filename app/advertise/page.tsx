@@ -371,9 +371,7 @@ export default function AdvertisePage() {
                                     action="https://formspree.io/f/fa42a7d8-c45e-4e7d-868c-7861ef21d915"
                                     method="POST"
                                     onSubmit={() => {
-                                        trackLeadSubmit({
-                                            campaignType: `Calculator Tier: ${marketTier} ($${budget}/mo)`
-                                        });
+                                        trackLeadSubmit(`Calculator Tier: ${marketTier} ($${budget}/mo)`);
                                         setFormSubmitted(true);
                                     }}
                                     className="space-y-6 relative z-10"

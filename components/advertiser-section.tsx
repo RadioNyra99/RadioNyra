@@ -113,7 +113,7 @@ export function AdvertiserSection() {
 
                     <div className="p-4 sm:p-5 rounded-2xl bg-card border border-border/80 text-center shadow-sm hover:shadow-md transition-all">
                         <TrendingUp className="w-6 h-6 text-cyan-500 mx-auto mb-2" />
-                        <span className="text-2xl sm:text-3xl font-black block">5.8M+</span>
+                        <span className="text-2xl sm:text-3xl font-black block">173.3K+</span>
                         <span className="text-[10px] text-muted-foreground font-extrabold uppercase tracking-wider">Digital & Video Impressions</span>
                     </div>
 

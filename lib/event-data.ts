@@ -45,22 +45,6 @@ export function getEventTimingLabel(startDate: string, now = new Date()) {
 
 export const upcomingEvents: UpcomingEvent[] = [
   {
-    title: "Bhajan Clubbing",
-    date: "September 5, 2026",
-    time: "8:00 PM EDT",
-    location: "Hooky Entertainment, Cary, NC",
-    venue: "Hooky Entertainment, Cary, NC",
-    type: "Krishna Janmashtami Special",
-    image: "/images/events/bhajan-clubbing-janmashtami-2026.png",
-    imageAspect: "portrait",
-    link: "https://www.eventbrite.com/e/bhajan-clubbing-krishna-janmashtami-special-ft-aj-the-dj-cary-nc-tickets-1998490272202",
-    startDate: "2026-09-05T20:00:00-04:00",
-    price: "Tickets on Eventbrite",
-    description:
-      "A Krishna Janmashtami special evening of devotional club beats featuring AJ The DJ for the Cary community.",
-    cta: "Get Tickets",
-  },
-  {
     title: "IAFV Garba Dandiya Night",
     date: "September 19, 2026",
     time: "6:00 PM - 10:00 PM EDT",

@@ -294,7 +294,7 @@ export function HomeView() {
                                     <Youtube className="w-5 h-5 fill-red-500" />
                                 </div>
                                 <div className="text-2xl md:text-3xl font-black text-white tracking-tighter mb-1">
-                                    <CountUp end={1.01} decimals={2} suffix="K" duration={2500} />
+                                    <CountUp end={1.05} decimals={2} suffix="K" duration={2500} />
                                 </div>
                                 <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-zinc-400">
                                     Subscribers
@@ -305,7 +305,7 @@ export function HomeView() {
                                     <Play className="w-5 h-5 text-red-500" />
                                 </div>
                                 <div className="text-2xl md:text-3xl font-black text-white tracking-tighter mb-1">
-                                    <CountUp end={270} suffix="+" duration={2500} />
+                                    <CountUp end={279} suffix="" duration={2500} />
                                 </div>
                                 <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-zinc-400">
                                     Videos Published
@@ -316,7 +316,7 @@ export function HomeView() {
                                     <PlayCircle className="w-5 h-5 text-red-500" />
                                 </div>
                                 <div className="text-2xl md:text-3xl font-black text-white tracking-tighter mb-1">
-                                    <CountUp end={151.3} decimals={1} suffix="K" duration={2500} />
+                                    <CountUp end={173.3} decimals={1} suffix="K" duration={2500} />
                                 </div>
                                 <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-zinc-400">
                                     Total Views
@@ -327,7 +327,7 @@ export function HomeView() {
                                     <Star className="w-5 h-5 text-red-500" />
                                 </div>
                                 <div className="text-2xl md:text-3xl font-black text-white tracking-tighter mb-1">
-                                    <CountUp end={560} suffix="" duration={2500} />
+                                    <CountUp end={621} suffix="" duration={2500} />
                                 </div>
                                 <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-zinc-400">
                                     Avg Views / Video

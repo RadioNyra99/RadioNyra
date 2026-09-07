@@ -94,7 +94,7 @@ export function YouTubeHub() {
                         <div className="bg-white/5 backdrop-blur rounded-2xl p-4 text-center border border-white/10">
                             <div className="flex items-center justify-center gap-2 text-red-400 mb-1">
                                 <Users className="w-5 h-5" />
-                                <span className="text-2xl font-black text-white">{subscriberCount || "1.01K"}</span>
+                                <span className="text-2xl font-black text-white">{subscriberCount || "1.05K"}</span>
                             </div>
                             <p className="text-[11px] text-zinc-400 font-extrabold uppercase tracking-wider">Subscribers</p>
                         </div>
@@ -102,7 +102,7 @@ export function YouTubeHub() {
                         <div className="bg-white/5 backdrop-blur rounded-2xl p-4 text-center border border-white/10">
                             <div className="flex items-center justify-center gap-2 text-cyan-400 mb-1">
                                 <Eye className="w-5 h-5" />
-                                <span className="text-2xl font-black text-white">{viewCount || "151.3K"}</span>
+                                <span className="text-2xl font-black text-white">{viewCount || "173.3K"}</span>
                             </div>
                             <p className="text-[11px] text-zinc-400 font-extrabold uppercase tracking-wider">Total Video Views</p>
                         </div>
@@ -118,7 +118,7 @@ export function YouTubeHub() {
                         <div className="bg-white/5 backdrop-blur rounded-2xl p-4 text-center border border-white/10">
                             <div className="flex items-center justify-center gap-2 text-emerald-400 mb-1">
                                 <PlayCircle className="w-5 h-5" />
-                                <span className="text-2xl font-black text-white">{videoCount || "270+"}</span>
+                                <span className="text-2xl font-black text-white">{videoCount || "279"}</span>
                             </div>
                             <p className="text-[11px] text-zinc-400 font-extrabold uppercase tracking-wider">Uploaded Videos</p>
                         </div>

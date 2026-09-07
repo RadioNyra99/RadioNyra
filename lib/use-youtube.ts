@@ -96,9 +96,9 @@ export function useYouTubeChannelStats() {
         watchTime: string;
         loading: boolean;
     }>({
-        subscriberCount: "1.01K",
-        viewCount: "151.3K",
-        videoCount: "270+",
+        subscriberCount: "1.05K",
+        viewCount: "173.3K",
+        videoCount: "279",
         watchTime: "25,000+",
         loading: true,
     });
@@ -116,17 +116,17 @@ export function useYouTubeChannelStats() {
                             return isNaN(num) ? valStr : num >= 1000 ? `${(num / 1000).toFixed(1)}K` : num.toLocaleString();
                         };
                         setStats({
-                            subscriberCount: formatVal(data.subscriberCount) || "1.01K",
-                            viewCount: formatVal(data.viewCount) || "151.3K",
-                            videoCount: formatVal(data.videoCount) || "270+",
+                            subscriberCount: formatVal(data.subscriberCount) || "1.05K",
+                            viewCount: formatVal(data.viewCount) || "173.3K",
+                            videoCount: formatVal(data.videoCount) || "279",
                             watchTime: "25,000+",
                             loading: false
                         });
                     } else {
                         setStats({
-                            subscriberCount: "1.01K",
-                            viewCount: "151.3K",
-                            videoCount: "270+",
+                            subscriberCount: "1.05K",
+                            viewCount: "173.3K",
+                            videoCount: "279",
                             watchTime: "25,000+",
                             loading: false
                         });
@@ -135,9 +135,9 @@ export function useYouTubeChannelStats() {
             } catch {
                 if (mounted) {
                     setStats({
-                        subscriberCount: "1.01K",
-                        viewCount: "151.3K",
-                        videoCount: "270+",
+                        subscriberCount: "1.05K",
+                        viewCount: "173.3K",
+                        videoCount: "279",
                         watchTime: "25,000+",
                         loading: false
                     });

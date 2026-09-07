@@ -60,7 +60,7 @@ export function AdvertisePopup() {
               <span className="text-[9px] text-zinc-400 font-extrabold uppercase tracking-wider block">Weekly Reach</span>
             </div>
             <div className="text-center">
-              <span className="text-lg font-black text-cyan-400 block">1.01K</span>
+              <span className="text-lg font-black text-cyan-400 block">1.05K</span>
               <span className="text-[9px] text-zinc-400 font-extrabold uppercase tracking-wider block">YouTube Subs</span>
             </div>
           </div>

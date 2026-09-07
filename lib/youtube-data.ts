@@ -49,10 +49,10 @@ export const OFFICIAL_YOUTUBE_CHANNEL: YouTubeChannelStats = {
     handle: "@RadioNyraUSA",
     channelUrl: "https://www.youtube.com/channel/UC9VgB6gNRgANFfv6LGZuAlw",
     subscribeUrl: "https://www.youtube.com/channel/UC9VgB6gNRgANFfv6LGZuAlw?sub_confirmation=1",
-    subscriberCount: "52.8K+",
-    subscriberCountNum: 52800,
-    totalViews: "5.8M+",
-    totalViewsNum: 5840000,
+    subscriberCount: "1.05K+",
+    subscriberCountNum: 1050,
+    totalViews: "173.3K+",
+    totalViewsNum: 173331,
     watchTimeHours: "285,000+",
-    totalVideos: 420
+    totalVideos: 279
 };

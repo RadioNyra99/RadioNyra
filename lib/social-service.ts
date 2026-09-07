@@ -57,7 +57,7 @@ export async function getLiveYouTubeStats(): Promise<LiveChannelStats> {
     if (cached) return cached;
 
     const apiKey = typeof window !== "undefined"
-        ? (window as Record<string, unknown>).__YOUTUBE_API_KEY as string || process.env.NEXT_PUBLIC_YOUTUBE_API_KEY
+        ? (window as unknown as Record<string, unknown>).__YOUTUBE_API_KEY as string || process.env.NEXT_PUBLIC_YOUTUBE_API_KEY
         : process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
 
     if (!apiKey) {

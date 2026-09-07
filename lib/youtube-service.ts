@@ -227,7 +227,7 @@ function setCache<T>(key: string, data: T, ttlMs: number = 10 * 60 * 1000): void
 // ─── API Key ─────────────────────────────────────────────────────────
 function getApiKey(): string | null {
     if (typeof window !== "undefined") {
-        return (window as Record<string, unknown>).__YOUTUBE_API_KEY as string | null
+        return (window as unknown as Record<string, unknown>).__YOUTUBE_API_KEY as string | null
             || process.env.NEXT_PUBLIC_YOUTUBE_API_KEY
             || null;
     }

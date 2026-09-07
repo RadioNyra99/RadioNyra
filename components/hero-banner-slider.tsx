@@ -26,7 +26,7 @@ const SLIDES = [
         subtitle: "& CELEBRITY SHOWS",
         description: "Subscribe to Radio Nyra YouTube for exclusive Bollywood celeb interviews, trending shorts, kids storytime, and community festival coverage.",
         bgImage: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1920&q=80",
-        badge: "52.8K+ Subscribers • 5.8M+ Views"
+        badge: "1.05K+ Subscribers • 173.3K+ Views"
     },
     {
         id: 3,

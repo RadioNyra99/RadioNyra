@@ -7,16 +7,10 @@ import { Lightbox } from "@/components/lightbox"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Calendar, Clock, ExternalLink, MapPin, Ticket } from "lucide-react"
-import { getEventTimingLabel, upcomingEvents } from "@/lib/event-data"
+import { getEventTimingLabel, upcomingEvents, pastEvents } from "@/lib/event-data"
 
 export default function EventsPage() {
     const [lightbox, setLightbox] = useState({ isOpen: false, index: 0 })
-
-    const pastEvents = [
-        { id: 1, title: "Zain Zohaib Qawwali Show", image: "/zain-zohaib-qawwali-show.webp", date: "2025" },
-        { id: 2, title: "Hooky Holiday Showcase Event", image: "/hooky-holiday-showcase-event.webp", date: "2025" },
-        { id: 3, title: "AR Rahman Concert", image: "/ar-rahman-concert.webp", date: "2025" },
-    ]
 
     const openLightbox = (index: number) => {
         setLightbox({ isOpen: true, index })

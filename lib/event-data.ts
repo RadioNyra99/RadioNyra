@@ -15,6 +15,13 @@ export type UpcomingEvent = {
   cta: string
 }
 
+export type PastEvent = {
+  id: number
+  title: string
+  image: string
+  date: string
+}
+
 const EVENT_TIME_ZONE = "America/New_York"
 
 function getDateKey(date: Date) {
@@ -75,5 +82,32 @@ export const upcomingEvents: UpcomingEvent[] = [
     description:
       "Rhythm & Raas presents a community Garba night with live music, food trucks, and performances by Amruta Manke and Nimesh Nagar.",
     cta: "See Flyer",
+  },
+]
+
+export const pastEvents: PastEvent[] = [
+  {
+    id: 1,
+    title: "Bhajan Clubbing - Janmashtami Special",
+    image: "/images/events/bhajan-clubbing-janmashtami-2026.png",
+    date: "August 2026",
+  },
+  {
+    id: 2,
+    title: "Zain Zohaib Qawwali Show",
+    image: "/zain-zohaib-qawwali-show.webp",
+    date: "2025",
+  },
+  {
+    id: 3,
+    title: "Hooky Holiday Showcase Event",
+    image: "/hooky-holiday-showcase-event.webp",
+    date: "2025",
+  },
+  {
+    id: 4,
+    title: "AR Rahman Concert",
+    image: "/ar-rahman-concert.webp",
+    date: "2025",
   },
 ]

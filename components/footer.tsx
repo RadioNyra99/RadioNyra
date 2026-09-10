@@ -46,7 +46,11 @@ export function Footer() {
               <Link href="/festival-calendar" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Festival Calendar</Link>
             </div>
             <div className="flex flex-col gap-3">
-              <span className="text-xs font-black uppercase tracking-widest text-white mb-1">Resources</span>
+              <span className="text-xs font-black uppercase tracking-widest text-white mb-1">Triangle NC</span>
+              <Link href="/markets/raleigh-durham" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Raleigh-Durham (99.9 FM)</Link>
+              <Link href="/cary-nc-radio" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Cary NC Radio</Link>
+              <Link href="/morrisville-nc-radio" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Morrisville NC Radio</Link>
+              <Link href="/durham-nc-radio" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Durham & RTP Radio</Link>
               <Link href="/write-for-us" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Write For Us</Link>
               <Link href="/faq" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">FAQ</Link>
             </div>

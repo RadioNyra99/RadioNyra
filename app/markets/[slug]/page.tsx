@@ -17,9 +17,18 @@ const MARKET_DATA: Record<string, {
     "raleigh-durham": {
         name: "Raleigh-Durham",
         frequency: "99.9 FM HD4 (Hindi) & HD3 (Telugu)",
-        description: "As the hub of the Research Triangle Park (RTP) area, our Raleigh-Durham broadcast reaches the fastest-growing Indian Subcontinent community in the Carolinas. Since our launch, we have become the central media hub for local events, business announcements, and cultural celebrations.",
+        description: "As the flagship broadcast hub of the Research Triangle, Radio Nyra on 99.9 FM HD4 and HD3 reaches over 85,000+ listeners across Raleigh, Durham, Cary, Morrisville, Apex, Chapel Hill, and RTP. Discover top music, cultural news, local event guides, and business sponsorships in North Carolina.",
         coverage: "Raleigh, Durham, Chapel Hill, Cary, Morrisville, Apex, Wake Forest, and surrounding Triangle areas.",
-        keywords: ["Hindi Radio Raleigh", "Telugu Radio Cary", "Indian Radio Station Morrisville", "99.9 FM HD4 Raleigh", "Indian Community Radio NC"],
+        keywords: [
+            "Top Radio Stations in Raleigh NC",
+            "Popular Radio Stations in North Carolina",
+            "Radio Stations in Raleigh Durham",
+            "99.9 FM HD4 Raleigh",
+            "Hindi Radio Raleigh",
+            "Telugu Radio Cary",
+            "Indian Radio Morrisville NC",
+            "Raleigh FM Radio Stations"
+        ],
         localContact: "+1 (919) 294-4800",
         stationKey: "Hindi"
     },
@@ -92,12 +101,17 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     const market = MARKET_DATA[slug];
     if (!market) return {};
 
-    const title = `Radio Nyra ${market.name} | Indian Subcontinent Radio & Media Network`;
-    const description = `Listen live to Radio Nyra in ${market.name} on ${market.frequency}. Connecting the Indian Subcontinent community with premium music, events, and marketing.`;
+    const isRdu = slug === "raleigh-durham";
+    const title = isRdu
+        ? "Top Radio Stations in Raleigh-Durham NC | Listen Free - Radio Nyra 99.9 FM"
+        : `Radio Nyra ${market.name} | ${market.frequency}`;
+    const description = isRdu
+        ? "Listen to top radio stations in Raleigh-Durham, NC for free. Stream Radio Nyra on 99.9 FM HD4 & HD3 for Bollywood, Telugu hits, talk shows & local Triangle events."
+        : `Listen live to Radio Nyra in ${market.name} on ${market.frequency}. Connecting the Indian Subcontinent community with premium music, events, and marketing.`;
 
     return {
         title,
-        description,
+        description: description.slice(0, 158),
         keywords: market.keywords,
         alternates: {
             canonical: `/markets/${slug}`,
@@ -139,12 +153,17 @@ export default async function MarketPage({ params }: { params: Params }) {
                 "telephone": market.localContact,
                 "address": {
                     "@type": "PostalAddress",
-                    "streetAddress": isRdu ? "10966 Chapel Hill Rd #144" : undefined,
-                    "addressLocality": isRdu ? "Morrisville" : market.name.split(",")[0],
+                    "streetAddress": isRdu ? "4819 Emperor Blvd Suite 400" : undefined,
+                    "addressLocality": isRdu ? "Durham" : market.name.split(",")[0],
                     "addressRegion": isRdu ? "NC" : (slug === "atlanta" ? "GA" : slug === "baltimore" ? "MD" : slug === "philadelphia" ? "PA" : slug === "st-louis" ? "MO" : "OH"),
-                    "postalCode": isRdu ? "27560" : undefined,
+                    "postalCode": isRdu ? "27703" : undefined,
                     "addressCountry": "US"
                 },
+                "geo": isRdu ? {
+                    "@type": "GeoCoordinates",
+                    "latitude": "35.8858",
+                    "longitude": "-78.8550"
+                } : undefined,
                 "areaServed": market.coverage,
                 "broadcastFrequency": isRdu ? [
                     {
@@ -190,7 +209,44 @@ export default async function MarketPage({ params }: { params: Params }) {
                         "item": `https://www.radionyra.com/markets/${slug}`
                     }
                 ]
-            }
+            },
+            ...(isRdu ? [{
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What are some popular radio stations in North Carolina and Raleigh-Durham?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Popular radio stations in Raleigh-Durham and North Carolina include Radio Nyra (99.9 FM HD4 for Hindi & HD3 for Telugu), 99.9 The Fan WCMC (Sports Talk), WRDU 100.7 FM (Classic Rock), G105 WDCG 105.1 FM (Top 40 Hits), K97.5 WQOK (Hip Hop & R&B), WQDR 94.7 FM (Country), and WUNC 90.1 FM (North Carolina Public Radio / NPR)."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How do I tune to Radio Nyra in Raleigh, Durham, and Cary NC?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "You can listen to Radio Nyra in your car across the Triangle by tuning your HD Radio to 99.9 FM and selecting HD4 for Hindi or HD3 for Telugu. You can also stream live online at radionyra.com, via our iOS and Android apps, or by saying 'Alexa, play Radio Nyra Hindi'."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is the premier Indian and South Asian radio station in North Carolina?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Radio Nyra is America's leading Indian radio network and the premier South Asian broadcaster in the Carolinas, broadcasting on 99.9 FM HD4 (Hindi) and HD3 (Telugu) across Raleigh, Durham, Cary, Morrisville, Apex, Chapel Hill, and RTP."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I listen to Raleigh-Durham radio stations online for free?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, Radio Nyra offers free 24/7 digital streaming online at radionyra.com without requiring a paid subscription, featuring live Bollywood music, Tollywood hits, local news, and community talk shows."
+                        }
+                    }
+                ]
+            }] : [])
         ]
     };
 
@@ -262,6 +318,159 @@ export default async function MarketPage({ params }: { params: Params }) {
                             <div className="bg-card p-5 rounded-2xl border border-border/60 shadow-sm">
                                 <h4 className="font-bold text-base text-foreground mb-1">Apex & Chapel Hill</h4>
                                 <p className="text-xs text-muted-foreground">Serving university students, medical staff, and thriving suburban communities.</p>
+                            </div>
+                        </div>
+                    </section>
+                )}
+
+                {/* Popular Radio Stations in Raleigh-Durham NC Directory */}
+                {isRdu && (
+                    <section className="bg-card border border-border p-8 md:p-10 rounded-3xl space-y-6 shadow-sm">
+                        <div className="space-y-2">
+                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Local Dial & Frequency Guide</span>
+                            <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">
+                                Popular Radio Stations in Raleigh-Durham, NC
+                            </h3>
+                            <p className="text-sm text-muted-foreground leading-relaxed max-w-3xl">
+                                Looking for the top radio stations in the Triangle? From multicultural hits and Bollywood melodies on Radio Nyra to sports talk, country, and mainstream pop, here is your quick frequency guide for Raleigh, Durham, Cary, and Chapel Hill:
+                            </p>
+                        </div>
+
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-left text-sm border-collapse">
+                                <thead>
+                                    <tr className="border-b border-border text-xs font-black uppercase tracking-wider text-muted-foreground">
+                                        <th className="py-3 px-4">Frequency</th>
+                                        <th className="py-3 px-4">Station</th>
+                                        <th className="py-3 px-4">Format / Genre</th>
+                                        <th className="py-3 px-4">Coverage</th>
+                                        <th className="py-3 px-4">Listen</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-border/60 text-xs font-medium">
+                                    <tr className="bg-primary/5 font-bold">
+                                        <td className="py-3.5 px-4 text-primary font-black">99.9 FM HD4</td>
+                                        <td className="py-3.5 px-4 text-foreground font-black">Radio Nyra (Hindi)</td>
+                                        <td className="py-3.5 px-4 text-primary">Bollywood, Desi Hits, Diaspora News</td>
+                                        <td className="py-3.5 px-4">Raleigh, Durham, Cary, Morrisville, RTP</td>
+                                        <td className="py-3.5 px-4">
+                                            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black uppercase bg-green-500/10 text-green-600">
+                                                Live Free On-Air
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr className="bg-primary/5 font-bold">
+                                        <td className="py-3.5 px-4 text-primary font-black">99.9 FM HD3</td>
+                                        <td className="py-3.5 px-4 text-foreground font-black">Radio Nyra (Telugu)</td>
+                                        <td className="py-3.5 px-4 text-primary">Tollywood Hits & Telugu Community</td>
+                                        <td className="py-3.5 px-4">Raleigh, Cary, Morrisville, Apex</td>
+                                        <td className="py-3.5 px-4">
+                                            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black uppercase bg-green-500/10 text-green-600">
+                                                Live Free On-Air
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="py-3.5 px-4 font-bold text-foreground">99.9 FM</td>
+                                        <td className="py-3.5 px-4">WCMC (99.9 The Fan)</td>
+                                        <td className="py-3.5 px-4 text-muted-foreground">Sports Talk (Hurricanes / ACC)</td>
+                                        <td className="py-3.5 px-4">Triangle Metro</td>
+                                        <td className="py-3.5 px-4 text-muted-foreground">Terrestrial FM</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="py-3.5 px-4 font-bold text-foreground">100.7 FM</td>
+                                        <td className="py-3.5 px-4">WRDU (iHeartMedia)</td>
+                                        <td className="py-3.5 px-4 text-muted-foreground">Classic Rock</td>
+                                        <td className="py-3.5 px-4">Raleigh & Central NC</td>
+                                        <td className="py-3.5 px-4 text-muted-foreground">Terrestrial FM</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="py-3.5 px-4 font-bold text-foreground">105.1 FM</td>
+                                        <td className="py-3.5 px-4">WDCG (G105 / iHeartMedia)</td>
+                                        <td className="py-3.5 px-4 text-muted-foreground">Top 40 / Pop Hit Music</td>
+                                        <td className="py-3.5 px-4">Raleigh-Durham</td>
+                                        <td className="py-3.5 px-4 text-muted-foreground">Terrestrial FM</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="py-3.5 px-4 font-bold text-foreground">106.1 FM</td>
+                                        <td className="py-3.5 px-4">WTKK (FM Talk / iHeartMedia)</td>
+                                        <td className="py-3.5 px-4 text-muted-foreground">News & Conservative Talk</td>
+                                        <td className="py-3.5 px-4">Raleigh-Durham</td>
+                                        <td className="py-3.5 px-4 text-muted-foreground">Terrestrial FM</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="py-3.5 px-4 font-bold text-foreground">93.9 FM</td>
+                                        <td className="py-3.5 px-4">WNCB (B93.9 / iHeartMedia)</td>
+                                        <td className="py-3.5 px-4 text-muted-foreground">Today's Country Music</td>
+                                        <td className="py-3.5 px-4">Raleigh-Durham</td>
+                                        <td className="py-3.5 px-4 text-muted-foreground">Terrestrial FM</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="py-3.5 px-4 font-bold text-foreground">97.5 FM</td>
+                                        <td className="py-3.5 px-4">WQOK (K97.5)</td>
+                                        <td className="py-3.5 px-4 text-muted-foreground">Hip-Hop & R&B Hits</td>
+                                        <td className="py-3.5 px-4">Raleigh & Durham</td>
+                                        <td className="py-3.5 px-4 text-muted-foreground">Terrestrial FM</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="py-3.5 px-4 font-bold text-foreground">90.1 FM</td>
+                                        <td className="py-3.5 px-4">WUNC</td>
+                                        <td className="py-3.5 px-4 text-muted-foreground">NPR & Public Radio</td>
+                                        <td className="py-3.5 px-4">Triangle & Statewide</td>
+                                        <td className="py-3.5 px-4 text-muted-foreground">Public Radio</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div className="pt-4 flex flex-wrap gap-4 text-xs font-bold uppercase tracking-wider">
+                            <Link href="/how-to-tune" className="text-primary hover:underline flex items-center gap-1.5">
+                                <span>Learn How to Tune HD Radio in Your Car</span> &rarr;
+                            </Link>
+                            <Link href="/community/temples" className="text-muted-foreground hover:text-foreground">
+                                Raleigh & Cary Temple Guide
+                            </Link>
+                            <Link href="/community/restaurants" className="text-muted-foreground hover:text-foreground">
+                                Triangle Indian Dining Guide
+                            </Link>
+                        </div>
+                    </section>
+                )}
+
+                {/* FAQ Section specifically answering the Google PAA box */}
+                {isRdu && (
+                    <section className="bg-card border border-border p-8 md:p-10 rounded-3xl space-y-6 shadow-sm">
+                        <div className="space-y-2">
+                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Frequently Asked Questions</span>
+                            <h3 className="text-2xl font-black uppercase tracking-tight text-foreground">
+                                Raleigh & North Carolina Radio FAQs
+                            </h3>
+                        </div>
+
+                        <div className="space-y-4 pt-2">
+                            <div className="bg-muted/40 p-5 rounded-2xl border border-border/50 space-y-2">
+                                <h4 className="font-bold text-base text-foreground">What are some popular radio stations in North Carolina?</h4>
+                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                    Popular radio stations in North Carolina include Radio Nyra (99.9 FM HD4 & HD3 for Bollywood and Telugu multicultural broadcasting), 99.9 The Fan (sports talk), WRDU 100.7 FM (classic rock), G105 105.1 FM (hit pop music), K97.5 (hip-hop), B93.9 (country), and WUNC 90.1 FM (NPR news).
+                                </p>
+                            </div>
+                            <div className="bg-muted/40 p-5 rounded-2xl border border-border/50 space-y-2">
+                                <h4 className="font-bold text-base text-foreground">How do I listen to Indian radio in Raleigh, Durham, and Cary?</h4>
+                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                    Tune your vehicle's HD Radio to 99.9 FM and switch to subchannel HD4 for Radio Nyra Hindi or HD3 for Radio Nyra Telugu. You can also listen live online anytime at radionyra.com or via the Radio Nyra mobile apps for iOS and Android.
+                                </p>
+                            </div>
+                            <div className="bg-muted/40 p-5 rounded-2xl border border-border/50 space-y-2">
+                                <h4 className="font-bold text-base text-foreground">What station is 99.9 HD4 in Raleigh?</h4>
+                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                    99.9 FM HD4 is Radio Nyra Hindi, the premier Indian Subcontinent community station in North Carolina, featuring non-stop Bollywood hits, morning and evening drive-time talk shows, community updates, and local news.
+                                </p>
+                            </div>
+                            <div className="bg-muted/40 p-5 rounded-2xl border border-border/50 space-y-2">
+                                <h4 className="font-bold text-base text-foreground">Where is Radio Nyra located in the Research Triangle?</h4>
+                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                    Radio Nyra's Triangle corporate offices and broadcast studios are located at 4819 Emperor Blvd Suite 400, Durham, NC 27703, serving the entire Raleigh-Durham-Cary-Morrisville metro area.
+                                </p>
                             </div>
                         </div>
                     </section>

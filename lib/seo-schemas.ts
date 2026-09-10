@@ -41,16 +41,16 @@ export function generateRadioStationSchema() {
         "telephone": "+1-919-294-4800",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "10966 Chapel Hill Rd #144",
-            "addressLocality": "Morrisville",
+            "streetAddress": "4819 Emperor Blvd Suite 400",
+            "addressLocality": "Durham",
             "addressRegion": "NC",
-            "postalCode": "27560",
+            "postalCode": "27703",
             "addressCountry": "US"
         },
         "geo": {
             "@type": "GeoCoordinates",
-            "latitude": "35.8398",
-            "longitude": "-78.8252"
+            "latitude": "35.8858",
+            "longitude": "-78.8550"
         },
         "broadcastFrequency": [
             {

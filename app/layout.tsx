@@ -32,7 +32,6 @@ export const metadata: Metadata = {
   },
   description:
     "Radio Nyra is America's leading Indian radio network for premium music, culture, news, podcasts, events, and multicultural advertising.",
-  generator: "v0.app",
   manifest: "/manifest.json",
   keywords: [
     "Radio Nyra", "Indian Radio USA", "Telugu Radio USA", "Hindi Radio USA",
@@ -67,9 +66,6 @@ export const metadata: Metadata = {
     title: "Radio Nyra | The Indian Subcontinent Community Media Network",
     description: "The Indian Subcontinent Community Media Network connecting diaspora communities across America.",
     images: ["/og-image.png"],
-  },
-  alternates: {
-    canonical: "/",
   },
   icons: {
     icon: [

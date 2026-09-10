@@ -25,7 +25,7 @@ const MARKET_DATA: Record<string, {
     },
     "atlanta": {
         name: "Atlanta",
-        frequency: "Digital Stream / App Store / Voice Assistant",
+        frequency: "107.5 FM HD3 (WAMJ) & 24/7 Digital Stream",
         description: "Our Atlanta presence connects with one of the most vibrant and affluent Indian Subcontinent diaspora populations in the Southeast. Tuning in connects you to local Georgia community highlights, major Bollywood and Tollywood event coverage, and local businesses.",
         coverage: "Atlanta Metro Area, Alpharetta, Johns Creek, Cumming, Duluth, Marietta, and surrounding Georgia counties.",
         keywords: ["Atlanta Indian Radio", "Telugu Radio Atlanta", "Hindi FM Georgia", "Indian Community Atlanta", "Alpharetta Indian Events"],
@@ -34,7 +34,7 @@ const MARKET_DATA: Record<string, {
     },
     "baltimore": {
         name: "Baltimore",
-        frequency: "Digital Stream / App Store / Voice Assistant",
+        frequency: "92.3 FM HD2 (WERQ) & 24/7 Digital Stream",
         description: "Serving the historic Baltimore metro and surrounding DMV suburbs, Radio Nyra Baltimore offers a premium audio experience featuring global hit music, cultural updates, and diaspora news tailored to the Mid-Atlantic community.",
         coverage: "Baltimore City, Columbia, Ellicott City, Towson, Annapolis, and surrounding Maryland counties.",
         keywords: ["Baltimore Indian Radio", "Indian Radio Maryland", "DMV Desi Community", "Hindi Stream Baltimore", "Columbia MD Telugu Radio"],
@@ -43,7 +43,7 @@ const MARKET_DATA: Record<string, {
     },
     "cleveland": {
         name: "Cleveland",
-        frequency: "Digital Stream / App Store / Voice Assistant",
+        frequency: "24/7 Digital Stream, iOS/Android App & Alexa",
         description: "Connecting the Indian Subcontinent professional and student communities in Northeast Ohio. Radio Nyra Cleveland brings the best of Bollywood, regional Indian programming, and local cultural spotlights straight to your devices.",
         coverage: "Cleveland Metro Area, Beachwood, Solon, Westlake, Strongsville, and surrounding Northeast Ohio regions.",
         keywords: ["Cleveland Indian Radio", "Hindi Radio Ohio", "Beachwood Desi Community", "Northeast Ohio Indian Events", "Solon Indian Radio"],
@@ -52,7 +52,7 @@ const MARKET_DATA: Record<string, {
     },
     "columbus": {
         name: "Columbus",
-        frequency: "Digital Stream / App Store / Voice Assistant",
+        frequency: "24/7 Digital Stream, iOS/Android App & Alexa",
         description: "Columbus is home to a rapidly growing population of tech professionals, medical experts, and students from the Indian Subcontinent. Radio Nyra Columbus serves as a key bridge, keeping the community connected to music, news, and events.",
         coverage: "Columbus Metro Area, Dublin, Westerville, New Albany, Powell, and surrounding Central Ohio suburbs.",
         keywords: ["Columbus Indian Radio", "Dublin Ohio Indian Community", "Hindi Radio Columbus", "Telugu Radio Columbus", "Central Ohio Desi Events"],
@@ -61,7 +61,7 @@ const MARKET_DATA: Record<string, {
     },
     "philadelphia": {
         name: "Philadelphia",
-        frequency: "Digital Stream / App Store / Voice Assistant",
+        frequency: "103.9 FM HD2 (WPPZ) & 24/7 Digital Stream",
         description: "Connecting the historic city of brotherly love with the rich sounds of the Indian Subcontinent. Radio Nyra Philadelphia covers local community events, university student segments, and corporate diaspora spotlights.",
         coverage: "Philadelphia Metro Area, Cherry Hill (NJ), King of Prussia, Bensalem, Upper Darby, and surrounding Pennsylvania/New Jersey suburbs.",
         keywords: ["Philadelphia Indian Radio", "Philly Desi Radio", "Cherry Hill Indian Community", "King of Prussia Indian Events", "Hindi Stream Pennsylvania"],
@@ -70,7 +70,7 @@ const MARKET_DATA: Record<string, {
     },
     "st-louis": {
         name: "St. Louis",
-        frequency: "Digital Stream / App Store / Voice Assistant",
+        frequency: "24/7 Digital Stream, iOS/Android App & Alexa",
         description: "Our St. Louis presence delivers high-fidelity audio streams, community newsletters, and local business promotion, bridging the gap between local Missouri residents and cultural roots in the subcontinent.",
         coverage: "St. Louis Metro Area, Chesterfield, St. Charles, Creve Coeur, and surrounding Missouri/Illinois suburbs.",
         keywords: ["St Louis Indian Radio", "Chesterfield Indian Community", "Hindi Radio Missouri", "Telugu Radio St Louis", "St Louis Desi Events"],
@@ -99,6 +99,9 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
         title,
         description,
         keywords: market.keywords,
+        alternates: {
+            canonical: `/markets/${slug}`,
+        },
         openGraph: {
             title,
             description,

@@ -4,7 +4,17 @@ import { SeoPageLayout } from "@/components/seo-page-layout"
 export const metadata: Metadata = {
   title: "Bollywood Radio Online | Live Hindi Music 24/7",
   description: "Listen to Bollywood radio online on Radio Nyra. Streaming 24/7 Hindi music, Bollywood news, and hit songs live.",
-  keywords: ["Bollywood Radio Online", "Hindi Radio USA", "Listen to Bollywood Music", "Indian FM Radio", "Radio Nyra"]
+  keywords: ["Bollywood Radio Online", "Hindi Radio USA", "Listen to Bollywood Music", "Indian FM Radio", "Radio Nyra"],
+  alternates: {
+    canonical: "/bollywood-radio-online",
+  },
+  openGraph: {
+    title: "Bollywood Radio Online | Live Hindi Music 24/7",
+    description: "Listen to Bollywood radio online on Radio Nyra. Streaming 24/7 Hindi music, Bollywood news, and hit songs live.",
+    url: "https://www.radionyra.com/bollywood-radio-online",
+    siteName: "Radio Nyra",
+    type: "website",
+  },
 }
 
 export default function BollywoodRadioOnlinePage() {

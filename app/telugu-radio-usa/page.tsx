@@ -4,7 +4,17 @@ import { SeoPageLayout } from "@/components/seo-page-layout"
 export const metadata: Metadata = {
   title: "Telugu Radio USA | Stream Tollywood & Telugu Hits Live",
   description: "Listen to the best Telugu radio in the USA. Streaming 24/7 Tollywood hits, news, and talk shows on Radio Nyra.",
-  keywords: ["Telugu Radio USA", "Tollywood Radio Online", "Telugu Fm USA", "Telugu News Radio", "Radio Nyra Telugu"]
+  keywords: ["Telugu Radio USA", "Tollywood Radio Online", "Telugu Fm USA", "Telugu News Radio", "Radio Nyra Telugu"],
+  alternates: {
+    canonical: "/telugu-radio-usa",
+  },
+  openGraph: {
+    title: "Telugu Radio USA | Stream Tollywood & Telugu Hits Live",
+    description: "Listen to the best Telugu radio in the USA. Streaming 24/7 Tollywood hits, news, and talk shows on Radio Nyra.",
+    url: "https://www.radionyra.com/telugu-radio-usa",
+    siteName: "Radio Nyra",
+    type: "website",
+  },
 }
 
 export default function TeluguRadioUsaPage() {

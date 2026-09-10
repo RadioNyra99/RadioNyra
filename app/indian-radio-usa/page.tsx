@@ -4,7 +4,17 @@ import { SeoPageLayout } from "@/components/seo-page-layout"
 export const metadata: Metadata = {
   title: "Indian Radio USA | #1 Indian Subcontinent Live Radio",
   description: "Radio Nyra is the premier Indian radio station in the USA. We bring you Bollywood, Tollywood, diverse programming, and community news 24/7.",
-  keywords: ["Indian Radio USA", "Indian Subcontinent Radio", "Desi Radio Station", "Hindi Telugu Radio", "Radio Nyra"]
+  keywords: ["Indian Radio USA", "Indian Subcontinent Radio", "Desi Radio Station", "Hindi Telugu Radio", "Radio Nyra"],
+  alternates: {
+    canonical: "/indian-radio-usa",
+  },
+  openGraph: {
+    title: "Indian Radio USA | #1 Indian Subcontinent Live Radio",
+    description: "Radio Nyra is the premier Indian radio station in the USA. We bring you Bollywood, Tollywood, diverse programming, and community news 24/7.",
+    url: "https://www.radionyra.com/indian-radio-usa",
+    siteName: "Radio Nyra",
+    type: "website",
+  },
 }
 
 export default function IndianRadioUsaPage() {

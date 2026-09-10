@@ -1,12 +1,17 @@
 import { MetadataRoute } from 'next'
+import { BLOG_POSTS } from '@/lib/blog-data'
 
 export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.radionyra.com'
 
-    const routes = [
+    const coreRoutes = [
         '',
+        '/indian-radio-usa',
+        '/bollywood-radio-online',
+        '/telugu-radio-usa',
+        '/how-to-tune',
         '/youtube',
         '/video-library',
         '/shorts',
@@ -26,6 +31,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/podcasts',
         '/services',
         '/community',
+        '/community/temples',
+        '/community/restaurants',
+        '/community/movies',
+        '/community/ott-adda',
         '/faq',
         '/analytics',
         '/ecosystem',
@@ -66,8 +75,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${baseUrl}${route}`,
         lastModified: new Date().toISOString(),
         changeFrequency: 'daily' as const,
-        priority: route === '' ? 1 : route.startsWith('/markets') || route.startsWith('/shows') ? 0.9 : 0.8,
+        priority: route === '' ? 1 : route.startsWith('/markets') || route.startsWith('/indian-radio-usa') || route.startsWith('/shows') ? 0.9 : 0.8,
     }))
 
-    return routes
+    const blogRoutes = BLOG_POSTS.map((post) => ({
+        url: `${baseUrl}/blog/${post.slug}`,
+        lastModified: new Date(post.date).toISOString(),
+        changeFrequency: 'weekly' as const,
+        priority: 0.7,
+    }))
+
+    return [...coreRoutes, ...blogRoutes]
 }

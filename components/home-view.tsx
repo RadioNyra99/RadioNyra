@@ -15,6 +15,7 @@ import { VoiceAssistants } from "@/components/voice-assistants"
 import { motion, AnimatePresence } from "framer-motion"
 import { PARTNERS } from "@/lib/partners"
 import { ApolloTracker } from "@/components/apollo-tracker"
+import { GaneshChaturthiBanner } from "@/components/ganesh-chaturthi-banner"
 import { HoliEffects } from "@/components/holi-effects"
 import { HoliBanner } from "@/components/holi-banner"
 import { ShowsMarquee } from "@/components/shows-marquee"
@@ -64,7 +65,6 @@ export function HomeView() {
             <FrequencyBar />
 
             <main>
-                <HoliEffects />
                 {/* HERO SECTION */}
                 <section className="relative h-auto min-h-[45vh] w-full overflow-hidden flex items-center justify-center bg-black py-8 md:py-10">
                     <div className="absolute inset-0 z-0 opacity-60">
@@ -173,6 +173,9 @@ export function HomeView() {
                         </div>
                     </div>
                 </section>
+ 
+                {/* GANESH CHATURTHI FESTIVE SHOWCASE */}
+                <GaneshChaturthiBanner />
 
                 {/* STATS */}
                 <section className="py-8 bg-background border-b border-border/50">

@@ -88,6 +88,12 @@ export const upcomingEvents: UpcomingEvent[] = [
 export const pastEvents: PastEvent[] = [
   {
     id: 1,
+    title: "Ganesh Chaturthi Utsav",
+    image: "/images/ganesh-chaturthi.jpg",
+    date: "September 2026",
+  },
+  {
+    id: 2,
     title: "Bhajan Clubbing - Janmashtami Special",
     image: "/images/events/bhajan-clubbing-janmashtami-2026.png",
     date: "August 2026",

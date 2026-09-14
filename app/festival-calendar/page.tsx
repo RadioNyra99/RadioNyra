@@ -34,6 +34,34 @@ export default function FestivalCalendarPage() {
                         </div>
 
                         <div className="space-y-12">
+                            {/* Ganesh Chaturthi */}
+                            <div className="flex flex-col md:flex-row gap-8 bg-amber-50/60 border-2 border-amber-400/80 p-8 shadow-md group hover:border-amber-500 transition-all rounded-xl">
+                                <div className="w-full md:w-56 h-56 rounded-lg overflow-hidden shrink-0 border border-amber-300 shadow-sm bg-black">
+                                    <img
+                                        src="/images/ganesh-chaturthi.jpg"
+                                        alt="Ganesh Chaturthi Celebration Radio Nyra"
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    />
+                                </div>
+                                <div className="flex-1 flex flex-col justify-center">
+                                    <div className="flex items-center gap-2 mb-2">
+                                        <span className="px-2.5 py-0.5 bg-amber-500 text-black text-xs font-black uppercase tracking-widest rounded">Aug - Sept</span>
+                                        <span className="px-2.5 py-0.5 bg-red-100 text-red-700 text-xs font-bold uppercase tracking-wider rounded">Special Broadcast</span>
+                                    </div>
+                                    <h2 className="text-3xl font-black uppercase tracking-tight text-gray-900 mb-2">Ganesh Chaturthi / Ganeshotsav</h2>
+                                    <p className="text-amber-800 font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-3">
+                                        <MapPin className="w-4 h-4 text-amber-600" /> Triangle Temples & Community Celebrations • Raleigh, Cary, Morrisville
+                                    </p>
+                                    <p className="text-gray-700 leading-relaxed mb-4">
+                                        Welcoming Lord Ganesha with grand community festivities, stotrams, bhajans, and special live broadcasts on Radio Nyra Hindi 99.9 FM-HD4 and Telugu 99.9 FM-HD3. May Lord Ganesha remove all obstacles and fill your life with happiness, success and peace.
+                                    </p>
+                                    <div className="flex flex-wrap gap-2">
+                                        <span className="inline-block px-3 py-1 bg-amber-200/80 text-amber-950 text-xs font-bold uppercase tracking-wider rounded">Radio Nyra Broadcast Partner</span>
+                                        <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-xs font-bold uppercase tracking-wider rounded">Live Coverage</span>
+                                    </div>
+                                </div>
+                            </div>
+
                             {/* Diwali */}
                             <div className="flex flex-col md:flex-row gap-8 bg-gray-50 border border-gray-200 p-8 shadow-sm group hover:border-primary transition-all">
                                 <div className="w-32 h-32 bg-primary/10 flex flex-col items-center justify-center shrink-0 border-2 border-primary">

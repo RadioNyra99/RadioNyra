@@ -15,7 +15,6 @@ import { VoiceAssistants } from "@/components/voice-assistants"
 import { motion, AnimatePresence } from "framer-motion"
 import { PARTNERS } from "@/lib/partners"
 import { ApolloTracker } from "@/components/apollo-tracker"
-import { GaneshChaturthiBanner } from "@/components/ganesh-chaturthi-banner"
 import { HoliEffects } from "@/components/holi-effects"
 import { HoliBanner } from "@/components/holi-banner"
 import { ShowsMarquee } from "@/components/shows-marquee"
@@ -173,9 +172,6 @@ export function HomeView() {
                         </div>
                     </div>
                 </section>
- 
-                {/* GANESH CHATURTHI FESTIVE SHOWCASE */}
-                <GaneshChaturthiBanner />
 
                 {/* STATS */}
                 <section className="py-8 bg-background border-b border-border/50">

@@ -19,16 +19,17 @@ const INITIAL_MESSAGES: Message[] = [
   {
     id: "1",
     role: "assistant",
-    content: "Namaste! Welcome to Radio Nyra. I'm Nyra, your AI assistant. How can I help you today?",
+    content: "Namaste! I'm Nyra AI, your personal discovery assistant for South Asian music, live shows, podcasts, and community events on Radio Nyra. What would you like to explore?",
     timestamp: new Date(),
   },
 ]
 
 const SUGGESTED_QUESTIONS = [
-  "How can I listen in my car?",
-  "What is the address of the studio?",
-  "Do you have any upcoming events?",
-  "What is the difference between FM and AM and HD radio?",
+  "What song was playing 10 minutes ago?",
+  "When is the next Telugu show?",
+  "What community events are happening this weekend?",
+  "Show me immigration podcast updates",
+  "How can I tune in to 99.9 FM in my car?",
 ]
 
 
@@ -39,6 +40,14 @@ export function NyraChat() {
   const [isLoading, setIsLoading] = React.useState(false)
   const [showSuggestions, setShowSuggestions] = React.useState(true)
   const scrollRef = React.useRef<HTMLDivElement>(null)
+
+  React.useEffect(() => {
+    const handleOpenAI = () => setIsOpen(true)
+    if (typeof window !== "undefined") {
+      window.addEventListener("open-nyra-ai", handleOpenAI)
+      return () => window.removeEventListener("open-nyra-ai", handleOpenAI)
+    }
+  }, [])
 
   const scrollToBottom = () => {
     if (scrollRef.current) {

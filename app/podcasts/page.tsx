@@ -13,7 +13,63 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 export default function PodcastsPage() {
-    const podcasts = [
+        const podcasts = [
+        {
+            title: "$103,265 H-1B Fee?! DHS Proposal Explained by Kelsey Berger, Brown Immigration | RadioNyra Podcast",
+            host: "Kelsey Berger",
+            show: "Brown Immigration Law",
+            url: "https://www.youtube.com/watch?v=Dh9sCFzkTnk",
+            thumbnail: "https://i.ytimg.com/vi/Dh9sCFzkTnk/hqdefault.jpg"
+        },
+        {
+            title: "L-1 Visa Secrets: Who Qualifies & How to Get Approved? | RadioNyra Podcast 99.9FM HD4",
+            host: "Kelsey Berger",
+            show: "Brown Immigration Law",
+            url: "https://www.youtube.com/watch?v=384r1uIW2NU",
+            thumbnail: "https://i.ytimg.com/vi/384r1uIW2NU/hqdefault.jpg"
+        },
+        {
+            title: "Prabhu Deva Live in Raleigh | Exclusive Interview with Prabhu Deva & Show Director Hari Kumar",
+            host: "Vaishnavi Palleda",
+            show: "Exclusive Interview",
+            url: "https://www.youtube.com/watch?v=9PVZvU-tZw8",
+            thumbnail: "https://i.ytimg.com/vi/9PVZvU-tZw8/hqdefault.jpg"
+        },
+        {
+            title: "Sanskar Gurukul Classes at HSNC | Chai Pe Charcha with Van Bhandari | RadioNyra Podcast",
+            host: "Van Bhandari",
+            show: "Chai Pe Charcha",
+            url: "https://www.youtube.com/watch?v=xgO4b6qmp84",
+            thumbnail: "https://i.ytimg.com/vi/xgO4b6qmp84/hqdefault.jpg"
+        },
+        {
+            title: "The Man Behind Prabhu Deva Live in Raleigh | Hari Kumar, Show Director | RadioNyra Podcast",
+            host: "Hari Kumar",
+            show: "Exclusive Interview",
+            url: "https://www.youtube.com/watch?v=1MVRWu3OL6M",
+            thumbnail: "https://i.ytimg.com/vi/1MVRWu3OL6M/hqdefault.jpg"
+        },
+        {
+            title: "Leaders & Legends | Hill Carrow on Sports, Economic Impact & World University Games | Steve Rao",
+            host: "Steve Rao",
+            show: "Leaders & Legends",
+            url: "https://www.youtube.com/watch?v=r845AOvE45A",
+            thumbnail: "https://i.ytimg.com/vi/r845AOvE45A/hqdefault.jpg"
+        },
+        {
+            title: "Leaders & Legends | RTP’s Next Chapter: Innovation, Tech & Economic Growth | Scott Levitan",
+            host: "Steve Rao",
+            show: "Leaders & Legends",
+            url: "https://www.youtube.com/watch?v=zXIo0RceZHc",
+            thumbnail: "https://i.ytimg.com/vi/zXIo0RceZHc/hqdefault.jpg"
+        },
+        {
+            title: "F-1 vs J-1 vs I Visa Explained: Student, Exchange & Journalist Visas | RadioNyra",
+            host: "Brown Immigration Law",
+            show: "Brown Immigration Law",
+            url: "https://www.youtube.com/watch?v=j77wSeVe2DM",
+            thumbnail: "https://i.ytimg.com/vi/j77wSeVe2DM/hqdefault.jpg"
+        },
         {
             title: "RadioNyra presents Leaders & Legends with Krista Covey, CEO of First Flight",
             host: "Steve Rao",

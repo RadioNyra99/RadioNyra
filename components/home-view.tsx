@@ -27,11 +27,7 @@ import { OFFICIAL_YOUTUBE_CHANNEL } from "@/lib/youtube-data"
 import { getEventTimingLabel, upcomingEvents } from "@/lib/event-data"
 
 export function HomeView() {
-    const [loadVideo, setLoadVideo] = useState(false);
 
-    useEffect(() => {
-        setLoadVideo(true);
-    }, []);
 
     // Radio Nyra Shows Data
     const shows = [
@@ -67,25 +63,11 @@ export function HomeView() {
                 {/* HERO SECTION */}
                 <section className="relative h-auto min-h-[45vh] w-full overflow-hidden flex items-center justify-center bg-black py-8 md:py-10">
                     <div className="absolute inset-0 z-0 opacity-60">
-                        {!loadVideo ? (
-                            <img
-                                src="/radio-studio-modern.webp"
-                                alt="Modern broadcast studio"
-                                className="w-full h-full object-cover"
-                            />
-                        ) : (
-                            <video
-                                autoPlay
-                                muted
-                                loop
-                                playsInline
-                                className="w-full h-full object-cover"
-                                poster="/radio-studio-modern.webp"
-                                preload="none"
-                            >
-                                <source src="/home-page-video.mp4" type="video/mp4" />
-                            </video>
-                        )}
+                        <img
+                            src="/radio-studio-modern.webp"
+                            alt="Modern broadcast studio"
+                            className="w-full h-full object-cover"
+                        />
                         <div className="absolute inset-0 bg-black/50" />
                     </div>
 

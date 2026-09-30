@@ -20,9 +20,10 @@ import { ComingUpSchedule } from "@/components/coming-up-schedule"
 import { TrendingMusicSection } from "@/components/trending-music-section"
 import { FeaturedPodcastsSection } from "@/components/featured-podcasts-section"
 import { ListenerRewardsSection } from "@/components/listener-rewards-section"
+import { PopularShowsSection } from "@/components/popular-shows-section"
+import { NyraAIShowcaseSection } from "@/components/nyra-ai-showcase-section"
 import { HoliEffects } from "@/components/holi-effects"
 import { HoliBanner } from "@/components/holi-banner"
-import { ShowsMarquee } from "@/components/shows-marquee"
 import { PartnersMarquee } from "@/components/partners-marquee"
 import { AdvertiserSection } from "@/components/advertiser-section"
 import { NewsletterSection } from "@/components/newsletter-section"
@@ -33,29 +34,7 @@ import { getEventTimingLabel, upcomingEvents } from "@/lib/event-data"
 export function HomeView() {
 
 
-    // Radio Nyra Shows Data
-    const shows = [
-        // Hindi shows
-
-        { name: "Hello Vaishnavi", host: "Vaishnavi Palleda", image: "/images/hosts/hello-vaishnavi.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Dil Se Desi With Van", host: "Van", image: "/images/hosts/dil-se-desi.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Aaj Ki Shaam", host: "Jyoti", image: "/images/hosts/Aaj Ki Shaam-jyoti kae naam.png", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Nirvana Nights", host: "Parag", image: "/images/hosts/nirvana-nights.png", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Geet Bazaar", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
-        // Telugu shows (as per requirement)
-        { name: "Chinna Mata", host: "Priya", image: "/images/hosts/chinna-mata.webp", stationId: STATIONS.Telugu.id, language: "telugu" },
-        { name: "Mana Muchatlu", host: "Kanthi", image: "/images/hosts/mana-muchatlu.webp", stationId: STATIONS.Telugu.id, language: "telugu" },
-    ];
-    const { playStation, currentStation } = useAudio();
     const featuredEvents = upcomingEvents;
-
-    // Determine selected language from audio player
-    const selectedLanguage = currentStation.id === STATIONS.Telugu.id ? "telugu" : "hindi";
-    const filteredShows = shows.filter((show) => show.language === selectedLanguage);
 
     return (
         <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-primary-foreground">
@@ -341,31 +320,13 @@ export function HomeView() {
                 {/* WIN & GIVEAWAYS (LISTENER REWARDS) */}
                 <ListenerRewardsSection />
 
-                <section id="shows" className="py-8 bg-muted/20">
-                    <div className="container mx-auto px-4">
-                        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-                            <div>
-                                <h2 className="text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-tighter text-primary italic leading-none">
-                                    Our Shows
-                                </h2>
-                                <p className="mt-2 text-muted-foreground font-medium uppercase tracking-widest text-xs sm:text-sm max-w-xl">
-                                    Explore our lineup of live shows hosted by talented voices from the community.
-                                </p>
-                            </div>
-                            <Button
-                                variant="outline"
-                                className="text-foreground hover:bg-primary hover:text-white font-bold uppercase tracking-widest rounded-none border-2 border-foreground hover:border-primary transition-all h-10 px-6 text-xs"
-                                asChild
-                            >
-                                <Link href="#shows">View All Shows</Link>
-                            </Button>
-                        </div>
-
-                        <ShowsMarquee shows={filteredShows} />
-                    </div>
-                </section>
+                {/* POPULAR SHOWS & PERSONALITIES (KEXP EDITORIAL STYLE) */}
+                <PopularShowsSection />
 
                 <AdvertiserSection />
+
+                {/* NYRA AI INTERACTIVE CANVAS */}
+                <NyraAIShowcaseSection />
 
                 {/* OUR PARTNERS */}
                 <section className="py-8 bg-background border-t border-border/50">

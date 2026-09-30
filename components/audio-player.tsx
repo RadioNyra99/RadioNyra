@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Play, Pause, Volume2, VolumeX, Volume1, Users, ChevronUp, Loader2, AlertCircle } from "lucide-react"
+import { Play, Pause, Volume2, VolumeX, Volume1, Users, ChevronUp, Loader2, AlertCircle, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { useAudio } from "@/components/audio-context"
@@ -282,8 +282,26 @@ export function AudioPlayer() {
 
             </div>
 
-            {/* Right: Language Dropdown (Menu Style) */}
-            <div className="flex items-center shrink-0">
+            {/* Right: Ask Nyra + Language Dropdown (Menu Style) */}
+            <div className="flex items-center gap-2 shrink-0">
+              <Button
+                variant="ghost"
+                onClick={() => {
+                  if (typeof window !== "undefined") {
+                    window.dispatchEvent(
+                      new CustomEvent("open-nyra-ai", {
+                        detail: { query: `What show is broadcasting right now on ${currentStation.name}?` },
+                      })
+                    )
+                  }
+                }}
+                className="hidden lg:inline-flex items-center gap-1.5 text-[11px] font-black uppercase tracking-wider text-amber-400 hover:text-amber-300 hover:bg-amber-500/10 px-3.5 py-1.5 h-9 sm:h-10 rounded-full border border-amber-500/40 cursor-pointer transition-all"
+                title="Ask Nyra AI about this station or show"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-pulse" />
+                <span>Ask Nyra</span>
+              </Button>
+
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button

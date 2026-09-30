@@ -52,22 +52,6 @@ export function getEventTimingLabel(startDate: string, now = new Date()) {
 
 export const upcomingEvents: UpcomingEvent[] = [
   {
-    title: "IAFV Garba Dandiya Night",
-    date: "September 19, 2026",
-    time: "6:00 PM - 10:00 PM EDT",
-    location: "Fuquay-Varina High School, Fuquay-Varina, NC",
-    venue: "Fuquay-Varina High School, Fuquay-Varina, NC",
-    type: "Garba Dandiya Night",
-    image: "/images/events/iafv-garba-dandiya-night-2026.png",
-    imageAspect: "landscape",
-    link: "https://iafvnc.org/",
-    startDate: "2026-09-19T18:00:00-04:00",
-    price: "$20 early bird; $25 at the door",
-    description:
-      "IAFV invites the community for a Garba Dandiya night with DJ Kash, plus a 6:15 PM Garba lesson included with entry.",
-    cta: "Visit IAFV",
-  },
-  {
     title: "Rhythm & Raas Garba Night",
     date: "October 2, 2026",
     time: "7:00 PM EDT",
@@ -88,30 +72,36 @@ export const upcomingEvents: UpcomingEvent[] = [
 export const pastEvents: PastEvent[] = [
   {
     id: 1,
+    title: "IAFV Garba Dandiya Night",
+    image: "/images/events/iafv-garba-dandiya-night-2026.png",
+    date: "September 2026",
+  },
+  {
+    id: 2,
     title: "Ganesh Chaturthi Utsav",
     image: "/images/ganesh-chaturthi.jpg",
     date: "September 2026",
   },
   {
-    id: 2,
+    id: 3,
     title: "Bhajan Clubbing - Janmashtami Special",
     image: "/images/events/bhajan-clubbing-janmashtami-2026.png",
     date: "August 2026",
   },
   {
-    id: 2,
+    id: 4,
     title: "Zain Zohaib Qawwali Show",
     image: "/zain-zohaib-qawwali-show.webp",
     date: "2025",
   },
   {
-    id: 3,
+    id: 5,
     title: "Hooky Holiday Showcase Event",
     image: "/hooky-holiday-showcase-event.webp",
     date: "2025",
   },
   {
-    id: 4,
+    id: 6,
     title: "AR Rahman Concert",
     image: "/ar-rahman-concert.webp",
     date: "2025",

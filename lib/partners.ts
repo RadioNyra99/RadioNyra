@@ -35,6 +35,7 @@ export const PARTNERS: Partner[] = [
     // On-Air Advertisers
     { name: "Autopark Honda", image: "/images/partners/Autopark Honda.jpg", link: "https://www.autoparkhonda.com/", category: 'On-Air Advertisers' },
     { name: "BMW", image: "/images/partners/BMW.jpg", link: "https://www.bmwofraleigh.com/", category: 'On-Air Advertisers' },
+    { name: "Brown Immigration Law", image: "/images/partners/brown-immigration-law.png", link: "https://brown-immigration.com/", category: 'On-Air Advertisers' },
     { name: "Empowerly", image: "/images/partners/Empowerly.jpg", link: "https://start.empowerly.com/radio-nyra", category: 'On-Air Advertisers' },
     { name: "Khanna and Sons Jewelers", image: "/images/partners/Khanna and Sons Jewelers.jpg", link: "https://khannasonsjewelers.com/", category: 'On-Air Advertisers' },
     { name: "LeithCars", image: "/images/partners/LeithCars.jpg", link: "https://www.leithcars.com/", category: 'On-Air Advertisers' },

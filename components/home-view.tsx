@@ -202,7 +202,7 @@ export function HomeView() {
                             </Button>
                         </div>
 
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div className={`grid grid-cols-1 ${featuredEvents.length > 1 ? "lg:grid-cols-2" : "max-w-2xl mx-auto"} gap-6`}>
                             {featuredEvents.map((event) => (
                                 <Link
                                     key={event.title}

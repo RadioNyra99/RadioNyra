@@ -25,6 +25,7 @@ import { YouTubeWatchSection } from "@/components/youtube-watch-section"
 import { CONTACT_INFO, LISTENING_PLATFORMS, SOCIAL_LINKS } from "@/lib/site-data"
 import { OFFICIAL_YOUTUBE_CHANNEL } from "@/lib/youtube-data"
 import { getEventTimingLabel, upcomingEvents } from "@/lib/event-data"
+import { RtvPlayer } from "@/components/rtv-player"
 
 export function HomeView() {
 
@@ -183,6 +184,37 @@ export function HomeView() {
                         </div>
                     </div>
                 </section>
+
+                {/* RTV DAILY NEWS BULLETIN SECTION */}
+                <section id="rtv-news" className="py-10 bg-gradient-to-b from-background via-muted/20 to-background border-b border-border/50">
+                    <div className="container mx-auto px-4">
+                        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+                            <div>
+                                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-600/10 border border-red-500/30 text-red-600 dark:text-red-400 text-xs font-black uppercase tracking-widest mb-2">
+                                    <Radio className="w-3.5 h-3.5 animate-pulse" /> Official Daily News
+                                </div>
+                                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tighter italic leading-none">
+                                    Radio Nyra Presents <span className="text-red-600">RTV NEWS</span> on 99.9 FM-HD3
+                                </h2>
+                                <p className="text-xs sm:text-sm text-muted-foreground font-medium mt-1">
+                                    Updated daily from our PC broadcast studio &bull; Listen to today's news bulletin on-demand
+                                </p>
+                            </div>
+                            <Button
+                                variant="outline"
+                                className="text-foreground hover:bg-red-600 hover:text-white font-bold uppercase tracking-widest rounded-none border-2 border-foreground hover:border-red-600 transition-all h-10 px-6 text-xs"
+                                asChild
+                            >
+                                <Link href="/rtv-news">Full News Center &amp; Archive</Link>
+                            </Button>
+                        </div>
+
+                        <div className="max-w-5xl mx-auto">
+                            <RtvPlayer />
+                        </div>
+                    </div>
+                </section>
+
                 {/* UPCOMING EVENTS */}
                 <section className="py-10 bg-background border-b border-border/50">
                     <div className="container mx-auto px-4">

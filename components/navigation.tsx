@@ -24,10 +24,12 @@ export function Navigation() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
+    { href: "/rtv-news", label: "RTV News" },
     {
       href: "/how-to-tune",
       label: "Listen",
       subLinks: [
+        { href: "/rtv-news", label: "RTV News (99.9 FM-HD3)" },
         { href: "/schedule", label: "Schedule" },
         { href: "/how-to-tune", label: "How to Tune In" },
         { href: "/markets", label: "Markets & Coverage" },
@@ -46,6 +48,8 @@ export function Navigation() {
       href: "/youtube",
       label: "Media",
       subLinks: [
+        { href: "/rtv-news", label: "RTV Daily News" },
+        { href: "/news", label: "News & Articles" },
         { href: "/ecosystem", label: "Ecosystem" },
         { href: "/press", label: "Press" },
       ]

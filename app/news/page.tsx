@@ -7,8 +7,9 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { 
   Search, BookOpen, Clock, Calendar, Share2, 
-  ThumbsUp, MessageSquare, ArrowRight, Star, Heart, Bookmark 
+  ThumbsUp, MessageSquare, ArrowRight, Star, Heart, Bookmark, Radio
 } from "lucide-react"
+import { RtvPlayer } from "@/components/rtv-player"
 
 interface NewsArticle {
   id: string
@@ -144,7 +145,7 @@ export default function NewsPage() {
       <main className="py-16">
         <div className="container mx-auto px-4 max-w-5xl">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <BookOpen className="w-16 h-16 text-primary mx-auto mb-4" />
             <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tighter italic text-primary">
               News & Updates <span className="text-foreground">Portal</span>
@@ -152,6 +153,11 @@ export default function NewsPage() {
             <p className="text-muted-foreground font-bold uppercase tracking-widest text-xs mt-3">
               Daily coverage of Bollywood, Tollywood, local Triangle community headlines, and immigration bulletins
             </p>
+          </div>
+
+          {/* RTV Daily News Audio Broadcast */}
+          <div className="mb-14">
+            <RtvPlayer />
           </div>
 
           {/* Search bar */}

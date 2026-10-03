@@ -15,6 +15,90 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 export default function PodcastsPage() {
         const podcasts = [
         {
+            title: "PM MODI SPEAKS WITH CAPTAIN SMIT MACHCHHAR, WISHES SPEEDY RECOVERY",
+            host: "Radio Nyra News",
+            show: "Breaking & Community Updates",
+            url: "https://www.youtube.com/watch?v=44_JY_o6v3c",
+            thumbnail: "https://i.ytimg.com/vi/44_JY_o6v3c/hqdefault.jpg"
+        },
+        {
+            title: "Dr. Rahul Gupta, Biden’s Former Drug Czar | In Conversation with Steve Rao | RadioNyra",
+            host: "Steve Rao",
+            show: "Leaders & Legends",
+            url: "https://www.youtube.com/watch?v=kyKb__XUNgQ",
+            thumbnail: "https://i.ytimg.com/vi/kyKb__XUNgQ/hqdefault.jpg"
+        },
+        {
+            title: "Natasha Kumar on Art, Identity & Her US Showcase | RadioNyra with Vaishnavi",
+            host: "Vaishnavi Palleda",
+            show: "Exclusive Interview",
+            url: "https://www.youtube.com/watch?v=x9xvyuEKiPc",
+            thumbnail: "https://i.ytimg.com/vi/x9xvyuEKiPc/hqdefault.jpg"
+        },
+        {
+            title: "Leaders & Legends: David M. Walker | Former U.S. Comptroller General | RadioNyra",
+            host: "Steve Rao",
+            show: "Leaders & Legends",
+            url: "https://www.youtube.com/watch?v=TRON9MpOOvA",
+            thumbnail: "https://i.ytimg.com/vi/TRON9MpOOvA/hqdefault.jpg"
+        },
+        {
+            title: "Anupam Kher & Swaroop Sampat on Theatre, Films & Life | RadioNyra with Vaishnavi Palleda",
+            host: "Vaishnavi Palleda",
+            show: "Exclusive Interview",
+            url: "https://www.youtube.com/watch?v=SAYX7pPq1nQ",
+            thumbnail: "https://i.ytimg.com/vi/SAYX7pPq1nQ/hqdefault.jpg"
+        },
+        {
+            title: "Hindu Society of North Carolina | Chai Pe Charcha | New Progress & Development of HSNC | RadioNyra",
+            host: "Van Bhandari",
+            show: "Chai Pe Charcha",
+            url: "https://www.youtube.com/watch?v=avBcFEtiLic",
+            thumbnail: "https://i.ytimg.com/vi/avBcFEtiLic/hqdefault.jpg"
+        },
+        {
+            title: "Immigration Updates: USCIS Announcements, DHS News & Visa Questions with Brown Imm law | RadioNyra",
+            host: "Brown Immigration Law",
+            show: "Brown Immigration Law",
+            url: "https://www.youtube.com/watch?v=DdQqsc76LU8",
+            thumbnail: "https://i.ytimg.com/vi/DdQqsc76LU8/hqdefault.jpg"
+        },
+        {
+            title: "Shirley Johnson on Leadership, NC & the Future | Leaders & Legends with Steve Rao",
+            host: "Steve Rao",
+            show: "Leaders & Legends",
+            url: "https://www.youtube.com/watch?v=B9gLGdxhPH4",
+            thumbnail: "https://i.ytimg.com/vi/B9gLGdxhPH4/hqdefault.jpg"
+        },
+        {
+            title: "Leading Morrisville Forward | Brandon Zuidema with Steve Rao | Leaders & Legends RadioNyra Podcast",
+            host: "Steve Rao",
+            show: "Leaders & Legends",
+            url: "https://www.youtube.com/watch?v=q8HooANpWNA",
+            thumbnail: "https://i.ytimg.com/vi/q8HooANpWNA/hqdefault.jpg"
+        },
+        {
+            title: "Rebecca Trout on Civic Engagement, Local Leadership & Stronger Communities | Leaders & Legends",
+            host: "Steve Rao",
+            show: "Leaders & Legends",
+            url: "https://www.youtube.com/watch?v=E8GjC6n5nr8",
+            thumbnail: "https://i.ytimg.com/vi/E8GjC6n5nr8/hqdefault.jpg"
+        },
+        {
+            title: "Brad Wilson Reveals Leadership Secrets | Former Blue Cross Blue Shield CEO & Chairman | RadioNyra",
+            host: "Steve Rao",
+            show: "Leaders & Legends",
+            url: "https://www.youtube.com/watch?v=ucSs6hl9ddE",
+            thumbnail: "https://i.ytimg.com/vi/ucSs6hl9ddE/hqdefault.jpg"
+        },
+        {
+            title: "Inside JLF North Carolina 2026 with Festival Director Sejal Mehta | RadioNyra Podcast",
+            host: "Radio Nyra USA",
+            show: "Community & Culture",
+            url: "https://www.youtube.com/watch?v=w-am2CUVdoc",
+            thumbnail: "https://i.ytimg.com/vi/w-am2CUVdoc/hqdefault.jpg"
+        },
+        {
             title: "$103,265 H-1B Fee?! DHS Proposal Explained by Kelsey Berger, Brown Immigration | RadioNyra Podcast",
             host: "Kelsey Berger",
             show: "Brown Immigration Law",

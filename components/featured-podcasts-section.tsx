@@ -40,6 +40,8 @@ function deriveTopic(video: YouTubeVideoItem): string {
   if (tags.includes("H1B") || tags.includes("DHS") || title.includes("H-1B")) return "Immigration & Legal"
   if (tags.includes("L1Visa") || title.includes("L-1")) return "Immigration & Legal"
   if (tags.includes("F1Visa") || tags.includes("StudentVisa") || tags.includes("J1Visa") || title.includes("F-1")) return "Student Visas"
+  if (title.includes("Art") || title.includes("Showcase")) return "Art & Culture"
+  if (title.includes("Anupam Kher") || title.includes("Theatre")) return "Cinema & Theatre"
   if (tags.includes("PrabhuDeva") || tags.includes("Celebrity")) return "Celebrity Spotlight"
   if (tags.includes("HariKumar") || tags.includes("Concert")) return "Events & Concerts"
   if (tags.includes("ChaiPeCharcha") || tags.includes("HSNC")) return "Community & Culture"
@@ -53,6 +55,7 @@ function deriveHost(video: YouTubeVideoItem): string {
   const { tags, title } = video
   if (tags.includes("SteveRao") || title.includes("Steve Rao")) return "Steve Rao"
   if (tags.includes("VanBhandari") || title.includes("Van Bhandari")) return "Van Bhandari"
+  if (title.includes("Vaishnavi") || tags.includes("VaishnaviPalleda")) return "Vaishnavi Palleda"
   if (title.includes("Kelsey Berger")) return "Kelsey Berger"
   if (title.includes("Prabhu Deva") && title.includes("Hari Kumar")) return "Vaishnavi Palleda"
   if (title.includes("Hari Kumar")) return "Hari Kumar"

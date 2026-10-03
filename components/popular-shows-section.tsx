@@ -106,18 +106,6 @@ const ALL_SHOWS: ShowItem[] = [
     tag: "Tollywood Melodies",
     description: "Wake up with the best Telugu melodies, Telugu diaspora news, family chit-chat, and positive energy on HD3.",
   },
-  {
-    id: "show-mana-muchatlu",
-    name: "Mana Muchatlu",
-    host: "Kanthi",
-    image: "/images/hosts/mana-muchatlu.webp",
-    stationId: STATIONS.Telugu.id,
-    language: "telugu",
-    stationLabel: "99.9 FM-HD3 Telugu",
-    time: "5:00 PM – 7:00 PM EST",
-    tag: "Telugu Community",
-    description: "Heart-to-heart Telugu talks, listener song dedications, local community happenings, and Tollywood chart hits.",
-  },
 ]
 
 export function PopularShowsSection() {

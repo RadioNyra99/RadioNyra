@@ -116,11 +116,11 @@ export function NyraChat() {
       },
       {
         keywords: ["schedule", "shows", "timing", "when", "program"],
-        response: "Our schedule is packed with hits!\n- Morning (7-9 AM): Zara Muskurao with Aayushii Rode (HD4 Hindi)\n- Morning (8-10 AM): Chinna Mata with Priya (HD3 Telugu)\n- Midday (9-11 AM): Triangle Tunes and Talks with Monika Joshi\n- Afternoon (1-3 PM): Bollywood Bliss with Bharti Rathore\n- Evening Drive (5-7 PM): Dil Se Desi with Van Bhandari (HD4) & Mana Muchatlu with Kanthi (HD3)\n- Evening (8-11 PM): Nirvana Nights with Parag.\nCheck the complete 7-day schedule on /schedule!"
+        response: "Our schedule is packed with hits!\n- Morning (7-9 AM): Zara Muskurao with Aayushii Rode (HD4 Hindi)\n- Morning (8-10 AM): Chinna Mata with Priya (HD3 Telugu)\n- Midday (9-11 AM): Triangle Tunes and Talks with Monika Joshi\n- Afternoon (1-3 PM): Bollywood Bliss with Bharti Rathore\n- Evening Drive (5-7 PM): Dil Se Desi with Van Bhandari (HD4)\n- Evening (8-11 PM): Nirvana Nights with Parag.\nCheck the complete 7-day schedule on /schedule!"
       },
       {
-        keywords: ["telugu", "next telugu", "chinna mata", "mana muchatlu"],
-        response: "RadioNyra Telugu broadcasts 24/7 on 99.9 FM-HD3 in the Raleigh-Durham Triangle!\n- Morning (8-10 AM): Chinna Mata with Priya\n- Evening (5-7 PM): Mana Muchatlu with Kanthi\nSwitch stations anytime in the bottom player!"
+        keywords: ["telugu", "next telugu", "chinna mata"],
+        response: "RadioNyra Telugu broadcasts 24/7 on 99.9 FM-HD3 in the Raleigh-Durham Triangle!\n- Morning (8-10 AM): Chinna Mata with Priya\nSwitch stations anytime in the bottom player!"
       },
       {
         keywords: ["contact", "phone", "email", "reach", "whatsapp", "call", "address", "location"],

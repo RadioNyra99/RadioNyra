@@ -200,8 +200,7 @@ export default function AnalyticsPage() {
                     { rank: 1, name: "Hello Vaishnavi", share: "34%", host: "Vaishnavi Palleda" },
                     { rank: 2, name: "Geet Bazaar", share: "28%", host: "Dr. Taj & Dr. Caldwell" },
                     { rank: 3, name: "Chinna Mata", share: "18%", host: "Priya" },
-                    { rank: 4, name: "Mana Muchatlu", share: "12%", host: "Kanthi" },
-                    { rank: 5, name: "Zara Muskurao", share: "8%", host: "Aayushii" }
+                    { rank: 4, name: "Zara Muskurao", share: "8%", host: "Aayushii" }
                   ].map((show, i) => (
                     <div key={i} className="flex items-center justify-between border-b border-border pb-3.5 text-xs font-bold text-muted-foreground">
                       <div className="flex items-center gap-3">

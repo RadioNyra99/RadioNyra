@@ -19,7 +19,6 @@ import { LiveNowHero } from "@/components/live-now-hero"
 import { ComingUpSchedule } from "@/components/coming-up-schedule"
 import { TrendingMusicSection } from "@/components/trending-music-section"
 import { FeaturedPodcastsSection } from "@/components/featured-podcasts-section"
-import { ListenerRewardsSection } from "@/components/listener-rewards-section"
 import { PopularShowsSection } from "@/components/popular-shows-section"
 import { NyraAIShowcaseSection } from "@/components/nyra-ai-showcase-section"
 import { HoliEffects } from "@/components/holi-effects"
@@ -30,11 +29,9 @@ import { NewsletterSection } from "@/components/newsletter-section"
 import { CONTACT_INFO, LISTENING_PLATFORMS, SOCIAL_LINKS } from "@/lib/site-data"
 import { OFFICIAL_YOUTUBE_CHANNEL } from "@/lib/youtube-data"
 import { getEventTimingLabel, upcomingEvents } from "@/lib/event-data"
+import { RtvPlayer } from "@/components/rtv-player"
 
 export function HomeView() {
-
-
-    const featuredEvents = upcomingEvents;
 
     return (
         <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-primary-foreground">
@@ -81,74 +78,32 @@ export function HomeView() {
                 {/* TRENDING MUSIC & PLAYLISTS (SPOTIFY STYLE) */}
                 <TrendingMusicSection />
 
-                {/* UPCOMING EVENTS */}
-                <section className="py-10 bg-background border-b border-border/50">
+                {/* RTV DAILY NEWS BULLETIN SECTION */}
+                <section id="rtv-news" className="py-10 bg-gradient-to-b from-background via-muted/20 to-background border-b border-border/50">
                     <div className="container mx-auto px-4">
                         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
                             <div>
-                                <p className="text-[10px] font-black uppercase tracking-[0.35em] text-primary mb-2">Upcoming Events</p>
-                                <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter italic leading-none">
-                                    Garba Nights For The Community
+                                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-600/10 border border-red-500/30 text-red-600 dark:text-red-400 text-xs font-black uppercase tracking-widest mb-2">
+                                    <Radio className="w-3.5 h-3.5 animate-pulse" /> Official Daily News
+                                </div>
+                                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tighter italic leading-none">
+                                    Radio Nyra Presents <span className="text-red-600">RTV NEWS</span> on 99.9 FM-HD3
                                 </h2>
+                                <p className="text-xs sm:text-sm text-muted-foreground font-medium mt-1">
+                                    Listen to today's Telugu news bulletin on-demand &bull; Broadcasting on Radio Nyra 99.9 FM-HD3
+                                </p>
                             </div>
                             <Button
                                 variant="outline"
-                                className="text-foreground hover:bg-primary hover:text-white font-bold uppercase tracking-widest rounded-none border-2 border-foreground hover:border-primary transition-all h-10 px-6 text-xs"
+                                className="text-foreground hover:bg-red-600 hover:text-white font-bold uppercase tracking-widest rounded-none border-2 border-foreground hover:border-red-600 transition-all h-10 px-6 text-xs cursor-pointer"
                                 asChild
                             >
-                                <Link href="/events">View All Events</Link>
+                                <Link href="/rtv-news">Full News Center &amp; Archive</Link>
                             </Button>
                         </div>
 
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                            {featuredEvents.map((event) => (
-                                <Link
-                                    key={event.title}
-                                    href={event.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="group border border-border bg-card hover:border-primary transition-colors overflow-hidden"
-                                >
-                                    <div className={`relative bg-muted overflow-hidden ${event.imageAspect === "landscape" ? "aspect-[16/10]" : "aspect-[4/5]"}`}>
-                                        <img
-                                            src={event.image}
-                                            alt={`${event.title} flyer`}
-                                            className="h-full w-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
-                                        />
-                                        <div className="absolute top-4 left-4 bg-primary text-white px-2 py-1 text-[9px] font-black uppercase tracking-widest">
-                                            {getEventTimingLabel(event.startDate)}
-                                        </div>
-                                    </div>
-
-                                    <div className="p-5 md:p-6">
-                                        <div className="flex flex-wrap gap-3 mb-4">
-                                            <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-primary">
-                                                <Calendar className="h-4 w-4" /> {event.date}
-                                            </span>
-                                            <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-muted-foreground">
-                                                <MapPin className="h-4 w-4" /> {event.location}
-                                            </span>
-                                        </div>
-                                        <p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary mb-3">
-                                            {event.type}
-                                        </p>
-                                        <h3 className="text-2xl md:text-4xl font-black uppercase tracking-tighter italic leading-none mb-4 group-hover:text-primary transition-colors">
-                                            {event.title}
-                                        </h3>
-                                        <p className="text-sm text-muted-foreground font-medium leading-relaxed mb-5">
-                                            {event.description}
-                                        </p>
-                                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-t border-border pt-4">
-                                            <span className="text-xs font-black uppercase tracking-wider text-foreground">
-                                                {event.time}
-                                            </span>
-                                            <span className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-widest text-primary">
-                                                {event.cta} <ExternalLink className="h-4 w-4" />
-                                            </span>
-                                        </div>
-                                    </div>
-                                </Link>
-                            ))}
+                        <div className="max-w-5xl mx-auto">
+                            <RtvPlayer />
                         </div>
                     </div>
                 </section>
@@ -316,9 +271,6 @@ export function HomeView() {
                         </div>
                     </div>
                 </section>
-
-                {/* WIN & GIVEAWAYS (LISTENER REWARDS) */}
-                <ListenerRewardsSection />
 
                 {/* POPULAR SHOWS & PERSONALITIES (KEXP EDITORIAL STYLE) */}
                 <PopularShowsSection />

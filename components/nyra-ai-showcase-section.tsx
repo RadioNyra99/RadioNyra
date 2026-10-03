@@ -15,7 +15,7 @@ const SAMPLE_PROMPTS = [
     icon: Mic,
     category: "Regional Schedule",
     query: "When is the next Telugu show?",
-    description: "Find out when Chinna Mata & Mana Muchatlu air",
+    description: "Find out when Chinna Mata and Telugu shows air",
   },
   {
     icon: ShieldCheck,

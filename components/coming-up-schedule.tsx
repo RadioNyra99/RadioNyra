@@ -36,15 +36,7 @@ const UPCOMING_SHOWS: UpcomingShow[] = [
     category: "Retro & Contemporary Hits",
     frequency: "99.9 FM-HD4",
   },
-  {
-    id: "show-3",
-    time: "3:00 PM - 5:00 PM",
-    title: "Mana Muchatlu",
-    host: "Kanthi",
-    language: "Telugu",
-    category: "Tollywood & Lifestyle",
-    frequency: "99.9 FM-HD3",
-  },
+
   {
     id: "show-4",
     time: "5:00 PM - 7:00 PM",

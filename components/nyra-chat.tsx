@@ -19,16 +19,17 @@ const INITIAL_MESSAGES: Message[] = [
   {
     id: "1",
     role: "assistant",
-    content: "Namaste! Welcome to Radio Nyra. I'm Nyra, your AI assistant. How can I help you today?",
+    content: "Namaste! I'm Nyra AI, your personal discovery assistant for South Asian music, live shows, podcasts, and community events on Radio Nyra. What would you like to explore?",
     timestamp: new Date(),
   },
 ]
 
 const SUGGESTED_QUESTIONS = [
-  "How can I listen in my car?",
-  "What is the address of the studio?",
-  "Do you have any upcoming events?",
-  "What is the difference between FM and AM and HD radio?",
+  "What song was playing 10 minutes ago?",
+  "When is the next Telugu show?",
+  "What community events are happening this weekend?",
+  "Show me immigration podcast updates",
+  "How can I tune in to 99.9 FM in my car?",
 ]
 
 
@@ -39,6 +40,22 @@ export function NyraChat() {
   const [isLoading, setIsLoading] = React.useState(false)
   const [showSuggestions, setShowSuggestions] = React.useState(true)
   const scrollRef = React.useRef<HTMLDivElement>(null)
+
+  React.useEffect(() => {
+    const handleOpenAI = (e: Event) => {
+      const customEvent = e as CustomEvent<{ query?: string }>
+      setIsOpen(true)
+      if (customEvent.detail?.query) {
+        setTimeout(() => {
+          handleSend(customEvent.detail.query)
+        }, 300)
+      }
+    }
+    if (typeof window !== "undefined") {
+      window.addEventListener("open-nyra-ai", handleOpenAI)
+      return () => window.removeEventListener("open-nyra-ai", handleOpenAI)
+    }
+  }, [])
 
   const scrollToBottom = () => {
     if (scrollRef.current) {
@@ -86,8 +103,24 @@ export function NyraChat() {
     // Knowledge Base
     const KB = [
       {
+        keywords: ["song playing", "what was playing", "played", "10 minutes", "song ago", "track", "tum hi ho"],
+        response: "🎶 Live Broadcast Music Log:\n- 99.9 FM-HD4 Hindi (Zara Muskurao): Recently played 'Tum Hi Ho' by Arijit Singh, followed by 'Kesariya'.\n- 99.9 FM-HD3 Telugu: Recently played 'Samajavaragamana' by Sid Sriram.\nClick the play button in the bottom player bar to listen live!"
+      },
+      {
+        keywords: ["dedication", "dedicate", "song request", "request"],
+        response: "🎵 Listener Song Dedication:\nTo dedicate a song on air to your friends or family:\n1. WhatsApp: +1 (919) 294-4800\n2. Include: Song Title, Artist Name, Name of recipient & your dedication message.\nOur on-air RJs will broadcast your dedication during the evening drive shows!"
+      },
+      {
+        keywords: ["immigration", "visa", "h-1b", "h1b", "l-1", "l1", "f-1", "j-1", "brown"],
+        response: "🇺🇸 Immigration & Legal Spotlight:\nWe have full-length video podcast episodes with Brown Immigration Law:\n- $103,265 H-1B Fee DHS Proposal Explained by Kelsey Berger\n- L-1 Visa Approval Secrets & Qualifications\n- F-1 vs J-1 vs I Visas Explained for Students\nCheck out the 'Latest RadioNyra Podcasts' section on the homepage or visit /podcasts!"
+      },
+      {
         keywords: ["schedule", "shows", "timing", "when", "program"],
-        response: "Our schedule is packed with hits! \n- Morning (7-9 AM): Zara Muskurao with Aayushii Rode \n- Mid-day (10 AM - 1 PM): Triangle Tunes and Talks with Monika Joshi \n- Afternoon (1-4 PM): Bollywood Bliss with Bharti Rathore \n- Evening (7-10 PM): Nirvana Nights with Parag. \nCheck the full schedule on our Schedule page!"
+        response: "Our schedule is packed with hits!\n- Morning (7-9 AM): Zara Muskurao with Aayushii Rode (HD4 Hindi)\n- Morning (8-10 AM): Chinna Mata with Priya (HD3 Telugu)\n- Midday (9-11 AM): Triangle Tunes and Talks with Monika Joshi\n- Afternoon (1-3 PM): Bollywood Bliss with Bharti Rathore\n- Evening Drive (5-7 PM): Dil Se Desi with Van Bhandari (HD4)\n- Evening (8-11 PM): Nirvana Nights with Parag.\nCheck the complete 7-day schedule on /schedule!"
+      },
+      {
+        keywords: ["telugu", "next telugu", "chinna mata"],
+        response: "RadioNyra Telugu broadcasts 24/7 on 99.9 FM-HD3 in the Raleigh-Durham Triangle!\n- Morning (8-10 AM): Chinna Mata with Priya\nSwitch stations anytime in the bottom player!"
       },
       {
         keywords: ["contact", "phone", "email", "reach", "whatsapp", "call", "address", "location"],
@@ -111,19 +144,19 @@ export function NyraChat() {
       },
       {
         keywords: ["hello", "hi", "namaste", "hey", "who are you", "what can you do"],
-        response: "Namaste! I'm Nyra, your AI assistant. I can help you with show schedules, station frequencies, advertising info, and more. What's on your mind?"
+        response: "Namaste! I'm Nyra, your AI cultural & discovery assistant. Ask me about songs playing on air, show schedules, Telugu & Hindi frequencies, immigration podcast episodes, or community events!"
       },
       {
         keywords: ["car", "automotive", "drive", "listen in car", "bluetooth", "carplay", "android auto"],
-        response: "To listen in your car, you can:\n- Tune to 99.9 FM (Raleigh-Durham area).\n- Use Bluetooth to stream from our app.\n- Connect via Apple CarPlay or Android Auto using our mobile app!\n- Just ask Siri/Google: 'Open Radio Nyra'!"
+        response: "To listen in your car, you can:\n- Tune to 99.9 FM (HD4 for Hindi, HD3 for Telugu in Raleigh-Durham).\n- Use Bluetooth to stream from our app.\n- Connect via Apple CarPlay or Android Auto using our mobile app!\n- Just ask Siri/Google: 'Open Radio Nyra'!"
       },
       {
-        keywords: ["events", "upcoming", "happenings", "holi", "concert", "festiv"],
-        response: "We always have exciting events! Currently, we're celebrating the Holi season with special broadcasts and community gatherings. Keep an eye on our 'Events' section on the website for the latest updates!"
+        keywords: ["events", "upcoming", "happenings", "holi", "concert", "festiv", "weekend", "cary", "morrisville"],
+        response: "We have exciting diaspora events in the Triangle!\n- Garba Nights for the Community in Raleigh/Cary\n- Cultural festivals and temple celebrations in Morrisville\nVisit our /events page for full venue details and tickets!"
       },
       {
         keywords: ["fm", "am", "hd", "difference", "radio technology", "high definition"],
-        response: "Great question! \n- FM (Frequency Modulation): Traditional high-quality analog broadcast.\n- AM (Amplitude Modulation): Older tech, usually for talk/news.\n- HD Radio: Digital technology that allows multiple 'channels' on one FM frequency (like our HD3 Telugu and HD4 Hindi stations) with CD-like crystal clear audio!"
+        response: "Great question!\n- FM (Frequency Modulation): Traditional high-quality analog broadcast.\n- HD Radio: Modern digital technology that allows multiple crystal-clear digital audio streams on one FM frequency—like our HD3 Telugu and HD4 Hindi stations with CD-like sound!"
       }
     ]
 

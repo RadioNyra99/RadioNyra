@@ -16,11 +16,17 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet"
-import { ChevronDown, Menu } from "lucide-react"
+import { ChevronDown, Menu, Sparkles } from "lucide-react"
 import { showAudioPlayer } from "../lib/audio-player-utils"
 import { SiteSearch } from "./site-search"
 
 export function Navigation() {
+  const openNyraAI = () => {
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("open-nyra-ai"))
+    }
+  }
+
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
@@ -147,14 +153,25 @@ export function Navigation() {
                       </Link>
                     </Button>
                   </div>
-                  <SheetClose asChild>
-                    <Button
-                      onClick={showAudioPlayer}
-                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-black uppercase tracking-[0.1em] rounded-full py-5 text-sm soft-shadow-primary transition-transform active:scale-95 cursor-pointer"
-                    >
-                      Listen Live
-                    </Button>
-                  </SheetClose>
+                  <div className="flex flex-col gap-2.5">
+                    <SheetClose asChild>
+                      <Button
+                        onClick={openNyraAI}
+                        className="w-full bg-gradient-to-r from-red-600 to-amber-500 hover:from-red-500 hover:to-amber-400 text-white font-black uppercase tracking-wider rounded-full py-5 text-xs shadow-md flex items-center justify-center gap-2 cursor-pointer"
+                      >
+                        <Sparkles className="w-4 h-4" />
+                        Ask Nyra AI
+                      </Button>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Button
+                        onClick={showAudioPlayer}
+                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-black uppercase tracking-[0.1em] rounded-full py-5 text-sm soft-shadow-primary transition-transform active:scale-95 cursor-pointer"
+                      >
+                        Listen Live
+                      </Button>
+                    </SheetClose>
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>
@@ -206,11 +223,18 @@ export function Navigation() {
           </div>
 
           {/* Logo & Right Actions */}
-          <div className="flex items-center gap-1.5 sm:gap-4 lg:gap-6">
+          <div className="flex items-center gap-1.5 sm:gap-2.5 lg:gap-3">
             <SiteSearch />
             <Button
+              onClick={openNyraAI}
+              className="bg-gradient-to-r from-red-600 to-amber-500 hover:from-red-500 hover:to-amber-400 text-white font-black uppercase tracking-wider rounded-full px-3 sm:px-4 h-8 sm:h-9 text-[10px] sm:text-xs transition-all cursor-pointer shadow-sm hover:scale-105 shrink-0 hidden sm:inline-flex items-center gap-1.5"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Ask Nyra</span>
+            </Button>
+            <Button
               onClick={showAudioPlayer}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-black uppercase tracking-tighter rounded-full px-3.5 sm:px-6 h-8 sm:h-10 text-[10px] sm:text-xs transition-all cursor-pointer shrink-0"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-black uppercase tracking-tighter rounded-full px-3.5 sm:px-5 h-8 sm:h-9 text-[10px] sm:text-xs transition-all cursor-pointer shrink-0"
             >
               Listen Live
             </Button>

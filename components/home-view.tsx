@@ -15,44 +15,23 @@ import { VoiceAssistants } from "@/components/voice-assistants"
 import { motion, AnimatePresence } from "framer-motion"
 import { PARTNERS } from "@/lib/partners"
 import { ApolloTracker } from "@/components/apollo-tracker"
+import { LiveNowHero } from "@/components/live-now-hero"
+import { ComingUpSchedule } from "@/components/coming-up-schedule"
+import { TrendingMusicSection } from "@/components/trending-music-section"
+import { FeaturedPodcastsSection } from "@/components/featured-podcasts-section"
+import { PopularShowsSection } from "@/components/popular-shows-section"
+import { NyraAIShowcaseSection } from "@/components/nyra-ai-showcase-section"
 import { HoliEffects } from "@/components/holi-effects"
 import { HoliBanner } from "@/components/holi-banner"
-import { ShowsMarquee } from "@/components/shows-marquee"
 import { PartnersMarquee } from "@/components/partners-marquee"
 import { AdvertiserSection } from "@/components/advertiser-section"
 import { NewsletterSection } from "@/components/newsletter-section"
-import { YouTubeWatchSection } from "@/components/youtube-watch-section"
 import { CONTACT_INFO, LISTENING_PLATFORMS, SOCIAL_LINKS } from "@/lib/site-data"
 import { OFFICIAL_YOUTUBE_CHANNEL } from "@/lib/youtube-data"
 import { getEventTimingLabel, upcomingEvents } from "@/lib/event-data"
 import { RtvPlayer } from "@/components/rtv-player"
 
 export function HomeView() {
-
-
-    // Radio Nyra Shows Data
-    const shows = [
-        // Hindi shows
-
-        { name: "Hello Vaishnavi", host: "Vaishnavi Palleda", image: "/images/hosts/hello-vaishnavi.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Triangle Tunes and Talks", host: "Monika Joshi", image: "/images/hosts/triangle-tunes.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Idhar Udhar Ki Baatein", host: "Arpit Tandon", image: "/images/hosts/idhar-udhar-ki-baatein.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Dil Se Desi With Van", host: "Van", image: "/images/hosts/dil-se-desi.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Aaj Ki Shaam", host: "Jyoti", image: "/images/hosts/Aaj Ki Shaam-jyoti kae naam.png", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpeg", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Nirvana Nights", host: "Parag", image: "/images/hosts/nirvana-nights.png", stationId: STATIONS.Hindi.id, language: "hindi" },
-        { name: "Geet Bazaar", host: "Dr. Taj & Dr. Caldwell", image: "/images/hosts/geet-bazaar.webp", stationId: STATIONS.Hindi.id, language: "hindi" },
-        // Telugu shows (as per requirement)
-        { name: "Chinna Mata", host: "Priya", image: "/images/hosts/chinna-mata.webp", stationId: STATIONS.Telugu.id, language: "telugu" },
-        { name: "Mana Muchatlu", host: "Kanthi", image: "/images/hosts/mana-muchatlu.webp", stationId: STATIONS.Telugu.id, language: "telugu" },
-    ];
-    const { playStation, currentStation } = useAudio();
-    const featuredEvents = upcomingEvents;
-
-    // Determine selected language from audio player
-    const selectedLanguage = currentStation.id === STATIONS.Telugu.id ? "telugu" : "hindi";
-    const filteredShows = shows.filter((show) => show.language === selectedLanguage);
 
     return (
         <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-primary-foreground">
@@ -61,100 +40,11 @@ export function HomeView() {
             <FrequencyBar />
 
             <main>
-                {/* HERO SECTION */}
-                <section className="relative h-auto min-h-[45vh] w-full overflow-hidden flex items-center justify-center bg-black py-8 md:py-10">
-                    <div className="absolute inset-0 z-0 opacity-60">
-                        <img
-                            src="/radio-studio-modern.webp"
-                            alt="Modern broadcast studio"
-                            className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-black/50" />
-                    </div>
+                {/* LIVE NOW STREAMING HERO (SPOTIFY + KEXP STYLE) */}
+                <LiveNowHero />
 
-                    <div className="relative z-20 container mx-auto px-4 text-center">
-                        {/* Added Contact Info */}
-                        <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 mb-5 text-white/90 font-bold uppercase tracking-widest text-xs md:text-sm">
-                            <a href={CONTACT_INFO.emailHref} className="hover:text-primary transition-colors flex items-center gap-2">
-                                <span className="w-2 h-2 bg-primary rounded-full"></span> {CONTACT_INFO.email}
-                            </a>
-                            <a href={CONTACT_INFO.phoneHref} className="hover:text-primary transition-colors flex items-center gap-2">
-                                <span className="hidden md:inline text-primary">|</span> {CONTACT_INFO.phone} (Call Only)
-                            </a>
-                            <a href={CONTACT_INFO.whatsappHref} target="_blank" rel="noopener noreferrer" className="hover:text-[#25D366] transition-colors flex items-center gap-2">
-                                <span className="hidden md:inline text-primary">|</span> WhatsApp: {CONTACT_INFO.phone}
-                            </a>
-                        </div>
-
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-3 uppercase leading-[1.1] md:leading-[0.95] drop-shadow-2xl italic">
-                            <span className="text-white block">The Indian Subcontinent</span>
-                            <span className="text-primary block mt-1 md:mt-2">Community Media Network In USA</span>
-                        </h1>
-                        <p className="text-white/90 text-sm md:text-base max-w-2xl mx-auto mb-6 font-medium">
-                            Wherever our listeners go, Radio Nyra goes with them. Listen in your car, at work, on your phone, on the website, on Alexa, and across America.
-                        </p>
-                        <div className="flex flex-wrap justify-center gap-2.5 sm:gap-4 mb-6">
-                            <Button onClick={() => playStation(STATIONS.Hindi.id)} className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white rounded-none font-bold uppercase tracking-widest px-6 sm:px-8 py-4 sm:py-5 text-xs sm:text-sm cursor-pointer">Listen Live</Button>
-                            <Button asChild className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-white rounded-none font-bold uppercase tracking-widest px-6 sm:px-8 py-4 sm:py-5 text-xs sm:text-sm cursor-pointer">
-                                <Link href="https://apps.apple.com/us/app/radio-nyra-raleigh-durham/id6469009980" target="_blank">Download App</Link>
-                            </Button>
-                            <Button asChild className="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white rounded-none font-bold uppercase tracking-widest px-6 sm:px-8 py-4 sm:py-5 text-xs sm:text-sm cursor-pointer">
-                                <Link href={OFFICIAL_YOUTUBE_CHANNEL.subscribeUrl} target="_blank" className="inline-flex items-center justify-center gap-2">
-                                    <Youtube className="w-4 h-4 fill-white" /> Subscribe on YouTube
-                                </Link>
-                            </Button>
-
-                            <DropdownMenu>
-                                <DropdownMenuTrigger asChild>
-                                    <Button className="w-full sm:w-auto bg-white text-black hover:bg-gray-100 rounded-none border-2 border-white font-bold uppercase tracking-widest px-6 sm:px-8 py-4 sm:py-5 text-xs sm:text-sm cursor-pointer">
-                                        Other Stations <ChevronDown className="ml-2 w-4 h-4" />
-                                    </Button>
-                                </DropdownMenuTrigger>
-                                <DropdownMenuContent className="bg-black/90 text-white border-white/20">
-                                    {Object.entries(STATIONS).filter(([key]) => key !== "Hindi" && key !== "Telugu").map(([key, station]) => (
-                                        <DropdownMenuItem key={key} onClick={() => playStation(station.id)} className="cursor-pointer hover:bg-primary/20 hover:text-white font-bold uppercase text-xs tracking-widest">
-                                            {station.name}
-                                        </DropdownMenuItem>
-                                    ))}
-                                </DropdownMenuContent>
-                            </DropdownMenu>
-
-                            <Button asChild className="hidden md:flex bg-white text-black hover:bg-gray-100 rounded-none border-2 border-white font-bold uppercase tracking-widest px-6 py-5 text-xs sm:text-sm cursor-pointer">
-                                <Link href="/advertise">Advertise</Link>
-                            </Button>
-                            <Button asChild className="hidden md:flex bg-white text-black hover:bg-gray-100 rounded-none border-2 border-white font-bold uppercase tracking-widest px-6 py-5 text-xs sm:text-sm cursor-pointer">
-                                <Link href="/contact">Partner With Us</Link>
-                            </Button>
-                        </div>
-
-                        <div className="mt-6">
-                            <p className="text-white/60 text-[10px] font-black uppercase tracking-[0.3em] mb-3 drop-shadow-sm">Also Available on Digital Platforms</p>
-                            <div className="flex flex-wrap items-center justify-center gap-4">
-                                <VoiceAssistants />
-
-                                {/* Mobile Store Icons Moved Here */}
-                                <div className="flex items-center gap-4 py-2">
-                                    <Link
-                                        href="https://apps.apple.com/us/app/radio-nyra-raleigh-durham/id6469009980"
-                                        target="_blank"
-                                        className="bg-white p-2 rounded-full h-12 w-12 flex items-center justify-center hover:scale-110 transition-all shadow-xl border-2 border-white/20"
-                                        title="Download on App Store"
-                                    >
-                                        <img src="/apple-icon.webp" alt="Download on the App Store" className="w-7 h-7 object-contain" />
-                                    </Link>
-                                    <Link
-                                        href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app"
-                                        target="_blank"
-                                        className="bg-white p-2 rounded-full h-12 w-12 flex items-center justify-center hover:scale-110 transition-all shadow-xl border-2 border-white/20"
-                                        title="Get it on Google Play"
-                                    >
-                                        <img src="/android-icon.webp" alt="Get it on Google Play" className="w-7 h-7 object-contain" />
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                {/* COMING UP SCHEDULE STRIP */}
+                <ComingUpSchedule />
 
                 {/* STATS */}
                 <section className="py-8 bg-background border-b border-border/50">
@@ -185,6 +75,9 @@ export function HomeView() {
                     </div>
                 </section>
 
+                {/* TRENDING MUSIC & PLAYLISTS (SPOTIFY STYLE) */}
+                <TrendingMusicSection />
+
                 {/* RTV DAILY NEWS BULLETIN SECTION */}
                 <section id="rtv-news" className="py-10 bg-gradient-to-b from-background via-muted/20 to-background border-b border-border/50">
                     <div className="container mx-auto px-4">
@@ -197,12 +90,12 @@ export function HomeView() {
                                     Radio Nyra Presents <span className="text-red-600">RTV NEWS</span> on 99.9 FM-HD3
                                 </h2>
                                 <p className="text-xs sm:text-sm text-muted-foreground font-medium mt-1">
-                                    Updated daily from our PC broadcast studio &bull; Listen to today's news bulletin on-demand
+                                    Listen to today's Telugu news bulletin on-demand &bull; Broadcasting on Radio Nyra 99.9 FM-HD3
                                 </p>
                             </div>
                             <Button
                                 variant="outline"
-                                className="text-foreground hover:bg-red-600 hover:text-white font-bold uppercase tracking-widest rounded-none border-2 border-foreground hover:border-red-600 transition-all h-10 px-6 text-xs"
+                                className="text-foreground hover:bg-red-600 hover:text-white font-bold uppercase tracking-widest rounded-none border-2 border-foreground hover:border-red-600 transition-all h-10 px-6 text-xs cursor-pointer"
                                 asChild
                             >
                                 <Link href="/rtv-news">Full News Center &amp; Archive</Link>
@@ -215,77 +108,8 @@ export function HomeView() {
                     </div>
                 </section>
 
-                {/* UPCOMING EVENTS */}
-                <section className="py-10 bg-background border-b border-border/50">
-                    <div className="container mx-auto px-4">
-                        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
-                            <div>
-                                <p className="text-[10px] font-black uppercase tracking-[0.35em] text-primary mb-2">Upcoming Events</p>
-                                <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter italic leading-none">
-                                    Garba Nights For The Community
-                                </h2>
-                            </div>
-                            <Button
-                                variant="outline"
-                                className="text-foreground hover:bg-primary hover:text-white font-bold uppercase tracking-widest rounded-none border-2 border-foreground hover:border-primary transition-all h-10 px-6 text-xs"
-                                asChild
-                            >
-                                <Link href="/events">View All Events</Link>
-                            </Button>
-                        </div>
-
-                        <div className={`grid grid-cols-1 ${featuredEvents.length > 1 ? "lg:grid-cols-2" : "max-w-2xl mx-auto"} gap-6`}>
-                            {featuredEvents.map((event) => (
-                                <Link
-                                    key={event.title}
-                                    href={event.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="group border border-border bg-card hover:border-primary transition-colors overflow-hidden"
-                                >
-                                    <div className={`relative bg-muted overflow-hidden ${event.imageAspect === "landscape" ? "aspect-[16/10]" : "aspect-[4/5]"}`}>
-                                        <img
-                                            src={event.image}
-                                            alt={`${event.title} flyer`}
-                                            className="h-full w-full object-contain bg-black transition-transform duration-500 group-hover:scale-105"
-                                        />
-                                        <div className="absolute top-4 left-4 bg-primary text-white px-2 py-1 text-[9px] font-black uppercase tracking-widest">
-                                            {getEventTimingLabel(event.startDate)}
-                                        </div>
-                                    </div>
-
-                                    <div className="p-5 md:p-6">
-                                        <div className="flex flex-wrap gap-3 mb-4">
-                                            <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-primary">
-                                                <Calendar className="h-4 w-4" /> {event.date}
-                                            </span>
-                                            <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-muted-foreground">
-                                                <MapPin className="h-4 w-4" /> {event.location}
-                                            </span>
-                                        </div>
-                                        <p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary mb-3">
-                                            {event.type}
-                                        </p>
-                                        <h3 className="text-2xl md:text-4xl font-black uppercase tracking-tighter italic leading-none mb-4 group-hover:text-primary transition-colors">
-                                            {event.title}
-                                        </h3>
-                                        <p className="text-sm text-muted-foreground font-medium leading-relaxed mb-5">
-                                            {event.description}
-                                        </p>
-                                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-t border-border pt-4">
-                                            <span className="text-xs font-black uppercase tracking-wider text-foreground">
-                                                {event.time}
-                                            </span>
-                                            <span className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-widest text-primary">
-                                                {event.cta} <ExternalLink className="h-4 w-4" />
-                                            </span>
-                                        </div>
-                                    </div>
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                {/* FEATURED PODCASTS (ON-DEMAND AUDIO) */}
+                <FeaturedPodcastsSection />
 
                 {/* YOUTUBE STATISTICS & ANALYTICS SECTION */}
                 <section className="py-8 bg-gradient-to-r from-red-950 via-zinc-950 to-black text-white border-b border-red-900/30">
@@ -448,33 +272,13 @@ export function HomeView() {
                     </div>
                 </section>
 
-                <YouTubeWatchSection />
-
-                <section id="shows" className="py-8 bg-muted/20">
-                    <div className="container mx-auto px-4">
-                        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-                            <div>
-                                <h2 className="text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-tighter text-primary italic leading-none">
-                                    Our Shows
-                                </h2>
-                                <p className="mt-2 text-muted-foreground font-medium uppercase tracking-widest text-xs sm:text-sm max-w-xl">
-                                    Explore our lineup of live shows hosted by talented voices from the community.
-                                </p>
-                            </div>
-                            <Button
-                                variant="outline"
-                                className="text-foreground hover:bg-primary hover:text-white font-bold uppercase tracking-widest rounded-none border-2 border-foreground hover:border-primary transition-all h-10 px-6 text-xs"
-                                asChild
-                            >
-                                <Link href="#shows">View All Shows</Link>
-                            </Button>
-                        </div>
-
-                        <ShowsMarquee shows={filteredShows} />
-                    </div>
-                </section>
+                {/* POPULAR SHOWS & PERSONALITIES (KEXP EDITORIAL STYLE) */}
+                <PopularShowsSection />
 
                 <AdvertiserSection />
+
+                {/* NYRA AI INTERACTIVE CANVAS */}
+                <NyraAIShowcaseSection />
 
                 {/* OUR PARTNERS */}
                 <section className="py-8 bg-background border-t border-border/50">

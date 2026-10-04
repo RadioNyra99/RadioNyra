@@ -81,7 +81,7 @@ const faqCategories = [
       { q: "Does Radio Nyra have a dedicated Telugu station?", a: "Yes! We launched our 24/7 Telugu channel on 99.9 FM HD3 in the Raleigh-Durham area, also streaming globally online." },
       { q: "What is the schedule for the Telugu channel?", a: "The Telugu channel broadcasts Tollywood hits, interviews, local news, and community discussions 24/7." },
       { q: "What is the show 'Chinna Mata'?", a: "Chinna Mata is a popular Telugu show hosted by Priya, featuring lighthearted talks, wellness advice, and favorite melodies." },
-      { q: "What is the show 'Mana Muchatlu'?", a: "Mana Muchatlu is hosted by Kanthi, focusing on regional community stories, local immigrant experiences, and classic Tollywood trivia." },
+
       { q: "Does the Telugu channel play Tollywood movie songs?", a: "Yes! We play all the latest Telugu film soundtracks, folk songs, independent Telugu pop, and timeless classics." },
       { q: "Can Telugu listeners call in for requests?", a: "Absolutely! You can call the Telugu studio line or WhatsApp us to request songs, dedicate tracks, or share greetings." },
       { q: "Are there promotions for Telugu movies in NC?", a: "Yes, we promote local Telugu movie screenings, theater listings, and cultural community events across North Carolina." },

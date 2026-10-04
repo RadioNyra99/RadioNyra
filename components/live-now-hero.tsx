@@ -1,16 +1,32 @@
 "use client"
 
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Link from "next/link"
-import { Play, Pause, Radio, Volume2, Sparkles, Calendar, ChevronRight, Share2, Headphones, Music2 } from "lucide-react"
+import { Play, Pause, Radio, Volume2, Sparkles, Calendar, ChevronRight, Share2, Headphones, Music2, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useAudio } from "@/components/audio-context"
 import { STATIONS } from "@/lib/stations"
 import { cn } from "@/lib/utils"
+import { getLiveHindiShow, getLiveTeluguShow, getEasternTime, type LiveShowInfo, type EasternTime } from "@/lib/live-schedule-service"
 
 export function LiveNowHero() {
   const { isPlaying, currentStation, playStation, togglePlay, metadata } = useAudio()
+
+  const [liveHindi, setLiveHindi] = useState<LiveShowInfo>(() => getLiveHindiShow())
+  const [liveTelugu, setLiveTelugu] = useState<LiveShowInfo>(() => getLiveTeluguShow())
+  const [easternTime, setEasternTime] = useState<EasternTime>(() => getEasternTime())
+
+  useEffect(() => {
+    const updateShows = () => {
+      setLiveHindi(getLiveHindiShow())
+      setLiveTelugu(getLiveTeluguShow())
+      setEasternTime(getEasternTime())
+    }
+    updateShows()
+    const timer = setInterval(updateShows, 30000)
+    return () => clearInterval(timer)
+  }, [])
 
   const isHindiActive = currentStation.id === STATIONS.Hindi.id
   const isTeluguActive = currentStation.id === STATIONS.Telugu.id
@@ -44,8 +60,13 @@ export function LiveNowHero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
               </span>
-              <span className="text-xs font-black uppercase tracking-[0.2em] text-red-400">
+              <span className="text-xs font-black uppercase tracking-[0.2em] text-red-400 flex items-center gap-2">
                 Live Broadcast Command Center
+                <span className="text-zinc-600">•</span>
+                <span className="text-zinc-400 font-semibold lowercase tracking-normal flex items-center gap-1">
+                  <Clock className="w-3 h-3 text-red-400" />
+                  {easternTime.formattedTime}
+                </span>
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white italic">
@@ -59,7 +80,7 @@ export function LiveNowHero() {
           <div className="flex items-center gap-3">
             <Button
               onClick={openNyraAI}
-              className="rounded-full bg-gradient-to-r from-red-600 to-amber-500 hover:from-red-500 hover:to-amber-400 text-white font-bold text-xs sm:text-sm px-4 sm:px-5 py-2.5 shadow-lg shadow-red-900/30 transition-all hover:scale-105"
+              className="rounded-full bg-gradient-to-r from-red-600 to-amber-500 hover:from-red-500 hover:to-amber-400 text-white font-bold text-xs sm:text-sm px-4 sm:px-5 py-2.5 shadow-lg shadow-red-900/30 transition-all hover:scale-105 cursor-pointer"
             >
               <Sparkles className="w-4 h-4 mr-2" />
               Ask Nyra AI
@@ -92,8 +113,9 @@ export function LiveNowHero() {
               {/* Cover Artwork & Equalizer */}
               <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-xl overflow-hidden shrink-0 border border-zinc-700/80 shadow-md bg-zinc-950">
                 <img
-                  src="/images/hosts/zara-muskurao.jpeg"
-                  alt="Radio Nyra Hindi Live"
+                  src={liveHindi.image}
+                  alt={`${liveHindi.title} - ${liveHindi.host}`}
+                  key={liveHindi.image}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 {isHindiActive && isPlaying && (
@@ -109,6 +131,11 @@ export function LiveNowHero() {
                     HD4
                   </Badge>
                 </div>
+                <div className="absolute bottom-1.5 right-1.5">
+                  <span className="bg-black/80 backdrop-blur-xs text-[8px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded text-zinc-300">
+                    {liveHindi.tag}
+                  </span>
+                </div>
               </div>
 
               {/* Station Info */}
@@ -118,19 +145,19 @@ export function LiveNowHero() {
                     Hindi Broadcast
                   </span>
                   <span className="text-zinc-600">•</span>
-                  <span className="text-[10px] font-semibold text-zinc-400">
+                  <span className="text-[10px] font-semibold text-zinc-400 truncate">
                     99.9 FM-HD4 • 101.9 FM • 1490 AM
                   </span>
                 </div>
                 <h3 className="text-lg sm:text-xl font-black text-white truncate group-hover:text-red-400 transition-colors">
-                  {isHindiActive && metadata?.title ? metadata.title : "Zara Muskurao"}
+                  {isHindiActive && metadata?.title ? metadata.title : liveHindi.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-300 font-medium truncate mt-0.5">
-                  Hosted by Aayushii Rode • Morning Prime
+                  Hosted by {liveHindi.host} • <span className="text-amber-400 font-bold">{liveHindi.timeRange}</span>
                 </p>
                 <div className="flex items-center gap-2 mt-3 text-[11px] text-zinc-400">
-                  <Music2 className="w-3.5 h-3.5 text-red-400" />
-                  <span className="truncate">Bollywood Retro, Current Chartbusters & Talks</span>
+                  <Music2 className="w-3.5 h-3.5 text-red-400 shrink-0" />
+                  <span className="truncate">{liveHindi.description}</span>
                 </div>
               </div>
 
@@ -175,8 +202,9 @@ export function LiveNowHero() {
               {/* Cover Artwork & Equalizer */}
               <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-xl overflow-hidden shrink-0 border border-zinc-700/80 shadow-md bg-zinc-950">
                 <img
-                  src="/images/hosts/chinna-mata.webp"
-                  alt="Radio Nyra Telugu Live"
+                  src={liveTelugu.image}
+                  alt={`${liveTelugu.title} - ${liveTelugu.host}`}
+                  key={liveTelugu.image}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 {isTeluguActive && isPlaying && (
@@ -192,6 +220,11 @@ export function LiveNowHero() {
                     HD3
                   </Badge>
                 </div>
+                <div className="absolute bottom-1.5 right-1.5">
+                  <span className="bg-black/80 backdrop-blur-xs text-[8px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded text-amber-300">
+                    {liveTelugu.tag}
+                  </span>
+                </div>
               </div>
 
               {/* Station Info */}
@@ -206,14 +239,14 @@ export function LiveNowHero() {
                   </span>
                 </div>
                 <h3 className="text-lg sm:text-xl font-black text-white truncate group-hover:text-amber-400 transition-colors">
-                  {isTeluguActive && metadata?.title ? metadata.title : "Chinna Mata"}
+                  {isTeluguActive && metadata?.title ? metadata.title : liveTelugu.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-300 font-medium truncate mt-0.5">
-                  Hosted by Priya • Tollywood & Culture
+                  Hosted by {liveTelugu.host} • <span className="text-amber-400 font-bold">{liveTelugu.timeRange}</span>
                 </p>
                 <div className="flex items-center gap-2 mt-3 text-[11px] text-zinc-400">
-                  <Music2 className="w-3.5 h-3.5 text-amber-400" />
-                  <span className="truncate">Tollywood Hits, Super Melody & Youth Beats</span>
+                  <Music2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                  <span className="truncate">{liveTelugu.description}</span>
                 </div>
               </div>
 
@@ -253,24 +286,24 @@ export function LiveNowHero() {
               On Air Now
             </span>
             <span className="text-zinc-300 font-medium truncate">
-              Broadcasting 24/7 across Raleigh-Durham, Atlanta, Baltimore & online worldwide.
+              {liveHindi.title} on HD4 &bull; {liveTelugu.title} on HD3 &bull; Broadcasting 24/7 across Raleigh-Durham & online.
             </span>
           </div>
 
           <div className="flex items-center gap-4 text-zinc-400 shrink-0">
             <button
               onClick={openNyraAI}
-              className="text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-1 transition-colors"
+              className="text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-1 transition-colors cursor-pointer"
             >
               <Sparkles className="w-3.5 h-3.5" />
               Ask who's playing
             </button>
             <span className="text-zinc-700">|</span>
             <Link
-              href="/how-to-tune"
+              href="/schedule"
               className="hover:text-white font-medium flex items-center gap-1 transition-colors"
             >
-              How to Tune In
+              View Full Schedule
               <ChevronRight className="w-3 h-3" />
             </Link>
           </div>

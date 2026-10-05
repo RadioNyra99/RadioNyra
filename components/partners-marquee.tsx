@@ -33,12 +33,15 @@ export function PartnersMarquee({ partnersCount, partnersData }: PartnersMarquee
 
     const renderPartner = (partner: Partner, index: number) => {
         const content = (
-            <div className="flex-shrink-0 w-32 h-20 mx-4 border border-border/30 bg-white/50 backdrop-blur-sm p-2 flex items-center justify-center hover:border-primary/50 transition-all duration-300 snap-center">
+            <div 
+                title={partner.name}
+                className="flex-shrink-0 w-32 h-20 mx-4 border border-border/30 bg-white/70 backdrop-blur-sm p-2.5 flex items-center justify-center hover:border-primary/50 hover:shadow-md rounded-xl overflow-hidden transition-all duration-300 snap-center"
+            >
                 <img
                     src={partner.image}
                     alt={partner.name}
                     loading="lazy"
-                    className="max-w-full max-h-full object-contain transition-all duration-500"
+                    className="max-w-full max-h-full object-contain rounded-lg transition-all duration-500"
                 />
             </div>
         );

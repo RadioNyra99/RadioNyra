@@ -139,8 +139,8 @@ export function NyraChat() {
         response: "Tune in on:\n- Hindi: Raleigh-Durham 99.9FM-HD4, Atlanta 107.5FM-HD3, and more!\n- Telugu: Raleigh-Durham 99.9FM-HD3 (Launched July 2025)."
       },
       {
-        keywords: ["partner", "apna bazar", "spices hut", "sangam", "bombay central"],
-        response: "We partner with amazing local businesses like Apna Bazar, Spices Hut, Sangam Mart, and Bombay Central. Check our Partners page for the full list!"
+        keywords: ["partner", "partners", "client", "clients", "apna bazar", "spices hut", "sangam", "bombay central", "brown immigration", "novel morrisville"],
+        response: "We partner with amazing businesses and community sponsors including Brown Immigration Law, Novel Morrisville, BMW, Apna Bazar, Spices Hut, and many more. Check our Partners page (/partners) for the full list!"
       },
       {
         keywords: ["hello", "hi", "namaste", "hey", "who are you", "what can you do"],

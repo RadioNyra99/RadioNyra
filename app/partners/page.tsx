@@ -125,7 +125,7 @@ export default function PartnersPage() {
                                                                 src={partner.image}
                                                                 alt={partner.name}
                                                                 loading="lazy"
-                                                                className="w-full h-full object-contain"
+                                                                className="w-full h-full object-contain rounded-xl"
                                                             />
                                                         </div>
                                                     </Link>
@@ -135,7 +135,7 @@ export default function PartnersPage() {
                                                             src={partner.image}
                                                             alt={partner.name}
                                                             loading="lazy"
-                                                            className="w-full h-full object-contain"
+                                                            className="w-full h-full object-contain rounded-xl"
                                                         />
                                                     </div>
                                                 )}

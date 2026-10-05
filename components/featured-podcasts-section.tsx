@@ -2,7 +2,7 @@
 
 import React, { useState } from "react"
 import Link from "next/link"
-import { Mic, Play, Clock, ChevronRight, ExternalLink, User, Youtube, Radio } from "lucide-react"
+import { Mic, Play, ChevronRight, ExternalLink, User, Youtube, Radio } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
@@ -155,11 +155,6 @@ export function FeaturedPodcastsSection() {
                         <Play className="w-5 h-5 fill-current ml-0.5" />
                       </div>
                     </div>
-                    {/* Duration badge */}
-                    <div className="absolute bottom-2 right-2 bg-black/85 backdrop-blur-sm px-2 py-0.5 rounded text-[10px] font-bold text-zinc-300 flex items-center gap-1 border border-white/10">
-                      <Clock className="w-3 h-3 text-amber-400" />
-                      {episode.duration}
-                    </div>
                     {/* Full episode pill */}
                     <div className="absolute top-2 left-2 bg-red-600/90 text-white text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded shadow">
                       Podcast
@@ -183,12 +178,11 @@ export function FeaturedPodcastsSection() {
                     >
                       {episode.title}
                     </h3>
-                    <div className="flex items-center justify-between text-xs text-zinc-400 mt-3 pt-2 border-t border-zinc-800/60 font-medium">
+                    <div className="flex items-center text-xs text-zinc-400 mt-3 pt-2 border-t border-zinc-800/60 font-medium">
                       <span className="flex items-center gap-1 truncate">
                         <User className="w-3 h-3 text-zinc-500 shrink-0" />
                         <span className="truncate">{episode.host}</span>
                       </span>
-                      <span className="text-[10px] text-zinc-500 shrink-0 font-semibold">{episode.views}</span>
                     </div>
                   </div>
                 </div>
@@ -247,8 +241,6 @@ export function FeaturedPodcastsSection() {
               <span className="text-amber-400 font-bold">{activeVideo?.show}</span>
               <span>•</span>
               <span>Hosted by {activeVideo?.host}</span>
-              <span>•</span>
-              <span className="text-zinc-500">{activeVideo?.duration}</span>
             </div>
             {activeVideo && (
               <a

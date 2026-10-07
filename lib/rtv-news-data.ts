@@ -21,6 +21,7 @@ const DRIVE_IDS = {
   day4: "19_frDSnA36yJPI_nehVS-aKMefBxAyXm",
   day5: "1NNQcU3OBYx4mVuLjHo2ULbZ-MLrIpEZm",
   day6: "14A2cd7WpeirXpEl7pXGYxIY5y7hpzGAT",
+  day7: "1ycrETWXR7PpPFQpCuHzEoGj-NW86m_qg",
 }
 
 // Converts a Google Drive file ID to a streamable audio URL
@@ -30,9 +31,23 @@ export function driveAudioUrl(fileId: string): string {
 
 export const RTV_TELUGU_NEWS_EPISODES: RtvNewsEpisode[] = [
   {
+    id: "Day 7",
+    filename: "Day 7.mp3",
+    title: "RTV Telugu Daily News - Day 7 (Latest)",
+    dayNumber: 7,
+    date: "2026-10-06",
+    formattedDate: "Oct 6, 2026",
+    sizeFormatted: "~15 MB",
+    url: driveAudioUrl(DRIVE_IDS.day7),
+    driveId: DRIVE_IDS.day7,
+    language: "Telugu",
+    station: "99.9 FM-HD3",
+    description: "Latest RTV Telugu daily news bulletin — breaking headlines, national politics, and community updates.",
+  },
+  {
     id: "Day 6",
     filename: "Day 6.mp3",
-    title: "RTV Telugu Daily News - Day 6 (Latest)",
+    title: "RTV Telugu Daily News - Day 6",
     dayNumber: 6,
     date: "2026-10-04",
     formattedDate: "Oct 4, 2026",
@@ -41,7 +56,7 @@ export const RTV_TELUGU_NEWS_EPISODES: RtvNewsEpisode[] = [
     driveId: DRIVE_IDS.day6,
     language: "Telugu",
     station: "99.9 FM-HD3",
-    description: "Latest RTV Telugu daily news bulletin — breaking headlines, national politics, and community updates.",
+    description: "Daily Telugu news bulletin covering breaking headlines, national politics, and community updates.",
   },
   {
     id: "Day 5",

@@ -56,10 +56,10 @@ export function SocialHub() {
         <section id="social-hub" className="py-16 bg-muted/30 text-foreground border-y border-border">
             <div className="container mx-auto px-4">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="px-3.5 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-black uppercase tracking-widest inline-block mb-3">
+                    <span className="px-3.5 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-extrabold uppercase tracking-widest inline-block mb-3">
                         Official Social Media Hub
                     </span>
-                    <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight italic">
+                    <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight italic">
                         Connect With Radio Nyra Across Channels
                     </h2>
                     <p className="text-muted-foreground text-sm md:text-base font-medium mt-3">
@@ -149,7 +149,7 @@ export function SocialHub() {
                     <div className="flex items-center justify-between mb-6">
                         <div className="flex items-center gap-2">
                             <Radio className="w-5 h-5 text-primary animate-pulse" />
-                            <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight">
+                            <h3 className="text-xl md:text-2xl font-extrabold uppercase tracking-tight">
                                 Official Social Feed
                             </h3>
                         </div>
@@ -184,7 +184,7 @@ export function SocialHub() {
                                                 alt={post.title}
                                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                             />
-                                            <span className="absolute top-3 left-3 px-2.5 py-1 rounded bg-black/80 text-white text-[10px] font-black uppercase tracking-wider">
+                                            <span className="absolute top-3 left-3 px-2.5 py-1 rounded bg-black/80 text-white text-[10px] font-extrabold uppercase tracking-wider">
                                                 {post.platform}
                                             </span>
                                         </div>
@@ -217,9 +217,9 @@ export function SocialHub() {
                         <div className="p-8 text-center bg-card border border-border rounded-2xl">
                             <p className="text-sm font-bold text-muted-foreground mb-3">Visit our official social media handles for daily posts, videos, and live broadcasts.</p>
                             <div className="flex flex-wrap items-center justify-center gap-3">
-                                <a href={settings.youtube.url} target="_blank" rel="noopener noreferrer" className="text-xs font-black uppercase text-red-500 hover:underline">YouTube &rarr;</a>
-                                <a href={settings.instagram.url} target="_blank" rel="noopener noreferrer" className="text-xs font-black uppercase text-pink-500 hover:underline">Instagram &rarr;</a>
-                                <a href={settings.facebook.url} target="_blank" rel="noopener noreferrer" className="text-xs font-black uppercase text-blue-500 hover:underline">Facebook &rarr;</a>
+                                <a href={settings.youtube.url} target="_blank" rel="noopener noreferrer" className="text-xs font-extrabold uppercase text-red-500 hover:underline">YouTube &rarr;</a>
+                                <a href={settings.instagram.url} target="_blank" rel="noopener noreferrer" className="text-xs font-extrabold uppercase text-pink-500 hover:underline">Instagram &rarr;</a>
+                                <a href={settings.facebook.url} target="_blank" rel="noopener noreferrer" className="text-xs font-extrabold uppercase text-blue-500 hover:underline">Facebook &rarr;</a>
                             </div>
                         </div>
                     )}
@@ -228,11 +228,11 @@ export function SocialHub() {
                 {/* Newsletter Subscription Box */}
                 <div className="rounded-3xl bg-gradient-to-r from-red-600 via-orange-600 to-primary text-white p-8 md:p-12 shadow-2xl relative overflow-hidden">
                     <div className="max-w-3xl mx-auto text-center">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-black uppercase tracking-widest mb-4 backdrop-blur">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-extrabold uppercase tracking-widest mb-4 backdrop-blur">
                             <Mail className="w-4 h-4" />
                             Radio Nyra Weekly Digest
                         </div>
-                        <h3 className="text-2xl md:text-4xl font-black uppercase tracking-tight">
+                        <h3 className="text-2xl md:text-4xl font-extrabold uppercase tracking-tight">
                             Never Miss a Live Show or Community Event
                         </h3>
                         <p className="text-white/90 text-sm md:text-base mt-2 font-medium">
@@ -251,7 +251,7 @@ export function SocialHub() {
                             <Button
                                 type="submit"
                                 size="lg"
-                                className="w-full sm:w-auto h-14 bg-black hover:bg-zinc-900 text-white font-black uppercase text-xs tracking-widest px-8 rounded-2xl cursor-pointer shadow-xl"
+                                className="w-full sm:w-auto h-14 bg-black hover:bg-zinc-900 text-white font-extrabold uppercase text-xs tracking-widest px-8 rounded-2xl cursor-pointer shadow-xl"
                             >
                                 {subscribed ? (
                                     <span className="flex items-center gap-2 text-green-400">

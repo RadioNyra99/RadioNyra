@@ -26,3 +26,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 *.zip
+cloudflared.exe
+*.log
+codex_presentation_work/node_modules/

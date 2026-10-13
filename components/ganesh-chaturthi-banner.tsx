@@ -48,7 +48,7 @@ export function GaneshChaturthiBanner() {
                                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-bold text-xs uppercase tracking-wider backdrop-blur-[2px]">
                                         <Maximize2 className="w-4 h-4 text-amber-400" /> Click to view full image
                                     </div>
-                                    <div className="absolute bottom-2 right-2 bg-black/80 backdrop-blur-md px-2.5 py-1 rounded-md border border-amber-400/40 text-[10px] font-black text-amber-300 uppercase tracking-widest flex items-center gap-1.5">
+                                    <div className="absolute bottom-2 right-2 bg-black/80 backdrop-blur-md px-2.5 py-1 rounded-md border border-amber-400/40 text-[10px] font-extrabold text-amber-300 uppercase tracking-widest flex items-center gap-1.5">
                                         <Sparkles className="w-3 h-3 text-amber-400" /> Radio Nyra Special
                                     </div>
                                 </div>
@@ -58,13 +58,13 @@ export function GaneshChaturthiBanner() {
                         {/* Text and Tune-in CTAs */}
                         <div className="w-full lg:w-7/12 text-center lg:text-left">
                             {/* Festive Tag */}
-                            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/30 text-xs font-black uppercase tracking-widest mb-4">
+                            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/30 text-xs font-extrabold uppercase tracking-widest mb-4">
                                 <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-spin" style={{ animationDuration: '4s' }} />
                                 <span>Ganesh Chaturthi Festive Greetings</span>
                             </div>
 
                             {/* Headline */}
-                            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black uppercase tracking-tight italic leading-tight text-white mb-2">
+                            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold uppercase tracking-tight italic leading-tight text-white mb-2">
                                 Happy <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-500 inline-block">Ganesh Chaturthi</span>
                             </h2>
                             <p className="text-amber-400 font-extrabold text-sm sm:text-base uppercase tracking-widest mb-4">
@@ -84,13 +84,13 @@ export function GaneshChaturthiBanner() {
                                 {/* Hindi Station */}
                                 <div className="bg-gradient-to-r from-red-950/60 to-black/80 border border-red-600/30 p-3.5 rounded-xl flex items-center justify-between gap-3">
                                     <div className="text-left">
-                                        <div className="text-[10px] font-black uppercase tracking-widest text-red-400">Hindi Broadcast</div>
+                                        <div className="text-[10px] font-extrabold uppercase tracking-widest text-red-400">Hindi Broadcast</div>
                                         <div className="text-xs sm:text-sm font-bold text-white">99.9 FM-HD4 • 101.9 FM • 1490 AM</div>
                                     </div>
                                     <Button
                                         onClick={handlePlayHindi}
                                         size="sm"
-                                        className="bg-red-600 hover:bg-red-700 text-white font-black text-xs uppercase tracking-wider h-9 px-3 rounded-lg shadow-md cursor-pointer shrink-0"
+                                        className="bg-red-600 hover:bg-red-700 text-white font-extrabold text-xs uppercase tracking-wider h-9 px-3 rounded-lg shadow-md cursor-pointer shrink-0"
                                     >
                                         <Radio className="w-3.5 h-3.5 mr-1.5" /> Listen
                                     </Button>
@@ -99,13 +99,13 @@ export function GaneshChaturthiBanner() {
                                 {/* Telugu Station */}
                                 <div className="bg-gradient-to-r from-amber-950/60 to-black/80 border border-amber-500/30 p-3.5 rounded-xl flex items-center justify-between gap-3">
                                     <div className="text-left">
-                                        <div className="text-[10px] font-black uppercase tracking-widest text-amber-400">Telugu Broadcast</div>
+                                        <div className="text-[10px] font-extrabold uppercase tracking-widest text-amber-400">Telugu Broadcast</div>
                                         <div className="text-xs sm:text-sm font-bold text-white">99.9 FM-HD3</div>
                                     </div>
                                     <Button
                                         onClick={handlePlayTelugu}
                                         size="sm"
-                                        className="bg-amber-500 hover:bg-amber-600 text-black font-black text-xs uppercase tracking-wider h-9 px-3 rounded-lg shadow-md cursor-pointer shrink-0"
+                                        className="bg-amber-500 hover:bg-amber-600 text-black font-extrabold text-xs uppercase tracking-wider h-9 px-3 rounded-lg shadow-md cursor-pointer shrink-0"
                                     >
                                         <Radio className="w-3.5 h-3.5 mr-1.5 text-black" /> Listen
                                     </Button>

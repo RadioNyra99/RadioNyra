@@ -20,8 +20,8 @@ export function ListenWatchBanner() {
                         <Radio className="w-7 h-7 text-white animate-pulse" />
                     </div>
                     <div>
-                        <span className="text-[10px] font-black uppercase tracking-widest text-red-400">Radio Nyra Live + Video</span>
-                        <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight italic">Listen Live & Watch YouTube</h3>
+                        <span className="text-[10px] font-extrabold uppercase tracking-widest text-red-400">Radio Nyra Live + Video</span>
+                        <h3 className="text-xl md:text-2xl font-extrabold uppercase tracking-tight italic">Listen Live & Watch YouTube</h3>
                     </div>
                 </div>
 
@@ -33,7 +33,7 @@ export function ListenWatchBanner() {
                             playStation(STATIONS.Hindi.id);
                             trackListenLive(STATIONS.Hindi.name, "Hindi");
                         }}
-                        className="bg-red-600 hover:bg-red-700 text-white font-black text-xs uppercase tracking-wider px-6 py-6 rounded-xl shadow-lg cursor-pointer"
+                        className="bg-red-600 hover:bg-red-700 text-white font-extrabold text-xs uppercase tracking-wider px-6 py-6 rounded-xl shadow-lg cursor-pointer"
                     >
                         <Radio className="w-4 h-4 mr-2" /> Listen Live 99.9 FM
                     </Button>
@@ -42,7 +42,7 @@ export function ListenWatchBanner() {
                     <Button
                         onClick={() => window.open(OFFICIAL_YOUTUBE_CHANNEL.channelUrl, "_blank")}
                         variant="outline"
-                        className="bg-white/10 hover:bg-white/20 border-white/20 text-white font-black text-xs uppercase tracking-wider px-6 py-6 rounded-xl cursor-pointer"
+                        className="bg-white/10 hover:bg-white/20 border-white/20 text-white font-extrabold text-xs uppercase tracking-wider px-6 py-6 rounded-xl cursor-pointer"
                     >
                         <Play className="w-4 h-4 mr-2 fill-white" /> Watch Latest Video
                     </Button>
@@ -54,7 +54,7 @@ export function ListenWatchBanner() {
                             window.open(OFFICIAL_YOUTUBE_CHANNEL.subscribeUrl, "_blank");
                         }}
                         variant="outline"
-                        className="border-red-500/80 text-red-400 hover:bg-red-600/20 font-black text-xs uppercase tracking-wider px-6 py-6 rounded-xl cursor-pointer"
+                        className="border-red-500/80 text-red-400 hover:bg-red-600/20 font-extrabold text-xs uppercase tracking-wider px-6 py-6 rounded-xl cursor-pointer"
                     >
                         <Youtube className="w-4 h-4 mr-2 fill-red-400" /> Subscribe @RadioNyraUSA
                     </Button>

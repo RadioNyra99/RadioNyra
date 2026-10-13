@@ -101,10 +101,27 @@ export const STATIONS: Record<string, Station> = {
     }
 }
 
-export const getStationsList = () => Object.entries(STATIONS).map(([key, station]) => ({
-    ...station,
-    key // Use this for UI if needed
-})).sort((a, b) => `${a.city ?? ""} ${a.name} ${a.frequency ?? ""}`.localeCompare(`${b.city ?? ""} ${b.name} ${b.frequency ?? ""}`))
+export const getStationsList = () =>
+    Object.entries(STATIONS)
+        .map(([key, station]) => ({
+            ...station,
+            key // Use this for UI if needed
+        }))
+        .sort((a, b) => {
+            const getPriority = (item: Station & { key: string }) => {
+                if (item.key === "Hindi" || item.id === "raleigh-hd4-hindi") return 1
+                if (item.key === "Telugu" || item.id === "raleigh-hd3-telugu") return 2
+                return 3
+            }
+
+            const pA = getPriority(a)
+            const pB = getPriority(b)
+            if (pA !== pB) return pA - pB
+
+            return `${a.city ?? ""} ${a.name} ${a.frequency ?? ""}`.localeCompare(
+                `${b.city ?? ""} ${b.name} ${b.frequency ?? ""}`
+            )
+        })
 
 export const NETWORK_STATS = {
     stations: "76",

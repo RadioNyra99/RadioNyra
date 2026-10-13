@@ -25,7 +25,7 @@ export default function InterviewsPage() {
                 <div className="flex items-center gap-3 mb-8">
                     <Film className="w-8 h-8 text-primary" />
                     <div>
-                        <h1 className="text-3xl md:text-5xl font-black uppercase tracking-tight italic">Celebrity & Guest Interviews</h1>
+                        <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">Celebrity & Guest Interviews</h1>
                         <p className="text-muted-foreground text-sm font-medium mt-1">Exclusive talks with Bollywood & Tollywood stars from {OFFICIAL_YOUTUBE_CHANNEL.handle}</p>
                     </div>
                 </div>

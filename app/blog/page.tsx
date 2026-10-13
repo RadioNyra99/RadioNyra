@@ -30,7 +30,7 @@ export default function BlogPage() {
             <div className="py-20">
             <div className="container mx-auto px-4">
                 <div className="max-w-6xl mx-auto">
-                    <h1 className="text-5xl md:text-6xl font-black uppercase tracking-tighter text-primary mb-12">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-primary mb-8">
                         Latest from Radio Nyra
                     </h1>
 

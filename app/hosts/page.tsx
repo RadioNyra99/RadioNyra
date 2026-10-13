@@ -147,7 +147,7 @@ export default function HostsPage() {
                 e.currentTarget.src = "/images/radio-nyra-logo.jpg"
               }}
             />
-            <span className="absolute top-3 right-3 text-[9px] font-black uppercase tracking-widest bg-primary text-white px-2.5 py-0.5 rounded-full shadow-sm">
+            <span className="absolute top-3 right-3 text-[9px] font-extrabold uppercase tracking-widest bg-primary text-white px-2.5 py-0.5 rounded-full shadow-sm">
               {host.language}
             </span>
           </div>
@@ -155,7 +155,7 @@ export default function HostsPage() {
 
         {/* Content */}
         <div className="px-5 pb-4 space-y-2">
-          <h3 className="text-center font-black text-gray-900 group-hover:text-primary transition-colors text-base tracking-tight uppercase leading-snug">
+          <h3 className="text-center font-extrabold text-gray-900 group-hover:text-primary transition-colors text-base tracking-tight uppercase leading-snug">
             {host.name}
           </h3>
           
@@ -199,8 +199,8 @@ export default function HostsPage() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
             
             <div className="space-y-2 text-center md:text-left z-10">
-              <span className="text-[10px] font-black uppercase tracking-[0.25em] text-primary">Radio Nyra Team</span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter italic text-gray-900 leading-none">
+              <span className="text-[10px] font-extrabold uppercase tracking-[0.25em] text-primary">Radio Nyra Team</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 leading-tight">
                 Introduction Of <span className="text-primary block md:inline">Our Team</span>
               </h1>
               <p className="text-xs text-gray-600 font-bold uppercase tracking-widest mt-2 max-w-2xl">
@@ -222,7 +222,7 @@ export default function HostsPage() {
           <div className="space-y-12">
             {/* ROW 1: 4 Columns */}
             <div>
-              <h2 className="text-xs font-black uppercase tracking-widest text-primary mb-6 flex items-center gap-2">
+              <h2 className="text-xs font-extrabold uppercase tracking-widest text-primary mb-6 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" /> Primetime Show Hosts
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -232,7 +232,7 @@ export default function HostsPage() {
 
             {/* ROW 2: 6 Columns */}
             <div>
-              <h2 className="text-xs font-black uppercase tracking-widest text-primary mb-6 flex items-center gap-2">
+              <h2 className="text-xs font-extrabold uppercase tracking-widest text-primary mb-6 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" /> Specialty & Weekend Programming
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-6">
@@ -244,7 +244,7 @@ export default function HostsPage() {
           {/* Interactive join the crew card */}
           <div className="mt-16 bg-white border border-gray-100 rounded-3xl p-8 md:p-12 text-center max-w-4xl mx-auto shadow-[0_8px_30px_rgb(0,0,0,0.02)]">
             <Sparkles className="w-10 h-10 text-primary mx-auto mb-4" />
-            <h3 className="text-2xl font-black uppercase tracking-tight italic mb-2 text-gray-900">Want to host your own show or podcast?</h3>
+            <h3 className="text-2xl font-extrabold uppercase tracking-tight italic mb-2 text-gray-900">Want to host your own show or podcast?</h3>
             <p className="text-xs text-gray-600 max-w-xl leading-relaxed mb-6 font-medium mx-auto">
               Our Creative Studio provides state-of-the-art recording, production assistance, distribution, and syndication services. Get your voice heard on the air and digital streams.
             </p>

@@ -13,7 +13,7 @@ export default function TermsOfServicePage() {
           {/* Header */}
           <div className="mb-12 border-b border-border/40 pb-8">
             <p className="text-primary font-bold uppercase tracking-widest text-sm mb-2">Legal</p>
-            <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-foreground mb-4">Terms of Service</h1>
+            <h1 className="text-4xl md:text-6xl font-extrabold uppercase tracking-tighter text-foreground mb-4">Terms of Service</h1>
             <p className="text-muted-foreground text-sm font-mono uppercase tracking-wider">Last Updated: June 11, 2026</p>
           </div>
 
@@ -21,7 +21,7 @@ export default function TermsOfServicePage() {
           <div className="space-y-12 text-lg text-muted-foreground leading-relaxed">
 
             <section>
-              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-extrabold uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
                 <span className="text-primary">01.</span> Agreement to Terms
               </h2>
               <p className="mb-4">
@@ -33,7 +33,7 @@ export default function TermsOfServicePage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-extrabold uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
                 <span className="text-primary">02.</span> Intellectual Property Rights
               </h2>
               <p className="mb-4">
@@ -45,7 +45,7 @@ export default function TermsOfServicePage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-extrabold uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
                 <span className="text-primary">03.</span> User Conduct & Prohibited Activities
               </h2>
               <p className="mb-4">
@@ -72,7 +72,7 @@ export default function TermsOfServicePage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-extrabold uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
                 <span className="text-primary">04.</span> Mobile Application License
               </h2>
               <p className="mb-4">
@@ -84,7 +84,7 @@ export default function TermsOfServicePage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-extrabold uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
                 <span className="text-primary">05.</span> Third-Party Links & Advertisements
               </h2>
               <p>
@@ -93,7 +93,7 @@ export default function TermsOfServicePage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-extrabold uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
                 <span className="text-primary">06.</span> Disclaimers & Limitation of Liability
               </h2>
               <p className="mb-4">
@@ -105,7 +105,7 @@ export default function TermsOfServicePage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-extrabold uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
                 <span className="text-primary">07.</span> Governing Law
               </h2>
               <p>
@@ -114,7 +114,7 @@ export default function TermsOfServicePage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-extrabold uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
                 <span className="text-primary">08.</span> Contact Us
               </h2>
               <div className="bg-primary/5 border border-primary/20 p-8 rounded-lg mt-6">

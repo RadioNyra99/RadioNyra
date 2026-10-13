@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next'
 import { BLOG_POSTS } from '@/lib/blog-data'
+import { NC_CITIES } from '@/lib/nc-data'
+import { RTV_TELUGU_NEWS_EPISODES } from '@/lib/rtv-news-data'
 
 export const dynamic = 'force-static'
 
@@ -8,6 +10,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     const coreRoutes = [
         '',
+        '/north-carolina',
+        '/near-me',
+        '/directory',
+        '/directory/submit',
+        '/events/submit',
+        '/trending-music',
+        '/rtv-news',
         '/indian-radio-usa',
         '/bollywood-radio-online',
         '/telugu-radio-usa',
@@ -78,9 +87,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${baseUrl}${route}`,
         lastModified: new Date().toISOString(),
         changeFrequency: 'daily' as const,
-        priority: route === '' ? 1 : route.startsWith('/markets') || route.startsWith('/indian-radio-usa') || route.startsWith('/shows') ? 0.9 : 0.8,
+        priority: route === '' ? 1 : route.startsWith('/north-carolina') || route.startsWith('/near-me') || route.startsWith('/directory') || route.startsWith('/markets') || route.startsWith('/indian-radio-usa') || route.startsWith('/shows') ? 0.9 : 0.8,
     }))
 
+    // Dynamic North Carolina City Hubs
+    const ncCityRoutes = NC_CITIES.map((city) => ({
+        url: `${baseUrl}/north-carolina/${city.slug}`,
+        lastModified: new Date().toISOString(),
+        changeFrequency: 'daily' as const,
+        priority: 0.95,
+    }))
+
+    // Dynamic RTV Telugu News Daily Bulletins
+    const rtvRoutes = RTV_TELUGU_NEWS_EPISODES.map((ep) => ({
+        url: `${baseUrl}/rtv-news/${ep.date}`,
+        lastModified: new Date(`${ep.date}T07:00:00Z`).toISOString(),
+        changeFrequency: 'weekly' as const,
+        priority: 0.85,
+    }))
+
+    // Blog Routes
     const blogRoutes = BLOG_POSTS.map((post) => ({
         url: `${baseUrl}/blog/${post.slug}`,
         lastModified: new Date(post.date).toISOString(),
@@ -88,5 +114,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
     }))
 
-    return [...coreRoutes, ...blogRoutes]
+    return [...coreRoutes, ...ncCityRoutes, ...rtvRoutes, ...blogRoutes]
 }
+

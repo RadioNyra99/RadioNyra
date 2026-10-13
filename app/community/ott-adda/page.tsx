@@ -53,17 +53,17 @@ export default function OTTAddaPage() {
                         <div className="absolute inset-0 bg-[url('/OTT ADDA/OTT ADDA/Pochamma.jpg')] bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-1000" />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/40 to-transparent" />
                         <div className="relative z-10 h-full flex flex-col justify-end p-12 md:p-20">
-                            <Badge className="w-fit mb-6 bg-primary text-white px-4 py-1 font-black uppercase tracking-widest animate-pulse">
+                            <Badge className="w-fit mb-6 bg-primary text-white px-4 py-1 font-extrabold uppercase tracking-widest animate-pulse">
                                 Featured This Week
                             </Badge>
-                            <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter italic leading-none mb-6">
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">
                                 OTT <span className="text-primary italic">ADDA</span>
                             </h1>
                             <p className="max-w-xl text-gray-300 font-medium text-lg mb-10 leading-relaxed uppercase tracking-wide">
                                 Your front-row seat to the latest digital premieres. Track every drop across Aha, ETV Win, Prime Video & more!
                             </p>
                             <div className="flex gap-4">
-                                <Button className="bg-white text-black hover:bg-primary hover:text-white font-black uppercase tracking-widest px-10 py-6 rounded-2xl h-auto transition-all">
+                                <Button className="bg-white text-black hover:bg-primary hover:text-white font-extrabold uppercase tracking-widest px-10 py-6 rounded-2xl h-auto transition-all">
                                     <Play fill="currentColor" size={20} className="mr-2" /> Start Watching
                                 </Button>
                             </div>
@@ -78,7 +78,7 @@ export default function OTTAddaPage() {
                                     <Tv size={24} />
                                 </div>
                                 <div>
-                                    <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter italic">Fresh OTT Drops</h2>
+                                    <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-tighter italic">Fresh OTT Drops</h2>
                                     <p className="text-primary font-bold uppercase tracking-[0.2em] text-[10px] mt-1">April 10 – April 17, 2026</p>
                                 </div>
                             </div>
@@ -105,16 +105,16 @@ export default function OTTAddaPage() {
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
                                         <div className="absolute top-4 left-4">
-                                            <Badge className={`${platforms[item.platform]?.bg || 'bg-white/10'} backdrop-blur-md ${platforms[item.platform]?.color || 'text-white'} border-none font-black text-[9px] px-3 py-1 ring-1 ring-inset ring-white/10`}>
+                                            <Badge className={`${platforms[item.platform]?.bg || 'bg-white/10'} backdrop-blur-md ${platforms[item.platform]?.color || 'text-white'} border-none font-extrabold text-[9px] px-3 py-1 ring-1 ring-inset ring-white/10`}>
                                                 {item.platform}
                                             </Badge>
                                         </div>
                                         <div className="absolute bottom-6 left-6 right-6">
                                             <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">{item.type}</p>
-                                            <h3 className="text-xl font-black uppercase tracking-tight leading-none group-hover:text-primary transition-colors">{item.title}</h3>
+                                            <h3 className="text-xl font-extrabold uppercase tracking-tight leading-none group-hover:text-primary transition-colors">{item.title}</h3>
                                         </div>
                                     </div>
-                                    <Button className="absolute -bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white text-black hover:bg-primary hover:text-white font-black uppercase text-[10px] px-6 h-10 rounded-xl shadow-2xl">
+                                    <Button className="absolute -bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white text-black hover:bg-primary hover:text-white font-extrabold uppercase text-[10px] px-6 h-10 rounded-xl shadow-2xl">
                                         Watch Now
                                     </Button>
                                 </motion.div>
@@ -129,7 +129,7 @@ export default function OTTAddaPage() {
                                 <TrendingUp size={24} />
                             </div>
                             <div>
-                                <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter italic">Recently Premiered</h2>
+                                <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-tighter italic">Recently Premiered</h2>
                                 <p className="text-gray-500 font-bold uppercase tracking-[0.2em] text-[10px] mt-1">March – Early April 2026</p>
                             </div>
                         </div>
@@ -149,19 +149,19 @@ export default function OTTAddaPage() {
                                     </div>
                                     <div className="flex flex-col justify-center">
                                         <div className="flex items-center gap-2 mb-2">
-                                            <Badge variant="outline" className={`${platforms[item.platform]?.color || 'text-white'} border-none p-0 font-black uppercase text-[10px] tracking-widest`}>
+                                            <Badge variant="outline" className={`${platforms[item.platform]?.color || 'text-white'} border-none p-0 font-extrabold uppercase text-[10px] tracking-widest`}>
                                                 {item.platform}
                                             </Badge>
                                             <span className="text-gray-600">•</span>
                                             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{item.date}</span>
                                         </div>
-                                        <h3 className="text-2xl font-black uppercase tracking-tighter leading-none mb-3 group-hover:text-primary transition-colors">
+                                        <h3 className="text-2xl font-extrabold uppercase tracking-tighter leading-none mb-3 group-hover:text-primary transition-colors">
                                             {item.title}
                                         </h3>
                                         <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-6">
                                             {item.type}
                                         </p>
-                                        <Button variant="ghost" className="w-fit p-0 h-auto font-black uppercase text-[10px] tracking-widest text-primary hover:text-white hover:bg-transparent flex items-center gap-2">
+                                        <Button variant="ghost" className="w-fit p-0 h-auto font-extrabold uppercase text-[10px] tracking-widest text-primary hover:text-white hover:bg-transparent flex items-center gap-2">
                                             <Play size={12} fill="currentColor" /> Stream Details
                                         </Button>
                                     </div>
@@ -177,7 +177,7 @@ export default function OTTAddaPage() {
                         </div>
                         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
                             <div className="max-w-2xl text-center md:text-left">
-                                <h3 className="text-4xl md:text-6xl font-black uppercase tracking-tighter italic text-white leading-none mb-6">
+                                <h3 className="text-4xl md:text-6xl font-extrabold uppercase tracking-tighter italic text-white leading-none mb-6">
                                     Join the OTT <br /><span className="text-black">Watch Party!</span>
                                 </h3>
                                 <p className="text-white/80 font-medium text-lg mb-0 leading-relaxed uppercase tracking-wide">
@@ -185,7 +185,7 @@ export default function OTTAddaPage() {
                                 </p>
                             </div>
                             <div className="flex flex-col gap-4 w-full md:w-auto">
-                                <Button className="bg-black text-white hover:bg-white hover:text-black font-black uppercase tracking-widest px-12 py-8 rounded-2xl h-auto text-xl transition-all shadow-2xl">
+                                <Button className="bg-black text-white hover:bg-white hover:text-black font-extrabold uppercase tracking-widest px-12 py-8 rounded-2xl h-auto text-xl transition-all shadow-2xl">
                                     Join Now
                                 </Button>
                                 <Button variant="outline" className="border-black/20 text-black hover:bg-black/10 font-bold uppercase tracking-widest px-12 py-4 rounded-2xl h-auto transition-all">
@@ -196,7 +196,7 @@ export default function OTTAddaPage() {
                     </div>
 
                     <div className="mt-32 text-center">
-                        <p className="text-gray-500 font-black uppercase tracking-[0.4em] text-[10px] animate-pulse">
+                        <p className="text-gray-500 font-extrabold uppercase tracking-[0.4em] text-[10px] animate-pulse">
                             Refreshed Every Monday by Radio Nyra Digital Dept.
                         </p>
                     </div>

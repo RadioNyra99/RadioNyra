@@ -271,7 +271,7 @@ export default async function MarketPage({ params }: { params: Params }) {
                             <MapPin className="w-3.5 h-3.5" />
                             {isRdu ? "Flagship On-Air Broadcast Market" : "Digital Broadcast Market"}
                         </div>
-                        <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground flex items-center gap-3">
+                        <h2 className="text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-foreground flex items-center gap-3">
                             Local Broadcast & Community Hub
                         </h2>
                         <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl">
@@ -280,7 +280,7 @@ export default async function MarketPage({ params }: { params: Params }) {
                         <div className="pt-6 grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-border/50">
                             <div className="bg-muted/50 p-4 rounded-2xl border border-border/40">
                                 <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">Frequency / Channel</h3>
-                                <p className="text-xl font-black text-primary italic uppercase">{market.frequency}</p>
+                                <p className="text-xl font-extrabold text-primary italic uppercase">{market.frequency}</p>
                             </div>
                             <div className="bg-muted/50 p-4 rounded-2xl border border-border/40">
                                 <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">Coverage Area</h3>
@@ -294,8 +294,8 @@ export default async function MarketPage({ params }: { params: Params }) {
                 {isRdu && (
                     <section className="bg-gradient-to-br from-primary/5 via-card to-card border border-primary/20 p-8 md:p-10 rounded-3xl space-y-6">
                         <div className="max-w-2xl space-y-2">
-                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">RTP Triangle Coverage</span>
-                            <h3 className="text-2xl font-black uppercase tracking-tight text-foreground">
+                            <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-primary">RTP Triangle Coverage</span>
+                            <h3 className="text-2xl font-extrabold uppercase tracking-tight text-foreground">
                                 Reaching Indian Communities Across the Triangle
                             </h3>
                             <p className="text-sm text-muted-foreground leading-relaxed">
@@ -327,8 +327,8 @@ export default async function MarketPage({ params }: { params: Params }) {
                 {isRdu && (
                     <section className="bg-card border border-border p-8 md:p-10 rounded-3xl space-y-6 shadow-sm">
                         <div className="space-y-2">
-                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Local Dial & Frequency Guide</span>
-                            <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">
+                            <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-primary">Local Dial & Frequency Guide</span>
+                            <h3 className="text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-foreground">
                                 Popular Radio Stations in Raleigh-Durham, NC
                             </h3>
                             <p className="text-sm text-muted-foreground leading-relaxed max-w-3xl">
@@ -339,7 +339,7 @@ export default async function MarketPage({ params }: { params: Params }) {
                         <div className="overflow-x-auto">
                             <table className="w-full text-left text-sm border-collapse">
                                 <thead>
-                                    <tr className="border-b border-border text-xs font-black uppercase tracking-wider text-muted-foreground">
+                                    <tr className="border-b border-border text-xs font-extrabold uppercase tracking-wider text-muted-foreground">
                                         <th className="py-3 px-4">Frequency</th>
                                         <th className="py-3 px-4">Station</th>
                                         <th className="py-3 px-4">Format / Genre</th>
@@ -349,23 +349,23 @@ export default async function MarketPage({ params }: { params: Params }) {
                                 </thead>
                                 <tbody className="divide-y divide-border/60 text-xs font-medium">
                                     <tr className="bg-primary/5 font-bold">
-                                        <td className="py-3.5 px-4 text-primary font-black">99.9 FM HD4</td>
-                                        <td className="py-3.5 px-4 text-foreground font-black">Radio Nyra (Hindi)</td>
+                                        <td className="py-3.5 px-4 text-primary font-extrabold">99.9 FM HD4</td>
+                                        <td className="py-3.5 px-4 text-foreground font-extrabold">Radio Nyra (Hindi)</td>
                                         <td className="py-3.5 px-4 text-primary">Bollywood, Desi Hits, Diaspora News</td>
                                         <td className="py-3.5 px-4">Raleigh, Durham, Cary, Morrisville, RTP</td>
                                         <td className="py-3.5 px-4">
-                                            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black uppercase bg-green-500/10 text-green-600">
+                                            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-green-500/10 text-green-600">
                                                 Live Free On-Air
                                             </span>
                                         </td>
                                     </tr>
                                     <tr className="bg-primary/5 font-bold">
-                                        <td className="py-3.5 px-4 text-primary font-black">99.9 FM HD3</td>
-                                        <td className="py-3.5 px-4 text-foreground font-black">Radio Nyra (Telugu)</td>
+                                        <td className="py-3.5 px-4 text-primary font-extrabold">99.9 FM HD3</td>
+                                        <td className="py-3.5 px-4 text-foreground font-extrabold">Radio Nyra (Telugu)</td>
                                         <td className="py-3.5 px-4 text-primary">Tollywood Hits & Telugu Community</td>
                                         <td className="py-3.5 px-4">Raleigh, Cary, Morrisville, Apex</td>
                                         <td className="py-3.5 px-4">
-                                            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black uppercase bg-green-500/10 text-green-600">
+                                            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-green-500/10 text-green-600">
                                                 Live Free On-Air
                                             </span>
                                         </td>
@@ -441,8 +441,8 @@ export default async function MarketPage({ params }: { params: Params }) {
                 {isRdu && (
                     <section className="bg-card border border-border p-8 md:p-10 rounded-3xl space-y-6 shadow-sm">
                         <div className="space-y-2">
-                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Frequently Asked Questions</span>
-                            <h3 className="text-2xl font-black uppercase tracking-tight text-foreground">
+                            <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-primary">Frequently Asked Questions</span>
+                            <h3 className="text-2xl font-extrabold uppercase tracking-tight text-foreground">
                                 Raleigh & North Carolina Radio FAQs
                             </h3>
                         </div>
@@ -480,7 +480,7 @@ export default async function MarketPage({ params }: { params: Params }) {
                 <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="bg-card border border-border p-8 rounded-3xl shadow-sm flex flex-col justify-between">
                         <div>
-                            <h3 className="text-xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
+                            <h3 className="text-xl font-extrabold uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
                                 <MapPin className="w-5 h-5 text-primary" /> Key Market Features
                             </h3>
                             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
@@ -497,7 +497,7 @@ export default async function MarketPage({ params }: { params: Params }) {
                         </div>
                         <div className="pt-6 mt-6 border-t border-border/40 flex items-center justify-between">
                             <span className="text-xs font-bold text-muted-foreground">Local Helpline:</span>
-                            <span className="text-sm font-black text-primary">{market.localContact}</span>
+                            <span className="text-sm font-extrabold text-primary">{market.localContact}</span>
                         </div>
                     </div>
 
@@ -506,7 +506,7 @@ export default async function MarketPage({ params }: { params: Params }) {
                             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
                                 <Megaphone className="w-3.5 h-3.5" /> Direct Sponsor Impact
                             </div>
-                            <h3 className="text-2xl font-black uppercase tracking-tight mb-3">
+                            <h3 className="text-2xl font-extrabold uppercase tracking-tight mb-3">
                                 Advertise in {market.name}
                             </h3>
                             <p className="opacity-90 leading-relaxed text-sm">
@@ -526,7 +526,7 @@ export default async function MarketPage({ params }: { params: Params }) {
 
                 {/* Local Keywords Cloud */}
                 <div className="text-center pt-6 border-t border-border/30">
-                    <p className="text-[10px] font-black uppercase tracking-[0.25em] text-muted-foreground mb-4">Local Target Search Topics</p>
+                    <p className="text-[10px] font-extrabold uppercase tracking-[0.25em] text-muted-foreground mb-4">Local Target Search Topics</p>
                     <div className="flex flex-wrap justify-center gap-2">
                         {market.keywords.map((kw, i) => (
                             <span key={i} className="bg-muted px-4 py-1.5 rounded-full text-xs font-semibold text-muted-foreground border border-border/40">

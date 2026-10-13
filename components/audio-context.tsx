@@ -12,6 +12,8 @@ interface AudioContextType {
     isLoading: boolean
     error: string | null
     togglePlay: () => void
+    play: () => void
+    pause: () => void
     toggleMute: () => void
     setVolume: (volume: number) => void
     playStation: (stationId: string) => void
@@ -66,6 +68,30 @@ export function AudioProvider({ children }: { children: ReactNode }) {
         })
     }, [currentStation.name])
 
+    /**
+     * Idempotent start. Safe to call from several places in the same tick
+     * (e.g. a button that both reveals the player and starts the stream)
+     * without flipping playback back off again.
+     */
+    const play = useCallback(() => {
+        setIsPlaying(prev => {
+            if (!prev) trackAudioPlay(currentStation.name)
+            return true
+        })
+    }, [currentStation.name])
+
+    /**
+     * Idempotent stop. Safe to call from several places in the same tick
+     * (e.g. the OS "pause" media action and the element's own pause event)
+     * without flipping playback back on again.
+     */
+    const pause = useCallback(() => {
+        setIsPlaying(prev => {
+            if (prev) trackAudioPause(currentStation.name)
+            return false
+        })
+    }, [currentStation.name])
+
     const toggleMute = useCallback(() => setIsMuted(prev => !prev), [])
 
     const setVolume = useCallback((val: number) => {
@@ -86,7 +112,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
                     setMetadata({
                         title: currentStation.name + " Live",
                         artwork: "/images/radio-nyra-logo.jpg",
-                        listeners: 1250 // Mock listeners for stability
+                        listeners: 0
                     })
                     return;
                 }
@@ -127,6 +153,8 @@ export function AudioProvider({ children }: { children: ReactNode }) {
             isLoading,
             error,
             togglePlay,
+            play,
+            pause,
             toggleMute,
             setVolume,
             playStation,

@@ -25,7 +25,7 @@ export default function KidsShowsPage() {
                 <div className="flex items-center gap-3 mb-8">
                     <Sparkles className="w-8 h-8 text-amber-500 fill-amber-500 animate-pulse" />
                     <div>
-                        <h1 className="text-3xl md:text-5xl font-black uppercase tracking-tight italic">Kids Corner & Storytime</h1>
+                        <h1 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight italic">Kids Corner & Storytime</h1>
                         <p className="text-muted-foreground text-sm font-medium mt-1">Moral stories, rhymes, and fun tales from {OFFICIAL_YOUTUBE_CHANNEL.handle}</p>
                     </div>
                 </div>

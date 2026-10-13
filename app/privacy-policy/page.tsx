@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
           {/* Header */}
           <div className="mb-12 border-b border-border/40 pb-8">
             <p className="text-primary font-bold uppercase tracking-widest text-sm mb-2">Legal</p>
-            <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-foreground mb-4">Privacy Policy</h1>
+            <h1 className="text-4xl md:text-6xl font-extrabold uppercase tracking-tighter text-foreground mb-4">Privacy Policy</h1>
             <p className="text-muted-foreground text-sm font-mono uppercase tracking-wider">Last Updated: June 11, 2026</p>
           </div>
 
@@ -21,7 +21,7 @@ export default function PrivacyPolicyPage() {
           <div className="space-y-12 text-lg text-muted-foreground leading-relaxed">
 
             <section>
-              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-extrabold uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
                 <span className="text-primary">01.</span> Introduction
               </h2>
               <p className="mb-4">
@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-extrabold uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
                 <span className="text-primary">02.</span> Information We Collect
               </h2>
               <p className="mb-4">
@@ -57,7 +57,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-extrabold uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
                 <span className="text-primary">03.</span> How We Use Your Information
               </h2>
               <p className="mb-6">
@@ -82,7 +82,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-extrabold uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
                 <span className="text-primary">04.</span> Sharing Your Information
               </h2>
               <p>
@@ -91,7 +91,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-extrabold uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
                 <span className="text-primary">05.</span> Third-Party Websites
               </h2>
               <p>
@@ -100,7 +100,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-extrabold uppercase tracking-tight text-foreground mb-4 flex items-center gap-2">
                 <span className="text-primary">06.</span> Contact Us
               </h2>
               <div className="bg-primary/5 border border-primary/20 p-8 rounded-lg mt-6">

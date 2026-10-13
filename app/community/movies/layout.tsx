@@ -1,7 +1,7 @@
 ﻿import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Bollywood & Tollywood Movie Releases USA | Radio Nyra Cinema Hub",
+  title: "Bollywood & Tollywood Movie Releases USA",
   description: "Latest Indian movie releases, theater showtimes, box office updates, and Bollywood reviews in the USA.",
   alternates: {
     canonical: "/community/movies",

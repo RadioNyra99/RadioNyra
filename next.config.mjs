@@ -5,9 +5,6 @@ const nextConfig = {
     root: process.cwd(),
   },
   trailingSlash: false,
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   images: {
     unoptimized: true,
   },

@@ -1,9 +1,10 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import {
   Radio, Calendar, Sparkles, ListMusic, ChevronRight,
-  ExternalLink, Play
+  ExternalLink, Play, FileText
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { RTV_TELUGU_NEWS_EPISODES, type RtvNewsEpisode } from "@/lib/rtv-news-data"
@@ -36,7 +37,7 @@ export function RtvPlayer({ showArchive = true }: RtvPlayerProps) {
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
           <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
         </span>
-        <span className="text-[11px] font-black uppercase tracking-[0.2em] text-red-400">
+        <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-red-400">
           Radio Nyra &times; RTV Telugu News
         </span>
         <span className="text-zinc-500">&bull;</span>
@@ -59,7 +60,7 @@ export function RtvPlayer({ showArchive = true }: RtvPlayerProps) {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-3 left-3 right-3 text-center">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-600/90 text-white text-[10px] font-black uppercase tracking-wider backdrop-blur-sm shadow-lg">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-600/90 text-white text-[10px] font-extrabold uppercase tracking-wider backdrop-blur-sm shadow-lg">
                   <Radio className="w-3 h-3 animate-pulse" /> Daily Telugu News On Air
                 </div>
               </div>
@@ -71,10 +72,10 @@ export function RtvPlayer({ showArchive = true }: RtvPlayerProps) {
 
             {/* Episode Info */}
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-black uppercase tracking-widest mb-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-extrabold uppercase tracking-widest mb-2">
                 <Sparkles className="w-3 h-3" /> Telugu Daily Bulletin
               </div>
-              <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight italic text-white leading-tight">
+              <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight italic text-white leading-tight">
                 {selectedEpisode.title}
               </h2>
               <div className="flex flex-wrap items-center gap-3 mt-2 text-xs text-zinc-400">
@@ -120,10 +121,10 @@ export function RtvPlayer({ showArchive = true }: RtvPlayerProps) {
 
               {/* Station Badge */}
               <div className="flex gap-2 ml-auto">
-                <span className="px-2 py-1 rounded bg-red-950 text-red-300 font-black text-[10px] uppercase border border-red-800">
+                <span className="px-2 py-1 rounded bg-red-950 text-red-300 font-extrabold text-[10px] uppercase border border-red-800">
                   99.9 FM-HD3
                 </span>
-                <span className="px-2 py-1 rounded bg-zinc-800 text-zinc-300 font-black text-[10px] uppercase border border-zinc-700">
+                <span className="px-2 py-1 rounded bg-zinc-800 text-zinc-300 font-extrabold text-[10px] uppercase border border-zinc-700">
                   Telugu
                 </span>
               </div>
@@ -146,7 +147,7 @@ export function RtvPlayer({ showArchive = true }: RtvPlayerProps) {
           <div className="mt-8 pt-6 border-t border-zinc-800">
             <div className="flex items-center gap-2 mb-4">
               <ListMusic className="w-5 h-5 text-red-500" />
-              <h3 className="text-lg font-black uppercase tracking-tight text-white">
+              <h3 className="text-lg font-extrabold uppercase tracking-tight text-white">
                 Telugu Daily News Archive
               </h3>
               <span className="text-xs bg-red-600/30 text-red-300 px-2 py-0.5 rounded-full font-bold">
@@ -177,7 +178,7 @@ export function RtvPlayer({ showArchive = true }: RtvPlayerProps) {
                         <h4 className="font-bold text-sm text-white leading-tight">
                           Day {ep.dayNumber}
                           {isCurrent && (
-                            <span className="ml-1.5 text-[9px] text-red-400 font-black uppercase">
+                            <span className="ml-1.5 text-[9px] text-red-400 font-extrabold uppercase">
                               Selected
                             </span>
                           )}
@@ -191,10 +192,20 @@ export function RtvPlayer({ showArchive = true }: RtvPlayerProps) {
                     </p>
 
                     <div className="flex items-center justify-between text-[11px] text-zinc-400 border-t border-zinc-800/80 pt-2">
-                      <span className="font-mono">{ep.sizeFormatted}</span>
-                      <span className="text-red-400 font-bold flex items-center text-[10px] uppercase">
-                        Play <ChevronRight className="w-3 h-3" />
-                      </span>
+                      <span className="font-mono text-[10px]">{ep.sizeFormatted}</span>
+                      <div className="flex items-center gap-2">
+                        <Link
+                          href={`/rtv-news/${ep.date}`}
+                          onClick={(e) => e.stopPropagation()}
+                          className="text-[10px] text-zinc-400 hover:text-white flex items-center gap-0.5 underline decoration-zinc-600 hover:decoration-white"
+                          title="View full bulletin, transcript & share"
+                        >
+                          <FileText className="w-2.5 h-2.5" /> Details
+                        </Link>
+                        <span className="text-red-400 font-bold flex items-center text-[10px] uppercase">
+                          Play <ChevronRight className="w-3 h-3" />
+                        </span>
+                      </div>
                     </div>
                   </div>
                 )

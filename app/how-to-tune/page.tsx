@@ -233,7 +233,7 @@ export default function HowToTunePage() {
 
             <div className="bg-background border-b border-border/50">
                 <div className="container mx-auto px-4 py-3">
-                    <a href="/" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors">
+                    <a href="/" className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors">
                         <ArrowLeft className="h-4 w-4" /> Back to Home
                     </a>
                 </div>
@@ -245,10 +245,10 @@ export default function HowToTunePage() {
                     <div className="container mx-auto px-4 relative z-10">
                         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                             <div className="flex-1 text-center md:text-left">
-                                <span className="inline-flex items-center gap-2 px-3 py-1 bg-black/30 rounded-full text-xs font-black uppercase tracking-widest text-white/90 mb-4 border border-white/10">
+                                <span className="inline-flex items-center gap-2 px-3 py-1 bg-black/30 rounded-full text-xs font-extrabold uppercase tracking-widest text-white/90 mb-4 border border-white/10">
                                     <Radio className="w-3.5 h-3.5 text-yellow-300" /> Official English Video Guides
                                 </span>
-                                <h1 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter mb-4 italic leading-tight md:leading-none drop-shadow-md">
+                                <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight drop-shadow-md">
                                     How To Tune <br /> <span className="text-yellow-300">English Tutorials</span>
                                 </h1>
                                 <p className="text-sm md:text-base font-bold uppercase tracking-[0.12em] opacity-95 max-w-xl leading-relaxed mb-6">
@@ -257,30 +257,30 @@ export default function HowToTunePage() {
 
                                 {/* Quick Jump Car Pills */}
                                 <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 pt-2">
-                                    <span className="text-xs font-black uppercase tracking-wider text-white/80 mr-1 flex items-center gap-1">
+                                    <span className="text-xs font-extrabold uppercase tracking-wider text-white/80 mr-1 flex items-center gap-1">
                                         <Car className="w-3.5 h-3.5" /> Jump to:
                                     </span>
                                     <button
                                         onClick={() => { setSelectedFilter("honda"); document.getElementById("honda")?.scrollIntoView({ behavior: 'smooth' }); }}
-                                        className="px-3 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-black/40 hover:bg-white hover:text-black border border-white/20 transition-all cursor-pointer"
+                                        className="px-3 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider bg-black/40 hover:bg-white hover:text-black border border-white/20 transition-all cursor-pointer"
                                     >
                                         Honda / Acura
                                     </button>
                                     <button
                                         onClick={() => { setSelectedFilter("toyota"); document.getElementById("toyota")?.scrollIntoView({ behavior: 'smooth' }); }}
-                                        className="px-3 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-black/40 hover:bg-white hover:text-black border border-white/20 transition-all cursor-pointer"
+                                        className="px-3 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider bg-black/40 hover:bg-white hover:text-black border border-white/20 transition-all cursor-pointer"
                                     >
                                         Toyota / Lexus
                                     </button>
                                     <button
                                         onClick={() => { setSelectedFilter("bmw"); document.getElementById("bmw")?.scrollIntoView({ behavior: 'smooth' }); }}
-                                        className="px-3 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-black/40 hover:bg-white hover:text-black border border-white/20 transition-all cursor-pointer"
+                                        className="px-3 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider bg-black/40 hover:bg-white hover:text-black border border-white/20 transition-all cursor-pointer"
                                     >
                                         BMW / Mercedes
                                     </button>
                                     <button
                                         onClick={() => { setSelectedFilter("general"); document.getElementById("general")?.scrollIntoView({ behavior: 'smooth' }); }}
-                                        className="px-3 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-black/40 hover:bg-white hover:text-black border border-white/20 transition-all cursor-pointer"
+                                        className="px-3 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider bg-black/40 hover:bg-white hover:text-black border border-white/20 transition-all cursor-pointer"
                                     >
                                         General HD Radio
                                     </button>
@@ -309,7 +309,7 @@ export default function HowToTunePage() {
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-between p-4">
                                             <div className="flex items-center justify-between">
-                                                <span className="bg-red-600 text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full shadow">
+                                                <span className="bg-red-600 text-white text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full shadow">
                                                     Main English Guide
                                                 </span>
                                                 <span className="text-[11px] text-white/90 font-bold bg-black/60 px-2 py-0.5 rounded backdrop-blur-xs">
@@ -322,7 +322,7 @@ export default function HowToTunePage() {
                                                 </div>
                                             </div>
                                             <div className="text-left">
-                                                <h3 className="text-sm sm:text-base font-black text-white leading-tight drop-shadow">
+                                                <h3 className="text-sm sm:text-base font-extrabold text-white leading-tight drop-shadow">
                                                     HD Radio Multicast Tuning (HD2, HD3 & HD4)
                                                 </h3>
                                                 <p className="text-[11px] text-yellow-300 font-bold uppercase tracking-wider mt-0.5">
@@ -341,7 +341,7 @@ export default function HowToTunePage() {
                 <section className="py-10 bg-muted/40 border-b border-border">
                     <div className="container mx-auto px-4">
                         <div className="text-center max-w-3xl mx-auto mb-8">
-                            <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight italic">
+                            <h2 className="text-2xl md:text-3xl font-extrabold uppercase tracking-tight italic">
                                 3 Quick Steps to Tune In Your Car
                             </h2>
                             <p className="text-xs md:text-sm text-muted-foreground font-semibold uppercase tracking-wider mt-1">
@@ -351,33 +351,33 @@ export default function HowToTunePage() {
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                             <div className="bg-card border border-border/80 p-6 rounded-2xl shadow-sm relative overflow-hidden group hover:border-primary transition-colors">
-                                <div className="text-4xl font-black text-primary/20 absolute top-4 right-4">01</div>
-                                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-black mb-4">
+                                <div className="text-4xl font-extrabold text-primary/20 absolute top-4 right-4">01</div>
+                                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-extrabold mb-4">
                                     <Radio className="w-6 h-6" />
                                 </div>
-                                <h3 className="text-lg font-black uppercase tracking-tight mb-2">Tune to 99.9 FM</h3>
+                                <h3 className="text-lg font-extrabold uppercase tracking-tight mb-2">Tune to 99.9 FM</h3>
                                 <p className="text-xs text-muted-foreground font-medium leading-relaxed">
                                     Set your vehicle&apos;s audio system to <strong>99.9 FM</strong>. Ensure your car&apos;s HD Radio feature is switched on.
                                 </p>
                             </div>
 
                             <div className="bg-card border border-border/80 p-6 rounded-2xl shadow-sm relative overflow-hidden group hover:border-primary transition-colors">
-                                <div className="text-4xl font-black text-primary/20 absolute top-4 right-4">02</div>
-                                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-black mb-4">
+                                <div className="text-4xl font-extrabold text-primary/20 absolute top-4 right-4">02</div>
+                                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-extrabold mb-4">
                                     <Sparkles className="w-6 h-6" />
                                 </div>
-                                <h3 className="text-lg font-black uppercase tracking-tight mb-2">Wait for HD Logo</h3>
+                                <h3 className="text-lg font-extrabold uppercase tracking-tight mb-2">Wait for HD Logo</h3>
                                 <p className="text-xs text-muted-foreground font-medium leading-relaxed">
                                     Within 2-3 seconds, the digital <strong>HD Radio logo</strong> will appear on your screen, indicating multicast channels are ready.
                                 </p>
                             </div>
 
                             <div className="bg-card border border-border/80 p-6 rounded-2xl shadow-sm relative overflow-hidden group hover:border-primary transition-colors">
-                                <div className="text-4xl font-black text-primary/20 absolute top-4 right-4">03</div>
-                                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-black mb-4">
+                                <div className="text-4xl font-extrabold text-primary/20 absolute top-4 right-4">03</div>
+                                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-extrabold mb-4">
                                     <Volume2 className="w-6 h-6" />
                                 </div>
-                                <h3 className="text-lg font-black uppercase tracking-tight mb-2">Select HD4 or HD3</h3>
+                                <h3 className="text-lg font-extrabold uppercase tracking-tight mb-2">Select HD4 or HD3</h3>
                                 <p className="text-xs text-muted-foreground font-medium leading-relaxed">
                                     Use your tuning knob, seek buttons, or touchscreen to select <strong>HD4 for Hindi</strong> or <strong>HD3 for Telugu</strong>.
                                 </p>
@@ -390,10 +390,10 @@ export default function HowToTunePage() {
                 <section className="py-16">
                     <div className="container mx-auto px-4 max-w-6xl">
                         <div className="text-center max-w-3xl mx-auto mb-10">
-                            <span className="text-xs font-black uppercase tracking-[0.25em] text-primary block mb-2">
+                            <span className="text-xs font-extrabold uppercase tracking-[0.25em] text-primary block mb-2">
                                 Video Walkthroughs
                             </span>
-                            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight italic">
+                            <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight italic">
                                 Car-Specific English Video Tutorials
                             </h2>
                             <p className="text-xs md:text-sm text-muted-foreground font-medium mt-2">
@@ -406,7 +406,7 @@ export default function HowToTunePage() {
                                     variant={selectedFilter === "all" ? "default" : "outline"}
                                     size="sm"
                                     onClick={() => setSelectedFilter("all")}
-                                    className="font-black text-xs uppercase tracking-wider rounded-full px-5 cursor-pointer"
+                                    className="font-extrabold text-xs uppercase tracking-wider rounded-full px-5 cursor-pointer"
                                 >
                                     All Brands
                                 </Button>
@@ -414,7 +414,7 @@ export default function HowToTunePage() {
                                     variant={selectedFilter === "honda" ? "default" : "outline"}
                                     size="sm"
                                     onClick={() => setSelectedFilter("honda")}
-                                    className="font-black text-xs uppercase tracking-wider rounded-full px-5 cursor-pointer"
+                                    className="font-extrabold text-xs uppercase tracking-wider rounded-full px-5 cursor-pointer"
                                 >
                                     Honda & Acura
                                 </Button>
@@ -422,7 +422,7 @@ export default function HowToTunePage() {
                                     variant={selectedFilter === "toyota" ? "default" : "outline"}
                                     size="sm"
                                     onClick={() => setSelectedFilter("toyota")}
-                                    className="font-black text-xs uppercase tracking-wider rounded-full px-5 cursor-pointer"
+                                    className="font-extrabold text-xs uppercase tracking-wider rounded-full px-5 cursor-pointer"
                                 >
                                     Toyota & Lexus
                                 </Button>
@@ -430,7 +430,7 @@ export default function HowToTunePage() {
                                     variant={selectedFilter === "bmw" ? "default" : "outline"}
                                     size="sm"
                                     onClick={() => setSelectedFilter("bmw")}
-                                    className="font-black text-xs uppercase tracking-wider rounded-full px-5 cursor-pointer"
+                                    className="font-extrabold text-xs uppercase tracking-wider rounded-full px-5 cursor-pointer"
                                 >
                                     BMW & Luxury
                                 </Button>
@@ -438,7 +438,7 @@ export default function HowToTunePage() {
                                     variant={selectedFilter === "general" ? "default" : "outline"}
                                     size="sm"
                                     onClick={() => setSelectedFilter("general")}
-                                    className="font-black text-xs uppercase tracking-wider rounded-full px-5 cursor-pointer"
+                                    className="font-extrabold text-xs uppercase tracking-wider rounded-full px-5 cursor-pointer"
                                 >
                                     General HD Setup
                                 </Button>
@@ -451,10 +451,10 @@ export default function HowToTunePage() {
                                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 border-b border-border/60 pb-4">
                                         <div>
                                             <div className="flex items-center gap-3">
-                                                <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider ${cat.badgeColor}`}>
+                                                <span className={`px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider ${cat.badgeColor}`}>
                                                     {cat.badge}
                                                 </span>
-                                                <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight italic">{cat.brand}</h3>
+                                                <h3 className="text-2xl md:text-3xl font-extrabold uppercase tracking-tight italic">{cat.brand}</h3>
                                             </div>
                                             <p className="text-xs text-muted-foreground font-medium mt-2 max-w-3xl">{cat.description}</p>
                                         </div>
@@ -489,7 +489,7 @@ export default function HowToTunePage() {
                                                                         <Play className="w-6 h-6 fill-white ml-1 text-white" />
                                                                     </div>
                                                                 </div>
-                                                                <div className="absolute top-3 left-3 bg-black/80 backdrop-blur-xs text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full border border-white/10">
+                                                                <div className="absolute top-3 left-3 bg-black/80 backdrop-blur-xs text-white text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full border border-white/10">
                                                                     {video.duration}
                                                                 </div>
                                                                 <div className="absolute bottom-3 right-3 bg-black/80 backdrop-blur-xs text-yellow-300 text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded border border-white/10">
@@ -499,7 +499,7 @@ export default function HowToTunePage() {
                                                         )}
                                                     </div>
                                                     <div className="p-5">
-                                                        <h4 className="text-base font-black uppercase tracking-tight italic leading-snug group-hover:text-primary transition-colors mb-2">
+                                                        <h4 className="text-base font-extrabold uppercase tracking-tight italic leading-snug group-hover:text-primary transition-colors mb-2">
                                                             {video.title}
                                                         </h4>
                                                     </div>
@@ -513,7 +513,7 @@ export default function HowToTunePage() {
                                                         href={`https://www.youtube.com/watch?v=${video.id}`}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="text-[11px] text-primary hover:underline font-black flex items-center gap-1 uppercase tracking-wider"
+                                                        className="text-[11px] text-primary hover:underline font-extrabold flex items-center gap-1 uppercase tracking-wider"
                                                     >
                                                         YouTube <ExternalLink className="w-3 h-3" />
                                                     </a>
@@ -531,10 +531,10 @@ export default function HowToTunePage() {
                 <section className="py-16 bg-zinc-950 text-white border-y border-zinc-800">
                     <div className="container mx-auto px-4 max-w-5xl">
                         <div className="text-center max-w-3xl mx-auto mb-12">
-                            <span className="inline-flex items-center gap-2 px-3 py-1 bg-red-600/20 text-red-400 rounded-full text-xs font-black uppercase tracking-widest mb-3 border border-red-500/20">
+                            <span className="inline-flex items-center gap-2 px-3 py-1 bg-red-600/20 text-red-400 rounded-full text-xs font-extrabold uppercase tracking-widest mb-3 border border-red-500/20">
                                 <Globe className="w-3.5 h-3.5" /> Worldwide Online Directories
                             </span>
-                            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight italic">
+                            <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight italic">
                                 Listen via Global Radio Directories
                             </h2>
                             <p className="text-xs md:text-sm text-zinc-400 font-medium mt-3 leading-relaxed">
@@ -548,22 +548,22 @@ export default function HowToTunePage() {
                             <div className="bg-gradient-to-br from-zinc-900 to-black border-2 border-red-500/40 hover:border-red-500 p-6 sm:p-8 rounded-3xl transition-all shadow-xl group">
                                 <div className="flex items-center justify-between mb-4">
                                     <div className="flex items-center gap-3">
-                                        <div className="w-12 h-12 rounded-2xl bg-red-600 flex items-center justify-center font-black text-white text-lg">
+                                        <div className="w-12 h-12 rounded-2xl bg-red-600 flex items-center justify-center font-extrabold text-white text-lg">
                                             <Radio className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-black uppercase tracking-tight">radio.net</h3>
+                                            <h3 className="text-xl font-extrabold uppercase tracking-tight">radio.net</h3>
                                             <span className="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">Official Search & Stream</span>
                                         </div>
                                     </div>
-                                    <span className="px-3 py-1 rounded-full bg-red-600/20 text-red-400 text-[10px] font-black uppercase tracking-widest border border-red-500/30">
+                                    <span className="px-3 py-1 rounded-full bg-red-600/20 text-red-400 text-[10px] font-extrabold uppercase tracking-widest border border-red-500/30">
                                         Featured
                                     </span>
                                 </div>
                                 <p className="text-xs text-zinc-300 font-medium mb-6 leading-relaxed">
                                     Tune into Radio Nyra live on radio.net portal and mobile apps across the United States and Europe.
                                 </p>
-                                <Button asChild className="w-full bg-red-600 hover:bg-red-700 text-white font-black text-xs uppercase tracking-widest h-12 rounded-xl cursor-pointer">
+                                <Button asChild className="w-full bg-red-600 hover:bg-red-700 text-white font-extrabold text-xs uppercase tracking-widest h-12 rounded-xl cursor-pointer">
                                     <a href="http://radio.net/search?q=radionyra" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                                         Listen on radio.net <ExternalLink className="w-4 h-4" />
                                     </a>
@@ -574,22 +574,22 @@ export default function HowToTunePage() {
                             <div className="bg-gradient-to-br from-zinc-900 to-black border-2 border-cyan-500/40 hover:border-cyan-500 p-6 sm:p-8 rounded-3xl transition-all shadow-xl group">
                                 <div className="flex items-center justify-between mb-4">
                                     <div className="flex items-center gap-3">
-                                        <div className="w-12 h-12 rounded-2xl bg-cyan-600 flex items-center justify-center font-black text-white text-lg">
+                                        <div className="w-12 h-12 rounded-2xl bg-cyan-600 flex items-center justify-center font-extrabold text-white text-lg">
                                             <Volume2 className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-black uppercase tracking-tight">Get Me Radio!</h3>
+                                            <h3 className="text-xl font-extrabold uppercase tracking-tight">Get Me Radio!</h3>
                                             <span className="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">Station #4514</span>
                                         </div>
                                     </div>
-                                    <span className="px-3 py-1 rounded-full bg-cyan-600/20 text-cyan-400 text-[10px] font-black uppercase tracking-widest border border-cyan-500/30">
+                                    <span className="px-3 py-1 rounded-full bg-cyan-600/20 text-cyan-400 text-[10px] font-extrabold uppercase tracking-widest border border-cyan-500/30">
                                         Verified
                                     </span>
                                 </div>
                                 <p className="text-xs text-zinc-300 font-medium mb-6 leading-relaxed">
                                     Official verified Radio Nyra station on Get Me Radio! Compatible with web, Roku, Fire TV, and Alexa skills.
                                 </p>
-                                <Button asChild className="w-full bg-cyan-600 hover:bg-cyan-700 text-white font-black text-xs uppercase tracking-widest h-12 rounded-xl cursor-pointer">
+                                <Button asChild className="w-full bg-cyan-600 hover:bg-cyan-700 text-white font-extrabold text-xs uppercase tracking-widest h-12 rounded-xl cursor-pointer">
                                     <a href="https://www.getmeradio.com/stations/radionyra-4514/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                                         Listen on Get Me Radio <ExternalLink className="w-4 h-4" />
                                     </a>
@@ -621,16 +621,16 @@ export default function HowToTunePage() {
                 {/* Voice Assistants & Smart Speakers Guide */}
                 <section className="py-14 bg-card border-b border-border">
                     <div className="container mx-auto px-4 max-w-4xl text-center">
-                        <span className="text-xs font-black uppercase tracking-[0.25em] text-primary block mb-2">
+                        <span className="text-xs font-extrabold uppercase tracking-[0.25em] text-primary block mb-2">
                             Hands-Free Listening
                         </span>
-                        <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tight italic mb-8">
+                        <h2 className="text-2xl md:text-4xl font-extrabold uppercase tracking-tight italic mb-8">
                             Smart Speaker Voice Commands (English)
                         </h2>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
                             <div className="bg-muted/40 p-6 rounded-2xl border border-border">
-                                <div className="text-primary font-black text-sm uppercase tracking-wider mb-2 flex items-center gap-2">
+                                <div className="text-primary font-extrabold text-sm uppercase tracking-wider mb-2 flex items-center gap-2">
                                     <CheckCircle2 className="w-4 h-4" /> Amazon Alexa
                                 </div>
                                 <p className="text-xs text-foreground font-bold italic mb-1">&quot;Alexa, Play Radio Nyra on Get Me Radio&quot;</p>
@@ -638,7 +638,7 @@ export default function HowToTunePage() {
                             </div>
 
                             <div className="bg-muted/40 p-6 rounded-2xl border border-border">
-                                <div className="text-primary font-black text-sm uppercase tracking-wider mb-2 flex items-center gap-2">
+                                <div className="text-primary font-extrabold text-sm uppercase tracking-wider mb-2 flex items-center gap-2">
                                     <CheckCircle2 className="w-4 h-4" /> Google Assistant
                                 </div>
                                 <p className="text-xs text-foreground font-bold italic mb-1">&quot;Hey Google, Play Radio Nyra&quot;</p>
@@ -646,7 +646,7 @@ export default function HowToTunePage() {
                             </div>
 
                             <div className="bg-muted/40 p-6 rounded-2xl border border-border">
-                                <div className="text-primary font-black text-sm uppercase tracking-wider mb-2 flex items-center gap-2">
+                                <div className="text-primary font-extrabold text-sm uppercase tracking-wider mb-2 flex items-center gap-2">
                                     <CheckCircle2 className="w-4 h-4" /> Apple Siri
                                 </div>
                                 <p className="text-xs text-foreground font-bold italic mb-1">&quot;Hey Siri, Play Radio Nyra&quot;</p>
@@ -659,11 +659,11 @@ export default function HowToTunePage() {
                 {/* Contact support */}
                 <section className="py-16 bg-primary/5 text-center">
                     <div className="container mx-auto px-4 max-w-2xl">
-                        <h2 className="text-3xl font-black uppercase tracking-tighter mb-4 italic">Still having trouble tuning in?</h2>
+                        <h2 className="text-3xl font-extrabold uppercase tracking-tighter mb-4 italic">Still having trouble tuning in?</h2>
                         <p className="text-muted-foreground font-bold uppercase tracking-widest text-xs mb-8">
                             We can help you set up your car radio! Visit our Morrisville broadcast studio or call our engineering team.
                         </p>
-                        <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white font-black uppercase tracking-widest px-10 py-6 rounded-full shadow-xl">
+                        <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white font-extrabold uppercase tracking-widest px-10 py-6 rounded-full shadow-xl">
                             <a href="/contact">Get Tuning Support</a>
                         </Button>
                     </div>

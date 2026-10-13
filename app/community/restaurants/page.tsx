@@ -84,7 +84,7 @@ export default function RestaurantsPage() {
                         animate={{ opacity: 1, x: 0 }}
                         className="mb-16 border-l-8 border-primary pl-8"
                     >
-                        <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter italic mb-4">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
                             Best Indian Restaurants
                         </h1>
                         <p className="text-muted-foreground text-lg font-medium uppercase tracking-widest">
@@ -114,15 +114,15 @@ export default function RestaurantsPage() {
                                     <div className="flex justify-between items-start mb-4">
                                         <div className="flex items-center gap-1 text-primary">
                                             <Star size={16} fill="currentColor" />
-                                            <span className="font-black text-sm">{rest.rating}</span>
+                                            <span className="font-extrabold text-sm">{rest.rating}</span>
                                         </div>
-                                        <div className="flex items-center gap-1 text-muted-foreground text-[10px] font-black uppercase tracking-widest">
+                                        <div className="flex items-center gap-1 text-muted-foreground text-[10px] font-extrabold uppercase tracking-widest">
                                             <MapPin size={12} />
                                             {rest.location}
                                         </div>
                                     </div>
 
-                                    <h3 className="text-2xl font-black uppercase tracking-tight mb-2 group-hover:text-primary transition-colors">
+                                    <h3 className="text-2xl font-extrabold uppercase tracking-tight mb-2 group-hover:text-primary transition-colors">
                                         {rest.name}
                                     </h3>
                                     <p className="text-muted-foreground text-sm font-bold uppercase tracking-widest mb-4">
@@ -145,21 +145,21 @@ export default function RestaurantsPage() {
 
                     <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center border-y border-border/50 py-12">
                         <div>
-                            <h4 className="font-black uppercase tracking-widest text-primary mb-2">Cuisine</h4>
+                            <h4 className="font-extrabold uppercase tracking-widest text-primary mb-2">Cuisine</h4>
                             <p className="text-sm font-bold opacity-70">Authentic & Fusion</p>
                         </div>
                         <div>
-                            <h4 className="font-black uppercase tracking-widest text-primary mb-2">Experience</h4>
+                            <h4 className="font-extrabold uppercase tracking-widest text-primary mb-2">Experience</h4>
                             <p className="text-sm font-bold opacity-70">Fine Dining to Casual</p>
                         </div>
                         <div>
-                            <h4 className="font-black uppercase tracking-widest text-primary mb-2">Options</h4>
+                            <h4 className="font-extrabold uppercase tracking-widest text-primary mb-2">Options</h4>
                             <p className="text-sm font-bold opacity-70">Veg & Non-Veg</p>
                         </div>
                     </div>
 
                     <div className="mt-32 text-center border-t border-border/50 pt-20">
-                        <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tighter italic mb-6">
+                        <h3 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tighter italic mb-6">
                             Have more <span className="text-primary">Questions?</span>
                         </h3>
                         <p className="text-muted-foreground font-bold uppercase tracking-widest mb-10 max-w-md mx-auto">
@@ -167,7 +167,7 @@ export default function RestaurantsPage() {
                         </p>
                         <a
                             href="/faq"
-                            className="inline-block bg-primary text-white font-black uppercase tracking-widest px-12 py-4 hover:bg-primary/90 transition-all hover:scale-105 shadow-[0_10px_20px_rgba(235,30,50,0.2)]"
+                            className="inline-block bg-primary text-white font-extrabold uppercase tracking-widest px-12 py-4 hover:bg-primary/90 transition-all hover:scale-105 shadow-[0_10px_20px_rgba(235,30,50,0.2)]"
                         >
                             Visit FAQ Page
                         </a>

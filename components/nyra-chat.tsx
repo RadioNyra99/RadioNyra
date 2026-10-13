@@ -25,11 +25,11 @@ const INITIAL_MESSAGES: Message[] = [
 ]
 
 const SUGGESTED_QUESTIONS = [
-  "What song was playing 10 minutes ago?",
-  "When is the next Telugu show?",
-  "What community events are happening this weekend?",
-  "Show me immigration podcast updates",
-  "How can I tune in to 99.9 FM in my car?",
+  "How can I listen in Morrisville or Cary?",
+  "Today's RTV Telugu News updates",
+  "Where are Indian groceries and temples nearby?",
+  "How can I advertise my business or submit an event?",
+  "When is the next live show?",
 ]
 
 
@@ -41,22 +41,6 @@ export function NyraChat() {
   const [showSuggestions, setShowSuggestions] = React.useState(true)
   const scrollRef = React.useRef<HTMLDivElement>(null)
 
-  React.useEffect(() => {
-    const handleOpenAI = (e: Event) => {
-      const customEvent = e as CustomEvent<{ query?: string }>
-      setIsOpen(true)
-      if (customEvent.detail?.query) {
-        setTimeout(() => {
-          handleSend(customEvent.detail.query)
-        }, 300)
-      }
-    }
-    if (typeof window !== "undefined") {
-      window.addEventListener("open-nyra-ai", handleOpenAI)
-      return () => window.removeEventListener("open-nyra-ai", handleOpenAI)
-    }
-  }, [])
-
   const scrollToBottom = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight
@@ -67,37 +51,7 @@ export function NyraChat() {
     scrollToBottom()
   }, [messages, isOpen])
 
-  const handleSend = async (text?: string) => {
-    const messageContent = text || inputValue
-    if (!messageContent.trim() || isLoading) return
-
-    if (showSuggestions) setShowSuggestions(false)
-
-    const userMessage: Message = {
-      id: Date.now().toString(),
-      role: "user",
-      content: messageContent,
-      timestamp: new Date(),
-    }
-
-    setMessages((prev) => [...prev, userMessage])
-    if (!text) setInputValue("")
-    setIsLoading(true)
-
-    // Simulate AI response
-    setTimeout(() => {
-      const assistantMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        role: "assistant",
-        content: getMockResponse(messageContent),
-        timestamp: new Date(),
-      }
-      setMessages((prev) => [...prev, assistantMessage])
-      setIsLoading(false)
-    }, 1500)
-  }
-
-  const getMockResponse = (input: string): string => {
+  function getMockResponse(input: string): string {
     const lowInput = input.toLowerCase()
     
     // Knowledge Base
@@ -155,6 +109,26 @@ export function NyraChat() {
         response: "We have exciting diaspora events in the Triangle!\n- Garba Nights for the Community in Raleigh/Cary\n- Cultural festivals and temple celebrations in Morrisville\nVisit our /events page for full venue details and tickets!"
       },
       {
+        keywords: ["rtv", "rtv news", "bulletin", "telugu news", "headlines", "today news"],
+        response: "🎙️ RTV Telugu News on Radio Nyra:\nBroadcasts daily on 99.9 FM-HD3! You can listen to today's complete news bulletin, read the headlines, and view transcripts on-demand anytime at /rtv-news!"
+      },
+      {
+        keywords: ["cary", "morrisville", "raleigh", "durham", "apex", "chapel hill", "wake forest", "rtp", "near me", "north carolina"],
+        response: "📍 North Carolina Triangle Hubs:\nRadio Nyra broadcasts across 8 Triangle communities on 99.9 FM HD4 (Hindi) & HD3 (Telugu)!\n- Morrisville: 46% South Asian community\n- Cary: Cultural & temple heart\n- Raleigh & Durham: Research Triangle tech corridor\nCheck your local city guide at /near-me or /north-carolina/[city]!"
+      },
+      {
+        keywords: ["grocery", "groceries", "temple", "temples", "patel", "sv temple", "baps", "bazaar"],
+        response: "🛕 Temples & Indian Markets in Triangle:\n- Sri Venkateswara (SV) Temple: 121 Balaji Pl, Cary\n- BAPS Mandir: 10200 Aviation Pkwy, Morrisville\n- Patel Brothers: 770 Maynard Rd, Cary\n- Swad Indian Grocery: Raleigh\n- Mirchi Grocers: Durham\nExplore all verified listings at /directory or /community/temples!"
+      },
+      {
+        keywords: ["directory", "list business", "add business", "submit business", "restaurants", "dining"],
+        response: "🏪 Radio Nyra Business Directory:\nDiscover South Asian restaurants, grocery stores, real estate agents, and immigration attorneys at /directory. Local business owners can submit a free listing at /directory/submit!"
+      },
+      {
+        keywords: ["submit event", "post event", "add event", "promote event"],
+        response: "📅 Submit Community Event:\nAre you organizing a festival, musical concert, garba night, or community meetup? Submit your event details to our official calendar at /events/submit for broadcast consideration!"
+      },
+      {
         keywords: ["fm", "am", "hd", "difference", "radio technology", "high definition"],
         response: "Great question!\n- FM (Frequency Modulation): Traditional high-quality analog broadcast.\n- HD Radio: Modern digital technology that allows multiple crystal-clear digital audio streams on one FM frequency—like our HD3 Telugu and HD4 Hindi stations with CD-like sound!"
       }
@@ -175,16 +149,62 @@ export function NyraChat() {
     return bestMatch || "That's an interesting question! I'm specifically trained on Radio Nyra info like schedules, contact details, and advertising. Could you try asking about one of those? Namaste!"
   }
 
+  const handleSend = async (text?: string) => {
+    const messageContent = text || inputValue
+    if (!messageContent.trim() || isLoading) return
+
+    if (showSuggestions) setShowSuggestions(false)
+
+    const userMessage: Message = {
+      id: Date.now().toString(),
+      role: "user",
+      content: messageContent,
+      timestamp: new Date(),
+    }
+
+    setMessages((prev) => [...prev, userMessage])
+    if (!text) setInputValue("")
+    setIsLoading(true)
+
+    // Simulate AI response
+    setTimeout(() => {
+      const assistantMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        role: "assistant",
+        content: getMockResponse(messageContent),
+        timestamp: new Date(),
+      }
+      setMessages((prev) => [...prev, assistantMessage])
+      setIsLoading(false)
+    }, 1500)
+  }
+
+  React.useEffect(() => {
+    const handleOpenAI = (e: Event) => {
+      const customEvent = e as CustomEvent<{ query?: string }>
+      setIsOpen(true)
+      if (customEvent.detail?.query) {
+        setTimeout(() => {
+          handleSend(customEvent.detail.query)
+        }, 300)
+      }
+    }
+    if (typeof window !== "undefined") {
+      window.addEventListener("open-nyra-ai", handleOpenAI)
+      return () => window.removeEventListener("open-nyra-ai", handleOpenAI)
+    }
+  }, [])
+
   return (
-    <div className="fixed bottom-6 right-6 z-[100] font-sans">
+    <div className="fixed bottom-6 right-6 z-[100] hidden font-sans md:block">
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="mb-4 w-[350px] sm:w-[400px] h-[500px] bg-background border border-border shadow-2xl flex flex-col overflow-hidden glass-card"
-            style={{ borderRadius: "0px" }} // Following Radio Nyra's sharp corner design
+            className="mb-4 flex h-[500px] w-[350px] flex-col overflow-hidden border border-border bg-background shadow-2xl glass-card sm:w-[400px]"
+            style={{ borderRadius: "16px" }}
           >
             {/* Header */}
             <div className="p-4 bg-primary text-primary-foreground flex justify-between items-center shadow-md">

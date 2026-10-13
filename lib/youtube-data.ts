@@ -12,6 +12,7 @@ export {
     CHANNEL_URL,
     SUBSCRIBE_URL,
     REAL_RADIO_NYRA_VIDEOS,
+    SITE_VIDEOS,
     fetchLatestVideos,
     fetchShorts,
     fetchLiveStreams,

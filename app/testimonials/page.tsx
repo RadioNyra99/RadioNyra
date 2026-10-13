@@ -103,7 +103,7 @@ export default function TestimonialsPage() {
                 {/* Hero Section */}
                 <section className="py-20 bg-primary/5 border-b border-primary/10 relative overflow-hidden">
                     <div className="container mx-auto px-4 text-center relative z-10">
-                        <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-6 text-primary italic text-shadow-glow">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-primary">
                             Voice of the <span className="text-foreground">Community</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-muted-foreground uppercase tracking-widest max-w-2xl mx-auto font-bold opacity-80 italic">
@@ -135,10 +135,10 @@ export default function TestimonialsPage() {
                                     </p>
 
                                     <div className="mt-auto pt-8 border-t border-border/50 flex flex-col">
-                                        <span className="text-lg font-black uppercase tracking-tighter text-primary italic">{t.name}</span>
+                                        <span className="text-lg font-extrabold uppercase tracking-tighter text-primary italic">{t.name}</span>
                                         <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">{t.role}</span>
                                         {t.highlight && (
-                                            <span className="mt-4 inline-block bg-primary/10 text-primary text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full w-fit">
+                                            <span className="mt-4 inline-block bg-primary/10 text-primary text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full w-fit">
                                                 {t.highlight}
                                             </span>
                                         )}
@@ -153,10 +153,10 @@ export default function TestimonialsPage() {
                 <section className="py-20 bg-muted/20 border-t border-border">
                     <div className="container mx-auto px-4 max-w-6xl">
                         <div className="text-center mb-16">
-                            <span className="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest border border-primary/20">
+                            <span className="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-widest border border-primary/20">
                                 Advertiser Success Stories
                             </span>
-                            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mt-6 italic text-foreground">
+                            <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tighter mt-6 italic text-foreground">
                                 Marketing Case Studies
                             </h2>
                             <p className="text-muted-foreground mt-3 uppercase tracking-widest text-xs font-bold">
@@ -168,14 +168,14 @@ export default function TestimonialsPage() {
                             {caseStudies.map((study) => (
                                 <div key={study.slug} className="bg-card border border-border p-8 rounded-sm shadow-sm flex flex-col hover:border-primary transition-all duration-300">
                                     <div className="flex justify-between items-start mb-6">
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-primary bg-primary/10 px-2.5 py-1 rounded-full">
+                                        <span className="text-[10px] font-extrabold uppercase tracking-widest text-primary bg-primary/10 px-2.5 py-1 rounded-full">
                                             {study.industry}
                                         </span>
-                                        <span className="text-3xl font-black text-primary">
+                                        <span className="text-3xl font-extrabold text-primary">
                                             +{study.increase}
                                         </span>
                                     </div>
-                                    <h3 className="text-xl font-black uppercase tracking-tight text-foreground mb-2 leading-snug">
+                                    <h3 className="text-xl font-extrabold uppercase tracking-tight text-foreground mb-2 leading-snug">
                                         {study.client}
                                     </h3>
                                     <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-4">
@@ -202,28 +202,28 @@ export default function TestimonialsPage() {
                                     <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                                         <MessageSquare className="w-8 h-8 text-primary" />
                                     </div>
-                                    <h2 className="text-3xl font-black uppercase tracking-tighter italic">Share Your Story</h2>
+                                    <h2 className="text-3xl font-extrabold uppercase tracking-tighter italic">Share Your Story</h2>
                                     <p className="text-muted-foreground font-bold uppercase tracking-widest text-xs mt-2">We'd love to hear from you!</p>
                                 </div>
 
                                 <form onSubmit={handleSubmit} className="space-y-6">
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div className="space-y-2">
-                                            <Label htmlFor="name" className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Your Name</Label>
+                                            <Label htmlFor="name" className="text-[10px] font-extrabold uppercase tracking-widest text-muted-foreground">Your Name</Label>
                                             <Input id="name" required className="h-12 rounded-none border-border focus:border-primary bg-background" />
                                         </div>
                                         <div className="space-y-2">
-                                            <Label htmlFor="role" className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Your Role/City</Label>
+                                            <Label htmlFor="role" className="text-[10px] font-extrabold uppercase tracking-widest text-muted-foreground">Your Role/City</Label>
                                             <Input id="role" placeholder="e.g. Local Business Owner, Raleigh" className="h-12 rounded-none border-border focus:border-primary bg-background" />
                                         </div>
                                     </div>
 
                                     <div className="space-y-2">
-                                        <Label htmlFor="content" className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Your Testimonial</Label>
+                                        <Label htmlFor="content" className="text-[10px] font-extrabold uppercase tracking-widest text-muted-foreground">Your Testimonial</Label>
                                         <Textarea id="content" required className="min-h-[150px] rounded-none border-border focus:border-primary bg-background italic text-lg" placeholder="Tell us about your experience with Radio Nyra..." />
                                     </div>
 
-                                    <Button type="submit" className="w-full h-14 text-sm font-black uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none shadow-lg transition-all active:scale-95">
+                                    <Button type="submit" className="w-full h-14 text-sm font-extrabold uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none shadow-lg transition-all active:scale-95">
                                         Submit Testimonial
                                     </Button>
                                 </form>
@@ -233,11 +233,11 @@ export default function TestimonialsPage() {
                                 <div className="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
                                     <Star className="w-10 h-10 text-green-500 fill-green-500" />
                                 </div>
-                                <h2 className="text-4xl font-black uppercase tracking-tighter mb-4 italic text-primary">Thank You!</h2>
+                                <h2 className="text-4xl font-extrabold uppercase tracking-tighter mb-4 italic text-primary">Thank You!</h2>
                                 <p className="text-xl font-bold text-muted-foreground uppercase tracking-widest">
                                     Your message means the world to us.
                                 </p>
-                                <Button onClick={() => setSubmitted(false)} variant="link" className="mt-8 text-primary font-black uppercase tracking-widest">
+                                <Button onClick={() => setSubmitted(false)} variant="link" className="mt-8 text-primary font-extrabold uppercase tracking-widest">
                                     Submit another one
                                 </Button>
                             </div>

@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next"
+import type { Metadata } from "next"
 import { SeoPageLayout } from "@/components/seo-page-layout"
 import Link from "next/link"
 import { MapPin, Radio, Megaphone, CheckCircle2 } from "lucide-react"
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "Listen to top Durham NC radio stations live. Radio Nyra broadcasts on 99.9 FM HD4 (Hindi) and HD3 (Telugu) with studios at 4819 Emperor Blvd, Durham, NC.",
   keywords: ["Durham NC Radio Stations", "Indian Radio Durham", "Radio Nyra Durham NC", "99.9 FM Durham", "RTP Indian Community Radio", "Radio Stations in Durham NC"],
   alternates: {
-    canonical: "/durham-nc-radio",
+    canonical: "https://www.radionyra.com/north-carolina/durham",
   },
   openGraph: {
     title: "Durham NC Radio Stations | Listen to Radio Nyra 99.9 FM HD",
@@ -71,11 +71,21 @@ export default function DurhamNcRadioPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <div className="space-y-10">
+        <div className="p-4 rounded-2xl bg-primary/10 border border-primary/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+          <div>
+            <span className="font-bold text-foreground block">Looking for Durham Indian community events, restaurants &amp; directory?</span>
+            <span className="text-muted-foreground">Visit our full Durham South Asian Community Hub with local directory and guides.</span>
+          </div>
+          <Button asChild size="sm" className="rounded-full font-bold uppercase tracking-wider text-[11px] shrink-0">
+            <Link href="/north-carolina/durham">Visit Durham Hub &rarr;</Link>
+          </Button>
+        </div>
+
         <section className="bg-card border border-border p-8 rounded-3xl space-y-4 shadow-sm">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-widest">
             <MapPin className="w-3.5 h-3.5" /> Corporate HQ & Studios: Durham, NC
           </div>
-          <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">
+          <h2 className="text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-foreground">
             Durham & Research Triangle Park (RTP) Broadcast Hub
           </h2>
           <p className="text-muted-foreground leading-relaxed">
@@ -84,7 +94,7 @@ export default function DurhamNcRadioPage() {
         </section>
 
         <section className="bg-card border border-border p-8 rounded-3xl space-y-4 shadow-sm">
-          <h3 className="text-xl font-black uppercase tracking-tight text-foreground">
+          <h3 className="text-xl font-extrabold uppercase tracking-tight text-foreground">
             Durham Radio Stations Frequency Overview
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -108,7 +118,7 @@ export default function DurhamNcRadioPage() {
 
         <section className="bg-primary text-primary-foreground p-8 rounded-3xl shadow-lg flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
-            <h3 className="text-2xl font-black uppercase tracking-tight mb-2">Advertise Across Durham & RTP</h3>
+            <h3 className="text-2xl font-extrabold uppercase tracking-tight mb-2">Advertise Across Durham & RTP</h3>
             <p className="opacity-90 text-sm max-w-xl">
               Connect with top tech, biotech, healthcare, and university professionals living and commuting throughout Durham County.
             </p>

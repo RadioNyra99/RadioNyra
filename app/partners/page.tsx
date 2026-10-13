@@ -68,7 +68,7 @@ export default function PartnersPage() {
                             transition={{ duration: 0.8 }}
                             className="max-w-4xl"
                         >
-                            <h1 className="text-5xl sm:text-7xl md:text-9xl font-black uppercase tracking-tighter mb-8 leading-[0.9] text-gray-900">
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight text-gray-900">
                                 OUR <span className="text-primary italic">NETWORK</span>
                             </h1>
                             <div className="flex flex-col md:flex-row md:items-center gap-6">
@@ -95,7 +95,7 @@ export default function PartnersPage() {
                                     variants={containerVariants}
                                 >
                                     <div className="mb-12">
-                                        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-gray-900 flex items-baseline gap-4">
+                                        <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tighter text-gray-900 flex items-baseline gap-4">
                                             {category.title}
                                             <span className="h-2 w-2 rounded-full bg-primary" />
                                         </h2>

@@ -53,7 +53,7 @@ export function VideoCard({ video }: VideoCardProps) {
                     {/* Live Badge */}
                     {video.isLive && (
                         <div className="absolute top-3 left-3 z-10">
-                            <span className="px-2.5 py-1 rounded-md bg-red-600 text-white text-[10px] font-black uppercase tracking-wider shadow-md flex items-center gap-1 animate-pulse">
+                            <span className="px-2.5 py-1 rounded-md bg-red-600 text-white text-[10px] font-extrabold uppercase tracking-wider shadow-md flex items-center gap-1 animate-pulse">
                                 <span className="w-1.5 h-1.5 rounded-full bg-white" />
                                 LIVE
                             </span>
@@ -63,7 +63,7 @@ export function VideoCard({ video }: VideoCardProps) {
                     {/* Short Badge */}
                     {video.isShort && !video.isLive && (
                         <div className="absolute top-3 left-3 z-10">
-                            <span className="px-2.5 py-1 rounded-md bg-gradient-to-r from-red-500 to-orange-500 text-white text-[10px] font-black uppercase tracking-wider shadow-md">
+                            <span className="px-2.5 py-1 rounded-md bg-gradient-to-r from-red-500 to-orange-500 text-white text-[10px] font-extrabold uppercase tracking-wider shadow-md">
                                 Short
                             </span>
                         </div>
@@ -93,7 +93,7 @@ export function VideoCard({ video }: VideoCardProps) {
                     <div className="flex items-center gap-2 pt-2 border-t border-border/40">
                         <Button
                             onClick={handleWatch}
-                            className="flex-1 bg-red-600 hover:bg-red-700 text-white font-black text-xs uppercase tracking-wider h-10 rounded-xl flex items-center justify-center gap-2 cursor-pointer shadow-md"
+                            className="flex-1 bg-red-600 hover:bg-red-700 text-white font-extrabold text-xs uppercase tracking-wider h-10 rounded-xl flex items-center justify-center gap-2 cursor-pointer shadow-md"
                         >
                             <Play className="w-3.5 h-3.5 fill-white" />
                             <span>Watch Now</span>

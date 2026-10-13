@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Write For Us - Media & Guest Blog Contribution Guidelines | Radio Nyra",
+  title: "Write For Us - Media & Guest Blog Contribution Guidelines",
   description: "Contribute high-quality guest posts or share immigrant stories on Radio Nyra's media platform. Read our editorial guidelines and link-exchange options.",
   alternates: {
     canonical: "/write-for-us",

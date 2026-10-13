@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "Advertise with Radio Nyra",
+    title: { absolute: "Advertise with Radio Nyra" },
     description: "Reach Indian and South Asian listeners in Raleigh-Durham and Radio Nyra markets through FM, streaming, social, and event advertising.",
     keywords: ["Radio Advertising", "Indian Subcontinent Marketing", "Raleigh Business Ads", "Radio Nyra Advertising", "Indian Community Marketing"],
     alternates: {

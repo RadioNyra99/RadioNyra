@@ -94,21 +94,21 @@ export default async function CityRadioPage({ params }: { params: Params }) {
         <section className="bg-primary/5 border-b border-primary/10 py-14 md:py-20">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-5xl">
-              <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-[11px] font-black uppercase tracking-widest text-primary">
+              <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-[11px] font-extrabold uppercase tracking-widest text-primary">
                 <Radio className="h-4 w-4" />
                 {market.regionLabel}
               </p>
-              <h1 className="max-w-4xl text-4xl font-black uppercase tracking-tight text-foreground md:text-6xl">
+              <h1 className="max-w-4xl text-4xl font-extrabold uppercase tracking-tight text-foreground md:text-6xl">
                 Radio Nyra {market.city} Indian Radio
               </h1>
               <p className="mt-6 max-w-3xl text-base font-medium leading-8 text-muted-foreground md:text-lg">
                 {market.description} Listeners tune in for Hindi music, South Asian community updates, artist interviews, event coverage, and local sponsor messages built for the {market.regionLabel} audience.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button asChild className="rounded-none bg-primary px-8 py-6 text-xs font-black uppercase tracking-widest text-white">
+                <Button asChild className="rounded-none bg-primary px-8 py-6 text-xs font-extrabold uppercase tracking-widest text-white">
                   <Link href="/">Listen Live</Link>
                 </Button>
-                <Button asChild variant="outline" className="rounded-none px-8 py-6 text-xs font-black uppercase tracking-widest">
+                <Button asChild variant="outline" className="rounded-none px-8 py-6 text-xs font-extrabold uppercase tracking-widest">
                   <Link href="/advertise">Advertise in {market.city}</Link>
                 </Button>
               </div>
@@ -120,17 +120,17 @@ export default async function CityRadioPage({ params }: { params: Params }) {
           <div className="container mx-auto grid gap-6 px-4 md:grid-cols-3">
             <div className="border border-border bg-card p-6">
               <Headphones className="mb-5 h-8 w-8 text-primary" />
-              <h2 className="text-xl font-black uppercase tracking-tight">Local Frequency</h2>
+              <h2 className="text-xl font-extrabold uppercase tracking-tight">Local Frequency</h2>
               <p className="mt-3 text-sm font-semibold leading-7 text-muted-foreground">{market.frequency}</p>
             </div>
             <div className="border border-border bg-card p-6">
               <Users className="mb-5 h-8 w-8 text-primary" />
-              <h2 className="text-xl font-black uppercase tracking-tight">Local Host Info</h2>
+              <h2 className="text-xl font-extrabold uppercase tracking-tight">Local Host Info</h2>
               <p className="mt-3 text-sm font-semibold leading-7 text-muted-foreground">{market.hostInfo}</p>
             </div>
             <div className="border border-border bg-card p-6">
               <Megaphone className="mb-5 h-8 w-8 text-primary" />
-              <h2 className="text-xl font-black uppercase tracking-tight">Advertiser CTA</h2>
+              <h2 className="text-xl font-extrabold uppercase tracking-tight">Advertiser CTA</h2>
               <p className="mt-3 text-sm font-semibold leading-7 text-muted-foreground">{market.advertiserCopy}</p>
             </div>
           </div>
@@ -139,7 +139,7 @@ export default async function CityRadioPage({ params }: { params: Params }) {
         <section className="bg-muted/20 py-14 md:py-20">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-4xl">
-              <h2 className="text-3xl font-black uppercase tracking-tight">Coverage Across {market.regionLabel}</h2>
+              <h2 className="text-3xl font-extrabold uppercase tracking-tight">Coverage Across {market.regionLabel}</h2>
               <p className="mt-4 text-sm leading-7 text-muted-foreground">
                 This landing page targets the search phrase "{market.searchPhrase}" with useful local listening and advertising information. Radio Nyra supports community groups, cultural organizers, small businesses, artists, and families looking for a trusted South Asian media connection in {market.city}, {market.state}.
               </p>
@@ -152,10 +152,10 @@ export default async function CityRadioPage({ params }: { params: Params }) {
                 ))}
               </div>
               <div className="mt-10 flex flex-wrap gap-3">
-                <Link className="text-sm font-black uppercase tracking-widest text-primary hover:underline" href="/markets">
+                <Link className="text-sm font-extrabold uppercase tracking-widest text-primary hover:underline" href="/markets">
                   Explore market coverage
                 </Link>
-                <Link className="text-sm font-black uppercase tracking-widest text-primary hover:underline" href="/contact">
+                <Link className="text-sm font-extrabold uppercase tracking-widest text-primary hover:underline" href="/contact">
                   Contact Radio Nyra
                 </Link>
               </div>

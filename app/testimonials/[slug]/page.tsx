@@ -154,8 +154,8 @@ export default async function CaseStudyPage({ params }: { params: Params }) {
                             {renderIcon()}
                         </div>
                         <div className="flex-1 space-y-2 text-center lg:text-left">
-                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Campaign Focus</span>
-                            <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-foreground leading-tight">
+                            <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-primary">Campaign Focus</span>
+                            <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-foreground leading-tight">
                                 {study.campaign}
                             </h2>
                             <p className="text-lg text-muted-foreground">
@@ -169,15 +169,15 @@ export default async function CaseStudyPage({ params }: { params: Params }) {
                 <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="bg-card border border-border p-8 rounded-2xl text-center">
                         <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-2">Before Campaign</h4>
-                        <p className="text-3xl font-black text-foreground/80 line-through tracking-tight">{study.beforeMetric}</p>
+                        <p className="text-3xl font-extrabold text-foreground/80 line-through tracking-tight">{study.beforeMetric}</p>
                     </div>
                     <div className="bg-card border border-border p-8 rounded-2xl text-center ring-2 ring-primary">
                         <h4 className="text-xs font-bold uppercase tracking-widest text-primary mb-2">After Campaign</h4>
-                        <p className="text-4xl font-black text-foreground tracking-tight">{study.afterMetric}</p>
+                        <p className="text-4xl font-extrabold text-foreground tracking-tight">{study.afterMetric}</p>
                     </div>
                     <div className="bg-primary text-primary-foreground p-8 rounded-2xl text-center flex flex-col justify-center">
                         <h4 className="text-xs font-bold uppercase tracking-widest opacity-80 mb-1">Net Performance Increase</h4>
-                        <p className="text-5xl font-black tracking-tight">+{study.percentageIncrease}</p>
+                        <p className="text-5xl font-extrabold tracking-tight">+{study.percentageIncrease}</p>
                     </div>
                 </section>
 
@@ -193,7 +193,7 @@ export default async function CaseStudyPage({ params }: { params: Params }) {
                                 <Star key={s} className="w-4 h-4 fill-primary text-primary" />
                             ))}
                         </div>
-                        <p className="font-black uppercase tracking-widest text-sm text-primary">{study.author}</p>
+                        <p className="font-extrabold uppercase tracking-widest text-sm text-primary">{study.author}</p>
                         <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-0.5">{study.role}</p>
                     </div>
                 </section>
@@ -201,7 +201,7 @@ export default async function CaseStudyPage({ params }: { params: Params }) {
                 {/* Case Study Details */}
                 <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-4">
-                        <h3 className="text-xl font-black uppercase tracking-tight text-foreground">Campaign Execution</h3>
+                        <h3 className="text-xl font-extrabold uppercase tracking-tight text-foreground">Campaign Execution</h3>
                         <p className="text-muted-foreground leading-relaxed">
                             {study.details}
                         </p>
@@ -210,7 +210,7 @@ export default async function CaseStudyPage({ params }: { params: Params }) {
                         </p>
                     </div>
                     <div className="bg-card border border-border p-8 rounded-2xl shadow-sm space-y-4">
-                        <h3 className="text-xl font-black uppercase tracking-tight text-foreground border-b border-border/50 pb-2">Key Highlights</h3>
+                        <h3 className="text-xl font-extrabold uppercase tracking-tight text-foreground border-b border-border/50 pb-2">Key Highlights</h3>
                         <ul className="space-y-3">
                             {study.points.map((pt, i) => (
                                 <li key={i} className="flex gap-3 text-sm text-muted-foreground leading-relaxed">

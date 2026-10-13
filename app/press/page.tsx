@@ -15,7 +15,7 @@ export default function PressPage() {
                 <section className="relative py-20 overflow-hidden bg-gray-50 border-b border-gray-100">
                     <div className="container mx-auto px-4 relative z-10 text-center">
                         <div className="max-w-4xl mx-auto">
-                            <h1 className="text-4xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter mb-8 italic leading-none text-gray-900">
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight text-gray-900">
                                 Press <span className="text-primary">& News</span>
                             </h1>
                             <p className="text-xl md:text-2xl text-gray-600 uppercase tracking-[0.2em] font-bold italic mb-8">
@@ -36,11 +36,11 @@ export default function PressPage() {
                                     </div>
                                     <div className="flex-1">
                                         <p className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2">Press Release • July 2025</p>
-                                        <h2 className="text-2xl font-black uppercase tracking-tight mb-3 group-hover:text-primary transition-colors">Radio Nyra Launches 24/7 Telugu Channel on 99.9FM HD3</h2>
+                                        <h2 className="text-2xl font-extrabold uppercase tracking-tight mb-3 group-hover:text-primary transition-colors">Radio Nyra Launches 24/7 Telugu Channel on 99.9FM HD3</h2>
                                         <p className="text-gray-600 leading-relaxed mb-4">
                                             Expanding its commitment to the diverse Indian Subcontinent community, Radio Nyra announces the launch of a dedicated 24/7 Telugu station, delivering round-the-clock news, talk shows, and Tollywood hits to the Triangle area.
                                         </p>
-                                        <a href="#" className="inline-flex items-center text-sm font-black uppercase tracking-widest text-primary hover:text-gray-900 transition-colors">
+                                        <a href="#" className="inline-flex items-center text-sm font-extrabold uppercase tracking-widest text-primary hover:text-gray-900 transition-colors">
                                             Read Full Release <ChevronRight className="w-4 h-4 ml-1" />
                                         </a>
                                     </div>
@@ -54,11 +54,11 @@ export default function PressPage() {
                                     </div>
                                     <div className="flex-1">
                                         <p className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2">Company News • January 2025</p>
-                                        <h2 className="text-2xl font-black uppercase tracking-tight mb-3 group-hover:text-primary transition-colors">Record Growth in Digital Listenership Surpasses 100K Weekly</h2>
+                                        <h2 className="text-2xl font-extrabold uppercase tracking-tight mb-3 group-hover:text-primary transition-colors">Record Growth in Digital Listenership Surpasses 100K Weekly</h2>
                                         <p className="text-gray-600 leading-relaxed mb-4">
                                             Radio Nyra continues to dominate the Indian Subcontinent media landscape, hitting a new milestone of 100,000 active weekly listeners across terrestrial and digital streaming platforms combined.
                                         </p>
-                                        <a href="#" className="inline-flex items-center text-sm font-black uppercase tracking-widest text-primary hover:text-gray-900 transition-colors">
+                                        <a href="#" className="inline-flex items-center text-sm font-extrabold uppercase tracking-widest text-primary hover:text-gray-900 transition-colors">
                                             Read Full Release <ChevronRight className="w-4 h-4 ml-1" />
                                         </a>
                                     </div>
@@ -69,7 +69,7 @@ export default function PressPage() {
 
                         {/* Media Coverage Section */}
                         <div className="mt-16 border-t border-gray-100 pt-16">
-                            <h2 className="text-3xl font-black uppercase tracking-tighter mb-8 italic text-gray-900">Media Coverage</h2>
+                            <h2 className="text-3xl font-extrabold uppercase tracking-tighter mb-8 italic text-gray-900">Media Coverage</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="p-6 bg-gray-50 border border-gray-200 rounded-xl space-y-3">
                                     <span className="text-[10px] font-bold text-primary uppercase tracking-widest">American Kahani</span>
@@ -81,7 +81,7 @@ export default function PressPage() {
                                         href="https://americankahani.com/community/indian-american-steve-s-rao-elected-to-a-4th-term/" 
                                         target="_blank" 
                                         rel="noopener noreferrer" 
-                                        className="inline-flex items-center text-xs font-black uppercase tracking-widest text-primary hover:text-gray-900 transition-colors pt-2"
+                                        className="inline-flex items-center text-xs font-extrabold uppercase tracking-widest text-primary hover:text-gray-900 transition-colors pt-2"
                                     >
                                         View Coverage <ChevronRight className="w-3.5 h-3.5 ml-1" />
                                     </a>
@@ -97,7 +97,7 @@ export default function PressPage() {
                                         href="https://www.radionyra.com/event/radio-nyra-diwali/" 
                                         target="_blank" 
                                         rel="noopener noreferrer" 
-                                        className="inline-flex items-center text-xs font-black uppercase tracking-widest text-primary hover:text-gray-900 transition-colors pt-2"
+                                        className="inline-flex items-center text-xs font-extrabold uppercase tracking-widest text-primary hover:text-gray-900 transition-colors pt-2"
                                     >
                                         View Event Details <ChevronRight className="w-3.5 h-3.5 ml-1" />
                                     </a>

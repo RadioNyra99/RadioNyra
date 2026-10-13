@@ -65,11 +65,11 @@ export function NyraAIShowcaseSection() {
 
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-red-500/20 via-amber-500/20 to-red-500/20 border border-amber-500/30 text-amber-400 text-xs font-black uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-red-500/20 via-amber-500/20 to-red-500/20 border border-amber-500/30 text-amber-400 text-xs font-extrabold uppercase tracking-widest mb-3">
             <Sparkles className="w-3.5 h-3.5 animate-pulse" />
             Next-Gen Discovery Experience
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight italic text-white leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight italic text-white leading-tight">
             Meet Nyra AI
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base font-medium mt-2 max-w-xl mx-auto">
@@ -108,7 +108,7 @@ export function NyraAIShowcaseSection() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-[10px] font-black uppercase tracking-wider text-amber-400">
+                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-amber-400">
                       {prompt.category}
                     </span>
                     <div className="w-8 h-8 rounded-full bg-zinc-900 group-hover:bg-amber-500/20 text-zinc-400 group-hover:text-amber-400 flex items-center justify-center transition-colors">

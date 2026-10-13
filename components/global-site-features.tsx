@@ -2,22 +2,21 @@
 
 import type React from "react"
 import { AudioPlayer } from "@/components/audio-player"
-import { AdvertisePopup } from "@/components/advertise-popup"
-import { InstallAppPopup } from "@/components/install-app-popup"
-import { MobileFab } from "@/components/mobile-fab"
 import { NyraChat } from "@/components/nyra-chat"
-import Scene3D from "@/components/scene-3d"
+import { MobileBottomNav } from "@/components/mobile-bottom-nav"
 
+/**
+ * Shell mounted once around every route. It owns the single persistent audio
+ * player, the mobile tab bar and the Nyra assistant — nothing that can
+ * autoplay, and no overlapping floating play button.
+ */
 export function GlobalSiteFeatures({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <Scene3D />
-      <div className="relative z-10">{children}</div>
+      <div className="relative z-10 pb-36 md:pb-24">{children}</div>
       <AudioPlayer />
+      <MobileBottomNav />
       <NyraChat />
-      <MobileFab />
-      <AdvertisePopup />
-      <InstallAppPopup />
     </>
   )
 }

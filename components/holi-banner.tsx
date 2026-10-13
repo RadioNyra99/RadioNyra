@@ -84,7 +84,7 @@ export function HoliBanner() {
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
                         >
-                            <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter italic text-white drop-shadow-[0_5px_15px_rgba(234,20,131,0.5)] leading-none">
+                            <h2 className="text-2xl md:text-4xl font-extrabold uppercase tracking-tighter italic text-white drop-shadow-[0_5px_15px_rgba(234,20,131,0.5)] leading-none">
                                 <span className="text-primary">Happy</span> Holi
                             </h2>
                             <p className="mt-1 md:mt-2 text-white font-bold uppercase tracking-[0.3em] text-[8px] md:text-xs drop-shadow-md">

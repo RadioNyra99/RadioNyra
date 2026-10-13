@@ -83,7 +83,7 @@ export default function BlogPostClientView({ slug }: { slug: string }) {
                         )}
 
                         {/* Title */}
-                        <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-6">
+                        <h1 className="text-4xl md:text-6xl font-extrabold uppercase tracking-tighter mb-6">
                             {post.title}
                         </h1>
 

@@ -404,3 +404,29 @@ export function getLiveTeluguShow(now = new Date()): LiveShowInfo {
     stationFrequency: "99.9 FM-HD3",
   }
 }
+
+/**
+ * Derives the next distinct shows on a channel by walking the same
+ * Eastern-Time schedule forward hour by hour. Nothing is hardcoded, so the
+ * "coming up" list always reflects the schedule source of truth.
+ */
+export function getUpcomingShows(
+  station: "hindi" | "telugu",
+  now: Date = new Date(),
+  max = 3,
+): { show: LiveShowInfo; startsAt: Date }[] {
+  const getter = station === "hindi" ? getLiveHindiShow : getLiveTeluguShow
+  const current = getter(now)
+  const seen = new Set<string>([current.id])
+  const upcoming: { show: LiveShowInfo; startsAt: Date }[] = []
+
+  for (let hour = 1; hour <= 24 && upcoming.length < max; hour++) {
+    const at = new Date(now.getTime() + hour * 3_600_000)
+    const show = getter(at)
+    if (seen.has(show.id)) continue
+    seen.add(show.id)
+    upcoming.push({ show, startsAt: at })
+  }
+
+  return upcoming
+}

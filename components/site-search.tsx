@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Search } from "lucide-react"
+import { CalendarDays, Headphones, Newspaper, Radio, Search, Tv, Users, Video } from "lucide-react"
 import { useRouter } from "next/navigation"
 
 import {
@@ -16,16 +16,48 @@ import {
 import { Button } from "@/components/ui/button"
 import { showAudioPlayer } from "@/lib/audio-player-utils"
 import { useAudio } from "@/components/audio-context"
-import { getStationsList } from "@/lib/stations"
-import { BLOG_POSTS } from "@/lib/blog-data"
+import { getSearchIndex, type ContentType, type SearchItem } from "@/lib/content-discovery"
+
+const TYPE_LABELS: Record<ContentType, string> = {
+  station: "Live Radio",
+  show: "Shows",
+  podcast: "Podcasts",
+  video: "Videos",
+  short: "Shorts",
+  news: "News",
+  event: "Events",
+  community: "Community",
+  partner: "Partners",
+  page: "Pages",
+}
+
+const TYPE_ORDER: ContentType[] = ["station", "show", "podcast", "video", "short", "news", "event", "community", "partner", "page"]
+
+const TYPE_ICONS: Record<ContentType, React.ComponentType<{ className?: string }>> = {
+  station: Radio,
+  show: Headphones,
+  podcast: Headphones,
+  video: Video,
+  short: Tv,
+  news: Newspaper,
+  event: CalendarDays,
+  community: Users,
+  partner: Users,
+  page: Search,
+}
 
 export function SiteSearch() {
   const [open, setOpen] = React.useState(false)
-  const [posts, setPosts] = React.useState(BLOG_POSTS)
   const router = useRouter()
   const { playStation } = useAudio()
-  
-  const stations = getStationsList()
+
+  const searchItems = React.useMemo(() => getSearchIndex(), [])
+  const groupedItems = React.useMemo(() => {
+    return TYPE_ORDER.map((type) => ({
+      type,
+      items: searchItems.filter((item) => item.type === type).slice(0, type === "podcast" || type === "video" ? 8 : 6),
+    })).filter((group) => group.items.length > 0)
+  }, [searchItems])
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -39,26 +71,27 @@ export function SiteSearch() {
     return () => document.removeEventListener("keydown", down)
   }, [])
 
-  React.useEffect(() => {
-    if (open) {
-      try {
-        const saved = localStorage.getItem('custom_blog_posts');
-        if (saved) {
-          const customPosts = JSON.parse(saved);
-          if (Array.isArray(customPosts)) {
-            setPosts([...customPosts, ...BLOG_POSTS]);
-          }
-        }
-      } catch (e) {
-        console.error("Error loading custom posts for search:", e);
-      }
-    }
-  }, [open]);
-
   const runCommand = React.useCallback((command: () => void) => {
     setOpen(false)
     command()
   }, [])
+
+  const handleItemSelect = React.useCallback((item: SearchItem) => {
+    runCommand(() => {
+      if (item.type === "station" && item.stationId) {
+        playStation(item.stationId)
+        showAudioPlayer()
+        return
+      }
+
+      const isExternal = item.href.startsWith("http")
+      if (isExternal) {
+        window.open(item.href, "_blank", "noopener,noreferrer")
+      } else {
+        router.push(item.href)
+      }
+    })
+  }, [playStation, router, runCommand])
 
   return (
     <>
@@ -71,56 +104,47 @@ export function SiteSearch() {
         <Search className="h-5 w-5" />
         <span className="sr-only">Search</span>
       </Button>
-      <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Search shows, blogs, and pages..." />
-        <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Live Radio Stations">
-            {stations.map((station) => (
-              <CommandItem
-                key={station.id}
-                onSelect={() => {
-                  runCommand(() => {
-                    playStation(station.id)
-                    showAudioPlayer()
-                  })
-                }}
-              >
-                {station.name}
-              </CommandItem>
-            ))}
-          </CommandGroup>
-          <CommandSeparator />
-          <CommandGroup heading="Latest Blogs & News">
-            {posts.map((post) => (
-              <CommandItem
-                key={post.slug}
-                onSelect={() => {
-                  runCommand(() => router.push(`/blog/${post.slug}`))
-                }}
-              >
-                {post.title}
-              </CommandItem>
-            ))}
-          </CommandGroup>
-          <CommandSeparator />
-          <CommandGroup heading="Pages">
-            <CommandItem onSelect={() => runCommand(() => router.push("/about"))}>
-              About Us
-            </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push("/schedule"))}>
-              Schedule
-            </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push("/contact"))}>
-              Contact Us
-            </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push("/bolloywood-radio-online"))}>
-              Bollywood Radio Online
-            </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push("/telugu-radio-usa"))}>
-              Telugu Radio USA
-            </CommandItem>
-          </CommandGroup>
+      <CommandDialog open={open} onOpenChange={setOpen} title="Search Radio Nyra" description="Search live radio, shows, podcasts, videos, news, events, partners, and pages.">
+        <CommandInput placeholder="Search podcasts, videos, shows, news, events..." />
+        <CommandList className="max-h-[70vh]">
+          <CommandEmpty>
+            <div className="px-6 py-8 text-center">
+              <p className="font-bold text-foreground">No matching Radio Nyra content found.</p>
+              <p className="text-xs text-muted-foreground mt-1">Try a show, host, topic, city, podcast, or event keyword.</p>
+            </div>
+          </CommandEmpty>
+          {groupedItems.map((group, index) => (
+            <React.Fragment key={group.type}>
+              {index > 0 && <CommandSeparator />}
+              <CommandGroup heading={TYPE_LABELS[group.type]}>
+                {group.items.map((item) => {
+                  const Icon = TYPE_ICONS[item.type]
+
+                  return (
+                    <CommandItem
+                      key={item.id}
+                      value={`${item.title} ${item.description} ${item.keywords.join(" ")}`}
+                      onSelect={() => handleItemSelect(item)}
+                      className="items-start gap-3"
+                    >
+                      <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary">
+                        <Icon className="h-4 w-4" />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-2">
+                          <span className="truncate text-sm font-bold">{item.title}</span>
+                          <span className="shrink-0 rounded-full bg-muted px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-widest text-muted-foreground">
+                            {TYPE_LABELS[item.type]}
+                          </span>
+                        </div>
+                        <p className="line-clamp-1 text-xs text-muted-foreground">{item.description}</p>
+                      </div>
+                    </CommandItem>
+                  )
+                })}
+              </CommandGroup>
+            </React.Fragment>
+          ))}
         </CommandList>
       </CommandDialog>
     </>

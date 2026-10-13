@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 export function ListenLiveButton({ className }: { className?: string }) {
   return (
     <Button
-      onClick={showAudioPlayer}
+      onClick={() => showAudioPlayer()}
       size="lg"
       className={cn(
         "h-14 px-8 text-base relative bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-md",

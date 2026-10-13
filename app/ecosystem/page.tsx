@@ -15,7 +15,7 @@ export default function EcosystemPage() {
                 <section className="relative py-20 overflow-hidden bg-gray-50 border-b border-gray-100">
                     <div className="container mx-auto px-4 relative z-10 text-center">
                         <div className="max-w-4xl mx-auto">
-                            <h1 className="text-4xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter mb-8 italic leading-none text-gray-900">
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight text-gray-900">
                                 The <span className="text-primary">Ecosystem</span>
                             </h1>
                             <p className="text-xl md:text-2xl text-gray-600 uppercase tracking-[0.2em] font-bold italic mb-8">
@@ -34,7 +34,7 @@ export default function EcosystemPage() {
                                     <Radio className="w-32 h-32" />
                                 </div>
                                 <Radio className="w-12 h-12 text-primary mb-6" />
-                                <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Terrestrial Radio</h2>
+                                <h2 className="text-2xl font-extrabold uppercase tracking-tight mb-4">Terrestrial Radio</h2>
                                 <p className="text-gray-600 mb-6 leading-relaxed">
                                     Our foundational broadcast reaching the Triangle area with massive localized penetration. HD Radio technology ensures crystal clear sound across FM translators.
                                 </p>
@@ -51,7 +51,7 @@ export default function EcosystemPage() {
                                     <Smartphone className="w-32 h-32" />
                                 </div>
                                 <Smartphone className="w-12 h-12 text-primary mb-6" />
-                                <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Mobile & Smart Tech</h2>
+                                <h2 className="text-2xl font-extrabold uppercase tracking-tight mb-4">Mobile & Smart Tech</h2>
                                 <p className="text-gray-600 mb-6 leading-relaxed">
                                     Our dedicated iOS and Android applications let listeners take us anywhere. Fully integrated with Alexa and Google Home smart speakers for hands-free tuning.
                                 </p>
@@ -68,7 +68,7 @@ export default function EcosystemPage() {
                                     <Mic2 className="w-32 h-32" />
                                 </div>
                                 <Mic2 className="w-12 h-12 text-primary mb-6" />
-                                <h2 className="text-2xl font-black uppercase tracking-tight mb-4">On-Ground Events</h2>
+                                <h2 className="text-2xl font-extrabold uppercase tracking-tight mb-4">On-Ground Events</h2>
                                 <p className="text-gray-600 mb-6 leading-relaxed">
                                     Bridging the gap between the airwaves and the community. We host and sponsor the largest Indian Subcontinent festivals, concerts, and cultural gatherings in NC.
                                 </p>
@@ -85,7 +85,7 @@ export default function EcosystemPage() {
                                     <Megaphone className="w-32 h-32" />
                                 </div>
                                 <Megaphone className="w-12 h-12 text-primary mb-6" />
-                                <h2 className="text-2xl font-black uppercase tracking-tight mb-4">Direct Digital</h2>
+                                <h2 className="text-2xl font-extrabold uppercase tracking-tight mb-4">Direct Digital</h2>
                                 <p className="text-gray-600 mb-6 leading-relaxed">
                                     We own the audience relationship. With highly engaged email newsletters and active WhatsApp communities, we bypass algorithms to reach consumers directly.
                                 </p>

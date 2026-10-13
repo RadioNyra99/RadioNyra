@@ -4,9 +4,10 @@ import { FrequencyBar } from "@/components/frequency-bar"
 import { Footer } from "@/components/footer"
 import { YouTubeHub } from "@/components/youtube-hub"
 import { generateVideoSchema } from "@/lib/seo-schemas"
+import { SITE_VIDEOS } from "@/lib/youtube-service"
 
 export const metadata: Metadata = {
-    title: "YouTube Hub | Watch Celeb Interviews, Shorts & Music | Radio Nyra",
+    title: "YouTube Hub | Watch Celeb Interviews, Shorts & Music",
     description: "Explore Radio Nyra YouTube Hub: Watch latest uploads, trending shorts, celebrity interviews, kids stories, and Indian community events.",
     openGraph: {
         title: "Radio Nyra YouTube Hub | Live Streams, Interviews & Music",
@@ -16,12 +17,14 @@ export const metadata: Metadata = {
 }
 
 export default function YouTubePage() {
+    const featuredVideo = SITE_VIDEOS[0]
     const videoSchema = generateVideoSchema({
-        title: "Exclusive Interview with Bollywood Superstar",
-        description: "Candid conversation with Bollywood star on Radio Nyra.",
-        thumbnailUrl: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80",
-        uploadDate: "2026-07-20",
-        embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        title: featuredVideo.title,
+        description: featuredVideo.description,
+        thumbnailUrl: featuredVideo.thumbnailHigh || featuredVideo.thumbnail,
+        uploadDate: featuredVideo.publishedAt,
+        duration: featuredVideo.duration,
+        embedUrl: featuredVideo.embedUrl,
     });
 
     return (

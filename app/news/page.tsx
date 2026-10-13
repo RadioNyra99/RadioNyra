@@ -1,296 +1,169 @@
 "use client"
 
-import { useState } from "react"
+import { useMemo, useState } from "react"
+import Link from "next/link"
+import { Archive, BookOpen, Calendar, Newspaper, PlayCircle, Search } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { 
-  Search, BookOpen, Clock, Calendar, Share2, 
-  ThumbsUp, MessageSquare, ArrowRight, Star, Heart, Bookmark, Radio
-} from "lucide-react"
 import { RtvPlayer } from "@/components/rtv-player"
+import { getNewsItems } from "@/lib/content-discovery"
 
-interface NewsArticle {
-  id: string
-  title: string
-  category: "bollywood" | "tollywood" | "local" | "community"
-  image: string
-  excerpt: string
-  content: string
-  postedDate: string
-  author: string
-  readTime: string
-  likes: number
-  commentsCount: number
-}
-
-const INITIAL_NEWS: NewsArticle[] = [
-  {
-    id: "1",
-    title: "A.R. Rahman Announces 'Wonderment' Concert Tour Stop in Raleigh",
-    category: "bollywood",
-    image: "/images/partners/A.R. Rahman – The Wonderment Tour.jpg",
-    excerpt: "Legendary music composer A.R. Rahman is set to perform live in North Carolina as part of his North American Tour. Tickets go on sale this Friday.",
-    content: "Legendary composer and Oscar winner A.R. Rahman is bringing his world-class 'Wonderment Tour' to the Lenovo Center in Raleigh. Celebrating three decades of musical hits in Hindi, Tamil, and Telugu cinema, the concert features a 50-member orchestra, guest singers, and state-of-the-art stage visuals. Radio Nyra is a proud official media partner, providing exclusive on-air ticket giveaways and backstage listener meet-and-greets.",
-    postedDate: "2026-07-20",
-    author: "Entertainment Desk",
-    readTime: "3 min read",
-    likes: 342,
-    commentsCount: 18
-  },
-  {
-    id: "2",
-    title: "H-1B FY2027 Registration Cap: USCIS Issues New Online Filing Rules",
-    category: "community",
-    image: "/images/radio-nyra-logo.jpg",
-    excerpt: "USCIS has released updated online guidelines for the next fiscal year H-1B registration lottery, tightening beneficiary-centric checks.",
-    content: "United States Citizenship and Immigration Services (USCIS) has finalized new security and selection rules for the upcoming H-1B specialty occupation visa lottery. The new policy ensures a beneficiary-centric selection process to prevent multiple registrations for the same individual. Our partner immigration attorneys recommend that Raleigh-Durham tech applicants submit their details by early winter to secure employer alignments.",
-    postedDate: "2026-07-19",
-    author: "Immigration Desk",
-    readTime: "4 min read",
-    likes: 215,
-    commentsCount: 42
-  },
-  {
-    id: "3",
-    title: "Holi Festival 2026 Draws Record Crowds to Morrisville Town Park",
-    category: "local",
-    image: "/holi.webp",
-    excerpt: "Over 15,000 Triangle residents celebrated the festival of colors with rain dance, authentic food stalls, and live DJ sets sponsored by Radio Nyra.",
-    content: "The annual Holi festival co-hosted by the Hindu Society of North Carolina (HSNC) and Radio Nyra saw its highest-ever attendance this year. Morrisville Town Park was painted in rainbow colors as families danced to Bollywood and Telugu hits. Local food trucks serving hot samosas, chaat, and sugarcane juice reported sold-out menus, demonstrating the growing cultural footprint of the Indian Subcontinent community in Wake County.",
-    postedDate: "2026-07-18",
-    author: "Community Reporter",
-    readTime: "3 min read",
-    likes: 512,
-    commentsCount: 29
-  },
-  {
-    id: "4",
-    title: "Tollywood Superstar Mahesh Babu's Next Film Confirms US Shooting Schedule",
-    category: "tollywood",
-    image: "/images/radio-nyra-logo.jpg",
-    excerpt: "The highly anticipated action drama directed by SS Rajamouli will shoot key action sequences in North Carolina's Research Triangle Park.",
-    content: "SS Rajamouli's globe-trotting adventure featuring Tollywood prince Mahesh Babu is scheduled for a 30-day filming schedule in North Carolina. Key office settings in Research Triangle Park and scenic routes in the Blue Ridge Mountains will serve as backdrops. Radio Nyra Telugu (99.9 FM HD3) will cover the production updates and coordinate local casting calls for extras.",
-    postedDate: "2026-07-17",
-    author: "Tollywood desk",
-    readTime: "2 min read",
-    likes: 429,
-    commentsCount: 35
-  }
-]
+const newsItems = getNewsItems()
+const categories = ["All", ...Array.from(new Set(newsItems.map((item) => item.category)))]
 
 export default function NewsPage() {
-  const [news, setNews] = useState<NewsArticle[]>(INITIAL_NEWS)
-  const [searchQuery, setSearchQuery] = useState("")
-  const [selectedTab, setSelectedTab] = useState<string>("all")
-  
-  // Bookmark state mockup
-  const [bookmarkedIds, setBookmarkedIds] = useState<string[]>([])
-  // Likes mockup
-  const [likedIds, setLikedIds] = useState<string[]>([])
+  const [query, setQuery] = useState("")
+  const [category, setCategory] = useState("All")
 
-  const toggleBookmark = (id: string) => {
-    if (bookmarkedIds.includes(id)) {
-      setBookmarkedIds(bookmarkedIds.filter(item => item !== id))
-    } else {
-      setBookmarkedIds([...bookmarkedIds, id])
-    }
-  }
+  const filteredNews = useMemo(() => {
+    const normalizedQuery = query.trim().toLowerCase()
+    return newsItems.filter((item) => {
+      const matchesCategory = category === "All" || item.category === category
+      const searchable = `${item.title} ${item.excerpt} ${item.category} ${item.source}`.toLowerCase()
+      const matchesQuery = !normalizedQuery || searchable.includes(normalizedQuery)
+      return matchesCategory && matchesQuery
+    })
+  }, [category, query])
 
-  const toggleLike = (id: string) => {
-    if (likedIds.includes(id)) {
-      setLikedIds(likedIds.filter(item => item !== id))
-      setNews(news.map(item => item.id === id ? { ...item, likes: item.likes - 1 } : item))
-    } else {
-      setLikedIds([...likedIds, id])
-      setNews(news.map(item => item.id === id ? { ...item, likes: item.likes + 1 } : item))
-    }
-  }
+  const featured = filteredNews[0] || newsItems[0]
+  const archiveItems = filteredNews.slice(1)
 
-  // Filter news
-  const filteredNews = news.filter((item) => {
-    const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          item.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          item.content.toLowerCase().includes(searchQuery.toLowerCase())
-    const matchesCategory = selectedTab === "all" || item.category === selectedTab
-    return matchesSearch && matchesCategory
-  })
-
-  // Dynamic schema markup
   const schemaMarkup = {
     "@context": "https://schema.org",
-    "@graph": news.map((item) => ({
-      "@type": "NewsArticle",
-      "headline": item.title,
-      "image": [
-        `https://www.radionyra.com${item.image}`
-      ],
-      "datePublished": item.postedDate,
-      "author": {
-        "@type": "Person",
-        "name": item.author
-      }
-    }))
+    "@graph": newsItems.slice(0, 12).map((item) => ({
+      "@type": item.source === "RTV News" ? "AudioObject" : "Article",
+      name: item.title,
+      headline: item.title,
+      description: item.excerpt,
+      datePublished: item.date,
+      url: `https://www.radionyra.com${item.href}`,
+      image: `https://www.radionyra.com${item.image}`,
+      publisher: {
+        "@type": "Organization",
+        name: "Radio Nyra",
+      },
+    })),
   }
 
   return (
     <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-white">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }} />
       <Navigation />
 
-      <main className="py-16">
-        <div className="container mx-auto px-4 max-w-5xl">
-          {/* Header */}
-          <div className="text-center mb-10">
-            <BookOpen className="w-16 h-16 text-primary mx-auto mb-4" />
-            <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tighter italic text-primary">
-              News & Updates <span className="text-foreground">Portal</span>
-            </h1>
-            <p className="text-muted-foreground font-bold uppercase tracking-widest text-xs mt-3">
-              Daily coverage of Bollywood, Tollywood, local Triangle community headlines, and immigration bulletins
-            </p>
+      <main>
+        <section className="bg-zinc-950 text-white py-12 md:py-16 border-b border-zinc-800">
+          <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-600/10 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.25em] text-red-400 mb-4">
+                <Newspaper className="h-4 w-4" /> News & Updates
+              </div>
+              <h1 className="text-4xl md:text-6xl font-extrabold uppercase tracking-tight italic leading-none">
+                Daily Bulletins, Community Updates & Radio Nyra Stories
+              </h1>
+              <p className="mt-4 max-w-2xl text-sm md:text-base text-zinc-300 leading-relaxed">
+                Listen to RTV Telugu daily bulletins, browse Radio Nyra articles, and search archived community updates from one editorial hub.
+              </p>
+            </div>
           </div>
+        </section>
 
-          {/* RTV Daily News Audio Broadcast */}
-          <div className="mb-14">
+        <section className="py-10 md:py-12 border-b border-border/50">
+          <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
+            <div className="mb-6 flex flex-col gap-2 text-center">
+              <p className="text-[10px] font-extrabold uppercase tracking-[0.3em] text-primary">Featured Audio News</p>
+              <h2 className="text-2xl md:text-4xl font-extrabold uppercase tracking-tight italic">RTV Telugu Daily News</h2>
+              <p className="text-sm text-muted-foreground">On-demand bulletins from Radio Nyra 99.9 FM-HD3.</p>
+            </div>
             <RtvPlayer />
           </div>
+        </section>
 
-          {/* Search bar */}
-          <div className="relative mb-12 max-w-2xl mx-auto">
-            <Input
-              type="text"
-              placeholder="Search news articles, topics or authors..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-6 rounded-none border-2 border-border focus:border-primary transition-colors bg-card text-foreground"
-            />
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5" />
-          </div>
-
-          {/* Tabs Navigation */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12 border-b border-border/50 pb-6">
-            {[
-              { id: "all", label: "All News" },
-              { id: "bollywood", label: "Bollywood" },
-              { id: "tollywood", label: "Tollywood / Telugu" },
-              { id: "local", label: "Local NC News" },
-              { id: "community", label: "Immigration & Community" }
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setSelectedTab(tab.id)}
-                className={`px-5 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                  selectedTab === tab.id
-                    ? "bg-primary text-white shadow-md scale-105"
-                    : "bg-muted text-muted-foreground hover:bg-muted/80"
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-
-          {/* News Feed Grid */}
-          {filteredNews.length === 0 ? (
-            <div className="text-center py-20 bg-muted/20 border border-dashed border-border rounded-xl">
-              <BookOpen className="w-16 h-16 mx-auto text-muted-foreground mb-4 opacity-50" />
-              <h3 className="text-xl font-bold uppercase mb-2">No Articles Found</h3>
-              <p className="text-muted-foreground max-w-md mx-auto">Try selecting a different filter tab or search keyword.</p>
+        <section className="py-10 md:py-14">
+          <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+            <div className="mb-8 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-4 items-end">
+              <div>
+                <p className="text-[10px] font-extrabold uppercase tracking-[0.3em] text-primary mb-2">Browse Archive</p>
+                <h2 className="text-2xl md:text-4xl font-extrabold uppercase tracking-tight italic">Latest News & Updates</h2>
+              </div>
+              <div className="relative w-full lg:w-96">
+                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                <Input
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
+                  placeholder="Search news, topics, bulletins..."
+                  className="h-11 rounded-full pl-10"
+                />
+              </div>
             </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {filteredNews.map((post) => {
-                const isLiked = likedIds.includes(post.id)
-                const isBookmarked = bookmarkedIds.includes(post.id)
-                return (
-                  <div 
-                    key={post.id}
-                    className="bg-card border border-border flex flex-col justify-between transition-all duration-300 hover:border-primary/50 hover:shadow-xl group"
-                  >
-                    <div>
-                      {/* Image header */}
-                      <div className="relative aspect-video overflow-hidden bg-black/10">
-                        <img 
-                          src={post.image} 
-                          alt={post.title} 
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                          onError={(e) => {
-                            e.currentTarget.src = "/images/radio-nyra-logo.jpg"
-                          }}
-                        />
-                        <span className="absolute bottom-4 left-4 text-[9px] font-black uppercase tracking-widest bg-primary text-white px-3 py-1 shadow-md">
-                          {post.category}
-                        </span>
-                      </div>
 
-                      {/* Info body */}
-                      <div className="p-6 space-y-3">
-                        <div className="flex items-center gap-4 text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
-                          <span className="flex items-center gap-1"><Calendar className="w-3.5 h-3.5" /> {post.postedDate}</span>
-                          <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> {post.readTime}</span>
-                        </div>
-
-                        <h3 className="text-xl font-black uppercase tracking-tight italic text-foreground/90 leading-tight group-hover:text-primary transition-colors">
-                          {post.title}
-                        </h3>
-
-                        <p className="text-xs text-muted-foreground leading-relaxed">
-                          {post.excerpt}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Social footer */}
-                    <div className="p-6 pt-0 mt-4 border-t border-border pt-4 flex items-center justify-between">
-                      <div className="flex gap-4 text-xs font-bold text-muted-foreground">
-                        <button 
-                          onClick={() => toggleLike(post.id)}
-                          className={`flex items-center gap-1 hover:text-red-500 transition-colors ${
-                            isLiked ? "text-red-500" : ""
-                          }`}
-                        >
-                          <ThumbsUp className={`w-4 h-4 ${isLiked ? "fill-current" : ""}`} />
-                          <span>{post.likes}</span>
-                        </button>
-                        <span className="flex items-center gap-1">
-                          <MessageSquare className="w-4 h-4" />
-                          <span>{post.commentsCount}</span>
-                        </span>
-                      </div>
-
-                      <div className="flex items-center gap-3">
-                        <button 
-                          onClick={() => toggleBookmark(post.id)}
-                          className={`text-muted-foreground hover:text-primary transition-colors ${
-                            isBookmarked ? "text-primary" : ""
-                          }`}
-                          title="Bookmark article"
-                        >
-                          <Bookmark className={`w-4.5 h-4.5 ${isBookmarked ? "fill-current" : ""}`} />
-                        </button>
-                        <button 
-                          className="text-muted-foreground hover:text-primary transition-colors"
-                          title="Share article"
-                          onClick={() => alert(`Share link: https://www.radionyra.com/news/${post.id}`)}
-                        >
-                          <Share2 className="w-4.5 h-4.5" />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                )
-              })}
+            <div className="mb-8 flex gap-2 overflow-x-auto pb-2">
+              {categories.map((item) => (
+                <button
+                  key={item}
+                  type="button"
+                  onClick={() => setCategory(item)}
+                  className={`shrink-0 rounded-full px-4 py-2 text-xs font-extrabold uppercase tracking-wider transition-colors ${
+                    category === item ? "bg-primary text-white" : "bg-muted text-muted-foreground hover:bg-muted/80"
+                  }`}
+                >
+                  {item}
+                </button>
+              ))}
             </div>
-          )}
-        </div>
+
+            {featured ? (
+              <Link href={featured.href} className="group mb-8 grid grid-cols-1 overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary/50 lg:grid-cols-[0.9fr_1.1fr]">
+                <div className="relative aspect-video lg:aspect-auto bg-muted">
+                  <img src={featured.image} alt={featured.title} className="h-full w-full object-cover transition-transform group-hover:scale-105" loading="lazy" />
+                  <span className="absolute left-4 top-4 rounded-full bg-primary px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest text-white">
+                    Featured
+                  </span>
+                </div>
+                <div className="p-6 md:p-8 flex flex-col justify-center">
+                  <p className="mb-3 flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-widest text-muted-foreground">
+                    <Calendar className="h-4 w-4 text-primary" /> {featured.dateLabel} - {featured.category}
+                  </p>
+                  <h3 className="text-2xl md:text-4xl font-extrabold uppercase tracking-tight italic leading-tight group-hover:text-primary">{featured.title}</h3>
+                  <p className="mt-4 line-clamp-3 text-sm leading-relaxed text-muted-foreground">{featured.excerpt}</p>
+                  <span className="mt-6 inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-primary">
+                    {featured.source === "RTV News" ? <PlayCircle className="h-4 w-4" /> : <BookOpen className="h-4 w-4" />}
+                    Open Story
+                  </span>
+                </div>
+              </Link>
+            ) : null}
+
+            {archiveItems.length === 0 ? (
+              <div className="rounded-xl border border-dashed border-border bg-muted/20 p-10 text-center">
+                <Archive className="mx-auto mb-3 h-10 w-10 text-muted-foreground/50" />
+                <h3 className="font-extrabold uppercase tracking-tight">No matching archive items</h3>
+                <p className="mt-1 text-sm text-muted-foreground">Try another keyword or category.</p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {archiveItems.map((item) => (
+                  <Link key={item.id} href={item.href} className="group overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary/50">
+                    <div className="aspect-video overflow-hidden bg-muted">
+                      <img src={item.image} alt={item.title} className="h-full w-full object-cover transition-transform group-hover:scale-105" loading="lazy" />
+                    </div>
+                    <div className="p-5">
+                      <p className="mb-2 flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-widest text-muted-foreground">
+                        <Calendar className="h-3.5 w-3.5 text-primary" /> {item.dateLabel} - {item.category}
+                      </p>
+                      <h3 className="line-clamp-2 text-lg font-extrabold uppercase tracking-tight leading-tight group-hover:text-primary">{item.title}</h3>
+                      <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-muted-foreground">{item.excerpt}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
       </main>
 
       <Footer />
     </div>
   )
 }
+

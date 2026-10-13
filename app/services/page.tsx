@@ -18,7 +18,7 @@ export default function ServicesPage() {
                 {/* Header Section */}
                 <section className="py-8 md:py-10 bg-primary/5 border-b border-primary/10 text-center relative overflow-hidden">
                     <div className="container mx-auto px-4 fade-in-up">
-                        <h1 className="text-4xl md:text-8xl font-black uppercase tracking-tighter mb-8 text-primary italic drop-shadow-sm">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-primary">
                             Our Services
                         </h1>
                         <p className="text-xl md:text-3xl text-muted-foreground uppercase tracking-[0.3em] max-w-3xl mx-auto font-bold mb-12 italic">
@@ -35,7 +35,7 @@ export default function ServicesPage() {
                             <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white shadow-[0_0_20px_rgba(255,0,0,0.3)]">
                                 <Radio className="w-8 h-8" />
                             </div>
-                            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter italic">On-Air Advertising</h2>
+                            <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tighter italic">On-Air Advertising</h2>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -65,19 +65,19 @@ export default function ServicesPage() {
                                 <Card key={i} className={`group border-border bg-card hover:border-primary hover:shadow-2xl transition-all duration-500 rounded-none overflow-hidden fade-in-up stagger-${i + 1} relative`}>
                                     <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 -rotate-45 translate-x-12 -translate-y-12 transition-transform group-hover:bg-primary/10" />
                                     <CardHeader>
-                                        <CardTitle className="text-2xl font-black uppercase text-foreground group-hover:text-primary transition-colors italic">{item.title}</CardTitle>
+                                        <CardTitle className="text-2xl font-extrabold uppercase text-foreground group-hover:text-primary transition-colors italic">{item.title}</CardTitle>
                                     </CardHeader>
                                     <CardContent className="space-y-6 text-sm">
                                         <div>
-                                            <p className="font-black uppercase text-primary tracking-widest mb-2 text-[10px]">Time Slots</p>
+                                            <p className="font-extrabold uppercase text-primary tracking-widest mb-2 text-[10px]">Time Slots</p>
                                             <p className="font-bold text-base">{item.slots}</p>
                                         </div>
                                         <div>
-                                            <p className="font-black uppercase text-primary tracking-widest mb-2 text-[10px]">Minimum Purchase</p>
+                                            <p className="font-extrabold uppercase text-primary tracking-widest mb-2 text-[10px]">Minimum Purchase</p>
                                             <p className="font-bold text-base">{item.min}</p>
                                         </div>
                                         <div>
-                                            <p className="font-black uppercase text-primary tracking-widest mb-2 text-[10px]">Delivery</p>
+                                            <p className="font-extrabold uppercase text-primary tracking-widest mb-2 text-[10px]">Delivery</p>
                                             <p className="text-muted-foreground font-medium">{item.delivery}</p>
                                         </div>
                                     </CardContent>
@@ -94,13 +94,13 @@ export default function ServicesPage() {
                             <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white shadow-[0_0_20px_rgba(255,0,0,0.3)]">
                                 <Award className="w-8 h-8" />
                             </div>
-                            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter italic">Sponsorship Packages</h2>
+                            <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tighter italic">Sponsorship Packages</h2>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                             <Card className="border-border bg-card rounded-none hover:border-primary transition-all duration-500 hover:shadow-2xl fade-in-up stagger-1 p-4">
                                 <CardHeader>
-                                    <CardTitle className="text-3xl font-black uppercase text-primary tracking-tight italic">Show Sponsorship</CardTitle>
+                                    <CardTitle className="text-3xl font-extrabold uppercase text-primary tracking-tight italic">Show Sponsorship</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <ul className="space-y-6">
@@ -117,8 +117,8 @@ export default function ServicesPage() {
                             </Card>
                             <Card className="border-border bg-card rounded-none hover:border-primary transition-all duration-500 hover:shadow-2xl fade-in-up stagger-2 p-4">
                                 <CardHeader>
-                                    <CardTitle className="text-3xl font-black uppercase text-primary tracking-tight italic">Festival Sponsorship</CardTitle>
-                                    <CardDescription className="font-black uppercase tracking-[0.2em] text-xs text-muted-foreground mt-2">Events: Holi, Diwali, New Year’s, Independence Day, etc.</CardDescription>
+                                    <CardTitle className="text-3xl font-extrabold uppercase text-primary tracking-tight italic">Festival Sponsorship</CardTitle>
+                                    <CardDescription className="font-extrabold uppercase tracking-[0.2em] text-xs text-muted-foreground mt-2">Events: Holi, Diwali, New Year’s, Independence Day, etc.</CardDescription>
                                 </CardHeader>
                                 <CardContent>
                                     <ul className="space-y-6">
@@ -148,14 +148,14 @@ export default function ServicesPage() {
                             <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white shadow-[0_0_20px_rgba(255,0,0,0.3)]">
                                 <Globe className="w-8 h-8" />
                             </div>
-                            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter italic">Digital & Social Media</h2>
+                            <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tighter italic">Digital & Social Media</h2>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <Card className="group border-border bg-card relative overflow-hidden hover:border-primary transition-all duration-500 hover:shadow-2xl rounded-none fade-in-up stagger-1">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rotate-45 translate-x-16 -translate-y-16 group-hover:bg-primary/10 transition-colors" />
                                 <CardHeader>
-                                    <CardTitle className="text-2xl font-black uppercase flex items-center gap-4 italic">
+                                    <CardTitle className="text-2xl font-extrabold uppercase flex items-center gap-4 italic">
                                         <Megaphone className="w-8 h-8 text-primary" /> Sponsored Social Media
                                     </CardTitle>
                                 </CardHeader>
@@ -164,14 +164,14 @@ export default function ServicesPage() {
                                     <div className="p-6 bg-muted/50 border-l-8 border-primary shadow-sm">
                                         <p className="text-base font-medium italic">Inclusions: Image + caption + brand tag/hashtag</p>
                                     </div>
-                                    <p className="font-black text-sm uppercase tracking-[0.3em] text-primary">Frequency: Recommended 2 posts per week</p>
+                                    <p className="font-extrabold text-sm uppercase tracking-[0.3em] text-primary">Frequency: Recommended 2 posts per week</p>
                                 </CardContent>
                             </Card>
 
                             <Card className="group border-border bg-card relative overflow-hidden hover:border-primary transition-all duration-500 hover:shadow-2xl rounded-none fade-in-up stagger-2">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rotate-45 translate-x-16 -translate-y-16 group-hover:bg-primary/10 transition-colors" />
                                 <CardHeader>
-                                    <CardTitle className="text-2xl font-black uppercase flex items-center gap-4 italic">
+                                    <CardTitle className="text-2xl font-extrabold uppercase flex items-center gap-4 italic">
                                         <ZapIcon className="w-8 h-8 text-primary" /> Monthly Email Blast
                                     </CardTitle>
                                 </CardHeader>
@@ -180,7 +180,7 @@ export default function ServicesPage() {
                                     <div className="p-6 bg-muted/50 border-l-8 border-primary shadow-sm">
                                         <p className="text-base font-medium italic">Inclusions: One dedicated HTML email sent to full list</p>
                                     </div>
-                                    <p className="font-black text-sm uppercase tracking-[0.3em] text-primary">Best for: Event promotions, launches, sales</p>
+                                    <p className="font-extrabold text-sm uppercase tracking-[0.3em] text-primary">Best for: Event promotions, launches, sales</p>
                                 </CardContent>
                             </Card>
                         </div>
@@ -197,9 +197,9 @@ export default function ServicesPage() {
                                     <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-md">
                                         <Monitor className="w-8 h-8" />
                                     </div>
-                                    <h2 className="text-3xl md:text-6xl font-black uppercase tracking-tighter italic">In-Store Digital Displays</h2>
+                                    <h2 className="text-3xl md:text-6xl font-extrabold uppercase tracking-tighter italic">In-Store Digital Displays</h2>
                                 </div>
-                                <h3 className="text-3xl font-black mb-8 italic text-white/90">Static Ad Display</h3>
+                                <h3 className="text-3xl font-extrabold mb-8 italic text-white/90">Static Ad Display</h3>
                                 <ul className="space-y-6 text-xl">
                                     <li className="flex gap-6 items-start">
                                         <Check className="w-7 h-7 text-white/40 flex-shrink-0 mt-1" />
@@ -220,13 +220,13 @@ export default function ServicesPage() {
                                 </ul>
                             </div>
                             <div className="md:w-1/2 p-10 bg-black/40 backdrop-blur-xl rounded-none border border-white/20 shadow-2xl fade-in-up stagger-1">
-                                <p className="text-2xl font-black mb-8 uppercase tracking-[0.3em] text-primary italic">Extensions</p>
+                                <p className="text-2xl font-extrabold mb-8 uppercase tracking-[0.3em] text-primary italic">Extensions</p>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div className="p-6 bg-white/5 border border-white/10 rounded-none hover:bg-white/10 transition-colors">
-                                        <p className="font-black uppercase tracking-tight italic">Motion ad option</p>
+                                        <p className="font-extrabold uppercase tracking-tight italic">Motion ad option</p>
                                     </div>
                                     <div className="p-6 bg-white/5 border border-white/10 rounded-none hover:bg-white/10 transition-colors">
-                                        <p className="font-black uppercase tracking-tight italic">Ad production support available</p>
+                                        <p className="font-extrabold uppercase tracking-tight italic">Ad production support available</p>
                                     </div>
                                 </div>
                             </div>
@@ -238,8 +238,8 @@ export default function ServicesPage() {
                 <section id="packages" className="py-16 bg-background">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-20 fade-in-up">
-                            <h2 className="text-4xl md:text-8xl font-black uppercase tracking-tighter mb-6 text-primary italic">Monthly Packages</h2>
-                            <p className="text-muted-foreground uppercase tracking-[0.4em] font-black italic">Select the perfect plan for your growth</p>
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-primary">Monthly Packages</h2>
+                            <p className="text-muted-foreground uppercase tracking-[0.4em] font-extrabold italic">Select the perfect plan for your growth</p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -247,8 +247,8 @@ export default function ServicesPage() {
                             <Card className="group border-green-500/20 bg-card hover:shadow-[0_0_50px_rgba(34,197,94,0.15)] transition-all duration-500 rounded-none fade-in-up stagger-1 relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-full h-1 bg-green-500" />
                                 <CardHeader className="text-center bg-green-500/5 pb-10 pt-12">
-                                    <div className="text-green-500 font-black uppercase tracking-[0.2em] mb-4 text-xs">Trial</div>
-                                    <CardTitle className="text-4xl font-black italic">PACKAGE I</CardTitle>
+                                    <div className="text-green-500 font-extrabold uppercase tracking-[0.2em] mb-4 text-xs">Trial</div>
+                                    <CardTitle className="text-4xl font-extrabold italic">PACKAGE I</CardTitle>
                                     <CardDescription className="font-bold uppercase tracking-widest text-xs mt-2">One-Time Use Only</CardDescription>
                                 </CardHeader>
                                 <CardContent className="pt-10 space-y-6">
@@ -264,7 +264,7 @@ export default function ServicesPage() {
                                     ))}
                                 </CardContent>
                                 <CardFooter className="pb-10">
-                                    <Button className="w-full bg-green-600 hover:bg-green-700 font-black uppercase tracking-widest py-8 rounded-none transition-transform active:scale-95" asChild>
+                                    <Button className="w-full bg-green-600 hover:bg-green-700 font-extrabold uppercase tracking-widest py-8 rounded-none transition-transform active:scale-95" asChild>
                                         <Link href="/advertise#inquiry">Get Started</Link>
                                     </Button>
                                 </CardFooter>
@@ -274,8 +274,8 @@ export default function ServicesPage() {
                             <Card className="group border-blue-500/20 bg-card hover:shadow-[0_0_50px_rgba(59,130,246,0.15)] transition-all duration-500 rounded-none fade-in-up stagger-2 relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-full h-1 bg-blue-500" />
                                 <CardHeader className="text-center bg-blue-500/5 pb-10 pt-12">
-                                    <div className="text-blue-500 font-black uppercase tracking-[0.2em] mb-4 text-xs">Growth</div>
-                                    <CardTitle className="text-4xl font-black italic">PACKAGE II</CardTitle>
+                                    <div className="text-blue-500 font-extrabold uppercase tracking-[0.2em] mb-4 text-xs">Growth</div>
+                                    <CardTitle className="text-4xl font-extrabold italic">PACKAGE II</CardTitle>
                                 </CardHeader>
                                 <CardContent className="pt-10 space-y-6">
                                     {[
@@ -292,7 +292,7 @@ export default function ServicesPage() {
                                     ))}
                                 </CardContent>
                                 <CardFooter className="pb-10">
-                                    <Button className="w-full bg-blue-600 hover:bg-blue-700 font-black uppercase tracking-widest py-8 rounded-none transition-transform active:scale-95" asChild>
+                                    <Button className="w-full bg-blue-600 hover:bg-blue-700 font-extrabold uppercase tracking-widest py-8 rounded-none transition-transform active:scale-95" asChild>
                                         <Link href="/advertise#inquiry">Choose Growth</Link>
                                     </Button>
                                 </CardFooter>
@@ -302,8 +302,8 @@ export default function ServicesPage() {
                             <Card className="group border-purple-500/20 bg-card hover:shadow-[0_0_50px_rgba(168,85,247,0.15)] transition-all duration-500 rounded-none fade-in-up stagger-3 relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-full h-1 bg-purple-500" />
                                 <CardHeader className="text-center bg-purple-500/5 pb-10 pt-12">
-                                    <div className="text-purple-500 font-black uppercase tracking-[0.2em] mb-4 text-xs">Elite Tier</div>
-                                    <CardTitle className="text-4xl font-black italic">PACKAGE III</CardTitle>
+                                    <div className="text-purple-500 font-extrabold uppercase tracking-[0.2em] mb-4 text-xs">Elite Tier</div>
+                                    <CardTitle className="text-4xl font-extrabold italic">PACKAGE III</CardTitle>
                                 </CardHeader>
                                 <CardContent className="pt-10 space-y-6">
                                     {[
@@ -320,7 +320,7 @@ export default function ServicesPage() {
                                     ))}
                                 </CardContent>
                                 <CardFooter className="pb-10">
-                                    <Button className="w-full bg-purple-600 hover:bg-purple-700 font-black uppercase tracking-widest py-8 rounded-none transition-transform active:scale-95" asChild>
+                                    <Button className="w-full bg-purple-600 hover:bg-purple-700 font-extrabold uppercase tracking-widest py-8 rounded-none transition-transform active:scale-95" asChild>
                                         <Link href="/advertise#inquiry">Choose Elite</Link>
                                     </Button>
                                 </CardFooter>
@@ -330,8 +330,8 @@ export default function ServicesPage() {
                             <Card className="group border-primary/20 bg-card hover:shadow-[0_0_50px_rgba(255,0,0,0.15)] transition-all duration-500 rounded-none fade-in-up stagger-4 relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-full h-1 bg-primary" />
                                 <CardHeader className="text-center bg-primary/5 pb-10 pt-12">
-                                    <div className="text-primary font-black uppercase tracking-[0.2em] mb-4 text-xs">Exclusive</div>
-                                    <CardTitle className="text-4xl font-black italic">PACKAGE IV</CardTitle>
+                                    <div className="text-primary font-extrabold uppercase tracking-[0.2em] mb-4 text-xs">Exclusive</div>
+                                    <CardTitle className="text-4xl font-extrabold italic">PACKAGE IV</CardTitle>
                                 </CardHeader>
                                 <CardContent className="pt-10 space-y-6">
                                     {[
@@ -349,7 +349,7 @@ export default function ServicesPage() {
                                     ))}
                                 </CardContent>
                                 <CardFooter className="pb-10">
-                                    <Button className="w-full bg-primary hover:bg-primary/90 font-black uppercase tracking-widest py-8 rounded-none transition-transform active:scale-95" asChild>
+                                    <Button className="w-full bg-primary hover:bg-primary/90 font-extrabold uppercase tracking-widest py-8 rounded-none transition-transform active:scale-95" asChild>
                                         <Link href="/advertise#inquiry">Request Live</Link>
                                     </Button>
                                 </CardFooter>

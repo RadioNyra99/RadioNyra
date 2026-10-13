@@ -1,15 +1,15 @@
-﻿import type { Metadata } from "next"
+import type { Metadata } from "next"
 import { SeoPageLayout } from "@/components/seo-page-layout"
 import Link from "next/link"
 import { MapPin, Radio, Megaphone, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
-  title: "Cary NC Indian Radio | 99.9 FM HD4 & HD3 Radio Nyra",
+  title: "Cary NC Indian Radio | 99.9 FM HD4 & HD3",
   description: "Listen to Radio Nyra in Cary, NC on 99.9 FM HD4 (Hindi) & HD3 (Telugu). Serving Cary, Morrisville & RTP with live Bollywood hits, local news & community updates.",
   keywords: ["Cary NC Indian Radio", "Telugu Radio Cary", "Hindi Radio Cary NC", "99.9 FM Cary NC", "Indian Community Cary NC", "Radio Nyra Cary"],
   alternates: {
-    canonical: "/cary-nc-radio",
+    canonical: "https://www.radionyra.com/north-carolina/cary",
   },
   openGraph: {
     title: "Cary NC Indian Radio | 99.9 FM HD4 & HD3 Radio Nyra",
@@ -71,11 +71,21 @@ export default function CaryNcRadioPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <div className="space-y-10">
+        <div className="p-4 rounded-2xl bg-primary/10 border border-primary/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+          <div>
+            <span className="font-bold text-foreground block">Looking for Cary Indian community events, restaurants &amp; directory?</span>
+            <span className="text-muted-foreground">Visit our full Cary South Asian Community Hub with local directory and guides.</span>
+          </div>
+          <Button asChild size="sm" className="rounded-full font-bold uppercase tracking-wider text-[11px] shrink-0">
+            <Link href="/north-carolina/cary">Visit Cary Hub &rarr;</Link>
+          </Button>
+        </div>
+
         <section className="bg-card border border-border p-8 rounded-3xl space-y-4 shadow-sm">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-widest">
             <MapPin className="w-3.5 h-3.5" /> Cary, North Carolina Broadcast
           </div>
-          <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">
+          <h2 className="text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-foreground">
             The Voice of Cary's Indian Subcontinent Community
           </h2>
           <p className="text-muted-foreground leading-relaxed">
@@ -84,19 +94,19 @@ export default function CaryNcRadioPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-border/50">
             <div className="bg-muted/40 p-4 rounded-2xl">
               <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block mb-1">Hindi Broadcast</span>
-              <span className="text-lg font-black text-primary italic">99.9 FM HD4</span>
+              <span className="text-lg font-extrabold text-primary italic">99.9 FM HD4</span>
               <p className="text-xs text-muted-foreground mt-1">Bollywood chartbusters, morning talk shows, diaspora news.</p>
             </div>
             <div className="bg-muted/40 p-4 rounded-2xl">
               <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block mb-1">Telugu Broadcast</span>
-              <span className="text-lg font-black text-primary italic">99.9 FM HD3</span>
+              <span className="text-lg font-extrabold text-primary italic">99.9 FM HD3</span>
               <p className="text-xs text-muted-foreground mt-1">Tollywood hits, Telugu cultural talk, festive specials.</p>
             </div>
           </div>
         </section>
 
         <section className="bg-card border border-border p-8 rounded-3xl space-y-4 shadow-sm">
-          <h3 className="text-xl font-black uppercase tracking-tight text-foreground">
+          <h3 className="text-xl font-extrabold uppercase tracking-tight text-foreground">
             How to Tune in Cary, NC
           </h3>
           <p className="text-sm text-muted-foreground leading-relaxed">
@@ -125,7 +135,7 @@ export default function CaryNcRadioPage() {
 
         <section className="bg-primary text-primary-foreground p-8 rounded-3xl shadow-lg flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
-            <h3 className="text-2xl font-black uppercase tracking-tight mb-2">Reach Cary Indian Consumers</h3>
+            <h3 className="text-2xl font-extrabold uppercase tracking-tight mb-2">Reach Cary Indian Consumers</h3>
             <p className="opacity-90 text-sm max-w-xl">
               Promote your Cary business, restaurant, healthcare clinic, or service to high-income South Asian professionals across Wake County.
             </p>

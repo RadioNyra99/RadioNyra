@@ -53,11 +53,11 @@ export function YouTubeWatchSection() {
                             <Youtube className="w-7 h-7 text-white fill-white" />
                         </div>
                         <div>
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/20 text-red-400 border border-red-500/30 text-xs font-black uppercase tracking-widest mb-1.5">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/20 text-red-400 border border-red-500/30 text-xs font-extrabold uppercase tracking-widest mb-1.5">
                                 <Sparkles className="w-3.5 h-3.5" />
                                 Official Channel: {OFFICIAL_YOUTUBE_CHANNEL.handle}
                             </div>
-                            <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight italic text-white">
+                            <h2 className="text-2xl md:text-3xl font-extrabold uppercase tracking-tight italic text-white">
                                 Watch On YouTube
                             </h2>
                             <p className="text-zinc-400 text-xs md:text-sm mt-0.5 max-w-lg font-medium">
@@ -69,13 +69,13 @@ export function YouTubeWatchSection() {
                     {/* Large Subscribe Button */}
                     <div className="flex flex-col sm:flex-row items-center gap-3 z-10 shrink-0">
                         <div className="text-center sm:text-right hidden md:block">
-                            <span className="text-lg font-black text-white block">{subscriberCount}</span>
+                            <span className="text-lg font-extrabold text-white block">{subscriberCount}</span>
                             <span className="text-[10px] text-zinc-400 font-extrabold uppercase tracking-widest">Subscribers</span>
                         </div>
                         <Button
                             onClick={handleSubscribe}
                             size="lg"
-                            className="bg-red-600 hover:bg-red-700 text-white font-black text-xs uppercase tracking-widest px-6 py-5 rounded-xl shadow-xl shadow-red-600/50 transform hover:scale-105 transition-all flex items-center gap-2 cursor-pointer"
+                            className="bg-red-600 hover:bg-red-700 text-white font-extrabold text-xs uppercase tracking-widest px-6 py-5 rounded-xl shadow-xl shadow-red-600/50 transform hover:scale-105 transition-all flex items-center gap-2 cursor-pointer"
                         >
                             <Youtube className="w-5 h-5 fill-white" />
                             <span>Subscribe Now</span>
@@ -90,7 +90,7 @@ export function YouTubeWatchSection() {
                             key={category}
                             onClick={() => setSelectedCategory(category)}
                             variant={selectedCategory === category ? "default" : "outline"}
-                            className={`rounded-xl text-xs font-black uppercase tracking-wider px-5 py-2.5 shrink-0 transition-all cursor-pointer ${selectedCategory === category
+                            className={`rounded-xl text-xs font-extrabold uppercase tracking-wider px-5 py-2.5 shrink-0 transition-all cursor-pointer ${selectedCategory === category
                                     ? "bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-600/30 border-red-600"
                                     : "bg-zinc-900/60 border-zinc-800 text-zinc-300 hover:border-red-500/50 hover:text-white"
                                 }`}

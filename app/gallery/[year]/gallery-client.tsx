@@ -47,7 +47,7 @@ export default function GalleryClient({ data }: { data: { title: string; images:
                                         loading="lazy"
                                     />
                                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                        <p className="text-white text-[10px] font-black uppercase tracking-widest border-2 border-white px-4 py-2">View Image</p>
+                                        <p className="text-white text-[10px] font-extrabold uppercase tracking-widest border-2 border-white px-4 py-2">View Image</p>
                                     </div>
                                 </div>
                             ))}

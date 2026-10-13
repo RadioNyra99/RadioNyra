@@ -57,12 +57,12 @@ export function NewsletterSection() {
   return (
     <section className="py-8 md:py-10 bg-gradient-to-br from-zinc-950 via-zinc-900 to-black text-white border-t border-zinc-800">
       <div className="container mx-auto px-4 max-w-4xl text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/20 text-red-400 border border-red-500/30 text-xs font-black uppercase tracking-widest mb-3">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/20 text-red-400 border border-red-500/30 text-xs font-extrabold uppercase tracking-widest mb-3">
           <Mail className="w-4 h-4" />
           Radio Nyra VIP Newsletter
         </div>
 
-        <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tight italic">
+        <h2 className="text-2xl md:text-4xl font-extrabold uppercase tracking-tight italic">
           Stay Connected With Indian Subcontinent Media
         </h2>
 
@@ -100,7 +100,7 @@ export function NewsletterSection() {
             type="submit"
             size="lg"
             disabled={status === "loading" || status === "success"}
-            className="w-full sm:w-auto h-14 bg-red-600 hover:bg-red-700 text-white font-black uppercase text-xs tracking-widest px-8 rounded-2xl cursor-pointer shadow-xl shadow-red-600/40 shrink-0 disabled:opacity-70"
+            className="w-full sm:w-auto h-14 bg-red-600 hover:bg-red-700 text-white font-extrabold uppercase text-xs tracking-widest px-8 rounded-2xl cursor-pointer shadow-xl shadow-red-600/40 shrink-0 disabled:opacity-70"
           >
             {status === "loading" ? (
               <span className="flex items-center gap-2">

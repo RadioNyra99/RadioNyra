@@ -141,7 +141,7 @@ export default function FAQPage() {
             <main className="py-16">
                 <div className="container mx-auto px-4 max-w-5xl">
                     <div className="text-center mb-12">
-                        <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4 italic text-primary">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-primary">
                             Frequently Asked <span className="text-foreground">Questions</span>
                         </h1>
                         <p className="text-lg text-muted-foreground uppercase tracking-widest font-bold">
@@ -182,7 +182,7 @@ export default function FAQPage() {
                                     onClick={() => setOpenIndex(openIndex === i ? null : i)}
                                     className="w-full flex items-center justify-between p-6 text-left hover:bg-muted/50 transition-colors"
                                 >
-                                    <span className="text-lg font-black uppercase tracking-tight italic text-foreground/90 leading-tight">
+                                    <span className="text-lg font-extrabold uppercase tracking-tight italic text-foreground/90 leading-tight">
                                         {item.q}
                                     </span>
                                     {openIndex === i ? (
@@ -202,11 +202,11 @@ export default function FAQPage() {
 
 
                     <div className="mt-16 p-10 bg-primary/5 border border-primary/10 text-center max-w-3xl mx-auto">
-                        <h2 className="text-2xl font-black uppercase tracking-tight mb-4 italic">Still have questions?</h2>
+                        <h2 className="text-2xl font-extrabold uppercase tracking-tight mb-4 italic">Still have questions?</h2>
                         <p className="mb-8 text-muted-foreground">We are here to help you. Reach out to us through our contact page.</p>
                         <a
                             href="/contact"
-                            className="inline-block bg-primary text-white font-black uppercase tracking-widest px-10 py-4 hover:bg-primary/90 transition-all hover:scale-105"
+                            className="inline-block bg-primary text-white font-extrabold uppercase tracking-widest px-10 py-4 hover:bg-primary/90 transition-all hover:scale-105"
                         >
                             Contact Us Now
                         </a>

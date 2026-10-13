@@ -1,117 +1,183 @@
 import Link from "next/link"
 import { CONTACT_INFO, SOCIAL_LINKS } from "@/lib/site-data"
 
+const FOOTER_COLUMNS: { title: string; links: { href: string; label: string }[] }[] = [
+  {
+    title: "Listen",
+    links: [
+      { href: "/schedule", label: "Schedule" },
+      { href: "/how-to-tune", label: "How to Tune In" },
+      { href: "/shows", label: "Shows" },
+      { href: "/hosts", label: "Hosts" },
+      { href: "/markets", label: "Markets & Coverage" },
+      { href: "/markets/raleigh-durham", label: "Raleigh-Durham 99.9 FM" },
+    ],
+  },
+  {
+    title: "Discover",
+    links: [
+      { href: "/podcasts", label: "Podcasts" },
+      { href: "/youtube", label: "YouTube" },
+      { href: "/shorts", label: "Shorts" },
+      { href: "/news", label: "News" },
+      { href: "/blog", label: "Blog" },
+      { href: "/events", label: "Events" },
+    ],
+  },
+  {
+    title: "Community",
+    links: [
+      { href: "/community", label: "Community Hub" },
+      { href: "/near-me", label: "Near Me" },
+      { href: "/directory", label: "Business Directory" },
+      { href: "/gallery", label: "Gallery" },
+      { href: "/festival-calendar", label: "Festival Calendar" },
+      { href: "/partners", label: "Partners" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { href: "/about", label: "About" },
+      { href: "/advertise", label: "Advertise" },
+      { href: "/services", label: "Services" },
+      { href: "/contact", label: "Contact" },
+      { href: "/press", label: "Press" },
+      { href: "/faq", label: "FAQ" },
+    ],
+  },
+]
+
+/**
+ * Compact site footer: four short link columns, contact + socials, the
+ * newsletter form, and the legal row. Promotional copy and duplicated
+ * navigation were removed — the detail lives on the pages themselves.
+ */
 export function Footer() {
   return (
-    <footer className="bg-foreground text-background py-8 border-t border-border/20">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
-          {/* Brand */}
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-full bg-background overflow-hidden flex items-center justify-center border border-border/20">
-              <img
-                src="/images/radio-nyra-logo.jpg"
-                alt="Radio Nyra Logo"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <span className="font-bold text-xl tracking-tight block">Radio Nyra</span>
-              <span className="text-xs text-gray-400 mt-1 block">The Indian Subcontinent Community Media Network</span>
-            </div>
-          </div>
+    <footer className="mt-auto border-t border-border bg-ink text-white/80">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-6">
+          {/* Brand + contact */}
+          <div className="lg:col-span-2">
+            <Link href="/" className="flex items-center gap-3" aria-label="Radio Nyra — home">
+              <span className="h-11 w-11 overflow-hidden rounded-full border border-white/20">
+                <img
+                  src="/images/radio-nyra-logo.jpg"
+                  alt=""
+                  width={44}
+                  height={44}
+                  className="h-full w-full object-cover"
+                />
+              </span>
+              <span className="flex flex-col leading-none">
+                <span className="text-lg font-extrabold tracking-tight text-white">Radio Nyra</span>
+                <span className="mt-1 text-[9px] font-bold uppercase tracking-[0.14em] text-white/60">
+                  The Indian Subcontinent Community Media Network
+                </span>
+              </span>
+            </Link>
 
-          {/* Nav Links - 4 Column Footer Grid */}
-          <nav className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full md:w-auto">
-            <div className="flex flex-col gap-3">
-              <span className="text-xs font-black uppercase tracking-widest text-white mb-1">Listen</span>
-              <Link href="/markets" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Markets & Coverage</Link>
-              <Link href="/indian-radio-usa" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Indian Radio USA</Link>
-              <Link href="/bollywood-radio-online" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Bollywood Radio</Link>
-              <Link href="/telugu-radio-usa" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Telugu Radio USA</Link>
-              <Link href="/hosts" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Meet the Hosts</Link>
-              <Link href="/schedule" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Schedule</Link>
-              <Link href="/podcasts" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Podcasts</Link>
-              <Link href="/how-to-tune" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">How to Tune In</Link>
-            </div>
-            <div className="flex flex-col gap-3">
-              <span className="text-xs font-black uppercase tracking-widest text-white mb-1">Community</span>
-              <Link href="/events" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Events</Link>
-              <Link href="/community/temples" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Temples & Spiritual</Link>
-              <Link href="/community/restaurants" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Indian Food Guide</Link>
-              <Link href="/community/movies" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Movie Releases</Link>
-              <Link href="/gallery" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Gallery</Link>
-              <Link href="/news" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">News</Link>
-              <Link href="/blog" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Blog</Link>
-              <Link href="/festival-calendar" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Festival Calendar</Link>
-            </div>
-            <div className="flex flex-col gap-3">
-              <span className="text-xs font-black uppercase tracking-widest text-white mb-1">Triangle NC</span>
-              <Link href="/markets/raleigh-durham" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Raleigh-Durham (99.9 FM)</Link>
-              <Link href="/cary-nc-radio" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Cary NC Radio</Link>
-              <Link href="/morrisville-nc-radio" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Morrisville NC Radio</Link>
-              <Link href="/durham-nc-radio" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Durham & RTP Radio</Link>
-              <Link href="/write-for-us" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Write For Us</Link>
-              <Link href="/faq" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">FAQ</Link>
-            </div>
-            <div className="flex flex-col gap-3">
-              <span className="text-xs font-black uppercase tracking-widest text-white mb-1">Company</span>
-              <Link href="/about" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">About</Link>
-              <Link href="/advertise" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Advertise</Link>
-              <Link href="/advertiser-success-stories" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Success Stories</Link>
-              <Link href="/services" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Services</Link>
-              <Link href="/contact" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Contact</Link>
-              <Link href="/press" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Press</Link>
-            </div>
-          </nav>
+            <address className="mt-5 space-y-1.5 text-sm not-italic text-white/60">
+              <p>
+                <a className="transition-colors hover:text-white" href={`mailto:${CONTACT_INFO.email}`}>
+                  {CONTACT_INFO.email}
+                </a>
+              </p>
+              <p>
+                <a
+                  className="transition-colors hover:text-white"
+                  href={`tel:${CONTACT_INFO.phone.replace(/[^+\d]/g, "")}`}
+                >
+                  {CONTACT_INFO.phone}
+                </a>
+              </p>
+              <p className="text-white/50">{CONTACT_INFO.address.full}</p>
+            </address>
 
-          {/* Socials & Voice Assistant */}
-          <div className="flex flex-col items-center md:items-end gap-6">
-            <div className="flex items-center gap-4">
+            <div className="mt-5 flex flex-wrap items-center gap-3">
               {SOCIAL_LINKS.map((social) => (
                 <Link
                   key={social.label}
                   href={social.href}
                   target="_blank"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  rel="noopener noreferrer"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-primary hover:text-white"
                   title={social.label}
                   aria-label={social.label}
                 >
-                  <social.icon className="w-5 h-5" />
+                  <social.icon className="h-4 w-4" />
                 </Link>
               ))}
-              <div className="w-px h-4 bg-white/10 mx-2" />
-              <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app" target="_blank" className="text-primary hover:text-white transition-colors flex items-center" title="Download Radio Nyra on the Google Play Store">
-                <img src="/android-icon.webp" alt="Get it on Google Play" className="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all" />
-              </Link>
-              <Link href="https://apps.apple.com/us/app/radio-nyra-raleigh-durham/id6469009980" target="_blank" className="text-primary hover:text-white transition-colors flex items-center" title="Download Radio Nyra on the Apple App Store">
-                <img src="/apple-icon.webp" alt="Download on App Store" className="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all" />
-              </Link>
             </div>
           </div>
+
+          {/* Link columns */}
+          {FOOTER_COLUMNS.map((column) => (
+            <nav key={column.title} aria-label={`Footer — ${column.title}`}>
+              <h2 className="mb-4 text-[11px] font-extrabold uppercase tracking-[0.16em] text-white">
+                {column.title}
+              </h2>
+              <ul className="space-y-2.5">
+                {column.links.map((link) => (
+                  <li key={link.href + link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-white/60 transition-colors hover:text-white"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
         </div>
-        <form action="https://formspree.io/f/fa42a7d8-c45e-4e7d-868c-7861ef21d915" method="POST" className="border-t border-white/10 pt-8 mb-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <label htmlFor="footer-email" className="text-xs font-black uppercase tracking-widest text-white">Newsletter Signup</label>
-          <input id="footer-email" name="email" type="email" required placeholder="Email address" className="h-10 w-full sm:w-72 bg-white/10 border border-white/10 px-4 text-xs text-white placeholder:text-gray-500 outline-none focus:border-primary" />
-          <button type="submit" className="h-10 px-6 bg-primary text-white text-xs font-black uppercase tracking-widest hover:bg-primary/90">Join</button>
+
+        {/* Newsletter */}
+        <form
+          action="https://formspree.io/f/fa42a7d8-c45e-4e7d-868c-7861ef21d915"
+          method="POST"
+          className="flex flex-col gap-3 border-t border-white/10 py-6 sm:flex-row sm:items-center sm:justify-between"
+        >
+          <label htmlFor="footer-email" className="text-sm font-semibold text-white/80">
+            Get the weekly newsletter
+          </label>
+          <div className="flex w-full items-center gap-2 sm:w-auto">
+            <input
+              id="footer-email"
+              name="email"
+              type="email"
+              required
+              autoComplete="email"
+              placeholder="Email address"
+              className="h-11 w-full rounded-lg border border-white/15 bg-white/5 px-4 text-sm text-white placeholder:text-white/40 outline-none focus:border-primary sm:w-72"
+            />
+            <button
+              type="submit"
+              className="h-11 shrink-0 rounded-lg bg-primary px-6 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-primary/90"
+            >
+              Join
+            </button>
+          </div>
         </form>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] text-gray-400 uppercase tracking-widest font-bold">
-          <p>Copyright {new Date().getFullYear()} Radio Nyra. All rights reserved.</p>
-          <div className="flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full border border-white/10">
-            <div className="w-2 h-2 rounded-full bg-green-500"></div>
-            <span>Verified by Radio.co Analytics</span>
-          </div>
-          <div className="flex gap-6 text-[11px]">
-            <Link href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors underline decoration-primary/50 underline-offset-4">Privacy Policy</Link>
-            <Link href="/terms-services" className="text-gray-400 hover:text-white transition-colors underline decoration-primary/50 underline-offset-4">Terms of Service</Link>
-          </div>
-          <div className="flex flex-col md:items-end text-right">
-            <p>Email: {CONTACT_INFO.email}</p>
-            <p>Phone: {CONTACT_INFO.phone}</p>
-            <p>Office: {CONTACT_INFO.address.full}</p>
-            <p>Website: www.radionyra.com</p>
-          </div>
+        {/* Legal */}
+        <div className="flex flex-col gap-3 border-t border-white/10 py-6 text-xs text-white/50 md:flex-row md:items-center md:justify-between">
+          <p>
+            &copy; {new Date().getFullYear()} Radio Nyra. All rights reserved.
+          </p>
+          <nav aria-label="Legal" className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <Link href="/privacy-policy" className="transition-colors hover:text-white">
+              Privacy Policy
+            </Link>
+            <Link href="/terms-services" className="transition-colors hover:text-white">
+              Terms of Service
+            </Link>
+            <Link href="/write-for-us" className="transition-colors hover:text-white">
+              Write For Us
+            </Link>
+          </nav>
         </div>
       </div>
     </footer>

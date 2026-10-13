@@ -87,7 +87,7 @@ export function AISearchModal({ open, onOpenChange }: { open: boolean; onOpenCha
         <Dialog open={open} onOpenChange={onOpenChange}>
             <DialogContent className="max-w-3xl p-6 bg-card text-foreground border-border rounded-3xl shadow-2xl">
                 <DialogHeader>
-                    <DialogTitle className="flex items-center gap-2 text-xl font-black uppercase tracking-tight">
+                    <DialogTitle className="flex items-center gap-2 text-xl font-extrabold uppercase tracking-tight">
                         <Sparkles className="w-5 h-5 text-primary animate-pulse" />
                         AI Smart Search & Voice Assistant
                     </DialogTitle>
@@ -171,7 +171,7 @@ export function AISearchModal({ open, onOpenChange }: { open: boolean; onOpenCha
                         >
                             <img src={video.thumbnail} alt={video.title} className="w-20 h-14 object-cover rounded-xl shrink-0" />
                             <div className="flex-1 min-w-0">
-                                <span className="text-[10px] font-black uppercase tracking-wider text-primary">{video.isShort ? "Short" : "Video"}</span>
+                                <span className="text-[10px] font-extrabold uppercase tracking-wider text-primary">{video.isShort ? "Short" : "Video"}</span>
                                 <h4 className="font-extrabold text-sm line-clamp-1 group-hover:text-primary transition-colors">{video.title}</h4>
                                 <span className="text-xs text-muted-foreground font-medium">{video.viewCount}{video.duration ? ` • ${video.duration}` : ""}</span>
                             </div>
@@ -193,7 +193,7 @@ export function AISearchModal({ open, onOpenChange }: { open: boolean; onOpenCha
                                 <Podcast className="w-6 h-6" />
                             </div>
                             <div className="flex-1 min-w-0">
-                                <span className="text-[10px] font-black uppercase tracking-wider text-secondary">Podcast Episode</span>
+                                <span className="text-[10px] font-extrabold uppercase tracking-wider text-secondary">Podcast Episode</span>
                                 <h4 className="font-extrabold text-sm line-clamp-1 group-hover:text-primary transition-colors">{podcast.title}</h4>
                                 <span className="text-xs text-muted-foreground font-medium">Host: {podcast.host}</span>
                             </div>

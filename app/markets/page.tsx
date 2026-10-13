@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Megaphone, ArrowRight, Signal, Headphones } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Markets & Broadcast Coverage | Radio Nyra USA",
+  title: "Markets & Broadcast Coverage",
   description: "Explore Radio Nyra's broadcast and digital coverage across Raleigh-Durham (99.9 FM HD4/HD3), Atlanta, Baltimore, Cleveland, Columbus, Philadelphia, and St. Louis.",
   keywords: [
     "Radio Nyra Markets", "Raleigh FM Radio Stations", "Indian Radio Atlanta",
@@ -107,7 +107,7 @@ export default function MarketsHubPage() {
             <Signal className="w-3.5 h-3.5 animate-pulse" />
             7 Metropolitan Markets & National Reach
           </div>
-          <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-foreground mb-4">
             Where to Tune In & Connect
           </h2>
           <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
@@ -128,7 +128,7 @@ export default function MarketsHubPage() {
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className={`text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full ${
+                  <span className={`text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full ${
                     m.featured ? "bg-primary text-white" : "bg-muted text-muted-foreground"
                   }`}>
                     {m.type}
@@ -138,7 +138,7 @@ export default function MarketsHubPage() {
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-black uppercase tracking-tight text-foreground mb-1 flex items-center gap-2">
+                <h3 className="text-2xl font-extrabold uppercase tracking-tight text-foreground mb-1 flex items-center gap-2">
                   <MapPin className="w-5 h-5 text-primary shrink-0" />
                   {m.name}
                 </h3>
@@ -178,10 +178,10 @@ export default function MarketsHubPage() {
         {/* Business & Sponsorship Banner */}
         <section className="bg-primary text-primary-foreground p-8 md:p-12 rounded-3xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="max-w-2xl space-y-3 text-center md:text-left">
-            <span className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full text-xs font-black uppercase tracking-widest text-white">
+            <span className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full text-xs font-extrabold uppercase tracking-widest text-white">
               <Megaphone className="w-3.5 h-3.5" /> Multicultural Advertising
             </span>
-            <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight">
+            <h3 className="text-2xl md:text-3xl font-extrabold uppercase tracking-tight">
               Grow Your Brand in Local Diaspora Markets
             </h3>
             <p className="opacity-90 text-sm md:text-base leading-relaxed">

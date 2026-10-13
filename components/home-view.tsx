@@ -1,299 +1,97 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
-import { FrequencyBar } from "@/components/frequency-bar"
 import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/button"
-import { Users, Smartphone, Play, Megaphone, Star, Radio, PlayCircle, Headphones, Music2, Youtube, ChevronDown, Calendar, MapPin, ExternalLink } from "lucide-react"
-import { CountUp } from "@/components/ui/count-up"
-import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu"
-import { useAudio } from "@/components/audio-context"
-import { STATIONS } from "@/lib/stations"
-import { VoiceAssistants } from "@/components/voice-assistants"
-import { motion, AnimatePresence } from "framer-motion"
-import { PARTNERS } from "@/lib/partners"
 import { ApolloTracker } from "@/components/apollo-tracker"
 import { LiveNowHero } from "@/components/live-now-hero"
+import { CitySelectorBar } from "@/components/city-selector-bar"
 import { ComingUpSchedule } from "@/components/coming-up-schedule"
-import { TrendingMusicSection } from "@/components/trending-music-section"
-import { FeaturedPodcastsSection } from "@/components/featured-podcasts-section"
-import { PopularShowsSection } from "@/components/popular-shows-section"
-import { NyraAIShowcaseSection } from "@/components/nyra-ai-showcase-section"
-import { HoliEffects } from "@/components/holi-effects"
-import { HoliBanner } from "@/components/holi-banner"
-import { PartnersMarquee } from "@/components/partners-marquee"
-import { AdvertiserSection } from "@/components/advertiser-section"
-import { NewsletterSection } from "@/components/newsletter-section"
-import { CONTACT_INFO, LISTENING_PLATFORMS, SOCIAL_LINKS } from "@/lib/site-data"
-import { OFFICIAL_YOUTUBE_CHANNEL } from "@/lib/youtube-data"
-import { getEventTimingLabel, upcomingEvents } from "@/lib/event-data"
 import { RtvPlayer } from "@/components/rtv-player"
+import { PopularShowsSection } from "@/components/popular-shows-section"
+import { FeaturedPodcastsSection } from "@/components/featured-podcasts-section"
+import { LatestNewsSection } from "@/components/latest-news-section"
+import { FeaturedVideosSection } from "@/components/featured-videos-section"
+import { CommunityEventsSection } from "@/components/community-events-section"
+import { PartnersMarquee } from "@/components/partners-marquee"
+import { Section, SectionHeading } from "@/components/section"
 
+/**
+ * Homepage composition. Ordered around listener journeys: listen first, then
+ * what is on, then shows, podcasts, news, video and community. Every block is
+ * a shared Section so spacing and typography stay identical to the inner pages.
+ */
 export function HomeView() {
+  return (
+    <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-primary-foreground">
+      <Navigation />
+      <ApolloTracker />
 
-    return (
-        <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-primary-foreground">
-            <Navigation />
-            <ApolloTracker />
-            <FrequencyBar />
+      <main>
+        <LiveNowHero />
+        <CitySelectorBar />
+        <ComingUpSchedule />
 
-            <main>
-                {/* LIVE NOW STREAMING HERO (SPOTIFY + KEXP STYLE) */}
-                <LiveNowHero />
+        {/* Daily Telugu bulletin — player only, archive lives on /rtv-news */}
+        <Section id="rtv-news" variant="alt">
+          <SectionHeading
+            eyebrow="Daily bulletin"
+            title="RTV Telugu News"
+            description="On-demand Telugu news for 99.9 FM HD3 listeners."
+            href="/rtv-news"
+            linkLabel="News centre & archive"
+          />
+          <div className="mx-auto max-w-5xl">
+            <RtvPlayer showArchive={false} />
+          </div>
+        </Section>
 
-                {/* COMING UP SCHEDULE STRIP */}
-                <ComingUpSchedule />
+        <PopularShowsSection />
+        <FeaturedPodcastsSection />
+        <LatestNewsSection />
+        <FeaturedVideosSection />
+        <CommunityEventsSection />
 
-                {/* STATS */}
-                <section className="py-8 bg-background border-b border-border/50">
-                    <div className="container mx-auto px-4">
-                        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 text-center justify-center items-start">
-                            {[
-                                { label: "Weekly Listeners", end: 100, suffix: "K+", icon: Headphones },
-                                { label: "Email Subscribers", end: 50, suffix: "K+", icon: Megaphone },
-                                { label: "WhatsApp Members", end: 100, suffix: "K+", icon: Smartphone },
-                                { label: "Monthly IG Reach", end: 500, suffix: "K+", icon: Users },
-                                { label: "Display Impressions", end: 216, suffix: "K+", icon: Star },
-                                { label: "Years On Air", end: 12, suffix: "", icon: Radio },
-                                { label: "Media Channels", end: 8, suffix: "+", icon: Play },
-                            ].map((stat, i) => (
-                                <div key={i} className="flex flex-col items-center">
-                                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-2">
-                                        <stat.icon className="w-5 h-5 text-primary" />
-                                    </div>
-                                    <div className="text-2xl md:text-3xl font-black text-foreground tracking-tighter mb-1">
-                                        <CountUp end={stat.end} suffix={stat.suffix} duration={2500} />
-                                    </div>
-                                    <div className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground leading-tight">
-                                        {stat.label}
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+        {/* Partners */}
+        <Section id="partners" variant="tight">
+          <SectionHeading
+            eyebrow="Partners"
+            title="Our partners"
+            href="/partners"
+            linkLabel="All partners"
+          />
+          <PartnersMarquee />
+        </Section>
 
-                {/* TRENDING MUSIC & PLAYLISTS (SPOTIFY STYLE) */}
-                <TrendingMusicSection />
+        {/* Advertise — one quiet route instead of a popup */}
+        <Section variant="alt">
+          <div className="flex flex-col gap-5 rounded-2xl border border-border bg-card p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+            <div>
+              <span className="eyebrow">Advertise</span>
+              <h2 className="section-title">Grow with Radio Nyra</h2>
+              <p className="lede mt-1.5">
+                Radio, podcasts, digital and community campaigns across seven US markets.
+              </p>
+            </div>
+            <div className="flex shrink-0 flex-wrap gap-3">
+              <Link
+                href="/advertise"
+                className="inline-flex h-11 items-center rounded-full bg-primary px-6 text-xs font-bold uppercase tracking-wider text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                Advertise with us
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex h-11 items-center rounded-full border border-border px-6 text-xs font-bold uppercase tracking-wider transition-colors hover:border-primary hover:text-primary"
+              >
+                Contact
+              </Link>
+            </div>
+          </div>
+        </Section>
+      </main>
 
-                {/* RTV DAILY NEWS BULLETIN SECTION */}
-                <section id="rtv-news" className="py-10 bg-gradient-to-b from-background via-muted/20 to-background border-b border-border/50">
-                    <div className="container mx-auto px-4">
-                        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
-                            <div>
-                                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-600/10 border border-red-500/30 text-red-600 dark:text-red-400 text-xs font-black uppercase tracking-widest mb-2">
-                                    <Radio className="w-3.5 h-3.5 animate-pulse" /> Official Daily News
-                                </div>
-                                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tighter italic leading-none">
-                                    Radio Nyra Presents <span className="text-red-600">RTV NEWS</span> on 99.9 FM-HD3
-                                </h2>
-                                <p className="text-xs sm:text-sm text-muted-foreground font-medium mt-1">
-                                    Listen to today's Telugu news bulletin on-demand &bull; Broadcasting on Radio Nyra 99.9 FM-HD3
-                                </p>
-                            </div>
-                            <Button
-                                variant="outline"
-                                className="text-foreground hover:bg-red-600 hover:text-white font-bold uppercase tracking-widest rounded-none border-2 border-foreground hover:border-red-600 transition-all h-10 px-6 text-xs cursor-pointer"
-                                asChild
-                            >
-                                <Link href="/rtv-news">Full News Center &amp; Archive</Link>
-                            </Button>
-                        </div>
-
-                        <div className="max-w-5xl mx-auto">
-                            <RtvPlayer />
-                        </div>
-                    </div>
-                </section>
-
-                {/* FEATURED PODCASTS (ON-DEMAND AUDIO) */}
-                <FeaturedPodcastsSection />
-
-                {/* YOUTUBE STATISTICS & ANALYTICS SECTION */}
-                <section className="py-8 bg-gradient-to-r from-red-950 via-zinc-950 to-black text-white border-b border-red-900/30">
-                    <div className="container mx-auto px-4">
-                        <div className="text-center max-w-2xl mx-auto mb-6">
-                            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-600/20 text-red-400 border border-red-500/30 text-xs font-black uppercase tracking-widest mb-2">
-                                <Youtube className="w-4 h-4 fill-red-500 text-red-500" /> YouTube Channel Analytics
-                            </span>
-                            <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight italic text-white">
-                                @RadioNyraUSA on YouTube
-                            </h2>
-                            <p className="text-zinc-400 text-xs sm:text-sm font-medium mt-1">
-                                Streaming Indian Subcontinent content since February 2021
-                            </p>
-                        </div>
-                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-                            <div className="bg-zinc-900/90 border border-red-500/20 p-4 sm:p-5 rounded-2xl text-center shadow-xl hover:border-red-500/50 transition-all group">
-                                <div className="w-10 h-10 rounded-full bg-red-600/20 text-red-500 flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
-                                    <Youtube className="w-5 h-5 fill-red-500" />
-                                </div>
-                                <div className="text-2xl md:text-3xl font-black text-white tracking-tighter mb-1">
-                                    <CountUp end={1.05} decimals={2} suffix="K" duration={2500} />
-                                </div>
-                                <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-zinc-400">
-                                    Subscribers
-                                </div>
-                            </div>
-                            <div className="bg-zinc-900/90 border border-red-500/20 p-4 sm:p-5 rounded-2xl text-center shadow-xl hover:border-red-500/50 transition-all group">
-                                <div className="w-10 h-10 rounded-full bg-red-600/20 text-red-500 flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
-                                    <Play className="w-5 h-5 text-red-500" />
-                                </div>
-                                <div className="text-2xl md:text-3xl font-black text-white tracking-tighter mb-1">
-                                    <CountUp end={279} suffix="" duration={2500} />
-                                </div>
-                                <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-zinc-400">
-                                    Videos Published
-                                </div>
-                            </div>
-                            <div className="bg-zinc-900/90 border border-red-500/20 p-4 sm:p-5 rounded-2xl text-center shadow-xl hover:border-red-500/50 transition-all group">
-                                <div className="w-10 h-10 rounded-full bg-red-600/20 text-red-500 flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
-                                    <PlayCircle className="w-5 h-5 text-red-500" />
-                                </div>
-                                <div className="text-2xl md:text-3xl font-black text-white tracking-tighter mb-1">
-                                    <CountUp end={173.3} decimals={1} suffix="K" duration={2500} />
-                                </div>
-                                <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-zinc-400">
-                                    Total Views
-                                </div>
-                            </div>
-                            <div className="bg-zinc-900/90 border border-red-500/20 p-4 sm:p-5 rounded-2xl text-center shadow-xl hover:border-red-500/50 transition-all group">
-                                <div className="w-10 h-10 rounded-full bg-red-600/20 text-red-500 flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
-                                    <Star className="w-5 h-5 text-red-500" />
-                                </div>
-                                <div className="text-2xl md:text-3xl font-black text-white tracking-tighter mb-1">
-                                    <CountUp end={621} suffix="" duration={2500} />
-                                </div>
-                                <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-zinc-400">
-                                    Avg Views / Video
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* SOCIAL PROOF & TESTIMONIALS */}
-                <section className="py-10 bg-muted/30">
-                    <div className="container mx-auto px-4">
-                        <div className="text-center mb-8 flex flex-col items-center">
-                            <div className="flex items-center gap-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4 border border-green-200 dark:border-green-800">
-                                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                                Verified Audience Data
-                            </div>
-                            <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter italic">Proven Reach & Engagement</h2>
-                        </div>
-                        
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
-                            <div className="bg-card p-6 border border-border shadow-sm rounded-none text-center">
-                                <h3 className="text-lg font-black uppercase tracking-tighter text-primary mb-3">Instagram</h3>
-                                <div className="space-y-3">
-                                    <div>
-                                        <div className="text-2xl font-black"><CountUp end={10400} duration={2000} suffix="+" /></div>
-                                        <div className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold mt-0.5">Followers</div>
-                                    </div>
-                                    <div>
-                                        <div className="text-xl font-black"><CountUp end={8.4} decimals={1} duration={2000} suffix="%" /></div>
-                                        <div className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold mt-0.5">Engagement Rate</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="bg-card p-6 border border-border shadow-sm rounded-none text-center">
-                                <h3 className="text-lg font-black uppercase tracking-tighter text-primary mb-3">Email</h3>
-                                <div className="space-y-3">
-                                    <div>
-                                        <div className="text-2xl font-black"><CountUp end={60000} duration={2000} suffix="+" /></div>
-                                        <div className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold mt-0.5">Subscribers</div>
-                                    </div>
-                                    <div>
-                                        <div className="text-xl font-black"><CountUp end={34.2} decimals={1} duration={2000} suffix="%" /></div>
-                                        <div className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold mt-0.5">Open Rate</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="bg-card p-6 border border-border shadow-sm rounded-none text-center">
-                                <h3 className="text-lg font-black uppercase tracking-tighter text-primary mb-3">WhatsApp</h3>
-                                <div className="space-y-3">
-                                    <div>
-                                        <div className="text-2xl font-black"><CountUp end={12000} duration={2000} suffix="+" /></div>
-                                        <div className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold mt-0.5">Members</div>
-                                    </div>
-                                    <div>
-                                        <div className="text-xl font-black"><CountUp end={78} duration={2000} suffix="%" /></div>
-                                        <div className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold mt-0.5">Open Rate</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="text-center mb-6">
-                            <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter italic">Testimonials</h2>
-                        </div>
-
-                        <div className="max-w-4xl mx-auto bg-primary text-primary-foreground p-6 md:p-8 text-center rounded-none shadow-2xl relative overflow-hidden">
-                            <div className="absolute top-0 left-0 text-[100px] font-serif leading-none opacity-10 -translate-x-4 -translate-y-4">"</div>
-                            <div className="relative z-10">
-                                <div className="flex justify-center gap-1 mb-4">
-                                    {[1, 2, 3, 4, 5].map((star) => (
-                                        <Star key={star} className="w-5 h-5 fill-current text-yellow-400" />
-                                    ))}
-                                </div>
-                                <blockquote className="text-xl md:text-2xl font-bold mb-6 leading-snug italic">
-                                    "This platform has helped us reach the right audience and grow our brand in ways we never expected."
-                                </blockquote>
-                                <div className="flex flex-col items-center">
-                                    <div className="font-black uppercase tracking-widest text-base">Mihir Chakraborty</div>
-                                    <div className="text-xs font-bold opacity-80 uppercase tracking-widest mt-0.5">CEO, MC Construction Co.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* LISTEN EVERYWHERE */}
-                <section className="py-10 bg-background border-b border-border/50">
-                    <div className="container mx-auto px-4">
-                        <div className="text-center max-w-3xl mx-auto mb-8">
-                            <p className="text-[10px] font-black uppercase tracking-[0.35em] text-primary mb-2">The Indian Subcontinent Community Media Network</p>
-                            <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter italic leading-none">
-                                Wherever Our Listeners Go, Radio Nyra Goes With Them.
-                            </h2>
-                        </div>
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-                            {LISTENING_PLATFORMS.map((platform) => (
-                                <div key={platform.label} className="bg-card border border-border p-4 text-center hover:border-primary transition-colors">
-                                    <platform.icon className="w-6 h-6 text-primary mx-auto mb-3" />
-                                    <h3 className="text-xs font-black uppercase tracking-tight mb-1">{platform.label}</h3>
-                                    <p className="text-[10px] text-muted-foreground font-medium leading-relaxed">{platform.copy}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* POPULAR SHOWS & PERSONALITIES (KEXP EDITORIAL STYLE) */}
-                <PopularShowsSection />
-
-                <AdvertiserSection />
-
-                {/* NYRA AI INTERACTIVE CANVAS */}
-                <NyraAIShowcaseSection />
-
-                {/* OUR PARTNERS */}
-                <section className="py-8 bg-background border-t border-border/50">
-                    <div className="container mx-auto px-4 text-center">
-                        <h2 className="text-xl md:text-2xl font-bold uppercase tracking-tighter mb-6 border-l-4 border-primary pl-4 text-left">Our Partners</h2>
-
-                        <PartnersMarquee />
-                    </div>
-                </section>
-
-                <NewsletterSection />
-
-            </main >
-
-            <Footer />
-        </div >
-    )
+      <Footer />
+    </div>
+  )
 }

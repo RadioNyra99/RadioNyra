@@ -78,7 +78,7 @@ export default function EventsPage() {
                 {/* Header with Background */}
                 <section className="relative py-8 bg-black overflow-hidden flex items-center justify-center">
                     <div className="relative z-10 container mx-auto px-4 text-center">
-                        <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter italic text-white leading-none drop-shadow-2xl">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight drop-shadow-2xl">
                             Events That Bring Communities Together
                         </h1>
                         <p className="mt-6 text-primary font-bold uppercase tracking-[0.4em] text-sm md:text-base drop-shadow-md">
@@ -90,7 +90,24 @@ export default function EventsPage() {
                 <div className="container mx-auto px-4 mt-10">
                     {/* UPCOMING EVENTS */}
                     <section className="mb-16">
-                        <h2 className="text-2xl font-bold uppercase tracking-tighter mb-8 border-l-4 border-primary pl-4">Upcoming Events</h2>
+                        <div className="flex items-center justify-between mb-8 border-l-4 border-primary pl-4">
+                            <h2 className="text-2xl font-bold uppercase tracking-tighter">Upcoming Events</h2>
+                            <Button asChild size="sm" className="rounded-full text-xs font-bold uppercase">
+                                <a href="/events/submit">+ Submit Event</a>
+                            </Button>
+                        </div>
+                        {upcomingEvents.length === 0 ? (
+                            <div className="p-8 bg-muted/20 border border-dashed border-border rounded-xl text-center">
+                                <Calendar className="w-10 h-10 text-muted-foreground mx-auto mb-2 opacity-40" />
+                                <h3 className="text-base font-bold mb-1">No upcoming events right now</h3>
+                                <p className="text-xs text-muted-foreground mb-4">
+                                    Organizing a community festival, temple celebration, or concert in the Triangle?
+                                </p>
+                                <Button asChild size="sm" className="rounded-full text-xs font-bold uppercase">
+                                    <a href="/events/submit">Submit Your Event to Radio Nyra</a>
+                                </Button>
+                            </div>
+                        ) : (
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                             {upcomingEvents.map((ev: any, i) => {
                                 const EventCard = (
@@ -115,24 +132,24 @@ export default function EventsPage() {
 
                                         <div className="p-5 md:p-6">
                                             <div className="flex flex-wrap gap-3 mb-4">
-                                                <span className="text-xs font-black text-primary uppercase tracking-wider flex items-center gap-1.5">
+                                                <span className="text-xs font-extrabold text-primary uppercase tracking-wider flex items-center gap-1.5">
                                                     <Calendar className="w-4 h-4" /> {ev.date}
                                                 </span>
-                                                <span className="text-xs font-black text-muted-foreground uppercase tracking-wider flex items-center gap-1.5">
+                                                <span className="text-xs font-extrabold text-muted-foreground uppercase tracking-wider flex items-center gap-1.5">
                                                     <Clock className="w-4 h-4" /> {ev.time}
                                                 </span>
                                             </div>
                                             <h3 className="text-xl font-bold uppercase tracking-tight mb-2 group-hover:text-primary transition-colors leading-none">{ev.title}</h3>
-                                            {ev.type && <p className="text-[9px] font-black uppercase tracking-widest text-primary mb-2">{ev.type}</p>}
+                                            {ev.type && <p className="text-[9px] font-extrabold uppercase tracking-widest text-primary mb-2">{ev.type}</p>}
                                             <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-wide flex items-center gap-1.5 mb-3">
                                                 <MapPin className="w-3 h-3" /> {ev.location}
                                             </p>
                                             <p className="text-sm text-muted-foreground font-medium leading-relaxed mb-4">{ev.description}</p>
                                             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-t border-border pt-4">
-                                                <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-foreground">
+                                                <span className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-foreground">
                                                     <Ticket className="h-4 w-4 text-primary" /> {ev.price}
                                                 </span>
-                                                <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-primary">
+                                                <span className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-primary">
                                                     {ev.cta} <ExternalLink className="h-4 w-4" />
                                                 </span>
                                             </div>
@@ -151,6 +168,7 @@ export default function EventsPage() {
                                 )
                             })}
                         </div>
+                        )}
                     </section>
 
                     <section>
@@ -178,15 +196,15 @@ export default function EventsPage() {
                     </section>
 
                     <section className="mt-16 bg-primary text-white p-8 md:p-12 text-center">
-                        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter italic mb-4">Need help organizing your event?</h2>
+                        <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tighter italic mb-4">Need help organizing your event?</h2>
                         <p className="max-w-3xl mx-auto text-white/90 font-bold uppercase tracking-widest text-xs leading-relaxed mb-8">
                             Radio Nyra helps businesses plan, promote, broadcast and engage audiences through successful events.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <Button className="bg-white text-black hover:bg-gray-100 rounded-none font-black uppercase tracking-widest" asChild>
+                            <Button className="bg-white text-black hover:bg-gray-100 rounded-none font-extrabold uppercase tracking-widest" asChild>
                                 <a href="/contact">Partner With Us</a>
                             </Button>
-                            <Button className="bg-foreground text-background hover:bg-black/80 rounded-none font-black uppercase tracking-widest" asChild>
+                            <Button className="bg-foreground text-background hover:bg-black/80 rounded-none font-extrabold uppercase tracking-widest" asChild>
                                 <a href="/contact">Host Your Event</a>
                             </Button>
                         </div>

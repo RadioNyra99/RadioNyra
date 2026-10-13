@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Schedule | Radio Nyra",
+  title: "Schedule",
   description: "View the Radio Nyra daily schedule for Hindi, Telugu, Bollywood, community, weekend, and live-hosted shows.",
   alternates: {
     canonical: "/schedule",

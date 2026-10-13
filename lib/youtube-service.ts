@@ -9,6 +9,8 @@
  *   4. Pre-populated real Radio Nyra videos as instant fallback
  */
 
+import liveFeedSnapshot from "./youtube-live.json";
+
 // ─── Channel Constants ───────────────────────────────────────────────
 export const CHANNEL_ID = "UC9VgB6gNRgANFfv6LGZuAlw";
 export const CHANNEL_HANDLE = "@RadioNyraUSA";
@@ -345,6 +347,46 @@ export const REAL_RADIO_NYRA_VIDEOS: YouTubeVideoItem[] = [
     }
 ];
 
+// ─── Live Site Videos (feed snapshot ⨝ curated archive) ─────────────
+/**
+ * What the site actually renders: the newest videos from the official
+ * channel feed — refreshed on every build by scripts/sync-youtube.mjs —
+ * merged with the curated archive above. Live entries carry fresh titles,
+ * dates and view counts; archive entries add descriptions, durations and
+ * tags the feed lacks and cover older videos past the feed's 15-item
+ * window. Falls back to the archive alone when the snapshot is empty, so
+ * the site still builds with no network access.
+ */
+function mergeSiteVideos(): YouTubeVideoItem[] {
+    const snapshot: YouTubeVideoItem[] = Array.isArray(liveFeedSnapshot?.videos)
+        ? (liveFeedSnapshot.videos as YouTubeVideoItem[])
+        : [];
+    if (snapshot.length === 0) return REAL_RADIO_NYRA_VIDEOS;
+
+    const archiveById = new Map(REAL_RADIO_NYRA_VIDEOS.map((video) => [video.id, video]));
+    const snapshotIds = new Set(snapshot.map((video) => video.id));
+
+    const liveEntries = snapshot.map((video) => {
+        const known = archiveById.get(video.id);
+        if (!known) return video;
+        return {
+            ...video,
+            description: video.description || known.description,
+            duration: video.duration || known.duration,
+            likeCount: video.likeCount !== "0" ? video.likeCount : known.likeCount,
+            tags: video.tags.length > 0 ? video.tags : known.tags,
+        };
+    });
+
+    const olderArchiveEntries = REAL_RADIO_NYRA_VIDEOS.filter((video) => !snapshotIds.has(video.id));
+
+    return [...liveEntries, ...olderArchiveEntries].sort(
+        (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+    );
+}
+
+export const SITE_VIDEOS: YouTubeVideoItem[] = mergeSiteVideos();
+
 // ─── In-Memory Cache ─────────────────────────────────────────────────
 interface CacheEntry<T> {
     data: T;
@@ -501,7 +543,7 @@ async function fetchFromRSS(maxResults: number = 16, query?: string): Promise<Yo
         }
     }
 
-    return REAL_RADIO_NYRA_VIDEOS;
+    return SITE_VIDEOS;
 }
 
 async function fetchFromRSSJson(rssUrl: string, maxResults: number): Promise<YouTubeVideoItem[]> {
@@ -643,7 +685,7 @@ export async function fetchShorts(maxResults: number = 8): Promise<YouTubeVideoI
 
     const rss = await fetchFromRSS();
     const shorts = rss.filter(v => v.isShort || v.title.toLowerCase().includes("#short") || v.title.toLowerCase().includes("shorts"));
-    return shorts.length > 0 ? shorts.slice(0, maxResults) : REAL_RADIO_NYRA_VIDEOS.slice(0, maxResults);
+    return shorts.length > 0 ? shorts.slice(0, maxResults) : SITE_VIDEOS.slice(0, maxResults);
 }
 
 export async function fetchLiveStreams(maxResults: number = 4): Promise<YouTubeVideoItem[]> {
@@ -686,7 +728,7 @@ export async function searchChannelVideos(query: string, maxResults: number = 8)
     const rss = await fetchFromRSS();
     const lower = query.toLowerCase();
     const matches = rss.filter(v => v.title.toLowerCase().includes(lower) || v.description.toLowerCase().includes(lower));
-    return matches.length > 0 ? matches : REAL_RADIO_NYRA_VIDEOS.filter(v => v.title.toLowerCase().includes(lower) || v.description.toLowerCase().includes(lower));
+    return matches.length > 0 ? matches : SITE_VIDEOS.filter(v => v.title.toLowerCase().includes(lower) || v.description.toLowerCase().includes(lower));
 }
 
 export async function fetchKidsVideos(maxResults: number = 8): Promise<YouTubeVideoItem[]> {

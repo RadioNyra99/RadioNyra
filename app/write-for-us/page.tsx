@@ -33,8 +33,8 @@ export default function WriteForUsPage() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
             
             <div className="space-y-4 text-center md:text-left z-10">
-              <span className="text-[10px] font-black uppercase tracking-[0.25em] text-primary">Guest Blogging & Partnerships</span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter italic text-gray-900 leading-none">
+              <span className="text-[10px] font-extrabold uppercase tracking-[0.25em] text-primary">Guest Blogging & Partnerships</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-tighter italic text-gray-900 leading-none">
                 Write For <span className="text-primary block md:inline">Radio Nyra</span>
               </h1>
               <p className="text-sm text-gray-600 font-bold uppercase tracking-widest mt-2 max-w-2xl">
@@ -52,7 +52,7 @@ export default function WriteForUsPage() {
             <div className="lg:col-span-2 space-y-8">
               {/* Guidelines Card */}
               <div className="bg-white border border-gray-100 rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.02)] space-y-6">
-                <h2 className="text-2xl font-black uppercase tracking-tight italic text-gray-900 flex items-center gap-2">
+                <h2 className="text-2xl font-extrabold uppercase tracking-tight italic text-gray-900 flex items-center gap-2">
                   <Mic className="w-6 h-6 text-primary" /> Submission Guidelines
                 </h2>
                 
@@ -76,7 +76,7 @@ export default function WriteForUsPage() {
 
               {/* Topics Card */}
               <div className="bg-white border border-gray-100 rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.02)] space-y-6">
-                <h2 className="text-2xl font-black uppercase tracking-tight italic text-gray-900 flex items-center gap-2">
+                <h2 className="text-2xl font-extrabold uppercase tracking-tight italic text-gray-900 flex items-center gap-2">
                   <Share2 className="w-6 h-6 text-primary" /> Topics We Accept
                 </h2>
                 
@@ -99,7 +99,7 @@ export default function WriteForUsPage() {
 
               {/* Active Link Partners & Contributors */}
               <div className="bg-white border border-gray-100 rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.02)] space-y-6">
-                <h2 className="text-2xl font-black uppercase tracking-tight italic text-gray-900 flex items-center gap-2">
+                <h2 className="text-2xl font-extrabold uppercase tracking-tight italic text-gray-900 flex items-center gap-2">
                   <Link2 className="w-6 h-6 text-primary" /> Media Partners & Backlink Exchanges
                 </h2>
                 <p className="text-xs text-gray-600 font-medium leading-relaxed">
@@ -123,7 +123,7 @@ export default function WriteForUsPage() {
                       className="p-4 bg-gray-50 hover:bg-primary/5 border border-gray-100 hover:border-primary/30 rounded-xl flex items-center justify-between transition-all duration-300 group"
                     >
                       <div className="text-left">
-                        <span className="font-black text-gray-900 text-xs block group-hover:text-primary transition-colors">{partner.name}</span>
+                        <span className="font-extrabold text-gray-900 text-xs block group-hover:text-primary transition-colors">{partner.name}</span>
                         <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wider mt-0.5 block">{partner.domain}</span>
                       </div>
                       <Link2 className="w-4 h-4 text-gray-400 group-hover:text-primary transition-colors" />
@@ -136,7 +136,7 @@ export default function WriteForUsPage() {
             {/* Submission Form Column */}
             <div className="space-y-8">
               <div className="bg-white border border-gray-100 rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.02)] sticky top-24">
-                <h3 className="text-xl font-black uppercase tracking-tight italic text-gray-900 mb-6 flex items-center gap-2 border-b border-gray-100 pb-4">
+                <h3 className="text-xl font-extrabold uppercase tracking-tight italic text-gray-900 mb-6 flex items-center gap-2 border-b border-gray-100 pb-4">
                   <Send className="w-5 h-5 text-primary" /> Pitch Your Post
                 </h3>
 
@@ -151,7 +151,7 @@ export default function WriteForUsPage() {
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="space-y-1">
-                      <label className="text-[10px] font-black uppercase tracking-wider text-gray-400">Name</label>
+                      <label className="text-[10px] font-extrabold uppercase tracking-wider text-gray-400">Name</label>
                       <input 
                         type="text" 
                         required 
@@ -163,7 +163,7 @@ export default function WriteForUsPage() {
                     </div>
                     
                     <div className="space-y-1">
-                      <label className="text-[10px] font-black uppercase tracking-wider text-gray-400">Email Address</label>
+                      <label className="text-[10px] font-extrabold uppercase tracking-wider text-gray-400">Email Address</label>
                       <input 
                         type="email" 
                         required 
@@ -175,7 +175,7 @@ export default function WriteForUsPage() {
                     </div>
 
                     <div className="space-y-1">
-                      <label className="text-[10px] font-black uppercase tracking-wider text-gray-400">Your Website URL</label>
+                      <label className="text-[10px] font-extrabold uppercase tracking-wider text-gray-400">Your Website URL</label>
                       <input 
                         type="url" 
                         value={formData.website}
@@ -186,7 +186,7 @@ export default function WriteForUsPage() {
                     </div>
 
                     <div className="space-y-1">
-                      <label className="text-[10px] font-black uppercase tracking-wider text-gray-400">Suggested Topic</label>
+                      <label className="text-[10px] font-extrabold uppercase tracking-wider text-gray-400">Suggested Topic</label>
                       <input 
                         type="text" 
                         required 
@@ -198,7 +198,7 @@ export default function WriteForUsPage() {
                     </div>
 
                     <div className="space-y-1">
-                      <label className="text-[10px] font-black uppercase tracking-wider text-gray-400">Article Pitch / Outline</label>
+                      <label className="text-[10px] font-extrabold uppercase tracking-wider text-gray-400">Article Pitch / Outline</label>
                       <textarea 
                         required 
                         rows={4}
@@ -209,7 +209,7 @@ export default function WriteForUsPage() {
                       />
                     </div>
 
-                    <Button type="submit" className="w-full bg-primary hover:bg-primary/95 text-white font-black uppercase tracking-widest text-xs py-3 rounded-xl transition-all cursor-pointer shadow-md">
+                    <Button type="submit" className="w-full bg-primary hover:bg-primary/95 text-white font-extrabold uppercase tracking-widest text-xs py-3 rounded-xl transition-all cursor-pointer shadow-md">
                       Submit Proposal
                     </Button>
                   </form>

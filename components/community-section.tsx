@@ -32,10 +32,10 @@ export function CommunitySection() {
             <div className="container mx-auto px-4">
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="px-3.5 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-black uppercase tracking-widest inline-block mb-3">
+                    <span className="px-3.5 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-extrabold uppercase tracking-widest inline-block mb-3">
                         Indian Subcontinent Community Hub
                     </span>
-                    <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight italic">
+                    <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight italic">
                         Events & Festival Calendar
                     </h2>
                     <p className="text-muted-foreground text-sm md:text-base font-medium mt-3">
@@ -48,7 +48,7 @@ export function CommunitySection() {
                     <Button
                         onClick={() => setSelectedTab('events')}
                         variant={selectedTab === 'events' ? 'default' : 'outline'}
-                        className="rounded-2xl text-xs font-black uppercase tracking-widest px-6 py-6 cursor-pointer"
+                        className="rounded-2xl text-xs font-extrabold uppercase tracking-widest px-6 py-6 cursor-pointer"
                     >
                         <Calendar className="w-4 h-4 mr-2" /> Community Events
                     </Button>
@@ -56,7 +56,7 @@ export function CommunitySection() {
                     <Button
                         onClick={() => setSelectedTab('festivals')}
                         variant={selectedTab === 'festivals' ? 'default' : 'outline'}
-                        className="rounded-2xl text-xs font-black uppercase tracking-widest px-6 py-6 cursor-pointer"
+                        className="rounded-2xl text-xs font-extrabold uppercase tracking-widest px-6 py-6 cursor-pointer"
                     >
                         <Sparkles className="w-4 h-4 mr-2 text-amber-500" /> Festival Calendar
                     </Button>
@@ -70,7 +70,7 @@ export function CommunitySection() {
                                 <div>
                                     <div className="relative aspect-video w-full overflow-hidden">
                                         <img src={event.image} alt={event.title} className="w-full h-full object-cover" />
-                                        <span className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-red-600 text-white text-[10px] font-black uppercase">
+                                        <span className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-red-600 text-white text-[10px] font-extrabold uppercase">
                                             {event.category}
                                         </span>
                                     </div>
@@ -79,7 +79,7 @@ export function CommunitySection() {
                                             <Calendar className="w-3.5 h-3.5" />
                                             {event.date}
                                         </div>
-                                        <h3 className="font-black text-xl text-foreground mb-2 line-clamp-2">{event.title}</h3>
+                                        <h3 className="font-extrabold text-xl text-foreground mb-2 line-clamp-2">{event.title}</h3>
                                         <p className="flex items-center gap-1.5 text-xs text-muted-foreground font-medium mb-3">
                                             <MapPin className="w-3.5 h-3.5 text-muted-foreground shrink-0" />
                                             {event.location}
@@ -90,7 +90,7 @@ export function CommunitySection() {
                                 <div className="p-6 pt-0">
                                     <Button
                                         onClick={() => setActiveRegisterEvent(event)}
-                                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-black text-xs uppercase tracking-wider h-11 rounded-xl cursor-pointer"
+                                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-extrabold text-xs uppercase tracking-wider h-11 rounded-xl cursor-pointer"
                                     >
                                         <Ticket className="w-4 h-4 mr-2" /> Register / RSVP
                                     </Button>
@@ -107,8 +107,8 @@ export function CommunitySection() {
                             <div key={fest.id} className="rounded-3xl bg-card border border-border/80 p-6 flex flex-col sm:flex-row items-center gap-6 shadow-md hover:shadow-xl transition-all">
                                 <img src={fest.image} alt={fest.festivalName} className="w-full sm:w-36 h-36 object-cover rounded-2xl shrink-0" />
                                 <div className="flex-1">
-                                    <span className="text-[10px] font-black text-amber-500 uppercase tracking-widest">{fest.date}</span>
-                                    <h3 className="font-black text-xl text-foreground mb-1">{fest.festivalName}</h3>
+                                    <span className="text-[10px] font-extrabold text-amber-500 uppercase tracking-widest">{fest.date}</span>
+                                    <h3 className="font-extrabold text-xl text-foreground mb-1">{fest.festivalName}</h3>
                                     <p className="text-xs font-medium text-muted-foreground mb-2">{fest.significance}</p>
                                     <div className="text-[11px] bg-muted/60 p-2.5 rounded-xl border border-border/50 text-foreground font-semibold">
                                         ✨ Radio Nyra Broadcast: <span className="text-primary font-bold">{fest.associatedShow}</span>
@@ -124,7 +124,7 @@ export function CommunitySection() {
             <Dialog open={!!activeRegisterEvent} onOpenChange={() => setActiveRegisterEvent(null)}>
                 <DialogContent className="max-w-md p-6 rounded-3xl bg-card border-border">
                     <DialogHeader>
-                        <DialogTitle className="text-xl font-black uppercase tracking-tight">
+                        <DialogTitle className="text-xl font-extrabold uppercase tracking-tight">
                             Event RSVP: {activeRegisterEvent?.title}
                         </DialogTitle>
                     </DialogHeader>
@@ -132,7 +132,7 @@ export function CommunitySection() {
                         <Input placeholder="Full Name *" required className="rounded-xl h-12" />
                         <Input type="email" placeholder="Email Address *" required className="rounded-xl h-12" />
                         <Input type="tel" placeholder="Phone Number *" required className="rounded-xl h-12" />
-                        <Button type="submit" className="w-full h-12 rounded-xl bg-primary text-primary-foreground font-black uppercase text-xs tracking-widest cursor-pointer">
+                        <Button type="submit" className="w-full h-12 rounded-xl bg-primary text-primary-foreground font-extrabold uppercase text-xs tracking-widest cursor-pointer">
                             {registered ? (
                                 <span className="flex items-center gap-2 text-white">
                                     <CheckCircle2 className="w-4 h-4 text-green-300" /> Registration Confirmed!

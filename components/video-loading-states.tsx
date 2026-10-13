@@ -84,14 +84,14 @@ export function VideoEmptyState({
             <div className="w-20 h-20 rounded-full bg-muted/30 flex items-center justify-center mb-6">
                 <Youtube className="w-10 h-10 text-muted-foreground/50" />
             </div>
-            <h3 className="text-lg font-black uppercase tracking-tight text-foreground mb-2">{title}</h3>
+            <h3 className="text-lg font-extrabold uppercase tracking-tight text-foreground mb-2">{title}</h3>
             <p className="text-sm text-muted-foreground font-medium max-w-md mb-6">{description}</p>
             <div className="flex items-center gap-3">
                 {onRetry && (
                     <Button
                         onClick={onRetry}
                         variant="outline"
-                        className="rounded-xl text-xs font-black uppercase tracking-wider px-6 py-5 cursor-pointer"
+                        className="rounded-xl text-xs font-extrabold uppercase tracking-wider px-6 py-5 cursor-pointer"
                     >
                         <RefreshCw className="w-4 h-4 mr-2" />
                         Retry
@@ -100,7 +100,7 @@ export function VideoEmptyState({
                 {showSubscribe && (
                     <Button
                         onClick={() => window.open("https://www.youtube.com/@RadioNyraUSA?sub_confirmation=1", "_blank")}
-                        className="bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs font-black uppercase tracking-wider px-6 py-5 cursor-pointer"
+                        className="bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs font-extrabold uppercase tracking-wider px-6 py-5 cursor-pointer"
                     >
                         <Youtube className="w-4 h-4 mr-2 fill-white" />
                         Visit @RadioNyraUSA

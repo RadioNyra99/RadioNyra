@@ -49,11 +49,11 @@ export function StickySidebar() {
                 <div className="w-14 h-14 rounded-full bg-red-600 flex items-center justify-center mx-auto mb-3 shadow-lg shadow-red-600/40">
                     <Youtube className="w-8 h-8 text-white fill-white" />
                 </div>
-                <h4 className="font-black text-lg uppercase tracking-tight">Official YouTube</h4>
+                <h4 className="font-extrabold text-lg uppercase tracking-tight">Official YouTube</h4>
                 <p className="text-xs text-zinc-400 mt-1 mb-4 font-medium">{OFFICIAL_YOUTUBE_CHANNEL.handle} • {subscriberCount} Subs</p>
                 <Button
                     onClick={handleSubscribe}
-                    className="w-full bg-red-600 hover:bg-red-700 text-white font-black text-xs uppercase tracking-wider h-11 rounded-xl cursor-pointer shadow-lg shadow-red-600/30"
+                    className="w-full bg-red-600 hover:bg-red-700 text-white font-extrabold text-xs uppercase tracking-wider h-11 rounded-xl cursor-pointer shadow-lg shadow-red-600/30"
                 >
                     <Youtube className="w-4 h-4 mr-2 fill-white" /> Subscribe Now
                 </Button>
@@ -63,7 +63,7 @@ export function StickySidebar() {
             <div className="rounded-3xl bg-card border border-border/80 p-6 shadow-md">
                 <div className="flex items-center gap-2 mb-4">
                     <Flame className="w-5 h-5 text-red-500 fill-red-500 animate-bounce" />
-                    <h4 className="font-black text-base uppercase tracking-tight">Trending Shorts</h4>
+                    <h4 className="font-extrabold text-base uppercase tracking-tight">Trending Shorts</h4>
                 </div>
                 <div className="space-y-3">
                     {loadingShorts ? (
@@ -95,17 +95,17 @@ export function StickySidebar() {
             <div className="rounded-3xl bg-card border border-border/80 p-6 shadow-md">
                 <div className="flex items-center gap-2 mb-4">
                     <Radio className="w-5 h-5 text-primary" />
-                    <h4 className="font-black text-base uppercase tracking-tight">Upcoming Shows</h4>
+                    <h4 className="font-extrabold text-base uppercase tracking-tight">Upcoming Shows</h4>
                 </div>
                 <div className="space-y-3 text-xs">
                     <div className="p-3 rounded-xl bg-primary/5 border border-primary/20">
-                        <span className="text-[10px] font-black uppercase text-primary">Radio Nyra Hindi • 99.9 FM</span>
+                        <span className="text-[10px] font-extrabold uppercase text-primary">Radio Nyra Hindi • 99.9 FM</span>
                         <p className="font-bold text-foreground mt-0.5">Zara Muskurao with RJ Aayushii</p>
                         <span className="text-[10px] text-muted-foreground font-semibold">10:00 AM - 1:00 PM EST</span>
                     </div>
 
                     <div className="p-3 rounded-xl bg-secondary/5 border border-secondary/20">
-                        <span className="text-[10px] font-black uppercase text-cyan-600">Radio Nyra Telugu • 99.9 FM</span>
+                        <span className="text-[10px] font-extrabold uppercase text-cyan-600">Radio Nyra Telugu • 99.9 FM</span>
                         <p className="font-bold text-foreground mt-0.5">Chinna Mata with RJ Priya</p>
                         <span className="text-[10px] text-muted-foreground font-semibold">8:00 AM - 11:00 AM EST</span>
                     </div>
@@ -116,7 +116,7 @@ export function StickySidebar() {
             <div className="rounded-3xl bg-zinc-950 p-6 border border-zinc-800 text-white shadow-md">
                 <div className="flex items-center gap-2 mb-2">
                     <Mail className="w-4 h-4 text-red-500" />
-                    <h4 className="font-black text-sm uppercase tracking-tight">Nyra VIP Digest</h4>
+                    <h4 className="font-extrabold text-sm uppercase tracking-tight">Nyra VIP Digest</h4>
                 </div>
                 <p className="text-[11px] text-zinc-400 mb-3 font-medium">Get weekly radio & YouTube highlights.</p>
                 <form onSubmit={handleNewsletter} className="space-y-2">
@@ -128,7 +128,7 @@ export function StickySidebar() {
                         className="bg-white/10 border-white/20 text-xs h-10 rounded-xl"
                         required
                     />
-                    <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-white text-xs font-black uppercase tracking-wider h-10 rounded-xl cursor-pointer">
+                    <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-white text-xs font-extrabold uppercase tracking-wider h-10 rounded-xl cursor-pointer">
                         {subscribed ? <CheckCircle2 className="w-4 h-4 text-green-300" /> : "Join Digest"}
                     </Button>
                 </form>

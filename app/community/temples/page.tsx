@@ -44,10 +44,10 @@ export default function TemplesPage() {
                         animate={{ opacity: 1, scale: 1 }}
                         className="text-center mb-20 bg-primary/5 py-16 border-2 border-primary/20"
                     >
-                        <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-primary italic mb-4">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-primary mb-4">
                             Temples & Spiritual Places
                         </h1>
-                        <p className="text-muted-foreground text-sm font-black uppercase tracking-[0.4em]">
+                        <p className="text-muted-foreground text-sm font-extrabold uppercase tracking-[0.4em]">
                             In Raleigh & Durham
                         </p>
                     </motion.div>
@@ -72,11 +72,11 @@ export default function TemplesPage() {
                                 )}
                                 <div className="flex flex-col md:flex-row gap-8 p-8">
                                     <div className="flex-1">
-                                        <div className="flex items-center gap-2 text-primary mb-4 font-black text-xs uppercase tracking-widest">
+                                        <div className="flex items-center gap-2 text-primary mb-4 font-extrabold text-xs uppercase tracking-widest">
                                             <button className="bg-primary text-white p-1 rounded-sm"><Landmark size={14} /></button>
                                             {place.type}
                                         </div>
-                                        <h3 className="text-3xl font-black uppercase tracking-tight mb-4">{place.name}</h3>
+                                        <h3 className="text-3xl font-extrabold uppercase tracking-tight mb-4">{place.name}</h3>
                                         <p className="text-muted-foreground font-medium leading-relaxed mb-6">
                                             {place.description}
                                         </p>
@@ -94,7 +94,7 @@ export default function TemplesPage() {
                                             <MapPin size={18} className="text-primary" />
                                             {place.location}
                                         </div>
-                                        <button className="mt-4 md:mt-0 text-xs font-black uppercase tracking-widest text-primary hover:underline flex items-center gap-2">
+                                        <button className="mt-4 md:mt-0 text-xs font-extrabold uppercase tracking-widest text-primary hover:underline flex items-center gap-2">
                                             Learn More <Heart size={14} />
                                         </button>
                                     </div>
@@ -109,14 +109,14 @@ export default function TemplesPage() {
                         className="mt-20 text-center p-12 bg-black text-white"
                     >
                         <Sun className="mx-auto text-primary mb-6" size={48} />
-                        <h2 className="text-3xl font-black uppercase tracking-tighter mb-4 italic">Spiritual Guidance & Community</h2>
+                        <h2 className="text-3xl font-extrabold uppercase tracking-tighter mb-4 italic">Spiritual Guidance & Community</h2>
                         <p className="max-w-2xl mx-auto opacity-70 font-medium leading-relaxed uppercase tracking-widest text-sm">
                             Discover peaceful and spiritual destinations in the Triangle area, ideal for worship, meditation, and community gatherings.
                         </p>
                     </motion.div>
 
                     <div className="mt-32 text-center border-t border-border/50 pt-20">
-                        <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tighter italic mb-6">
+                        <h3 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tighter italic mb-6">
                             Have more <span className="text-primary">Questions?</span>
                         </h3>
                         <p className="text-muted-foreground font-bold uppercase tracking-widest mb-10 max-w-md mx-auto">
@@ -124,7 +124,7 @@ export default function TemplesPage() {
                         </p>
                         <a
                             href="/faq"
-                            className="inline-block bg-primary text-white font-black uppercase tracking-widest px-12 py-4 hover:bg-primary/90 transition-all hover:scale-105 shadow-[0_10px_20px_rgba(235,30,50,0.2)]"
+                            className="inline-block bg-primary text-white font-extrabold uppercase tracking-widest px-12 py-4 hover:bg-primary/90 transition-all hover:scale-105 shadow-[0_10px_20px_rgba(235,30,50,0.2)]"
                         >
                             Visit FAQ Page
                         </a>

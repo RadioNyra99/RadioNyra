@@ -223,7 +223,7 @@ export default function MoviesPage() {
                         <Badge variant="outline" className="mb-6 border-primary/50 text-primary py-1 px-4 text-xs font-bold uppercase tracking-[0.3em] bg-primary/5">
                             Radio Nyra Exclusives
                         </Badge>
-                        <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-none mb-8">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">
                             Upcoming <span className="text-primary italic">Movies</span>
                         </h1>
                         <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
@@ -243,7 +243,7 @@ export default function MoviesPage() {
                                     {category.icon}
                                 </div>
                                 <div>
-                                    <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter italic">
+                                    <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tighter italic">
                                         {category.title}
                                     </h2>
                                     <p className="text-primary font-bold uppercase tracking-[0.2em] text-xs mt-1">
@@ -288,10 +288,10 @@ export default function MoviesPage() {
                                             </div>
 
                                             <div className="absolute bottom-0 left-0 right-0 p-5 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                                <p className="text-primary font-black uppercase text-[8px] tracking-[0.3em] mb-1.5 drop-shadow-lg">
+                                                <p className="text-primary font-extrabold uppercase text-[8px] tracking-[0.3em] mb-1.5 drop-shadow-lg">
                                                     {movie.genre}
                                                 </p>
-                                                <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter leading-none mb-3 group-hover:text-primary transition-colors">
+                                                <h3 className="text-xl md:text-2xl font-extrabold uppercase tracking-tighter leading-none mb-3 group-hover:text-primary transition-colors">
                                                     {movie.title}
                                                 </h3>
                                                 
@@ -303,13 +303,13 @@ export default function MoviesPage() {
                                                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                                                     {movie.bookingUrl ? (
                                                         <a href={movie.bookingUrl} target="_blank" rel="noopener noreferrer">
-                                                            <Button className="w-full bg-primary hover:bg-white hover:text-primary text-white font-black uppercase tracking-widest rounded-lg h-9 text-[9px] transition-all group/btn">
+                                                            <Button className="w-full bg-primary hover:bg-white hover:text-primary text-white font-extrabold uppercase tracking-widest rounded-lg h-9 text-[9px] transition-all group/btn">
                                                                 <Ticket size={12} className="mr-1.5 group-hover/btn:rotate-12 transition-transform" />
                                                                 Book Tickets
                                                             </Button>
                                                         </a>
                                                     ) : (
-                                                        <Button disabled className="w-full bg-white/5 border border-white/10 text-white/40 font-black uppercase tracking-widest rounded-lg h-9 text-[9px] cursor-not-allowed">
+                                                        <Button disabled className="w-full bg-white/5 border border-white/10 text-white/40 font-extrabold uppercase tracking-widest rounded-lg h-9 text-[9px] cursor-not-allowed">
                                                             Coming Soon
                                                         </Button>
                                                     )}
@@ -333,7 +333,7 @@ export default function MoviesPage() {
                         
                         <div className="relative z-10">
                             <Sparkles className="mx-auto text-primary mb-6" size={40} />
-                            <h3 className="text-4xl md:text-6xl font-black uppercase tracking-tighter italic mb-6 leading-none">
+                            <h3 className="text-4xl md:text-6xl font-extrabold uppercase tracking-tighter italic mb-6 leading-none">
                                 Want to <span className="text-primary">Stay Updated?</span>
                             </h3>
                             <p className="text-gray-400 font-bold uppercase tracking-[0.2em] mb-12 max-w-xl mx-auto text-sm">
@@ -342,13 +342,13 @@ export default function MoviesPage() {
                             <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
                                 <a
                                     href="/community"
-                                    className="px-12 py-5 bg-primary text-white font-black uppercase tracking-widest rounded-2xl hover:scale-105 transition-all shadow-[0_15px_30px_rgba(235,30,50,0.3)]"
+                                    className="px-12 py-5 bg-primary text-white font-extrabold uppercase tracking-widest rounded-2xl hover:scale-105 transition-all shadow-[0_15px_30px_rgba(235,30,50,0.3)]"
                                 >
                                     Join Community
                                 </a>
                                 <a
                                     href="/faq"
-                                    className="px-12 py-5 bg-white/5 text-white font-black uppercase tracking-widest rounded-2xl hover:bg-white/10 transition-all border border-white/10"
+                                    className="px-12 py-5 bg-white/5 text-white font-extrabold uppercase tracking-widest rounded-2xl hover:bg-white/10 transition-all border border-white/10"
                                 >
                                     View FAQ
                                 </a>

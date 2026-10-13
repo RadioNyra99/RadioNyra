@@ -1,10 +1,12 @@
 export type UpcomingEvent = {
+  id?: string | number
   title: string
   date: string
   time: string
   location: string
   venue: string
   type: string
+  category?: string
   image: string
   imageAspect: "portrait" | "landscape"
   link: string
@@ -50,26 +52,15 @@ export function getEventTimingLabel(startDate: string, now = new Date()) {
   return "Upcoming"
 }
 
-export const upcomingEvents: UpcomingEvent[] = [
-  {
-    title: "Rhythm & Raas Garba Night",
-    date: "October 2, 2026",
-    time: "7:00 PM EDT",
-    location: "Haveli, Apex, NC",
-    venue: "Haveli, 795 Beaver Creek Rd, Apex, NC 27502",
-    type: "Garba Night",
-    image: "/images/events/rhythm-raas-garba-2026.png",
-    imageAspect: "portrait",
-    link: "",
-    startDate: "2026-10-02T19:00:00-04:00",
-    price: "Adults $20; Kids 5 to 16 $10",
-    description:
-      "Rhythm & Raas presents a community Garba night with live music, food trucks, and performances by Amruta Manke and Nimesh Nagar.",
-    cta: "See Flyer",
-  },
-]
+export const upcomingEvents: UpcomingEvent[] = []
 
 export const pastEvents: PastEvent[] = [
+  {
+    id: 0,
+    title: "Rhythm & Raas Garba Night",
+    image: "/images/events/rhythm-raas-garba-2026.png",
+    date: "October 2, 2026",
+  },
   {
     id: 1,
     title: "IAFV Garba Dandiya Night",

@@ -50,7 +50,7 @@ export function VoiceAssistants() {
 
                     <DialogContent className="sm:max-w-md bg-white/95 backdrop-blur-xl border-none shadow-2xl">
                         <DialogHeader>
-                            <DialogTitle className="text-center text-2xl font-black uppercase tracking-tighter text-black">
+                            <DialogTitle className="text-center text-2xl font-extrabold uppercase tracking-tighter text-black">
                                 {assistant.popupTitle}
                             </DialogTitle>
                         </DialogHeader>
@@ -62,7 +62,7 @@ export function VoiceAssistants() {
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-gray-900 text-xl">{assistant.displayName}</h4>
-                                        <p className="text-primary text-2xl font-black italic mt-2">"{assistant.command}"</p>
+                                        <p className="text-primary text-2xl font-extrabold italic mt-2">"{assistant.command}"</p>
                                     </div>
                                 </div>
                             </div>

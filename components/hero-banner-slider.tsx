@@ -93,7 +93,7 @@ export function HeroBannerSlider() {
                 <div className="max-w-4xl">
                     {/* Live ON AIR Indicator & Badge */}
                     <div className="flex flex-wrap items-center gap-3 mb-6">
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-600/90 text-white font-black text-xs uppercase tracking-widest shadow-lg shadow-red-600/30 backdrop-blur">
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-600/90 text-white font-extrabold text-xs uppercase tracking-widest shadow-lg shadow-red-600/30 backdrop-blur">
                             <span className="w-2.5 h-2.5 rounded-full bg-white animate-ping" />
                             <Radio className="w-4 h-4 animate-pulse" />
                             <span>LIVE ON AIR</span>
@@ -120,7 +120,7 @@ export function HeroBannerSlider() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-[1.05] italic mb-4"
+                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-tight leading-[1.05] italic mb-4"
                     >
                         <span className="text-white block drop-shadow-lg">{currentSlide.title}</span>
                         <span className="bg-gradient-to-r from-red-500 via-orange-400 to-amber-300 bg-clip-text text-transparent block">
@@ -150,7 +150,7 @@ export function HeroBannerSlider() {
                         <Button
                             onClick={handleListenLiveClick}
                             size="lg"
-                            className="bg-red-600 hover:bg-red-700 text-white font-black uppercase tracking-widest text-sm px-8 py-7 rounded-full shadow-2xl shadow-red-600/50 transform hover:scale-105 transition-all duration-300 flex items-center gap-3 cursor-pointer group"
+                            className="bg-red-600 hover:bg-red-700 text-white font-extrabold uppercase tracking-widest text-sm px-8 py-7 rounded-full shadow-2xl shadow-red-600/50 transform hover:scale-105 transition-all duration-300 flex items-center gap-3 cursor-pointer group"
                         >
                             <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center group-hover:rotate-12 transition-transform">
                                 <Play className="w-5 h-5 text-white fill-white ml-0.5" />

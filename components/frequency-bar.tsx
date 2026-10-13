@@ -7,19 +7,19 @@ export function FrequencyBar() {
         <div className="bg-[#0000FF] border-y border-white/20 overflow-hidden py-2.5 sm:py-3.5 shadow-xl relative z-40">
             <div className="flex whitespace-nowrap animate-marquee">
                 <div className="flex items-center gap-64 px-8">
-                    <span className="text-xs md:text-sm font-black text-white uppercase tracking-[0.4em] italic flex items-center gap-12 drop-shadow-md">
+                    <span className="text-xs md:text-sm font-extrabold text-white uppercase tracking-[0.4em] italic flex items-center gap-12 drop-shadow-md">
                         {text.split(' I ').join('          ★          ')} <span className="text-white/50">★</span>
                     </span>
-                    <span className="text-xs md:text-sm font-black text-white uppercase tracking-[0.4em] italic flex items-center gap-12 drop-shadow-md">
+                    <span className="text-xs md:text-sm font-extrabold text-white uppercase tracking-[0.4em] italic flex items-center gap-12 drop-shadow-md">
                         {text.split(' I ').join('          ★          ')} <span className="text-white/50">★</span>
                     </span>
                 </div>
                 {/* Duplicate for seamless scrolling */}
                 <div className="flex items-center gap-64 px-8">
-                    <span className="text-xs md:text-sm font-black text-white uppercase tracking-[0.4em] italic flex items-center gap-12 drop-shadow-md">
+                    <span className="text-xs md:text-sm font-extrabold text-white uppercase tracking-[0.4em] italic flex items-center gap-12 drop-shadow-md">
                         {text.split(' I ').join('          ★          ')} <span className="text-white/50">★</span>
                     </span>
-                    <span className="text-xs md:text-sm font-black text-white uppercase tracking-[0.4em] italic flex items-center gap-12 drop-shadow-md">
+                    <span className="text-xs md:text-sm font-extrabold text-white uppercase tracking-[0.4em] italic flex items-center gap-12 drop-shadow-md">
                         {text.split(' I ').join('          ★          ')} <span className="text-white/50">★</span>
                     </span>
                 </div>

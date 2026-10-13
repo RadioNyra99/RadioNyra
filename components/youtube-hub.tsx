@@ -63,11 +63,11 @@ export function YouTubeHub() {
                                 <Youtube className="w-12 h-12 text-white fill-white" />
                             </div>
                             <div>
-                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/30 border border-red-500/30 text-red-400 text-xs font-black uppercase tracking-widest mb-3">
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/30 border border-red-500/30 text-red-400 text-xs font-extrabold uppercase tracking-widest mb-3">
                                     <Sparkles className="w-3.5 h-3.5" />
                                     Radio Nyra YouTube Hub
                                 </div>
-                                <h1 className="text-3xl md:text-5xl font-black uppercase tracking-tight italic">
+                                <h1 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight italic">
                                     Watch & Subscribe
                                 </h1>
                                 <p className="text-zinc-300 text-sm md:text-base mt-2 max-w-xl font-medium">
@@ -81,7 +81,7 @@ export function YouTubeHub() {
                             <Button
                                 onClick={handleSubscribe}
                                 size="lg"
-                                className="bg-red-600 hover:bg-red-700 text-white font-black text-sm uppercase tracking-widest px-8 py-7 rounded-2xl shadow-2xl shadow-red-600/50 transform hover:scale-105 transition-all flex items-center gap-3 cursor-pointer"
+                                className="bg-red-600 hover:bg-red-700 text-white font-extrabold text-sm uppercase tracking-widest px-8 py-7 rounded-2xl shadow-2xl shadow-red-600/50 transform hover:scale-105 transition-all flex items-center gap-3 cursor-pointer"
                             >
                                 <Youtube className="w-6 h-6 fill-white" />
                                 <span>Subscribe Now</span>
@@ -94,7 +94,7 @@ export function YouTubeHub() {
                         <div className="bg-white/5 backdrop-blur rounded-2xl p-4 text-center border border-white/10">
                             <div className="flex items-center justify-center gap-2 text-red-400 mb-1">
                                 <Users className="w-5 h-5" />
-                                <span className="text-2xl font-black text-white">{subscriberCount || "1.05K"}</span>
+                                <span className="text-2xl font-extrabold text-white">{subscriberCount || "1.05K"}</span>
                             </div>
                             <p className="text-[11px] text-zinc-400 font-extrabold uppercase tracking-wider">Subscribers</p>
                         </div>
@@ -102,7 +102,7 @@ export function YouTubeHub() {
                         <div className="bg-white/5 backdrop-blur rounded-2xl p-4 text-center border border-white/10">
                             <div className="flex items-center justify-center gap-2 text-cyan-400 mb-1">
                                 <Eye className="w-5 h-5" />
-                                <span className="text-2xl font-black text-white">{viewCount || "173.3K"}</span>
+                                <span className="text-2xl font-extrabold text-white">{viewCount || "173.3K"}</span>
                             </div>
                             <p className="text-[11px] text-zinc-400 font-extrabold uppercase tracking-wider">Total Video Views</p>
                         </div>
@@ -110,7 +110,7 @@ export function YouTubeHub() {
                         <div className="bg-white/5 backdrop-blur rounded-2xl p-4 text-center border border-white/10">
                             <div className="flex items-center justify-center gap-2 text-amber-400 mb-1">
                                 <Clock className="w-5 h-5" />
-                                <span className="text-2xl font-black text-white">25,000+</span>
+                                <span className="text-2xl font-extrabold text-white">25,000+</span>
                             </div>
                             <p className="text-[11px] text-zinc-400 font-extrabold uppercase tracking-wider">Watch Time Hours</p>
                         </div>
@@ -118,7 +118,7 @@ export function YouTubeHub() {
                         <div className="bg-white/5 backdrop-blur rounded-2xl p-4 text-center border border-white/10">
                             <div className="flex items-center justify-center gap-2 text-emerald-400 mb-1">
                                 <PlayCircle className="w-5 h-5" />
-                                <span className="text-2xl font-black text-white">{videoCount || "279"}</span>
+                                <span className="text-2xl font-extrabold text-white">{videoCount || "279"}</span>
                             </div>
                             <p className="text-[11px] text-zinc-400 font-extrabold uppercase tracking-wider">Uploaded Videos</p>
                         </div>
@@ -130,7 +130,7 @@ export function YouTubeHub() {
                     <div className="flex items-center justify-between mb-6">
                         <div className="flex items-center gap-2">
                             <Flame className="w-6 h-6 text-red-500 fill-red-500 animate-bounce" />
-                            <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight">
+                            <h2 className="text-2xl md:text-3xl font-extrabold uppercase tracking-tight">
                                 Trending Shorts
                             </h2>
                         </div>
@@ -160,7 +160,7 @@ export function YouTubeHub() {
                             key={category}
                             onClick={() => setSelectedCategory(category)}
                             variant={selectedCategory === category ? "default" : "outline"}
-                            className={`rounded-xl text-xs font-black uppercase tracking-wider px-5 py-2.5 shrink-0 transition-all cursor-pointer ${selectedCategory === category
+                            className={`rounded-xl text-xs font-extrabold uppercase tracking-wider px-5 py-2.5 shrink-0 transition-all cursor-pointer ${selectedCategory === category
                                     ? "bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-600/30"
                                     : "hover:border-primary"
                                 }`}
@@ -189,7 +189,7 @@ export function YouTubeHub() {
 
                 {/* Featured Playlists */}
                 <div className="mt-16 pt-12 border-t border-border">
-                    <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-8 flex items-center gap-3">
+                    <h2 className="text-2xl md:text-3xl font-extrabold uppercase tracking-tight mb-8 flex items-center gap-3">
                         <Grid className="w-7 h-7 text-primary" />
                         Curated Playlists
                     </h2>
@@ -220,7 +220,7 @@ export function YouTubeHub() {
                                         </div>
                                     )}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent p-5 flex flex-col justify-end">
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-red-400">
+                                        <span className="text-[10px] font-extrabold uppercase tracking-widest text-red-400">
                                             {playlist.videoCount} Videos
                                         </span>
                                         <h3 className="text-white font-extrabold text-lg leading-tight group-hover:text-red-400 transition-colors">

@@ -15,7 +15,7 @@ export default function FestivalCalendarPage() {
                 <section className="relative py-20 overflow-hidden bg-gray-50 border-b border-gray-100">
                     <div className="container mx-auto px-4 relative z-10 text-center">
                         <div className="max-w-4xl mx-auto">
-                            <h1 className="text-4xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter mb-8 italic leading-none text-gray-900">
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight text-gray-900">
                                 Festival <span className="text-primary">Calendar</span>
                             </h1>
                             <p className="text-xl md:text-2xl text-gray-600 uppercase tracking-[0.2em] font-bold italic mb-8">
@@ -45,10 +45,10 @@ export default function FestivalCalendarPage() {
                                 </div>
                                 <div className="flex-1 flex flex-col justify-center">
                                     <div className="flex items-center gap-2 mb-2">
-                                        <span className="px-2.5 py-0.5 bg-amber-500 text-black text-xs font-black uppercase tracking-widest rounded">Aug - Sept</span>
+                                        <span className="px-2.5 py-0.5 bg-amber-500 text-black text-xs font-extrabold uppercase tracking-widest rounded">Aug - Sept</span>
                                         <span className="px-2.5 py-0.5 bg-red-100 text-red-700 text-xs font-bold uppercase tracking-wider rounded">Special Broadcast</span>
                                     </div>
-                                    <h2 className="text-3xl font-black uppercase tracking-tight text-gray-900 mb-2">Ganesh Chaturthi / Ganeshotsav</h2>
+                                    <h2 className="text-3xl font-extrabold uppercase tracking-tight text-gray-900 mb-2">Ganesh Chaturthi / Ganeshotsav</h2>
                                     <p className="text-amber-800 font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-3">
                                         <MapPin className="w-4 h-4 text-amber-600" /> Triangle Temples & Community Celebrations • Raleigh, Cary, Morrisville
                                     </p>
@@ -66,10 +66,10 @@ export default function FestivalCalendarPage() {
                             <div className="flex flex-col md:flex-row gap-8 bg-gray-50 border border-gray-200 p-8 shadow-sm group hover:border-primary transition-all">
                                 <div className="w-32 h-32 bg-primary/10 flex flex-col items-center justify-center shrink-0 border-2 border-primary">
                                     <Sparkles className="w-8 h-8 text-primary mb-2" />
-                                    <span className="font-black uppercase tracking-widest text-sm">Oct-Nov</span>
+                                    <span className="font-extrabold uppercase tracking-widest text-sm">Oct-Nov</span>
                                 </div>
                                 <div>
-                                    <h2 className="text-3xl font-black uppercase tracking-tight mb-2">Grand Diwali Mela</h2>
+                                    <h2 className="text-3xl font-extrabold uppercase tracking-tight mb-2">Grand Diwali Mela</h2>
                                     <p className="text-gray-500 font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-4">
                                         <MapPin className="w-4 h-4" /> Koka Booth Amphitheatre, Cary NC
                                     </p>
@@ -84,10 +84,10 @@ export default function FestivalCalendarPage() {
                             <div className="flex flex-col md:flex-row gap-8 bg-gray-50 border border-gray-200 p-8 shadow-sm group hover:border-primary transition-all">
                                 <div className="w-32 h-32 bg-primary/10 flex flex-col items-center justify-center shrink-0 border-2 border-primary">
                                     <Sparkles className="w-8 h-8 text-primary mb-2" />
-                                    <span className="font-black uppercase tracking-widest text-sm">March</span>
+                                    <span className="font-extrabold uppercase tracking-widest text-sm">March</span>
                                 </div>
                                 <div>
-                                    <h2 className="text-3xl font-black uppercase tracking-tight mb-2">Colors of Holi Festival</h2>
+                                    <h2 className="text-3xl font-extrabold uppercase tracking-tight mb-2">Colors of Holi Festival</h2>
                                     <p className="text-gray-500 font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-4">
                                         <MapPin className="w-4 h-4" /> Morrisville, NC
                                     </p>
@@ -102,10 +102,10 @@ export default function FestivalCalendarPage() {
                             <div className="flex flex-col md:flex-row gap-8 bg-gray-50 border border-gray-200 p-8 shadow-sm group hover:border-primary transition-all">
                                 <div className="w-32 h-32 bg-primary/10 flex flex-col items-center justify-center shrink-0 border-2 border-primary">
                                     <Music className="w-8 h-8 text-primary mb-2" />
-                                    <span className="font-black uppercase tracking-widest text-sm">Dec 31</span>
+                                    <span className="font-extrabold uppercase tracking-widest text-sm">Dec 31</span>
                                 </div>
                                 <div>
-                                    <h2 className="text-3xl font-black uppercase tracking-tight mb-2">Bollywood & Tollywood NYE Bash</h2>
+                                    <h2 className="text-3xl font-extrabold uppercase tracking-tight mb-2">Bollywood & Tollywood NYE Bash</h2>
                                     <p className="text-gray-500 font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-4">
                                         <MapPin className="w-4 h-4" /> Raleigh Convention Center
                                     </p>

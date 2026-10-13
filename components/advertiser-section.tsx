@@ -91,11 +91,11 @@ export function AdvertiserSection() {
             <div className="container mx-auto px-4">
                 {/* Header */}
                 <div className="text-center max-w-4xl mx-auto mb-8">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/10 text-red-600 text-xs font-black uppercase tracking-widest mb-3 border border-red-600/20">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/10 text-red-600 text-xs font-extrabold uppercase tracking-widest mb-3 border border-red-600/20">
                         <Megaphone className="w-4 h-4" />
                         Media & Business Advertising Opportunities
                     </div>
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight italic text-foreground leading-tight mb-3">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight italic text-foreground leading-tight mb-3">
                         Promote Your Brand Across America's Leading Indian Subcontinent Network
                     </h2>
                     <p className="text-muted-foreground text-xs sm:text-sm md:text-base font-medium max-w-2xl mx-auto leading-relaxed">
@@ -107,25 +107,25 @@ export function AdvertiserSection() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
                     <div className="p-4 sm:p-5 rounded-2xl bg-card border border-border/80 text-center shadow-sm hover:shadow-md transition-all">
                         <Users className="w-6 h-6 text-primary mx-auto mb-2" />
-                        <span className="text-2xl sm:text-3xl font-black block">100K+</span>
+                        <span className="text-2xl sm:text-3xl font-extrabold block">100K+</span>
                         <span className="text-[10px] text-muted-foreground font-extrabold uppercase tracking-wider">Weekly Listeners</span>
                     </div>
 
                     <div className="p-4 sm:p-5 rounded-2xl bg-card border border-border/80 text-center shadow-sm hover:shadow-md transition-all">
                         <TrendingUp className="w-6 h-6 text-cyan-500 mx-auto mb-2" />
-                        <span className="text-2xl sm:text-3xl font-black block">173.3K+</span>
+                        <span className="text-2xl sm:text-3xl font-extrabold block">173.3K+</span>
                         <span className="text-[10px] text-muted-foreground font-extrabold uppercase tracking-wider">Digital & Video Impressions</span>
                     </div>
 
                     <div className="p-4 sm:p-5 rounded-2xl bg-card border border-border/80 text-center shadow-sm hover:shadow-md transition-all">
                         <MapPin className="w-6 h-6 text-amber-500 mx-auto mb-2" />
-                        <span className="text-2xl sm:text-3xl font-black block">7+ Major</span>
+                        <span className="text-2xl sm:text-3xl font-extrabold block">7+ Major</span>
                         <span className="text-[10px] text-muted-foreground font-extrabold uppercase tracking-wider">US Metro Markets</span>
                     </div>
 
                     <div className="p-4 sm:p-5 rounded-2xl bg-card border border-border/80 text-center shadow-sm hover:shadow-md transition-all">
                         <Radio className="w-6 h-6 text-emerald-500 mx-auto mb-2" />
-                        <span className="text-2xl sm:text-3xl font-black block">99.9 FM</span>
+                        <span className="text-2xl sm:text-3xl font-extrabold block">99.9 FM</span>
                         <span className="text-[10px] text-muted-foreground font-extrabold uppercase tracking-wider">HD3 & HD4 Channels</span>
                     </div>
                 </div>
@@ -133,7 +133,7 @@ export function AdvertiserSection() {
                 {/* Why Advertise With Us - Benefits Grid */}
                 <div className="mb-10">
                     <div className="text-center mb-6">
-                        <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight italic">
+                        <h3 className="text-xl md:text-2xl font-extrabold uppercase tracking-tight italic">
                             Why Brands Choose Radio Nyra
                         </h3>
                         <p className="text-muted-foreground text-[10px] md:text-xs font-semibold uppercase tracking-widest mt-1">
@@ -148,7 +148,7 @@ export function AdvertiserSection() {
                                     <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-3">
                                         <benefit.icon className="w-5 h-5" />
                                     </div>
-                                    <h4 className="font-black text-base text-foreground mb-1 leading-tight">{benefit.title}</h4>
+                                    <h4 className="font-extrabold text-base text-foreground mb-1 leading-tight">{benefit.title}</h4>
                                     <p className="text-xs text-muted-foreground leading-relaxed font-medium">{benefit.desc}</p>
                                 </div>
                             </div>
@@ -158,7 +158,7 @@ export function AdvertiserSection() {
 
                 {/* Ad Packages Grid */}
                 <div className="text-center mb-6">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight italic">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight italic">
                         Premium Plans
                     </h3>
                 </div>
@@ -166,10 +166,10 @@ export function AdvertiserSection() {
                     {AD_PACKAGES.map((pkg, idx) => (
                         <div key={idx} className="relative rounded-xl bg-card border border-border/80 p-6 shadow-lg hover:shadow-2xl transition-all flex flex-col justify-between">
                             <div>
-                                <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-black uppercase tracking-wider inline-block mb-4">
+                                <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-extrabold uppercase tracking-wider inline-block mb-4">
                                     {pkg.tag}
                                 </span>
-                                <h3 className="text-xl font-black text-foreground mb-2">{pkg.title}</h3>
+                                <h3 className="text-xl font-extrabold text-foreground mb-2">{pkg.title}</h3>
                                 <p className="text-2xl font-extrabold text-primary mb-5">{pkg.price}</p>
                                 <ul className="space-y-2.5 mb-6">
                                     {pkg.features.map((feat, fIdx) => (
@@ -185,7 +185,7 @@ export function AdvertiserSection() {
                                     const element = document.getElementById("lead-form-anchor");
                                     element?.scrollIntoView({ behavior: "smooth" });
                                 }}
-                                className="w-full bg-foreground text-background hover:bg-foreground/90 font-black text-xs uppercase tracking-widest h-11 rounded-lg cursor-pointer"
+                                className="w-full bg-foreground text-background hover:bg-foreground/90 font-extrabold text-xs uppercase tracking-widest h-11 rounded-lg cursor-pointer"
                             >
                                 Request Advertising Information
                             </Button>
@@ -196,10 +196,10 @@ export function AdvertiserSection() {
                 {/* Lead Form Container */}
                 <div id="lead-form-anchor" className="max-w-3xl mx-auto bg-gradient-to-b from-card via-card to-muted/30 border border-border/80 rounded-3xl p-8 md:p-12 shadow-2xl">
                     <div className="text-center mb-8">
-                        <span className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-widest text-primary mb-2">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-widest text-primary mb-2">
                             <Sparkles className="w-4 h-4" /> Start Your Campaign
                         </span>
-                        <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight">Request Advertising Information</h3>
+                        <h3 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight">Request Advertising Information</h3>
                         <p className="text-muted-foreground text-xs sm:text-sm font-medium mt-2 max-w-lg mx-auto">
                             Fill out the inquiry form below and our advertising strategy team will prepare a customized media plan for your brand within 24 hours.
                         </p>
@@ -254,7 +254,7 @@ export function AdvertiserSection() {
                             <Button
                                 type="submit"
                                 size="lg"
-                                className="flex-1 bg-red-600 hover:bg-red-700 text-white font-black text-xs uppercase tracking-widest h-14 rounded-2xl cursor-pointer shadow-xl shadow-red-600/30"
+                                className="flex-1 bg-red-600 hover:bg-red-700 text-white font-extrabold text-xs uppercase tracking-widest h-14 rounded-2xl cursor-pointer shadow-xl shadow-red-600/30"
                             >
                                 {submitted ? (
                                     <span className="flex items-center gap-2 text-white">

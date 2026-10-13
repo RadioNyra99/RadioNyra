@@ -26,7 +26,7 @@ export default function ShortsPage() {
                 <div className="flex items-center gap-3 mb-8">
                     <Flame className="w-8 h-8 text-red-500 fill-red-500 animate-bounce" />
                     <div>
-                        <h1 className="text-3xl md:text-5xl font-black uppercase tracking-tight italic">Radio Nyra Shorts</h1>
+                        <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">Radio Nyra Shorts</h1>
                         <p className="text-muted-foreground text-sm font-medium mt-1">Official 60-second video highlights from {OFFICIAL_YOUTUBE_CHANNEL.handle}</p>
                     </div>
                 </div>

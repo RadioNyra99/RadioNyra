@@ -2,6 +2,7 @@
 
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { PageHeader } from "@/components/ui/page-header"
 import { Users, Target, Zap, Award } from "lucide-react"
 
 export default function AboutPage() {
@@ -11,40 +12,28 @@ export default function AboutPage() {
 
             <main>
                 {/* HERO */}
-                <section className="py-12 bg-primary text-primary-foreground text-left relative overflow-hidden">
-                    <div className="absolute inset-0 opacity-10">
-                        <img
-                            src="/OLD Images/P0105_1-01-45-018_0001.jpg"
-                            alt="Heritage background"
-                            className="w-full h-full object-cover grayscale"
-                        />
-                    </div>
-                    <div className="container mx-auto px-4 max-w-5xl relative z-10">
-                        <h1 className="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4 italic leading-tight">
-                            RadioNyra — The Voice That Connects
-                        </h1>
-                        <p className="text-base md:text-lg font-bold uppercase tracking-[0.3em] opacity-90">
-                            Since November 16, 1963
-                        </p>
-                    </div>
-                </section>
+                <PageHeader
+                    eyebrow="About"
+                    title="Radio Nyra — the voice that connects"
+                    description="The Indian Subcontinent Community Media Network. Broadcasting since November 16, 1963."
+                />
 
                 <section className="py-16 md:py-24 bg-background border-b border-border">
                     <div className="container mx-auto px-4 max-w-5xl">
                         <div className="text-center max-w-4xl mx-auto mb-12">
-                            <h2 className="text-xs sm:text-sm font-bold uppercase tracking-[0.4em] text-primary mb-4">About Radio Nyra</h2>
-                            <p className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight leading-tight">
+                            <span className="eyebrow">About Radio Nyra</span>
+                            <h2 className="section-title">
                                 Radio Nyra is America's leading Indian radio network connecting communities
                                 <br className="hidden md:block" /> through music, culture, news, podcasts, entertainment, and live events.
-                            </p>
-                            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+                            </h2>
+                            <p className="lede mx-auto mt-4">
                                 We deliver premium content while helping businesses connect with one of the most engaged multicultural audiences in North America.
                             </p>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                             {["60+ years of broadcast excellence", "Serving Indian communities across America", "Premium entertainment", "Music", "News", "Culture", "Business", "Community", "Podcasts", "Events"].map((item) => (
                                 <div key={item} className="bg-card border border-border p-5 text-center">
-                                    <h3 className="text-xs font-black uppercase tracking-widest text-primary leading-relaxed">{item}</h3>
+                                    <h3 className="text-xs font-extrabold uppercase tracking-widest text-primary leading-relaxed">{item}</h3>
                                 </div>
                             ))}
                         </div>
@@ -57,7 +46,7 @@ export default function AboutPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
                             <div className="text-center md:text-left">
                                 <h2 className="text-xs sm:text-sm font-bold uppercase tracking-[0.4em] text-primary mb-4">Our Heritage</h2>
-                                <h3 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight mb-8 leading-tight">
+                                <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight mb-8 leading-tight">
                                     A Legacy Born <br className="hidden md:block" />in 1963
                                 </h3>
                                 <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
@@ -96,7 +85,7 @@ export default function AboutPage() {
                 <section className="py-16 md:py-24 bg-muted/30 border-y border-border">
                     <div className="container mx-auto px-4 max-w-5xl">
                         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-                            <h2 className="text-2xl sm:text-3xl font-black uppercase mb-6">Radio Nyra: The Modern Identity</h2>
+                            <h2 className="text-2xl sm:text-3xl font-extrabold mb-6 tracking-tight">Radio Nyra: The Modern Identity</h2>
                             <p className="text-lg md:text-xl text-muted-foreground italic">
                                 Today, that original pulse beats through Radio Nyra. We are the modern face of a timeless legacy, a continuation of a journey that started more than half a century ago.
                             </p>
@@ -126,7 +115,7 @@ export default function AboutPage() {
 
                             {/* Pioneering Since 2014 */}
                             <div className="text-center md:text-left">
-                                <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight mb-8">Pioneering Since 2014</h2>
+                                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-8">Pioneering Since 2014</h2>
                                 <div className="max-w-4xl space-y-6 text-lg text-muted-foreground leading-relaxed italic">
                                     <p>
                                         The recent chapter of our story began in 2014 in Durham, North Carolina. WDUR 1490 AM became the vessel for our mission, launching 24/7 Desi News, Talk, and Music.
@@ -142,7 +131,7 @@ export default function AboutPage() {
 
                             {/* Why Radio Nyra */}
                             <div className="pt-12">
-                                <h2 className="text-3xl font-black uppercase tracking-tight mb-12 text-center">Why Radio Nyra?</h2>
+                                <h2 className="text-2xl font-extrabold tracking-tight mb-12 text-center">Why Radio Nyra?</h2>
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                                     <div className="p-6 bg-card border border-border shadow-sm text-center">
                                         <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
@@ -177,7 +166,7 @@ export default function AboutPage() {
 
                             {/* Our Mission */}
                             <div className="text-center md:text-left">
-                                <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight mb-6">Our Mission</h2>
+                                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-6">Our Mission</h2>
                                 <div className="w-16 h-1 bg-primary mb-8 mx-auto md:mx-0" />
                                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed italic">
                                     To empower the Indian Subcontinent community by providing a platform that celebrates our rich culture while fostering connection and growth in the USA.
@@ -194,7 +183,7 @@ export default function AboutPage() {
                                     />
                                 </div>
                                 <div>
-                                    <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight mb-2">Ravi Cherukuri</h2>
+                                    <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-2">Ravi Cherukuri</h2>
                                     <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-6">Founder, Radio Nyra</p>
 
                                     <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
@@ -205,7 +194,7 @@ export default function AboutPage() {
 
                             {/* Team Image Section */}
                             <div className="pt-8 text-center md:text-left">
-                                <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight mb-8">Meet The Team</h2>
+                                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-8">Meet The Team</h2>
                                 <div className="w-full relative rounded-xl overflow-hidden shadow-2xl border-4 border-primary/20">
                                     <img
                                         src="/radio-nyra-team.png"

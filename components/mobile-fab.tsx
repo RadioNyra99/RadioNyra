@@ -7,14 +7,13 @@ import { cn } from "@/lib/utils"
 import { showAudioPlayer } from "@/lib/audio-player-utils"
 
 export function MobileFab() {
-    const { isPlaying, togglePlay } = useAudio()
+    const { isPlaying } = useAudio()
 
     return (
-        <div className="md:hidden fixed bottom-24 right-6 z-[60] flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-10 duration-500">
+        <div className="md:hidden fixed bottom-36 right-4 z-[60] flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-10 duration-500">
             <Button
                 onClick={() => {
-                    showAudioPlayer();
-                    if (!isPlaying) togglePlay();
+                    showAudioPlayer({ toggle: true })
                 }}
                 size="icon"
                 className={cn(

@@ -23,14 +23,14 @@ export default function AnalyticsPage() {
           {/* Hero Header */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12 border-b border-border pb-8">
             <div className="text-left">
-              <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter italic text-primary">
+              <h1 className="text-4xl md:text-6xl font-extrabold uppercase tracking-tighter italic text-primary">
                 Network <span className="text-foreground">Analytics</span>
               </h1>
               <p className="text-muted-foreground font-bold uppercase tracking-widest text-xs mt-2">
                 Live performance dashboard, audience reach, and campaign impact metrics
               </p>
             </div>
-            <div className="flex items-center gap-2 bg-green-500/10 border border-green-500/20 text-green-600 px-4 py-2 text-xs font-black uppercase tracking-widest rounded-full shrink-0">
+            <div className="flex items-center gap-2 bg-green-500/10 border border-green-500/20 text-green-600 px-4 py-2 text-xs font-extrabold uppercase tracking-widest rounded-full shrink-0">
               <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
               Live Tracking Enabled
             </div>
@@ -48,10 +48,10 @@ export default function AnalyticsPage() {
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                   <stat.icon className="w-5 h-5 text-primary" />
                 </div>
-                <div className="text-3xl md:text-4xl font-black text-foreground tracking-tighter mb-1">
+                <div className="text-3xl md:text-4xl font-extrabold text-foreground tracking-tighter mb-1">
                   <CountUp end={stat.end} suffix={stat.suffix} duration={2000} decimals={stat.end === 2.1 ? 1 : 0} />
                 </div>
-                <div className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">
+                <div className="text-[10px] font-extrabold uppercase tracking-widest text-muted-foreground">
                   {stat.label}
                 </div>
               </div>
@@ -89,7 +89,7 @@ export default function AnalyticsPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
               {/* Age Distribution Card */}
               <div className="bg-card border border-border p-8">
-                <h3 className="text-xl font-black uppercase tracking-tight italic mb-6 flex items-center gap-2">
+                <h3 className="text-xl font-extrabold uppercase tracking-tight italic mb-6 flex items-center gap-2">
                   <PieChart className="w-5 h-5 text-primary" /> Listener Age Demographics
                 </h3>
                 <div className="space-y-6">
@@ -114,7 +114,7 @@ export default function AnalyticsPage() {
 
               {/* Geographic Core Card */}
               <div className="bg-card border border-border p-8">
-                <h3 className="text-xl font-black uppercase tracking-tight italic mb-6 flex items-center gap-2">
+                <h3 className="text-xl font-extrabold uppercase tracking-tight italic mb-6 flex items-center gap-2">
                   <MapPin className="w-5 h-5 text-primary" /> Geographic Core Reach
                 </h3>
                 <div className="space-y-4">
@@ -127,10 +127,10 @@ export default function AnalyticsPage() {
                   ].map((item, i) => (
                     <div key={i} className="flex justify-between items-center border-b border-border pb-3 text-xs font-semibold text-muted-foreground">
                       <div className="text-left">
-                        <p className="text-foreground font-black uppercase tracking-tight text-sm italic">{item.city}</p>
+                        <p className="text-foreground font-extrabold uppercase tracking-tight text-sm italic">{item.city}</p>
                         <p className="text-[10px] mt-0.5">{item.role}</p>
                       </div>
-                      <span className="text-primary font-black text-sm">{item.share}</span>
+                      <span className="text-primary font-extrabold text-sm">{item.share}</span>
                     </div>
                   ))}
                 </div>
@@ -142,7 +142,7 @@ export default function AnalyticsPage() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Platform Share Card */}
               <div className="bg-card border border-border p-8 lg:col-span-2">
-                <h3 className="text-xl font-black uppercase tracking-tight italic mb-6 flex items-center gap-2">
+                <h3 className="text-xl font-extrabold uppercase tracking-tight italic mb-6 flex items-center gap-2">
                   <Laptop className="w-5 h-5 text-primary" /> Listener Platform Share
                 </h3>
                 
@@ -162,8 +162,8 @@ export default function AnalyticsPage() {
                     { label: "FM / HD Radio", val: "10%", color: "border-amber-600" }
                   ].map((p, i) => (
                     <div key={i} className={`p-4 bg-muted/30 border-l-4 ${p.color} text-center`}>
-                      <p className="text-lg font-black text-foreground italic">{p.val}</p>
-                      <p className="text-[9px] font-black uppercase tracking-widest text-muted-foreground mt-0.5">{p.label}</p>
+                      <p className="text-lg font-extrabold text-foreground italic">{p.val}</p>
+                      <p className="text-[9px] font-extrabold uppercase tracking-widest text-muted-foreground mt-0.5">{p.label}</p>
                     </div>
                   ))}
                 </div>
@@ -171,16 +171,16 @@ export default function AnalyticsPage() {
 
               {/* Streaming bitrates */}
               <div className="bg-card border border-border p-8">
-                <h3 className="text-xl font-black uppercase tracking-tight italic mb-6 flex items-center gap-2">
+                <h3 className="text-xl font-extrabold uppercase tracking-tight italic mb-6 flex items-center gap-2">
                   <Activity className="w-5 h-5 text-primary" /> Quality Settings
                 </h3>
                 <div className="space-y-4 text-xs font-semibold text-muted-foreground leading-relaxed">
                   <div className="p-4 bg-muted/40 border border-border">
-                    <p className="font-black text-foreground uppercase tracking-wider">192kbps AAC Stereo</p>
+                    <p className="font-extrabold text-foreground uppercase tracking-wider">192kbps AAC Stereo</p>
                     <p className="text-[10px] mt-1">High-fidelity digital stream used by mobile applications & direct web links. CD-quality reproduction.</p>
                   </div>
                   <div className="p-4 bg-muted/40 border border-border">
-                    <p className="font-black text-foreground uppercase tracking-wider">96kbps MP3 Mono</p>
+                    <p className="font-extrabold text-foreground uppercase tracking-wider">96kbps MP3 Mono</p>
                     <p className="text-[10px] mt-1">Standard compression settings for voice assistant devices and smart home integration to support low-bandwidth connections.</p>
                   </div>
                 </div>
@@ -192,7 +192,7 @@ export default function AnalyticsPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
               {/* Popular Shows Grid */}
               <div className="bg-card border border-border p-8">
-                <h3 className="text-xl font-black uppercase tracking-tight italic mb-6 flex items-center gap-2">
+                <h3 className="text-xl font-extrabold uppercase tracking-tight italic mb-6 flex items-center gap-2">
                   <Radio className="w-5 h-5 text-primary" /> Top Performing Shows
                 </h3>
                 <div className="space-y-4">
@@ -204,7 +204,7 @@ export default function AnalyticsPage() {
                   ].map((show, i) => (
                     <div key={i} className="flex items-center justify-between border-b border-border pb-3.5 text-xs font-bold text-muted-foreground">
                       <div className="flex items-center gap-3">
-                        <span className="w-7 h-7 rounded-lg bg-primary/10 text-primary font-black flex items-center justify-center shrink-0">
+                        <span className="w-7 h-7 rounded-lg bg-primary/10 text-primary font-extrabold flex items-center justify-center shrink-0">
                           {show.rank}
                         </span>
                         <div className="text-left">
@@ -212,7 +212,7 @@ export default function AnalyticsPage() {
                           <p className="text-[10px] text-muted-foreground font-semibold uppercase mt-0.5">Host: {show.host}</p>
                         </div>
                       </div>
-                      <span className="text-primary font-black text-sm">{show.share} Share</span>
+                      <span className="text-primary font-extrabold text-sm">{show.share} Share</span>
                     </div>
                   ))}
                 </div>
@@ -220,30 +220,30 @@ export default function AnalyticsPage() {
 
               {/* Podcasts analytics mockup */}
               <div className="bg-card border border-border p-8">
-                <h3 className="text-xl font-black uppercase tracking-tight italic mb-6 flex items-center gap-2">
+                <h3 className="text-xl font-extrabold uppercase tracking-tight italic mb-6 flex items-center gap-2">
                   <Headphones className="w-5 h-5 text-primary" /> Podcast Listenership
                 </h3>
                 <div className="space-y-4 text-xs font-semibold text-muted-foreground leading-relaxed">
                   <div className="flex justify-between items-center p-4 bg-muted/30 border border-border">
                     <div className="text-left">
-                      <p className="font-black text-foreground uppercase">Indian Diaspora Stories</p>
+                      <p className="font-extrabold text-foreground uppercase">Indian Diaspora Stories</p>
                       <p className="text-[10px]">Average play duration: 24 mins</p>
                     </div>
-                    <span className="font-black text-primary text-sm">45k Plays</span>
+                    <span className="font-extrabold text-primary text-sm">45k Plays</span>
                   </div>
                   <div className="flex justify-between items-center p-4 bg-muted/30 border border-border">
                     <div className="text-left">
-                      <p className="font-black text-foreground uppercase">Tech & Immigration Chronicles</p>
+                      <p className="font-extrabold text-foreground uppercase">Tech & Immigration Chronicles</p>
                       <p className="text-[10px]">Average play duration: 18 mins</p>
                     </div>
-                    <span className="font-black text-primary text-sm">32k Plays</span>
+                    <span className="font-extrabold text-primary text-sm">32k Plays</span>
                   </div>
                   <div className="flex justify-between items-center p-4 bg-muted/30 border border-border">
                     <div className="text-left">
-                      <p className="font-black text-foreground uppercase">Bollywood Retro & Trivia</p>
+                      <p className="font-extrabold text-foreground uppercase">Bollywood Retro & Trivia</p>
                       <p className="text-[10px]">Average play duration: 32 mins</p>
                     </div>
-                    <span className="font-black text-primary text-sm">29k Plays</span>
+                    <span className="font-extrabold text-primary text-sm">29k Plays</span>
                   </div>
                 </div>
               </div>
@@ -254,7 +254,7 @@ export default function AnalyticsPage() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Traffic Channels */}
               <div className="bg-card border border-border p-8 lg:col-span-2">
-                <h3 className="text-xl font-black uppercase tracking-tight italic mb-6 flex items-center gap-2">
+                <h3 className="text-xl font-extrabold uppercase tracking-tight italic mb-6 flex items-center gap-2">
                   <Globe className="w-5 h-5 text-primary" /> Traffic Acquisition Channels
                 </h3>
                 <div className="space-y-4">
@@ -267,10 +267,10 @@ export default function AnalyticsPage() {
                     <div key={i} className="space-y-1">
                       <div className="flex justify-between text-xs font-bold uppercase tracking-wider text-muted-foreground">
                         <div className="text-left">
-                          <span className="text-foreground font-black text-sm uppercase tracking-tight italic">{item.channel}</span>
+                          <span className="text-foreground font-extrabold text-sm uppercase tracking-tight italic">{item.channel}</span>
                           <span className="text-[10px] block font-semibold text-muted-foreground/80 mt-0.5">{item.details}</span>
                         </div>
-                        <span className="text-primary font-black text-sm">{item.pct}%</span>
+                        <span className="text-primary font-extrabold text-sm">{item.pct}%</span>
                       </div>
                       <div className="w-full bg-muted h-2.5 rounded-full overflow-hidden">
                         <div className="bg-primary h-full rounded-full" style={{ width: `${item.pct}%` }}></div>
@@ -282,20 +282,20 @@ export default function AnalyticsPage() {
 
               {/* Backlink Growth and DA */}
               <div className="bg-card border border-border p-8">
-                <h3 className="text-xl font-black uppercase tracking-tight italic mb-6 flex items-center gap-2">
+                <h3 className="text-xl font-extrabold uppercase tracking-tight italic mb-6 flex items-center gap-2">
                   <Compass className="w-5 h-5 text-primary" /> Backlink & Authority
                 </h3>
                 <div className="space-y-6 text-center">
                   <div className="p-6 bg-muted/30 border border-border flex flex-col items-center">
-                    <span className="text-5xl font-black text-primary italic">38</span>
-                    <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mt-2">Domain Authority (DA)</span>
+                    <span className="text-5xl font-extrabold text-primary italic">38</span>
+                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-muted-foreground mt-2">Domain Authority (DA)</span>
                   </div>
                   <div className="flex justify-between items-center text-xs font-bold uppercase tracking-wider text-muted-foreground">
                     <div className="text-left">
                       <p className="text-foreground">Total Backlinks</p>
                       <p className="text-[9px]">Referring domains: 420+</p>
                     </div>
-                    <span className="font-black text-foreground">8.2k</span>
+                    <span className="font-extrabold text-foreground">8.2k</span>
                   </div>
                 </div>
               </div>

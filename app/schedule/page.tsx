@@ -4,8 +4,9 @@ import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Clock, User, Calendar } from "lucide-react"
+import { PageHeader } from "@/components/ui/page-header"
+import { Section } from "@/components/section"
+import { Clock, User } from "lucide-react"
 import { useState } from "react"
 
 interface ScheduleEntry {
@@ -162,20 +163,14 @@ export default function SchedulePage() {
             <Navigation />
 
             <main>
-                {/* Header Section */}
-                <section className="py-12 bg-primary/5 border-b border-primary/10 text-center">
-                    <div className="container mx-auto px-4">
-                        <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-6 text-primary italic">
-                            The Schedule
-                        </h1>
-                        <p className="text-xl md:text-2xl text-muted-foreground uppercase tracking-widest max-w-2xl mx-auto font-bold opacity-80">
-                            Your Daily Dose of Rhythms & Stories
-                        </p>
-                    </div>
-                </section>
+                <PageHeader
+                    eyebrow="Listen"
+                    title="Broadcast schedule"
+                    description="Seven days of Hindi and Telugu programming on 99.9 FM HD4 and HD3. All times Eastern."
+                />
 
-                <section className="py-12 md:py-16 bg-background">
-                    <div className="container mx-auto px-4">
+                <Section>
+                    <div className="mx-auto max-w-4xl">
 
                         {/* Unified Vertical List Layout */}
                         <div className="max-w-4xl mx-auto space-y-12">
@@ -185,9 +180,10 @@ export default function SchedulePage() {
                                         <button
                                             key={day}
                                             onClick={() => setSelectedDay(day)}
-                                            className={`px-8 py-3 rounded-full whitespace-nowrap text-sm font-black uppercase tracking-tighter transition-all ${selectedDay === day
-                                                ? "bg-primary text-white shadow-lg"
-                                                : "bg-muted/50 text-muted-foreground hover:bg-muted"
+                                            aria-pressed={selectedDay === day}
+                                            className={`px-6 py-2.5 rounded-full whitespace-nowrap text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer ${selectedDay === day
+                                                ? "bg-primary text-primary-foreground shadow-sm"
+                                                : "bg-muted/60 text-muted-foreground hover:text-foreground"
                                                 }`}
                                         >
                                             {day}
@@ -238,22 +234,22 @@ export default function SchedulePage() {
                                                         <Clock className="w-12 h-12 text-muted-foreground/20" />
                                                     </div>
                                                 )}
-                                                <div className="p-8 flex-1 flex flex-col justify-center">
-                                                    <div className="flex items-center gap-2 text-primary mb-4">
+                                                <div className="p-6 md:p-8 flex-1 flex flex-col justify-center">
+                                                    <div className="flex items-center gap-2 text-primary mb-3">
                                                         <Clock className="w-4 h-4" />
-                                                        <span className="text-sm font-black uppercase tracking-widest">{item.time}</span>
+                                                        <span className="text-xs font-bold uppercase tracking-widest">{item.time}</span>
                                                     </div>
-                                                    <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tighter leading-tight mb-3 italic">
+                                                    <h3 className="text-xl md:text-2xl font-extrabold tracking-tight leading-snug mb-2">
                                                         {show.name}
                                                     </h3>
                                                     {show.host && (
-                                                        <div className="flex items-center gap-2 text-muted-foreground mb-6">
+                                                        <div className="flex items-center gap-2 text-muted-foreground mb-4">
                                                             <User className="w-4 h-4" />
-                                                            <span className="text-xs font-bold uppercase tracking-widest">{show.host}</span>
+                                                            <span className="text-xs font-semibold uppercase tracking-widest">{show.host}</span>
                                                         </div>
                                                     )}
                                                     <div>
-                                                        <div className={`px-4 py-1.5 text-[10px] font-black uppercase tracking-widest inline-block ${show.color}`}>
+                                                        <div className={`px-3 py-1 text-[10px] font-bold uppercase tracking-widest inline-block rounded ${show.color}`}>
                                                             Live on Air
                                                         </div>
                                                     </div>
@@ -265,19 +261,19 @@ export default function SchedulePage() {
                             </div>
                         </div>
                     </div>
-                </section>
+                </Section>
 
-                <section className="py-16 bg-muted/20 border-t border-border">
-                    <div className="container mx-auto px-4 text-center max-w-2xl">
-                        <h2 className="text-4xl font-black uppercase tracking-tighter mb-4 italic">Tune In Anywhere</h2>
-                        <p className="text-muted-foreground font-bold uppercase tracking-widest text-xs mb-10 leading-loose">
-                            Radio Nyra is available 24/7. Don't miss out on our special weekend programs and exclusive community segments.
+                <Section variant="alt">
+                    <div className="mx-auto max-w-2xl text-center">
+                        <h2 className="section-title">Tune in anywhere</h2>
+                        <p className="lede mx-auto mt-2">
+                            Radio Nyra broadcasts 24/7, with special weekend programmes and community segments.
                         </p>
-                        <Button className="h-16 px-12 text-lg font-black uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none shadow-xl transition-all" asChild>
-                            <Link href="/">Listen Live Now</Link>
+                        <Button className="mt-6 rounded-full px-8" asChild>
+                            <Link href="/">Listen live now</Link>
                         </Button>
                     </div>
-                </section>
+                </Section>
             </main>
 
             <Footer />

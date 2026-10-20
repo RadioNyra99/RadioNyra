@@ -23,7 +23,7 @@ export function PartnersMarquee({ partnersCount, partnersData }: PartnersMarquee
     const scroll = (direction: 'left' | 'right') => {
         if (scrollContainerRef.current) {
             const { current } = scrollContainerRef;
-            const scrollAmount = 200;
+            const scrollAmount = 360;
             current.scrollBy({
                 left: direction === 'left' ? -scrollAmount : scrollAmount,
                 behavior: 'smooth'
@@ -35,13 +35,13 @@ export function PartnersMarquee({ partnersCount, partnersData }: PartnersMarquee
         const content = (
             <div 
                 title={partner.name}
-                className="flex-shrink-0 w-32 h-20 mx-4 border border-border/30 bg-white/70 backdrop-blur-sm p-2.5 flex items-center justify-center hover:border-primary/50 hover:shadow-md rounded-xl overflow-hidden transition-all duration-300 snap-center"
+                className="flex-shrink-0 w-60 h-36 sm:w-80 sm:h-44 md:w-96 md:h-52 mx-3 sm:mx-5 border-2 border-border/40 bg-white p-5 sm:p-8 flex items-center justify-center hover:border-primary hover:shadow-2xl rounded-2xl overflow-hidden transition-all duration-300 snap-center group/card"
             >
                 <img
                     src={partner.image}
                     alt={partner.name}
                     loading="lazy"
-                    className="max-w-full max-h-full object-contain rounded-lg transition-all duration-500"
+                    className="w-full h-full object-contain transition-all duration-300 group-hover/card:scale-110 drop-shadow-sm"
                 />
             </div>
         );
@@ -58,24 +58,24 @@ export function PartnersMarquee({ partnersCount, partnersData }: PartnersMarquee
     };
 
     return (
-        <div className="relative py-4 w-full group">
+        <div className="relative py-6 w-full group">
             {/* Navigation Buttons */}
-            <div className="absolute top-1/2 -left-4 -translate-y-1/2 z-20 hidden md:block">
+            <div className="absolute top-1/2 -left-3 sm:-left-5 -translate-y-1/2 z-20 hidden md:block">
                 <button
                     onClick={() => scroll('left')}
-                    className="p-2 bg-primary text-white rounded-full shadow-md hover:scale-110 transition-transform"
+                    className="p-3 bg-primary text-white rounded-full shadow-xl hover:scale-110 transition-transform cursor-pointer"
                     aria-label="Scroll Left"
                 >
-                    <ArrowLeft size={20} />
+                    <ArrowLeft size={24} />
                 </button>
             </div>
-            <div className="absolute top-1/2 -right-4 -translate-y-1/2 z-20 hidden md:block">
+            <div className="absolute top-1/2 -right-3 sm:-right-5 -translate-y-1/2 z-20 hidden md:block">
                 <button
                     onClick={() => scroll('right')}
-                    className="p-2 bg-primary text-white rounded-full shadow-md hover:scale-110 transition-transform"
+                    className="p-3 bg-primary text-white rounded-full shadow-xl hover:scale-110 transition-transform cursor-pointer"
                     aria-label="Scroll Right"
                 >
-                    <ArrowRight size={20} />
+                    <ArrowRight size={24} />
                 </button>
             </div>
 

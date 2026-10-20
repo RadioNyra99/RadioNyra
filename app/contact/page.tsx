@@ -133,15 +133,13 @@ export default function ContactPage() {
         <section className="py-16 bg-background border-t border-border/50">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <Card className="border border-border bg-card rounded-sm shadow-sm">
-                <CardContent className="p-8">
-                  <h2 className="text-2xl font-extrabold tracking-tight mb-6">Business hours</h2>
-                  <p className="text-muted-foreground font-semibold uppercase tracking-widest text-xs mb-8">Monday - Friday, 9:00 AM - 6:00 PM ET</p>
+              <Card className="border border-border bg-card rounded-sm shadow-sm flex items-center justify-center">
+                <CardContent className="p-6 sm:p-8 w-full flex flex-col justify-center">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <Button className="rounded-none font-extrabold uppercase tracking-widest bg-primary hover:bg-primary/90 text-white" asChild>
+                    <Button className="rounded-none font-extrabold uppercase tracking-widest bg-primary hover:bg-primary/90 text-white h-12 text-xs sm:text-sm" asChild>
                       <a href="mailto:info@radionyra.com?subject=Business Inquiry">Business Inquiry</a>
                     </Button>
-                    <Button className="rounded-none font-extrabold uppercase tracking-widest bg-foreground text-background hover:bg-primary hover:text-white" asChild>
+                    <Button className="rounded-none font-extrabold uppercase tracking-widest bg-foreground text-background hover:bg-primary hover:text-white h-12 text-xs sm:text-sm" asChild>
                       <a href="mailto:vp@radionyra.com?subject=Advertising Inquiry">Advertising Inquiry</a>
                     </Button>
                   </div>
@@ -167,27 +165,6 @@ export default function ContactPage() {
               <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">Our services overview</h2>
               <div className="w-16 h-1 bg-primary mx-auto mt-6" />
             </div>
-
-            <Card className="max-w-2xl mx-auto mb-16 border-2 border-primary bg-primary/5 shadow-xl">
-              <CardContent className="p-8 text-center">
-                <h3 className="text-xs font-extrabold uppercase tracking-widest text-primary mb-2">Premium Plan</h3>
-                <h4 className="text-2xl font-extrabold uppercase mb-1">Advertising Consultation</h4>
-                <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-6">Radio Nyra Business Team</p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
-                  <a href="mailto:vp@radionyra.com" className="flex items-center gap-2 hover:text-primary transition-colors">
-                    <Mail className="w-5 h-5 text-primary" />
-                    <span className="font-bold text-lg">vp@radionyra.com</span>
-                  </a>
-                  <a href="tel:9192944800" className="flex items-center gap-2 hover:text-primary transition-colors">
-                    <Phone className="w-5 h-5 text-primary" />
-                    <span className="font-bold text-lg">(919) 294 - 4800</span>
-                  </a>
-                </div>
-                <Button className="font-extrabold uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none px-8 py-6" asChild>
-                  <a href="mailto:vp@radionyra.com?subject=Advertising Inquiry">Schedule Advertising Consultation</a>
-                </Button>
-              </CardContent>
-            </Card>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {services.map((service, idx) => (

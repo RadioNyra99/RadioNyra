@@ -31,8 +31,8 @@ export function TuneInPlatforms() {
 
   return (
     <>
-      <section className="bg-white dark:bg-zinc-900 border-b border-gray-200 dark:border-zinc-800 py-3 px-4 overflow-x-auto">
-        <div className="flex items-center justify-center gap-2 min-w-max mx-auto">
+      <section className="bg-white dark:bg-zinc-900 border-b border-gray-200 dark:border-zinc-800 py-3.5 px-4 overflow-x-auto scroll-smooth no-scrollbar" style={{ WebkitOverflowScrolling: "touch", scrollbarWidth: "none" }}>
+        <div className="flex items-center justify-start md:justify-center gap-2.5 min-w-max mx-auto px-1">
           {/* App Store */}
           <Link
             href="https://apps.apple.com/us/app/radio-nyra-raleigh-durham/id6469009980"

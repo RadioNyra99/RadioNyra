@@ -77,9 +77,10 @@ function formatDuration(duration: string): string {
   return duration
 }
 
-// All full-length YouTube videos as podcasts
-const PODCAST_EPISODES = REAL_RADIO_NYRA_VIDEOS
+// Initial fallback episodes sorted newest first
+const INITIAL_PODCAST_EPISODES = [...REAL_RADIO_NYRA_VIDEOS]
   .filter((v) => !v.isShort)
+  .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
   .map((v) => ({
     id: v.id,
     title: v.title,
@@ -95,7 +96,48 @@ const PODCAST_EPISODES = REAL_RADIO_NYRA_VIDEOS
   }))
 
 export function FeaturedPodcastsSection() {
-  const [activeVideo, setActiveVideo] = useState<(typeof PODCAST_EPISODES)[0] | null>(null)
+  const [episodes, setEpisodes] = useState(INITIAL_PODCAST_EPISODES.slice(0, 4))
+  const [activeVideo, setActiveVideo] = useState<(typeof INITIAL_PODCAST_EPISODES)[0] | null>(null)
+
+  React.useEffect(() => {
+    let isMounted = true
+
+    async function loadLatestVideos() {
+      try {
+        const res = await fetch("/api/youtube/latest")
+        if (!res.ok) return
+        const data = await res.json()
+        if (Array.isArray(data.videos) && data.videos.length > 0 && isMounted) {
+          const formatted = data.videos
+            .filter((v: YouTubeVideoItem) => !v.isShort)
+            .sort((a: YouTubeVideoItem, b: YouTubeVideoItem) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+            .map((v: YouTubeVideoItem) => ({
+              id: v.id,
+              title: v.title,
+              host: deriveHost(v),
+              show: deriveShow(v),
+              topic: deriveTopic(v),
+              duration: formatDuration(v.duration || ""),
+              rawDuration: v.duration || "",
+              url: v.youtubeUrl || `https://www.youtube.com/watch?v=${v.id}`,
+              embedUrl: v.embedUrl || `https://www.youtube.com/embed/${v.id}`,
+              thumbnail: v.thumbnailHigh || v.thumbnail || `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`,
+              views: v.viewCount || "",
+            }))
+          if (formatted.length > 0) {
+            setEpisodes(formatted.slice(0, 4))
+          }
+        }
+      } catch (err) {
+        // Keep initial fallback if fetch fails
+      }
+    }
+
+    loadLatestVideos()
+    return () => {
+      isMounted = false
+    }
+  }, [])
 
   return (
     <>
@@ -106,18 +148,15 @@ export function FeaturedPodcastsSection() {
               <div className="flex items-center gap-2 mb-2">
                 <Mic className="w-4 h-4 text-amber-500" />
                 <span className="text-[10px] font-black uppercase tracking-[0.25em] text-amber-400">
-                  On-Demand Audio &amp; Video
+                  Latest on YouTube
                 </span>
                 <span className="bg-red-600/30 text-red-400 border border-red-500/40 text-[9px] font-black uppercase px-2 py-0.5 rounded-full">
-                  All Full Episodes
+                  4 Recent Videos
                 </span>
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-white italic">
-                Latest RadioNyra Podcasts
+                Latest RadioNyra Videos
               </h2>
-              <p className="text-zinc-400 text-xs sm:text-sm font-medium mt-1">
-                Full-length in-depth conversations with community leaders, legal experts, founders, and cultural icons
-              </p>
             </div>
 
             <Button
@@ -125,15 +164,15 @@ export function FeaturedPodcastsSection() {
               asChild
               className="text-xs font-bold text-zinc-300 hover:text-white hover:bg-zinc-800 self-start sm:self-auto"
             >
-              <Link href="/podcasts" className="flex items-center gap-1.5">
-                <span>View All Podcasts</span>
+              <a href="https://www.youtube.com/@RadioNyraUSA" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5">
+                <span>View All on YouTube</span>
                 <ChevronRight className="w-3.5 h-3.5" />
-              </Link>
+              </a>
             </Button>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {PODCAST_EPISODES.map((episode) => (
+            {episodes.map((episode) => (
               <div
                 key={episode.id}
                 className="group rounded-2xl bg-zinc-950 border border-zinc-800/90 overflow-hidden flex flex-col justify-between hover:border-amber-500/60 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/5"

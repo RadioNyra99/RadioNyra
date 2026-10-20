@@ -65,11 +65,11 @@ export function ListenerRewardsSection() {
           <div>
             <div className="flex items-center gap-2 mb-2">
               <Trophy className="w-4 h-4 text-amber-400" />
-              <span className="text-[10px] font-extrabold uppercase tracking-[0.25em] text-amber-400">
+              <span className="text-[10px] font-black uppercase tracking-[0.25em] text-amber-400">
                 RadioNyra Perks
               </span>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase tracking-tight text-white italic">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-white italic">
               Win & Giveaways
             </h2>
             <p className="text-zinc-400 text-xs sm:text-sm font-medium mt-1">
@@ -100,7 +100,7 @@ export function ListenerRewardsSection() {
                   <div className="flex items-center justify-between gap-2 mb-3">
                     <Badge
                       className={cn(
-                        "text-[9px] font-extrabold uppercase tracking-wider px-2 py-0.5 border-none",
+                        "text-[9px] font-black uppercase tracking-wider px-2 py-0.5 border-none",
                         contest.status === "Ending Soon"
                           ? "bg-red-600 text-white"
                           : "bg-zinc-800 text-zinc-300"
@@ -113,11 +113,11 @@ export function ListenerRewardsSection() {
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-extrabold text-white leading-snug mb-2">
+                  <h3 className="text-lg font-black text-white leading-snug mb-2">
                     {contest.title}
                   </h3>
                   <div className="p-3 rounded-xl bg-black/40 border border-zinc-800/80 mb-4">
-                    <p className="text-xs font-extrabold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
+                    <p className="text-xs font-black uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
                       <Gift className="w-3.5 h-3.5 shrink-0" />
                       Grand Prize:
                     </p>

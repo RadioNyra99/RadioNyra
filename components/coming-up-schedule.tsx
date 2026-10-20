@@ -1,158 +1,209 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import Link from "next/link"
-import { ChevronRight } from "lucide-react"
-import { Section, SectionHeading } from "@/components/section"
+import { Clock, Calendar, Bell, ChevronRight, User, Check, Music } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
-import {
-  getLiveHindiShow,
-  getLiveTeluguShow,
-  getUpcomingShows,
-  type LiveShowInfo,
-} from "@/lib/live-schedule-service"
 
-interface ChannelSchedule {
-  key: "hindi" | "telugu"
-  label: string
+interface UpcomingShow {
+  id: string
+  time: string
+  title: string
+  host: string
+  language: "Hindi" | "Telugu"
+  category: string
   frequency: string
-  accent: string
-  now: LiveShowInfo
-  upcoming: { show: LiveShowInfo; startsAt: Date }[]
 }
 
-/** Start time taken from the schedule entry itself (e.g. "10:00 AM – 1:00 PM EST"). */
-const startFromRange = (range: string) => range.split(/[–—-]/)[0].trim()
+const UPCOMING_SHOWS: UpcomingShow[] = [
+  {
+    id: "show-zara",
+    time: "7:00 AM - 10:00 AM",
+    title: "Zara Muskurao",
+    host: "Aayushii Rode",
+    language: "Hindi",
+    category: "Morning Prime & Bollywood Hits",
+    frequency: "99.9 FM-HD4",
+  },
+  {
+    id: "show-chinna-mata",
+    time: "7:00 AM - 10:00 AM",
+    title: "Chinna Mata",
+    host: "Priya",
+    language: "Telugu",
+    category: "Tollywood Melodies & Morning Talk",
+    frequency: "99.9 FM-HD3",
+  },
+  {
+    id: "show-rtv-news",
+    time: "10:00 AM - 12:00 PM",
+    title: "RTV Telugu Daily News",
+    host: "RTV News Team",
+    language: "Telugu",
+    category: "Daily News & Community Express",
+    frequency: "99.9 FM-HD3",
+  },
+  {
+    id: "show-1",
+    time: "10:00 AM - 1:00 PM",
+    title: "Triangle Tunes and Talks",
+    host: "Monika Joshi",
+    language: "Hindi",
+    category: "Community & Interviews",
+    frequency: "99.9 FM-HD4",
+  },
+  {
+    id: "show-2",
+    time: "1:00 PM - 3:00 PM",
+    title: "Bollywood Bliss",
+    host: "Bharti Rathore",
+    language: "Hindi",
+    category: "Retro & Contemporary Hits",
+    frequency: "99.9 FM-HD4",
+  },
+  {
+    id: "show-idhar-udhar",
+    time: "3:00 PM - 5:00 PM",
+    title: "Idhar Udhar Ki Baatein",
+    host: "Arpit Tandon",
+    language: "Hindi",
+    category: "Humor, Trends & Listener Calls",
+    frequency: "99.9 FM-HD4",
+  },
+  {
+    id: "show-4",
+    time: "5:00 PM - 7:00 PM",
+    title: "Dil Se Desi With Van",
+    host: "Van Bhandari",
+    language: "Hindi",
+    category: "Evening Drive & Music",
+    frequency: "99.9 FM-HD4",
+  },
+  {
+    id: "show-6",
+    time: "7:00 PM - 10:00 PM",
+    title: "Nirvana Nights",
+    host: "Parag",
+    language: "Hindi",
+    category: "Late Night Chill & Classics",
+    frequency: "99.9 FM-HD4",
+  },
+]
 
-/**
- * "On Air Now & Coming Up" — a compact visual schedule. Both the live show and
- * the upcoming list are derived from the shared schedule service at render
- * time, so this section never carries a stale hardcoded timetable.
- */
 export function ComingUpSchedule() {
-  const [schedules, setSchedules] = useState<ChannelSchedule[]>(() => buildSchedules())
+  const [reminders, setReminders] = useState<Record<string, boolean>>({})
 
-  useEffect(() => {
-    const update = () => setSchedules(buildSchedules())
-    update()
-    const timer = setInterval(update, 60_000)
-    return () => clearInterval(timer)
-  }, [])
+  const toggleReminder = (id: string, title: string) => {
+    setReminders((prev) => {
+      const next = { ...prev, [id]: !prev[id] }
+      return next
+    })
+  }
 
   return (
-    <Section id="schedule">
-      <SectionHeading
-        eyebrow="Schedule"
-        title="On air now & coming up"
-        description="All times Eastern (EST). Live 24/7 on 99.9 FM HD4 and HD3."
-        href="/schedule"
-        linkLabel="Full schedule"
-      />
-
-      <div className="grid gap-5 md:grid-cols-2">
-        {schedules.map((channel) => (
-          <div
-            key={channel.key}
-            className="overflow-hidden rounded-2xl border border-border bg-card"
-          >
-            <div className="flex items-center justify-between gap-3 border-b border-border bg-muted/50 px-4 py-3">
-              <div className="flex items-center gap-2">
-                <span
-                  className={cn(
-                    "flex h-2 w-2 rounded-full",
-                    channel.key === "hindi" ? "bg-primary" : "bg-gold",
-                  )}
-                />
-                <span className="text-xs font-extrabold uppercase tracking-[0.14em] text-foreground">
-                  {channel.label}
-                </span>
-              </div>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                {channel.frequency}
-              </span>
+    <section className="bg-zinc-950 py-8 border-b border-zinc-800/80">
+      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
+          <div className="flex items-center gap-2.5">
+            <div className="p-2 rounded-lg bg-red-500/10 text-red-500 border border-red-500/20">
+              <Clock className="w-4 h-4" />
             </div>
-
-            {/* On air now */}
-            <div className="flex items-center gap-3 px-4 py-4">
-              <div className="h-14 w-14 shrink-0 overflow-hidden rounded-lg border border-border bg-muted">
-                <img
-                  src={channel.now.image}
-                  alt=""
-                  loading="lazy"
-                  width={56}
-                  height={56}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="min-w-0">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-[0.16em] text-primary">
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" /> On air
-                </span>
-                <h3 className="mt-1 truncate text-sm font-bold text-foreground">
-                  {channel.now.title}
-                </h3>
-                <p className="truncate text-xs text-muted-foreground">
-                  {channel.now.host || "Radio Nyra"} · {channel.now.timeRange}
-                </p>
-              </div>
-            </div>
-
-            {/* Coming up */}
-            <ul className="divide-y divide-border border-t border-border">
-              {channel.upcoming.map((entry) => (
-                <li
-                  key={`${channel.key}-${entry.show.id}`}
-                  className="flex items-center gap-3 px-4 py-3 transition-colors hover:bg-muted/40"
-                >
-                  <span className="w-20 shrink-0 text-xs font-semibold tabular-nums text-primary">
-                    {startFromRange(entry.show.timeRange)}
-                  </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="block truncate text-sm font-semibold text-foreground">
-                      {entry.show.title}
-                    </span>
-                    <span className="block truncate text-xs text-muted-foreground">
-                      {entry.show.host || "Radio Nyra"}
-                    </span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="border-t border-border px-4 py-3">
-              <Link
-                href="/schedule"
-                className="group inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-primary"
-              >
-                See the whole day
-                <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
-              </Link>
+            <div>
+              <h2 className="text-lg sm:text-xl font-black uppercase tracking-tight text-white flex items-center gap-2">
+                Coming Up On Air
+              </h2>
+              <p className="text-xs text-zinc-400 font-medium">
+                Today's scheduled programming across Hindi & Telugu broadcasts
+              </p>
             </div>
           </div>
-        ))}
-      </div>
-    </Section>
-  )
-}
 
-function buildSchedules(): ChannelSchedule[] {
-  const now = new Date()
-  return [
-    {
-      key: "hindi",
-      label: "Radio Nyra Hindi",
-      frequency: "99.9 FM HD4",
-      accent: "bg-primary",
-      now: getLiveHindiShow(now),
-      upcoming: getUpcomingShows("hindi", now, 3),
-    },
-    {
-      key: "telugu",
-      label: "Radio Nyra Telugu",
-      frequency: "99.9 FM HD3",
-      accent: "bg-gold",
-      now: getLiveTeluguShow(now),
-      upcoming: getUpcomingShows("telugu", now, 3),
-    },
-  ]
+          <Button
+            variant="ghost"
+            asChild
+            className="text-xs font-bold text-zinc-300 hover:text-white hover:bg-zinc-900 self-start sm:self-auto -ml-3 sm:ml-0"
+          >
+            <Link href="/schedule" className="flex items-center gap-1.5">
+              <span>View Full Weekly Schedule</span>
+              <ChevronRight className="w-3.5 h-3.5" />
+            </Link>
+          </Button>
+        </div>
+
+        {/* Horizontal Scrollable Program Cards */}
+        <div className="flex gap-3.5 overflow-x-auto pb-3 pt-1 scrollbar-thin scrollbar-thumb-zinc-800 scrollbar-track-transparent">
+          {UPCOMING_SHOWS.map((show) => {
+            const isReminderSet = !!reminders[show.id]
+            const isTelugu = show.language === "Telugu"
+
+            return (
+              <div
+                key={show.id}
+                className="min-w-[260px] sm:min-w-[280px] max-w-[280px] rounded-xl bg-zinc-900/60 border border-zinc-800/90 p-4 flex flex-col justify-between hover:border-zinc-700 transition-all hover:bg-zinc-900/90 group shrink-0"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-2.5">
+                    <span className="text-[11px] font-bold text-zinc-400 flex items-center gap-1">
+                      <Clock className="w-3 h-3 text-zinc-500" />
+                      {show.time}
+                    </span>
+                    <Badge
+                      className={cn(
+                        "text-[9px] font-black uppercase tracking-wider px-2 py-0.5 border-none",
+                        isTelugu
+                          ? "bg-amber-500/20 text-amber-400"
+                          : "bg-red-500/20 text-red-400"
+                      )}
+                    >
+                      {show.language}
+                    </Badge>
+                  </div>
+
+                  <h3 className="text-sm font-black text-white group-hover:text-red-400 transition-colors line-clamp-1">
+                    {show.title}
+                  </h3>
+                  <p className="text-xs text-zinc-400 flex items-center gap-1.5 mt-1 font-medium">
+                    <User className="w-3 h-3 text-zinc-500" />
+                    {show.host}
+                  </p>
+                  <p className="text-[11px] text-zinc-500 mt-2 line-clamp-1 italic">
+                    {show.category}
+                  </p>
+                </div>
+
+                <div className="mt-4 pt-3 border-t border-zinc-800/80 flex items-center justify-between">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-500">
+                    {show.frequency}
+                  </span>
+                  <button
+                    onClick={() => toggleReminder(show.id, show.title)}
+                    className={cn(
+                      "text-[11px] font-bold px-2.5 py-1 rounded-md transition-all flex items-center gap-1 cursor-pointer",
+                      isReminderSet
+                        ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                        : "text-zinc-400 hover:text-white hover:bg-zinc-800"
+                    )}
+                  >
+                    {isReminderSet ? (
+                      <>
+                        <Check className="w-3 h-3 text-green-400" />
+                        Reminder Set
+                      </>
+                    ) : (
+                      <>
+                        <Bell className="w-3 h-3 text-zinc-400" />
+                        Remind Me
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
 }

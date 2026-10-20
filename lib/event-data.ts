@@ -1,12 +1,10 @@
 export type UpcomingEvent = {
-  id?: string | number
   title: string
   date: string
   time: string
   location: string
   venue: string
   type: string
-  category?: string
   image: string
   imageAspect: "portrait" | "landscape"
   link: string

@@ -102,11 +102,11 @@ export function TrendingMusicSection() {
           <div>
             <div className="flex items-center gap-2 mb-2">
               <Flame className="w-4 h-4 text-red-500" />
-              <span className="text-[10px] font-extrabold uppercase tracking-[0.25em] text-red-400">
+              <span className="text-[10px] font-black uppercase tracking-[0.25em] text-red-400">
                 Music Discovery
               </span>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase tracking-tight text-white italic">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-white italic">
               Trending Sounds & Playlists
             </h2>
             <p className="text-zinc-400 text-xs sm:text-sm font-medium mt-1">
@@ -166,7 +166,7 @@ export function TrendingMusicSection() {
                       {pl.tag}
                     </span>
                   </div>
-                  <h3 className="text-base font-extrabold text-white group-hover:text-red-400 transition-colors line-clamp-1">
+                  <h3 className="text-base font-black text-white group-hover:text-red-400 transition-colors line-clamp-1">
                     {pl.title}
                   </h3>
                   <p className="text-xs text-zinc-400 mt-1 line-clamp-2 leading-relaxed">

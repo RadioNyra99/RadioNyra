@@ -40,11 +40,18 @@ export default function ContactPage() {
 
       <main>
         {/* HEADER */}
-        <PageHeader
-          eyebrow="Contact"
-          title="Contact Radio Nyra"
-          description="Partner with us, reach the community, or just say hello. We respond Monday to Friday, 9am–6pm ET."
-        />
+        <section className="relative py-14 sm:py-20 overflow-hidden bg-gray-50 dark:bg-zinc-950 border-b border-gray-100 dark:border-zinc-800">
+            <div className="container mx-auto px-4 relative z-10 text-center">
+                <div className="max-w-4xl mx-auto">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight text-foreground">
+                        Contact <span className="text-primary">Radio Nyra</span>
+                    </h1>
+                    <p className="text-xs sm:text-sm md:text-base text-muted-foreground uppercase tracking-[0.25em] font-bold italic">
+                        Partner With Us • Reach The Community • 24/7 Support
+                    </p>
+                </div>
+            </div>
+        </section>
 
         {/* SECTION 1: CONTACT FORM (Moved to top as requested) */}
         <section className="py-16 bg-muted/30">

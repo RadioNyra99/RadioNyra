@@ -75,14 +75,17 @@ export default function EventsPage() {
             <Navigation />
 
             <main className="pb-20">
-                {/* Header with Background */}
-                <section className="relative py-8 bg-black overflow-hidden flex items-center justify-center">
-                    <div className="relative z-10 container mx-auto px-4 text-center">
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight drop-shadow-2xl">
-                            Events That Bring Communities Together
+                {/* Clean Header */}
+                <section className="py-10 sm:py-14 bg-zinc-950 border-b border-zinc-800 text-center">
+                    <div className="container mx-auto px-4 max-w-2xl">
+                        <span className="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">
+                            Community Calendar
+                        </span>
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white italic">
+                            Events
                         </h1>
-                        <p className="mt-6 text-primary font-bold uppercase tracking-[0.4em] text-sm md:text-base drop-shadow-md">
-                            Upcoming events, past events, corporate events, community events, festival celebrations, and business networking
+                        <p className="mt-2 text-zinc-400 text-xs sm:text-sm font-medium">
+                            Upcoming festivals, cultural celebrations, and community gatherings.
                         </p>
                     </div>
                 </section>

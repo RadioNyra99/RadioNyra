@@ -155,7 +155,7 @@ export function FeaturedPodcastsSection() {
                 </span>
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-white italic">
-                Latest RadioNyra Videos
+                RADIONYRA PODCAST VIDEOS
               </h2>
             </div>
 

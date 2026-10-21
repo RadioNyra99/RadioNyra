@@ -35,8 +35,8 @@ export function MobileBottomNav() {
       id: "news",
       label: "News",
       icon: Newspaper,
-      href: "/rtv-news",
-      isActive: pathname?.startsWith("/rtv-news") || pathname?.startsWith("/news"),
+      href: "/news",
+      isActive: pathname?.startsWith("/news"),
     },
     {
       id: "events",

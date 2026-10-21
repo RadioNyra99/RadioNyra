@@ -50,7 +50,24 @@ export function getEventTimingLabel(startDate: string, now = new Date()) {
   return "Upcoming"
 }
 
-export const upcomingEvents: UpcomingEvent[] = []
+export const upcomingEvents: UpcomingEvent[] = [
+  {
+    title: "IAFV Diwali Fest Show & Expo",
+    date: "Saturday, October 24, 2026",
+    time: "6:00 PM – 10:00 PM EST",
+    location: "Fuquay-Varina High School, Fuquay-Varina, NC",
+    venue: "Fuquay-Varina High School",
+    type: "Cultural Festival & Expo",
+    image: "/images/events/iafv-diwali-fest-2026.jpg",
+    imageAspect: "portrait",
+    link: "https://iafvnc.org",
+    startDate: "2026-10-24T18:00:00",
+    doorsOpen: "6:00 PM",
+    price: "$5 (Kids 10 & under free)",
+    description: "Join IAFV for the grand Diwali Fest Show & Expo featuring 180+ performers, Hiway Dhaba food, 12+ vendor stalls, and festive cultural entertainment. Radio Nyra is a proud Platinum Sponsor!",
+    cta: "Tickets at IAFVNC.ORG",
+  },
+]
 
 export const pastEvents: PastEvent[] = [
   {

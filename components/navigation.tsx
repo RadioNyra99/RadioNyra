@@ -29,16 +29,12 @@ export function Navigation() {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/rtv-news", label: "RTV News" },
     {
       href: "/how-to-tune",
       label: "Listen",
       subLinks: [
-        { href: "/rtv-news", label: "RTV News (99.9 FM-HD3)" },
         { href: "/schedule", label: "Schedule" },
         { href: "/how-to-tune", label: "How to Tune In" },
-        { href: "/markets", label: "Markets & Coverage" },
       ]
     },
     {
@@ -48,30 +44,34 @@ export function Navigation() {
         { href: "/events", label: "Events" },
         { href: "/gallery", label: "Gallery" },
         { href: "/festival-calendar", label: "Festival Calendar" },
+        { href: "/community-impact", label: "Community Impact" },
       ]
     },
     {
-      href: "/youtube",
+      href: "/news",
       label: "Media",
       subLinks: [
-        { href: "/rtv-news", label: "RTV Daily News" },
         { href: "/news", label: "News & Articles" },
-        { href: "/ecosystem", label: "Ecosystem" },
         { href: "/press", label: "Press" },
       ]
     },
-    { href: "/podcasts", label: "Podcasts" },
     {
-      href: "#services",
+      href: "/services",
       label: "Services",
       subLinks: [
-        { href: "/services", label: "Advertising Services" },
         { href: "/creative-studio", label: "Creative Studio" },
+        { href: "/advertiser-success-stories", label: "Success Stories" },
       ]
     },
-    { href: "/advertise", label: "Advertise" },
-    { href: "/blog", label: "Blog" },
-    { href: "/faq", label: "FAQ" },
+    {
+      href: "/advertise",
+      label: "Advertise",
+      subLinks: [
+        { href: "/advertise", label: "Advertise with Us" },
+        { href: "/services", label: "Advertising Services" },
+      ]
+    },
+    { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -85,7 +85,7 @@ export function Navigation() {
             {/* Mobile Menu Trigger */}
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden mr-2 cursor-pointer" aria-label="Open navigation menu">
+                <Button variant="ghost" size="icon" className="lg:hidden mr-2 cursor-pointer" aria-label="Open navigation menu">
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
@@ -165,7 +165,7 @@ export function Navigation() {
                     </SheetClose>
                     <SheetClose asChild>
                       <Button
-                        onClick={showAudioPlayer}
+                        onClick={() => showAudioPlayer()}
                         className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-black uppercase tracking-[0.1em] rounded-full py-5 text-sm soft-shadow-primary transition-transform active:scale-95 cursor-pointer"
                       >
                         Listen Live
@@ -177,13 +177,13 @@ export function Navigation() {
             </Sheet>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-2 lg:gap-3 xl:gap-5">
+            <div className="hidden lg:flex items-center gap-3 xl:gap-5">
               {navLinks.map((link) => (
                 link.subLinks ? (
                   <DropdownMenu key={link.href}>
-                    <DropdownMenuTrigger className="flex items-center gap-1 text-[10px] lg:text-[11px] xl:text-[13px] font-black text-foreground hover:text-primary transition-colors tracking-tighter uppercase focus:outline-none">
+                    <DropdownMenuTrigger className="flex items-center gap-1 text-[11px] xl:text-[13px] font-black text-foreground hover:text-primary transition-colors tracking-tight uppercase focus:outline-none">
                       {link.label}
-                      <ChevronDown className="h-4 w-4" />
+                      <ChevronDown className="h-3.5 w-3.5 opacity-70" />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="start" className="bg-background border-border">
                       {link.subLinks.map((subLink) => (
@@ -199,7 +199,7 @@ export function Navigation() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-[10px] lg:text-[11px] xl:text-[13px] font-black text-foreground hover:text-primary transition-colors tracking-tighter uppercase whitespace-nowrap"
+                    className="text-[11px] xl:text-[13px] font-black text-foreground hover:text-primary transition-colors tracking-tight uppercase whitespace-nowrap"
                   >
                     {link.label}
                   </Link>
@@ -233,7 +233,7 @@ export function Navigation() {
               <span>Ask Nyra</span>
             </Button>
             <Button
-              onClick={showAudioPlayer}
+              onClick={() => showAudioPlayer()}
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-black uppercase tracking-tighter rounded-full px-3.5 sm:px-5 h-8 sm:h-9 text-[10px] sm:text-xs transition-all cursor-pointer shrink-0"
             >
               Listen Live

@@ -35,7 +35,7 @@ const SCHEDULE_DATA: ScheduleEntry[] = [
     },
     {
         time: "7 AM - 10 AM", hour: 7,
-        shows: { all: { name: "Zara Muskurao", host: "Aayushii Rode", image: "/images/hosts/zara-muskurao.jpeg", color: "bg-orange-100 text-orange-700" } }
+        shows: { all: { name: "Zara Muskurao", host: "Amritha", image: "/images/hosts/zara-muskurao.jpeg", color: "bg-orange-100 text-orange-700" } }
     },
     {
         time: "10 AM - 11 AM", hour: 10,
@@ -163,11 +163,18 @@ export default function SchedulePage() {
             <Navigation />
 
             <main>
-                <PageHeader
-                    eyebrow="Listen"
-                    title="Broadcast schedule"
-                    description="Seven days of Hindi and Telugu programming on 99.9 FM HD4 and HD3. All times Eastern."
-                />
+                <section className="relative py-14 sm:py-20 overflow-hidden bg-gray-50 dark:bg-zinc-950 border-b border-gray-100 dark:border-zinc-800">
+                    <div className="container mx-auto px-4 relative z-10 text-center">
+                        <div className="max-w-4xl mx-auto">
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight text-foreground">
+                                Broadcast <span className="text-primary">Schedule</span>
+                            </h1>
+                            <p className="text-xs sm:text-sm md:text-base text-muted-foreground uppercase tracking-[0.25em] font-bold italic">
+                                Seven Days of Hindi &amp; Telugu Programming • All Times Eastern
+                            </p>
+                        </div>
+                    </div>
+                </section>
 
                 <Section>
                     <div className="mx-auto max-w-4xl">
@@ -263,17 +270,7 @@ export default function SchedulePage() {
                     </div>
                 </Section>
 
-                <Section variant="alt">
-                    <div className="mx-auto max-w-2xl text-center">
-                        <h2 className="section-title">Tune in anywhere</h2>
-                        <p className="lede mx-auto mt-2">
-                            Radio Nyra broadcasts 24/7, with special weekend programmes and community segments.
-                        </p>
-                        <Button className="mt-6 rounded-full px-8" asChild>
-                            <Link href="/">Listen live now</Link>
-                        </Button>
-                    </div>
-                </Section>
+
             </main>
 
             <Footer />

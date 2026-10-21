@@ -57,7 +57,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/press',
         '/privacy-policy',
         '/terms-services',
-        '/hosts',
         '/news',
         '/write-for-us',
         // Market Landing Pages

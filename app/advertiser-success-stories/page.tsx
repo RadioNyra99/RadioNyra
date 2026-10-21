@@ -44,13 +44,16 @@ export default function AdvertiserSuccessStoriesPage() {
     <div className="min-h-screen bg-background font-sans">
       <Navigation />
       <main>
-        <section className="bg-gradient-to-br from-slate-950 via-indigo-950 to-sky-900 py-16 text-white">
-          <div className="container mx-auto px-4 text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-sky-300">Advertiser Trust</p>
-            <h1 className="mx-auto mt-4 max-w-4xl text-4xl font-semibold tracking-tight md:text-6xl">Advertiser Success Stories</h1>
-            <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-white/75">
-              Campaigns built around trust, community context, premium content, and measurable multicultural reach.
-            </p>
+        <section className="relative py-14 sm:py-20 overflow-hidden bg-gray-50 dark:bg-zinc-950 border-b border-gray-100 dark:border-zinc-800">
+          <div className="container mx-auto px-4 relative z-10 text-center">
+            <div className="max-w-4xl mx-auto">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight text-foreground">
+                Advertiser <span className="text-primary">Success Stories</span>
+              </h1>
+              <p className="text-xs sm:text-sm md:text-base text-muted-foreground uppercase tracking-[0.25em] font-bold italic">
+                Trust, Community Context &amp; Measurable Multicultural Reach
+              </p>
+            </div>
           </div>
         </section>
 

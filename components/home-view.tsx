@@ -1,15 +1,17 @@
 "use client"
 
+import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { FrequencyBar } from "@/components/frequency-bar"
 import { Footer } from "@/components/footer"
-import { Star, Play, PlayCircle, Youtube, Headphones, Megaphone, Smartphone, Users, Radio } from "lucide-react"
+import { Star, Play, PlayCircle, Youtube, Headphones, Megaphone, Smartphone, Users, Radio, ArrowRight } from "lucide-react"
 import { CountUp } from "@/components/ui/count-up"
 import { ApolloTracker } from "@/components/apollo-tracker"
 import { LiveNowHero } from "@/components/live-now-hero"
 import { TuneInPlatforms } from "@/components/tune-in-platforms"
 import { FeaturedPodcastsSection } from "@/components/featured-podcasts-section"
 import { PartnersMarquee } from "@/components/partners-marquee"
+import { PopularShowsSection } from "@/components/popular-shows-section"
 
 export function HomeView() {
   return (
@@ -19,13 +21,10 @@ export function HomeView() {
       <FrequencyBar />
 
       <main>
-        {/* LIVE NOW HERO */}
         <LiveNowHero />
-
-        {/* TUNE-IN PLATFORM STRIP */}
         <TuneInPlatforms />
 
-        {/* PROVEN REACH STATS STRIP (MATCHING SCREENSHOT) */}
+        {/* PROVEN REACH STATS */}
         <section className="py-8 sm:py-10 bg-background border-b border-border/50">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-y-8 gap-x-3 text-center justify-center items-start">
@@ -33,7 +32,7 @@ export function HomeView() {
                 { label: "Weekly Listeners", end: 100, suffix: "K+", icon: Headphones },
                 { label: "Email Subscribers", end: 60, suffix: "K+", icon: Megaphone },
                 { label: "WhatsApp Members", end: 12, suffix: "K+", icon: Smartphone },
-                { label: "Monthly IG Reach", end: 500, suffix: "K+", icon: Users },
+                { label: "Monthly Instagram Reach", end: 500, suffix: "K+", icon: Users },
                 { label: "Display Impressions", end: 216, suffix: "K+", icon: Star },
                 { label: "Years On Air", end: 12, suffix: "", icon: Radio },
                 { label: "Media Channels", end: 8, suffix: "+", icon: Play },
@@ -50,6 +49,23 @@ export function HomeView() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* GROW YOUR BUSINESS CTA */}
+            <div className="mt-8 pt-6 border-t border-border/40 flex flex-wrap items-center justify-center gap-3">
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary/90 text-white text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-md hover:shadow-lg transition-all"
+              >
+                <span>Grow Your Business With RadioNyra</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-muted/70 hover:bg-muted text-foreground border border-border text-xs sm:text-sm font-bold uppercase tracking-wider transition-all"
+              >
+                <span>Contact Us</span>
+              </Link>
             </div>
           </div>
         </section>
@@ -91,7 +107,7 @@ export function HomeView() {
           </div>
         </section>
 
-        {/* LATEST 4 VIDEOS (DYNAMIC REAL-TIME FROM YOUTUBE) */}
+        {/* LATEST VIDEOS */}
         <FeaturedPodcastsSection />
 
         {/* OUR PARTNERS */}
@@ -104,7 +120,7 @@ export function HomeView() {
           </div>
         </section>
 
-        {/* TESTIMONIAL (ONLY MC CONSTRUCTION CO.) */}
+        {/* TESTIMONIAL */}
         <section className="py-12 sm:py-16 bg-muted/30 border-t border-border/50">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="text-center mb-8">
@@ -131,6 +147,9 @@ export function HomeView() {
             </div>
           </div>
         </section>
+
+        {/* HOSTS & SHOW POSTERS — sliding carousel */}
+        <PopularShowsSection />
 
       </main>
 

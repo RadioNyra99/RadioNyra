@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils"
 import { getLiveHindiShow, getLiveTeluguShow, getEasternTime, type LiveShowInfo, type EasternTime } from "@/lib/live-schedule-service"
 
 /**
- * Live radio hero — the first thing a visitor sees.
+ * Live radio hero ΓÇö the first thing a visitor sees.
  *
  * One short headline, two clear listen actions and the channel preview cards
  * that show what is on air right now. All show data comes from the shared
@@ -88,7 +88,7 @@ function ShowNowCard({
         className={cn(
           "h-11 w-full shrink-0 rounded-full px-6 text-xs font-bold uppercase tracking-wider sm:w-auto",
           active
-            ? "bg-white text-ink hover:bg-white/90"
+            ? "bg-white text-black hover:bg-white/90"
             : "bg-primary text-white hover:bg-primary/90",
         )}
         aria-label={active && playing ? `Pause ${show.title}` : `Listen to ${show.title}`}
@@ -134,7 +134,7 @@ export function LiveNowHero() {
   }
 
   return (
-    <section className="relative isolate overflow-hidden bg-ink text-white">
+    <section className="relative isolate overflow-hidden bg-black text-white">
       {/* Ambient backdrop */}
       <div
         aria-hidden
@@ -146,7 +146,7 @@ export function LiveNowHero() {
       />
       <span
         aria-hidden
-        className="pointer-events-none absolute -right-6 top-6 -z-10 select-none text-[22vw] font-extrabold leading-none tracking-tighter text-white/[0.04]"
+        className="pointer-events-none absolute -right-6 top-6 -z-10 select-none text-[22vw] font-extrabold leading-none tracking-tighter text-white/[0.15]"
       >
         NYRA
       </span>
@@ -163,9 +163,9 @@ export function LiveNowHero() {
                 </span>
                 <span className="text-primary">On Air</span>
               </span>
-              <span aria-hidden className="text-white/25">·</span>
+              <span aria-hidden className="text-white/25">&middot;</span>
               Radio Nyra
-              <span aria-hidden className="text-white/25">·</span>
+              <span aria-hidden className="text-white/25">&middot;</span>
               <span className="font-semibold normal-case tracking-normal text-white/50">
                 {easternTime.formattedTime}
               </span>
@@ -185,7 +185,7 @@ export function LiveNowHero() {
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Button
                 onClick={() => handleStationClick(STATIONS.Hindi.id)}
-                className="h-12 rounded-full bg-white px-6 text-sm font-bold text-ink shadow-sm transition-transform hover:scale-[1.02] hover:bg-white/90"
+                className="h-12 rounded-full bg-red-600 px-6 text-sm font-bold text-white shadow-sm transition-transform hover:scale-[1.02] hover:bg-red-500"
                 aria-label={isHindiActive && isPlaying ? "Pause Radio Nyra Hindi" : "Listen to Radio Nyra Hindi"}
               >
                 {isHindiActive && isPlaying ? (
@@ -224,7 +224,7 @@ export function LiveNowHero() {
               {isPlaying ? (
                 <>
                   Now streaming {currentStation.name}
-                  {metadata?.title ? ` — ${metadata.title}` : ""}
+                  {metadata?.title ? ` ΓÇö ${metadata.title}` : ""}
                 </>
               ) : (
                 "Press play to start the live stream. No account needed."

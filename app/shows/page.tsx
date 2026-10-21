@@ -76,8 +76,8 @@ export default function ShowsPage() {
                 <h2 className="text-2xl md:text-4xl font-extrabold uppercase tracking-tight italic">Programs, RJs & Broadcast Blocks</h2>
               </div>
               <Button asChild variant="outline" className="rounded-full text-xs font-extrabold uppercase tracking-widest self-start">
-                <Link href="/hosts">
-                  <Mic2 className="mr-2 h-4 w-4" /> Meet All Hosts
+                <Link href="/schedule">
+                  <CalendarDays className="mr-2 h-4 w-4" /> View Full Schedule
                 </Link>
               </Button>
             </div>

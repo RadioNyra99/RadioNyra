@@ -101,17 +101,17 @@ export default function TestimonialsPage() {
 
             <main>
                 {/* Hero Section */}
-                <section className="py-20 bg-primary/5 border-b border-primary/10 relative overflow-hidden">
-                    <div className="container mx-auto px-4 text-center relative z-10">
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-primary">
-                            Voice of the <span className="text-foreground">Community</span>
-                        </h1>
-                        <p className="text-xl md:text-2xl text-muted-foreground uppercase tracking-widest max-w-2xl mx-auto font-bold opacity-80 italic">
-                            What our listeners and partners say about Radio Nyra
-                        </p>
+                <section className="relative py-14 sm:py-20 overflow-hidden bg-gray-50 dark:bg-zinc-950 border-b border-gray-100 dark:border-zinc-800">
+                    <div className="container mx-auto px-4 relative z-10 text-center">
+                        <div className="max-w-4xl mx-auto">
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight text-foreground">
+                                Voice of the <span className="text-primary">Community</span>
+                            </h1>
+                            <p className="text-xs sm:text-sm md:text-base text-muted-foreground uppercase tracking-[0.25em] font-bold italic">
+                                What Our Listeners &amp; Partners Say About Radio Nyra
+                            </p>
+                        </div>
                     </div>
-                    {/* Decorative Background Icon */}
-                    <Quote className="absolute -bottom-10 -right-10 w-64 h-64 text-primary/5 -rotate-12" />
                 </section>
 
                 {/* Testimonials Grid */}

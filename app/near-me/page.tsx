@@ -243,11 +243,11 @@ export default function NearMePage() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {upcomingEvents.slice(0, 4).map((evt) => (
-                  <div key={evt.id} className="p-4 bg-card border border-border rounded-xl flex flex-col justify-between">
+                {upcomingEvents.slice(0, 4).map((evt, idx) => (
+                  <div key={`${evt.title}-${idx}`} className="p-4 bg-card border border-border rounded-xl flex flex-col justify-between">
                     <div>
                       <div className="flex items-center justify-between text-[10px] font-extrabold uppercase tracking-wider text-primary mb-1">
-                        <span>{evt.category}</span>
+                        <span>{evt.type}</span>
                         <span>{evt.date}</span>
                       </div>
                       <h4 className="font-bold text-sm text-foreground mb-1">{evt.title}</h4>

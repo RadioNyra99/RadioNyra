@@ -39,14 +39,14 @@ export function TriangleEventsPreview() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {events.map((evt) => (
+          {events.map((evt, idx) => (
             <div
-              key={evt.id}
+              key={`${evt.title}-${idx}`}
               className="bg-card border border-border rounded-xl p-4 flex flex-col justify-between hover:border-primary/60 hover:shadow-md transition-all group"
             >
               <div>
                 <div className="flex items-center justify-between text-[10px] font-extrabold uppercase tracking-wider text-primary mb-2">
-                  <span>{evt.category}</span>
+                  <span>{evt.type}</span>
                   <span className="text-muted-foreground font-semibold">{evt.date}</span>
                 </div>
                 <h3 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-2 leading-snug">

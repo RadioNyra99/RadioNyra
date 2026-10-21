@@ -103,7 +103,7 @@ export function getLiveHindiShow(now = new Date()): LiveShowInfo {
     return {
       id: "hindi-zara-muskurao",
       title: "Zara Muskurao",
-      host: "Aayushii Rode",
+      host: "Amritha",
       image: "/images/hosts/zara-muskurao.jpeg",
       timeRange: "7:00 AM – 10:00 AM EST",
       tag: "Morning Drive Prime",

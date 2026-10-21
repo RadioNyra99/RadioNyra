@@ -225,7 +225,8 @@ export default async function RtvBulletinDetailPage({ params }: BulletinPageProp
                   src={embedUrl}
                   allow="autoplay"
                   width="100%"
-                  height="72"
+                  height="160"
+                  className="w-full rounded-xl bg-zinc-900 border border-zinc-800"
                   style={{ border: "none", display: "block" }}
                   title={episode.title}
                 />

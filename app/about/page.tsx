@@ -12,11 +12,18 @@ export default function AboutPage() {
 
             <main>
                 {/* HERO */}
-                <PageHeader
-                    eyebrow="About"
-                    title="Radio Nyra — the voice that connects"
-                    description="The Indian Subcontinent Community Media Network. Broadcasting since November 16, 1963."
-                />
+                <section className="relative py-14 sm:py-20 overflow-hidden bg-gray-50 dark:bg-zinc-950 border-b border-gray-100 dark:border-zinc-800">
+                    <div className="container mx-auto px-4 relative z-10 text-center">
+                        <div className="max-w-4xl mx-auto">
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight text-foreground">
+                                About <span className="text-primary">Radio Nyra</span>
+                            </h1>
+                            <p className="text-xs sm:text-sm md:text-base text-muted-foreground uppercase tracking-[0.25em] font-bold italic">
+                                The Indian Subcontinent Community Media Network • Since 1963
+                            </p>
+                        </div>
+                    </div>
+                </section>
 
                 <section className="py-16 md:py-24 bg-background border-b border-border">
                     <div className="container mx-auto px-4 max-w-5xl">

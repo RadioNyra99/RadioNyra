@@ -26,6 +26,9 @@ const DRIVE_IDS = {
   day6: "14A2cd7WpeirXpEl7pXGYxIY5y7hpzGAT",
   day7: "1ycrETWXR7PpPFQpCuHzEoGj-NW86m_qg",
   day8: "1Q6hVwdU2EF5RIpKDGqIH0m3hOfVy5ZlX",
+  day9: "1O-wfLrcMk8TmVjZfT_VntJDogc9EOUrD",
+  day10: "1fuDXdNOFIT3qjDxSWxaPA_bsANjWuRzh",
+  day11: "1Ba1hQlO1_E7bdchG0SBF8zRCrsVUEdu2",
 }
 
 // Converts a Google Drive file ID to a streamable audio URL
@@ -34,6 +37,72 @@ export function driveAudioUrl(fileId: string): string {
 }
 
 export const RTV_TELUGU_NEWS_EPISODES: RtvNewsEpisode[] = [
+  {
+    id: "Day 11",
+    filename: "Day 11.mp3",
+    title: "RTV Telugu Daily News - Day 11",
+    dayNumber: 11,
+    date: "2026-10-20",
+    formattedDate: "Oct 20, 2026",
+    sizeFormatted: "~14 MB",
+    url: driveAudioUrl(DRIVE_IDS.day11),
+    driveId: DRIVE_IDS.day11,
+    language: "Telugu",
+    station: "99.9 FM-HD3",
+    description: "Latest RTV Telugu daily news bulletin for Radio Nyra listeners, available on-demand through the official Day 11 audio update.",
+    topics: ["RTV Telugu News", "Daily Bulletin", "Andhra Pradesh", "Telangana", "Diaspora Updates"],
+    keyHighlights: [
+      "Full Day 11 RTV Telugu news audio is now available for on-demand listening.",
+      "Daily Telugu bulletin broadcast on Radio Nyra Telugu 99.9 FM-HD3.",
+      "Coverage includes Telugu-state updates, Indian current affairs, and diaspora-focused news.",
+      "Listeners can play the bulletin directly on the website or open the full Google Drive player."
+    ],
+    transcriptSummary: "RTV Telugu News Day 11 bulletin on Radio Nyra 99.9 FM-HD3. Complete daily Telugu news audio covering Andhra Pradesh, Telangana, national headlines, and US diaspora updates."
+  },
+  {
+    id: "Day 10",
+    filename: "Day 10.mp3",
+    title: "RTV Telugu Daily News - Day 10",
+    dayNumber: 10,
+    date: "2026-10-19",
+    formattedDate: "Oct 19, 2026",
+    sizeFormatted: "~14 MB",
+    url: driveAudioUrl(DRIVE_IDS.day10),
+    driveId: DRIVE_IDS.day10,
+    language: "Telugu",
+    station: "99.9 FM-HD3",
+    description: "Latest RTV Telugu daily news bulletin for Radio Nyra listeners, available on-demand through the official Day 10 audio update.",
+    topics: ["RTV Telugu News", "Daily Bulletin", "Andhra Pradesh", "Telangana", "Diaspora Updates"],
+    keyHighlights: [
+      "Full Day 10 RTV Telugu news audio is now available for on-demand listening.",
+      "Daily Telugu bulletin broadcast on Radio Nyra Telugu 99.9 FM-HD3.",
+      "Coverage includes Telugu states infrastructure, economy, and community events.",
+      "Stream directly on RadioNyra.com."
+    ],
+    transcriptSummary: "RTV Telugu News Day 10 bulletin on Radio Nyra 99.9 FM-HD3. Complete daily Telugu news audio covering current affairs, regional state updates, and community news."
+  },
+  {
+    id: "Day 9",
+    filename: "Day 9.mp3",
+    title: "RTV Telugu Daily News - Day 9",
+    dayNumber: 9,
+    date: "2026-10-18",
+    formattedDate: "Oct 18, 2026",
+    sizeFormatted: "~14 MB",
+    url: driveAudioUrl(DRIVE_IDS.day9),
+    driveId: DRIVE_IDS.day9,
+    language: "Telugu",
+    station: "99.9 FM-HD3",
+    description: "Latest RTV Telugu daily news bulletin for Radio Nyra listeners, available on-demand through the official Day 9 audio update.",
+    topics: ["RTV Telugu News", "Daily Bulletin", "Andhra Pradesh", "Telangana", "Diaspora Updates"],
+    keyHighlights: [
+      "Full Day 9 RTV Telugu news audio is now available for on-demand listening.",
+      "Daily Telugu bulletin broadcast on Radio Nyra Telugu 99.9 FM-HD3.",
+      "Key political developments, cultural updates, and US diaspora headlines.",
+      "Available for instant web playback and smart speaker streaming."
+    ],
+    transcriptSummary: "RTV Telugu News Day 9 bulletin on Radio Nyra 99.9 FM-HD3. Complete daily Telugu news audio covering Andhra Pradesh, Telangana, and North Carolina diaspora news."
+  },
   {
     id: "Day 8",
     filename: "Day 8.mp3",

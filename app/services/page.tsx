@@ -16,15 +16,16 @@ export default function ServicesPage() {
 
             <main className="relative z-10">
                 {/* Header Section */}
-                <section className="py-8 md:py-10 bg-primary/5 border-b border-primary/10 text-center relative overflow-hidden">
-                    <div className="container mx-auto px-4 fade-in-up">
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-primary">
-                            Our Services
-                        </h1>
-                        <p className="text-xl md:text-3xl text-muted-foreground uppercase tracking-[0.3em] max-w-3xl mx-auto font-bold mb-12 italic">
-                            Elevate Your Brand with the Voice of the Indian Subcontinent
-                        </p>
-                        <div className="w-24 h-2 bg-primary mx-auto" />
+                <section className="relative py-14 sm:py-20 overflow-hidden bg-gray-50 dark:bg-zinc-950 border-b border-gray-100 dark:border-zinc-800">
+                    <div className="container mx-auto px-4 relative z-10 text-center">
+                        <div className="max-w-4xl mx-auto">
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight text-foreground">
+                                Our <span className="text-primary">Services</span>
+                            </h1>
+                            <p className="text-xs sm:text-sm md:text-base text-muted-foreground uppercase tracking-[0.25em] font-bold italic">
+                                Elevate Your Brand With The Voice Of The Indian Subcontinent
+                            </p>
+                        </div>
                     </div>
                 </section>
 

@@ -287,6 +287,7 @@ export function PopularShowsSection() {
                         alt={`${show.name} hosted by ${show.host}`}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
+                        decoding="async"
                         onError={(e) => {
                           const target = e.currentTarget
                           target.src = "/images/radio-nyra-logo.jpg"

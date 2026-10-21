@@ -15,8 +15,8 @@ export function ApolloTracker() {
         const n = Math.random().toString(36).substring(7)
         const o = document.createElement("script")
 
-        // Use custom tracking subdomain if available, otherwise fallback to default
-        const trackingHost = process.env.NEXT_PUBLIC_APOLLO_TRACKING_HOST || "go.radionyra.com"
+        // Use reliable fast CDN host (avoids go.radionyra.com which times out)
+        const trackingHost = process.env.NEXT_PUBLIC_APOLLO_TRACKING_HOST || "assets.apollo.io"
         const defaultHost = "assets.apollo.io"
 
         o.src = `https://${trackingHost}/micro/website-tracker/tracker.iife.js?nocache=` + n

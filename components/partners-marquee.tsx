@@ -41,6 +41,7 @@ export function PartnersMarquee({ partnersCount, partnersData }: PartnersMarquee
                     src={partner.image}
                     alt={partner.name}
                     loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-contain transition-all duration-300 group-hover/card:scale-110 drop-shadow-sm"
                 />
             </div>

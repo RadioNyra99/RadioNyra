@@ -14,7 +14,7 @@ import { ApolloTracker } from "@/components/apollo-tracker"
 import { trackEvent, trackLeadSubmit } from "@/lib/analytics"
 
 export default function AdvertisePage() {
-    const [budget, setBudget] = useState(1500)
+    const [budget, setBudget] = useState(3000)
     const [marketTier, setMarketTier] = useState<"rdu" | "southeast" | "national">("rdu")
     const [formSubmitted, setFormSubmitted] = useState(false)
     const [advertiserSegment, setAdvertiserSegment] = useState<"local" | "events" | "services" | "healthcare" | "national">("local")
@@ -22,24 +22,36 @@ export default function AdvertisePage() {
     const [targetCity, setTargetCity] = useState("Triangle-Wide (All 8 Cities)")
     const [selectedChannels, setSelectedChannels] = useState<string[]>(["On-Air Spots (99.9 FM)", "Digital Web Streaming"])
 
-    // Dynamic calculations based on market and budget
+    // Dynamic calculations based on fixed package tiers:
+    // Starter: 30 spots / $1,200 ($40/spot)
+    // Growth: 75 spots / $3,000 ($40/spot)
+    // Domination: 150+ spots / $6,000+ ($40/spot)
     const getReachEstimates = () => {
-        if (marketTier === "rdu") {
-            const spots = Math.floor(budget / 35)
-            const impressions = Math.floor(budget * 95)
-            const listeners = Math.min(100000, Math.floor(budget * 42))
-            return { spots, impressions, listeners, tierLabel: "Raleigh-Durham 99.9 FM (HD4/HD3) + Triangle Digital" }
-        } else if (marketTier === "southeast") {
-            const spots = Math.floor(budget / 45)
-            const impressions = Math.floor(budget * 120)
-            const listeners = Math.floor(budget * 55)
-            return { spots, impressions, listeners, tierLabel: "Raleigh-Durham + Atlanta Digital Hub" }
-        } else {
-            const spots = Math.floor(budget / 55)
-            const impressions = Math.floor(budget * 160)
-            const listeners = Math.floor(budget * 75)
-            return { spots, impressions, listeners, tierLabel: "7-Market National Network + YouTube + Audio Stream" }
+        let spotRate = 40
+        let reachMultiplier = 25
+        let baseReach = 35000
+        let impressionsMultiplier = 65
+        let tierLabel = "Raleigh-Durham 99.9 FM (HD4/HD3) + Triangle Digital"
+
+        if (marketTier === "southeast") {
+            spotRate = 50
+            reachMultiplier = 35
+            baseReach = 65000
+            impressionsMultiplier = 95
+            tierLabel = "Raleigh-Durham + Atlanta Digital Hub"
+        } else if (marketTier === "national") {
+            spotRate = 60
+            reachMultiplier = 50
+            baseReach = 125000
+            impressionsMultiplier = 140
+            tierLabel = "7-Market National Network + YouTube + Audio Stream"
         }
+
+        const spots = Math.floor(budget / spotRate)
+        const impressions = Math.floor(budget * impressionsMultiplier)
+        const listeners = Math.floor(budget * reachMultiplier) + baseReach
+
+        return { spots, impressions, listeners, tierLabel }
     }
 
     const { spots, impressions, listeners, tierLabel } = getReachEstimates()
@@ -456,6 +468,44 @@ export default function AdvertisePage() {
                                             }`}
                                         >
                                             All 7 Markets
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label className="text-xs font-extrabold uppercase tracking-widest text-gray-500 mb-2 block">
+                                        Select Package Tier:
+                                    </label>
+                                    <div className="grid grid-cols-3 gap-2">
+                                        <button
+                                            type="button"
+                                            onClick={() => setBudget(1200)}
+                                            className={`p-2.5 text-center rounded-xl border transition-all ${
+                                                budget === 1200 ? "bg-primary text-white border-primary shadow-sm" : "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100"
+                                            }`}
+                                        >
+                                            <div className="font-extrabold uppercase text-[11px] tracking-tight">Starter</div>
+                                            <div className="text-[10px] opacity-90 mt-0.5">30 Spots • $1,200</div>
+                                        </button>
+                                        <button
+                                            type="button"
+                                            onClick={() => setBudget(3000)}
+                                            className={`p-2.5 text-center rounded-xl border transition-all ${
+                                                budget === 3000 ? "bg-primary text-white border-primary shadow-sm" : "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100"
+                                            }`}
+                                        >
+                                            <div className="font-extrabold uppercase text-[11px] tracking-tight">Growth</div>
+                                            <div className="text-[10px] opacity-90 mt-0.5">75 Spots • $3,000</div>
+                                        </button>
+                                        <button
+                                            type="button"
+                                            onClick={() => setBudget(6000)}
+                                            className={`p-2.5 text-center rounded-xl border transition-all ${
+                                                budget === 6000 ? "bg-primary text-white border-primary shadow-sm" : "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100"
+                                            }`}
+                                        >
+                                            <div className="font-extrabold uppercase text-[11px] tracking-tight">Domination</div>
+                                            <div className="text-[10px] opacity-90 mt-0.5">150+ Spots • $6,000</div>
                                         </button>
                                     </div>
                                 </div>

@@ -1,9 +1,11 @@
 import Link from "next/link"
 import { SOCIAL_LINKS } from "@/lib/site-data"
+import { NewsletterSection } from "@/components/newsletter-section"
 
 export function Footer() {
   return (
     <footer className="bg-zinc-950 text-white border-t border-zinc-800 py-8">
+      <NewsletterSection />
       <div className="container mx-auto px-4 sm:px-6">
         {/* Top Row: Brand + Links + Socials */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
@@ -14,7 +16,7 @@ export function Footer() {
             </div>
             <div className="text-center sm:text-left">
               <span className="font-bold text-base text-white block">Radio Nyra</span>
-              <span className="text-[11px] text-zinc-400">The Indian Subcontinent Community Media Network</span>
+              <span className="text-[11px] text-zinc-400">The Indian Subcontinent Community Media Network USA</span>
             </div>
           </div>
 

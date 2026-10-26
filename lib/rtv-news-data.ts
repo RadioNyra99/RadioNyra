@@ -29,6 +29,8 @@ const DRIVE_IDS = {
   day9: "1O-wfLrcMk8TmVjZfT_VntJDogc9EOUrD",
   day10: "1fuDXdNOFIT3qjDxSWxaPA_bsANjWuRzh",
   day11: "1Ba1hQlO1_E7bdchG0SBF8zRCrsVUEdu2",
+  day12: "1UOhXNJxb8Zd_TN-ekf4dPQoJLpoRBBh9",
+  day13: "1lKcgz3o5b3mRJpp7xT5q1aAF3qmpfhKy",
 }
 
 // Converts a Google Drive file ID to a streamable audio URL
@@ -37,6 +39,46 @@ export function driveAudioUrl(fileId: string): string {
 }
 
 export const RTV_TELUGU_NEWS_EPISODES: RtvNewsEpisode[] = [
+  {
+    id: "Day 13",
+    filename: "Day 13.mp3",
+    title: "RTV Telugu Daily News - Day 13",
+    dayNumber: 13,
+    date: "2026-10-22",
+    formattedDate: "Oct 22, 2026",
+    sizeFormatted: "~12.7 MB",
+    url: driveAudioUrl(DRIVE_IDS.day13),
+    driveId: DRIVE_IDS.day13,
+    language: "Telugu",
+    station: "99.9 FM-HD3",
+    description: "RTV Telugu daily news bulletin for Radio Nyra listeners, available on-demand as Day 13.",
+    topics: ["RTV Telugu News", "Daily Bulletin"],
+    keyHighlights: [
+      "The full Day 13 RTV Telugu news bulletin is available to stream.",
+      "Recorded for Radio Nyra Telugu listeners on 99.9 FM-HD3.",
+    ],
+    transcriptSummary: "RTV Telugu Daily News bulletin, Day 13.",
+  },
+  {
+    id: "Day 12",
+    filename: "Day 12.mp3",
+    title: "RTV Telugu Daily News - Day 12",
+    dayNumber: 12,
+    date: "2026-10-21",
+    formattedDate: "Oct 21, 2026",
+    sizeFormatted: "~9.2 MB",
+    url: driveAudioUrl(DRIVE_IDS.day12),
+    driveId: DRIVE_IDS.day12,
+    language: "Telugu",
+    station: "99.9 FM-HD3",
+    description: "RTV Telugu daily news bulletin for Radio Nyra listeners, available on-demand as Day 12.",
+    topics: ["RTV Telugu News", "Daily Bulletin"],
+    keyHighlights: [
+      "The full Day 12 RTV Telugu news bulletin is available to stream.",
+      "Recorded for Radio Nyra Telugu listeners on 99.9 FM-HD3.",
+    ],
+    transcriptSummary: "RTV Telugu Daily News bulletin, Day 12.",
+  },
   {
     id: "Day 11",
     filename: "Day 11.mp3",

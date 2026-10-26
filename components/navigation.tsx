@@ -242,7 +242,7 @@ export function Navigation() {
             <Link href="/" className="flex items-center gap-2 sm:gap-3 group shrink-0">
               <div className="text-right flex flex-col justify-center hidden sm:flex">
                 <div className="font-bold text-base sm:text-xl lg:text-2xl text-foreground tracking-tighter leading-none whitespace-nowrap">Radio Nyra</div>
-                <p className="text-[8px] sm:text-[9px] font-black uppercase tracking-[0.1em] text-primary leading-none mt-1">COMMUNITY MEDIA NETWORK</p>
+                <p className="text-[8px] sm:text-[9px] font-black uppercase tracking-[0.1em] text-primary leading-none mt-1">COMMUNITY MEDIA NETWORK USA</p>
               </div>
               <div className="relative w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 overflow-hidden rounded-full border-2 border-primary group-hover:border-primary/80 transition-colors shrink-0">
                 <img

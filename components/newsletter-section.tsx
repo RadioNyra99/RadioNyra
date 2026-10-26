@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
-import { Mail, CheckCircle2, Radio, Youtube, Calendar, AlertCircle, Loader2 } from "lucide-react"
+import { Mail, CheckCircle2, AlertCircle, Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { trackEvent } from "@/lib/analytics"
@@ -70,21 +70,6 @@ export function NewsletterSection() {
           Get weekly highlights of live radio shows, trending YouTube celeb interviews, and local Indian
           community events delivered to your inbox.
         </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 my-5 text-xs font-bold uppercase tracking-wider text-zinc-300">
-          <div className="flex items-center justify-center gap-2 bg-white/5 p-2.5 rounded-xl border border-white/10">
-            <Radio className="w-4 h-4 text-red-500" />
-            <span>Weekly Live Show Schedules</span>
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-white/5 p-2.5 rounded-xl border border-white/10">
-            <Youtube className="w-4 h-4 text-red-500" />
-            <span>Top 10 Video Countdown</span>
-          </div>
-          <div className="flex items-center justify-center gap-2 bg-white/5 p-2.5 rounded-xl border border-white/10">
-            <Calendar className="w-4 h-4 text-red-500" />
-            <span>Local Festival Guides</span>
-          </div>
-        </div>
 
         <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row items-center gap-3 max-w-lg mx-auto">
           <Input

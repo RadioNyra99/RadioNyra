@@ -12,6 +12,7 @@ import { TuneInPlatforms } from "@/components/tune-in-platforms"
 import { FeaturedPodcastsSection } from "@/components/featured-podcasts-section"
 import { PartnersMarquee } from "@/components/partners-marquee"
 import { PopularShowsSection } from "@/components/popular-shows-section"
+import { OFFICIAL_YOUTUBE_CHANNEL } from "@/lib/youtube-data"
 
 export function HomeView() {
   return (
@@ -86,10 +87,10 @@ export function HomeView() {
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto">
               {[
-                { icon: Youtube, label: "Subscribers", value: <CountUp end={1.05} decimals={2} suffix="K" duration={2500} /> },
-                { icon: Play, label: "Videos Published", value: <CountUp end={279} suffix="" duration={2500} /> },
-                { icon: PlayCircle, label: "Total Views", value: <CountUp end={173.3} decimals={1} suffix="K" duration={2500} /> },
-                { icon: Star, label: "Watch Hours", value: <CountUp end={25000} suffix="+" duration={2500} /> },
+                { icon: Youtube, label: "Subscribers", value: "1.07K" },
+                { icon: Play, label: "Videos Published", value: "298" },
+                { icon: PlayCircle, label: "Total Views", value: "173.3K" },
+                { icon: Star, label: "Watch Hours", value: "25,000+" },
               ].map((stat, i) => (
                 <div key={i} className="bg-zinc-900/90 border border-red-500/20 p-4 sm:p-5 rounded-2xl text-center shadow-xl hover:border-red-500/50 transition-all group flex flex-col items-center justify-center">
                   <div className="w-10 h-10 rounded-full bg-red-600/20 text-red-500 flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
@@ -103,6 +104,19 @@ export function HomeView() {
                   </div>
                 </div>
               ))}
+            </div>
+            <div className="mt-6 flex flex-col items-center gap-3 text-center">
+              <p className="max-w-3xl text-xs font-medium leading-relaxed text-zinc-400 sm:text-sm">
+                Radio Nyra USA: Bollywood &amp; South Asian radio, music, and stories from India to America.
+              </p>
+              <a
+                href={OFFICIAL_YOUTUBE_CHANNEL.subscribeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-red-600/20 px-4 py-2 text-xs font-extrabold uppercase tracking-wider text-red-300 transition-colors hover:bg-red-600 hover:text-white"
+              >
+                <Youtube className="h-4 w-4 fill-current" /> Subscribe
+              </a>
             </div>
           </div>
         </section>

@@ -6,7 +6,7 @@ import { Mic, Play, ChevronRight, ExternalLink, User, Youtube, Radio } from "luc
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { REAL_RADIO_NYRA_VIDEOS, YouTubeVideoItem } from "@/lib/youtube-service"
+import { clearYouTubeCache, fetchLatestVideos, SITE_VIDEOS, YouTubeVideoItem } from "@/lib/youtube-service"
 
 // Derive a clean, concise show name
 function deriveShow(video: YouTubeVideoItem): string {
@@ -78,7 +78,7 @@ function formatDuration(duration: string): string {
 }
 
 // Initial fallback episodes sorted newest first
-const INITIAL_PODCAST_EPISODES = [...REAL_RADIO_NYRA_VIDEOS]
+const INITIAL_PODCAST_EPISODES = [...SITE_VIDEOS]
   .filter((v) => !v.isShort)
   .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
   .map((v) => ({
@@ -104,11 +104,9 @@ export function FeaturedPodcastsSection() {
 
     async function loadLatestVideos() {
       try {
-        const res = await fetch("/api/youtube/latest")
-        if (!res.ok) return
-        const data = await res.json()
-        if (Array.isArray(data.videos) && data.videos.length > 0 && isMounted) {
-          const formatted = data.videos
+        const videos = await fetchLatestVideos(16)
+        if (videos.length > 0 && isMounted) {
+          const formatted = videos
             .filter((v: YouTubeVideoItem) => !v.isShort)
             .sort((a: YouTubeVideoItem, b: YouTubeVideoItem) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
             .map((v: YouTubeVideoItem) => ({
@@ -134,8 +132,13 @@ export function FeaturedPodcastsSection() {
     }
 
     loadLatestVideos()
+    const refreshTimer = window.setInterval(() => {
+      clearYouTubeCache()
+      loadLatestVideos()
+    }, 5 * 60 * 1000)
     return () => {
       isMounted = false
+      window.clearInterval(refreshTimer)
     }
   }, [])
 
@@ -155,7 +158,7 @@ export function FeaturedPodcastsSection() {
                 </span>
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-white italic">
-                RADIONYRA PODCAST VIDEOS
+                LATEST VIDEOS
               </h2>
             </div>
 

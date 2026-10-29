@@ -520,8 +520,9 @@ async function fetchFromRSS(maxResults: number = 16, query?: string): Promise<Yo
         return rssJsonVideos;
     }
 
-    // Direct external RSS feed with multiple redundant proxies
+    // A CORS-enabled proxy keeps the live channel feed available on static hosting.
     const proxyUrls = [
+        `https://cors.tools/proxy?url=${encodeURIComponent(rssUrlWithCacheBust)}`,
         `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrlWithCacheBust)}`,
         `https://corsproxy.io/?url=${encodeURIComponent(rssUrlWithCacheBust)}`,
         `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(rssUrlWithCacheBust)}`

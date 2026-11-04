@@ -46,18 +46,18 @@ const AD_PACKAGES = [
 const AD_BENEFITS = [
     {
         icon: Target,
-        title: "High-Income Diaspora Audience",
-        desc: "Reach affluent Indian Subcontinent families with high purchasing power across top US metropolitan hubs."
+        title: "Hindi and Telugu Programming",
+        desc: "Plan messages for listeners exploring South Asian music, news, culture, and community stories."
     },
     {
         icon: ShieldCheck,
-        title: "Verified Community Trust",
-        desc: "Over 12 years on air building unmatched listener loyalty and brand credibility across generations."
+        title: "Community Connections",
+        desc: "Discuss sponsorships, event listings, and community-focused campaigns with the Radio Nyra team."
     },
     {
         icon: Zap,
-        title: "Multi-Channel Synergy",
-        desc: "Simultaneous reach across terrestrial FM radio, YouTube digital video, email, and social networks."
+        title: "Multiple Campaign Formats",
+        desc: "Explore radio, digital streams, podcasts, video, and event placements."
     },
     {
         icon: Award,
@@ -96,38 +96,25 @@ export function AdvertiserSection() {
                         Media & Business Advertising Opportunities
                     </div>
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight italic text-foreground leading-tight mb-3">
-                        Promote Your Brand Across America's Leading Indian Subcontinent Network
+        Promote Your Brand with Radio Nyra
                     </h2>
                     <p className="text-muted-foreground text-xs sm:text-sm md:text-base font-medium max-w-2xl mx-auto leading-relaxed">
-                        Connect directly with over <strong className="text-foreground">100,000+ engaged weekly listeners</strong> across terrestrial FM radio, YouTube original video content, digital streams, and premier community events.
+                        Discuss campaign options across Hindi and Telugu radio, digital streams, podcasts, videos, and community events. Request a current media kit for verified reach and audience information.
                     </p>
                 </div>
 
-                {/* Audience Statistics Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-                    <div className="p-4 sm:p-5 rounded-2xl bg-card border border-border/80 text-center shadow-sm hover:shadow-md transition-all">
-                        <Users className="w-6 h-6 text-primary mx-auto mb-2" />
-                        <span className="text-2xl sm:text-3xl font-extrabold block">100K+</span>
-                        <span className="text-[10px] text-muted-foreground font-extrabold uppercase tracking-wider">Weekly Listeners</span>
-                    </div>
-
-                    <div className="p-4 sm:p-5 rounded-2xl bg-card border border-border/80 text-center shadow-sm hover:shadow-md transition-all">
-                        <TrendingUp className="w-6 h-6 text-cyan-500 mx-auto mb-2" />
-                        <span className="text-2xl sm:text-3xl font-extrabold block">173.3K+</span>
-                        <span className="text-[10px] text-muted-foreground font-extrabold uppercase tracking-wider">Digital & Video Impressions</span>
-                    </div>
-
-                    <div className="p-4 sm:p-5 rounded-2xl bg-card border border-border/80 text-center shadow-sm hover:shadow-md transition-all">
-                        <MapPin className="w-6 h-6 text-amber-500 mx-auto mb-2" />
-                        <span className="text-2xl sm:text-3xl font-extrabold block">7+ Major</span>
-                        <span className="text-[10px] text-muted-foreground font-extrabold uppercase tracking-wider">US Metro Markets</span>
-                    </div>
-
-                    <div className="p-4 sm:p-5 rounded-2xl bg-card border border-border/80 text-center shadow-sm hover:shadow-md transition-all">
-                        <Radio className="w-6 h-6 text-emerald-500 mx-auto mb-2" />
-                        <span className="text-2xl sm:text-3xl font-extrabold block">99.9 FM</span>
-                        <span className="text-[10px] text-muted-foreground font-extrabold uppercase tracking-wider">HD3 & HD4 Channels</span>
-                    </div>
+                <div className="mb-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
+                    {[
+                        { icon: Radio, title: "Live radio", description: "Hindi and Telugu streams, with local HD Radio channels in Raleigh-Durham." },
+                        { icon: TrendingUp, title: "Digital content", description: "Podcast conversations, interviews, and station videos." },
+                        { icon: MapPin, title: "Community", description: "Event listings and sponsorship opportunities for local organizations." },
+                    ].map((item) => (
+                        <div key={item.title} className="rounded-2xl border border-border/80 bg-card p-5 text-center shadow-sm">
+                            <item.icon className="mx-auto mb-2 h-6 w-6 text-primary" aria-hidden="true" />
+                            <h3 className="font-extrabold">{item.title}</h3>
+                            <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{item.description}</p>
+                        </div>
+                    ))}
                 </div>
 
                 {/* Why Advertise With Us - Benefits Grid */}

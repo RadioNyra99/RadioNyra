@@ -70,6 +70,7 @@ const SCHEDULE_DATA: ScheduleEntry[] = [
     {
         time: "3 PM - 4 PM", hour: 15,
         shows: {
+            Tuesday: { name: "Sunn Zarra", host: "Prachi", image: "/images/hosts/Prachi.png", color: "bg-pink-100 text-pink-700" },
             weekdays: { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpeg", color: "bg-purple-50 text-purple-700" },
             Saturday: { name: "Back to Back", image: "/back-to-back.webp", color: "bg-muted/30 text-muted-foreground" },
             Sunday: { name: "Bollywood Bliss", host: "Bharti Rathore", image: "/images/hosts/bollywood-bliss.jpeg", color: "bg-purple-50 text-purple-700" }
@@ -78,6 +79,7 @@ const SCHEDULE_DATA: ScheduleEntry[] = [
     {
         time: "4 PM - 5 PM", hour: 16,
         shows: {
+            Tuesday: { name: "Sunn Zarra", host: "Prachi", image: "/images/hosts/Prachi.png", color: "bg-pink-100 text-pink-700" },
             weekdays: { name: "Back to Back", image: "/back-to-back.webp", color: "bg-muted/30 text-muted-foreground" },
             Saturday: { name: "Back to Back", image: "/back-to-back.webp", color: "bg-muted/30 text-muted-foreground" },
             Sunday: { name: "Legends & Leaders", host: "Steve Rao", image: "/legends-and-leaders.webp", color: "bg-blue-900 text-white" }

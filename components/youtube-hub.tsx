@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useMemo } from "react"
-import { Youtube, Users, Eye, Clock, Sparkles, Flame, PlayCircle, Grid, ListFilter } from "lucide-react"
+import { Youtube, Users, Eye, Sparkles, Flame, PlayCircle, Grid, ListFilter } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { OFFICIAL_YOUTUBE_CHANNEL } from "@/lib/youtube-data"
 import { fetchLatestVideos, fetchShorts, fetchPopularVideos, fetchPlaylists } from "@/lib/youtube-service"
@@ -20,6 +20,7 @@ const CATEGORIES = [
 export function YouTubeHub() {
     const [selectedCategory, setSelectedCategory] = useState("All Content");
     const { subscriberCount, viewCount, videoCount } = useYouTubeChannelStats();
+    const hasChannelStats = [subscriberCount, viewCount, videoCount].some((value) => value !== "Unavailable");
 
     // Fetch all latest videos
     const { videos: allVideos, loading: loadingAll, error: errorAll, refetch } = useYouTube(
@@ -89,40 +90,30 @@ export function YouTubeHub() {
                         </div>
                     </div>
 
-                    {/* Channel Stats Widget */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 pt-8 border-t border-zinc-800/80">
-                        <div className="bg-white/5 backdrop-blur rounded-2xl p-4 text-center border border-white/10">
+                    {/* Show channel statistics only when the API returns current values. */}
+                    {hasChannelStats && <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-10 pt-8 border-t border-zinc-800/80">
+                        {subscriberCount !== "Unavailable" && <div className="bg-white/5 backdrop-blur rounded-2xl p-4 text-center border border-white/10">
                             <div className="flex items-center justify-center gap-2 text-red-400 mb-1">
                                 <Users className="w-5 h-5" />
-                                <span className="text-2xl font-extrabold text-white">{subscriberCount || "1.05K"}</span>
+                                <span className="text-2xl font-extrabold text-white">{subscriberCount}</span>
                             </div>
                             <p className="text-[11px] text-zinc-400 font-extrabold uppercase tracking-wider">Subscribers</p>
-                        </div>
-
-                        <div className="bg-white/5 backdrop-blur rounded-2xl p-4 text-center border border-white/10">
+                        </div>}
+                        {viewCount !== "Unavailable" && <div className="bg-white/5 backdrop-blur rounded-2xl p-4 text-center border border-white/10">
                             <div className="flex items-center justify-center gap-2 text-cyan-400 mb-1">
                                 <Eye className="w-5 h-5" />
-                                <span className="text-2xl font-extrabold text-white">{viewCount || "173.3K"}</span>
+                                <span className="text-2xl font-extrabold text-white">{viewCount}</span>
                             </div>
                             <p className="text-[11px] text-zinc-400 font-extrabold uppercase tracking-wider">Total Video Views</p>
-                        </div>
-
-                        <div className="bg-white/5 backdrop-blur rounded-2xl p-4 text-center border border-white/10">
-                            <div className="flex items-center justify-center gap-2 text-amber-400 mb-1">
-                                <Clock className="w-5 h-5" />
-                                <span className="text-2xl font-extrabold text-white">25,000+</span>
-                            </div>
-                            <p className="text-[11px] text-zinc-400 font-extrabold uppercase tracking-wider">Watch Time Hours</p>
-                        </div>
-
-                        <div className="bg-white/5 backdrop-blur rounded-2xl p-4 text-center border border-white/10">
+                        </div>}
+                        {videoCount !== "Unavailable" && <div className="bg-white/5 backdrop-blur rounded-2xl p-4 text-center border border-white/10">
                             <div className="flex items-center justify-center gap-2 text-emerald-400 mb-1">
                                 <PlayCircle className="w-5 h-5" />
-                                <span className="text-2xl font-extrabold text-white">{videoCount || "279"}</span>
+                                <span className="text-2xl font-extrabold text-white">{videoCount}</span>
                             </div>
                             <p className="text-[11px] text-zinc-400 font-extrabold uppercase tracking-wider">Uploaded Videos</p>
-                        </div>
-                    </div>
+                        </div>}
+                    </div>}
                 </div>
 
                 {/* Shorts Carousel Section */}

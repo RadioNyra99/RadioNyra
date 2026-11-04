@@ -68,10 +68,10 @@ export function YouTubeWatchSection() {
 
                     {/* Large Subscribe Button */}
                     <div className="flex flex-col sm:flex-row items-center gap-3 z-10 shrink-0">
-                        <div className="text-center sm:text-right hidden md:block">
+                        {subscriberCount !== "Unavailable" && <div className="text-center sm:text-right hidden md:block">
                             <span className="text-lg font-extrabold text-white block">{subscriberCount}</span>
                             <span className="text-[10px] text-zinc-400 font-extrabold uppercase tracking-widest">Subscribers</span>
-                        </div>
+                        </div>}
                         <Button
                             onClick={handleSubscribe}
                             size="lg"

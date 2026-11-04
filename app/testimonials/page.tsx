@@ -15,26 +15,7 @@ const testimonials = [
         name: "Kash Patel Productions",
         role: "Event Organizers",
         content: "A record-breaking journey across North America. Every show was a testament to teamwork, creativity, and the unifying power of music. Radio Nyra was a key partner in making this vision a reality.",
-        highlight: "A.R. Rahman – The Wonderment Tour",
-        stars: 5
-    },
-    {
-        name: "Digital Display Partner",
-        role: "Local Business Owner",
-        content: "Partnering with Radio Nyra has significantly increased our foot traffic. Their digital display network is a game-changer for local businesses in the Triangle area.",
-        stars: 5
-    },
-    {
-        name: "Raleigh Fan",
-        role: "Listener",
-        content: "Radio Nyra feels like home. It's the voice of our community, keeping us connected to our roots with the best music and news.",
-        stars: 5
-    },
-    {
-        name: "Community Leader",
-        role: "Morrisville Resident",
-        content: "The support Radio Nyra provides to local cultural events is unparalleled. They are truly the heartbeat of the Indian Subcontinent community in North Carolina.",
-        stars: 5
+        highlight: "A.R. Rahman – The Wonderment Tour"
     }
 ];
 
@@ -43,28 +24,22 @@ const caseStudies = [
         slug: "kash-patel-productions",
         client: "Kash Patel Productions",
         campaign: "A.R. Rahman – The Wonderment Tour Promotion",
-        increase: "130%",
-        metric: "Concert Ticket Sales",
         industry: "Live Entertainment & Concerts",
-        summary: "Sold out 15,000+ capacity arenas and increased local Triangle tickets by 45%."
+        summary: "Radio Nyra supported promotion for the North American tour through on-air and digital campaign activity."
     },
     {
         slug: "mc-construction",
         client: "MC Construction Co.",
         campaign: "Triangle Custom Homebuilder Branding",
-        increase: "275%",
-        metric: "Monthly Inbound Leads",
         industry: "Real Estate & Construction",
-        summary: "Generated 120+ qualified inbound leads and increased brand recall by 35%."
+        summary: "Radio Nyra supported local homebuilder awareness through on-air and digital campaign activity."
     },
     {
         slug: "royal-spice-restaurant",
         client: "Royal Spice Indian Restaurant",
         campaign: "Weekend Buffet & Dining Campaign",
-        increase: "50%",
-        metric: "Weekend Diners Served",
         industry: "Food & Hospitality",
-        summary: "Boosted weekend dining traffic by 50% and registered 200+ WhatsApp claims."
+        summary: "Radio Nyra partnered with the restaurant on a weekend dining promotion using on-air and WhatsApp campaign activity."
     }
 ];
 
@@ -124,12 +99,6 @@ export default function TestimonialsPage() {
                                         <Quote className="w-12 h-12" />
                                     </div>
 
-                                    <div className="flex gap-1 mb-6">
-                                        {[...Array(t.stars)].map((_, idx) => (
-                                            <Star key={idx} className="w-5 h-5 fill-primary text-primary" />
-                                        ))}
-                                    </div>
-
                                     <p className="text-xl md:text-2xl font-bold leading-relaxed mb-8 italic tracking-tight text-foreground/90">
                                         "{t.content}"
                                     </p>
@@ -160,7 +129,7 @@ export default function TestimonialsPage() {
                                 Marketing Case Studies
                             </h2>
                             <p className="text-muted-foreground mt-3 uppercase tracking-widest text-xs font-bold">
-                                See how local and national brands drive measurable results with Radio Nyra
+                                Campaign summaries and partner perspectives. Ask for documented metrics where available.
                             </p>
                         </div>
 
@@ -170,9 +139,6 @@ export default function TestimonialsPage() {
                                     <div className="flex justify-between items-start mb-6">
                                         <span className="text-[10px] font-extrabold uppercase tracking-widest text-primary bg-primary/10 px-2.5 py-1 rounded-full">
                                             {study.industry}
-                                        </span>
-                                        <span className="text-3xl font-extrabold text-primary">
-                                            +{study.increase}
                                         </span>
                                     </div>
                                     <h3 className="text-xl font-extrabold uppercase tracking-tight text-foreground mb-2 leading-snug">

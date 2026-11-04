@@ -1,16 +1,17 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { SeoPageLayout } from "@/components/seo-page-layout"
 
 export const metadata: Metadata = {
   title: "Bollywood Radio Online | Live Hindi Music 24/7",
-  description: "Listen to Bollywood radio online on Radio Nyra. Streaming 24/7 Hindi music, Bollywood news, and hit songs live.",
+  description: "Listen live to Radio Nyra Hindi for Bollywood music, entertainment, news, and community programming.",
   keywords: ["Bollywood Radio Online", "Hindi Radio USA", "Listen to Bollywood Music", "Indian FM Radio", "Radio Nyra"],
   alternates: {
     canonical: "/bollywood-radio-online",
   },
   openGraph: {
     title: "Bollywood Radio Online | Live Hindi Music 24/7",
-    description: "Listen to Bollywood radio online on Radio Nyra. Streaming 24/7 Hindi music, Bollywood news, and hit songs live.",
+    description: "Listen live to Radio Nyra Hindi for Bollywood music, entertainment, news, and community programming.",
     url: "https://www.radionyra.com/bollywood-radio-online",
     siteName: "Radio Nyra",
     type: "website",
@@ -26,7 +27,7 @@ export default function BollywoodRadioOnlinePage() {
         >
             <div className="space-y-6">
                 <section>
-                    <h2 className="text-2xl font-bold mb-4">The Ultimate Destination for Bollywood Radio Online</h2>
+                    <h2 className="text-2xl font-bold mb-4">Bollywood Radio Online with Radio Nyra</h2>
                     <p>Welcome to Radio Nyra, your go-to station for non-stop Bollywood entertainment. Whether you are looking for the latest romantic tracks, upbeat party anthems, or soulful classics from the golden era of Hindi cinema, our Bollywood radio online stream has it all.</p>
                 </section>
                 
@@ -47,7 +48,7 @@ export default function BollywoodRadioOnlinePage() {
 
                 <section>
                     <h2 className="text-2xl font-bold mb-4">Be Part of the Radio Nyra Family</h2>
-                    <p>Join thousands of active listeners who tune in every day. Follow us on social media for behind-the-scenes content, participate in live show requests, and make Radio Nyra your daily soundtrack.</p>
+                    <p>Listen to Radio Nyra Hindi through the player above, then explore current programs on the <Link className="text-primary underline underline-offset-4" href="/schedule">broadcast schedule</Link> or browse more conversations in the <Link className="text-primary underline underline-offset-4" href="/podcasts">podcast library</Link>.</p>
                 </section>
             </div>
         </SeoPageLayout>

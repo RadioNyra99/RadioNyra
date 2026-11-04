@@ -263,7 +263,7 @@ export default async function CityHubPage({ params }: CityPageProps) {
                 <Building2 className="w-8 h-8 text-muted-foreground mx-auto mb-2 opacity-50" />
                 <h3 className="text-sm font-bold text-foreground mb-1">Own a South Asian business in {city.name}?</h3>
                 <p className="text-xs text-muted-foreground max-w-md mx-auto mb-4">
-                  Connect with thousands of daily South Asian listeners in {city.name}. Add your listing to our community directory for free.
+                  Share your business with the South Asian community in {city.name}. Add your listing to the community directory for review.
                 </p>
                 <Button asChild size="sm" className="rounded-full text-xs font-bold">
                   <Link href="/directory/submit">Submit Free Business Listing</Link>
@@ -304,7 +304,7 @@ export default async function CityHubPage({ params }: CityPageProps) {
                   <Sparkles className="w-5 h-5 text-white mb-2" />
                   <h4 className="text-xs font-extrabold uppercase text-white mb-1">Advertise on 99.9 FM</h4>
                   <p className="text-[11px] text-white/90 mb-3">
-                    Reach 100K+ weekly listeners on HD4 Hindi &amp; HD3 Telugu radio.
+                    Connect with Hindi and Telugu radio audiences through Radio Nyra's broadcast and digital options.
                   </p>
                 </div>
                 <Button asChild size="sm" className="bg-white text-black hover:bg-gray-100 rounded-full text-xs font-bold w-full">

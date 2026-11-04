@@ -8,24 +8,17 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import {
   LayoutDashboard, FileText, BarChart3, Users, Radio, Settings,
-  LogOut, Sparkles, Globe, TrendingUp, Eye, Clock,
-  ArrowUpRight, Activity, Podcast, Calendar
+  LogOut, Sparkles, Globe, Eye, ArrowUpRight, Activity, Calendar
 } from "lucide-react"
 
 const quickStats = [
-  { label: "Weekly Listeners", value: "100K+", icon: Users, trend: "+12%", color: "text-blue-500" },
-  { label: "Email Subscribers", value: "50K+", icon: FileText, trend: "+8%", color: "text-green-500" },
-  { label: "WhatsApp Members", value: "100K+", icon: Globe, trend: "+15%", color: "text-emerald-500" },
-  { label: "Instagram Reach", value: "500K+", icon: Eye, trend: "+22%", color: "text-pink-500" },
+  { label: "Audience reporting", value: "Unavailable", icon: Users, color: "text-blue-500" },
+  { label: "Search Console", value: "Unavailable", icon: FileText, color: "text-green-500" },
+  { label: "Listening reports", value: "Unavailable", icon: Globe, color: "text-emerald-500" },
+  { label: "Campaign results", value: "Unavailable", icon: Eye, color: "text-pink-500" },
 ]
 
-const recentActivity = [
-  { action: "Blog draft generated", detail: "Indian Events Raleigh-Durham", time: "2 min ago", icon: Sparkles },
-  { action: "New subscriber", detail: "via WhatsApp form", time: "15 min ago", icon: Users },
-  { action: "Ad campaign started", detail: "MC Construction Q3", time: "1 hour ago", icon: TrendingUp },
-  { action: "Show schedule updated", detail: "Hello Vaishnavi timeslot", time: "3 hours ago", icon: Calendar },
-  { action: "Podcast episode published", detail: "Community Spotlight #42", time: "5 hours ago", icon: Podcast },
-]
+const recentActivity: { action: string; detail: string; time: string; icon: typeof Activity }[] = []
 
 const dashboardModules = [
   {
@@ -38,11 +31,11 @@ const dashboardModules = [
   },
   {
     title: "Analytics Overview",
-    description: "View listener metrics, engagement rates, and growth trends",
+    description: "Reporting is unavailable until analytics access is connected",
     href: "/analytics",
     icon: BarChart3,
-    badge: "Live",
-    badgeColor: "bg-green-500"
+    badge: "Unavailable",
+    badgeColor: "bg-muted-foreground"
   },
   {
     title: "Content Management",
@@ -141,7 +134,7 @@ export default function AdminDashboardPage() {
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-2 px-4 py-2 bg-green-500/10 border border-green-500/20 rounded-full">
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-xs font-bold uppercase tracking-widest text-green-600">System Online</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-green-600">Admin Session Active</span>
               </div>
               <Button
                 variant="outline"
@@ -164,9 +157,6 @@ export default function AdminDashboardPage() {
                     <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <Icon className="w-5 h-5 text-primary" />
                     </div>
-                    <span className={`text-xs font-black uppercase tracking-wider ${stat.color}`}>
-                      {stat.trend}
-                    </span>
                   </div>
                   <p className="text-3xl font-black tracking-tighter text-foreground">{stat.value}</p>
                   <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mt-1">{stat.label}</p>
@@ -218,7 +208,9 @@ export default function AdminDashboardPage() {
                 <Activity className="w-5 h-5 text-primary" /> Recent Activity
               </h2>
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
-                {recentActivity.map((item, i) => {
+                {recentActivity.length === 0 ? (
+                  <p className="p-4 text-sm text-muted-foreground">No activity data is connected.</p>
+                ) : recentActivity.map((item, i) => {
                   const Icon = item.icon
                   return (
                     <div key={i} className="flex items-start gap-3 p-4 border-b border-border/30 last:border-b-0 hover:bg-muted/30 transition-colors">
@@ -245,19 +237,19 @@ export default function AdminDashboardPage() {
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold text-foreground uppercase tracking-wider">Hindi Stream (HD4)</span>
-                    <span className="text-xs font-black text-green-500 uppercase">● Online</span>
+                    <span className="text-xs font-black text-muted-foreground uppercase">Not monitored</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold text-foreground uppercase tracking-wider">Telugu Stream (HD3)</span>
-                    <span className="text-xs font-black text-green-500 uppercase">● Online</span>
+                    <span className="text-xs font-black text-muted-foreground uppercase">Not monitored</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold text-foreground uppercase tracking-wider">Web Player</span>
-                    <span className="text-xs font-black text-green-500 uppercase">● Active</span>
+                    <span className="text-xs font-black text-muted-foreground uppercase">Not monitored</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold text-foreground uppercase tracking-wider">Mobile App</span>
-                    <span className="text-xs font-black text-green-500 uppercase">● v3.2.1</span>
+                    <span className="text-xs font-black text-muted-foreground uppercase">Not monitored</span>
                   </div>
                 </div>
               </div>

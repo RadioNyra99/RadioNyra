@@ -8,17 +8,17 @@ export default function robots(): MetadataRoute.Robots {
             {
                 userAgent: 'Googlebot',
                 allow: '/',
-                disallow: ['/api/', '/admin/'],
+                disallow: ['/api/'],
             },
             {
                 userAgent: 'Bingbot',
                 allow: '/',
-                disallow: ['/api/', '/admin/'],
+                disallow: ['/api/'],
             },
             {
                 userAgent: '*',
                 allow: '/',
-                disallow: ['/api/', '/admin/'],
+                disallow: ['/api/'],
             },
         ],
         sitemap: 'https://www.radionyra.com/sitemap.xml',

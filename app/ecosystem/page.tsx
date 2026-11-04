@@ -87,13 +87,9 @@ export default function EcosystemPage() {
                                 <Megaphone className="w-12 h-12 text-primary mb-6" />
                                 <h2 className="text-2xl font-extrabold uppercase tracking-tight mb-4">Direct Digital</h2>
                                 <p className="text-gray-600 mb-6 leading-relaxed">
-                                    We own the audience relationship. With highly engaged email newsletters and active WhatsApp communities, we bypass algorithms to reach consumers directly.
+                                    Radio Nyra offers email, WhatsApp, and social promotion options. Ask the team to confirm current availability.
                                 </p>
-                                <ul className="space-y-2 text-sm font-bold uppercase tracking-widest text-gray-500">
-                                    <li>• 60,000+ Email List</li>
-                                    <li>• 12,000+ WhatsApp Members</li>
-                                    <li>• 390K+ Instagram Reach</li>
-                                </ul>
+                                <p className="text-sm font-bold uppercase tracking-widest text-gray-500">Audience sizes and placement availability are provided on request when current reporting is available.</p>
                             </div>
                         </div>
                     </div>

@@ -6,14 +6,14 @@ import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "Morrisville NC Indian Radio | 99.9 FM HD4 & HD3",
-  description: "Tune in to Radio Nyra in Morrisville, NC on 99.9 FM HD4 (Hindi) & HD3 (Telugu). Connecting Morrisville's 46% South Asian community with 24/7 hits & local news.",
+  description: "Listen to Radio Nyra in Morrisville, NC on 99.9 FM HD4 (Hindi) and HD3 (Telugu), with live music, news, and community programming.",
   keywords: ["Morrisville NC Indian Radio", "Indian Radio Morrisville", "99.9 FM HD4 Morrisville", "Telugu Radio Morrisville NC", "Morrisville Desi Community", "Radio Nyra Morrisville"],
   alternates: {
     canonical: "https://www.radionyra.com/north-carolina/morrisville",
   },
   openGraph: {
     title: "Morrisville NC Indian Radio | 99.9 FM HD4 & HD3 Radio Nyra",
-    description: "Tune in to Radio Nyra in Morrisville, NC on 99.9 FM HD4 (Hindi) & HD3 (Telugu). Connecting Morrisville's 46% South Asian community with 24/7 hits & local news.",
+    description: "Listen to Radio Nyra in Morrisville, NC on 99.9 FM HD4 (Hindi) and HD3 (Telugu), with live music, news, and community programming.",
     url: "https://www.radionyra.com/morrisville-nc-radio",
     siteName: "Radio Nyra",
     type: "website",
@@ -89,7 +89,7 @@ export default function MorrisvilleNcRadioPage() {
             North Carolina's Premier South Asian Broadcaster
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            With over 46% of its population identifying as Asian and Indian-American, Morrisville is the cultural and commercial epicentre of the Indian diaspora in North Carolina. Radio Nyra broadcasts directly into Morrisville homes, cars, and businesses on 99.9 FM HD4 (Hindi) and HD3 (Telugu).
+            Morrisville is home to a diverse South Asian community. Radio Nyra broadcasts Hindi on 99.9 FM HD4 and Telugu on HD3, with online streams available to listeners outside the local broadcast area.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-border/50">
             <div className="bg-muted/40 p-4 rounded-2xl">

@@ -98,6 +98,19 @@ export const SHOW_PROFILES: ShowProfile[] = [
       "Workday music, lifestyle conversations, local community updates, and listener-friendly talk from the Research Triangle.",
   },
   {
+    slug: "sunn-zarra",
+    name: "Sunn Zarra",
+    host: "Prachi",
+    image: "/images/hosts/Prachi.png",
+    stationId: STATIONS.Hindi.id,
+    language: "Hindi",
+    stationLabel: "99.9 FM-HD4",
+    schedule: "Tuesdays, 3:00 PM - 5:00 PM ET",
+    category: "Soulful Melodies",
+    description:
+      "Dil Se... Har Sur Aapke Naam: join Prachi on Sunn Zarra for soulful melodies, musical nostalgia, and heartfelt conversations on Radio Nyra.",
+  },
+  {
     slug: "bollywood-bliss",
     name: "Bollywood Bliss",
     host: "Bharti Rathore",

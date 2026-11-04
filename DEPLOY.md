@@ -14,8 +14,7 @@
 ### 1.1 Install WordPress Plugins
 
 1. Log into WordPress admin at https://radionyra.com/wp-admin
-   - Username: `thepranab.it@gmail.com`
-   - Password: `7TiIXD&yw3qG62^yfv5HBRWX`
+   - Use authorized account access stored outside the repository.
 
 2. Go to **Plugins → Add New**
 

@@ -169,8 +169,21 @@ export function getLiveHindiShow(now = new Date()): LiveShowInfo {
     }
   }
 
-  // 3 PM - 5 PM: Idhar Udhar Ki Baatein / Afternoon Groove
+  // 3 PM - 5 PM: Sunn Zarra (Tuesdays) / Idhar Udhar Ki Baatein / Afternoon Groove
   if (hour >= 15 && hour < 17) {
+    if (day === "Tuesday") {
+      return {
+        id: "hindi-sunn-zarra",
+        title: "Sunn Zarra",
+        host: "Prachi",
+        image: "/images/hosts/Prachi.png",
+        timeRange: "3:00 PM – 5:00 PM EST",
+        tag: "Soulful Melodies",
+        description: "Dil Se... Har Sur Aapke Naam: join Prachi on Sunn Zarra for soulful melodies, heartfelt conversations, and timeless Bollywood music.",
+        station: "hindi",
+        stationFrequency: "99.9 FM-HD4 • 101.9 FM • 1490 AM",
+      }
+    }
     if (!isWeekend) {
       return {
         id: "hindi-idhar-udhar",

@@ -17,7 +17,7 @@ const MARKET_DATA: Record<string, {
     "raleigh-durham": {
         name: "Raleigh-Durham",
         frequency: "99.9 FM HD4 (Hindi) & HD3 (Telugu)",
-        description: "As the flagship broadcast hub of the Research Triangle, Radio Nyra on 99.9 FM HD4 and HD3 reaches over 85,000+ listeners across Raleigh, Durham, Cary, Morrisville, Apex, Chapel Hill, and RTP. Discover top music, cultural news, local event guides, and business sponsorships in North Carolina.",
+        description: "The flagship broadcast hub of the Research Triangle, with Hindi on 99.9 FM HD4 and Telugu on HD3. Explore music, community news, local events, and business sponsorships across Raleigh, Durham, Cary, Morrisville, Apex, Chapel Hill, and RTP.",
         coverage: "Raleigh, Durham, Chapel Hill, Cary, Morrisville, Apex, Wake Forest, and surrounding Triangle areas.",
         keywords: [
             "Top Radio Stations in Raleigh NC",
@@ -234,7 +234,7 @@ export default async function MarketPage({ params }: { params: Params }) {
                         "name": "What is the premier Indian and South Asian radio station in North Carolina?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Radio Nyra is America's leading Indian radio network and the premier South Asian broadcaster in the Carolinas, broadcasting on 99.9 FM HD4 (Hindi) and HD3 (Telugu) across Raleigh, Durham, Cary, Morrisville, Apex, Chapel Hill, and RTP."
+                            "text": "Radio Nyra shares Hindi and Telugu radio programming online and on 99.9 FM HD4 (Hindi) and HD3 (Telugu) in the Raleigh-Durham area."
                         }
                     },
                     {
@@ -510,7 +510,7 @@ export default async function MarketPage({ params }: { params: Params }) {
                                 Advertise in {market.name}
                             </h3>
                             <p className="opacity-90 leading-relaxed text-sm">
-                                Reach over thousands of active listeners from the Indian Subcontinent community in {market.name}. Promote your business with local on-air spots, digital streaming ads, social campaigns, and local festival sponsorships.
+                                Promote your business through local on-air, digital, social, and event sponsorship options in {market.name}. Ask for current audience information when planning a campaign.
                             </p>
                         </div>
                         <div className="mt-8 flex flex-col sm:flex-row gap-4">

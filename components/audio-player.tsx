@@ -116,13 +116,18 @@ export function AudioPlayer() {
     const handleShowPlayer = (event: Event) => {
       setIsVisible(true)
       setIsCollapsed(false)
-      const detail = (event as CustomEvent<{ toggle?: boolean }>).detail
-      if (detail?.toggle) togglePlay()
-      else play()
+      const detail = (event as CustomEvent<{ toggle?: boolean; stationId?: string }>).detail
+      if (detail?.stationId) {
+        playStation(detail.stationId)
+      } else if (detail?.toggle) {
+        togglePlay()
+      } else {
+        play()
+      }
     }
     window.addEventListener("showAudioPlayer", handleShowPlayer)
     return () => window.removeEventListener("showAudioPlayer", handleShowPlayer)
-  }, [togglePlay, play])
+  }, [togglePlay, play, playStation])
 
   // Sync audio element with state
   useEffect(() => {
@@ -269,7 +274,7 @@ export function AudioPlayer() {
                   >
                     <img
                       src={metadata.artwork}
-                      alt=""
+                      alt={metadata.title ? `${metadata.title} - ${currentStation.name}` : `${currentStation.name} on-air artwork`}
                       width={44}
                       height={44}
                       className="h-full w-full object-cover"

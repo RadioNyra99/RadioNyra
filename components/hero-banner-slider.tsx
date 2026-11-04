@@ -15,7 +15,7 @@ const SLIDES = [
         tag: "LIVE ON AIR 99.9 FM HD3 / HD4",
         title: "THE INDIAN SUBCONTINENT",
         subtitle: "COMMUNITY MEDIA NETWORK",
-        description: "Reaching over 100K+ weekly Indian Subcontinent listeners across the US through high-definition radio, YouTube streams, community events, and digital media.",
+        description: "Hindi and Telugu radio, community news, live interviews, podcasts, and video programming from Radio Nyra.",
         bgImage: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1920&q=80",
         badge: "24/7 HD Radio Streaming"
     },
@@ -26,7 +26,7 @@ const SLIDES = [
         subtitle: "& CELEBRITY SHOWS",
         description: "Subscribe to Radio Nyra YouTube for exclusive Bollywood celeb interviews, trending shorts, kids storytime, and community festival coverage.",
         bgImage: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1920&q=80",
-        badge: "1.05K+ Subscribers • 173.3K+ Views"
+        badge: "Radio Nyra YouTube"
     },
     {
         id: 3,
@@ -35,7 +35,7 @@ const SLIDES = [
         subtitle: "ANYWHERE IN THE WORLD",
         description: "Download the free Radio Nyra app on iOS and Android for crystal-clear HD live audio, podcast episodes, and real-time community updates.",
         bgImage: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1920&q=80",
-        badge: "Top Rated #1 Indian Subcontinent Radio App"
+        badge: "Listen Across Platforms"
     }
 ];
 

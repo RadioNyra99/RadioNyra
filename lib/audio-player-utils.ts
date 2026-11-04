@@ -4,6 +4,10 @@ export interface ShowPlayerOptions {
      * false -> reveal the player and make sure it is playing (a "Listen Live" CTA)
      */
     toggle?: boolean
+    /**
+     * Optional station ID to immediately switch to and play (e.g. 'raleigh-hd4-hindi' or 'raleigh-hd3-telugu')
+     */
+    stationId?: string
 }
 
 /**
@@ -15,7 +19,10 @@ export function showAudioPlayer(options: ShowPlayerOptions = {}) {
     if (typeof window !== "undefined") {
         window.dispatchEvent(
             new CustomEvent("showAudioPlayer", {
-                detail: { toggle: options.toggle === true },
+                detail: {
+                    toggle: options.toggle === true,
+                    stationId: options.stationId,
+                },
             }),
         )
     }

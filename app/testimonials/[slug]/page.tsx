@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { SeoPageLayout } from "@/components/seo-page-layout";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Star, BarChart, ArrowRight, Quote, Landmark, ShoppingBag, Utensils } from "lucide-react";
+import { BarChart, ArrowRight, Quote, Landmark, ShoppingBag, Utensils } from "lucide-react";
 import type { Metadata } from "next";
 
 interface CaseStudy {
@@ -13,10 +13,6 @@ interface CaseStudy {
     testimonial: string;
     author: string;
     role: string;
-    beforeMetric: string;
-    afterMetric: string;
-    metricLabel: string;
-    percentageIncrease: string;
     details: string;
     points: string[];
 }
@@ -26,60 +22,48 @@ const CASE_STUDIES: Record<string, CaseStudy> = {
         client: "Kash Patel Productions",
         industry: "Live Entertainment & Concerts",
         campaign: "A.R. Rahman – The Wonderment Tour Promotion",
-        resultsSummary: "Sold out 15,000+ capacity arenas and increased local Triangle tickets by 45%.",
+        resultsSummary: "Radio Nyra supported promotion for the North American tour through on-air and digital campaign activity.",
         testimonial: "A record-breaking journey across North America. Every show was a testament to teamwork, creativity, and the unifying power of music. Radio Nyra was a key partner in making this vision a reality.",
         author: "Mihir Chakraborty",
         role: "Event Directing Partner, Kash Patel Productions",
-        beforeMetric: "6,500 tickets",
-        afterMetric: "15,000+ (Sold Out)",
-        metricLabel: "Concert Ticket Sales",
-        percentageIncrease: "130%",
         details: "Kash Patel Productions partnered with Radio Nyra to drive awareness and ticket sales for the North American tour of legendary composer A.R. Rahman. We implemented high-frequency radio spots across multiple markets, social media countdown campaigns, and exclusive on-air ticket giveaways.",
         points: [
-            "Coordinated on-air marketing campaigns in 4 key markets.",
-            "Ran target audience banner placements and email blast pushes to 50K+ subscribers.",
+            "Coordinated on-air marketing and digital promotion.",
+            "Used banner placements and email promotion as campaign channels.",
             "Hosted live studio discussions and ticket contest sweeps.",
-            "Direct attribution tracking confirmed Radio Nyra generated 45% of NC sales."
+            "Ticket sales and attribution figures are not published without supporting campaign records."
         ]
     },
     "mc-construction": {
         client: "MC Construction Co.",
         industry: "Real Estate & Construction",
         campaign: "Triangle Custom Homebuilder Branding",
-        resultsSummary: "Generated 120+ qualified inbound leads and increased brand recall by 35%.",
+        resultsSummary: "Radio Nyra supported local homebuilder awareness through on-air and digital campaign activity.",
         testimonial: "Radio Nyra has consistently delivered strong visibility and meaningful engagement for our business. They understand the local community like no one else and have generated high-value clients for us.",
         author: "Mihir Chakraborty",
         role: "CEO, MC Construction Co.",
-        beforeMetric: "12 inquiries / mo",
-        afterMetric: "45 inquiries / mo",
-        metricLabel: "Monthly Inbound Leads",
-        percentageIncrease: "275%",
-        details: "MC Construction Co. needed to reach affluent families in the Raleigh-Durham area to promote custom home building services. Radio Nyra designed a multi-channel branding campaign focusing on our premium listener demographic, combining daily prime-time spots with web sponsorships.",
+        details: "MC Construction Co. partnered with Radio Nyra to promote custom homebuilding services in the Raleigh-Durham area through on-air spots and web placements.",
         points: [
-            "60-second morning drive-time sponsorships detailing custom builds.",
-            "Banner display impressions on the Radio Nyra homepage (216K+ impressions).",
-            "Coordinated local community outreach presence.",
-            "Resulted in 120+ direct inbound leads over a 90-day period."
+            "Used morning drive-time sponsorships to introduce custom homebuilding services.",
+            "Included banner placements on Radio Nyra's website.",
+            "Coordinated local community outreach.",
+            "Lead and brand-awareness outcomes require supporting campaign records before publication."
         ]
     },
     "royal-spice-restaurant": {
         client: "Royal Spice Indian Restaurant",
         industry: "Food & Hospitality",
         campaign: "Weekend Buffet & Dining Campaign",
-        resultsSummary: "Boosted weekend dining traffic by 50% and registered 200+ WhatsApp claims.",
+        resultsSummary: "Radio Nyra partnered with the restaurant on a weekend dining promotion using on-air and WhatsApp campaign activity.",
         testimonial: "Our weekend crowds have doubled since launching on-air ads with Radio Nyra. The WhatsApp coupons were a massive hit and let us track our advertising ROI exactly.",
         author: "Rajesh Kumar",
         role: "General Manager, Royal Spice Restaurant",
-        beforeMetric: "150 tables / weekend",
-        afterMetric: "225+ tables / weekend",
-        metricLabel: "Weekend Diners Served",
-        percentageIncrease: "50%",
         details: "Royal Spice Restaurant wanted to increase weekend dining and buffet occupancy. We designed an interactive WhatsApp-driven on-air campaign. Radio hosts shared a keyword code, prompting listeners to message the station for restaurant coupons.",
         points: [
             "Aired dynamic weekend dinner live spots during Friday drive-time.",
-            "Integrated coupon code distribution with the Radio Nyra WhatsApp community (12K+ members).",
+            "Integrated coupon-code promotion with Radio Nyra's WhatsApp channel.",
             "Offered localized targeting to families in Cary and Morrisville.",
-            "Created measurable 1:1 ROI mapping of radio advertising spend."
+            "Sales and return-on-investment figures are not published without supporting campaign records."
         ]
     }
 };
@@ -98,7 +82,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     if (!study) return {};
 
     const title = `${study.client} Case Study | Radio Nyra Advertising`;
-    const description = `Discover how ${study.client} achieved a ${study.percentageIncrease} increase in ${study.metricLabel} through targeted marketing campaigns with Radio Nyra.`;
+    const description = `${study.client} campaign story: ${study.resultsSummary}`;
 
     return {
         title,
@@ -165,22 +149,6 @@ export default async function CaseStudyPage({ params }: { params: Params }) {
                     </div>
                 </section>
 
-                {/* Metrics Breakdown */}
-                <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="bg-card border border-border p-8 rounded-2xl text-center">
-                        <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-2">Before Campaign</h4>
-                        <p className="text-3xl font-extrabold text-foreground/80 line-through tracking-tight">{study.beforeMetric}</p>
-                    </div>
-                    <div className="bg-card border border-border p-8 rounded-2xl text-center ring-2 ring-primary">
-                        <h4 className="text-xs font-bold uppercase tracking-widest text-primary mb-2">After Campaign</h4>
-                        <p className="text-4xl font-extrabold text-foreground tracking-tight">{study.afterMetric}</p>
-                    </div>
-                    <div className="bg-primary text-primary-foreground p-8 rounded-2xl text-center flex flex-col justify-center">
-                        <h4 className="text-xs font-bold uppercase tracking-widest opacity-80 mb-1">Net Performance Increase</h4>
-                        <p className="text-5xl font-extrabold tracking-tight">+{study.percentageIncrease}</p>
-                    </div>
-                </section>
-
                 {/* Testimonial Quote */}
                 <section className="relative bg-primary/5 border border-primary/20 p-8 md:p-12 rounded-3xl text-center max-w-4xl mx-auto overflow-hidden">
                     <Quote className="absolute top-4 left-4 w-16 h-16 text-primary/10 -rotate-12" />
@@ -188,11 +156,6 @@ export default async function CaseStudyPage({ params }: { params: Params }) {
                         "{study.testimonial}"
                     </blockquote>
                     <div className="relative z-10">
-                        <div className="flex justify-center gap-1 mb-2">
-                            {[1, 2, 3, 4, 5].map((s) => (
-                                <Star key={s} className="w-4 h-4 fill-primary text-primary" />
-                            ))}
-                        </div>
                         <p className="font-extrabold uppercase tracking-widest text-sm text-primary">{study.author}</p>
                         <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-0.5">{study.role}</p>
                     </div>
@@ -206,7 +169,7 @@ export default async function CaseStudyPage({ params }: { params: Params }) {
                             {study.details}
                         </p>
                         <p className="text-muted-foreground leading-relaxed">
-                            Through close collaboration and dynamic audience targeting, Radio Nyra was able to maximize client ROI and build lasting local brand equity.
+                            Campaign performance is not reported here because no supporting measurement records were supplied for this review.
                         </p>
                     </div>
                     <div className="bg-card border border-border p-8 rounded-2xl shadow-sm space-y-4">

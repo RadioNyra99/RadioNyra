@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { ApolloTracker } from "@/components/apollo-tracker"
@@ -40,9 +41,9 @@ export default function PressPage() {
                                         <p className="text-gray-600 leading-relaxed mb-4">
                                             Expanding its commitment to the diverse Indian Subcontinent community, Radio Nyra announces the launch of a dedicated 24/7 Telugu station, delivering round-the-clock news, talk shows, and Tollywood hits to the Triangle area.
                                         </p>
-                                        <a href="#" className="inline-flex items-center text-sm font-extrabold uppercase tracking-widest text-primary hover:text-gray-900 transition-colors">
-                                            Read Full Release <ChevronRight className="w-4 h-4 ml-1" />
-                                        </a>
+                                        <Link href="/telugu-radio-usa" className="inline-flex items-center text-sm font-extrabold uppercase tracking-widest text-primary hover:text-gray-900 transition-colors">
+                                            Listen to Radio Nyra Telugu <ChevronRight className="w-4 h-4 ml-1" />
+                                        </Link>
                                     </div>
                                 </div>
                             </article>
@@ -53,13 +54,13 @@ export default function PressPage() {
                                         <Newspaper className="w-8 h-8 text-primary" />
                                     </div>
                                     <div className="flex-1">
-                                        <p className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2">Company News • January 2025</p>
-                                        <h2 className="text-2xl font-extrabold uppercase tracking-tight mb-3 group-hover:text-primary transition-colors">Record Growth in Digital Listenership Surpasses 100K Weekly</h2>
+                                        <p className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2">Media information</p>
+                                        <h2 className="text-2xl font-extrabold uppercase tracking-tight mb-3 group-hover:text-primary transition-colors">Radio Nyra Station and Programming Details</h2>
                                         <p className="text-gray-600 leading-relaxed mb-4">
-                                            Radio Nyra continues to dominate the Indian Subcontinent media landscape, hitting a new milestone of 100,000 active weekly listeners across terrestrial and digital streaming platforms combined.
+                                            For current station information, press enquiries, and verified audience figures, contact the Radio Nyra team or review the public broadcast schedule and listening pages.
                                         </p>
-                                        <a href="#" className="inline-flex items-center text-sm font-extrabold uppercase tracking-widest text-primary hover:text-gray-900 transition-colors">
-                                            Read Full Release <ChevronRight className="w-4 h-4 ml-1" />
+                                        <a href="mailto:info@radionyra.com" className="inline-flex items-center text-sm font-extrabold uppercase tracking-widest text-primary hover:text-gray-900 transition-colors">
+                                            Contact Radio Nyra <ChevronRight className="w-4 h-4 ml-1" />
                                         </a>
                                     </div>
                                 </div>

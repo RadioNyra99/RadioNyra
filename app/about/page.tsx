@@ -19,7 +19,7 @@ export default function AboutPage() {
                                 About <span className="text-primary">Radio Nyra</span>
                             </h1>
                             <p className="text-xs sm:text-sm md:text-base text-muted-foreground uppercase tracking-[0.25em] font-bold italic">
-                                The Indian Subcontinent Community Media Network • Since 1963
+                                The Indian Subcontinent Community Media Network
                             </p>
                         </div>
                     </div>
@@ -30,15 +30,15 @@ export default function AboutPage() {
                         <div className="text-center max-w-4xl mx-auto mb-12">
                             <span className="eyebrow">About Radio Nyra</span>
                             <h2 className="section-title">
-                                Radio Nyra is America's leading Indian radio network connecting communities
+                                Radio Nyra connects Indian Subcontinent communities
                                 <br className="hidden md:block" /> through music, culture, news, podcasts, entertainment, and live events.
                             </h2>
                             <p className="lede mx-auto mt-4">
-                                We deliver premium content while helping businesses connect with one of the most engaged multicultural audiences in North America.
+                                We share Hindi and Telugu radio, music, news, podcasts, interviews, and community events.
                             </p>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            {["60+ years of broadcast excellence", "Serving Indian communities across America", "Premium entertainment", "Music", "News", "Culture", "Business", "Community", "Podcasts", "Events"].map((item) => (
+                            {["Hindi and Telugu radio", "Community programming", "Music", "News", "Culture", "Business", "Podcasts", "Events"].map((item) => (
                                 <div key={item} className="bg-card border border-border p-5 text-center">
                                     <h3 className="text-xs font-extrabold uppercase tracking-widest text-primary leading-relaxed">{item}</h3>
                                 </div>
@@ -54,17 +54,14 @@ export default function AboutPage() {
                             <div className="text-center md:text-left">
                                 <h2 className="text-xs sm:text-sm font-bold uppercase tracking-[0.4em] text-primary mb-4">Our Heritage</h2>
                                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight mb-8 leading-tight">
-                                    A Legacy Born <br className="hidden md:block" />in 1963
+                                    Radio Nyra Today
                                 </h3>
                                 <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                                     <p>
-                                        It began on a crisp November morning in 1963. A switch was flipped, and a voice entered the homes and hearts of a community for the first time.
+                                        Radio Nyra brings Hindi and Telugu music, news, and community programming to listeners in the United States.
                                     </p>
                                     <p>
-                                        We don't remember the exact name that was whispered over the airwaves that day, a detail lost to the archives of time, but we remember how it felt. It felt like home. It was the start of a conversation that has never stopped.
-                                    </p>
-                                    <p>
-                                        For over sixty years, that voice has evolved, adapted, and grown. It has been a steady companion through decades of change, technological shifts, and the migration of dreams across oceans.
+                                        The station connects listeners with local events, interviews, podcasts, and stories from the Indian Subcontinent community.
                                     </p>
                                 </div>
                             </div>
@@ -72,14 +69,14 @@ export default function AboutPage() {
                                 <div className="aspect-[4/5] bg-muted rounded-sm overflow-hidden border-8 border-white shadow-2xl skew-y-2">
                                     <img
                                         src="/OLD Images/P0105_1-01-45-018_0003.jpg"
-                                        alt="Historical archives 1963"
+                                        alt="Radio Nyra archival photograph"
                                         className="w-full h-full object-cover grayscale sepia-[0.2]"
                                     />
                                 </div>
                                 <div className="absolute -bottom-4 -left-2 md:-bottom-6 md:-left-6 aspect-square w-32 md:w-48 bg-muted rounded-sm overflow-hidden border-4 border-white shadow-xl -skew-y-3 block">
                                     <img
                                         src="/OLD Images/P0105_1-01-45-018_0004.jpg"
-                                        alt="Historical archives 1963 detail"
+                                        alt="Radio Nyra archive detail"
                                         className="w-full h-full object-cover grayscale"
                                     />
                                 </div>
@@ -94,14 +91,14 @@ export default function AboutPage() {
                         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
                             <h2 className="text-2xl sm:text-3xl font-extrabold mb-6 tracking-tight">Radio Nyra: The Modern Identity</h2>
                             <p className="text-lg md:text-xl text-muted-foreground italic">
-                                Today, that original pulse beats through Radio Nyra. We are the modern face of a timeless legacy, a continuation of a journey that started more than half a century ago.
+                                Radio Nyra shares Hindi and Telugu programming alongside community news, podcasts, and events.
                             </p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             <div className="p-8 bg-background border border-border rounded-sm">
-                                <h4 className="font-bold uppercase tracking-widest text-primary mb-4">1963</h4>
-                                <p className="text-sm text-muted-foreground">The first broadcast is aired, marking the beginning of a lifelong connection with the Indian Subcontinent community.</p>
+                                    <h4 className="font-bold uppercase tracking-widest text-primary mb-4">Radio</h4>
+                                    <p className="text-sm text-muted-foreground">Hindi and Telugu programming connects listeners with music and community updates.</p>
                             </div>
                             <div className="p-8 bg-background border border-border rounded-sm">
                                 <h4 className="font-bold uppercase tracking-widest text-primary mb-4">Evolution</h4>
@@ -126,7 +123,7 @@ export default function AboutPage() {
                                 <div className="max-w-4xl space-y-6 text-lg text-muted-foreground leading-relaxed italic">
                                     <p>
                                         The recent chapter of our story began in 2014 in Durham, North Carolina. WDUR 1490 AM became the vessel for our mission, launching 24/7 Desi News, Talk, and Music.
-                                    </p>
+                            </p>
                                     <p>
                                         What started as a 1000W broadcasting channel quickly expanded to HD radio, FM translators, and digital media, catching the attention of the rapidly growing Triangle community.
                                     </p>
@@ -145,7 +142,7 @@ export default function AboutPage() {
                                             <Users className="w-6 h-6 text-primary" />
                                         </div>
                                         <h3 className="font-bold uppercase tracking-widest text-sm mb-2">Massive Reach</h3>
-                                        <p className="text-sm text-muted-foreground">Connecting with 100K+ weekly listeners and 60K+ email subscribers across the USA.</p>
+                                        <p className="text-sm text-muted-foreground">Connecting listeners through Hindi and Telugu radio, community news, podcasts, and events.</p>
                                     </div>
                                     <div className="p-6 bg-card border border-border shadow-sm text-center">
                                         <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
@@ -166,7 +163,7 @@ export default function AboutPage() {
                                             <Award className="w-6 h-6 text-primary" />
                                         </div>
                                         <h3 className="font-bold uppercase tracking-widest text-sm mb-2">Trusted Authority</h3>
-                                        <p className="text-sm text-muted-foreground">Over 12 years of building deep trust and relationships within the community.</p>
+                                    <p className="text-sm text-muted-foreground">Radio, digital programming, and community events provide ways for listeners to connect.</p>
                                     </div>
                                 </div>
                             </div>

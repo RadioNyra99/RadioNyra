@@ -11,13 +11,13 @@ const faqCategories = [
     name: "General Questions",
     icon: HelpCircle,
     items: [
-      { q: "What is Radio Nyra?", a: "Radio Nyra is the premier Indian Subcontinent Community Media Network in the United States, connecting communities, culture, and businesses through radio, digital streams, social platforms, live events, and AI-powered marketing." },
+      { q: "What is Radio Nyra?", a: "Radio Nyra is an Indian Subcontinent community media network sharing Hindi and Telugu radio, music, news, podcasts, interviews, and events." },
       { q: "Where are the Radio Nyra studios located?", a: "Our primary broadcasting studios and offices are located in Durham, North Carolina, USA. We serve the entire Research Triangle area, including Raleigh, Durham, Chapel Hill, Cary, Morrisville, and surrounding suburbs." },
       { q: "How can I listen to Radio Nyra outside of North Carolina?", a: "You can stream Radio Nyra live from anywhere in the world by clicking the 'Listen Live' button on our website, downloading our mobile app on the iOS App Store or Google Play Store, or using smart voice assistants." },
       { q: "Is Radio Nyra free to listen to?", a: "Yes! Radio Nyra is 100% free to listen to on-air (via HD Radio) and online through our website, mobile applications, and smart speakers." },
       { q: "What digital platforms is Radio Nyra available on?", a: "Radio Nyra is available on iOS (Apple App Store), Android (Google Play Store), Alexa smart speakers, Google Home devices, Siri, TuneIn, and online web players." },
       { q: "How do I download the Radio Nyra app?", a: "Search for 'Radio Nyra' in the Apple App Store or Google Play Store, or click the direct badges in our header/footer to download the app for free." },
-      { q: "When was Radio Nyra founded?", a: "Radio Nyra has been on-air for over 12 years, serving as the trusted voice and cultural bridge for the Indian Subcontinent diaspora in the United States." },
+      { q: "When was Radio Nyra founded?", a: "The current website does not publish a verified founding date. Radio Nyra shares Hindi and Telugu radio and community programming." },
       { q: "Does Radio Nyra play regional Indian music?", a: "Yes, we feature dedicated channels and shows for Hindi (Bollywood) and Telugu music, and cover other regional Indian hit music during special segments." },
       { q: "How can I contact Radio Nyra?", a: "You can reach us via email at info@radionyra.com, call our office at +1 (919) 294-4800, or send us a WhatsApp message at +1 (919) 294-4800." },
       { q: "Does Radio Nyra host live community events?", a: "Yes, Radio Nyra regularly organizes and sponsors major community events, concerts (such as the AR Rahman Tour), Diwali festivals, Holi celebrations, and local charity drives." }
@@ -86,7 +86,7 @@ const faqCategories = [
       { q: "Can Telugu listeners call in for requests?", a: "Absolutely! You can call the Telugu studio line or WhatsApp us to request songs, dedicate tracks, or share greetings." },
       { q: "Are there promotions for Telugu movies in NC?", a: "Yes, we promote local Telugu movie screenings, theater listings, and cultural community events across North Carolina." },
       { q: "Is Telugu news available on the station?", a: "Yes, we broadcast regular updates covering both local community news in the US and major headlines from Andhra Pradesh and Telangana." },
-      { q: "How popular is the Telugu channel?", a: "Our Telugu channel reaches over 100K+ members across digital and terrestrial platforms, serving as the central media hub for Telugu-speakers in the region." },
+      { q: "How popular is the Telugu channel?", a: "Radio Nyra Telugu is available on 99.9 FM HD3 in Raleigh-Durham and through its online stream. Current audience totals are not published here." },
       { q: "Who are the sponsors of the Telugu channel?", a: "We partner with local grocery stores, IT consulting firms, builders, and restaurants targeting the Telugu-speaking demographic." }
     ]
   },
@@ -98,7 +98,7 @@ const faqCategories = [
       { q: "How can I advertise my business on Radio Nyra?", a: "You can submit an inquiry via our 'Advertise' page, email sales at info@radionyra.com, or call our team directly at +1 (919) 294-4800." },
       { q: "What advertising services do you offer?", a: "We offer on-air radio ads, digital banner placements, social media promotions, email newsletter features, WhatsApp community broadcasts, and live event sponsorship opportunities." },
       { q: "Can Radio Nyra produce my radio commercial?", a: "Yes, our Creative Studio provides professional scriptwriting, voiceover talent, and audio engineering services to produce high-impact commercials for your business." },
-      { q: "What is the size of Radio Nyra's audience?", a: "We have over 100K+ weekly listeners, 50K+ email subscribers, 100K+ WhatsApp members, and a monthly Instagram reach exceeding 500K+." },
+      { q: "What is the size of Radio Nyra's audience?", a: "Audience size and engagement change over time. Contact the advertising team for current, verified figures and the reporting period behind them." },
       { q: "Is radio advertising effective for local businesses?", a: "Yes, ethnic radio advertising provides highly focused demographic targeting, yielding higher conversion rates, trust, and brand recall than broad programmatic ads." },
       { q: "Can I sponsor a specific show or segment?", a: "Yes, you can sponsor popular programs (like Hello Vaishnavi or Geet Bazaar) or segments like local traffic, weather, or community updates." },
       { q: "How do you measure advertising campaign success?", a: "We offer direct tracking options such as dedicated call-tracking numbers, custom landing pages, and coupon codes integrated with our WhatsApp broadcasts." },

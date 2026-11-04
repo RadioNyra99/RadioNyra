@@ -4,8 +4,7 @@ import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { FrequencyBar } from "@/components/frequency-bar"
 import { Footer } from "@/components/footer"
-import { Star, Play, PlayCircle, Youtube, Headphones, Megaphone, Smartphone, Users, Radio, ArrowRight } from "lucide-react"
-import { CountUp } from "@/components/ui/count-up"
+import { Star, Play, PlayCircle, Youtube, ArrowRight } from "lucide-react"
 import { ApolloTracker } from "@/components/apollo-tracker"
 import { LiveNowHero } from "@/components/live-now-hero"
 import { TuneInPlatforms } from "@/components/tune-in-platforms"
@@ -25,35 +24,9 @@ export function HomeView() {
         <LiveNowHero />
         <TuneInPlatforms />
 
-        {/* PROVEN REACH STATS */}
         <section className="py-8 sm:py-10 bg-background border-b border-border/50">
           <div className="container mx-auto px-4 sm:px-6">
-            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-y-8 gap-x-3 text-center justify-center items-start">
-              {[
-                { label: "Weekly Listeners", end: 100, suffix: "K+", icon: Headphones },
-                { label: "Email Subscribers", end: 60, suffix: "K+", icon: Megaphone },
-                { label: "WhatsApp Members", end: 12, suffix: "K+", icon: Smartphone },
-                { label: "Monthly Instagram Reach", end: 500, suffix: "K+", icon: Users },
-                { label: "Display Impressions", end: 216, suffix: "K+", icon: Star },
-                { label: "Years On Air", end: 12, suffix: "", icon: Radio },
-                { label: "Media Channels", end: 8, suffix: "+", icon: Play },
-              ].map((stat, i) => (
-                <div key={i} className="flex flex-col items-center justify-center px-1">
-                  <div className="w-12 h-12 rounded-full bg-red-500/10 dark:bg-red-500/20 flex items-center justify-center mb-2.5 transition-transform hover:scale-110">
-                    <stat.icon className="w-5 h-5 text-red-600 dark:text-red-400" />
-                  </div>
-                  <div className="text-2xl sm:text-3xl font-black text-foreground tracking-tight mb-1">
-                    <CountUp end={stat.end} suffix={stat.suffix} duration={2500} />
-                  </div>
-                  <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-muted-foreground leading-tight text-center">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* GROW YOUR BUSINESS CTA */}
-            <div className="mt-8 pt-6 border-t border-border/40 flex flex-wrap items-center justify-center gap-3">
+            <div className="flex flex-wrap items-center justify-center gap-3">
               <Link
                 href="/services"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary/90 text-white text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-md hover:shadow-lg transition-all"

@@ -11,7 +11,7 @@ export function generateOrganizationSchema() {
         "name": "Radio Nyra",
         "url": "https://www.radionyra.com",
         "logo": "https://www.radionyra.com/images/radio-nyra-logo.jpg",
-        "description": "Radio Nyra is America's leading Indian radio network delivering live radio, music, culture, news, podcasts, events, and AI-powered marketing across the US.",
+        "description": "Radio Nyra shares Hindi and Telugu radio programming, music, community news, podcasts, interviews, and events.",
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+1-919-294-4800",
@@ -91,9 +91,8 @@ export function generatePodcastSchema(podcast: {
         },
         "publisher": {
             "@type": "Organization",
-            "name": "Radio Nyra Media Network"
-        },
-        "webFeed": "https://www.radionyra.com/podcasts/feed.xml"
+            "name": "Radio Nyra"
+        }
     };
 }
 
@@ -105,14 +104,13 @@ export function generateVideoSchema(video: {
     duration?: string;
     embedUrl: string;
 }) {
-    return {
+    const schema: Record<string, unknown> = {
         "@context": "https://schema.org",
         "@type": "VideoObject",
         "name": video.title,
         "description": video.description,
         "thumbnailUrl": [video.thumbnailUrl],
         "uploadDate": video.uploadDate,
-        "duration": video.duration || "PT5M30S",
         "embedUrl": video.embedUrl,
         "publisher": {
             "@type": "Organization",
@@ -123,6 +121,9 @@ export function generateVideoSchema(video: {
             }
         }
     };
+
+    if (video.duration) schema.duration = video.duration;
+    return schema;
 }
 
 export function generateBreadcrumbSchema(items: { name: string; url: string }[]) {
@@ -148,19 +149,12 @@ export function generateLocalBusinessSchema() {
         "email": "info@radionyra.com",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "10966 Chapel Hill Rd #144",
-            "addressLocality": "Morrisville",
+            "streetAddress": "4819 Emperor Blvd Suite 400",
+            "addressLocality": "Durham",
             "addressRegion": "NC",
-            "postalCode": "27560",
+            "postalCode": "27703",
             "addressCountry": "US"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "35.8398",
-            "longitude": "-78.8252"
-        },
-        "priceRange": "$$",
-        "openingHours": "Mo-Fr 09:00-18:00"
+        }
     };
 }
 

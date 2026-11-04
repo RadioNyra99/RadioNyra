@@ -96,10 +96,10 @@ export function useYouTubeChannelStats() {
         watchTime: string;
         loading: boolean;
     }>({
-        subscriberCount: "1.05K",
-        viewCount: "173.3K",
-        videoCount: "279",
-        watchTime: "25,000+",
+        subscriberCount: "Unavailable",
+        viewCount: "Unavailable",
+        videoCount: "Unavailable",
+        watchTime: "Unavailable",
         loading: true,
     });
 
@@ -116,18 +116,18 @@ export function useYouTubeChannelStats() {
                             return isNaN(num) ? valStr : num >= 1000 ? `${(num / 1000).toFixed(1)}K` : num.toLocaleString();
                         };
                         setStats({
-                            subscriberCount: formatVal(data.subscriberCount) || "1.05K",
-                            viewCount: formatVal(data.viewCount) || "173.3K",
-                            videoCount: formatVal(data.videoCount) || "279",
-                            watchTime: "25,000+",
+                            subscriberCount: formatVal(data.subscriberCount) || "Unavailable",
+                            viewCount: formatVal(data.viewCount) || "Unavailable",
+                            videoCount: formatVal(data.videoCount) || "Unavailable",
+                            watchTime: "Unavailable",
                             loading: false
                         });
                     } else {
                         setStats({
-                            subscriberCount: "1.05K",
-                            viewCount: "173.3K",
-                            videoCount: "279",
-                            watchTime: "25,000+",
+                            subscriberCount: "Unavailable",
+                            viewCount: "Unavailable",
+                            videoCount: "Unavailable",
+                            watchTime: "Unavailable",
                             loading: false
                         });
                     }
@@ -135,10 +135,10 @@ export function useYouTubeChannelStats() {
             } catch {
                 if (mounted) {
                     setStats({
-                        subscriberCount: "1.05K",
-                        viewCount: "173.3K",
-                        videoCount: "279",
-                        watchTime: "25,000+",
+                        subscriberCount: "Unavailable",
+                        viewCount: "Unavailable",
+                        videoCount: "Unavailable",
+                        watchTime: "Unavailable",
                         loading: false
                     });
                 }

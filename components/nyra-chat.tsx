@@ -82,7 +82,7 @@ export function NyraChat() {
       },
       {
         keywords: ["advertise", "business", "growth", "marketing", "listeners", "stats", "newsletter", "ads"],
-        response: "Advertise with the #1 Indian Subcontinent Radio Network! We have 100K+ daily listeners, a 60K+ monthly newsletter, and 500+ brand partners. Visit our Advertise page to send an inquiry!"
+        response: "Radio Nyra offers advertising options across radio, digital streams, podcasts, video, and community events. Current audience and campaign figures are not published here; request a current media kit from the advertising team. Visit /advertise to send an inquiry."
       },
       {
         keywords: ["founded", "history", "start", "1963", "ravi", "cherukuri", "founder", "mission"],
@@ -114,7 +114,7 @@ export function NyraChat() {
       },
       {
         keywords: ["cary", "morrisville", "raleigh", "durham", "apex", "chapel hill", "wake forest", "rtp", "near me", "north carolina"],
-        response: "📍 North Carolina Triangle Hubs:\nRadio Nyra broadcasts across 8 Triangle communities on 99.9 FM HD4 (Hindi) & HD3 (Telugu)!\n- Morrisville: 46% South Asian community\n- Cary: Cultural & temple heart\n- Raleigh & Durham: Research Triangle tech corridor\nCheck your local city guide at /near-me or /north-carolina/[city]!"
+        response: "📍 North Carolina Triangle Hubs:\nRadio Nyra broadcasts Hindi on 99.9 FM HD4 and Telugu on 99.9 FM HD3 in Raleigh-Durham, with online streams available elsewhere. Explore local pages at /near-me and /north-carolina."
       },
       {
         keywords: ["grocery", "groceries", "temple", "temples", "patel", "sv temple", "baps", "bazaar"],

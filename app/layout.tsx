@@ -27,15 +27,15 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.radionyra.com'),
   title: {
-    default: "Radio Nyra | The Indian Subcontinent Community Media Network In USA",
+    default: "Radio Nyra | Hindi & Telugu Radio, News & Podcasts",
     template: "%s | Radio Nyra"
   },
   description:
-    "Radio Nyra is America's leading Indian radio network for premium music, culture, news, podcasts, events, and multicultural advertising.",
+    "Listen live to Radio Nyra Hindi and Telugu radio, and explore music, community news, shows, podcasts, interviews, and events.",
   manifest: "/manifest.json",
   keywords: [
     "Radio Nyra", "Indian Radio USA", "Telugu Radio USA", "Hindi Radio USA",
-    "Raleigh FM Radio Stations", "Indian Subcontinent Community Media In USA"
+    "Bollywood radio online", "Indian community radio"
   ],
   authors: [{ name: "Radio Nyra" }],
   creator: "Radio Nyra",
@@ -50,8 +50,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.radionyra.com",
     siteName: "Radio Nyra",
-    title: "Radio Nyra | The Indian Subcontinent Community Media Network In USA",
-    description: "Radio Nyra is America's leading Indian Subcontinent Community Media Network for music, culture, news, podcasts, events, and multicultural advertising.",
+    title: "Radio Nyra | Hindi & Telugu Radio, News & Podcasts",
+    description: "Listen live to Radio Nyra Hindi and Telugu radio, and explore music, community news, shows, podcasts, interviews, and events.",
     images: [
       {
         url: "/og-image.png",
@@ -63,8 +63,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Radio Nyra | The Indian Subcontinent Community Media Network",
-    description: "The Indian Subcontinent Community Media Network connecting diaspora communities across America.",
+    title: "Radio Nyra | Hindi & Telugu Radio",
+    description: "Hindi and Telugu radio, podcasts, news, interviews, and community stories from Radio Nyra.",
     images: ["/og-image.png"],
   },
   icons: {
@@ -129,19 +129,6 @@ export default function RootLayout({
           "postalCode": "27703",
           "addressCountry": "US"
         },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "35.8398",
-          "longitude": "-78.8252"
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-          ],
-          "opens": "00:00",
-          "closes": "23:59"
-        },
         "telephone": "+1-919-294-4800",
         "broadcastFrequency": [
           {
@@ -187,11 +174,6 @@ export default function RootLayout({
           "@type": "Organization",
           "@id": "https://www.radionyra.com/#organization"
         },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.radionyra.com/search?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
       }
     ]
   };

@@ -40,9 +40,9 @@ export const NC_CITIES: NCCity[] = [
     county: "Wake County",
     tagline: "The Vibrant Heart of the Triangle's South Asian Community",
     description:
-      "Morrisville is one of America's most dynamic multicultural towns, with Asian residents comprising ~46% of the population and Asian Indians representing ~36%. Home to bustling cricket leagues, premier Hindu temples, Diwali at Town Hall, and thriving tech professionals.",
+      "Morrisville is home to a diverse South Asian community, local cultural events, places of worship, and technology employers.",
     population: "31,000+",
-    indianPopulationShare: "~36% Asian Indian",
+    indianPopulationShare: "Large South Asian community",
     listenDetails: {
       frequency: "99.9 FM",
       hdChannelHindi: "99.9 HD4 (Hindi - Radio Nyra)",
@@ -240,7 +240,7 @@ export const NC_CITIES: NCCity[] = [
       {
         question: "Can I advertise my Raleigh business on Radio Nyra?",
         answer:
-          "Yes! Radio Nyra provides 99.9 FM HD radio spots, digital banners, podcasts, WhatsApp community blasts, and social campaigns reaching 100K+ listeners across Raleigh.",
+          "Radio Nyra offers advertising options across 99.9 FM HD radio, digital streams, podcasts, and community programming. Contact the advertising team for current audience and campaign information.",
       },
     ],
   },

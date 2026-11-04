@@ -22,39 +22,11 @@ export default function AdvertisePage() {
     const [targetCity, setTargetCity] = useState("Triangle-Wide (All 8 Cities)")
     const [selectedChannels, setSelectedChannels] = useState<string[]>(["On-Air Spots (99.9 FM)", "Digital Web Streaming"])
 
-    // Dynamic calculations based on fixed package tiers:
-    // Starter: 30 spots / $1,200 ($40/spot)
-    // Growth: 75 spots / $3,000 ($40/spot)
-    // Domination: 150+ spots / $6,000+ ($40/spot)
-    const getReachEstimates = () => {
-        let spotRate = 40
-        let reachMultiplier = 25
-        let baseReach = 35000
-        let impressionsMultiplier = 65
-        let tierLabel = "Raleigh-Durham 99.9 FM (HD4/HD3) + Triangle Digital"
-
-        if (marketTier === "southeast") {
-            spotRate = 50
-            reachMultiplier = 35
-            baseReach = 65000
-            impressionsMultiplier = 95
-            tierLabel = "Raleigh-Durham + Atlanta Digital Hub"
-        } else if (marketTier === "national") {
-            spotRate = 60
-            reachMultiplier = 50
-            baseReach = 125000
-            impressionsMultiplier = 140
-            tierLabel = "7-Market National Network + YouTube + Audio Stream"
-        }
-
-        const spots = Math.floor(budget / spotRate)
-        const impressions = Math.floor(budget * impressionsMultiplier)
-        const listeners = Math.floor(budget * reachMultiplier) + baseReach
-
-        return { spots, impressions, listeners, tierLabel }
-    }
-
-    const { spots, impressions, listeners, tierLabel } = getReachEstimates()
+    const tierLabel = marketTier === "rdu"
+        ? "Raleigh-Durham"
+        : marketTier === "southeast"
+            ? "Raleigh-Durham and Atlanta"
+            : "National digital campaign scope"
 
     const handleMediaKitRequest = () => {
         trackEvent({
@@ -84,7 +56,7 @@ export default function AdvertisePage() {
                                 Grow Your <span className="text-primary">Business</span>
                             </h1>
                             <p className="text-xl md:text-2xl text-gray-600 uppercase tracking-[0.2em] font-bold italic mb-10">
-                                Advertise with America&apos;s #1 Indian Subcontinent Radio Network
+                                Advertise with Radio Nyra&apos;s Hindi, Telugu, and community programming
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <Button size="lg" className="h-16 px-10 text-base font-extrabold uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-full transition-all hover:scale-105 shadow-xl" asChild>
@@ -104,10 +76,10 @@ export default function AdvertisePage() {
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {[
-                                { title: "Listener Reach", desc: "100K+ loyal listeners across Raleigh-Durham.", icon: Users },
+                                { title: "Listener Reach", desc: "Plan placements across radio, digital streams, podcasts, and community events.", icon: Users },
                                 { title: "Digital + Radio", desc: "FM broadcast, mobile apps, and digital platforms.", icon: Smartphone },
-                                { title: "Targeted Audience", desc: "Reach the affluent Indian Subcontinent community.", icon: Star },
-                                { title: "Brand Visibility", desc: "High-frequency placements for maximum impact.", icon: Megaphone }
+                                { title: "Targeted Audience", desc: "Plan messaging around language, content, and market.", icon: Star },
+                                { title: "Brand Visibility", desc: "Discuss on-air and digital placement options with the team.", icon: Megaphone }
                             ].map((item, i) => (
                                 <div key={i} className="p-8 bg-gray-50 border border-gray-100 hover:border-primary/30 transition-all hover:shadow-lg rounded-2xl">
                                     <item.icon className="w-12 h-12 text-primary mb-6" />
@@ -140,7 +112,7 @@ export default function AdvertisePage() {
                                 {
                                     title: "99.9 FM HD Radio Spots",
                                     badge: "Broadcast Audio",
-                                    desc: "High-frequency 30s and 60s prime-time spots reaching daily commuters and families across the Triangle.",
+                                    desc: "Ask about available 30-second and 60-second radio placements for listeners across the Triangle.",
                                     detail: "99.9 FM HD4 (Hindi) & HD3 (Telugu)",
                                 },
                                 {
@@ -153,7 +125,7 @@ export default function AdvertisePage() {
                                     title: "Digital Audio & Web Stream",
                                     badge: "Digital Reach",
                                     desc: "Streaming prerolls, companion banners, and interactive display ads across RadioNyra.com and mobile apps.",
-                                    detail: "50,000+ monthly digital impressions",
+                                    detail: "Ask for current campaign reach data",
                                 },
                                 {
                                     title: "YouTube & Video Podcasts",
@@ -164,8 +136,8 @@ export default function AdvertisePage() {
                                 {
                                     title: "WhatsApp & Email Blasts",
                                     badge: "Direct Response",
-                                    desc: "Direct messages and newsletters delivered straight to 60,000+ subscribed Triangle South Asian professionals.",
-                                    detail: "High-open-rate community channels",
+                                    desc: "Ask about current email newsletter and WhatsApp promotional placements.",
+                                    detail: "Availability confirmed when a proposal is prepared",
                                 },
                                 {
                                     title: "Festival Event Activations",
@@ -249,7 +221,7 @@ export default function AdvertisePage() {
                                         Drive Weekend Foot Traffic &amp; Repeat Local Customers
                                     </h3>
                                     <p className="text-sm text-gray-600 leading-relaxed">
-                                        South Asian families across Cary, Morrisville, Apex, and Raleigh look to Radio Nyra for the latest dining spots, grocery specials, and festive shopping deals. Our heavy-rotation weekend drive-time ads turn listeners into immediate restaurant and store visits.
+                                        Businesses can ask about promotional placements for dining, grocery, retail, and community events in the Triangle.
                                     </p>
                                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3">
                                         <div className="p-3 bg-white rounded-xl border border-gray-200 text-xs">
@@ -274,10 +246,10 @@ export default function AdvertisePage() {
                                         <Calendar className="w-4 h-4" /> For Concerts, Festivals &amp; Comedy Organizers
                                     </div>
                                     <h3 className="text-2xl font-extrabold uppercase tracking-tight">
-                                        Sell Out Ticket Allocations Weeks Ahead of Showday
+                                        Promote Concerts, Festivals &amp; Community Events
                                     </h3>
                                     <p className="text-sm text-gray-600 leading-relaxed">
-                                        Radio Nyra is North Carolina's #1 official media partner for Bollywood singers, Tollywood musical concerts, stand-up comedy tours, and cultural melas. We create urgent ticket-buying momentum through on-air ticket giveaways, RJ interviews, and banner takeovers.
+                                        Discuss on-air spots, interviews, event listings, and digital placements for Bollywood and Tollywood concerts, comedy shows, festivals, and community events. Campaign delivery and outcomes depend on the agreed plan.
                                     </p>
                                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3">
                                         <div className="p-3 bg-white rounded-xl border border-gray-200 text-xs">
@@ -286,7 +258,7 @@ export default function AdvertisePage() {
                                         </div>
                                         <div className="p-3 bg-white rounded-xl border border-gray-200 text-xs">
                                             <strong className="block text-primary">Dedicated Email Blast</strong>
-                                            <span className="text-gray-500">Solo email sent to 60,000+ Triangle South Asian ticket buyers.</span>
+                                            <span className="text-gray-500">Email placement can be included when the current list and campaign schedule are confirmed.</span>
                                         </div>
                                         <div className="p-3 bg-white rounded-xl border border-gray-200 text-xs">
                                             <strong className="block text-primary">Artist Audio Station IDs</strong>
@@ -302,10 +274,10 @@ export default function AdvertisePage() {
                                         <Briefcase className="w-4 h-4" /> For Attorneys, CPAs, Realtors &amp; Mortgage Officers
                                     </div>
                                     <h3 className="text-2xl font-extrabold uppercase tracking-tight">
-                                        Establish Market Authority With High-Net-Worth Tech Families
+                                        Reach Audiences Interested in Professional Services
                                     </h3>
                                     <p className="text-sm text-gray-600 leading-relaxed">
-                                        Over 55% of our listener base has a household income exceeding $150K+, primarily working across RTP technology, biotech, and university campuses. Position your practice as the trusted South Asian authority for immigration visas, real estate purchases, and wealth management.
+                                        Introduce your practice through relevant programming and campaign placements. Ask the Radio Nyra team for current market information before planning a campaign.
                                     </p>
                                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3">
                                         <div className="p-3 bg-white rounded-xl border border-gray-200 text-xs">
@@ -314,7 +286,7 @@ export default function AdvertisePage() {
                                         </div>
                                         <div className="p-3 bg-white rounded-xl border border-gray-200 text-xs">
                                             <strong className="block text-primary">Priority Directory Placement</strong>
-                                            <span className="text-gray-500">Ranked #1 in our legal and financial services categories.</span>
+                                            <span className="text-gray-500">Featured placements may be available for eligible directory listings.</span>
                                         </div>
                                         <div className="p-3 bg-white rounded-xl border border-gray-200 text-xs">
                                             <strong className="block text-primary">Lead Generation Route</strong>
@@ -383,202 +355,89 @@ export default function AdvertisePage() {
                     </div>
                 </section>
 
-                {/* Audience Snapshot */}
+                {/* Listener channels */}
                 <section className="py-16 bg-muted/20 border-b border-gray-100">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight italic mb-4">Audience Snapshot</h2>
-                            <p className="text-lg text-gray-600 italic">Who you reach when you advertise with Radio Nyra.</p>
+                            <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight italic mb-4">Ways to Connect with Radio Nyra</h2>
+                            <p className="text-lg text-gray-600 italic">Choose placements that fit your audience, market, and campaign goals.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                             <div className="bg-white p-8 border-t-4 border-t-primary shadow-sm rounded-2xl">
-                                <h3 className="text-xl font-extrabold uppercase mb-4 text-primary">Demographics</h3>
-                                <ul className="space-y-3 text-gray-700 font-medium">
-                                    <li className="flex justify-between border-b pb-2"><span>Age 25-45</span> <strong>65%</strong></li>
-                                    <li className="flex justify-between border-b pb-2"><span>Age 45+</span> <strong>25%</strong></li>
-                                    <li className="flex justify-between"><span>Under 25</span> <strong>10%</strong></li>
-                                </ul>
+                                <h3 className="text-xl font-extrabold uppercase mb-4 text-primary">Live Radio</h3>
+                                <p className="text-gray-700 font-medium">Hindi and Telugu programming on FM HD channels in Raleigh-Durham, with online live streams.</p>
                             </div>
                             <div className="bg-white p-8 border-t-4 border-t-secondary shadow-sm rounded-2xl">
-                                <h3 className="text-xl font-extrabold uppercase mb-4 text-secondary">Purchasing Power</h3>
-                                <ul className="space-y-3 text-gray-700 font-medium">
-                                    <li className="flex justify-between border-b pb-2"><span>HHI $150K+</span> <strong>55%</strong></li>
-                                    <li className="flex justify-between border-b pb-2"><span>HHI $100K - $150K</span> <strong>30%</strong></li>
-                                    <li className="flex justify-between"><span>Homeowners</span> <strong>78%</strong></li>
-                                </ul>
+                                <h3 className="text-xl font-extrabold uppercase mb-4 text-secondary">Digital Content</h3>
+                                <p className="text-gray-700 font-medium">Explore podcast conversations, interviews, video, and station content across Radio Nyra's digital channels.</p>
                             </div>
                             <div className="bg-white p-8 border-t-4 border-t-green-500 shadow-sm rounded-2xl">
-                                <h3 className="text-xl font-extrabold uppercase mb-4 text-green-600">Engagement</h3>
-                                <ul className="space-y-3 text-gray-700 font-medium">
-                                    <li className="flex justify-between border-b pb-2"><span>Daily Listening</span> <strong>2.5 hrs</strong></li>
-                                    <li className="flex justify-between border-b pb-2"><span>Mobile App Usage</span> <strong>45%</strong></li>
-                                    <li className="flex justify-between"><span>Event Attendees</span> <strong>15K+ Yearly</strong></li>
-                                </ul>
+                                <h3 className="text-xl font-extrabold uppercase mb-4 text-green-600">Community</h3>
+                                <p className="text-gray-700 font-medium">Discuss event listings, sponsorships, and community-focused campaigns with the Radio Nyra team.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* Interactive Reach & Budget Estimator */}
-                <section className="py-16 bg-gradient-to-b from-gray-50 to-white border-b border-gray-100">
-                    <div className="container mx-auto px-4 max-w-5xl">
-                        <div className="text-center mb-12">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-widest mb-3">
-                                <Calculator className="w-3.5 h-3.5" />
-                                Interactive ROI Estimator
+                {/* Campaign planner */}
+                <section className="border-b border-gray-100 bg-gradient-to-b from-gray-50 to-white py-16">
+                    <div className="container mx-auto max-w-5xl px-4">
+                        <div className="mx-auto mb-10 max-w-2xl text-center">
+                            <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-primary">
+                                <Calculator className="h-3.5 w-3.5" /> Campaign planning
                             </div>
-                            <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight italic mb-3">
-                                Estimate Your Campaign Reach
-                            </h2>
-                            <p className="text-gray-600 text-base max-w-xl mx-auto">
-                                Customize your desired investment and target market to preview estimated listener reach and on-air placements.
+                            <h2 className="mb-3 text-3xl font-extrabold uppercase tracking-tight italic md:text-5xl">Build a Campaign Brief</h2>
+                            <p className="text-base text-gray-600">
+                                Choose a planning budget and market, then request a proposal. Listener reach, impressions, rates, and campaign outcomes require current inventory and reporting data, so this planner does not estimate them.
                             </p>
                         </div>
-
-                        <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 md:p-12 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                            <div className="lg:col-span-6 space-y-6">
-                                <div>
-                                    <label className="text-xs font-extrabold uppercase tracking-widest text-gray-500 mb-2 block">
-                                        Select Target Market Coverage:
-                                    </label>
-                                    <div className="grid grid-cols-3 gap-2">
+                        <div className="mx-auto grid max-w-3xl gap-6 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:grid-cols-2 sm:p-8">
+                            <div>
+                                <h3 className="mb-3 text-sm font-extrabold uppercase tracking-wider">Planning budget</h3>
+                                <div className="grid grid-cols-3 gap-2">
+                                    {[1200, 3000, 6000].map((amount) => (
                                         <button
+                                            key={amount}
                                             type="button"
-                                            onClick={() => setMarketTier("rdu")}
-                                            className={`p-3 text-xs font-bold uppercase rounded-xl border transition-all ${
-                                                marketTier === "rdu" ? "bg-primary text-white border-primary shadow-md" : "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100"
-                                            }`}
+                                            onClick={() => setBudget(amount)}
+                                            aria-pressed={budget === amount}
+                                            className={`rounded-xl border px-3 py-3 text-sm font-bold transition-colors ${budget === amount ? "border-primary bg-primary text-white" : "border-gray-200 bg-gray-50 text-gray-700 hover:border-primary"}`}
                                         >
-                                            Raleigh-Durham
+                                            ${amount.toLocaleString()}
                                         </button>
-                                        <button
-                                            type="button"
-                                            onClick={() => setMarketTier("southeast")}
-                                            className={`p-3 text-xs font-bold uppercase rounded-xl border transition-all ${
-                                                marketTier === "southeast" ? "bg-primary text-white border-primary shadow-md" : "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100"
-                                            }`}
-                                        >
-                                            RDU + Atlanta
-                                        </button>
-                                        <button
-                                            type="button"
-                                            onClick={() => setMarketTier("national")}
-                                            className={`p-3 text-xs font-bold uppercase rounded-xl border transition-all ${
-                                                marketTier === "national" ? "bg-primary text-white border-primary shadow-md" : "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100"
-                                            }`}
-                                        >
-                                            All 7 Markets
-                                        </button>
-                                    </div>
+                                    ))}
                                 </div>
-
-                                <div>
-                                    <label className="text-xs font-extrabold uppercase tracking-widest text-gray-500 mb-2 block">
-                                        Select Package Tier:
-                                    </label>
-                                    <div className="grid grid-cols-3 gap-2">
+                                <p className="mt-2 text-xs text-gray-500">Planning amount only; final pricing and placement require a proposal.</p>
+                            </div>
+                            <div>
+                                <h3 className="mb-3 text-sm font-extrabold uppercase tracking-wider">Market scope</h3>
+                                <div className="grid gap-2">
+                                    {[
+                                        { id: "rdu", label: "Raleigh-Durham" },
+                                        { id: "southeast", label: "Raleigh-Durham and Atlanta" },
+                                        { id: "national", label: "National digital" },
+                                    ].map((market) => (
                                         <button
+                                            key={market.id}
                                             type="button"
-                                            onClick={() => setBudget(1200)}
-                                            className={`p-2.5 text-center rounded-xl border transition-all ${
-                                                budget === 1200 ? "bg-primary text-white border-primary shadow-sm" : "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100"
-                                            }`}
+                                            onClick={() => setMarketTier(market.id as "rdu" | "southeast" | "national")}
+                                            aria-pressed={marketTier === market.id}
+                                            className={`rounded-xl border px-3 py-2 text-left text-xs font-bold transition-colors ${marketTier === market.id ? "border-primary bg-primary/10 text-primary" : "border-gray-200 text-gray-700 hover:border-primary"}`}
                                         >
-                                            <div className="font-extrabold uppercase text-[11px] tracking-tight">Starter</div>
-                                            <div className="text-[10px] opacity-90 mt-0.5">30 Spots • $1,200</div>
+                                            {market.label}
                                         </button>
-                                        <button
-                                            type="button"
-                                            onClick={() => setBudget(3000)}
-                                            className={`p-2.5 text-center rounded-xl border transition-all ${
-                                                budget === 3000 ? "bg-primary text-white border-primary shadow-sm" : "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100"
-                                            }`}
-                                        >
-                                            <div className="font-extrabold uppercase text-[11px] tracking-tight">Growth</div>
-                                            <div className="text-[10px] opacity-90 mt-0.5">75 Spots • $3,000</div>
-                                        </button>
-                                        <button
-                                            type="button"
-                                            onClick={() => setBudget(6000)}
-                                            className={`p-2.5 text-center rounded-xl border transition-all ${
-                                                budget === 6000 ? "bg-primary text-white border-primary shadow-sm" : "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100"
-                                            }`}
-                                        >
-                                            <div className="font-extrabold uppercase text-[11px] tracking-tight">Domination</div>
-                                            <div className="text-[10px] opacity-90 mt-0.5">150+ Spots • $6,000</div>
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div className="flex justify-between items-center mb-2">
-                                        <label className="text-xs font-extrabold uppercase tracking-widest text-gray-500">
-                                            Monthly Marketing Budget:
-                                        </label>
-                                        <span className="text-2xl font-extrabold text-primary">${budget.toLocaleString()}</span>
-                                    </div>
-                                    <input
-                                        type="range"
-                                        min={500}
-                                        max={10000}
-                                        step={250}
-                                        value={budget}
-                                        onChange={(e) => setBudget(Number(e.target.value))}
-                                        className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
-                                    />
-                                    <div className="flex justify-between text-[11px] font-bold text-gray-400 mt-1">
-                                        <span>$500</span>
-                                        <span>$5,000</span>
-                                        <span>$10,000+</span>
-                                    </div>
-                                </div>
-
-                                <div className="p-4 bg-primary/5 rounded-2xl border border-primary/20 text-xs text-gray-700 leading-relaxed">
-                                    <strong>Campaign Scope:</strong> {tierLabel}. Includes professional audio spot production and schedule optimization.
+                                    ))}
                                 </div>
                             </div>
-
-                            <div className="lg:col-span-6 bg-gray-900 text-white p-8 rounded-2xl shadow-inner space-y-6">
-                                <h3 className="text-xs font-extrabold uppercase tracking-[0.2em] text-primary">
-                                    Projected Monthly Impact
-                                </h3>
-
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div className="bg-white/10 p-4 rounded-xl">
-                                        <span className="text-xs text-gray-300 block mb-1">Estimated Reach</span>
-                                        <span className="text-2xl md:text-3xl font-extrabold text-white">{listeners.toLocaleString()}+</span>
-                                        <span className="text-[10px] text-gray-400 block mt-0.5">Unique Listeners</span>
-                                    </div>
-                                    <div className="bg-white/10 p-4 rounded-xl">
-                                        <span className="text-xs text-gray-300 block mb-1">On-Air Spots</span>
-                                        <span className="text-2xl md:text-3xl font-extrabold text-primary">{spots} Spots</span>
-                                        <span className="text-[10px] text-gray-400 block mt-0.5">30s / 60s Broadcasts</span>
-                                    </div>
-                                </div>
-
-                                <div className="space-y-2.5 pt-2 border-t border-white/10 text-xs text-gray-300">
-                                    <div className="flex items-center gap-2">
-                                        <CheckCircle2 className="w-4 h-4 text-green-400 shrink-0" />
-                                        <span>~{impressions.toLocaleString()} Digital Streaming & App Impressions</span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <CheckCircle2 className="w-4 h-4 text-green-400 shrink-0" />
-                                        <span>Live Host Endorsements & Show Tags</span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <CheckCircle2 className="w-4 h-4 text-green-400 shrink-0" />
-                                        <span>Monthly Performance & Reach Analytics Report</span>
-                                    </div>
-                                </div>
-
-                                <Button asChild className="w-full h-12 bg-primary hover:bg-primary/90 text-white font-extrabold uppercase tracking-wider text-xs rounded-xl shadow-lg">
-                                    <a href="#inquiry">Lock in this Custom Campaign <ArrowRight className="w-4 h-4 ml-1.5" /></a>
+                            <div className="sm:col-span-2 flex flex-col items-start justify-between gap-4 border-t border-gray-100 pt-5 sm:flex-row sm:items-center">
+                                <p className="text-sm text-gray-600">Selected brief: <strong>${budget.toLocaleString()}</strong> · {tierLabel}</p>
+                                <Button asChild className="rounded-full px-6 font-bold">
+                                    <a href="#inquiry">Request a proposal</a>
                                 </Button>
                             </div>
                         </div>
                     </div>
                 </section>
-
                 {/* Packages & Rate Card Overview */}
                 <section className="py-16 bg-white border-b border-gray-100">
                     <div className="container mx-auto px-4 max-w-6xl">
@@ -641,7 +500,7 @@ export default function AdvertisePage() {
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <Zap className="w-5 h-5 text-primary shrink-0" />
-                                        <span>Dedicated Email Blasts (60K+ list)</span>
+                                        <span>Email or WhatsApp placement, when available</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <Zap className="w-5 h-5 text-primary shrink-0" />
@@ -665,18 +524,16 @@ export default function AdvertisePage() {
                                 <div>
                                     <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight italic mb-4">Why Partner With Radio Nyra?</h2>
                                     <p className="text-base text-gray-600 leading-relaxed">
-                                        Radio Nyra is North Carolina's definitive broadcast &amp; digital media network for the South Asian community. Our listeners are affluent, loyal homeowners and technology professionals with direct purchasing power.
+                                        Radio Nyra offers advertising and sponsorship placements across Hindi and Telugu broadcasts, digital streams, podcasts, video, and community events. Ask the team for a current media kit and verified audience information.
                                     </p>
                                 </div>
 
                                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                                     {[
-                                        { label: "Weekly Listeners", value: "100K+" },
-                                        { label: "HD Broadcasting", value: "24/7" },
-                                        { label: "Email & WhatsApp", value: "60K+" },
-                                        { label: "Social Following", value: "25K+" },
-                                        { label: "Brand Partners", value: "500+" },
-                                        { label: "Morrisville Reach", value: "46%" }
+                                        { label: "Radio", value: "Hindi & Telugu" },
+                                        { label: "HD channels", value: "99.9 FM HD3 / HD4" },
+                                        { label: "On demand", value: "Podcasts & interviews" },
+                                        { label: "Community", value: "Events & stories" }
                                     ].map((stat, i) => (
                                         <div key={i} className="p-4 bg-gray-50 border border-gray-100 rounded-xl">
                                             <p className="text-2xl font-extrabold text-primary italic mb-0.5">{stat.value}</p>
@@ -718,7 +575,7 @@ export default function AdvertisePage() {
                                 <div className="absolute top-0 right-0 w-48 h-48 bg-primary/5 -rotate-45 translate-x-24 -translate-y-24 pointer-events-none" />
                                 <h3 className="text-2xl font-extrabold uppercase tracking-tight italic mb-2 relative z-10">Request Campaign Proposal</h3>
                                 <p className="text-xs text-gray-500 mb-6 relative z-10">
-                                    Fill out your details below and our team will prepare a custom proposal and reach projection within 24 hours.
+                                    Fill out your details below to request a campaign proposal. Timing, availability, reach, and projections are confirmed by the team.
                                 </p>
 
                                 <form

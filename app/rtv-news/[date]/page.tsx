@@ -364,7 +364,7 @@ export default async function RtvBulletinDetailPage({ params }: BulletinPageProp
                   Sponsor RTV Telugu News
                 </h3>
                 <p className="text-xs text-white/90 leading-relaxed mb-4">
-                  Reach over 35,000 Telugu-speaking professionals and families across North Carolina with daily bulletin sponsorship.
+                  Ask about current Telugu news sponsorship availability and audience reporting.
                 </p>
               </div>
               <Button asChild className="bg-white text-black hover:bg-gray-100 rounded-full text-xs font-bold w-full">

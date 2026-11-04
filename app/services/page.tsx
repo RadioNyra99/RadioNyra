@@ -161,7 +161,7 @@ export default function ServicesPage() {
                                     </CardTitle>
                                 </CardHeader>
                                 <CardContent className="space-y-6">
-                                    <p className="text-lg font-bold text-muted-foreground italic">Reach: 20K+ Social Media Followers</p>
+                                    <p className="text-lg font-bold text-muted-foreground italic">Social media campaign options available</p>
                                     <div className="p-6 bg-muted/50 border-l-8 border-primary shadow-sm">
                                         <p className="text-base font-medium italic">Inclusions: Image + caption + brand tag/hashtag</p>
                                     </div>
@@ -177,7 +177,7 @@ export default function ServicesPage() {
                                     </CardTitle>
                                 </CardHeader>
                                 <CardContent className="space-y-6">
-                                    <p className="text-lg font-bold text-muted-foreground italic">Audience: 60K+ Subscribers</p>
+                                    <p className="text-lg font-bold text-muted-foreground italic">Email placement details available on request</p>
                                     <div className="p-6 bg-muted/50 border-l-8 border-primary shadow-sm">
                                         <p className="text-base font-medium italic">Inclusions: One dedicated HTML email sent to full list</p>
                                     </div>
@@ -216,7 +216,7 @@ export default function ServicesPage() {
                                     </li>
                                     <li className="flex gap-6 items-start">
                                         <Check className="w-7 h-7 text-white/40 flex-shrink-0 mt-1" />
-                                        <span className="font-bold italic">Impressions: 400,000+ per month</span>
+                                        <span className="font-bold italic">Ask about current placement availability</span>
                                     </li>
                                 </ul>
                             </div>
@@ -282,7 +282,7 @@ export default function ServicesPage() {
                                     {[
                                         "25 × 30s ad spots",
                                         "1 sponsored social post",
-                                        "1 email blast (60K+ sub)",
+                                        "Email placement (availability confirmed with proposal)",
                                         "3 Grocery stores (1 month)",
                                         "Lite show sponsorship"
                                     ].map((feat, i) => (
@@ -310,7 +310,7 @@ export default function ServicesPage() {
                                     {[
                                         "50 × 30s ad spots",
                                         "2 sponsored social posts",
-                                        "1 email blast (60K+ sub)",
+                                        "Email placement (availability confirmed with proposal)",
                                         "3 Grocery stores (1 month)",
                                         "Exclusive show sponsorship"
                                     ].map((feat, i) => (

@@ -9,11 +9,12 @@ import { GlobalSiteFeatures } from "@/components/global-site-features"
 
 const _inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
   variable: "--font-inter",
 })
 const _geistMono = Geist_Mono({
   subsets: ["latin"],
+  display: "swap",
   variable: "--font-mono",
 })
 

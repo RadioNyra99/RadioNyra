@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T20:06:56.627Z",
+  "generatedAt": "2026-11-04T20:36:09.531Z",
   "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UC9VgB6gNRgANFfv6LGZuAlw",
   "videos": [
     {
@@ -118,7 +118,7 @@
       "thumbnailHigh": "https://i.ytimg.com/vi/mKv1Eep8KXU/hqdefault.jpg",
       "publishedAt": "2026-10-27T14:17:16.000Z",
       "channelTitle": "Radio Nyra USA",
-      "duration": "",
+      "duration": "22:55",
       "viewCount": "24 views",
       "viewCountNum": 24,
       "likeCount": "0",
@@ -137,8 +137,8 @@
       "publishedAt": "2026-10-16T17:22:52.000Z",
       "channelTitle": "Radio Nyra USA",
       "duration": "28:36",
-      "viewCount": "185 views",
-      "viewCountNum": 185,
+      "viewCount": "190 views",
+      "viewCountNum": 190,
       "likeCount": "3",
       "isShort": false,
       "isLive": false,

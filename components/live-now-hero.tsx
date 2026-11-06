@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils"
 import { getLiveHindiShow, getLiveTeluguShow, getEasternTime, type LiveShowInfo, type EasternTime } from "@/lib/live-schedule-service"
 
 /**
- * Live radio hero ΓÇö the first thing a visitor sees.
+ * Live radio hero — the first thing a visitor sees.
  *
  * One short headline, two clear listen actions and the channel preview cards
  * that show what is on air right now. All show data comes from the shared
@@ -224,7 +224,7 @@ export function LiveNowHero() {
               {isPlaying ? (
                 <>
                   Now streaming {currentStation.name}
-                  {metadata?.title ? ` ΓÇö ${metadata.title}` : ""}
+                  {metadata?.title ? ` — ${metadata.title}` : ""}
                 </>
               ) : (
                 "Press play to start the live stream. No account needed."

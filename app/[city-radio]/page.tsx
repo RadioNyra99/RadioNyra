@@ -9,6 +9,8 @@ import { Headphones, MapPin, Megaphone, Radio, Users } from "lucide-react"
 
 type Params = Promise<{ "city-radio": string }>
 
+export const dynamicParams = false
+
 export function generateStaticParams() {
   return CITY_RADIO_MARKETS.map((market) => ({
     "city-radio": market.path.replace("/", ""),

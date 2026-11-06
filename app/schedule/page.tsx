@@ -82,7 +82,7 @@ const SCHEDULE_DATA: ScheduleEntry[] = [
             Tuesday: { name: "Sunn Zarra", host: "Prachi", image: "/images/hosts/Prachi.png", color: "bg-pink-100 text-pink-700" },
             weekdays: { name: "Back to Back", image: "/back-to-back.webp", color: "bg-muted/30 text-muted-foreground" },
             Saturday: { name: "Back to Back", image: "/back-to-back.webp", color: "bg-muted/30 text-muted-foreground" },
-            Sunday: { name: "Legends & Leaders", host: "Steve Rao", image: "/legends-and-leaders.webp", color: "bg-blue-900 text-white" }
+            Sunday: { name: "Leaders & Legends", host: "Steve Rao", image: "/legends-and-leaders.webp", color: "bg-blue-900 text-white" }
         }
     },
     {

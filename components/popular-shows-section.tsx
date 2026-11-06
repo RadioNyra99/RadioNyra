@@ -31,8 +31,8 @@ const ALL_SHOWS: ShowItem[] = [
     stationId: STATIONS.Hindi.id,
     language: "hindi",
     stationLabel: "99.9 FM-HD4",
-    time: "Mon - Sat 10:00 AM – 1:00 PM EST",
-    tag: "Midday Hits",
+    time: "Mon - Sat 7:00 AM – 10:00 AM EST",
+    tag: "Morning Show",
     description: "Your daily companion with high-octane Bollywood hits, community updates, cheerful banter, and feel-good music vibes.",
   },
   {

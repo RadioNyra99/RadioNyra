@@ -70,7 +70,7 @@ export function NyraChat() {
       },
       {
         keywords: ["schedule", "shows", "timing", "when", "program"],
-        response: "Our schedule is packed with hits!\n- Morning (7-9 AM): Zara Muskurao with Aayushii Rode (HD4 Hindi)\n- Morning (8-10 AM): Chinna Mata with Priya (HD3 Telugu)\n- Midday (9-11 AM): Triangle Tunes and Talks with Monika Joshi\n- Afternoon (1-3 PM): Bollywood Bliss with Bharti Rathore\n- Evening Drive (5-7 PM): Dil Se Desi with Van Bhandari (HD4)\n- Evening (8-11 PM): Nirvana Nights with Parag.\nCheck the complete 7-day schedule on /schedule!"
+        response: "Our schedule is packed with hits!\n- Morning (7-10 AM): Zara Muskurao (HD4 Hindi)\n- Morning (7-10 AM): Chinna Mata with Priya (HD3 Telugu)\n- Midday (10 AM-1 PM): Triangle Tunes and Talks with Monika Joshi\n- Afternoon (1-3 PM): Bollywood Bliss with Bharti Rathore\n- Saturday (12-1 PM): Dil Se Desi with Van Bhandari (HD4)\n- Evening (7-10 PM): Nirvana Nights with Parag.\nCheck the complete 7-day schedule on /schedule!"
       },
       {
         keywords: ["telugu", "next telugu", "chinna mata"],

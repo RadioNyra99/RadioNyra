@@ -31,6 +31,8 @@ const DRIVE_IDS = {
   day11: "1Ba1hQlO1_E7bdchG0SBF8zRCrsVUEdu2",
   day12: "1UOhXNJxb8Zd_TN-ekf4dPQoJLpoRBBh9",
   day13: "1lKcgz3o5b3mRJpp7xT5q1aAF3qmpfhKy",
+  day14: "15RCQDa1RqX8__h1THY-djnxDh216dwQT",
+  day15: "14mskvgit3AosWgvWf6_UzahFmbhukdgl",
 }
 
 // Converts a Google Drive file ID to a streamable audio URL
@@ -39,6 +41,50 @@ export function driveAudioUrl(fileId: string): string {
 }
 
 export const RTV_TELUGU_NEWS_EPISODES: RtvNewsEpisode[] = [
+  {
+    id: "Day 15",
+    filename: "Day 15.mp3",
+    title: "RTV Telugu Daily News - Day 15",
+    dayNumber: 15,
+    date: "2026-11-05",
+    formattedDate: "Nov 5, 2026",
+    sizeFormatted: "~25 MB",
+    url: driveAudioUrl(DRIVE_IDS.day15),
+    driveId: DRIVE_IDS.day15,
+    language: "Telugu",
+    station: "99.9 FM-HD3",
+    description: "ట్రంప్‌కు షాక్.. కాంగ్రెస్‌పై డెమోక్రాట్ల పట్టు — Who will succeed Trump in 2028? Ravi Prakash analyses US political landscape and its impact on the Indian diaspora.",
+    topics: ["US Politics", "Trump", "Democrats", "2028 Elections", "Diaspora Updates"],
+    keyHighlights: [
+      "Analysis of Democratic control over Congress and its implications.",
+      "Who will succeed Trump in 2028 — early contenders and political dynamics.",
+      "Impact of US political shifts on Indian-American community.",
+      "Presented by Ravi Prakash on Radio Nyra Telugu 99.9 FM-HD3.",
+    ],
+    transcriptSummary: "RTV Telugu News Day 15: Trump ku shock — Congress pai Democrats pattu. 2028 elections lo Trump successor evaru? US political landscape analysis by Ravi Prakash. Radio Nyra 99.9 FM-HD3.",
+  },
+  {
+    id: "Day 14",
+    filename: "Day 14.mp3",
+    title: "RTV Telugu Daily News - Day 14",
+    dayNumber: 14,
+    date: "2026-11-04",
+    formattedDate: "Nov 4, 2026",
+    sizeFormatted: "~9.4 MB",
+    url: driveAudioUrl(DRIVE_IDS.day14),
+    driveId: DRIVE_IDS.day14,
+    language: "Telugu",
+    station: "99.9 FM-HD3",
+    description: "SIRతో దేశవ్యాప్తంగా ఓటర్లలో కలవరం — 13 crore names deleted from voter rolls. Who is accountable? Ravi Prakash investigates the voter roll crisis across India.",
+    topics: ["Voter Rolls", "Election Commission", "Democracy", "Accountability", "Ravi Prakash"],
+    keyHighlights: [
+      "Investigation into 13 crore voter names deleted from electoral rolls across India.",
+      "SIR — Systematic Irregularities in Rolls — and its impact on democratic participation.",
+      "Who is accountable for the mass voter deletion crisis?",
+      "Presented by Ravi Prakash on Radio Nyra Telugu 99.9 FM-HD3.",
+    ],
+    transcriptSummary: "RTV Telugu News Day 14: SIR to deshavyaptanga voter lalo kalavaram. 13 crore names deleted — accountability evari pai? Ravi Prakash investigation. Radio Nyra 99.9 FM-HD3.",
+  },
   {
     id: "Day 13",
     filename: "Day 13.mp3",

@@ -12,6 +12,7 @@ import { TuneInPlatforms } from "@/components/tune-in-platforms"
 import { FeaturedPodcastsSection } from "@/components/featured-podcasts-section"
 import { PartnersMarquee } from "@/components/partners-marquee"
 import { PopularShowsSection } from "@/components/popular-shows-section"
+import { UniversoulCircusBanner } from "@/components/universoul-circus-banner"
 import { OFFICIAL_YOUTUBE_CHANNEL } from "@/lib/youtube-data"
 
 export function HomeView() {
@@ -23,6 +24,7 @@ export function HomeView() {
 
       <main>
         <LiveNowHero />
+        <UniversoulCircusBanner />
         <TuneInPlatforms />
 
         {/* PROVEN REACH STATS */}

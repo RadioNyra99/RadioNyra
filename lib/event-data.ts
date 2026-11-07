@@ -50,7 +50,24 @@ export function getEventTimingLabel(startDate: string, now = new Date()) {
   return "Upcoming"
 }
 
-export const upcomingEvents: UpcomingEvent[] = []
+export const upcomingEvents: UpcomingEvent[] = [
+  {
+    title: "UniverSoul Circus - Radio Nyra Day Under the Big Top",
+    date: "Sunday, Nov 15th, 2026",
+    time: "12:00 PM",
+    location: "Raleigh, NC",
+    venue: "Coastal Credit Union Music Park at Walnut Creek",
+    type: "Circus & Family",
+    image: "/images/universoul-circus.jpg",
+    imageAspect: "portrait",
+    link: "https://ticketsea.com/events/universoul-circus-raleigh-2026-11-15-g5evz-fhikbnf/",
+    startDate: "2026-11-15T12:00:00-05:00",
+    doorsOpen: "11:00 AM",
+    price: "$5.00 OFF Select Seats",
+    description: "Join Radio Nyra under the big top at UniverSoul Circus! Enjoy world-class acrobatics, music, and $5 OFF select seats.",
+    cta: "Buy Tickets ($5 OFF)",
+  },
+]
 
 export const pastEvents: PastEvent[] = [
   {

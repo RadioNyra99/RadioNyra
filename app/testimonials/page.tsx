@@ -4,20 +4,14 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { Quote, Star, MessageSquare } from "lucide-react"
-import { useState } from "react"
+import { useState, type FormEvent } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { RADIO_CONTENT } from "@/lib/radio-content"
 
-const testimonials = [
-    {
-        name: "Kash Patel Productions",
-        role: "Event Organizers",
-        content: "A record-breaking journey across North America. Every show was a testament to teamwork, creativity, and the unifying power of music. Radio Nyra was a key partner in making this vision a reality.",
-        highlight: "A.R. Rahman – The Wonderment Tour"
-    }
-];
+const testimonials = RADIO_CONTENT.testimonials
 
 const caseStudies = [
     {
@@ -45,28 +39,38 @@ const caseStudies = [
 
 export default function TestimonialsPage() {
     const [submitted, setSubmitted] = useState(false);
+    const [submitError, setSubmitError] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const endpoint = process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT?.trim();
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
-        const form = e.target as HTMLFormElement;
+        if (!endpoint) {
+            setSubmitError("[PLACEHOLDER: testimonial form service. Contact the Radio Nyra team by phone or WhatsApp for now.]");
+            return;
+        }
+        const form = e.currentTarget as HTMLFormElement;
         const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
+        formData.set("inquiry_type", "testimonial");
+        setIsSubmitting(true);
+        setSubmitError("");
 
         try {
-            const response = await fetch("https://formspree.io/f/fa42a7d8-c45e-4e7d-868c-7861ef21d915", {
+            const response = await fetch(endpoint, {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data)
+                headers: { Accept: "application/json" },
+                body: formData,
             });
 
             if (response.ok) {
                 setSubmitted(true);
             } else {
-                alert("There was an error submitting your testimonial. Please try again.");
+                setSubmitError("We could not send your testimonial. Please try again or contact the Radio Nyra team.");
             }
-        } catch (error) {
-            alert("An unexpected error occurred. Please try again later.");
+        } catch {
+            setSubmitError("We could not send your testimonial. Please try again or contact the Radio Nyra team.");
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
@@ -176,21 +180,23 @@ export default function TestimonialsPage() {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div className="space-y-2">
                                             <Label htmlFor="name" className="text-[10px] font-extrabold uppercase tracking-widest text-muted-foreground">Your Name</Label>
-                                            <Input id="name" required className="h-12 rounded-none border-border focus:border-primary bg-background" />
+                                            <Input id="name" name="name" required className="h-12 rounded-none border-border focus:border-primary bg-background" />
                                         </div>
                                         <div className="space-y-2">
                                             <Label htmlFor="role" className="text-[10px] font-extrabold uppercase tracking-widest text-muted-foreground">Your Role/City</Label>
-                                            <Input id="role" placeholder="e.g. Local Business Owner, Raleigh" className="h-12 rounded-none border-border focus:border-primary bg-background" />
+                                            <Input id="role" name="role" placeholder="e.g. Local Business Owner, Raleigh" className="h-12 rounded-none border-border focus:border-primary bg-background" />
                                         </div>
                                     </div>
 
                                     <div className="space-y-2">
                                         <Label htmlFor="content" className="text-[10px] font-extrabold uppercase tracking-widest text-muted-foreground">Your Testimonial</Label>
-                                        <Textarea id="content" required className="min-h-[150px] rounded-none border-border focus:border-primary bg-background italic text-lg" placeholder="Tell us about your experience with Radio Nyra..." />
+                                        <Textarea id="content" name="content" required className="min-h-[150px] rounded-none border-border focus:border-primary bg-background italic text-lg" placeholder="Tell us about your experience with Radio Nyra..." />
                                     </div>
 
-                                    <Button type="submit" className="w-full h-14 text-sm font-extrabold uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none shadow-lg transition-all active:scale-95">
-                                        Submit Testimonial
+                                    {submitError && <p role="alert" className="text-sm text-destructive">{submitError}</p>}
+
+                                    <Button type="submit" disabled={isSubmitting} className="w-full h-14 text-sm font-extrabold uppercase tracking-widest bg-primary hover:bg-primary/90 text-white rounded-none shadow-lg transition-all active:scale-95">
+                                        {isSubmitting ? "Sending…" : "Submit Testimonial"}
                                     </Button>
                                 </form>
                             </div>

@@ -1,219 +1,77 @@
-"use client"
-
+import Link from "next/link"
+import type { Metadata } from "next"
+import { ArrowRight, HeartHandshake, Music2, Radio, Users, Youtube } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { PageHeader } from "@/components/ui/page-header"
-import { Users, Target, Zap, Award } from "lucide-react"
+import { AUDIENCE_STATS, YOUTUBE_STATS } from "@/lib/radio-content"
+
+export const metadata: Metadata = {
+  title: "About Radio Nyra",
+  description: "Radio Nyra is a Hindi and Telugu community radio and digital media network serving Raleigh–Durham and listeners beyond.",
+  alternates: { canonical: "/about" },
+}
 
 export default function AboutPage() {
-    return (
-        <div className="min-h-screen bg-background font-sans">
-            <Navigation />
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <Navigation />
+      <main>
+        <section className="relative isolate overflow-hidden bg-[#0b1631] text-white">
+          <div aria-hidden className="absolute inset-0 -z-10 opacity-60" style={{ background: "radial-gradient(ellipse at 78% 20%, rgba(239,42,56,.28), transparent 40%), radial-gradient(ellipse at 10% 95%, rgba(51,90,170,.32), transparent 42%)" }} />
+          <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1fr_.82fr] lg:items-center">
+            <div><p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-red-300">About Radio Nyra</p><h1 className="mt-3 max-w-3xl text-4xl font-black leading-[.98] tracking-tight sm:text-6xl">A soundtrack for the community we call home.</h1><p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">Radio Nyra is a Hindi and Telugu community radio and digital media network based in Raleigh–Durham, North Carolina. For 12 years, we have brought music, news, podcasts, interviews, and community stories to listeners here and beyond.</p><p className="mt-4 text-xs font-bold uppercase tracking-[.16em] text-white/45">The Indian Subcontinent Community Media Network USA</p></div>
+            <div className="overflow-hidden rounded-3xl border border-white/15 bg-white/5 p-2"><img src="/radio-studio-modern.webp" alt="Radio Nyra broadcast studio" className="aspect-[4/3] w-full rounded-2xl object-cover" /></div>
+          </div>
+        </section>
 
-            <main>
-                {/* HERO */}
-                <section className="relative py-14 sm:py-20 overflow-hidden bg-gray-50 dark:bg-zinc-950 border-b border-gray-100 dark:border-zinc-800">
-                    <div className="container mx-auto px-4 relative z-10 text-center">
-                        <div className="max-w-4xl mx-auto">
-                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight text-foreground">
-                                About <span className="text-primary">Radio Nyra</span>
-                            </h1>
-                            <p className="text-xs sm:text-sm md:text-base text-muted-foreground uppercase tracking-[0.25em] font-bold italic">
-                                The Indian Subcontinent Community Media Network
-                            </p>
-                        </div>
-                    </div>
-                </section>
+        <section id="history" className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14">
+          <div className="mb-7 max-w-3xl"><p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-primary">Our story</p><h2 className="mt-2 text-2xl font-black tracking-tight sm:text-4xl">A radio legacy that keeps growing.</h2><p className="mt-3 text-sm leading-relaxed text-muted-foreground">Radio Nyra connects a long broadcast heritage with the voices, music, and communities of today.</p></div>
+          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            <article className="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-7"><div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary"><Radio className="h-5 w-5" /></div><p className="mt-5 text-xs font-black uppercase tracking-[.17em] text-primary">November 16, 1963</p><h3 className="mt-2 text-xl font-extrabold">A heritage of broadcasting.</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">Radio Nyra traces its broadcast heritage to a community voice first heard on November 16, 1963.</p></article>
+            <article className="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-7"><div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary"><Radio className="h-5 w-5" /></div><p className="mt-5 text-xs font-black uppercase tracking-[.17em] text-primary">2014 · Durham, North Carolina</p><h3 className="mt-2 text-xl font-extrabold">Radio Nyra’s local chapter begins.</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">Founder Ravi Cherukuri brought Radio Nyra to the Triangle on WDUR 1490 AM with 24/7 Desi news, talk, and music.</p></article>
+            <article className="rounded-2xl border border-border bg-card p-6 shadow-sm sm:col-span-2 xl:col-span-1 sm:p-7"><div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-200"><YoutubeMark /></div><p className="mt-5 text-xs font-black uppercase tracking-[.17em] text-primary">2021 · YouTube</p><h3 className="mt-2 text-xl font-extrabold">The conversation reaches farther.</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">Radio Nyra began sharing interviews, podcasts, community conversations, and Leaders &amp; Legends on YouTube in February 2021.</p></article>
+          </div>
+        </section>
 
-                <section className="py-16 md:py-24 bg-background border-b border-border">
-                    <div className="container mx-auto px-4 max-w-5xl">
-                        <div className="text-center max-w-4xl mx-auto mb-12">
-                            <span className="eyebrow">About Radio Nyra</span>
-                            <h2 className="section-title">
-                                Radio Nyra connects Indian Subcontinent communities
-                                <br className="hidden md:block" /> through music, culture, news, podcasts, entertainment, and live events.
-                            </h2>
-                            <p className="lede mx-auto mt-4">
-                                We share Hindi and Telugu radio, music, news, podcasts, interviews, and community events.
-                            </p>
-                        </div>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            {["Hindi and Telugu radio", "Community programming", "Music", "News", "Culture", "Business", "Podcasts", "Events"].map((item) => (
-                                <div key={item} className="bg-card border border-border p-5 text-center">
-                                    <h3 className="text-xs font-extrabold uppercase tracking-widest text-primary leading-relaxed">{item}</h3>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+        <section className="bg-muted/35 py-10 sm:py-14">
+          <div className="mx-auto grid max-w-7xl items-center gap-7 px-4 sm:px-6 md:grid-cols-[1fr_.8fr] md:gap-10">
+            <div><p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-primary">Founder</p><h2 className="mt-2 text-2xl font-black tracking-tight sm:text-4xl">Ravi Cherukuri</h2><p className="mt-2 text-xs font-extrabold uppercase tracking-[.14em] text-muted-foreground">Founder, Radio Nyra</p><p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">Ravi Cherukuri founded Radio Nyra’s North Carolina chapter in Durham in 2014. Under his leadership, it has grown from a local AM station into a community media network spanning broadcast radio, digital listening, video, and community events.</p><Link href="/contact" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">Connect with Radio Nyra <ArrowRight className="h-4 w-4" /></Link></div>
+            <div className="overflow-hidden rounded-3xl border border-border bg-card p-2 shadow-sm"><img src="/rc-founder.webp" alt="Ravi Cherukuri, founder of Radio Nyra" loading="lazy" className="aspect-[4/3] w-full rounded-2xl object-cover object-center" /></div>
+          </div>
+        </section>
 
-                {/* HERITAGE SECTION */}
-                <section className="py-16 md:py-24 bg-background">
-                    <div className="container mx-auto px-4 max-w-5xl">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-                            <div className="text-center md:text-left">
-                                <h2 className="text-xs sm:text-sm font-bold uppercase tracking-[0.4em] text-primary mb-4">Our Heritage</h2>
-                                <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight mb-8 leading-tight">
-                                    Radio Nyra Today
-                                </h3>
-                                <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-                                    <p>
-                                        Radio Nyra brings Hindi and Telugu music, news, and community programming to listeners in the United States.
-                                    </p>
-                                    <p>
-                                        The station connects listeners with local events, interviews, podcasts, and stories from the Indian Subcontinent community.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="relative">
-                                <div className="aspect-[4/5] bg-muted rounded-sm overflow-hidden border-8 border-white shadow-2xl skew-y-2">
-                                    <img
-                                        src="/OLD Images/P0105_1-01-45-018_0003.jpg"
-                                        alt="Radio Nyra archival photograph"
-                                        className="w-full h-full object-cover grayscale sepia-[0.2]"
-                                    />
-                                </div>
-                                <div className="absolute -bottom-4 -left-2 md:-bottom-6 md:-left-6 aspect-square w-32 md:w-48 bg-muted rounded-sm overflow-hidden border-4 border-white shadow-xl -skew-y-3 block">
-                                    <img
-                                        src="/OLD Images/P0105_1-01-45-018_0004.jpg"
-                                        alt="Radio Nyra archive detail"
-                                        className="w-full h-full object-cover grayscale"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+        <section className="bg-muted/35 py-10 sm:py-14">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6">
+            <div className="mb-7"><p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-primary">Our reach</p><h2 className="mt-2 text-2xl font-black tracking-tight sm:text-3xl">A growing community, across channels.</h2></div>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+              {AUDIENCE_STATS.map((stat) => <div key={stat.label} className="rounded-2xl border border-border bg-card p-4 sm:p-5"><p className="text-2xl font-black tracking-tight text-primary sm:text-3xl">{stat.value}</p><p className="mt-1 text-[10px] font-extrabold uppercase tracking-[.1em] text-muted-foreground sm:text-xs">{stat.label}</p></div>)}
+            </div>
+            <div className="mt-8 rounded-2xl bg-[#0b1631] p-5 text-white sm:p-7">
+              <div className="mb-4 flex items-center gap-3"><YoutubeMark /><div><p className="font-extrabold">@RadioNyraUSA</p><p className="text-xs text-white/50">YouTube channel</p></div><Link href="https://www.youtube.com/@RadioNyraUSA" target="_blank" rel="noopener noreferrer" className="ml-auto text-xs font-bold text-red-300 hover:underline">Visit channel <ArrowRight className="ml-1 inline h-3.5 w-3.5" /></Link></div>
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">{YOUTUBE_STATS.map((stat) => <div key={stat.label} className="rounded-xl border border-white/10 bg-white/5 p-4"><p className="text-xl font-black sm:text-2xl">{stat.value}</p><p className="mt-1 text-[9px] font-extrabold uppercase tracking-[.12em] text-white/50">{stat.label}</p></div>)}</div>
+            </div>
+          </div>
+        </section>
 
-                {/* MODERN CONTINUATION */}
-                <section className="py-16 md:py-24 bg-muted/30 border-y border-border">
-                    <div className="container mx-auto px-4 max-w-5xl">
-                        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-                            <h2 className="text-2xl sm:text-3xl font-extrabold mb-6 tracking-tight">Radio Nyra: The Modern Identity</h2>
-                            <p className="text-lg md:text-xl text-muted-foreground italic">
-                                Radio Nyra shares Hindi and Telugu programming alongside community news, podcasts, and events.
-                            </p>
-                        </div>
+        <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
+          <div className="mb-7 max-w-3xl"><p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-primary">What guides us</p><h2 className="mt-2 text-2xl font-black tracking-tight sm:text-4xl">Our mission, vision &amp; values.</h2></div>
+          <div className="grid gap-4 lg:grid-cols-3">
+            <article className="rounded-2xl border border-border bg-card p-6"><HeartHandshake className="h-6 w-6 text-primary" /><h3 className="mt-4 text-lg font-extrabold">Mission</h3><p className="mt-2 text-sm leading-relaxed text-muted-foreground">To connect Hindi and Telugu listeners through music, news, culture, and stories that bring our community closer.</p></article>
+            <article className="rounded-2xl border border-border bg-card p-6"><Users className="h-6 w-6 text-primary" /><h3 className="mt-4 text-lg font-extrabold">Vision</h3><p className="mt-2 text-sm leading-relaxed text-muted-foreground">A welcoming community media network that helps South Asian voices, local stories, and shared culture travel farther.</p></article>
+            <article className="rounded-2xl border border-border bg-card p-6"><Music2 className="h-6 w-6 text-primary" /><h3 className="mt-4 text-lg font-extrabold">Values</h3><p className="mt-2 text-sm leading-relaxed text-muted-foreground">Community, cultural connection, representation, and accessible listening guide what we share on air and online.</p></article>
+          </div>
+          <div className="mt-8 flex flex-wrap gap-3"><Link href="/shows" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-bold text-white hover:bg-primary/90">Explore our shows <ArrowRight className="h-4 w-4" /></Link><Link href="/advertise" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-3 text-sm font-bold hover:border-primary/40">Partner with us <ArrowRight className="h-4 w-4 text-primary" /></Link></div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  )
+}
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <div className="p-8 bg-background border border-border rounded-sm">
-                                    <h4 className="font-bold uppercase tracking-widest text-primary mb-4">Radio</h4>
-                                    <p className="text-sm text-muted-foreground">Hindi and Telugu programming connects listeners with music and community updates.</p>
-                            </div>
-                            <div className="p-8 bg-background border border-border rounded-sm">
-                                <h4 className="font-bold uppercase tracking-widest text-primary mb-4">Evolution</h4>
-                                <p className="text-sm text-muted-foreground">The station thrives through decades of change, adapting its voice to reflect the community's growth.</p>
-                            </div>
-                            <div className="p-8 bg-background border border-border rounded-sm">
-                                <h4 className="font-bold uppercase tracking-widest text-primary mb-4">Present Day</h4>
-                                <p className="text-sm text-muted-foreground">Radio Nyra emerges as the modern platform, bridging the gap between roots and the future.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+function YoutubeMark() {
+  return <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-100 text-red-600 dark:bg-red-950/50 dark:text-red-300"><YoutubeIcon /></span>
+}
 
-                {/* CONTENT (Original) */}
-                <section className="py-16 md:py-24 bg-background">
-                    <div className="container mx-auto px-4 max-w-5xl">
-                        <div className="space-y-16 md:space-y-24">
-
-                            {/* Pioneering Since 2014 */}
-                            <div className="text-center md:text-left">
-                                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-8">Pioneering Since 2014</h2>
-                                <div className="max-w-4xl space-y-6 text-lg text-muted-foreground leading-relaxed italic">
-                                    <p>
-                                        The recent chapter of our story began in 2014 in Durham, North Carolina. WDUR 1490 AM became the vessel for our mission, launching 24/7 Desi News, Talk, and Music.
-                            </p>
-                                    <p>
-                                        What started as a 1000W broadcasting channel quickly expanded to HD radio, FM translators, and digital media, catching the attention of the rapidly growing Triangle community.
-                                    </p>
-                                    <p className="font-bold text-primary not-italic border-l-4 border-primary pl-6">
-                                        Today, we are more than just a radio station. We are a comprehensive Community Media Network, bridging the gap between local businesses and the Indian Subcontinent diaspora.
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Why Radio Nyra */}
-                            <div className="pt-12">
-                                <h2 className="text-2xl font-extrabold tracking-tight mb-12 text-center">Why Radio Nyra?</h2>
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                                    <div className="p-6 bg-card border border-border shadow-sm text-center">
-                                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                                            <Users className="w-6 h-6 text-primary" />
-                                        </div>
-                                        <h3 className="font-bold uppercase tracking-widest text-sm mb-2">Massive Reach</h3>
-                                        <p className="text-sm text-muted-foreground">Connecting listeners through Hindi and Telugu radio, community news, podcasts, and events.</p>
-                                    </div>
-                                    <div className="p-6 bg-card border border-border shadow-sm text-center">
-                                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                                            <Target className="w-6 h-6 text-primary" />
-                                        </div>
-                                        <h3 className="font-bold uppercase tracking-widest text-sm mb-2">Targeted Impact</h3>
-                                        <p className="text-sm text-muted-foreground">Hyper-local programming allowing businesses to reach specific demographics effectively.</p>
-                                    </div>
-                                    <div className="p-6 bg-card border border-border shadow-sm text-center">
-                                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                                            <Zap className="w-6 h-6 text-primary" />
-                                        </div>
-                                        <h3 className="font-bold uppercase tracking-widest text-sm mb-2">AI-Powered Tech</h3>
-                                        <p className="text-sm text-muted-foreground">Leveraging advanced analytics and AI for hyper-targeted marketing campaigns.</p>
-                                    </div>
-                                    <div className="p-6 bg-card border border-border shadow-sm text-center">
-                                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                                            <Award className="w-6 h-6 text-primary" />
-                                        </div>
-                                        <h3 className="font-bold uppercase tracking-widest text-sm mb-2">Trusted Authority</h3>
-                                    <p className="text-sm text-muted-foreground">Radio, digital programming, and community events provide ways for listeners to connect.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Our Mission */}
-                            <div className="text-center md:text-left">
-                                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-6">Our Mission</h2>
-                                <div className="w-16 h-1 bg-primary mb-8 mx-auto md:mx-0" />
-                                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed italic">
-                                    To empower the Indian Subcontinent community by providing a platform that celebrates our rich culture while fostering connection and growth in the USA.
-                                </p>
-                            </div>
-
-                            {/* Founder Section */}
-                            <div className="bg-gradient-to-r from-primary/10 to-transparent p-10 border-l-4 border-primary rounded-r-sm flex flex-col md:flex-row gap-10 items-center">
-                                <div className="w-40 h-52 md:w-48 md:h-64 shrink-0 overflow-hidden border-4 border-white shadow-xl bg-gray-50 relative">
-                                    <img
-                                        src="/rc-founder.webp"
-                                        alt="Ravi Cherukuri"
-                                        className="w-full h-full object-contain"
-                                    />
-                                </div>
-                                <div>
-                                    <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-2">Ravi Cherukuri</h2>
-                                    <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-6">Founder, Radio Nyra</p>
-
-                                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                                        Under Ravi's visionary leadership, Radio Nyra has grown from a single AM station to a multimedia powerhouse. His dedication to community service and passion for high-quality broadcasting have made Radio Nyra a household name in the Triangle area and beyond.
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Team Image Section */}
-                            <div className="pt-8 text-center md:text-left">
-                                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-8">Meet The Team</h2>
-                                <div className="w-full relative rounded-xl overflow-hidden shadow-2xl border-4 border-primary/20">
-                                    <img
-                                        src="/radio-nyra-team.png"
-                                        alt="Radio Nyra Team"
-                                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
-                                    />
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </section>
-            </main>
-
-            <Footer />
-        </div>
-    )
+function YoutubeIcon() {
+  return <Youtube className="h-5 w-5" aria-hidden />
 }

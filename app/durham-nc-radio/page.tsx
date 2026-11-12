@@ -6,14 +6,14 @@ import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "Durham NC Radio Stations | Listen to Radio Nyra 99.9 FM HD",
-  description: "Listen to top Durham NC radio stations live. Radio Nyra broadcasts on 99.9 FM HD4 (Hindi) and HD3 (Telugu) with studios at 4819 Emperor Blvd, Durham, NC.",
+  description: "Listen to Radio Nyra Hindi and Telugu radio in Durham and the Research Triangle, with music, news, and community stories.",
   keywords: ["Durham NC Radio Stations", "Indian Radio Durham", "Radio Nyra Durham NC", "99.9 FM Durham", "RTP Indian Community Radio", "Radio Stations in Durham NC"],
   alternates: {
     canonical: "https://www.radionyra.com/north-carolina/durham",
   },
   openGraph: {
     title: "Durham NC Radio Stations | Listen to Radio Nyra 99.9 FM HD",
-    description: "Listen to top Durham NC radio stations live. Radio Nyra broadcasts on 99.9 FM HD4 (Hindi) and HD3 (Telugu) with studios at 4819 Emperor Blvd, Durham, NC.",
+    description: "Listen to Radio Nyra Hindi and Telugu radio in Durham and the Research Triangle, with music, news, and community stories.",
     url: "https://www.radionyra.com/durham-nc-radio",
     siteName: "Radio Nyra",
     type: "website",
@@ -31,14 +31,6 @@ export default function DurhamNcRadioPage() {
         "url": "https://www.radionyra.com/durham-nc-radio",
         "logo": "https://www.radionyra.com/images/radio-nyra-logo.jpg",
         "telephone": "+1 (919) 294-4800",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "4819 Emperor Blvd Suite 400",
-          "addressLocality": "Durham",
-          "addressRegion": "NC",
-          "postalCode": "27703",
-          "addressCountry": "US"
-        },
         "areaServed": "Durham & Research Triangle Park, North Carolina",
         "broadcastFrequency": [
           {
@@ -63,7 +55,7 @@ export default function DurhamNcRadioPage() {
   return (
     <SeoPageLayout
       title="Durham NC Radio Stations"
-      subtitle="Broadcasting Live from 4819 Emperor Blvd Across Durham, RTP & Central North Carolina"
+      subtitle="Hindi and Telugu radio for Durham, RTP, and the Raleigh–Durham community"
       stationKey="Hindi"
     >
       <script
@@ -89,7 +81,7 @@ export default function DurhamNcRadioPage() {
             Durham & Research Triangle Park (RTP) Broadcast Hub
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            Headquartered in Durham at 4819 Emperor Blvd Suite 400, Radio Nyra serves Durham, Duke University students and faculty, biotech professionals across Research Triangle Park (RTP), and neighboring communities. Listen live on 99.9 FM HD4 and HD3 for premium music, entertainment, and news.
+            Based in Raleigh–Durham, Radio Nyra serves listeners across Durham, Research Triangle Park (RTP), and neighboring communities. Listen on 99.9 FM HD4 for Hindi and HD3 for Telugu radio, music, and news.
           </p>
         </section>
 

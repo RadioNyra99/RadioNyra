@@ -48,27 +48,79 @@ const TYPE_ICONS: Record<ContentType, React.ComponentType<{ className?: string }
 
 export function SiteSearch() {
   const [open, setOpen] = React.useState(false)
+  const [query, setQuery] = React.useState("")
+  const [activeType, setActiveType] = React.useState<ContentType | "all">("all")
   const router = useRouter()
   const { playStation } = useAudio()
 
   const searchItems = React.useMemo(() => getSearchIndex(), [])
   const groupedItems = React.useMemo(() => {
-    return TYPE_ORDER.map((type) => ({
-      type,
-      items: searchItems.filter((item) => item.type === type).slice(0, type === "podcast" || type === "video" ? 8 : 6),
-    })).filter((group) => group.items.length > 0)
-  }, [searchItems])
+    const normalizedQuery = query
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLocaleLowerCase()
+      .trim()
+    const terms = normalizedQuery.split(/\s+/).filter(Boolean)
+
+    const scoreItem = (item: SearchItem) => {
+      if (terms.length === 0) return 0
+
+      const title = item.title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase()
+      const keywords = item.keywords.join(" ").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase()
+      const description = item.description.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase()
+      const searchable = `${title} ${keywords} ${description}`
+      if (!terms.every((term) => searchable.includes(term))) return -1
+
+      return terms.reduce((score, term) => {
+        if (title === term) return score + 12
+        if (title.startsWith(term)) return score + 8
+        if (title.includes(term)) return score + 5
+        if (keywords.includes(term)) return score + 3
+        return score + 1
+      }, 0)
+    }
+
+    return TYPE_ORDER
+      .filter((type) => activeType === "all" || type === activeType)
+      .map((type) => {
+        const matches = searchItems
+          .filter((item) => item.type === type)
+          .map((item) => ({ item, score: scoreItem(item) }))
+          .filter(({ score }) => score >= 0)
+          .sort((a, b) => b.score - a.score)
+          .slice(0, terms.length > 0 ? 10 : 3)
+
+        return { type, items: matches.map(({ item }) => item) }
+      })
+      .filter((group) => group.items.length > 0)
+  }, [activeType, query, searchItems])
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault()
-        setOpen((open) => !open)
+        if (open) {
+          setOpen(false)
+        } else {
+          setQuery("")
+          setActiveType("all")
+          setOpen(true)
+        }
       }
     }
 
     document.addEventListener("keydown", down)
     return () => document.removeEventListener("keydown", down)
+  }, [open])
+
+  React.useEffect(() => {
+    const openSearch = () => {
+      setQuery("")
+      setActiveType("all")
+      setOpen(true)
+    }
+    window.addEventListener("open-site-search", openSearch)
+    return () => window.removeEventListener("open-site-search", openSearch)
   }, [])
 
   const runCommand = React.useCallback((command: () => void) => {
@@ -99,13 +151,37 @@ export function SiteSearch() {
         variant="ghost"
         size="icon"
         className="w-10 h-10 rounded-full hover:bg-muted"
-        onClick={() => setOpen(true)}
+        aria-label="Search Radio Nyra"
+        onClick={() => {
+          setQuery("")
+          setActiveType("all")
+          setOpen(true)
+        }}
       >
         <Search className="h-5 w-5" />
         <span className="sr-only">Search</span>
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen} title="Search Radio Nyra" description="Search live radio, shows, podcasts, videos, news, events, partners, and pages.">
-        <CommandInput placeholder="Search podcasts, videos, shows, news, events..." />
+        <CommandInput value={query} onValueChange={setQuery} placeholder="Search shows, hosts, podcasts, news, events..." />
+        <div className="flex gap-2 overflow-x-auto border-b border-border px-4 py-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" aria-label="Filter search results by category">
+          {(["all", ...TYPE_ORDER] as const).map((type) => {
+            const selected = activeType === type
+            const label = type === "all" ? "All" : TYPE_LABELS[type]
+            return (
+              <Button
+                key={type}
+                type="button"
+                size="sm"
+                variant={selected ? "default" : "outline"}
+                aria-pressed={selected}
+                onClick={() => setActiveType(type)}
+                className="h-8 shrink-0 rounded-full px-3 text-[10px] font-bold"
+              >
+                {label}
+              </Button>
+            )
+          })}
+        </div>
         <CommandList className="max-h-[70vh]">
           <CommandEmpty>
             <div className="px-6 py-8 text-center">
@@ -125,10 +201,10 @@ export function SiteSearch() {
                       key={item.id}
                       value={`${item.title} ${item.description} ${item.keywords.join(" ")}`}
                       onSelect={() => handleItemSelect(item)}
-                      className="items-start gap-3"
+                      className="items-center gap-3 py-2.5"
                     >
-                      <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary">
-                        <Icon className="h-4 w-4" />
+                      <div className="flex h-11 w-14 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-primary/10 text-primary">
+                        {item.image ? <img src={item.image} alt="" loading="lazy" className="h-full w-full object-cover" /> : <Icon className="h-5 w-5" aria-hidden />}
                       </div>
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-2">

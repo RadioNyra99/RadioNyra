@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react"
 import Link from "next/link"
-import { Pause, Play, CalendarDays, ChevronRight } from "lucide-react"
+import { Pause, Play, CalendarDays, ChevronRight, Youtube } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useAudio } from "@/components/audio-context"
 import { STATIONS } from "@/lib/stations"
@@ -217,6 +217,14 @@ export function LiveNowHero() {
                 <CalendarDays className="h-4 w-4" aria-hidden />
                 Full schedule
                 <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
+              </Link>
+
+              <Link
+                href="/youtube"
+                className="inline-flex h-12 items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-5 text-sm font-semibold text-white transition-colors hover:border-white/30 hover:bg-white/10"
+              >
+                <Youtube className="h-4 w-4 text-red-400" aria-hidden />
+                Watch Now
               </Link>
             </div>
 

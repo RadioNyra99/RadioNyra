@@ -41,6 +41,13 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     const playStation = useCallback((stationId: string) => {
         const station = Object.values(STATIONS).find(s => s.id === stationId)
         if (station) {
+            if (!station.streamUrl.trim()) {
+                setCurrentStation(station)
+                setIsPlaying(false)
+                setIsLoading(false)
+                setError(`${station.language} stream URL placeholder — add the URL in lib/stations.ts.`)
+                return
+            }
             setError(null)
             trackListenLive(station.name, station.language ?? "Unknown")
             trackAudioPlay(station.name)
@@ -57,6 +64,11 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     }, [currentStation, isPlaying])
 
     const togglePlay = useCallback(() => {
+        if (!isPlaying && !currentStation.streamUrl.trim()) {
+            setIsLoading(false)
+            setError(`${currentStation.language} stream URL placeholder — add the URL in lib/stations.ts.`)
+            return
+        }
         setIsPlaying(prev => {
             const next = !prev
             if (next) {
@@ -66,7 +78,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
             }
             return next
         })
-    }, [currentStation.name])
+    }, [currentStation, isPlaying])
 
     /**
      * Idempotent start. Safe to call from several places in the same tick
@@ -74,11 +86,16 @@ export function AudioProvider({ children }: { children: ReactNode }) {
      * without flipping playback back off again.
      */
     const play = useCallback(() => {
+        if (!currentStation.streamUrl.trim()) {
+            setIsLoading(false)
+            setError(`${currentStation.language} stream URL placeholder — add the URL in lib/stations.ts.`)
+            return
+        }
         setIsPlaying(prev => {
             if (!prev) trackAudioPlay(currentStation.name)
             return true
         })
-    }, [currentStation.name])
+    }, [currentStation])
 
     /**
      * Idempotent stop. Safe to call from several places in the same tick

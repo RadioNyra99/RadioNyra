@@ -4,21 +4,24 @@ import { notFound } from "next/navigation"
 import { Calendar, Clock, Headphones, Mic2, Play, Radio, User } from "lucide-react"
 import { SeoPageLayout } from "@/components/seo-page-layout"
 import { Button } from "@/components/ui/button"
-import { SHOW_PROFILES, getPodcastEpisodes } from "@/lib/content-discovery"
+import { getPodcastEpisodes } from "@/lib/content-discovery"
+import { RADIO_SHOWS, type RadioShow } from "@/lib/radio-content"
+
+const RADIO_PROGRAMS = RADIO_SHOWS.filter((show): show is RadioShow & { language: "Hindi" | "Telugu" } => show.language === "Hindi" || show.language === "Telugu")
 
 type Params = Promise<{ slug: string }>
 
 export async function generateStaticParams() {
-  return SHOW_PROFILES.map((show) => ({ slug: show.slug }))
+  return RADIO_PROGRAMS.map((show) => ({ slug: show.slug }))
 }
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { slug } = await params
-  const show = SHOW_PROFILES.find((item) => item.slug === slug)
+  const show = RADIO_PROGRAMS.find((item) => item.slug === slug)
   if (!show) return {}
 
   const title = `${show.name} with ${show.host} | Radio Nyra Show`
-  const description = `${show.name} on Radio Nyra ${show.stationLabel}. Hosted by ${show.host}. ${show.description}`
+  const description = `${show.name} on Radio Nyra ${show.language} ${show.station}. Hosted by ${show.host}. ${show.description}`
 
   return {
     title,
@@ -37,7 +40,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
 export default async function ShowPage({ params }: { params: Params }) {
   const { slug } = await params
-  const show = SHOW_PROFILES.find((item) => item.slug === slug)
+  const show = RADIO_PROGRAMS.find((item) => item.slug === slug)
 
   if (!show) notFound()
 
@@ -77,7 +80,7 @@ export default async function ShowPage({ params }: { params: Params }) {
           <div className="space-y-5">
             <div className="flex flex-wrap gap-2">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-extrabold uppercase tracking-widest text-primary">
-                <Radio className="h-3.5 w-3.5" /> {show.stationLabel}
+              <Radio className="h-3.5 w-3.5" /> {show.language} · {show.station}
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 text-xs font-extrabold uppercase tracking-widest text-muted-foreground">
                 <Clock className="h-3.5 w-3.5" /> {show.schedule}
@@ -87,7 +90,7 @@ export default async function ShowPage({ params }: { params: Params }) {
               <User className="h-5 w-5 text-primary" /> Meet The Host
             </h2>
             <p className="text-base leading-relaxed text-muted-foreground">
-              {show.host} hosts {show.name}, a Radio Nyra program focused on {show.category.toLowerCase()} for the Indian Subcontinent diaspora.
+              {show.host} hosts {show.name} on Radio Nyra {show.language} radio.
             </p>
             <p className="text-base leading-relaxed">{show.description}</p>
             <div className="flex flex-wrap gap-3">
@@ -97,8 +100,8 @@ export default async function ShowPage({ params }: { params: Params }) {
                 </Link>
               </Button>
               <Button asChild variant="outline" className="rounded-full font-extrabold uppercase tracking-widest text-xs">
-                <Link href="/podcasts">
-                  <Headphones className="mr-2 h-4 w-4" /> Related Podcasts
+                <Link href="/youtube">
+                  <Headphones className="mr-2 h-4 w-4" /> Related Videos
                 </Link>
               </Button>
             </div>
@@ -111,7 +114,7 @@ export default async function ShowPage({ params }: { params: Params }) {
               <Mic2 className="h-5 w-5 text-primary" /> Related Episodes
             </h2>
             <Button asChild variant="ghost" className="text-xs font-extrabold uppercase tracking-widest">
-              <Link href="/podcasts">Podcast Hub</Link>
+              <Link href="/youtube">YouTube Channel</Link>
             </Button>
           </div>
 
@@ -126,7 +129,9 @@ export default async function ShowPage({ params }: { params: Params }) {
               {relatedEpisodes.map((episode) => (
                 <Link
                   key={episode.id}
-                  href={`/podcasts?episode=${episode.id}`}
+                  href={episode.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group flex gap-3 rounded-xl border border-border bg-background p-3 transition-colors hover:border-primary/50"
                 >
                   <img src={episode.thumbnail} alt={episode.title} className="h-20 w-28 rounded-lg object-cover bg-muted" loading="lazy" />

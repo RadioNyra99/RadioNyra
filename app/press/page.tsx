@@ -59,9 +59,9 @@ export default function PressPage() {
                                         <p className="text-gray-600 leading-relaxed mb-4">
                                             For current station information, press enquiries, and verified audience figures, contact the Radio Nyra team or review the public broadcast schedule and listening pages.
                                         </p>
-                                        <a href="mailto:info@radionyra.com" className="inline-flex items-center text-sm font-extrabold uppercase tracking-widest text-primary hover:text-gray-900 transition-colors">
+                                        <Link href="/contact" className="inline-flex items-center text-sm font-extrabold uppercase tracking-widest text-primary hover:text-gray-900 transition-colors">
                                             Contact Radio Nyra <ChevronRight className="w-4 h-4 ml-1" />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </article>

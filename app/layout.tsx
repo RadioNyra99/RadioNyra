@@ -101,15 +101,15 @@ export default function RootLayout({
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+1-919-294-4800",
-          "contactType": "customer service",
-          "email": "info@radionyra.com"
+          "contactType": "customer service"
         },
         "sameAs": [
           "https://facebook.com/radionyrausa",
           "https://instagram.com/radionyrausa",
           "https://twitter.com/NyraUsa",
           "https://youtube.com/c/RadioNyraUSA",
-          "https://linkedin.com/company/radionyrausa"
+          "https://linkedin.com/company/radionyrausa",
+          "https://t.me/radionyra"
         ]
       },
       {
@@ -121,14 +121,6 @@ export default function RootLayout({
         "parentOrganization": {
           "@type": "Organization",
           "@id": "https://www.radionyra.com/#organization"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "4819 Emperor Blvd Suite 400",
-          "addressLocality": "Durham",
-          "addressRegion": "NC",
-          "postalCode": "27703",
-          "addressCountry": "US"
         },
         "telephone": "+1-919-294-4800",
         "broadcastFrequency": [

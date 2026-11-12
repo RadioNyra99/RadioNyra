@@ -115,7 +115,7 @@ export default function NorthCarolinaHubPage() {
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <h2 className="text-2xl font-extrabold uppercase tracking-tight mb-3">Broadcasting 24/7 Across The Research Triangle</h2>
             <p className="text-sm text-muted-foreground mb-6">
-              Radio Nyra's broadcast studios are headquartered at 4819 Emperor Blvd, Durham, NC 27703. We cover the entire triangle region via high-definition digital radio and global digital streaming.
+              Radio Nyra is based in Raleigh–Durham and serves listeners across the Triangle through HD Radio and online streaming.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
               <div className="bg-background p-4 rounded-lg border border-border">

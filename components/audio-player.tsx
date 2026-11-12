@@ -12,7 +12,6 @@ import {
   ChevronDown,
   Loader2,
   AlertCircle,
-  X,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -53,8 +52,8 @@ export function AudioPlayer() {
     metadata,
   } = useAudio()
 
-  const [isVisible, setIsVisible] = useState(true)
   const [isCollapsed, setIsCollapsed] = useState(false)
+  const [hasStarted, setHasStarted] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const retryTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const retryCountRef = useRef(0)
@@ -111,10 +110,9 @@ export function AudioPlayer() {
     })
   }, [currentStation, metadata, isPlaying, stations, play, pause, playStation])
 
-  // Reveals the bar and applies the playback intent sent by the caller.
+  // Expands the persistent player and applies the playback intent sent by the caller.
   useEffect(() => {
     const handleShowPlayer = (event: Event) => {
-      setIsVisible(true)
       setIsCollapsed(false)
       const detail = (event as CustomEvent<{ toggle?: boolean; stationId?: string }>).detail
       if (detail?.stationId) {
@@ -193,6 +191,7 @@ export function AudioPlayer() {
     setIsLoading(false)
     setError(null)
     retryCountRef.current = 0
+    setHasStarted(true)
     if (lastStartedStationRef.current !== currentStation.id) {
       lastStartedStationRef.current = currentStation.id
       trackEvent({
@@ -209,6 +208,11 @@ export function AudioPlayer() {
   }
 
   const handleError = () => {
+    if (!currentStation.streamUrl.trim()) {
+      setIsLoading(false)
+      setError(`${currentStation.language} stream URL placeholder — add the URL in lib/stations.ts.`)
+      return
+    }
     retryCountRef.current += 1
     const delay = Math.min(1000 * Math.pow(2, retryCountRef.current - 1), 16000)
     const message = `Connection interrupted. Reconnecting in ${(delay / 1000).toFixed(0)}s...`
@@ -231,12 +235,14 @@ export function AudioPlayer() {
     }
   }, [])
 
+  const statusLabel = error ? "Error" : isPlaying ? (isLoading ? "Connecting" : "On air") : hasStarted ? "Paused" : "Ready"
+
   return (
     <>
-      {/* Always mounted: hiding the bar below must never stop the stream */}
+      {/* Keep one audio element mounted so route changes preserve the current stream. */}
       <audio
         ref={audioRef}
-        src={currentStation.streamUrl}
+        src={currentStation.streamUrl || undefined}
         preload="none"
         playsInline
         onLoadStart={() => setIsLoading(true)}
@@ -249,7 +255,6 @@ export function AudioPlayer() {
         aria-hidden
       />
 
-      {!isVisible ? null : (
         <div className="fixed bottom-14 left-0 right-0 z-40 md:bottom-0 md:z-50 audio-player-slide-up">
           <div className="relative border-t border-border bg-background/95 shadow-[0_-8px_40px_rgba(0,0,0,0.12)] backdrop-blur-xl">
             {/* Live indicator rail */}
@@ -289,8 +294,8 @@ export function AudioPlayer() {
                   <div className="min-w-0">
                     <div className="flex items-center gap-1.5">
                       <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-primary/10 px-1.5 py-0.5 text-[8px] font-extrabold uppercase tracking-widest text-primary">
-                        <span className="h-1 w-1 animate-pulse rounded-full bg-primary" />
-                        {error ? "Retry" : "Live"}
+                        <span className={cn("h-1 w-1 rounded-full bg-primary", isPlaying && !error && "animate-pulse")} />
+                        {statusLabel}
                       </span>
                       <span className="truncate text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
                         {currentStation.name}
@@ -422,7 +427,9 @@ export function AudioPlayer() {
                                   : "border border-border",
                               )}
                             />
-                            <span className="flex-1 truncate">{station.name}</span>
+                            <span className="flex-1 truncate">
+                              {station.name}{!station.streamUrl ? " · stream URL needed" : ""}
+                            </span>
                           </DropdownMenuItem>
                         </Fragment>
                       ))}
@@ -440,22 +447,11 @@ export function AudioPlayer() {
                     {isCollapsed ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                   </Button>
 
-                  {/* Hides the bar only — the stream keeps playing */}
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    onClick={() => setIsVisible(false)}
-                    className="h-8 w-8 rounded-full text-muted-foreground hover:bg-muted hover:text-foreground"
-                    aria-label="Hide the player (keeps playing)"
-                  >
-                    <X className="h-4 w-4" />
-                  </Button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      )}
     </>
   )
 }

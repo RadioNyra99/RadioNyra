@@ -6,9 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { trackEvent } from "@/lib/analytics"
 
-// Google Apps Script Web App — saves subscribers to Google Sheets
-const GOOGLE_APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbzExvuDSmy3RC3r5DpeDpzzDZlvBKaN9wkVMkmZdp_tO1FTN0nx4TiHItyMjntHb01wzA/exec"
+const NEWSLETTER_ENDPOINT = process.env.NEXT_PUBLIC_NEWSLETTER_ENDPOINT?.trim()
 
 export function NewsletterSection() {
   const [email, setEmail] = useState("")
@@ -21,6 +19,12 @@ export function NewsletterSection() {
 
     setStatus("loading")
     setErrorMsg("")
+
+    if (!NEWSLETTER_ENDPOINT) {
+      setStatus("error")
+      setErrorMsg("Newsletter signup is awaiting an email provider. [PLACEHOLDER: configure the provider before launch.]")
+      return
+    }
 
     trackEvent({
       category: "CTA",
@@ -35,19 +39,16 @@ export function NewsletterSection() {
       formData.append("timestamp", new Date().toISOString())
       formData.append("source", "RadioNyra Website Newsletter")
 
-      const res = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+      const response = await fetch(NEWSLETTER_ENDPOINT, {
         method: "POST",
         body: formData,
-        // no-cors because Apps Script redirects; we just fire-and-forget
-        mode: "no-cors",
+        headers: { Accept: "application/json" },
       })
-
-      // With no-cors we always get opaque response — treat as success
+      if (!response.ok) throw new Error("The newsletter provider did not accept the signup.")
       setStatus("success")
       setEmail("")
       setTimeout(() => setStatus("idle"), 4000)
-    } catch (err) {
-      console.error("Newsletter subscription error:", err)
+    } catch {
       setStatus("error")
       setErrorMsg("Something went wrong. Please try again.")
       setTimeout(() => setStatus("idle"), 4000)
@@ -55,23 +56,23 @@ export function NewsletterSection() {
   }
 
   return (
-    <section className="py-8 md:py-10 bg-gradient-to-br from-zinc-950 via-zinc-900 to-black text-white border-t border-zinc-800">
-      <div className="container mx-auto px-4 max-w-4xl text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/20 text-red-400 border border-red-500/30 text-xs font-black uppercase tracking-widest mb-3">
+    <section className="border-t border-zinc-800 bg-gradient-to-br from-zinc-950 via-zinc-900 to-black py-10 text-white sm:py-12 md:py-14">
+      <div className="container mx-auto max-w-4xl px-4 text-center">
+        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-600/20 px-3 py-1 text-xs font-black uppercase tracking-widest text-red-400">
           <Mail className="w-4 h-4" />
-          Radio Nyra VIP Newsletter
+          Radio Nyra Newsletter
         </div>
 
-        <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tight italic">
-          Stay Connected With Indian Subcontinent Media
+        <h2 className="mx-auto max-w-3xl text-2xl font-black leading-tight tracking-tight sm:text-3xl md:text-4xl">
+          Stay connected with Radio Nyra.
         </h2>
 
-        <p className="text-zinc-300 text-xs md:text-sm font-medium mt-2 max-w-2xl mx-auto">
+        <p className="mx-auto mt-4 max-w-2xl text-xs font-medium leading-relaxed text-zinc-300 md:text-sm">
           Get weekly highlights of live radio shows, trending YouTube celeb interviews, and local Indian
           community events delivered to your inbox.
         </p>
 
-        <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row items-center gap-3 max-w-lg mx-auto">
+        <form onSubmit={handleSubscribe} className="mx-auto mt-6 flex max-w-lg flex-col items-center gap-3 sm:flex-row">
           <Input
             type="email"
             placeholder="Enter your email..."
@@ -109,7 +110,7 @@ export function NewsletterSection() {
 
         {status === "success" && (
           <p className="mt-3 text-emerald-400 text-xs font-bold">
-            ✅ You&apos;re now subscribed! Check your inbox for a welcome email.
+          You&apos;re subscribed to Radio Nyra updates.
           </p>
         )}
       </div>

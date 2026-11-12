@@ -1,0 +1,284 @@
+{
+  "frequencies": [
+    { "market": "Raleigh–Durham, NC", "channels": ["Hindi 99.9 FM HD4", "Hindi 101.9 FM", "Hindi 1490 AM", "Telugu 99.9 FM HD3"] },
+    { "market": "Atlanta", "channels": ["107.5 FM HD3"] },
+    { "market": "Baltimore (D.C.)", "channels": ["92.3 FM HD2"] },
+    { "market": "Cleveland", "channels": ["93.1 FM HD2"] },
+    { "market": "Columbus", "channels": ["107.5 FM HD2"] },
+    { "market": "Philadelphia", "channels": ["103.9 FM HD2"] },
+    { "market": "St. Louis", "channels": ["95.5 FM HD2"] }
+  ],
+  "shows": [
+    {
+      "slug": "zara-muskurao",
+      "name": "Zara Muskurao",
+      "language": "Hindi",
+      "station": "HD4",
+      "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "schedule": "Mon–Sat, 7:00–10:00 AM",
+      "startMinute": 420,
+      "endMinute": 600,
+      "host": "RJ Amritha",
+      "description": "Bollywood hits, community updates, and banter to start the day.",
+      "image": "/images/hosts/zara-muskurao.jpeg"
+    },
+    {
+      "slug": "triangle-tunes-and-talks",
+      "name": "Triangle Tunes and Talks",
+      "language": "Hindi",
+      "station": "HD4",
+      "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "schedule": "Weekdays, 10:00 AM–1:00 PM",
+      "startMinute": 600,
+      "endMinute": 780,
+      "host": "Monika Joshi",
+      "description": "A weekday mix of music, conversation, and Triangle community updates.",
+      "image": "/images/hosts/triangle-tunes.jpeg"
+    },
+    {
+      "slug": "bollywood-bliss",
+      "name": "Bollywood Bliss",
+      "language": "Hindi",
+      "station": "HD4",
+      "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "schedule": "Daily, 1:00–3:00 PM",
+      "startMinute": 780,
+      "endMinute": 900,
+      "host": "Bharti Rathore",
+      "description": "Romantic classics and favorite Bollywood melodies for the afternoon.",
+      "image": "/images/hosts/bollywood-bliss.jpeg"
+    },
+    {
+      "slug": "idhar-udhar-ki-baatein",
+      "name": "Idhar Udhar Ki Baatein",
+      "language": "Hindi",
+      "station": "HD4",
+      "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "schedule": "Weekdays, 3:00–5:00 PM",
+      "startMinute": 900,
+      "endMinute": 1020,
+      "host": "Arpit Tandon",
+      "description": "Humor, trends, and easygoing conversation from the world around us.",
+      "image": "/images/hosts/idhar-udhar-ki-baatein.webp"
+    },
+    {
+      "slug": "sunn-zarra",
+      "name": "Sunn Zarra",
+      "language": "Hindi",
+      "station": "HD4",
+      "days": ["Tuesday"],
+      "schedule": "Tuesdays, 3:00–5:00 PM",
+      "startMinute": 900,
+      "endMinute": 1020,
+      "host": "Prachi",
+      "description": "Soulful melodies and heartfelt musical moments.",
+      "image": "/images/hosts/Prachi.png"
+    },
+    {
+      "slug": "hello-vaishnavi",
+      "name": "Hello Vaishnavi",
+      "language": "Hindi",
+      "station": "HD4",
+      "days": ["Thursday"],
+      "schedule": "Thursdays, 5:00–7:00 PM",
+      "startMinute": 1020,
+      "endMinute": 1140,
+      "host": "Vaishnavi Palleda",
+      "description": "Celebrity conversations, culture, and stories from the community.",
+      "image": "/images/hosts/hello-vaishnavi.jpeg"
+    },
+    {
+      "slug": "aaj-ki-shaam",
+      "name": "Aaj Ki Shaam",
+      "language": "Hindi",
+      "station": "HD4",
+      "days": ["Friday"],
+      "schedule": "Fridays, 6:00–8:00 PM",
+      "startMinute": 1080,
+      "endMinute": 1200,
+      "host": "Jyothi",
+      "description": "An evening with Hindi music and conversation.",
+      "image": "/images/hosts/Aaj Ki Shaam-jyoti kae naam.png"
+    },
+    {
+      "slug": "nirvana-nights",
+      "name": "Nirvana Nights",
+      "language": "Hindi",
+      "station": "HD4",
+      "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "schedule": "Daily, 7:00–10:00 PM",
+      "startMinute": 1140,
+      "endMinute": 1320,
+      "host": "Parag",
+      "description": "Late-night chill with a relaxed selection of songs.",
+      "image": "/images/hosts/nirvana-nights.png"
+    },
+    {
+      "slug": "dil-se-desi-with-van",
+      "name": "Dil Se Desi With Van",
+      "language": "Hindi",
+      "station": "HD4",
+      "days": ["Saturday"],
+      "schedule": "Saturdays, 12:00–1:00 PM",
+      "startMinute": 720,
+      "endMinute": 780,
+      "host": "Van Bhandari",
+      "description": "Desi community stories, music, and conversation with Van.",
+      "image": "/images/hosts/dil-se-desi.jpeg"
+    },
+    {
+      "slug": "geet-bazaar",
+      "name": "Geet Bazaar",
+      "language": "Hindi",
+      "station": "HD4",
+      "days": ["Sunday"],
+      "schedule": "Sundays, 10:00 AM–12:00 PM",
+      "startMinute": 600,
+      "endMinute": 720,
+      "host": "Dr. Taj and Dr. Caldwell",
+      "description": "Golden classics and much-loved songs from across the years.",
+      "image": "/images/hosts/geet-bazaar.webp"
+    },
+    {
+      "slug": "chinna-mata",
+      "name": "Chinna Mata",
+      "language": "Telugu",
+      "station": "HD3",
+      "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "schedule": "Mornings, 7:00–10:00 AM",
+      "startMinute": 420,
+      "endMinute": 600,
+      "host": "Priya",
+      "description": "Tollywood melodies and diaspora news for Telugu listeners.",
+      "image": "/images/hosts/chinna-mata.webp"
+    },
+    {
+      "slug": "rtv-telugu-daily-news",
+      "name": "RTV Telugu Daily News",
+      "language": "Telugu",
+      "station": "HD3",
+      "days": [],
+      "schedule": "Daily bulletins",
+      "host": "RTV News Team",
+      "description": "Daily Telugu news bulletins for Radio Nyra listeners.",
+      "image": "/images/rtv/rtv-news-poster.jpg"
+    },
+    {
+      "slug": "leaders-and-legends",
+      "name": "Leaders & Legends",
+      "language": "Video podcast",
+      "station": "YouTube",
+      "days": [],
+      "schedule": "Video podcast",
+      "host": "Steve Rao",
+      "description": "Interviews with leaders, artists, and personalities.",
+      "image": "/images/radio-nyra-logo.png"
+    }
+  ],
+  "hosts": [
+    { "name": "RJ Amritha", "show": "Zara Muskurao", "bio": "Brings Bollywood hits, community updates, and lively banter to the morning show.", "image": "/images/hosts/zara-muskurao.jpeg" },
+    { "name": "Monika Joshi", "show": "Triangle Tunes and Talks", "bio": "Shares music, conversation, and local community updates through the weekday.", "image": "/images/hosts/triangle-tunes.jpeg" },
+    { "name": "Bharti Rathore", "show": "Bollywood Bliss", "bio": "Sets the afternoon mood with romantic classics and favorite Bollywood songs.", "image": "/images/hosts/bollywood-bliss.jpeg" },
+    { "name": "Arpit Tandon", "show": "Idhar Udhar Ki Baatein", "bio": "Explores humor and everyday trends with a light, conversational touch.", "image": "/images/hosts/idhar-udhar-ki-baatein.webp" },
+    { "name": "Prachi", "show": "Sunn Zarra", "bio": "Brings soulful melodies to Tuesday afternoons.", "image": "/images/hosts/Prachi.png" },
+    { "name": "Vaishnavi Palleda", "show": "Hello Vaishnavi", "bio": "Hosts conversations about celebrity, culture, and community.", "image": "/images/hosts/hello-vaishnavi.jpeg" },
+    { "name": "Jyothi", "show": "Aaj Ki Shaam", "bio": "Hosts the Friday evening Hindi show.", "image": "/images/hosts/Aaj Ki Shaam-jyoti kae naam.png" },
+    { "name": "Parag", "show": "Nirvana Nights", "bio": "Guides listeners through a relaxed late-night music mix.", "image": "/images/hosts/nirvana-nights.png" },
+    { "name": "Van Bhandari", "show": "Dil Se Desi With Van", "bio": "Connects the community through stories, music, and conversation.", "image": "/images/hosts/dil-se-desi.jpeg" },
+    { "name": "Dr. Taj and Dr. Caldwell", "show": "Geet Bazaar", "bio": "Share golden classics and memorable music on Sundays.", "image": "/images/hosts/geet-bazaar.webp" },
+    { "name": "Priya", "show": "Chinna Mata", "bio": "Hosts Telugu mornings with Tollywood melodies and diaspora news.", "image": "/images/hosts/chinna-mata.webp" },
+    { "name": "Steve Rao", "show": "Leaders & Legends", "bio": "Interviews leaders, artists, and personalities for Radio Nyra’s video podcast.", "image": "", "imagePlaceholder": "[PLACEHOLDER: add approved Steve Rao host photo]" }
+  ],
+  "videos": [
+    { "id": "Aqmcbn4zcTQ", "title": "Janet Cowell, Mayor of Raleigh | Leaders & Legends with Steve Rao", "host": "Steve Rao", "category": "Leaders & Legends" },
+    { "id": "ENVW0-YgHbA", "title": "Leaders & Legends: Cristine Krushner & Steve Rao in Conversation", "host": "Steve Rao", "category": "Leaders & Legends" },
+    { "id": "v4aHBeSlD6I", "title": "Health Beyond Borders | RadioNyra Podcast", "host": "Radio Nyra", "category": "Podcast" },
+    { "id": "QU4SrKGGG0M", "title": "H-1B & Green Card Updates | Brown Immigration Law", "host": "Brown Immigration Law", "category": "Community & Information" }
+  ],
+  "events": [
+    {
+      "title": "UniverSoul Circus",
+      "date": "Sunday, Nov 15, 2026",
+      "time": "12:00 PM",
+      "doors": "11:00 AM",
+      "venue": "Coastal Credit Union Music Park at Walnut Creek",
+      "location": "Raleigh, NC",
+      "offer": "$5 off select seats",
+      "url": "https://ticketsea.com/events/universoul-circus-raleigh-2026-11-15-g5evz-fhikbnf/",
+      "image": "/images/universoul-circus.jpg",
+      "type": "Circus & Family",
+      "imageAspect": "portrait",
+      "startDate": "2026-11-15T12:00:00-05:00",
+      "description": "UniverSoul Circus in Raleigh. Doors open at 11:00 AM, and $5 off select seats is available.",
+      "cta": "Get tickets · $5 off select seats"
+    }
+  ],
+  "announcements": ["Diwali wishes from Team Radio Nyra."],
+  "news": [
+    {
+      "id": "diwali-wishes-from-team-radio-nyra",
+      "title": "Diwali wishes from Team Radio Nyra",
+      "excerpt": "Diwali wishes from Team Radio Nyra.",
+      "category": "Announcements",
+      "date": "2026-11-09",
+      "href": "/news#diwali-wishes-from-team-radio-nyra",
+      "image": "/images/happy-diwali.jpg"
+    }
+  ],
+  "audienceStats": [
+    { "value": "100K+", "label": "weekly listeners" },
+    { "value": "60K+", "label": "email subscribers" },
+    { "value": "12K+", "label": "WhatsApp members" },
+    { "value": "500K+", "label": "monthly Instagram reach" },
+    { "value": "216K+", "label": "display impressions" },
+    { "value": "12", "label": "years on air" },
+    { "value": "8+", "label": "media channels" }
+  ],
+  "youtubeStats": [
+    { "value": "1.08K", "label": "subscribers" },
+    { "value": "310", "label": "videos" },
+    { "value": "185,444", "label": "views" },
+    { "value": "25,000+", "label": "watch hours" }
+  ],
+  "partners": ["Apna Bazar", "Spices Hut", "Sangam Mart", "Bombay Central", "Autopark Honda", "BMW of Raleigh", "Brown Immigration Law", "Khanna and Sons Jewelers", "Raj Jewels", "Tanishq USA", "UNC Health", "Allstate", "Publix", "Mercedes-Benz", "ZEE5", "Major League Cricket", "and others"],
+  "partnerLogos": [
+    { "name": "Apna Bazar", "image": "/images/partners/Apna Bazar.jpg" },
+    { "name": "Spices Hut", "image": "/images/partners/Spices Hut.jpg" },
+    { "name": "Sangam Mart", "image": "/images/partners/Sangam Mart.jpg" },
+    { "name": "Bombay Central", "image": "/images/partners/Bombay Central.jpg" },
+    { "name": "Autopark Honda", "image": "/images/partners/Autopark Honda.jpg" },
+    { "name": "BMW of Raleigh", "image": "/images/partners/BMW.jpg" },
+    { "name": "Brown Immigration Law", "image": "/images/partners/brown-immigration-law.png" },
+    { "name": "Khanna and Sons Jewelers", "image": "/images/partners/Khanna and Sons Jewelers.jpg" },
+    { "name": "Raj Jewels", "image": "/images/partners/Raj Jewels.jpg" },
+    { "name": "Tanishq USA", "image": "/images/partners/tanishq.jpg" },
+    { "name": "UNC Health", "image": "/images/partners/unc-health.jpg" },
+    { "name": "Allstate", "image": "/images/partners/Allstate.jpg" },
+    { "name": "Publix", "image": "/images/partners/Publix.jpg" },
+    { "name": "Mercedes-Benz", "image": "/images/partners/Mercedes-Benz.jpg" },
+    { "name": "ZEE5", "image": "/images/partners/ZEE5.jpg" },
+    { "name": "Major League Cricket", "image": "/images/partners/major-league-cricket.jpg" }
+  ],
+  "testimonials": [
+    {
+      "name": "Mihir Chakraborty",
+      "role": "CEO, MC Construction Co.",
+      "content": "This platform has helped us reach the right audience and grow our brand in ways we never expected.",
+      "highlight": "MC Construction Co.",
+      "rating": 5
+    },
+    {
+      "name": "Kash Patel Productions",
+      "role": "Event Organizers",
+      "content": "A record-breaking journey across North America. Every show was a testament to teamwork, creativity, and the unifying power of music. Radio Nyra was a key partner in making this vision a reality.",
+      "highlight": "A.R. Rahman – The Wonderment Tour"
+    }
+  ],
+  "contact": {
+    "business": "Radio Nyra, Raleigh–Durham, North Carolina, USA",
+    "phone": "+1 919-294-4800",
+    "whatsapp": "https://wa.me/19192944800",
+    "email": "info@radionyra.com",
+    "address": "4819 Emperor Blvd Suite 400, Durham, NC 27703"
+  }
+}

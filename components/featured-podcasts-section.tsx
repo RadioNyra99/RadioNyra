@@ -271,7 +271,7 @@ export function FeaturedPodcastsSection() {
           {activeVideo && (
             <div className="relative aspect-video w-full bg-black">
               <iframe
-                src={`${activeVideo.embedUrl}?autoplay=1&rel=0`}
+                src={`https://www.youtube-nocookie.com/embed/${activeVideo.id}?autoplay=1&rel=0`}
                 title={activeVideo.title}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen

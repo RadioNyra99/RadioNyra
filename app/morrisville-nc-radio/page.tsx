@@ -31,14 +31,6 @@ export default function MorrisvilleNcRadioPage() {
         "url": "https://www.radionyra.com/morrisville-nc-radio",
         "logo": "https://www.radionyra.com/images/radio-nyra-logo.jpg",
         "telephone": "+1 (919) 294-4800",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "4819 Emperor Blvd Suite 400",
-          "addressLocality": "Durham",
-          "addressRegion": "NC",
-          "postalCode": "27703",
-          "addressCountry": "US"
-        },
         "areaServed": "Morrisville, North Carolina",
         "broadcastFrequency": [
           {

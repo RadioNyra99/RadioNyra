@@ -48,7 +48,7 @@ export default function BollywoodRadioOnlinePage() {
 
                 <section>
                     <h2 className="text-2xl font-bold mb-4">Be Part of the Radio Nyra Family</h2>
-                    <p>Listen to Radio Nyra Hindi through the player above, then explore current programs on the <Link className="text-primary underline underline-offset-4" href="/schedule">broadcast schedule</Link> or browse more conversations in the <Link className="text-primary underline underline-offset-4" href="/podcasts">podcast library</Link>.</p>
+                    <p>Listen to Radio Nyra Hindi through the player above, then explore current programs on the <Link className="text-primary underline underline-offset-4" href="/schedule">broadcast schedule</Link> or watch more conversations on the <Link className="text-primary underline underline-offset-4" href="/youtube">Radio Nyra YouTube channel</Link>.</p>
                 </section>
             </div>
         </SeoPageLayout>

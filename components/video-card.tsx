@@ -123,7 +123,7 @@ export function VideoCard({ video }: VideoCardProps) {
                     </DialogHeader>
                     <div className="relative aspect-video w-full bg-black">
                         <iframe
-                            src={`${video.embedUrl}?autoplay=1&rel=0`}
+                            src={`https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&rel=0`}
                             title={video.title}
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen

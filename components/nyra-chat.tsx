@@ -66,7 +66,7 @@ export function NyraChat() {
       },
       {
         keywords: ["immigration", "visa", "h-1b", "h1b", "l-1", "l1", "f-1", "j-1", "brown"],
-        response: "🇺🇸 Immigration & Legal Spotlight:\nWe have full-length video podcast episodes with Brown Immigration Law:\n- $103,265 H-1B Fee DHS Proposal Explained by Kelsey Berger\n- L-1 Visa Approval Secrets & Qualifications\n- F-1 vs J-1 vs I Visas Explained for Students\nCheck out the 'Latest RadioNyra Podcasts' section on the homepage or visit /podcasts!"
+        response: "🇺🇸 Immigration & Legal Spotlight:\nWe have full-length video episodes with Brown Immigration Law:\n- $103,265 H-1B Fee DHS Proposal Explained by Kelsey Berger\n- L-1 Visa Approval Secrets & Qualifications\n- F-1 vs J-1 vs I Visas Explained for Students\nWatch Radio Nyra conversations in the YouTube section on our homepage or visit /youtube."
       },
       {
         keywords: ["schedule", "shows", "timing", "when", "program"],

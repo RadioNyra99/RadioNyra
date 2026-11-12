@@ -298,11 +298,7 @@ export default async function RtvBulletinDetailPage({ params }: BulletinPageProp
                   "{episode.transcriptSummary}"
                 </p>
                 <p className="text-xs text-muted-foreground mt-3">
-                  Transcribed from the daily Radio Nyra Telugu broadcast on 99.9 FM-HD3. For corrections or news story tips, email{" "}
-                  <a href="mailto:info@radionyra.com" className="text-primary underline">
-                    info@radionyra.com
-                  </a>
-                  .
+                  Transcribed from the daily Radio Nyra Telugu broadcast on 99.9 FM-HD3. For corrections or news story tips, use the contact form. Contact email: info@radionyra.com.
                 </p>
               </div>
             </details>

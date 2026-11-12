@@ -2,15 +2,17 @@
 
 import { useMemo, useState } from "react"
 import Link from "next/link"
-import { Archive, BookOpen, Calendar, Newspaper, PlayCircle, Search } from "lucide-react"
+import { Archive, ArrowRight, BookOpen, Calendar, MapPin, Newspaper, PlayCircle, Search } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Input } from "@/components/ui/input"
 import { RtvPlayer } from "@/components/rtv-player"
 import { getNewsItems } from "@/lib/content-discovery"
+import { RADIO_EVENTS } from "@/lib/radio-content"
 
 const newsItems = getNewsItems()
 const categories = ["All", ...Array.from(new Set(newsItems.map((item) => item.category)))]
+const featuredEvent = RADIO_EVENTS[0]
 
 export default function NewsPage() {
   const [query, setQuery] = useState("")
@@ -68,6 +70,19 @@ export default function NewsPage() {
           </div>
         </section>
 
+        {featuredEvent && (
+          <section className="border-b border-border bg-muted/30 py-7 sm:py-9">
+            <div className="mx-auto flex max-w-7xl flex-col gap-5 px-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+              <div className="min-w-0">
+                <p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-primary">Upcoming community event · {featuredEvent.date}</p>
+                <h2 className="mt-1 text-xl font-black tracking-tight sm:text-2xl">{featuredEvent.title}</h2>
+                <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-semibold text-muted-foreground"><span>{featuredEvent.time} · Doors {featuredEvent.doors}</span><span className="inline-flex items-center gap-1"><MapPin className="h-3.5 w-3.5 text-primary" />{featuredEvent.venue}, {featuredEvent.location}</span><span>{featuredEvent.offer}</span></p>
+              </div>
+              <a href={featuredEvent.url} target="_blank" rel="noopener noreferrer" className="inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-full bg-primary px-5 text-sm font-extrabold text-white transition-colors hover:bg-primary/90">Get tickets <ArrowRight className="h-4 w-4" /></a>
+            </div>
+          </section>
+        )}
+
         <section className="py-10 md:py-12 border-b border-border/50">
           <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
             <div className="mb-6 flex flex-col gap-2 text-center">
@@ -113,7 +128,7 @@ export default function NewsPage() {
             </div>
 
             {featured ? (
-              <Link href={featured.href} className="group mb-8 grid grid-cols-1 overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary/50 lg:grid-cols-[0.9fr_1.1fr]">
+              <Link id={featured.id} href={featured.href} className="group mb-8 grid grid-cols-1 overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary/50 lg:grid-cols-[0.9fr_1.1fr]">
                 <div className="relative aspect-video lg:aspect-auto bg-muted">
                   <img src={featured.image} alt={featured.title} className="h-full w-full object-cover transition-transform group-hover:scale-105" loading="lazy" />
                   <span className="absolute left-4 top-4 rounded-full bg-primary px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest text-white">

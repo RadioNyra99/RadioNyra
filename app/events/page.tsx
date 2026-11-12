@@ -139,7 +139,7 @@ export default function EventsPage() {
                                                     <Calendar className="w-4 h-4" /> {ev.date}
                                                 </span>
                                                 <span className="text-xs font-extrabold text-muted-foreground uppercase tracking-wider flex items-center gap-1.5">
-                                                    <Clock className="w-4 h-4" /> {ev.time}
+                                                    <Clock className="w-4 h-4" /> {ev.time}{ev.doorsOpen ? ` · Doors ${ev.doorsOpen}` : ""}
                                                 </span>
                                             </div>
                                             <h3 className="text-xl font-bold uppercase tracking-tight mb-2 group-hover:text-primary transition-colors leading-none">{ev.title}</h3>
@@ -147,6 +147,7 @@ export default function EventsPage() {
                                             <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-wide flex items-center gap-1.5 mb-3">
                                                 <MapPin className="w-3 h-3" /> {ev.location}
                                             </p>
+                                            <p className="-mt-2 mb-3 text-xs font-semibold text-muted-foreground">{ev.venue}</p>
                                             <p className="text-sm text-muted-foreground font-medium leading-relaxed mb-4">{ev.description}</p>
                                             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-t border-border pt-4">
                                                 <span className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-foreground">

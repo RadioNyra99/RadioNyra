@@ -1,174 +1,81 @@
-"use client"
-
 import Link from "next/link"
+import { ArrowRight, CalendarDays, MapPin, Quote, Star } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { FrequencyBar } from "@/components/frequency-bar"
 import { Footer } from "@/components/footer"
-import { Star, Play, PlayCircle, Youtube, Headphones, Megaphone, Smartphone, Users, Radio, ArrowRight } from "lucide-react"
-import { CountUp } from "@/components/ui/count-up"
-import { ApolloTracker } from "@/components/apollo-tracker"
 import { LiveNowHero } from "@/components/live-now-hero"
-import { TuneInPlatforms } from "@/components/tune-in-platforms"
-import { FeaturedPodcastsSection } from "@/components/featured-podcasts-section"
+import { FeaturedVideoGrid } from "@/components/featured-video-grid"
+import { AudienceReachSection, YoutubeAnalyticsSection } from "@/components/home-reach-sections"
 import { PartnersMarquee } from "@/components/partners-marquee"
 import { PopularShowsSection } from "@/components/popular-shows-section"
-import { FeaturedPromotionsBanner } from "@/components/featured-promotions-banner"
-import { OFFICIAL_YOUTUBE_CHANNEL } from "@/lib/youtube-data"
+import { getRecentYouTubeUploads } from "@/lib/content-discovery"
+import { PARTNERS } from "@/lib/partners"
+import { RADIO_CONTENT, RADIO_EVENTS } from "@/lib/radio-content"
+
+const featuredTestimonial = RADIO_CONTENT.testimonials[0]
 
 export function HomeView() {
-  return (
-    <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-primary-foreground">
-      <Navigation />
-      <ApolloTracker />
-      <FrequencyBar />
+  const event = RADIO_EVENTS[0]
 
+  return (
+    <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-white">
+      <Navigation />
+      <FrequencyBar />
       <main>
         <LiveNowHero />
-        <FeaturedPromotionsBanner />
-        <TuneInPlatforms />
 
-        {/* PROVEN REACH STATS */}
-        <section className="py-8 sm:py-10 bg-background border-b border-border/50">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-y-8 gap-x-3 text-center justify-center items-start">
-              {[
-                { label: "Weekly Listeners", end: 100, suffix: "K+", icon: Headphones },
-                { label: "Email Subscribers", end: 60, suffix: "K+", icon: Megaphone },
-                { label: "WhatsApp Members", end: 12, suffix: "K+", icon: Smartphone },
-                { label: "Monthly Instagram Reach", end: 500, suffix: "K+", icon: Users },
-                { label: "Display Impressions", end: 216, suffix: "K+", icon: Star },
-                { label: "Years On Air", end: 12, suffix: "", icon: Radio },
-                { label: "Media Channels", end: 8, suffix: "+", icon: Play },
-              ].map((stat, i) => (
-                <div key={i} className="flex flex-col items-center justify-center px-1">
-                  <div className="w-12 h-12 rounded-full bg-red-500/10 dark:bg-red-500/20 flex items-center justify-center mb-2.5 transition-transform hover:scale-110">
-                    <stat.icon className="w-5 h-5 text-red-600 dark:text-red-400" />
-                  </div>
-                  <div className="text-2xl sm:text-3xl font-black text-foreground tracking-tight mb-1">
-                    <CountUp end={stat.end} suffix={stat.suffix} duration={2500} />
-                  </div>
-                  <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-muted-foreground leading-tight text-center">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
+        <AudienceReachSection />
+        <YoutubeAnalyticsSection />
+        <FeaturedVideoGrid videos={getRecentYouTubeUploads(4)} />
 
-            {/* GROW YOUR BUSINESS CTA */}
-            <div className="mt-8 pt-6 border-t border-border/40 flex flex-wrap items-center justify-center gap-3">
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary/90 text-white text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-md hover:shadow-lg transition-all"
-              >
-                <span>Grow Your Business With RadioNyra</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-muted/70 hover:bg-muted text-foreground border border-border text-xs sm:text-sm font-bold uppercase tracking-wider transition-all"
-              >
-                <span>Contact Us</span>
-              </Link>
+        <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+          <article className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
+            <div className="grid sm:grid-cols-[.9fr_1.1fr]">
+              <div className="relative min-h-64 bg-muted sm:min-h-80"><img src={event.image} alt="UniverSoul Circus at Coastal Credit Union Music Park" loading="lazy" className="absolute inset-0 h-full w-full object-cover" /><span className="absolute left-4 top-4 rounded-full bg-primary px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-widest text-white">Radio Nyra event</span></div>
+              <div className="flex flex-col justify-center p-6 sm:p-8">
+                <p className="text-[10px] font-extrabold uppercase tracking-[.18em] text-primary">Community calendar</p>
+                <h2 className="mt-2 text-2xl font-black tracking-tight sm:text-3xl">{event.title}</h2>
+                <p className="mt-3 flex items-start gap-2 text-sm text-muted-foreground"><CalendarDays className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{event.date} · {event.time} (doors {event.doors})</p>
+                <p className="mt-2 flex items-start gap-2 text-sm leading-relaxed text-muted-foreground"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{event.venue}, {event.location}</p>
+                <p className="mt-4 font-extrabold text-foreground">{event.offer}</p>
+                <a href={event.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex h-11 w-fit items-center gap-2 rounded-full bg-primary px-5 text-sm font-bold text-white transition-colors hover:bg-primary/90">Get tickets <ArrowRight className="h-4 w-4" /></a>
+              </div>
             </div>
+          </article>
+        </section>
+
+        <section className="border-y border-border py-10 sm:py-12">
+          <div className="mx-auto max-w-7xl px-4 text-center sm:px-6">
+            <p className="text-[10px] font-extrabold uppercase tracking-[.22em] text-muted-foreground">Community and business partners</p>
+            <div className="mt-5"><PartnersMarquee /></div>
+            <p className="mt-1 text-xs text-muted-foreground">Scroll or swipe to browse all {PARTNERS.length} partner logos.</p>
+            <Link href="/advertise" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">Advertise with Radio Nyra <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </section>
 
-        {/* YOUTUBE CHANNEL ANALYTICS */}
-        <section className="py-8 sm:py-12 bg-gradient-to-r from-red-950 via-zinc-950 to-black text-white border-b border-red-900/30">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="text-center max-w-2xl mx-auto mb-8">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-600/20 text-red-400 border border-red-500/30 text-xs font-black uppercase tracking-widest mb-2.5">
-                <Youtube className="w-4 h-4 fill-red-500 text-red-500" /> YouTube Channel Analytics
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight italic text-white text-center">
-                @RadioNyraUSA on YouTube
-              </h2>
-              <p className="text-zinc-400 text-xs sm:text-sm font-medium mt-1.5 text-center">
-                Streaming Indian Subcontinent content since February 2021
-              </p>
-            </div>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto">
-              {[
-                { icon: Youtube, label: "Subscribers", value: "1.07K" },
-                { icon: Play, label: "Videos Published", value: "298" },
-                { icon: PlayCircle, label: "Total Views", value: "173.3K" },
-                { icon: Star, label: "Watch Hours", value: "25,000+" },
-              ].map((stat, i) => (
-                <div key={i} className="bg-zinc-900/90 border border-red-500/20 p-4 sm:p-5 rounded-2xl text-center shadow-xl hover:border-red-500/50 transition-all group flex flex-col items-center justify-center">
-                  <div className="w-10 h-10 rounded-full bg-red-600/20 text-red-500 flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
-                    <stat.icon className="w-5 h-5 fill-red-500" />
-                  </div>
-                  <div className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-zinc-400 text-center">
-                    {stat.label}
-                  </div>
+        {featuredTestimonial && (
+          <section className="bg-[#0b1631] py-12 text-white sm:py-16">
+            <div className="mx-auto grid max-w-7xl gap-5 px-4 sm:px-6 md:grid-cols-[auto_1fr] md:gap-8">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-red-300"><Quote className="h-6 w-6" aria-hidden /></div>
+              <div className="max-w-4xl">
+                <p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-red-300">Partner voices</p>
+                <h2 className="mt-2 text-2xl font-black tracking-tight sm:text-3xl">Community is at the heart of every story.</h2>
+                <div className="mt-4 flex gap-1 text-amber-300" aria-label={`${featuredTestimonial.rating ?? 5} out of 5 stars`}>
+                  {Array.from({ length: featuredTestimonial.rating ?? 5 }, (_, index) => <Star key={index} className="h-4 w-4 fill-current" aria-hidden />)}
                 </div>
-              ))}
-            </div>
-            <div className="mt-6 flex flex-col items-center gap-3 text-center">
-              <p className="max-w-3xl text-xs font-medium leading-relaxed text-zinc-400 sm:text-sm">
-                Radio Nyra USA: Bollywood &amp; South Asian radio, music, and stories from India to America.
-              </p>
-              <a
-                href={OFFICIAL_YOUTUBE_CHANNEL.subscribeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-red-600/20 px-4 py-2 text-xs font-extrabold uppercase tracking-wider text-red-300 transition-colors hover:bg-red-600 hover:text-white"
-              >
-                <Youtube className="h-4 w-4 fill-current" /> Subscribe
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* LATEST VIDEOS */}
-        <FeaturedPodcastsSection />
-
-        {/* OUR PARTNERS */}
-        <section className="py-10 bg-background border-t border-border/50">
-          <div className="container mx-auto px-4 sm:px-6 text-center">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-tight mb-6 border-l-4 border-primary pl-4 text-left">
-              Our Partners
-            </h2>
-            <PartnersMarquee />
-          </div>
-        </section>
-
-        {/* TESTIMONIAL */}
-        <section className="py-12 sm:py-16 bg-muted/30 border-t border-border/50">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight italic">
-                Testimonials
-              </h2>
-            </div>
-            <div className="max-w-2xl mx-auto bg-primary text-primary-foreground p-6 sm:p-10 text-center shadow-2xl relative overflow-hidden rounded-2xl sm:rounded-3xl">
-              <div className="absolute top-0 left-0 text-[100px] sm:text-[140px] font-serif leading-none opacity-10 -translate-x-4 -translate-y-4 pointer-events-none">"</div>
-              <div className="relative z-10 flex flex-col items-center">
-                <div className="flex justify-center gap-1.5 mb-5">
-                  {[1, 2, 3, 4, 5].map((s) => (
-                    <Star key={s} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <blockquote className="text-base sm:text-xl font-bold mb-6 leading-relaxed italic text-center max-w-lg">
-                  "This platform has helped us reach the right audience and grow our brand in ways we never expected."
-                </blockquote>
-                <div className="flex flex-col items-center text-center">
-                  <div className="font-black uppercase tracking-widest text-sm sm:text-base">Mihir Chakraborty</div>
-                  <div className="text-[11px] sm:text-xs font-bold opacity-85 uppercase tracking-widest mt-1">CEO, MC Construction Co.</div>
+                <blockquote className="mt-5 text-base font-medium leading-relaxed text-white/80 sm:text-lg">“{featuredTestimonial.content}”</blockquote>
+                <div className="mt-5 flex flex-col gap-3 border-t border-white/15 pt-4 sm:flex-row sm:items-center sm:justify-between">
+                  <p className="text-sm font-extrabold">{featuredTestimonial.name}<span className="ml-2 font-medium text-white/50">· {featuredTestimonial.role}</span></p>
+                  <Link href="/testimonials" className="inline-flex items-center gap-2 text-sm font-bold text-red-300 hover:text-white">More partner stories <ArrowRight className="h-4 w-4" /></Link>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
-        {/* HOSTS & SHOW POSTERS — sliding carousel */}
         <PopularShowsSection />
 
       </main>
-
       <Footer />
     </div>
   )

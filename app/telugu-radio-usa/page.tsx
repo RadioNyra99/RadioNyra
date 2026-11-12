@@ -48,7 +48,7 @@ export default function TeluguRadioUsaPage() {
 
                 <section>
                     <h2 className="text-2xl font-bold mb-4">Join Our Growing Community</h2>
-                    <p>Explore more conversations in the <Link className="text-primary underline underline-offset-4" href="/podcasts">Radio Nyra podcast library</Link> and find community programming across the site.</p>
+                    <p>Explore more conversations on the <Link className="text-primary underline underline-offset-4" href="/youtube">Radio Nyra YouTube channel</Link> and find community programming across the site.</p>
                 </section>
             </div>
         </SeoPageLayout>

@@ -266,7 +266,7 @@ export const NC_CITIES: NCCity[] = [
         name: "Radio Nyra Broadcast Studios",
         type: "Cultural",
         address: "4819 Emperor Blvd Suite 400, Durham, NC 27703",
-        description: "Official studio and operations headquarters for Radio Nyra, hosting daily live shows and community guests.",
+        description: "Radio Nyra is based in Raleigh–Durham and serves listeners across the Triangle.",
       },
       {
         name: "Sitar Indian Cuisine",
@@ -297,7 +297,7 @@ export const NC_CITIES: NCCity[] = [
     faqs: [
       {
         question: "Where are Radio Nyra studios located?",
-        answer: "Our main studios are at 4819 Emperor Blvd Suite 400, Durham, NC 27703.",
+        answer: "Radio Nyra is based in Raleigh–Durham, North Carolina. Office address: 4819 Emperor Blvd Suite 400, Durham, NC 27703.",
       },
     ],
   },

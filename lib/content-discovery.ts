@@ -4,6 +4,7 @@ import { PARTNERS } from "@/lib/partners"
 import { RTV_TELUGU_NEWS_EPISODES } from "@/lib/rtv-news-data"
 import { getStationsList, STATIONS } from "@/lib/stations"
 import { SITE_VIDEOS, type YouTubeVideoItem } from "@/lib/youtube-service"
+import { RADIO_CONTENT, RADIO_SHOWS } from "@/lib/radio-content"
 
 export type ContentType =
   | "station"
@@ -70,7 +71,7 @@ export type SearchItem = {
   stationId?: string
 }
 
-export const SHOW_PROFILES: ShowProfile[] = [
+const LEGACY_SHOW_PROFILES: ShowProfile[] = [
   {
     slug: "zara-muskurao",
     name: "Zara Muskurao",
@@ -216,6 +217,24 @@ export const SHOW_PROFILES: ShowProfile[] = [
   },
 ]
 
+export const SHOW_PROFILES: ShowProfile[] = RADIO_SHOWS
+  .filter((show) => show.language === "Hindi" || show.language === "Telugu")
+  .map((show) => {
+    const legacyProfile = LEGACY_SHOW_PROFILES.find((profile) => profile.slug === show.slug)
+    return {
+      slug: show.slug,
+      name: show.name,
+      host: show.host,
+      image: show.image,
+      stationId: show.language === "Telugu" ? STATIONS.Telugu.id : STATIONS.Hindi.id,
+      language: show.language as "Hindi" | "Telugu",
+      stationLabel: show.language === "Hindi" ? "99.9 FM-HD4" : "99.9 FM-HD3",
+      schedule: show.schedule,
+      category: legacyProfile?.category ?? `${show.language} Radio`,
+      description: show.description,
+    }
+  })
+
 export const COMMUNITY_LINKS: SearchItem[] = [
   {
     id: "community-events",
@@ -332,25 +351,36 @@ function normalizeDuration(duration: string) {
   return duration
 }
 
+function toPodcastEpisode(video: YouTubeVideoItem): PodcastEpisode {
+  return {
+    id: video.id,
+    title: video.title,
+    description: video.description,
+    host: deriveHost(video),
+    show: deriveShow(video),
+    category: deriveCategory(video),
+    duration: normalizeDuration(video.duration),
+    publishedAt: video.publishedAt,
+    publishedLabel: formatDateLabel(video.publishedAt),
+    url: video.youtubeUrl,
+    embedUrl: video.embedUrl,
+    thumbnail: video.thumbnailHigh || video.thumbnail,
+    views: video.viewCount,
+    viewCountNum: video.viewCountNum,
+  }
+}
+
 export function getPodcastEpisodes(): PodcastEpisode[] {
   return SITE_VIDEOS.filter((video) => !video.isShort)
-    .map((video) => ({
-      id: video.id,
-      title: video.title,
-      description: video.description,
-      host: deriveHost(video),
-      show: deriveShow(video),
-      category: deriveCategory(video),
-      duration: normalizeDuration(video.duration),
-      publishedAt: video.publishedAt,
-      publishedLabel: formatDateLabel(video.publishedAt),
-      url: video.youtubeUrl,
-      embedUrl: video.embedUrl,
-      thumbnail: video.thumbnailHigh || video.thumbnail,
-      views: video.viewCount,
-      viewCountNum: video.viewCountNum,
-    }))
+    .map(toPodcastEpisode)
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+}
+
+export function getRecentYouTubeUploads(limit = 4): PodcastEpisode[] {
+  return [...SITE_VIDEOS]
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+    .slice(0, limit)
+    .map(toPodcastEpisode)
 }
 
 export function getVideoItems() {
@@ -388,7 +418,19 @@ export function getNewsItems(): NewsItem[] {
     source: "Radio Nyra Blog",
   }))
 
-  return [...rtvItems, ...blogItems].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  const announcementItems: NewsItem[] = RADIO_CONTENT.news.map((item) => ({
+    id: item.id,
+    title: item.title,
+    excerpt: item.excerpt,
+    category: item.category,
+    date: item.date,
+    dateLabel: formatDateLabel(item.date),
+    href: item.href,
+    image: item.image,
+    source: "Radio Nyra Blog",
+  }))
+
+  return [...rtvItems, ...blogItems, ...announcementItems].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
 export function getPartnerHighlights() {
@@ -431,7 +473,7 @@ export function getSearchIndex(): SearchItem[] {
     type: "podcast",
     title: episode.title,
     description: `${episode.show} - Hosted by ${episode.host}`,
-    href: `/podcasts?episode=${episode.id}`,
+    href: episode.url,
     image: episode.thumbnail,
     keywords: [episode.title, episode.description, episode.host, episode.show, episode.category],
   }))
@@ -482,6 +524,7 @@ export function getSearchIndex(): SearchItem[] {
     { id: "page-youtube", type: "page", title: "Videos & Shorts", description: "Official Radio Nyra YouTube hub.", href: "/youtube", keywords: ["youtube", "videos", "shorts"] },
     { id: "page-advertise", type: "page", title: "Advertise With Radio Nyra", description: "Media kits, campaigns, and business partnerships.", href: "/advertise", keywords: ["advertise", "business", "media kit"] },
     { id: "page-contact", type: "page", title: "Contact Radio Nyra", description: "Reach the Radio Nyra team.", href: "/contact", keywords: ["contact", "phone", "email"] },
+    { id: "page-listener-voice", type: "page", title: "Listener Voice", description: "Send song requests, show feedback, topic ideas, and community messages.", href: "/listener-voice", image: "/images/radio-nyra-logo.jpg", keywords: ["listener", "song request", "feedback", "suggestion", "poll", "message"] },
   ]
 
   return [

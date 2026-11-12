@@ -1,5 +1,4 @@
 import {
-  Apple,
   Building2,
   Car,
   Facebook,
@@ -9,7 +8,6 @@ import {
   Instagram,
   Linkedin,
   MessageCircle,
-  Music2,
   Send,
   Smartphone,
   Twitter,
@@ -26,12 +24,12 @@ export const CONTACT_INFO = {
   whatsappHref: "https://wa.me/19192944800",
   address: {
     street: "4819 Emperor Blvd Suite 400",
-    city: "Durham",
+    city: "Raleigh–Durham",
     state: "NC",
-    zip: "27703",
+    zip: "",
     full: "4819 Emperor Blvd Suite 400, Durham, NC 27703",
   },
-  mapEmbedUrl: "https://www.google.com/maps?q=4819+Emperor+Blvd+Suite+400%2C+Durham%2C+NC+27703&output=embed",
+  mapEmbedUrl: "",
 }
 
 export const SOCIAL_LINKS = [
@@ -40,8 +38,6 @@ export const SOCIAL_LINKS = [
   { label: "YouTube", href: "https://youtube.com/c/RadioNyraUSA", icon: Youtube },
   { label: "LinkedIn", href: "https://linkedin.com/company/radionyrausa", icon: Linkedin },
   { label: "Twitter/X", href: "https://twitter.com/NyraUsa", icon: Twitter },
-  { label: "Spotify", href: "https://open.spotify.com/search/Radio%20Nyra", icon: Music2 },
-  { label: "Apple Podcasts", href: "https://podcasts.apple.com/search?term=Radio%20Nyra", icon: Apple },
   { label: "WhatsApp", href: CONTACT_INFO.whatsappHref, icon: MessageCircle },
   { label: "Telegram", href: "https://t.me/radionyra", icon: Send },
 ]

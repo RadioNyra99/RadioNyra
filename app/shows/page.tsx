@@ -1,131 +1,123 @@
-import type { Metadata } from "next"
+"use client"
+
+import { useEffect, useMemo, useState } from "react"
 import Link from "next/link"
-import { CalendarDays, Clock, Headphones, Mic2, Radio, Search } from "lucide-react"
+import { CalendarDays, Clock3, Radio, Search, Youtube } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { FrequencyBar } from "@/components/frequency-bar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { SHOW_PROFILES } from "@/lib/content-discovery"
+import { Input } from "@/components/ui/input"
+import { RADIO_SHOWS, getCurrentRadioShow, getEasternTime, type RadioLanguageFilter, type RadioShow } from "@/lib/radio-content"
+import { useAudio } from "@/components/audio-context"
+import { STATIONS } from "@/lib/stations"
 
-export const metadata: Metadata = {
-  title: "Shows & RJ Profiles",
-  description:
-    "Explore Radio Nyra shows, RJ profiles, broadcast timings, Hindi and Telugu programs, and related on-demand episodes.",
-  alternates: { canonical: "/shows" },
-}
+const filters: RadioLanguageFilter[] = ["All", "Hindi", "Telugu"]
+const programs = RADIO_SHOWS.filter((show): show is RadioShow & { language: "Hindi" | "Telugu" } => show.language === "Hindi" || show.language === "Telugu")
 
 export default function ShowsPage() {
-  const hindiShows = SHOW_PROFILES.filter((show) => show.language === "Hindi")
-  const teluguShows = SHOW_PROFILES.filter((show) => show.language === "Telugu")
+  const { playStation } = useAudio()
+  const [filter, setFilter] = useState<RadioLanguageFilter>("All")
+  const [query, setQuery] = useState("")
+  const [now, setNow] = useState(() => new Date())
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setNow(new Date()), 30_000)
+    return () => window.clearInterval(timer)
+  }, [])
+
+  const time = getEasternTime(now)
+  const hindiOnAir = getCurrentRadioShow("Hindi", now)
+  const teluguOnAir = getCurrentRadioShow("Telugu", now)
+  const visibleShows = useMemo(() => {
+    const normalizedQuery = query.trim().toLowerCase()
+    return programs.filter((show) => {
+      const matchesLanguage = filter === "All" || show.language === filter
+      const searchable = `${show.name} ${show.host} ${show.description} ${show.schedule} ${show.language}`.toLowerCase()
+      return matchesLanguage && (!normalizedQuery || searchable.includes(normalizedQuery))
+    })
+  }, [filter, query])
 
   return (
-    <div className="min-h-screen bg-background font-sans">
+    <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       <FrequencyBar />
-
       <main>
-        <section className="bg-zinc-950 text-white py-12 md:py-16 border-b border-zinc-800">
-          <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8 items-end">
-              <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-600/10 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.25em] text-red-400 mb-4">
-                  <Radio className="h-4 w-4" /> Shows & Schedule
-                </div>
-                <h1 className="text-4xl md:text-6xl font-extrabold uppercase tracking-tight italic leading-none">
-                  Meet The Voices Behind Radio Nyra
-                </h1>
-                <p className="mt-4 max-w-2xl text-sm md:text-base text-zinc-300 leading-relaxed">
-                  Browse Hindi and Telugu programming, RJ profiles, broadcast times, show pages, and related on-demand conversations.
-                </p>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <Button asChild className="rounded-full bg-red-600 hover:bg-red-500 text-white font-extrabold uppercase tracking-widest">
-                    <Link href="/schedule">
-                      <CalendarDays className="mr-2 h-4 w-4" /> Weekly Schedule
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline" className="rounded-full border-zinc-700 bg-zinc-900 text-zinc-100 hover:bg-zinc-800 font-extrabold uppercase tracking-widest">
-                    <Link href="/podcasts">
-                      <Headphones className="mr-2 h-4 w-4" /> Podcast Hub
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-              <div className="rounded-xl border border-zinc-800 bg-zinc-900/70 p-5">
-                <p className="text-[10px] font-extrabold uppercase tracking-[0.25em] text-amber-400 mb-3">At A Glance</p>
-                <div className="grid grid-cols-2 gap-3 text-center">
-                  <div className="rounded-lg bg-black/30 p-4 border border-zinc-800">
-                    <p className="text-3xl font-extrabold">{hindiShows.length}</p>
-                    <p className="text-[10px] font-extrabold uppercase tracking-widest text-zinc-400">Hindi Shows</p>
-                  </div>
-                  <div className="rounded-lg bg-black/30 p-4 border border-zinc-800">
-                    <p className="text-3xl font-extrabold">{teluguShows.length}</p>
-                    <p className="text-[10px] font-extrabold uppercase tracking-widest text-zinc-400">Telugu Shows</p>
-                  </div>
-                </div>
-              </div>
+        <section className="relative overflow-hidden bg-[#0b1631] py-12 text-white sm:py-16">
+          <div aria-hidden className="pointer-events-none absolute inset-0 opacity-70" style={{ background: "radial-gradient(ellipse at 85% 20%, rgba(239,42,56,.28), transparent 40%), radial-gradient(ellipse at 12% 100%, rgba(44,82,160,.35), transparent 45%)" }} />
+          <div className="relative mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-end">
+            <div className="max-w-3xl">
+              <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[.2em] text-white/70"><Radio className="h-3.5 w-3.5 text-red-400" /> Hindi HD4 · Telugu HD3</p>
+              <h1 className="text-4xl font-black leading-[.98] tracking-tight sm:text-6xl">Shows, voices<br className="hidden sm:block" /> &amp; the weekly schedule.</h1>
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/65 sm:text-base">Find your favorite Radio Nyra programs, meet the hosts, and see what is on air across Hindi and Telugu radio.</p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <Button onClick={() => playStation(STATIONS.Hindi.id)} className="h-11 rounded-full bg-primary px-5 font-bold text-white hover:bg-primary/90"><Radio className="mr-2 h-4 w-4" />Listen Live</Button>
+              <Button asChild variant="outline" className="h-11 rounded-full border-white/20 bg-white/5 px-5 font-bold text-white hover:bg-white/10 hover:text-white"><Link href="/youtube"><Youtube className="mr-2 h-4 w-4 text-red-300" />Watch Now</Link></Button>
             </div>
           </div>
         </section>
 
-        <section className="py-12 md:py-16">
-          <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
-            <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-              <div>
-                <p className="text-[10px] font-extrabold uppercase tracking-[0.3em] text-primary mb-2">Show Directory</p>
-                <h2 className="text-2xl md:text-4xl font-extrabold uppercase tracking-tight italic">Programs, RJs & Broadcast Blocks</h2>
-              </div>
-              <Button asChild variant="outline" className="rounded-full text-xs font-extrabold uppercase tracking-widest self-start">
-                <Link href="/schedule">
-                  <CalendarDays className="mr-2 h-4 w-4" /> View Full Schedule
-                </Link>
-              </Button>
+        <section id="schedule" className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14">
+          <div className="mb-6 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-primary">Weekly lineup · All times EST</p>
+              <h2 className="mt-2 text-2xl font-black tracking-tight sm:text-3xl">Find the show for you</h2>
+              <p className="mt-1 text-sm text-muted-foreground">Local time: {time.formattedTime}</p>
             </div>
+            <div className="relative w-full md:max-w-sm">
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden />
+              <Input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search shows or hosts" aria-label="Search shows or hosts" className="h-11 rounded-full pl-10" />
+            </div>
+          </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {SHOW_PROFILES.map((show) => (
-                <article key={show.slug} className="group overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary/50">
-                  <Link href={`/shows/${show.slug}`} className="block">
-                    <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-                      <img src={show.image} alt={`${show.name} hosted by ${show.host}`} className="h-full w-full object-cover transition-transform group-hover:scale-105" loading="lazy" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                      <Badge className={`absolute left-3 top-3 border-none ${show.language === "Hindi" ? "bg-red-600 text-white" : "bg-amber-500 text-black"}`}>
-                        {show.stationLabel}
-                      </Badge>
-                      <div className="absolute bottom-3 left-3 right-3 text-white">
-                        <p className="text-[10px] font-extrabold uppercase tracking-widest text-amber-300">{show.category}</p>
-                        <h3 className="text-xl font-extrabold italic leading-tight">{show.name}</h3>
+          <div className="mb-6 flex flex-wrap gap-2" role="group" aria-label="Filter shows by language">
+            {filters.map((item) => (
+              <button key={item} type="button" onClick={() => setFilter(item)} aria-pressed={filter === item} className={`rounded-full px-4 py-2.5 text-xs font-extrabold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${filter === item ? "bg-primary text-white" : "border border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground"}`}>
+                {item === "All" ? "All" : item === "Hindi" ? "Hindi · HD4" : "Telugu · HD3"}
+              </button>
+            ))}
+          </div>
+
+          <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+            <div className="grid grid-cols-[minmax(180px,1.4fr)_minmax(120px,.8fr)_minmax(180px,1fr)_minmax(150px,.8fr)] gap-4 border-b border-border bg-muted/50 px-5 py-3 text-[10px] font-extrabold uppercase tracking-[.14em] text-muted-foreground max-md:hidden">
+              <span>Program</span><span>Channel</span><span>Day &amp; time</span><span>Host</span>
+            </div>
+            <div className="divide-y divide-border">
+              {visibleShows.map((show) => {
+                const onAirShow = show.language === "Hindi" ? hindiOnAir : teluguOnAir
+                const isOnAir = onAirShow.id === show.slug
+                return (
+                  <article key={show.slug} className={`grid gap-4 px-4 py-4 sm:px-5 md:grid-cols-[minmax(180px,1.4fr)_minmax(120px,.8fr)_minmax(180px,1fr)_minmax(150px,.8fr)] md:items-center ${isOnAir ? "bg-primary/[.045]" : ""}`}>
+                    <div className="flex min-w-0 items-center gap-3">
+                      <img src={show.image} alt={`${show.name} program artwork`} loading="lazy" className="h-14 w-14 shrink-0 rounded-xl bg-muted object-cover" />
+                      <div className="min-w-0">
+                        <h3 className="truncate font-extrabold tracking-tight">{show.name}</h3>
+                        <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">{show.description}</p>
+                        {isOnAir && <span className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-primary px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-wider text-white"><span className="h-1.5 w-1.5 rounded-full bg-white" />On air now</span>}
                       </div>
                     </div>
-                  </Link>
-                  <div className="p-5">
-                    <p className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                      <Mic2 className="h-4 w-4 text-primary" /> Hosted by {show.host}
-                    </p>
-                    <p className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                      <Clock className="h-4 w-4 text-primary" /> {show.schedule}
-                    </p>
-                    <p className="line-clamp-3 text-sm leading-relaxed text-muted-foreground">{show.description}</p>
-                    <div className="mt-5 flex gap-2">
-                      <Button asChild size="sm" className="rounded-full text-xs font-bold">
-                        <Link href={`/shows/${show.slug}`}>View Show</Link>
-                      </Button>
-                      <Button asChild size="sm" variant="outline" className="rounded-full text-xs font-bold">
-                        <Link href={`/podcasts?episode=${show.slug}`}>
-                          <Search className="mr-1.5 h-3.5 w-3.5" /> Episodes
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                </article>
-              ))}
+                    <div><span className={`inline-flex rounded-full px-2.5 py-1 text-[10px] font-extrabold ${show.language === "Hindi" ? "bg-red-50 text-red-700 dark:bg-red-950/50 dark:text-red-300" : "bg-blue-50 text-blue-800 dark:bg-blue-950/50 dark:text-blue-300"}`}>{show.language} · {show.station}</span></div>
+                    <div className="flex items-center gap-2 text-sm font-semibold text-muted-foreground"><Clock3 className="h-4 w-4 shrink-0 text-primary" />{show.schedule}</div>
+                    <div className="flex items-center justify-between gap-3 text-sm font-medium"><span>{show.host}</span><Link href={`/shows/${show.slug}`} className="shrink-0 text-xs font-bold text-primary hover:underline">Details</Link></div>
+                  </article>
+                )
+              })}
+              {visibleShows.length === 0 && <p className="px-5 py-12 text-center text-sm text-muted-foreground">No shows match that search. Try another name or choose a different language.</p>}
             </div>
+          </div>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {[{ language: "Hindi" as const, show: hindiOnAir }, { language: "Telugu" as const, show: teluguOnAir }].map(({ language, show }) => (
+              <div key={language} className="flex items-center justify-between gap-4 rounded-2xl border border-border bg-card p-4 sm:p-5">
+                <div><p className="text-[10px] font-extrabold uppercase tracking-[.15em] text-muted-foreground">On air · {language}</p><p className="mt-1 font-extrabold">{show.title}</p><p className="mt-1 text-xs text-muted-foreground">{show.host} · {show.timeRange}</p></div>
+                <Button asChild variant="ghost" size="sm" className="rounded-full font-bold"><Link href="#schedule"><CalendarDays className="mr-1.5 h-4 w-4" />Schedule</Link></Button>
+              </div>
+            ))}
           </div>
         </section>
       </main>
-
       <Footer />
     </div>
   )
 }
-

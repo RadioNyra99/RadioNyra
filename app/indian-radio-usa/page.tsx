@@ -38,7 +38,7 @@ export default function IndianRadioUsaPage() {
 
                 <section>
                     <h2 className="text-2xl font-bold mb-4">Community Focused Programming</h2>
-                    <p>Radio Nyra programming includes music, interviews, news, and community conversations. Browse the <Link className="text-primary underline underline-offset-4" href="/schedule">broadcast schedule</Link>, <Link className="text-primary underline underline-offset-4" href="/podcasts">podcasts</Link>, and <Link className="text-primary underline underline-offset-4" href="/events">community events</Link>.</p>
+                    <p>Radio Nyra programming includes music, interviews, news, and community conversations. Browse the <Link className="text-primary underline underline-offset-4" href="/schedule">broadcast schedule</Link>, watch the <Link className="text-primary underline underline-offset-4" href="/youtube">Radio Nyra YouTube channel</Link>, and find <Link className="text-primary underline underline-offset-4" href="/events">community events</Link>.</p>
                 </section>
 
                 <section>

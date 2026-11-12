@@ -1,67 +1,55 @@
 import Link from "next/link"
+import { Headphones } from "lucide-react"
 import { SOCIAL_LINKS } from "@/lib/site-data"
+import { RADIO_CONTENT, RADIO_FREQUENCIES } from "@/lib/radio-content"
 import { NewsletterSection } from "@/components/newsletter-section"
+
+const quickLinks = [
+  { label: "Shows & Schedule", href: "/shows" },
+  { label: "Events", href: "/events" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Festival Calendar", href: "/festival-calendar" },
+  { label: "Community Impact", href: "/community-impact" },
+  { label: "Listener Voice", href: "/listener-voice" },
+  { label: "News & Updates", href: "/news" },
+  { label: "YouTube & Interviews", href: "/youtube" },
+  { label: "RTV Telugu News", href: "/rtv-news" },
+  { label: "Video Library", href: "/video-library" },
+  { label: "Creative Studio", href: "/creative-studio" },
+  { label: "Success Stories", href: "/advertiser-success-stories" },
+  { label: "Advertising Services", href: "/services" },
+  { label: "About", href: "/about" },
+  { label: "Advertise With Us", href: "/advertise" },
+  { label: "Contact", href: "/contact" },
+]
 
 export function Footer() {
   return (
-    <footer className="bg-zinc-950 text-white border-t border-zinc-800 py-8">
+    <footer className="bg-[#0b1631] text-white">
       <NewsletterSection />
-      <div className="container mx-auto px-4 sm:px-6">
-        {/* Top Row: Brand + Links + Socials */}
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
-          {/* Brand */}
-          <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
-            <div className="w-10 h-10 rounded-full overflow-hidden border border-zinc-700 bg-white shrink-0">
-              <img src="/images/radio-nyra-logo.jpg" alt="Radio Nyra" className="w-full h-full object-cover" />
+      <div className="mx-auto max-w-7xl px-4 pb-8 pt-9 sm:px-6">
+        <div className="grid gap-9 md:grid-cols-[1.2fr_.8fr]">
+          <div>
+            <Link href="/" className="inline-flex items-center gap-3" aria-label="Radio Nyra home">
+              <img src="/images/radio-nyra-logo.png" alt="Radio Nyra logo" className="h-14 w-14 rounded-full border border-white/20 bg-white object-cover" />
+              <span><span className="block text-xl font-black tracking-tight">Radio Nyra</span><span className="mt-1 block text-[9px] font-extrabold uppercase tracking-[.16em] text-white/45">Community Media Network USA</span></span>
+            </Link>
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-white/60">Hindi and Telugu community radio, podcasts, news, and stories from Raleigh–Durham, North Carolina.</p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {SOCIAL_LINKS.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} title={social.label} className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/65 transition-colors hover:border-white/40 hover:bg-white/10 hover:text-white"><social.icon className="h-4 w-4" /></a>)}
             </div>
-            <div className="text-center sm:text-left">
-              <span className="font-bold text-base text-white block">Radio Nyra</span>
-              <span className="text-[11px] text-zinc-400">The Indian Subcontinent Community Media Network USA</span>
-            </div>
+            <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs text-white/70"><a className="inline-flex items-center gap-2 hover:text-white" href={`tel:${RADIO_CONTENT.contact.phone.replace(/[^+\d]/g, "")}`}><Headphones className="h-3.5 w-3.5 text-red-300" />{RADIO_CONTENT.contact.phone}</a><a className="hover:text-white" href={`mailto:${RADIO_CONTENT.contact.email}`}>{RADIO_CONTENT.contact.email}</a></div>
           </div>
 
-          {/* Essential Links */}
-          <div className="flex flex-wrap items-center justify-center gap-x-5 sm:gap-x-6 gap-y-2.5">
-            {[
-              { label: "Shows", href: "/shows" },
-              { label: "Schedule", href: "/schedule" },
-              { label: "Events", href: "/events" },
-              { label: "Advertise", href: "/advertise" },
-              { label: "Contact", href: "/contact" },
-            ].map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-xs font-bold uppercase tracking-wider text-zinc-400 hover:text-white transition-colors py-1"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Social Icons */}
-          <div className="flex items-center justify-center gap-2 flex-wrap">
-            {SOCIAL_LINKS.map((social) => (
-              <Link
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                aria-label={social.label}
-                className="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-800 flex items-center justify-center transition-all hover:scale-110"
-              >
-                <social.icon className="w-4 h-4" />
-              </Link>
-            ))}
+          <div className="grid gap-8 sm:grid-cols-2">
+            <div><h2 className="text-[10px] font-extrabold uppercase tracking-[.18em] text-white/45">Explore</h2><nav aria-label="Footer navigation" className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2">{quickLinks.map((item) => <Link key={item.href} href={item.href} className="text-xs font-semibold text-white/75 transition-colors hover:text-white">{item.label}</Link>)}</nav></div>
+            <div><h2 className="text-[10px] font-extrabold uppercase tracking-[.18em] text-white/45">Listen</h2><ul className="mt-3 space-y-2 text-xs text-white/75">{RADIO_FREQUENCIES.map((market) => <li key={market.market}><span className="font-bold text-white">{market.market}:</span> {market.channels.join(" · ")}</li>)}</ul></div>
           </div>
         </div>
 
-        {/* Bottom: Copyright + Legal */}
-        <div className="mt-6 pt-5 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-500 text-center sm:text-left">
+        <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-5 text-[10px] text-white/45 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Radio Nyra. All rights reserved.</p>
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-5">
-            <Link href="/privacy-policy" className="hover:text-zinc-300 transition-colors">Privacy Policy</Link>
-            <Link href="/terms-services" className="hover:text-zinc-300 transition-colors">Terms of Service</Link>
-          </div>
+          <div className="flex flex-wrap gap-4"><Link href="/privacy-policy" className="hover:text-white/80">Privacy Policy</Link><Link href="/terms-services" className="hover:text-white/80">Terms of Service</Link><a href="https://apps.apple.com/us/app/radio-nyra-raleigh-durham/id6469009980" target="_blank" rel="noopener noreferrer" className="hover:text-white/80">App Store</a><a href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app" target="_blank" rel="noopener noreferrer" className="hover:text-white/80">Google Play</a></div>
         </div>
       </div>
     </footer>

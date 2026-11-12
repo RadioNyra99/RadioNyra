@@ -16,7 +16,6 @@ export function generateOrganizationSchema() {
             "@type": "ContactPoint",
             "telephone": "+1-919-294-4800",
             "contactType": "customer service",
-            "email": "info@radionyra.com",
             "availableLanguage": ["English", "Hindi", "Telugu"]
         },
         "sameAs": [
@@ -24,7 +23,8 @@ export function generateOrganizationSchema() {
             "https://instagram.com/radionyrausa",
             "https://twitter.com/NyraUsa",
             "https://youtube.com/c/RadioNyraUSA",
-            "https://linkedin.com/company/radionyrausa"
+            "https://linkedin.com/company/radionyrausa",
+            "https://t.me/radionyra"
         ]
     };
 }
@@ -39,19 +39,6 @@ export function generateRadioStationSchema() {
         "logo": "https://www.radionyra.com/images/radio-nyra-logo.jpg",
         "genre": ["Bollywood", "Indian Subcontinent", "Tollywood", "Community Radio", "Talk Show"],
         "telephone": "+1-919-294-4800",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "4819 Emperor Blvd Suite 400",
-            "addressLocality": "Durham",
-            "addressRegion": "NC",
-            "postalCode": "27703",
-            "addressCountry": "US"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "35.8858",
-            "longitude": "-78.8550"
-        },
         "broadcastFrequency": [
             {
                 "@type": "BroadcastFrequencySpecification",
@@ -146,15 +133,6 @@ export function generateLocalBusinessSchema() {
         "name": "Radio Nyra Media Network",
         "image": "https://www.radionyra.com/images/radio-nyra-logo.jpg",
         "telephone": "+1-919-294-4800",
-        "email": "info@radionyra.com",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "4819 Emperor Blvd Suite 400",
-            "addressLocality": "Durham",
-            "addressRegion": "NC",
-            "postalCode": "27703",
-            "addressCountry": "US"
-        }
     };
 }
 

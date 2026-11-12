@@ -1,260 +1,179 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import Link from "next/link"
+import { useTheme } from "next-themes"
+import { ChevronDown, Headphones, Menu, Moon, Play, Sun, Youtube } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-  SheetClose,
-} from "@/components/ui/sheet"
-import { ChevronDown, Menu, Sparkles } from "lucide-react"
-import { showAudioPlayer } from "../lib/audio-player-utils"
-import { SiteSearch } from "./site-search"
+import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { showAudioPlayer } from "@/lib/audio-player-utils"
+import { SiteSearch } from "@/components/site-search"
 
-export function Navigation() {
-  const openNyraAI = () => {
-    if (typeof window !== "undefined") {
-      window.dispatchEvent(new CustomEvent("open-nyra-ai"))
-    }
-  }
+const navigationSections = [
+  { label: "Shows", links: [{ href: "/shows", label: "Shows & Schedule" }] },
+  {
+    label: "Community",
+    links: [
+      { href: "/events", label: "Events" },
+      { href: "/gallery", label: "Gallery" },
+      { href: "/festival-calendar", label: "Festival Calendar" },
+      { href: "/community-impact", label: "Community Impact" },
+      { href: "/listener-voice", label: "Listener Voice" },
+    ],
+  },
+  {
+    label: "Media",
+    links: [
+      { href: "/news", label: "News & Updates" },
+    ],
+  },
+  {
+    label: "Services",
+    links: [
+      { href: "/creative-studio", label: "Creative Studio" },
+      { href: "/advertiser-success-stories", label: "Success Stories" },
+    ],
+  },
+  {
+    label: "Advertise",
+    links: [
+      { href: "/advertise", label: "Advertise With Us" },
+      { href: "/services", label: "Advertising Services" },
+    ],
+  },
+  { label: "About", links: [{ href: "/about", label: "About Radio Nyra" }] },
+  { label: "Contact", links: [{ href: "/contact", label: "Contact" }] },
+]
 
-  const navLinks = [
-    { href: "/", label: "Home" },
-    {
-      href: "/how-to-tune",
-      label: "Listen",
-      subLinks: [
-        { href: "/schedule", label: "Schedule" },
-        { href: "/how-to-tune", label: "How to Tune In" },
-      ]
-    },
-    {
-      href: "/community-impact",
-      label: "Community",
-      subLinks: [
-        { href: "/events", label: "Events" },
-        { href: "/gallery", label: "Gallery" },
-        { href: "/festival-calendar", label: "Festival Calendar" },
-        { href: "/community-impact", label: "Community Impact" },
-      ]
-    },
-    {
-      href: "/news",
-      label: "Media",
-      subLinks: [
-        { href: "/news", label: "News & Articles" },
-        { href: "/press", label: "Press" },
-      ]
-    },
-    {
-      href: "/services",
-      label: "Services",
-      subLinks: [
-        { href: "/creative-studio", label: "Creative Studio" },
-        { href: "/advertiser-success-stories", label: "Success Stories" },
-      ]
-    },
-    {
-      href: "/advertise",
-      label: "Advertise",
-      subLinks: [
-        { href: "/advertise", label: "Advertise with Us" },
-        { href: "/services", label: "Advertising Services" },
-      ]
-    },
-    { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
-  ];
+function ThemeToggle() {
+  const { resolvedTheme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => setMounted(true), [])
+  const isDark = mounted && resolvedTheme === "dark"
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border/40">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+    <Button
+      type="button"
+      variant="ghost"
+      size="icon"
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      className="h-9 w-9 rounded-full text-foreground hover:bg-muted"
+    >
+      {isDark ? <Sun className="h-4 w-4" aria-hidden /> : <Moon className="h-4 w-4" aria-hidden />}
+    </Button>
+  )
+}
 
-          {/* Navigation - LEFT ALIGNED */}
-          <div className="flex items-center gap-8">
-            {/* Mobile Menu Trigger */}
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="lg:hidden mr-2 cursor-pointer" aria-label="Open navigation menu">
-                  <Menu className="h-5 w-5" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="left" className="w-[300px] sm:w-[400px] flex flex-col p-0 border-r-0 shadow-2xl bg-background text-foreground">
-                <SheetHeader className="p-6 border-b border-border/10 bg-background/95 backdrop-blur sticky top-0 z-10 shrink-0">
-                  <div className="flex flex-row items-center gap-4">
-                    <div className="relative">
-                      <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary shrink-0">
-                        <img
-                          src="/images/radio-nyra-logo.jpg"
-                          alt="Radio Nyra Logo"
-                          className="w-full h-full object-cover scale-110"
-                        />
-                      </div>
-                      <div className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-primary border-2 border-background rounded-full animate-pulse" />
-                    </div>
-                    <div className="flex flex-col">
-                      <SheetTitle className="text-left font-black uppercase tracking-tighter leading-none text-xl">Menu</SheetTitle>
-                      <p className="text-[9px] text-muted-foreground font-bold tracking-[0.2em] uppercase mt-1">Radio Nyra</p>
-                    </div>
-                  </div>
-                </SheetHeader>
-
-                <div className="flex-1 overflow-y-auto px-6 py-8 custom-scrollbar">
-                  <div className="flex flex-col gap-6">
-                    {navLinks.map((link) => (
-                      <div key={link.href} className="flex flex-col gap-2 group">
-                        <SheetClose asChild>
-                          <Link
-                            href={link.href}
-                            className="text-lg font-black text-foreground hover:text-primary transition-all duration-300 tracking-tighter uppercase flex items-center gap-2"
-                          >
-                            {link.label}
+export function Navigation() {
+  return (
+    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/95 text-foreground shadow-sm backdrop-blur-xl supports-[backdrop-filter]:bg-background/85">
+      <div className="mx-auto flex h-[68px] max-w-7xl items-center gap-3 px-3 sm:px-5 lg:px-6">
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon" aria-label="Open navigation menu" className="h-10 w-10 shrink-0 rounded-full xl:hidden">
+              <Menu className="h-5 w-5" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left" className="flex w-[min(88vw,360px)] flex-col border-border bg-background p-0 text-foreground">
+            <SheetHeader className="border-b border-border px-6 py-5 text-left">
+              <SheetTitle className="flex items-center gap-3 text-left">
+                <img src="/images/radio-nyra-logo.png" alt="" className="h-11 w-11 rounded-full border border-border object-cover" />
+                <span>
+                  <span className="block text-lg font-black tracking-tight">Radio Nyra</span>
+                  <span className="mt-0.5 block text-[10px] font-bold uppercase tracking-[0.16em] text-muted-foreground">Hindi · Telugu · Community</span>
+                </span>
+              </SheetTitle>
+            </SheetHeader>
+            <nav aria-label="Mobile navigation" className="flex-1 overflow-y-auto px-6 py-5">
+              <div className="grid gap-5">
+                {navigationSections.map((section) => (
+                  <section key={section.label} aria-labelledby={`mobile-nav-${section.label.toLowerCase()}`}>
+                    <h2 id={`mobile-nav-${section.label.toLowerCase()}`} className="px-4 text-[10px] font-extrabold uppercase tracking-[.18em] text-muted-foreground">{section.label}</h2>
+                    <div className="mt-1 grid gap-0.5">
+                      {section.links.map((item) => (
+                        <SheetClose asChild key={item.href}>
+                          <Link href={item.href} className="flex min-h-11 items-center rounded-xl px-4 py-2 text-sm font-semibold transition-colors hover:bg-muted hover:text-primary">
+                            {item.label}
                           </Link>
                         </SheetClose>
-                        {link.subLinks && (
-                          <div className="flex flex-col gap-3.5 pl-4 border-l border-primary/20 mt-1">
-                            {link.subLinks.map((subLink) => (
-                              <SheetClose key={subLink.href} asChild>
-                                <Link
-                                  href={subLink.href}
-                                  className="text-[12px] font-bold text-muted-foreground hover:text-primary transition-colors tracking-wide uppercase leading-tight"
-                                >
-                                  {subLink.label}
-                                </Link>
-                              </SheetClose>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="p-6 border-t border-border/10 bg-muted/20 shrink-0 flex flex-col gap-4">
-                  <div className="flex gap-2 w-full">
-                    <Button variant="outline" className="flex-1 h-11 rounded-full border-2 text-xs" asChild>
-                      <Link href="https://apps.apple.com/us/app/radio-nyra-raleigh-durham/id6469009980" target="_blank" rel="noopener noreferrer">
-                        <img src="/apple-icon.webp" alt="Download on App Store" className="mr-1.5 h-4 w-4 object-contain" /> App Store
-                      </Link>
-                    </Button>
-                    <Button variant="outline" className="flex-1 h-11 rounded-full border-2 text-xs" asChild>
-                      <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app" target="_blank" rel="noopener noreferrer">
-                        <img src="/android-icon.webp" alt="Get it on Google Play" className="mr-1.5 h-4 w-4 object-contain" /> Play Store
-                      </Link>
-                    </Button>
-                  </div>
-                  <div className="flex flex-col gap-2.5">
-                    <SheetClose asChild>
-                      <Button
-                        onClick={openNyraAI}
-                        className="w-full bg-gradient-to-r from-red-600 to-amber-500 hover:from-red-500 hover:to-amber-400 text-white font-black uppercase tracking-wider rounded-full py-5 text-xs shadow-md flex items-center justify-center gap-2 cursor-pointer"
-                      >
-                        <Sparkles className="w-4 h-4" />
-                        Ask Nyra AI
-                      </Button>
-                    </SheetClose>
-                    <SheetClose asChild>
-                      <Button
-                        onClick={() => showAudioPlayer()}
-                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-black uppercase tracking-[0.1em] rounded-full py-5 text-sm soft-shadow-primary transition-transform active:scale-95 cursor-pointer"
-                      >
-                        Listen Live
-                      </Button>
-                    </SheetClose>
-                  </div>
-                </div>
-              </SheetContent>
-            </Sheet>
-
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-3 xl:gap-5">
-              {navLinks.map((link) => (
-                link.subLinks ? (
-                  <DropdownMenu key={link.href}>
-                    <DropdownMenuTrigger className="flex items-center gap-1 text-[11px] xl:text-[13px] font-black text-foreground hover:text-primary transition-colors tracking-tight uppercase focus:outline-none">
-                      {link.label}
-                      <ChevronDown className="h-3.5 w-3.5 opacity-70" />
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="start" className="bg-background border-border">
-                      {link.subLinks.map((subLink) => (
-                        <DropdownMenuItem key={subLink.href} asChild>
-                          <Link href={subLink.href} className="font-bold uppercase tracking-wider cursor-pointer">
-                            {subLink.label}
-                          </Link>
-                        </DropdownMenuItem>
                       ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                ) : (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="text-[11px] xl:text-[13px] font-black text-foreground hover:text-primary transition-colors tracking-tight uppercase whitespace-nowrap"
-                  >
-                    {link.label}
-                  </Link>
-                )
-              ))}
-
-              {/* App Icons */}
-              <div className="flex items-center gap-2 ml-2">
-                <Link href="https://apps.apple.com/us/app/radio-nyra-raleigh-durham/id6469009980" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
-                  <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-sm border border-border/10">
-                    <img src="/apple-icon.webp" alt="Download on App Store" className="h-5 w-5 object-contain" />
-                  </div>
-                </Link>
-                <Link href="https://play.google.com/store/apps/details?id=com.bb2757c5ba19.app" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
-                  <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-sm border border-border/10">
-                    <img src="/android-icon.webp" alt="Get it on Google Play" className="h-5 w-5 object-contain" />
-                  </div>
-                </Link>
+                    </div>
+                  </section>
+                ))}
+              </div>
+            </nav>
+            <div className="space-y-3 border-t border-border bg-muted/30 p-5">
+              <div className="grid grid-cols-2 gap-2">
+                <SheetClose asChild>
+                  <Button asChild variant="outline" className="h-11 rounded-full font-bold">
+                    <Link href="/youtube"><Youtube className="mr-2 h-4 w-4 text-primary" />Watch Now</Link>
+                  </Button>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Button onClick={() => showAudioPlayer()} className="h-11 rounded-full font-bold">
+                    <Headphones className="mr-2 h-4 w-4" />Listen Live
+                  </Button>
+                </SheetClose>
+              </div>
+              <div className="flex items-center justify-between rounded-xl border border-border bg-background px-4 py-2">
+                <span className="text-xs font-semibold text-muted-foreground">Appearance</span>
+                <ThemeToggle />
               </div>
             </div>
-          </div>
+          </SheetContent>
+        </Sheet>
 
-          {/* Logo & Right Actions */}
-          <div className="flex items-center gap-1.5 sm:gap-2.5 lg:gap-3">
-            <SiteSearch />
-            <Button
-              onClick={openNyraAI}
-              className="bg-gradient-to-r from-red-600 to-amber-500 hover:from-red-500 hover:to-amber-400 text-white font-black uppercase tracking-wider rounded-full px-3 sm:px-4 h-8 sm:h-9 text-[10px] sm:text-xs transition-all cursor-pointer shadow-sm hover:scale-105 shrink-0 hidden sm:inline-flex items-center gap-1.5"
-            >
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Ask Nyra</span>
-            </Button>
-            <Button
-              onClick={() => showAudioPlayer()}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-black uppercase tracking-tighter rounded-full px-3.5 sm:px-5 h-8 sm:h-9 text-[10px] sm:text-xs transition-all cursor-pointer shrink-0"
-            >
-              Listen Live
-            </Button>
+        <Link href="/" className="group flex min-w-0 shrink-0 items-center gap-2.5" aria-label="Radio Nyra home">
+          <img src="/images/radio-nyra-logo.png" alt="Radio Nyra logo" className="h-10 w-10 rounded-full border border-border bg-white object-cover shadow-sm sm:h-11 sm:w-11" />
+          <span className="min-w-0">
+            <span className="block truncate text-[17px] font-black leading-none tracking-tight sm:text-lg">Radio Nyra</span>
+            <span className="mt-1 hidden text-[8px] font-extrabold uppercase tracking-[0.14em] text-primary sm:block">Community Media Network USA</span>
+          </span>
+        </Link>
 
-            <Link href="/" className="flex items-center gap-2 sm:gap-3 group shrink-0">
-              <div className="text-right flex flex-col justify-center hidden sm:flex">
-                <div className="font-bold text-base sm:text-xl lg:text-2xl text-foreground tracking-tighter leading-none whitespace-nowrap">Radio Nyra</div>
-                <p className="text-[8px] sm:text-[9px] font-black uppercase tracking-[0.1em] text-primary leading-none mt-1">COMMUNITY MEDIA NETWORK USA</p>
-              </div>
-              <div className="relative w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 overflow-hidden rounded-full border-2 border-primary group-hover:border-primary/80 transition-colors shrink-0">
-                <img
-                  src="/images/radio-nyra-logo.jpg"
-                  alt="Radio Nyra Logo"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+        <nav aria-label="Main navigation" className="ml-auto hidden items-center gap-3 xl:flex">
+          {navigationSections.map((section) => {
+            const directLink = section.links.length === 1 && ["Shows", "About", "Contact"].includes(section.label)
+            if (directLink) {
+              const item = section.links[0]
+              return <Link key={section.label} href={item.href} className="whitespace-nowrap text-[11px] font-bold text-muted-foreground transition-colors hover:text-primary focus-visible:text-primary">{section.label}</Link>
+            }
+
+            return (
+              <details key={section.label} className="group relative">
+                <summary className="flex cursor-pointer list-none items-center gap-1 whitespace-nowrap rounded-md py-2 text-[11px] font-bold text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
+                  {section.label}<ChevronDown className="h-3 w-3 transition-transform group-open:rotate-180" aria-hidden />
+                </summary>
+                <div className="absolute left-0 top-full z-50 hidden min-w-52 rounded-xl border border-border bg-background p-2 text-foreground shadow-xl group-open:block">
+                  {section.links.map((item) => (
+                    <Link key={item.href} href={item.href} className="flex min-h-10 items-center rounded-lg px-3 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-muted hover:text-primary focus-visible:bg-muted">
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </details>
+            )
+          })}
+        </nav>
+
+        <div className="ml-auto flex shrink-0 items-center gap-1.5 xl:ml-5">
+          <div className="hidden md:block"><SiteSearch /></div>
+          <div className="hidden lg:block"><ThemeToggle /></div>
+          <Button asChild variant="outline" size="sm" className="h-10 w-10 rounded-full border-border p-0 sm:w-auto sm:px-4">
+            <Link href="/youtube" aria-label="Watch Now" title="Watch Now">
+              <Youtube className="h-4 w-4 text-primary sm:mr-2" aria-hidden />
+              <span className="hidden sm:inline">Watch Now</span>
             </Link>
-          </div>
+          </Button>
+          <Button onClick={() => showAudioPlayer()} size="sm" className="h-10 rounded-full px-3 text-xs font-extrabold sm:px-4 sm:text-sm">
+            <Play className="mr-1.5 h-3.5 w-3.5 fill-current" aria-hidden />
+            Listen Live
+          </Button>
         </div>
       </div>
-    </nav>
+    </header>
   )
 }

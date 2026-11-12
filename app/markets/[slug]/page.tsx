@@ -151,19 +151,6 @@ export default async function MarketPage({ params }: { params: Params }) {
                 "url": `https://www.radionyra.com/markets/${slug}`,
                 "logo": "https://www.radionyra.com/images/radio-nyra-logo.jpg",
                 "telephone": market.localContact,
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": isRdu ? "4819 Emperor Blvd Suite 400" : undefined,
-                    "addressLocality": isRdu ? "Durham" : market.name.split(",")[0],
-                    "addressRegion": isRdu ? "NC" : (slug === "atlanta" ? "GA" : slug === "baltimore" ? "MD" : slug === "philadelphia" ? "PA" : slug === "st-louis" ? "MO" : "OH"),
-                    "postalCode": isRdu ? "27703" : undefined,
-                    "addressCountry": "US"
-                },
-                "geo": isRdu ? {
-                    "@type": "GeoCoordinates",
-                    "latitude": "35.8858",
-                    "longitude": "-78.8550"
-                } : undefined,
                 "areaServed": market.coverage,
                 "broadcastFrequency": isRdu ? [
                     {
@@ -469,7 +456,7 @@ export default async function MarketPage({ params }: { params: Params }) {
                             <div className="bg-muted/40 p-5 rounded-2xl border border-border/50 space-y-2">
                                 <h4 className="font-bold text-base text-foreground">Where is Radio Nyra located in the Research Triangle?</h4>
                                 <p className="text-sm text-muted-foreground leading-relaxed">
-                                    Radio Nyra's Triangle corporate offices and broadcast studios are located at 4819 Emperor Blvd Suite 400, Durham, NC 27703, serving the entire Raleigh-Durham-Cary-Morrisville metro area.
+                                    Radio Nyra is based in Raleigh–Durham and serves listeners across the Triangle. Office address: 4819 Emperor Blvd Suite 400, Durham, NC 27703.
                                 </p>
                             </div>
                         </div>

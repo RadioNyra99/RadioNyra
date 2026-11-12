@@ -56,96 +56,90 @@
 }
 
 :root {
-  /* GDC Style: Sharp, Bold, High Contrast */
-  --background: #ffffff;
-  --foreground: #000000;
+  --background: #f7f8fb;
+  --foreground: #0b1631;
 
-  --card: #f8f8f8;
-  --card-foreground: #000000;
+  --card: #ffffff;
+  --card-foreground: #0b1631;
 
   --popover: #ffffff;
-  --popover-foreground: #000000;
+  --popover-foreground: #0b1631;
 
-  /* GDC Red Primary */
-  --primary: #ff0000;
+  --primary: #ef2a38;
   --primary-foreground: #ffffff;
 
-  /* GDC Secondary */
-  --secondary: #00bcd4;
-  --secondary-foreground: #000000;
+  --secondary: #244474;
+  --secondary-foreground: #ffffff;
 
-  --muted: #f1f1f1;
-  --muted-foreground: #666666;
+  --muted: #edf0f6;
+  --muted-foreground: #59677f;
 
-  --accent: #ff0000;
+  --accent: #ef2a38;
   --accent-foreground: #ffffff;
 
   --destructive: #d32f2f;
   --destructive-foreground: #ffffff;
 
-  --border: #e0e0e0;
-  --input: #e0e0e0;
-  --ring: #ff0000;
+  --border: #dfe5ef;
+  --input: #dfe5ef;
+  --ring: #ef2a38;
 
-  --radius: 0px;
-  /* GDC uses sharp corners mostly */
+  --radius: 0.75rem;
 
-  --chart-1: #ff0000;
-  --chart-2: #00bcd4;
-  --chart-3: #ff0000;
+  --chart-1: #ef2a38;
+  --chart-2: #244474;
+  --chart-3: #476ba6;
   --chart-4: #ffc107;
   --chart-5: #607d8b;
 
   --sidebar: #ffffff;
-  --sidebar-foreground: #000000;
-  --sidebar-primary: #ff0000;
+  --sidebar-foreground: #0b1631;
+  --sidebar-primary: #ef2a38;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #f1f1f1;
-  --sidebar-accent-foreground: #000000;
-  --sidebar-border: #e0e0e0;
-  --sidebar-ring: #ff0000;
+  --sidebar-accent-foreground: #0b1631;
+  --sidebar-border: #dfe5ef;
+  --sidebar-ring: #ef2a38;
 
-  --sidebar-ring: #ff0000;
 }
 
 .dark {
-  /* GDC Dark Mode */
-  --background: #121212;
-  --foreground: #ffffff;
+  --background: #081225;
+  --foreground: #f5f7fc;
 
-  --card: #1e1e1e;
-  --card-foreground: #ffffff;
+  --card: #101c36;
+  --card-foreground: #f5f7fc;
 
-  --popover: #1e1e1e;
-  --popover-foreground: #ffffff;
+  --popover: #101c36;
+  --popover-foreground: #f5f7fc;
 
-  --primary: #ff3333;
+  --primary: #ff4855;
   --primary-foreground: #ffffff;
 
-  --secondary: #4dd0e1;
-  --secondary-foreground: #000000;
+  --secondary: #365b93;
+  --secondary-foreground: #ffffff;
 
-  --muted: #2c2c2c;
-  --muted-foreground: #999999;
+  --muted: #182744;
+  --muted-foreground: #aebbd0;
 
-  --accent: #ff3333;
-  --accent-foreground: #000000;
+  --accent: #ff4855;
+  --accent-foreground: #ffffff;
 
   --destructive: #ef5350;
   --destructive-foreground: #ffffff;
 
-  --border: #333333;
-  --input: #333333;
-  --ring: #ff3333;
+  --border: #293858;
+  --input: #293858;
+  --ring: #ff4855;
 
-  --sidebar: #121212;
-  --sidebar-foreground: #ffffff;
-  --sidebar-primary: #ff3333;
+  --sidebar: #081225;
+  --sidebar-foreground: #f5f7fc;
+  --sidebar-primary: #ff4855;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #2c2c2c;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #333333;
-  --sidebar-ring: #ff3333;
+  --sidebar-accent: #182744;
+  --sidebar-accent-foreground: #f5f7fc;
+  --sidebar-border: #293858;
+  --sidebar-ring: #ff4855;
 }
 
 /* Subtle, sophisticated animations for white theme */
@@ -314,10 +308,6 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    /* Subtle dot pattern for white theme */
-    background-image:
-      radial-gradient(circle, oklch(0.93 0 0 / 0.5) 1px, transparent 1px);
-    background-size: 24px 24px;
   }
 
   /* Custom scrollbar for better UI */
@@ -340,6 +330,11 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+}
+
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 3px;
 }
 
 @layer components {
@@ -483,5 +478,48 @@ html, body {
   /* Optimize touch target sizes */
   button, a {
     touch-action: manipulation;
+  }
+}
+
+@keyframes frequency-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.frequency-marquee-track {
+  animation: frequency-marquee 42s linear infinite;
+  will-change: transform;
+}
+
+.frequency-marquee-viewport:hover .frequency-marquee-track,
+.frequency-marquee-viewport:focus-within .frequency-marquee-track,
+.frequency-marquee-viewport:active .frequency-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .frequency-marquee-track {
+    animation: none;
+    will-change: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }

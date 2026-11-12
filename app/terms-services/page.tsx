@@ -119,12 +119,12 @@ export default function TermsOfServicePage() {
               </h2>
               <div className="bg-primary/5 border border-primary/20 p-8 rounded-lg mt-6">
                 <p className="mb-4 font-bold text-foreground">
-                  If you have questions or comments about these Terms, you may email us at <a href="mailto:info@radionyra.com" className="text-primary hover:underline font-bold">info@radionyra.com</a> or by post to:
+                  If you have questions or comments about these Terms, contact us at <a className="text-primary hover:underline" href="mailto:info@radionyra.com">info@radionyra.com</a> or use the contact form.
                 </p>
                 <address className="not-italic text-foreground font-mono uppercase tracking-widest text-sm leading-relaxed">
                   Radio Nyra<br />
-                  Raleigh - Durham<br />
-                  NC, USA
+                  4819 Emperor Blvd Suite 400<br />
+                  Durham, NC 27703
                 </address>
               </div>
             </section>

@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
                 <span className="text-primary">01.</span> Introduction
               </h2>
               <p className="mb-4">
-                Welcome to Radio Nyra ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about our policy, or our practices with regards to your personal information, please contact us at <a href="mailto:info@radionyra.com" className="text-primary hover:underline font-bold">info@radionyra.com</a>.
+                Welcome to Radio Nyra ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about our policy, or our practices with regards to your personal information, please contact us at <a className="font-bold text-primary hover:underline" href="mailto:info@radionyra.com">info@radionyra.com</a> or use the contact form.
               </p>
               <p>
                 When you visit our website <strong>radionyra.com</strong> (the "Website"), use our mobile application (the "App"), and use our services, you trust us with your personal information. We take your privacy very seriously. In this privacy notice, we describe our privacy policy. We seek to explain to you in the clearest way possible what information we collect, how we use it, and what rights you have in relation to it.
@@ -105,12 +105,12 @@ export default function PrivacyPolicyPage() {
               </h2>
               <div className="bg-primary/5 border border-primary/20 p-8 rounded-lg mt-6">
                 <p className="mb-4 font-bold text-foreground">
-                  If you have questions or comments about this policy, you may email us at <a href="mailto:info@radionyra.com" className="text-primary hover:underline font-bold">info@radionyra.com</a> or by post to:
+                  If you have questions or comments about this policy, contact us at <a className="text-primary hover:underline" href="mailto:info@radionyra.com">info@radionyra.com</a> or use the contact form.
                 </p>
                 <address className="not-italic text-foreground font-mono uppercase tracking-widest text-sm leading-relaxed">
                   Radio Nyra<br />
-                  Raleigh - Durham<br />
-                  NC, USA
+                  4819 Emperor Blvd Suite 400<br />
+                  Durham, NC 27703
                 </address>
               </div>
             </section>

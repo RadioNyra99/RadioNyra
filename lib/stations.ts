@@ -29,9 +29,10 @@ export const STATIONS: Record<string, Station> = {
         state: "NC",
         frequency: "99.9 FM HD3",
         language: "Telugu",
-        streamUrl: "https://s4.radio.co/sefba541aa/listen",
-        statusUrl: "https://public.radio.co/stations/sefba541aa/status",
-        dashboardUrl: "https://studio.radio.co/stations/sefba541aa/dashboard"
+        // [PLACEHOLDER: add the Telugu stream URL when it is provided.]
+        streamUrl: "",
+        statusUrl: "",
+        dashboardUrl: ""
     },
     "Atlanta - 107.5 FM HD3 WAMJ": {
         id: "atlanta-hd3-hindi",

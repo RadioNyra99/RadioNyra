@@ -227,24 +227,54 @@ export default function AboutPage() {
             ))}
           </div>
         </section>
-        {/* Leadership Quote Card (Image 2) */}
-        <section className="mt-10 overflow-hidden rounded-3xl border border-red-200 bg-white p-6 sm:p-8 shadow-xl dark:border-zinc-800 dark:bg-zinc-900">
-          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
-            <div className="h-28 w-28 shrink-0 overflow-hidden rounded-2xl border-2 border-[#A81822] shadow-lg sm:h-36 sm:w-36">
-              <img src="/rc-founder.webp" alt="Ravi Cherukuri, founder of Radio Nyra" className="h-full w-full object-cover object-top" loading="lazy" />
-            </div>
-            <div className="flex-1">
-              <div className="flex items-start gap-2 sm:gap-3">
-                <span className="text-4xl sm:text-5xl font-black text-[#A81822] leading-none shrink-0 select-none" aria-hidden>
-                  “
-                </span>
-                <blockquote className="text-sm sm:text-base lg:text-lg font-medium leading-relaxed text-zinc-800 dark:text-zinc-200">
-                  Our vision is to bring the South Asian communities together by providing them with a common platform of news, talk and Bollywood music and we could not think of a better way to do this than this partnership with Mirchi.
-                </blockquote>
+        {/* Founder & Leadership: About Ravi Cherukuri */}
+        <section className="mt-10 overflow-hidden rounded-3xl border border-zinc-200 bg-white p-6 sm:p-10 shadow-xl dark:border-zinc-800 dark:bg-zinc-900">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-1 h-5 bg-[#A81822] rounded-full" />
+            <span className="text-xs font-bold tracking-widest text-[#A81822] uppercase">
+              Founder &amp; Leadership
+            </span>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-[auto_1fr] items-start">
+            <div className="flex flex-col items-center sm:items-start">
+              <div className="h-44 w-44 sm:h-52 sm:w-52 shrink-0 overflow-hidden rounded-2xl border-4 border-[#A81822]/20 shadow-xl">
+                <img
+                  src="/rc-founder.webp"
+                  alt="Ravi Cherukuri, Founder of Radio Nyra and CEO of Arohi Media"
+                  className="h-full w-full object-cover object-top"
+                  loading="lazy"
+                />
               </div>
-              <p className="mt-4 pl-6 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#A81822]">
-                — RAVI CHERUKURI, CEO, AROHI MEDIA
+              <div className="mt-4 text-center sm:text-left">
+                <h3 className="text-lg font-black text-zinc-950 dark:text-white">Ravi Cherukuri</h3>
+                <p className="text-xs font-bold uppercase tracking-wider text-[#A81822] mt-0.5">Founder, Radio Nyra</p>
+                <p className="text-xs text-zinc-500 dark:text-zinc-400">CEO, Arohi Media LLC</p>
+              </div>
+            </div>
+
+            <div className="space-y-4 text-zinc-700 text-sm sm:text-base leading-relaxed dark:text-zinc-300">
+              <h2 className="text-2xl sm:text-3xl font-black text-zinc-950 dark:text-white tracking-tight">
+                About Ravi Cherukuri
+              </h2>
+
+              <p>
+                Ravi Cherukuri is the founder of Radio Nyra, a South Asian radio network operated by Arohi Media LLC in North Carolina’s Research Triangle. His work in broadcasting began in 2014, when Arohi Media acquired Durham’s WDUR 1490 AM and returned it to the air on July 9 with a 24-hour format featuring Hindi news, talk shows, and Bollywood music. The station gave Indian and South Asian listeners in the Triangle a local radio home.
               </p>
+
+              <p>
+                Arohi Media expanded from AM to 101.9 FM and 99.9 FM HD4, later adding Telugu programming on 99.9 FM HD3. In 2019, The Economic Times identified Cherukuri as CEO of Arohi Media when reporting on its U.S. partnership with Radio Mirchi. Cherukuri described his goal as bringing South Asian communities together through a shared platform for news, conversation, and music. Radio Nyra now also features podcasts and live events.
+              </p>
+
+              {/* Founder's Vision Quote */}
+              <div className="mt-6 rounded-2xl border-l-4 border-[#A81822] bg-zinc-50 p-5 sm:p-6 shadow-sm dark:bg-zinc-950/60">
+                <blockquote className="text-sm sm:text-base italic leading-relaxed text-zinc-800 dark:text-zinc-200">
+                  &ldquo;At RadioNyra, our vision has always been to bring South Asian communities closer by creating a shared platform that celebrates our culture, connects our people, and keeps them informed and entertained. Through the power of music, news, conversations, and community engagement, we strive to create meaningful connections across borders.&rdquo;
+                </blockquote>
+                <p className="mt-3 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#A81822]">
+                  — Ravi Cherukuri, CEO, Arohi Media
+                </p>
+              </div>
             </div>
           </div>
         </section>

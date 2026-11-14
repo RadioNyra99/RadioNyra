@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { RtvPlayer } from "@/components/rtv-player"
 import { getNewsItems } from "@/lib/content-discovery"
 import { RADIO_EVENTS } from "@/lib/radio-content"
+import { RADIO_NYRA_PRESS_STORIES } from "@/lib/press-coverage"
 
 const newsItems = getNewsItems()
 const categories = ["All", ...Array.from(new Set(newsItems.map((item) => item.category)))]
@@ -128,9 +129,9 @@ export default function NewsPage() {
             </div>
 
             {featured ? (
-              <Link id={featured.id} href={featured.href} className="group mb-8 grid grid-cols-1 overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary/50 lg:grid-cols-[0.9fr_1.1fr]">
-                <div className="relative aspect-video lg:aspect-auto bg-muted">
-                  <img src={featured.image} alt={featured.title} className="h-full w-full object-cover transition-transform group-hover:scale-105" loading="lazy" />
+              <Link id={featured.id} href={featured.href} className="group mb-8 grid grid-cols-1 overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary/50 lg:grid-cols-[0.72fr_1.28fr]">
+                <div className="relative flex h-48 items-center justify-center overflow-hidden bg-muted p-2 sm:h-64 lg:h-[320px]">
+                  <img src={featured.image} alt={featured.title} className="max-h-full max-w-full object-contain transition-transform group-hover:scale-[1.02]" loading="lazy" />
                   <span className="absolute left-4 top-4 rounded-full bg-primary px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest text-white">
                     Featured
                   </span>
@@ -156,23 +157,66 @@ export default function NewsPage() {
                 <p className="mt-1 text-sm text-muted-foreground">Try another keyword or category.</p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
                 {archiveItems.map((item) => (
-                  <Link key={item.id} href={item.href} className="group overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary/50">
-                    <div className="aspect-video overflow-hidden bg-muted">
-                      <img src={item.image} alt={item.title} className="h-full w-full object-cover transition-transform group-hover:scale-105" loading="lazy" />
+                  <Link
+                    key={item.id}
+                    href={item.href}
+                    className="group flex flex-col sm:flex-row gap-4 rounded-2xl border border-border bg-card p-4 sm:p-5 transition-all hover:border-primary/50 hover:shadow-md"
+                  >
+                    {/* Small logo / thumbnail */}
+                    <div className="h-20 w-20 sm:h-24 sm:w-24 shrink-0 overflow-hidden rounded-xl border border-border bg-muted/40">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                      />
                     </div>
-                    <div className="p-5">
-                      <p className="mb-2 flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-widest text-muted-foreground">
-                        <Calendar className="h-3.5 w-3.5 text-primary" /> {item.dateLabel} - {item.category}
-                      </p>
-                      <h3 className="line-clamp-2 text-lg font-extrabold uppercase tracking-tight leading-tight group-hover:text-primary">{item.title}</h3>
-                      <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-muted-foreground">{item.excerpt}</p>
+
+                    {/* Content */}
+                    <div className="flex flex-1 flex-col justify-between min-w-0">
+                      <div>
+                        <p className="flex items-center gap-1.5 text-[10px] font-extrabold uppercase tracking-wider text-muted-foreground">
+                          <Calendar className="h-3 w-3 text-primary shrink-0" />
+                          <span>{item.dateLabel}</span>
+                          <span className="text-white/30">&middot;</span>
+                          <span className="text-primary font-bold">{item.category}</span>
+                        </p>
+                        <h3 className="mt-1 line-clamp-2 text-sm sm:text-base font-extrabold uppercase tracking-tight leading-snug group-hover:text-primary transition-colors">
+                          {item.title}
+                        </h3>
+                        <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
+                          {item.excerpt}
+                        </p>
+                      </div>
+                      <span className="mt-2 inline-flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-wider text-primary group-hover:underline">
+                        Read full story &rarr;
+                      </span>
                     </div>
                   </Link>
                 ))}
               </div>
             )}
+          </div>
+        </section>
+
+        <section id="radio-mirchi-us-rollout" className="border-t border-border bg-muted/25 py-10 sm:py-14">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6">
+            <div className="mb-7 max-w-3xl">
+              <p className="inline-flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[.2em] text-primary"><Newspaper className="h-4 w-4" aria-hidden />In the press</p>
+              <h2 className="mt-2 text-2xl font-black tracking-tight sm:text-4xl">Radio Mirchi’s US rollout.</h2>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">Selected coverage of the 2019 US expansion and the partnership with Arohi Media connected to Radio Nyra’s early story.</p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-3">
+              {RADIO_NYRA_PRESS_STORIES.map((story) => (
+                <a key={story.href} href={story.href} target="_blank" rel="noopener noreferrer" className="group flex h-full flex-col rounded-2xl border border-border bg-card p-5 transition-colors hover:border-primary/50 sm:p-6">
+                  <p className="text-[10px] font-extrabold uppercase tracking-[.15em] text-primary">{story.publication} <span className="text-muted-foreground">· {story.date}</span></p>
+                  <h3 className="mt-3 flex-1 text-lg font-extrabold leading-snug group-hover:text-primary">{story.title}</h3>
+                  <span className="mt-5 inline-flex items-center gap-2 text-xs font-bold text-muted-foreground group-hover:text-primary">Read article <ArrowRight className="h-3.5 w-3.5" /></span>
+                </a>
+              ))}
+            </div>
           </div>
         </section>
       </main>

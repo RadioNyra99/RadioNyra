@@ -502,8 +502,31 @@ html, body {
   animation-play-state: paused;
 }
 
+@keyframes partner-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.partner-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: partner-marquee 75s linear infinite;
+  will-change: transform;
+}
+
+.partner-marquee-viewport:hover .partner-marquee-track,
+.partner-marquee-viewport:focus-within .partner-marquee-track {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .frequency-marquee-track {
+  .frequency-marquee-track,
+  .partner-marquee-track {
     animation: none;
     will-change: auto;
   }

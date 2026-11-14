@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Headphones } from "lucide-react"
+import { Headphones, Megaphone } from "lucide-react"
 import { SOCIAL_LINKS } from "@/lib/site-data"
 import { RADIO_CONTENT, RADIO_FREQUENCIES } from "@/lib/radio-content"
 import { NewsletterSection } from "@/components/newsletter-section"
@@ -17,7 +17,6 @@ const quickLinks = [
   { label: "Video Library", href: "/video-library" },
   { label: "Creative Studio", href: "/creative-studio" },
   { label: "Success Stories", href: "/advertiser-success-stories" },
-  { label: "Advertising Services", href: "/services" },
   { label: "About", href: "/about" },
   { label: "Advertise With Us", href: "/advertise" },
   { label: "Contact", href: "/contact" },
@@ -38,7 +37,11 @@ export function Footer() {
             <div className="mt-5 flex flex-wrap gap-2">
               {SOCIAL_LINKS.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} title={social.label} className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/65 transition-colors hover:border-white/40 hover:bg-white/10 hover:text-white"><social.icon className="h-4 w-4" /></a>)}
             </div>
-            <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs text-white/70"><a className="inline-flex items-center gap-2 hover:text-white" href={`tel:${RADIO_CONTENT.contact.phone.replace(/[^+\d]/g, "")}`}><Headphones className="h-3.5 w-3.5 text-red-300" />{RADIO_CONTENT.contact.phone}</a><a className="hover:text-white" href={`mailto:${RADIO_CONTENT.contact.email}`}>{RADIO_CONTENT.contact.email}</a></div>
+            <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs text-white/70">
+              <a className="inline-flex items-center gap-2 hover:text-white" href={`tel:${RADIO_CONTENT.contact.phone.replace(/[^+\d]/g, "")}`}><Headphones className="h-3.5 w-3.5 text-red-300" />General: {RADIO_CONTENT.contact.phone}</a>
+              <a className="inline-flex items-center gap-2 hover:text-white" href={`tel:${RADIO_CONTENT.contact.businessPhone.replace(/[^+\d]/g, "")}`}><Megaphone className="h-3.5 w-3.5 text-red-300" />Business: {RADIO_CONTENT.contact.businessPhone}</a>
+              <a className="hover:text-white" href={`mailto:${RADIO_CONTENT.contact.email}`}>{RADIO_CONTENT.contact.email}</a>
+            </div>
           </div>
 
           <div className="grid gap-8 sm:grid-cols-2">

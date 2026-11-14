@@ -158,7 +158,7 @@ const LEGACY_SHOW_PROFILES: ShowProfile[] = [
     stationId: STATIONS.Hindi.id,
     language: "Hindi",
     stationLabel: "99.9 FM-HD4",
-    schedule: "Saturdays, 12:00 PM - 1:00 PM ET",
+    schedule: "Saturdays, 12:00 PM - 2:00 PM ET",
     category: "Community Talk",
     description:
       "Community-first conversations, Chai Pe Charcha segments, local stories, and business leader spotlights.",
@@ -184,7 +184,7 @@ const LEGACY_SHOW_PROFILES: ShowProfile[] = [
     stationId: STATIONS.Hindi.id,
     language: "Hindi",
     stationLabel: "99.9 FM-HD4",
-    schedule: "Sundays, 10:00 AM - 12:00 PM ET",
+    schedule: "Sundays, 10:00 AM - 12:00 PM and 10:00 PM - 12:00 AM ET",
     category: "Classics",
     description:
       "A long-running weekend favorite featuring nostalgic songs, ghazals, classic film music, and rich musical context.",

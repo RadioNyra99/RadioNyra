@@ -3,13 +3,15 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useTheme } from "next-themes"
-import { ChevronDown, Headphones, Menu, Moon, Play, Sun, Youtube } from "lucide-react"
+import { ChevronDown, Facebook, Headphones, Instagram, Menu, Moon, Play, Sun, Youtube } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { showAudioPlayer } from "@/lib/audio-player-utils"
 import { SiteSearch } from "@/components/site-search"
 
 const navigationSections = [
+  { label: "Home", links: [{ href: "/", label: "Home" }] },
+  { label: "About Us", links: [{ href: "/about", label: "About Us" }] },
   { label: "Shows", links: [{ href: "/shows", label: "Shows & Schedule" }] },
   {
     label: "Community",
@@ -22,27 +24,19 @@ const navigationSections = [
     ],
   },
   {
+    label: "Our Services",
+    links: [
+      { href: "/advertise", label: "Advertise with us" },
+      { href: "/creative-studio", label: "Creative Studio" },
+    ],
+  },
+  {
     label: "Media",
     links: [
       { href: "/news", label: "News & Updates" },
     ],
   },
-  {
-    label: "Services",
-    links: [
-      { href: "/creative-studio", label: "Creative Studio" },
-      { href: "/advertiser-success-stories", label: "Success Stories" },
-    ],
-  },
-  {
-    label: "Advertise",
-    links: [
-      { href: "/advertise", label: "Advertise With Us" },
-      { href: "/services", label: "Advertising Services" },
-    ],
-  },
-  { label: "About", links: [{ href: "/about", label: "About Radio Nyra" }] },
-  { label: "Contact", links: [{ href: "/contact", label: "Contact" }] },
+  { label: "Contact Us", links: [{ href: "/contact", label: "Contact Us" }] },
 ]
 
 function ThemeToggle() {
@@ -122,6 +116,40 @@ export function Navigation() {
                 <span className="text-xs font-semibold text-muted-foreground">Appearance</span>
                 <ThemeToggle />
               </div>
+
+              {/* Social Media Links */}
+              <div className="flex items-center justify-between rounded-xl border border-border bg-background px-4 py-2.5">
+                <span className="text-xs font-semibold text-muted-foreground">Follow Us</span>
+                <div className="flex items-center gap-2">
+                  <a
+                    href="https://facebook.com/radionyrausa"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Radio Nyra on Facebook"
+                    className="flex h-8 w-8 items-center justify-center rounded-full border border-border text-[#1877F2] transition-colors hover:bg-[#1877F2] hover:text-white"
+                  >
+                    <Facebook className="h-4 w-4 fill-current" />
+                  </a>
+                  <a
+                    href="https://instagram.com/radionyrausa"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Radio Nyra on Instagram"
+                    className="flex h-8 w-8 items-center justify-center rounded-full border border-border text-pink-500 transition-colors hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-500 hover:to-purple-600 hover:text-white"
+                  >
+                    <Instagram className="h-4 w-4" />
+                  </a>
+                  <a
+                    href="https://youtube.com/@radionyrausa"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Radio Nyra on YouTube"
+                    className="flex h-8 w-8 items-center justify-center rounded-full border border-border text-[#FF0000] transition-colors hover:bg-[#FF0000] hover:text-white"
+                  >
+                    <Youtube className="h-4 w-4 fill-current" />
+                  </a>
+                </div>
+              </div>
             </div>
           </SheetContent>
         </Sheet>
@@ -130,13 +158,13 @@ export function Navigation() {
           <img src="/images/radio-nyra-logo.png" alt="Radio Nyra logo" className="h-10 w-10 rounded-full border border-border bg-white object-cover shadow-sm sm:h-11 sm:w-11" />
           <span className="min-w-0">
             <span className="block truncate text-[17px] font-black leading-none tracking-tight sm:text-lg">Radio Nyra</span>
-            <span className="mt-1 hidden text-[8px] font-extrabold uppercase tracking-[0.14em] text-primary sm:block">Community Media Network USA</span>
+            <span className="mt-1 block whitespace-nowrap text-[7px] font-extrabold uppercase tracking-[0.1em] text-primary sm:text-[8px] sm:tracking-[0.14em]">Community Media Network USA</span>
           </span>
         </Link>
 
         <nav aria-label="Main navigation" className="ml-auto hidden items-center gap-3 xl:flex">
           {navigationSections.map((section) => {
-            const directLink = section.links.length === 1 && ["Shows", "About", "Contact"].includes(section.label)
+            const directLink = section.links.length === 1 && ["Home", "About Us", "Shows", "Contact Us"].includes(section.label)
             if (directLink) {
               const item = section.links[0]
               return <Link key={section.label} href={item.href} className="whitespace-nowrap text-[11px] font-bold text-muted-foreground transition-colors hover:text-primary focus-visible:text-primary">{section.label}</Link>
@@ -160,17 +188,39 @@ export function Navigation() {
         </nav>
 
         <div className="ml-auto flex shrink-0 items-center gap-1.5 xl:ml-5">
+          <div className="hidden lg:flex items-center gap-1 mr-1">
+            <a
+              href="https://facebook.com/radionyrausa"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Radio Nyra on Facebook"
+              title="Radio Nyra on Facebook"
+              className="flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-[#1877F2]"
+            >
+              <Facebook className="h-4 w-4 fill-current" />
+            </a>
+            <a
+              href="https://instagram.com/radionyrausa"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Radio Nyra on Instagram"
+              title="Radio Nyra on Instagram"
+              className="flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-pink-500"
+            >
+              <Instagram className="h-4 w-4" />
+            </a>
+          </div>
           <div className="hidden md:block"><SiteSearch /></div>
           <div className="hidden lg:block"><ThemeToggle /></div>
-          <Button asChild variant="outline" size="sm" className="h-10 w-10 rounded-full border-border p-0 sm:w-auto sm:px-4">
+          <Button asChild variant="outline" size="sm" className="hidden h-10 w-10 rounded-full border-border p-0 sm:flex sm:w-auto sm:px-4">
             <Link href="/youtube" aria-label="Watch Now" title="Watch Now">
               <Youtube className="h-4 w-4 text-primary sm:mr-2" aria-hidden />
               <span className="hidden sm:inline">Watch Now</span>
             </Link>
           </Button>
-          <Button onClick={() => showAudioPlayer()} size="sm" className="h-10 rounded-full px-3 text-xs font-extrabold sm:px-4 sm:text-sm">
-            <Play className="mr-1.5 h-3.5 w-3.5 fill-current" aria-hidden />
-            Listen Live
+          <Button onClick={() => showAudioPlayer()} size="sm" aria-label="Listen Live" title="Listen Live" className="h-10 w-10 rounded-full px-0 text-xs font-extrabold sm:w-auto sm:px-4 sm:text-sm">
+            <Play className="h-3.5 w-3.5 fill-current sm:mr-1.5" aria-hidden />
+            <span className="hidden sm:inline">Listen Live</span>
           </Button>
         </div>
       </div>

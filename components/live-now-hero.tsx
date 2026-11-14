@@ -2,12 +2,13 @@
 
 import React, { useState, useEffect } from "react"
 import Link from "next/link"
-import { Pause, Play, CalendarDays, ChevronRight, Youtube } from "lucide-react"
+import { Pause, Play, CalendarDays, ChevronRight, Facebook, Instagram, Youtube } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useAudio } from "@/components/audio-context"
 import { STATIONS } from "@/lib/stations"
 import { cn } from "@/lib/utils"
 import { getLiveHindiShow, getLiveTeluguShow, getEasternTime, type LiveShowInfo, type EasternTime } from "@/lib/live-schedule-service"
+import { HomeFrequencyBanner } from "@/components/home-frequency-banner"
 
 /**
  * Live radio hero — the first thing a visitor sees.
@@ -108,7 +109,7 @@ function ShowNowCard({
 }
 
 export function LiveNowHero() {
-  const { isPlaying, currentStation, playStation, togglePlay, metadata } = useAudio()
+  const { isPlaying, currentStation, playStation, togglePlay } = useAudio()
 
   const [liveHindi, setLiveHindi] = useState<LiveShowInfo>(() => getLiveHindiShow())
   const [liveTelugu, setLiveTelugu] = useState<LiveShowInfo>(() => getLiveTeluguShow())
@@ -134,6 +135,7 @@ export function LiveNowHero() {
   }
 
   return (
+    <>
     <section className="relative isolate overflow-hidden bg-black text-white">
       {/* Ambient backdrop */}
       <div
@@ -144,42 +146,45 @@ export function LiveNowHero() {
             "radial-gradient(1000px 500px at 15% -10%, rgba(217,36,28,0.35), transparent 60%), radial-gradient(800px 420px at 85% 0%, rgba(245,158,11,0.22), transparent 60%)",
         }}
       />
-      <span
-        aria-hidden
-        className="pointer-events-none absolute -right-6 top-6 -z-10 select-none text-[22vw] font-extrabold leading-none tracking-tighter text-white/[0.15]"
-      >
-        NYRA
-      </span>
+      <div aria-hidden className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none">
+        <img
+          src="/images/music-instrument-art.png"
+          alt=""
+          className="absolute right-[9%] top-0 h-36 w-auto object-contain opacity-50 drop-shadow-[0_12px_30px_rgba(255,100,50,0.35)] sm:right-[8%] sm:h-56 lg:right-[7%] lg:h-80 xl:h-96"
+        />
+        <span className="absolute right-3 top-3 z-10 select-none text-[18vw] font-extrabold leading-none tracking-tighter text-white/[0.15] sm:-right-6 sm:top-6 sm:text-[22vw]">
+          NYRA
+        </span>
+      </div>
 
-      <div className="container mx-auto px-4 pb-8 pt-10 sm:px-6 sm:pb-10 sm:pt-14 md:pt-16">
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between lg:gap-12">
+      <div className="container relative z-10 mx-auto px-4 pb-8 pt-10 sm:px-6 sm:pb-10 sm:pt-14 md:pt-16">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-8 xl:gap-12">
           {/* Headline + actions */}
-          <div className="max-w-xl">
-            <p className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[11px] font-extrabold uppercase tracking-[0.18em] text-white/60">
+          <div className="max-w-xl lg:max-w-lg xl:max-w-xl">
+            {/* Top Headline: Your RadioNyra wherever you go */}
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-[1.05] italic mb-3">
+              Your RadioNyra, <span className="bg-gradient-to-r from-red-500 via-orange-400 to-amber-300 bg-clip-text text-transparent not-italic">wherever you go.</span>
+            </h1>
+
+            {/* Live On-Air Indicator & Eastern Time */}
+            <p className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[11px] font-extrabold uppercase tracking-[0.18em] text-white/60 mb-4">
               <span className="inline-flex items-center gap-1.5">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
                 </span>
-                <span className="text-primary">On Air</span>
+                <span className="text-primary font-bold">On Air</span>
               </span>
               <span aria-hidden className="text-white/25">&middot;</span>
-              Radio Nyra
+              <span className="text-white/80 font-bold">Radio Nyra</span>
               <span aria-hidden className="text-white/25">&middot;</span>
-              <span className="font-semibold normal-case tracking-normal text-white/50">
+              <span className="font-semibold normal-case tracking-normal text-white/70">
                 {easternTime.formattedTime}
               </span>
             </p>
 
-            <h1 className="mt-4 text-4xl font-extrabold leading-[0.95] tracking-tight sm:text-5xl lg:text-6xl">
-              Your world.
-              <br />
-              Your soundtrack.
-            </h1>
-
-            <p className="mt-4 max-w-lg text-sm leading-relaxed text-white/65 sm:text-base">
-              Hindi and Telugu radio, podcasts, news and community stories — streaming 24/7 from
-              Raleigh–Durham.
+            <p className="mt-2 max-w-xl text-sm leading-relaxed text-white/70 sm:text-base">
+              Raleigh–Durham’s 24/7 Indian subcontinent community media network, sharing Hindi, Telugu, and English radio, news, music, and community stories across radio, WhatsApp, social media, email, in-store screens, and live events.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -228,23 +233,50 @@ export function LiveNowHero() {
               </Link>
             </div>
 
-            <p className="mt-5 text-xs text-white/40">
-              {isPlaying ? (
-                <>
-                  Now streaming {currentStation.name}
-                  {metadata?.title ? ` — ${metadata.title}` : ""}
-                </>
-              ) : (
-                "Press play to start the live stream. No account needed."
-              )}
-            </p>
+            {/* Social Media Channels */}
+            <div className="mt-5 flex items-center gap-3">
+              <span className="text-[11px] font-extrabold uppercase tracking-widest text-white/50">Follow Us:</span>
+              <a
+                href="https://facebook.com/radionyrausa"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Radio Nyra on Facebook"
+                title="Follow Radio Nyra on Facebook"
+                className="group flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/80 transition-all hover:scale-110 hover:border-[#1877F2] hover:bg-[#1877F2] hover:text-white hover:shadow-lg hover:shadow-[#1877F2]/30"
+              >
+                <Facebook className="h-4 w-4 fill-current transition-transform group-hover:scale-110" />
+              </a>
+              <a
+                href="https://instagram.com/radionyrausa"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Radio Nyra on Instagram"
+                title="Follow Radio Nyra on Instagram"
+                className="group flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/80 transition-all hover:scale-110 hover:border-pink-500 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-500 hover:to-purple-600 hover:text-white hover:shadow-lg hover:shadow-pink-500/30"
+              >
+                <Instagram className="h-4 w-4 transition-transform group-hover:scale-110" />
+              </a>
+              <a
+                href="https://youtube.com/@radionyrausa"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Radio Nyra on YouTube"
+                title="Subscribe to Radio Nyra on YouTube"
+                className="group flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/80 transition-all hover:scale-110 hover:border-[#FF0000] hover:bg-[#FF0000] hover:text-white hover:shadow-lg hover:shadow-red-600/30"
+              >
+                <Youtube className="h-4 w-4 fill-current transition-transform group-hover:scale-110" />
+              </a>
+            </div>
+
           </div>
 
           {/* Channel preview / on-air cards */}
-          <div className="flex w-full flex-col gap-3 lg:max-w-lg">
-            <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-white/45">
-              Channel preview
-            </p>
+          <div className="relative flex w-full flex-col gap-3 lg:max-w-md xl:max-w-lg z-10">
+            <div className="flex items-center justify-between">
+              <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-white/60">
+                Current Show
+              </p>
+            </div>
             <ShowNowCard
               show={liveHindi}
               active={isHindiActive}
@@ -265,5 +297,7 @@ export function LiveNowHero() {
         </div>
       </div>
     </section>
+    <HomeFrequencyBanner />
+    </>
   )
 }

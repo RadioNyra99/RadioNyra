@@ -25,7 +25,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/advertise",
     "/advertiser-success-stories",
     "/partners",
-    "/services",
     "/contact",
     "/listener-voice",
     "/events",

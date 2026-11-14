@@ -17,6 +17,8 @@ import {
 export const CONTACT_INFO = {
   phone: "+1 (919) 294-4800",
   phoneHref: "tel:+19192944800",
+  businessPhone: "+1 (919) 999-8595",
+  businessPhoneHref: "tel:+19199998595",
   email: "info@radionyra.com",
   emailHref: "mailto:info@radionyra.com",
   website: "https://www.radionyra.com",

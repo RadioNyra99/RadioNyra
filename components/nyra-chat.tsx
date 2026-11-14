@@ -62,7 +62,7 @@ export function NyraChat() {
       },
       {
         keywords: ["dedication", "dedicate", "song request", "request"],
-        response: "🎵 Listener Song Dedication:\nTo dedicate a song on air to your friends or family:\n1. WhatsApp: +1 (919) 294-4800\n2. Include: Song Title, Artist Name, Name of recipient & your dedication message.\nOur on-air RJs will broadcast your dedication during the evening drive shows!"
+        response: "🎵 Listener Song Dedication:\nTo dedicate a song on air to your friends or family:\n1. WhatsApp: +1 (919) 294-4800\n2. Include: Song Title, Artist Name, Name of recipient & your dedication message.\nFor advertising and partnerships, call +1 (919) 999-8595.\nOur on-air RJs will broadcast your dedication during the evening drive shows!"
       },
       {
         keywords: ["immigration", "visa", "h-1b", "h1b", "l-1", "l1", "f-1", "j-1", "brown"],
@@ -70,7 +70,7 @@ export function NyraChat() {
       },
       {
         keywords: ["schedule", "shows", "timing", "when", "program"],
-        response: "Our schedule is packed with hits!\n- Morning (7-10 AM): Zara Muskurao (HD4 Hindi)\n- Morning (7-10 AM): Chinna Mata with Priya (HD3 Telugu)\n- Midday (10 AM-1 PM): Triangle Tunes and Talks with Monika Joshi\n- Afternoon (1-3 PM): Bollywood Bliss with Bharti Rathore\n- Saturday (12-1 PM): Dil Se Desi with Van Bhandari (HD4)\n- Evening (7-10 PM): Nirvana Nights with Parag.\nCheck the complete 7-day schedule on /schedule!"
+        response: "Our schedule is packed with hits!\n- Morning (7-10 AM): Zara Muskurao (HD4 Hindi)\n- Morning (7-10 AM): Chinna Mata with Priya (HD3 Telugu)\n- Midday (10 AM-1 PM): Triangle Tunes and Talks with Monika Joshi\n- Afternoon (1-3 PM): Bollywood Bliss with Bharti Rathore\n- Saturday (12-2 PM ET): Dil Se Desi with Van Bhandari (HD4)\n- Sunday (10 AM-12 PM and 10 PM-12 AM ET): Geet Bazaar with Dr. Taj and Dr. Caldwell (HD4)\n- Evening (7-10 PM): Nirvana Nights with Parag.\nCheck the complete 7-day schedule on /schedule!"
       },
       {
         keywords: ["telugu", "next telugu", "chinna mata"],
@@ -78,7 +78,7 @@ export function NyraChat() {
       },
       {
         keywords: ["contact", "phone", "email", "reach", "whatsapp", "call", "address", "location"],
-        response: "You can reach us in many ways:\n- Email: Info@radionyra.com\n- Phone: +1 (919) 294-4800 (Mon-Fri, 9am-6pm EST)\n- WhatsApp: +1 (919) 294-4800\n- Location: Durham, North Carolina."
+        response: "You can reach us in many ways:\n- General line: +1 (919) 294-4800\n- Advertising and partnerships: +1 (919) 999-8595\n- Email: info@radionyra.com\n- WhatsApp: +1 (919) 294-4800\n- Location: Durham, North Carolina."
       },
       {
         keywords: ["advertise", "business", "growth", "marketing", "listeners", "stats", "newsletter", "ads"],

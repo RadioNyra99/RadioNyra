@@ -14,6 +14,12 @@ import { STATIONS } from "@/lib/stations"
 
 const filters: RadioLanguageFilter[] = ["All", "Hindi", "Telugu"]
 const programs = RADIO_SHOWS.filter((show): show is RadioShow & { language: "Hindi" | "Telugu" } => show.language === "Hindi" || show.language === "Telugu")
+const featuredTimes = [
+  { slug: "idhar-udhar-ki-baatein", day: "Wednesday", time: "5:00–7:00 PM ET" },
+  { slug: "aaj-ki-shaam", day: "Friday", time: "5:00–7:00 PM ET" },
+  { slug: "dil-se-desi-with-van", day: "Saturday", time: "12:00–2:00 PM ET" },
+  { slug: "geet-bazaar", day: "Sunday", time: "10:00 AM–12:00 PM ET", extra: "Also Sundays, 10:00 PM–12:00 AM ET" },
+]
 
 export default function ShowsPage() {
   const { playStation } = useAudio()
@@ -48,8 +54,8 @@ export default function ShowsPage() {
           <div className="relative mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-end">
             <div className="max-w-3xl">
               <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[.2em] text-white/70"><Radio className="h-3.5 w-3.5 text-red-400" /> Hindi HD4 · Telugu HD3</p>
-              <h1 className="text-4xl font-black leading-[.98] tracking-tight sm:text-6xl">Shows, voices<br className="hidden sm:block" /> &amp; the weekly schedule.</h1>
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/65 sm:text-base">Find your favorite Radio Nyra programs, meet the hosts, and see what is on air across Hindi and Telugu radio.</p>
+              <h1 className="text-4xl font-black leading-[.98] tracking-tight sm:text-6xl">Discover your next favorite show on RadioNyra.</h1>
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/65 sm:text-base">Explore our shows, meet your favorite hosts, and see what’s on this week.</p>
             </div>
             <div className="flex flex-wrap gap-2">
               <Button onClick={() => playStation(STATIONS.Hindi.id)} className="h-11 rounded-full bg-primary px-5 font-bold text-white hover:bg-primary/90"><Radio className="mr-2 h-4 w-4" />Listen Live</Button>
@@ -58,10 +64,34 @@ export default function ShowsPage() {
           </div>
         </section>
 
+        <section className="mx-auto max-w-7xl px-4 pt-9 sm:px-6 sm:pt-12">
+          <div className="mb-5">
+            <p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-primary">Weekly schedule · Eastern Time</p>
+            <h2 className="mt-2 text-2xl font-black tracking-tight sm:text-3xl">This week on RadioNyra</h2>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {featuredTimes.map((slot) => {
+              const show = programs.find((program) => program.slug === slot.slug)
+              if (!show) return null
+              return (
+                <article key={slot.slug} className="flex min-w-0 gap-4 rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5">
+                  <img src={show.image} alt={`${show.name} artwork`} className="h-16 w-16 shrink-0 rounded-xl bg-muted object-cover" />
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-extrabold uppercase tracking-[.14em] text-primary">{slot.day}</p>
+                    <h3 className="mt-1 truncate font-extrabold">{show.name}</h3>
+                    <p className="mt-1 text-sm font-semibold text-muted-foreground">{slot.time} · {show.host}</p>
+                    {slot.extra && <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{slot.extra}</p>}
+                  </div>
+                </article>
+              )
+            })}
+          </div>
+        </section>
+
         <section id="schedule" className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14">
           <div className="mb-6 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-primary">Weekly lineup · All times EST</p>
+              <p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-primary">Full lineup · All times Eastern Time (ET)</p>
               <h2 className="mt-2 text-2xl font-black tracking-tight sm:text-3xl">Find the show for you</h2>
               <p className="mt-1 text-sm text-muted-foreground">Local time: {time.formattedTime}</p>
             </div>

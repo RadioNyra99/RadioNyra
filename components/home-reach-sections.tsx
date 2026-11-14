@@ -68,6 +68,11 @@ export function AudienceReachSection() {
     <>
       <section className="border-y border-border bg-card py-10 sm:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="mb-6 text-center">
+            <p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-primary">Download and listen</p>
+            <h2 className="mt-2 text-2xl font-black tracking-tight text-foreground sm:text-3xl">Listen to RadioNyra anytime, anywhere.</h2>
+            <p className="mt-2 text-sm font-semibold text-muted-foreground">Your world. Your Music.</p>
+          </div>
           <div className="flex flex-wrap justify-center gap-2.5">
             {platforms.map((platform) => {
               const Icon = platform.icon

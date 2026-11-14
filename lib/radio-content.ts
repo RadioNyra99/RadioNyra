@@ -10,6 +10,7 @@ export type RadioShow = {
   schedule: string
   startMinute?: number
   endMinute?: number
+  additionalSlots?: Array<{ startMinute: number; endMinute: number }>
   host: string
   description: string
   image: string
@@ -68,10 +69,13 @@ export function getCurrentRadioShow(language: "Hindi" | "Telugu", now = new Date
     .filter((show) =>
       show.language === language &&
       show.days.includes(time.day) &&
-      show.startMinute !== undefined &&
-      show.endMinute !== undefined &&
-      time.minuteOfDay >= show.startMinute &&
-      time.minuteOfDay < show.endMinute
+      ((show.startMinute !== undefined &&
+        show.endMinute !== undefined &&
+        time.minuteOfDay >= show.startMinute &&
+        time.minuteOfDay < show.endMinute) ||
+        show.additionalSlots?.some((slot) =>
+          time.minuteOfDay >= slot.startMinute && time.minuteOfDay < slot.endMinute
+        ))
     )
     .sort((a, b) => a.days.length - b.days.length)[0]
 

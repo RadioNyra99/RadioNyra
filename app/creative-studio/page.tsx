@@ -12,22 +12,22 @@ export default function CreativeStudioPage() {
             <ApolloTracker />
 
             <main>
-                <section className="relative py-20 overflow-hidden bg-gray-50 border-b border-gray-100">
+                <section className="relative py-12 sm:py-14 overflow-hidden bg-gray-50 border-b border-gray-100">
                     <div className="container mx-auto px-4 relative z-10 text-center">
                         <div className="max-w-4xl mx-auto">
-                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight text-gray-900">
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight text-gray-900">
                                 Creative <span className="text-primary">Studio</span>
                             </h1>
-                            <p className="text-xl md:text-2xl text-gray-600 uppercase tracking-[0.2em] font-bold italic mb-8">
+                            <p className="text-xl md:text-2xl text-gray-600 uppercase tracking-[0.2em] font-bold italic">
                                 World-Class Audio Production & Advertising Creation
                             </p>
                         </div>
                     </div>
                 </section>
 
-                <section className="py-16 md:py-24 bg-white border-b border-gray-100">
+                <section className="py-10 md:py-16 bg-white border-b border-gray-100">
                     <div className="container mx-auto px-4 max-w-5xl">
-                        <div className="text-center mb-16">
+                        <div className="text-center mb-10">
                             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto italic">
                                 Don't have a commercial ready? No problem. The Radio Nyra Creative Studio provides end-to-end production services to craft compelling audio and visual assets for your brand.
                             </p>

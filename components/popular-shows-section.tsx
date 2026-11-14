@@ -67,7 +67,7 @@ const ALL_SHOWS: ShowItem[] = [
     stationId: STATIONS.Hindi.id,
     language: "hindi",
     stationLabel: "99.9 FM-HD4",
-    time: "Weekdays 3:00 PM – 5:00 PM EST",
+    time: "Wednesdays 5:00 PM – 7:00 PM ET",
     tag: "Humor & Trends",
     description: "Witty commentary, viral diaspora trends, quirky humor, and lively listener call-ins on current affairs.",
   },
@@ -91,7 +91,7 @@ const ALL_SHOWS: ShowItem[] = [
     stationId: STATIONS.Hindi.id,
     language: "hindi",
     stationLabel: "99.9 FM-HD4",
-    time: "Saturdays 12:00 PM – 1:00 PM EST",
+    time: "Saturdays 12:00 PM – 2:00 PM ET",
     tag: "Evening Commute",
     description: "The Triangle's premier evening drive-time show featuring Chai Pe Charcha, business leader spotlights, and great tracks.",
   },
@@ -110,12 +110,12 @@ const ALL_SHOWS: ShowItem[] = [
   {
     id: "show-aaj-ki-shaam",
     name: "Aaj Ki Shaam",
-    host: "Jyothi",
+    host: "Jyoti",
     image: "/images/hosts/Aaj Ki Shaam-jyoti kae naam.png",
     stationId: STATIONS.Hindi.id,
     language: "hindi",
     stationLabel: "99.9 FM-HD4",
-    time: "Fridays 6:00 PM – 8:00 PM EST",
+    time: "Fridays 5:00 PM – 7:00 PM ET",
     tag: "Weekend Melodies",
     description: "Unwind after a busy week with soulful melodies, local events, and heartwarming stories.",
   },
@@ -139,7 +139,7 @@ const ALL_SHOWS: ShowItem[] = [
     stationId: STATIONS.Hindi.id,
     language: "hindi",
     stationLabel: "99.9 FM-HD4",
-    time: "Sundays 10:00 AM – 12:00 PM EST",
+    time: "Sundays 10:00 AM – 12:00 PM & 10:00 PM – 12:00 AM ET",
     tag: "Golden Classics",
     description: "A long-running weekend favorite featuring nostalgic songs, ghazals, classic film music, and rich musical context.",
   },
@@ -202,10 +202,10 @@ export function PopularShowsSection() {
               </span>
             </div>
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-black uppercase tracking-tight text-white italic">
-              Our Hosts &amp; Show Posters
+              Our Radio Shows
             </h2>
             <p className="text-zinc-400 text-xs font-medium mt-0.5">
-              Slide through our live on-air shows broadcasting across America
+              Hindi and Telugu music, local news, interviews, and community voices—hosted by the people who make Radio Nyra feel like home.
             </p>
           </div>
 

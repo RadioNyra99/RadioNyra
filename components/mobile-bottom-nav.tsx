@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { CalendarDays, Newspaper, Pause, Radio, Search, Tv } from "lucide-react"
+import { CalendarDays, Home, Newspaper, Pause, Radio, Tv } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useAudio } from "@/components/audio-context"
 import { showAudioPlayer } from "@/lib/audio-player-utils"
@@ -12,11 +12,11 @@ export function MobileBottomNav() {
   const { isPlaying } = useAudio()
 
   const navItems = [
-    { id: "listen", label: "Listen", icon: isPlaying ? Pause : Radio, onClick: () => showAudioPlayer({ toggle: true }), isActive: false },
+    { id: "home", label: "Home", icon: Home, href: "/", isActive: pathname === "/" },
     { id: "shows", label: "Shows", icon: Tv, href: "/shows", isActive: pathname?.startsWith("/shows") },
-    { id: "search", label: "Search", icon: Search, onClick: () => window.dispatchEvent(new CustomEvent("open-site-search")), isActive: false },
-    { id: "news", label: "News", icon: Newspaper, href: "/news", isActive: pathname?.startsWith("/news") },
+    { id: "listen", label: "Listen", icon: isPlaying ? Pause : Radio, onClick: () => showAudioPlayer({ toggle: true }), isActive: false },
     { id: "events", label: "Events", icon: CalendarDays, href: "/events", isActive: pathname?.startsWith("/events") },
+    { id: "news", label: "News", icon: Newspaper, href: "/news", isActive: pathname?.startsWith("/news") },
   ]
 
   return (

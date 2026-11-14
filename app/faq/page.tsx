@@ -19,7 +19,7 @@ const faqCategories = [
       { q: "How do I download the Radio Nyra app?", a: "Search for 'Radio Nyra' in the Apple App Store or Google Play Store, or click the direct badges in our header/footer to download the app for free." },
       { q: "When was Radio Nyra founded?", a: "Radio Nyra traces its broadcast heritage to November 16, 1963. Its present-day North Carolina chapter began in Durham in 2014 on WDUR 1490 AM, founded by Ravi Cherukuri." },
       { q: "Does Radio Nyra play regional Indian music?", a: "Yes, we feature dedicated channels and shows for Hindi (Bollywood) and Telugu music, and cover other regional Indian hit music during special segments." },
-      { q: "How can I contact Radio Nyra?", a: "Use the contact form, call +1 (919) 294-4800, or message us on WhatsApp. Contact email: info@radionyra.com." },
+      { q: "How can I contact Radio Nyra?", a: "Use the contact form, call the general line at +1 (919) 294-4800, or reach advertising and partnerships at +1 (919) 999-8595. You can also message us on WhatsApp or email info@radionyra.com." },
       { q: "Does Radio Nyra host live community events?", a: "Yes, Radio Nyra regularly organizes and sponsors major community events, concerts (such as the AR Rahman Tour), Diwali festivals, Holi celebrations, and local charity drives." }
     ]
   },
@@ -63,7 +63,7 @@ const faqCategories = [
     items: [
       { q: "What is the schedule for the Hindi broadcast?", a: "Our Hindi channel (99.9 FM HD4 in Raleigh-Durham and digital stream worldwide) broadcasts Bollywood hits, news, and talk shows 24/7." },
       { q: "Who hosts the morning drive show on the Hindi station?", a: "Our popular morning show 'Hello Vaishnavi' is hosted by Vaishnavi Palleda, airing weekdays from 9:00 AM to 12:00 PM EST." },
-      { q: "What is 'Geet Bazaar'?", a: "Geet Bazaar is our longest-running weekend show hosted by Dr. Taj and Dr. Caldwell, featuring golden retro hits, ghazals, and historical music trivia. Airs Saturdays and Sundays 8:00 AM - 11:00 AM." },
+      { q: "What is 'Geet Bazaar'?", a: "Geet Bazaar is our longest-running weekend show hosted by Dr. Taj and Dr. Caldwell, featuring golden retro hits, ghazals, and historical music trivia. It airs Sundays from 10:00 AM–12:00 PM and 10:00 PM–12:00 AM ET." },
       { q: "What is the show 'Zara Muskurao'?", a: "Zara Muskurao is a midday wellness and lifestyle show hosted by Aayushii Rode, airing weekdays from 12:00 PM to 3:00 PM EST." },
       { q: "Does the Hindi station play new Bollywood songs?", a: "Yes! We play all the latest Bollywood movie tracks, pop releases, and trending Indian music hits throughout the day." },
       { q: "Are there interviews with Bollywood celebrities?", a: "Yes, we regularly host exclusive interviews with Bollywood actors, singers, composers, and tour promoters visiting the US." },
@@ -95,7 +95,7 @@ const faqCategories = [
     name: "Advertising & Business",
     icon: BarChart,
     items: [
-      { q: "How can I advertise my business on Radio Nyra?", a: "Submit an inquiry through the Advertise page or call +1 (919) 294-4800. Contact email: info@radionyra.com." },
+      { q: "How can I advertise my business on Radio Nyra?", a: "Submit an inquiry through the Advertise page or call +1 (919) 999-8595 for advertising and partnerships. For general questions, call +1 (919) 294-4800. Contact email: info@radionyra.com." },
       { q: "What advertising services do you offer?", a: "We offer on-air radio ads, digital banner placements, social media promotions, email newsletter features, WhatsApp community broadcasts, and live event sponsorship opportunities." },
       { q: "Can Radio Nyra produce my radio commercial?", a: "Yes, our Creative Studio provides professional scriptwriting, voiceover talent, and audio engineering services to produce high-impact commercials for your business." },
       { q: "What is the size of Radio Nyra's audience?", a: "Audience size and engagement change over time. Contact the advertising team for current, verified figures and the reporting period behind them." },

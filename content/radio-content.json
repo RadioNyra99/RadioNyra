@@ -53,10 +53,10 @@
       "name": "Idhar Udhar Ki Baatein",
       "language": "Hindi",
       "station": "HD4",
-      "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "schedule": "Weekdays, 3:00–5:00 PM",
-      "startMinute": 900,
-      "endMinute": 1020,
+      "days": ["Wednesday"],
+      "schedule": "Wednesdays, 5:00–7:00 PM ET",
+      "startMinute": 1020,
+      "endMinute": 1140,
       "host": "Arpit Tandon",
       "description": "Humor, trends, and easygoing conversation from the world around us.",
       "image": "/images/hosts/idhar-udhar-ki-baatein.webp"
@@ -93,10 +93,10 @@
       "language": "Hindi",
       "station": "HD4",
       "days": ["Friday"],
-      "schedule": "Fridays, 6:00–8:00 PM",
-      "startMinute": 1080,
-      "endMinute": 1200,
-      "host": "Jyothi",
+      "schedule": "Fridays, 5:00–7:00 PM ET",
+      "startMinute": 1020,
+      "endMinute": 1140,
+      "host": "Jyoti",
       "description": "An evening with Hindi music and conversation.",
       "image": "/images/hosts/Aaj Ki Shaam-jyoti kae naam.png"
     },
@@ -119,9 +119,9 @@
       "language": "Hindi",
       "station": "HD4",
       "days": ["Saturday"],
-      "schedule": "Saturdays, 12:00–1:00 PM",
+      "schedule": "Saturdays, 12:00–2:00 PM ET",
       "startMinute": 720,
-      "endMinute": 780,
+      "endMinute": 840,
       "host": "Van Bhandari",
       "description": "Desi community stories, music, and conversation with Van.",
       "image": "/images/hosts/dil-se-desi.jpeg"
@@ -132,9 +132,12 @@
       "language": "Hindi",
       "station": "HD4",
       "days": ["Sunday"],
-      "schedule": "Sundays, 10:00 AM–12:00 PM",
+      "schedule": "Sundays, 10:00 AM–12:00 PM and 10:00 PM–12:00 AM ET",
       "startMinute": 600,
       "endMinute": 720,
+      "additionalSlots": [
+        { "startMinute": 1320, "endMinute": 1440 }
+      ],
       "host": "Dr. Taj and Dr. Caldwell",
       "description": "Golden classics and much-loved songs from across the years.",
       "image": "/images/hosts/geet-bazaar.webp"
@@ -182,7 +185,7 @@
     { "name": "Arpit Tandon", "show": "Idhar Udhar Ki Baatein", "bio": "Explores humor and everyday trends with a light, conversational touch.", "image": "/images/hosts/idhar-udhar-ki-baatein.webp" },
     { "name": "Prachi", "show": "Sunn Zarra", "bio": "Brings soulful melodies to Tuesday afternoons.", "image": "/images/hosts/Prachi.png" },
     { "name": "Vaishnavi Palleda", "show": "Hello Vaishnavi", "bio": "Hosts conversations about celebrity, culture, and community.", "image": "/images/hosts/hello-vaishnavi.jpeg" },
-    { "name": "Jyothi", "show": "Aaj Ki Shaam", "bio": "Hosts the Friday evening Hindi show.", "image": "/images/hosts/Aaj Ki Shaam-jyoti kae naam.png" },
+    { "name": "Jyoti", "show": "Aaj Ki Shaam", "bio": "Hosts the Friday evening Hindi show.", "image": "/images/hosts/Aaj Ki Shaam-jyoti kae naam.png" },
     { "name": "Parag", "show": "Nirvana Nights", "bio": "Guides listeners through a relaxed late-night music mix.", "image": "/images/hosts/nirvana-nights.png" },
     { "name": "Van Bhandari", "show": "Dil Se Desi With Van", "bio": "Connects the community through stories, music, and conversation.", "image": "/images/hosts/dil-se-desi.jpeg" },
     { "name": "Dr. Taj and Dr. Caldwell", "show": "Geet Bazaar", "bio": "Share golden classics and memorable music on Sundays.", "image": "/images/hosts/geet-bazaar.webp" },
@@ -232,7 +235,7 @@
     { "value": "500K+", "label": "monthly Instagram reach" },
     { "value": "216K+", "label": "display impressions" },
     { "value": "12", "label": "years on air" },
-    { "value": "8+", "label": "media channels" }
+    { "value": "8+", "label": "marketing channels across media" }
   ],
   "youtubeStats": [
     { "value": "1.08K", "label": "subscribers" },
@@ -277,6 +280,7 @@
   "contact": {
     "business": "Radio Nyra, Raleigh–Durham, North Carolina, USA",
     "phone": "+1 919-294-4800",
+    "businessPhone": "+1 (919) 999-8595",
     "whatsapp": "https://wa.me/19192944800",
     "email": "info@radionyra.com",
     "address": "4819 Emperor Blvd Suite 400, Durham, NC 27703"

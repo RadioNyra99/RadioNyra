@@ -28,30 +28,32 @@ export function HomeView() {
         <AudienceReachSection />
 
         {/* Featured community event */}
-        <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-          <article className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
-            <div className="grid sm:grid-cols-[.9fr_1.1fr]">
-              <div className="relative min-h-64 bg-muted sm:min-h-80">
-                <img src={event.image} alt="UniverSoul Circus at Coastal Credit Union Music Park" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
-                <span className="absolute left-4 top-4 rounded-full bg-primary px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-widest text-white">Radio Nyra event</span>
+        {event && (
+          <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+            <article className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
+              <div className="grid sm:grid-cols-[.9fr_1.1fr]">
+                <div className="relative min-h-64 bg-muted sm:min-h-80">
+                  <img src={event.image} alt={event.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+                  <span className="absolute left-4 top-4 rounded-full bg-primary px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-widest text-white">Radio Nyra event</span>
+                </div>
+                <div className="flex flex-col justify-center p-6 sm:p-8">
+                  <p className="text-[10px] font-extrabold uppercase tracking-[.18em] text-primary">Community calendar</p>
+                  <h2 className="mt-2 text-2xl font-black tracking-tight sm:text-3xl">{event.title}</h2>
+                  <p className="mt-3 flex items-start gap-2 text-sm text-muted-foreground">
+                    <CalendarDays className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{event.date} · {event.time} (doors {event.doors})
+                  </p>
+                  <p className="mt-2 flex items-start gap-2 text-sm leading-relaxed text-muted-foreground">
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{event.venue}, {event.location}
+                  </p>
+                  <p className="mt-4 font-extrabold text-foreground">{event.offer}</p>
+                  <a href={event.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex h-11 w-fit items-center gap-2 rounded-full bg-primary px-5 text-sm font-bold text-white transition-colors hover:bg-primary/90">
+                    Get tickets <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
               </div>
-              <div className="flex flex-col justify-center p-6 sm:p-8">
-                <p className="text-[10px] font-extrabold uppercase tracking-[.18em] text-primary">Community calendar</p>
-                <h2 className="mt-2 text-2xl font-black tracking-tight sm:text-3xl">{event.title}</h2>
-                <p className="mt-3 flex items-start gap-2 text-sm text-muted-foreground">
-                  <CalendarDays className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{event.date} · {event.time} (doors {event.doors})
-                </p>
-                <p className="mt-2 flex items-start gap-2 text-sm leading-relaxed text-muted-foreground">
-                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{event.venue}, {event.location}
-                </p>
-                <p className="mt-4 font-extrabold text-foreground">{event.offer}</p>
-                <a href={event.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex h-11 w-fit items-center gap-2 rounded-full bg-primary px-5 text-sm font-bold text-white transition-colors hover:bg-primary/90">
-                  Get tickets <ArrowRight className="h-4 w-4" />
-                </a>
-              </div>
-            </div>
-          </article>
-        </section>
+            </article>
+          </section>
+        )}
 
         <PopularShowsSection />
         <YoutubeAnalyticsSection />

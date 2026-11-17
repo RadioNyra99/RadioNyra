@@ -243,25 +243,34 @@ export default function NearMePage() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {upcomingEvents.slice(0, 4).map((evt, idx) => (
-                  <div key={`${evt.title}-${idx}`} className="p-4 bg-card border border-border rounded-xl flex flex-col justify-between">
-                    <div>
-                      <div className="flex items-center justify-between text-[10px] font-extrabold uppercase tracking-wider text-primary mb-1">
-                        <span>{evt.type}</span>
-                        <span>{evt.date}</span>
-                      </div>
-                      <h4 className="font-bold text-sm text-foreground mb-1">{evt.title}</h4>
-                      <p className="text-xs text-muted-foreground flex items-center gap-1">
-                        <MapPin className="w-3.5 h-3.5 text-primary" /> {evt.venue}, {evt.location}
-                      </p>
-                    </div>
-                    <div className="mt-3 pt-2 border-t border-border/40 flex justify-end">
-                      <Button asChild size="sm" variant="outline" className="h-7 text-xs font-bold rounded-full">
-                        <Link href="/events">View Event</Link>
-                      </Button>
-                    </div>
+                {upcomingEvents.length === 0 ? (
+                  <div className="col-span-full p-6 bg-muted/20 border border-dashed rounded-xl text-center">
+                    <p className="text-xs text-muted-foreground mb-2">No upcoming events scheduled right now.</p>
+                    <Button asChild size="sm" variant="outline" className="rounded-full text-xs">
+                      <Link href="/events/submit">Submit An Event</Link>
+                    </Button>
                   </div>
-                ))}
+                ) : (
+                  upcomingEvents.slice(0, 4).map((evt, idx) => (
+                    <div key={`${evt.title}-${idx}`} className="p-4 bg-card border border-border rounded-xl flex flex-col justify-between">
+                      <div>
+                        <div className="flex items-center justify-between text-[10px] font-extrabold uppercase tracking-wider text-primary mb-1">
+                          <span>{evt.type}</span>
+                          <span>{evt.date}</span>
+                        </div>
+                        <h4 className="font-bold text-sm text-foreground mb-1">{evt.title}</h4>
+                        <p className="text-xs text-muted-foreground flex items-center gap-1">
+                          <MapPin className="w-3.5 h-3.5 text-primary" /> {evt.venue}, {evt.location}
+                        </p>
+                      </div>
+                      <div className="mt-3 pt-2 border-t border-border/40 flex justify-end">
+                        <Button asChild size="sm" variant="outline" className="h-7 text-xs font-bold rounded-full">
+                          <Link href="/events">View Event</Link>
+                        </Button>
+                      </div>
+                    </div>
+                  ))
+                )}
               </div>
             </div>
           </div>

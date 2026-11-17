@@ -198,24 +198,7 @@
     { "id": "v4aHBeSlD6I", "title": "Health Beyond Borders | RadioNyra Podcast", "host": "Radio Nyra", "category": "Podcast" },
     { "id": "QU4SrKGGG0M", "title": "H-1B & Green Card Updates | Brown Immigration Law", "host": "Brown Immigration Law", "category": "Community & Information" }
   ],
-  "events": [
-    {
-      "title": "UniverSoul Circus",
-      "date": "Sunday, Nov 15, 2026",
-      "time": "12:00 PM",
-      "doors": "11:00 AM",
-      "venue": "Coastal Credit Union Music Park at Walnut Creek",
-      "location": "Raleigh, NC",
-      "offer": "$5 off select seats",
-      "url": "https://ticketsea.com/events/universoul-circus-raleigh-2026-11-15-g5evz-fhikbnf/",
-      "image": "/images/universoul-circus.jpg",
-      "type": "Circus & Family",
-      "imageAspect": "portrait",
-      "startDate": "2026-11-15T12:00:00-05:00",
-      "description": "UniverSoul Circus in Raleigh. Doors open at 11:00 AM, and $5 off select seats is available.",
-      "cta": "Get tickets · $5 off select seats"
-    }
-  ],
+  "events": [],
   "announcements": ["Diwali wishes from Team Radio Nyra."],
   "news": [
     {

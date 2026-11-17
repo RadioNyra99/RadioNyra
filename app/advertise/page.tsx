@@ -137,7 +137,7 @@ export default function AdvertisePage() {
         </section>
 
         <section className="border-y border-border py-10 sm:py-12">
-          <div className="mx-auto max-w-7xl px-4 text-center sm:px-6"><p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-primary">Selected partners</p><div className="mt-5"><PartnersMarquee /></div></div>
+          <div className="mx-auto max-w-7xl px-4 text-center sm:px-6"><p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-primary">Our Trusted Partners</p><div className="mt-5"><PartnersMarquee /></div></div>
         </section>
 
         <section id="inquiry" className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[.85fr_1.15fr]">

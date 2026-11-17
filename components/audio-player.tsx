@@ -255,7 +255,7 @@ export function AudioPlayer() {
         aria-hidden
       />
 
-        <div className="fixed bottom-14 left-0 right-0 z-40 md:bottom-0 md:z-50 audio-player-slide-up">
+        <div className="fixed bottom-[calc(3.5rem+env(safe-area-inset-bottom,0px))] left-0 right-0 z-40 md:bottom-0 md:z-50 audio-player-slide-up">
           <div className="relative border-t border-border bg-background/95 shadow-[0_-8px_40px_rgba(0,0,0,0.12)] backdrop-blur-xl">
             {/* Live indicator rail */}
             <div className="absolute inset-x-0 top-0 h-0.5 overflow-hidden bg-primary/10">

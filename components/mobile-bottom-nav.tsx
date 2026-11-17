@@ -20,8 +20,14 @@ export function MobileBottomNav() {
   ]
 
   return (
-    <nav aria-label="Mobile navigation" className="fixed bottom-0 left-0 right-0 z-50 h-14 border-t border-border bg-background/95 px-1 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] backdrop-blur-xl md:hidden">
-      <div className="mx-auto grid h-full max-w-lg grid-cols-5 items-center">
+    <nav
+      aria-label="Mobile navigation"
+      className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 px-1 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] backdrop-blur-xl md:hidden"
+      style={{
+        paddingBottom: "env(safe-area-inset-bottom, 0px)",
+      }}
+    >
+      <div className="mx-auto grid h-14 max-w-lg grid-cols-5 items-center">
         {navItems.map((item) => {
           const Icon = item.icon
           const content = <><Icon className={cn("h-5 w-5 transition-transform duration-200 group-active:scale-90", item.isActive ? "text-primary" : isPlaying && item.id === "listen" ? "text-primary" : "text-muted-foreground group-hover:text-foreground")} aria-hidden /><span className={cn("mt-0.5 text-[10px] font-bold uppercase leading-none tracking-tight", item.isActive ? "text-primary" : "text-muted-foreground group-hover:text-foreground")}>{item.label}</span></>

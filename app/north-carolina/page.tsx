@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "North Carolina South Asian Community Hubs",
   description:
     "Explore Radio Nyra's dedicated hubs across the Research Triangle: Morrisville, Cary, Raleigh, Durham, Apex, Chapel Hill, Wake Forest, and RTP. 99.9 FM HD4/HD3 radio coverage, local events, dining, and community resources.",
+  alternates: { canonical: "/north-carolina" },
 }
 
 export default function NorthCarolinaHubPage() {

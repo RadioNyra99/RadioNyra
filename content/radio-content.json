@@ -98,7 +98,7 @@
       "endMinute": 1140,
       "host": "Jyoti",
       "description": "An evening with Hindi music and conversation.",
-      "image": "/images/hosts/Aaj Ki Shaam-jyoti kae naam.png"
+      "image": "/images/hosts/Aaj Ki Shaam-jyoti kae naam.webp"
     },
     {
       "slug": "nirvana-nights",
@@ -185,7 +185,7 @@
     { "name": "Arpit Tandon", "show": "Idhar Udhar Ki Baatein", "bio": "Explores humor and everyday trends with a light, conversational touch.", "image": "/images/hosts/idhar-udhar-ki-baatein.webp" },
     { "name": "Prachi", "show": "Sunn Zarra", "bio": "Brings soulful melodies to Tuesday afternoons.", "image": "/images/hosts/Prachi.png" },
     { "name": "Vaishnavi Palleda", "show": "Hello Vaishnavi", "bio": "Hosts conversations about celebrity, culture, and community.", "image": "/images/hosts/hello-vaishnavi.jpeg" },
-    { "name": "Jyoti", "show": "Aaj Ki Shaam", "bio": "Hosts the Friday evening Hindi show.", "image": "/images/hosts/Aaj Ki Shaam-jyoti kae naam.png" },
+    { "name": "Jyoti", "show": "Aaj Ki Shaam", "bio": "Hosts the Friday evening Hindi show.", "image": "/images/hosts/Aaj Ki Shaam-jyoti kae naam.webp" },
     { "name": "Parag", "show": "Nirvana Nights", "bio": "Guides listeners through a relaxed late-night music mix.", "image": "/images/hosts/nirvana-nights.png" },
     { "name": "Van Bhandari", "show": "Dil Se Desi With Van", "bio": "Connects the community through stories, music, and conversation.", "image": "/images/hosts/dil-se-desi.jpeg" },
     { "name": "Dr. Taj and Dr. Caldwell", "show": "Geet Bazaar", "bio": "Share golden classics and memorable music on Sundays.", "image": "/images/hosts/geet-bazaar.webp" },

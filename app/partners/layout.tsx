@@ -4,6 +4,7 @@ export const metadata: Metadata = {
     title: "Our Partners",
     description: "Explore the brands and organizations that trust Radio Nyra to connect with the Indian subcontinent communities in the USA.",
     keywords: ["Radio Nyra Partners", "Indian Business Network", "Community Partners USA", "Brand Collaborations"],
+    alternates: { canonical: "/partners" },
 }
 
 export default function PartnersLayout({

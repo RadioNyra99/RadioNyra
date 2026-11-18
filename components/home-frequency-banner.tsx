@@ -4,7 +4,7 @@ const frequencies = [
   { frequency: "101.9 FM", details: "Hindi · W270DT" },
   { frequency: "99.9 HD4", details: "Hindi · WCMC-FM" },
   { frequency: "1490 AM", details: "Hindi · WDUR" },
-  { frequency: "99.3 FM-HD3", details: "Telugu · WCMC-FM" },
+  { frequency: "99.9 FM-HD3", details: "Telugu · WCMC-FM" },
 ]
 
 export function HomeFrequencyBanner() {

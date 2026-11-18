@@ -7,6 +7,7 @@ import { SocialHub } from "@/components/social-hub"
 export const metadata: Metadata = {
     title: "Social Media Hub | Instagram, Facebook, WhatsApp",
     description: "Connect with Radio Nyra across Instagram, Facebook, LinkedIn, YouTube, WhatsApp groups, and Telegram channels.",
+    alternates: { canonical: "/social-hub" },
 }
 
 export default function SocialHubPage() {

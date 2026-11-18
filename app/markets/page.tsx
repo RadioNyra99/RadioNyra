@@ -7,6 +7,7 @@ import { MapPin, Megaphone, ArrowRight, Signal, Headphones } from "lucide-react"
 export const metadata: Metadata = {
   title: "Markets & Broadcast Coverage",
   description: "Explore Radio Nyra's broadcast and digital coverage across Raleigh-Durham (99.9 FM HD4/HD3), Atlanta, Baltimore, Cleveland, Columbus, Philadelphia, and St. Louis.",
+  alternates: { canonical: "/markets" },
   keywords: [
     "Radio Nyra Markets", "Raleigh FM Radio Stations", "Indian Radio Atlanta",
     "Telugu Radio Cary", "Hindi Radio USA", "Indian Community Radio NC"

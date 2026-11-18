@@ -111,7 +111,7 @@ const ALL_SHOWS: ShowItem[] = [
     id: "show-aaj-ki-shaam",
     name: "Aaj Ki Shaam",
     host: "Jyoti",
-    image: "/images/hosts/Aaj Ki Shaam-jyoti kae naam.png",
+    image: "/images/hosts/Aaj Ki Shaam-jyoti kae naam.webp",
     stationId: STATIONS.Hindi.id,
     language: "hindi",
     stationLabel: "99.9 FM-HD4",

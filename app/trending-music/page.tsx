@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Trending Music & Chartbusters",
   description:
     "Top Bollywood and Tollywood tracks trending across Radio Nyra 99.9 FM HD4 and HD3. Stream the biggest South Asian hits in North Carolina.",
+  alternates: { canonical: "/trending-music" },
 }
 
 export default function TrendingMusicPage() {

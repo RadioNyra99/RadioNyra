@@ -23,6 +23,11 @@ import {
   ChevronRight,
 } from "lucide-react"
 
+function getCityHubHref(cityName: string) {
+  const city = NC_CITIES.find((item) => item.name.toLowerCase() === cityName.trim().toLowerCase())
+  return city ? `/north-carolina/${city.slug}` : "/north-carolina"
+}
+
 export default function DirectoryPage() {
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [selectedCity, setSelectedCity] = useState("all")
@@ -231,7 +236,7 @@ export default function DirectoryPage() {
                         </a>
                       )}
                       <Button asChild size="sm" variant="ghost" className="h-7 px-2 text-[11px] font-bold">
-                        <Link href={`/north-carolina/${biz.city.toLowerCase()}`}>
+                        <Link href={getCityHubHref(biz.city)}>
                           City Hub <ChevronRight className="w-3 h-3 ml-0.5" />
                         </Link>
                       </Button>

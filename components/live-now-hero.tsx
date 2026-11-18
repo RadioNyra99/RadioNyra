@@ -148,7 +148,7 @@ export function LiveNowHero() {
       />
       <div aria-hidden className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none">
         <img
-          src="/images/music-instrument-art.png"
+          src="/images/music-instrument-art.webp"
           alt=""
           className="absolute right-[9%] top-0 h-36 w-auto object-contain opacity-50 drop-shadow-[0_12px_30px_rgba(255,100,50,0.35)] sm:right-[8%] sm:h-56 lg:right-[7%] lg:h-80 xl:h-96"
         />
@@ -163,7 +163,7 @@ export function LiveNowHero() {
           <div className="max-w-xl lg:max-w-lg xl:max-w-xl">
             {/* Top Headline: Your RadioNyra wherever you go */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-[1.05] italic mb-3">
-              Your RadioNyra, <span className="bg-gradient-to-r from-red-500 via-orange-400 to-amber-300 bg-clip-text text-transparent not-italic">wherever you go.</span>
+              Hindi &amp; Telugu Radio, <span className="bg-gradient-to-r from-red-500 via-orange-400 to-amber-300 bg-clip-text text-transparent not-italic">wherever you go.</span>
             </h1>
 
             {/* Live On-Air Indicator & Eastern Time */}

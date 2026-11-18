@@ -31,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/festival-calendar",
     "/schedule",
     "/shows",
+    "/podcasts",
     "/indian-radio-usa",
     "/bollywood-radio-online",
     "/telugu-radio-usa",

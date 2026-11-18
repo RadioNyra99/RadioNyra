@@ -7,6 +7,7 @@ import { YouTubeHub } from "@/components/youtube-hub"
 export const metadata: Metadata = {
     title: "Video Library | Watch Official Radio Nyra USA Videos",
     description: "Browse the complete video library from @RadioNyraUSA: Celebrity interviews, festival specials, kids storytime, and community programs.",
+    alternates: { canonical: "/video-library" },
 }
 
 export default function VideoLibraryPage() {

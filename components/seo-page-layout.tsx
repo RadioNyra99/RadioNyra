@@ -8,11 +8,13 @@ import { Footer } from "@/components/footer"
 import { PageHeader } from "@/components/ui/page-header"
 import { Button } from "@/components/ui/button"
 import { Play, Pause } from "lucide-react"
+import Link from "next/link"
 
 interface SeoPageLayoutProps {
     title: string;
     subtitle: string;
     stationKey: string;
+    fallbackAction?: { label: string; href: string };
     children: React.ReactNode;
 }
 
@@ -21,9 +23,10 @@ interface SeoPageLayoutProps {
  * testimonial detail). The header carries the single H1 and one-sentence
  * description; the body keeps the long-form copy these pages need for search.
  */
-export function SeoPageLayout({ title, subtitle, stationKey, children }: SeoPageLayoutProps) {
+export function SeoPageLayout({ title, subtitle, stationKey, fallbackAction, children }: SeoPageLayoutProps) {
     const { playStation, currentStation, isPlaying, togglePlay } = useAudio()
     const targetStation = STATIONS[stationKey] || STATIONS.Hindi
+    const hasOnlineStream = Boolean(targetStation.streamUrl.trim())
     const isTargetStation = currentStation.id === targetStation.id
     const isCurrentlyPlaying = isTargetStation && isPlaying
 
@@ -43,14 +46,23 @@ export function SeoPageLayout({ title, subtitle, stationKey, children }: SeoPage
                 title={title}
                 description={subtitle}
             >
-                <Button
-                    className="h-11 rounded-full bg-primary px-6 text-sm font-bold uppercase tracking-wide text-primary-foreground hover:bg-primary/90"
-                    onClick={handlePlayClick}
-                    aria-label={isCurrentlyPlaying ? "Pause the live stream" : "Listen to the live stream"}
-                >
-                    {isCurrentlyPlaying ? <Pause className="mr-2 h-4 w-4 fill-current" /> : <Play className="mr-2 h-4 w-4 fill-current" />}
-                    {isCurrentlyPlaying ? "Pause Live" : "Listen Live"}
-                </Button>
+                {hasOnlineStream ? (
+                    <Button
+                        className="h-11 rounded-full bg-primary px-6 text-sm font-bold uppercase tracking-wide text-primary-foreground hover:bg-primary/90"
+                        onClick={handlePlayClick}
+                        aria-label={isCurrentlyPlaying ? "Pause the live stream" : "Listen to the live stream"}
+                    >
+                        {isCurrentlyPlaying ? <Pause className="mr-2 h-4 w-4 fill-current" /> : <Play className="mr-2 h-4 w-4 fill-current" />}
+                        {isCurrentlyPlaying ? "Pause Live" : "Listen Live"}
+                    </Button>
+                ) : fallbackAction ? (
+                    <Button
+                        asChild
+                        className="h-11 rounded-full bg-primary px-6 text-sm font-bold uppercase tracking-wide text-primary-foreground hover:bg-primary/90"
+                    >
+                        <Link href={fallbackAction.href}>{fallbackAction.label}</Link>
+                    </Button>
+                ) : null}
             </PageHeader>
 
             <main className="container mx-auto max-w-3xl px-4 py-10 sm:px-6 md:py-14">

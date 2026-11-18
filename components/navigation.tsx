@@ -34,6 +34,8 @@ const navigationSections = [
     label: "Media",
     links: [
       { href: "/news", label: "News & Updates" },
+      { href: "/podcasts", label: "Podcasts & Interviews" },
+      { href: "/youtube", label: "Videos & YouTube" },
     ],
   },
   { label: "Contact Us", links: [{ href: "/contact", label: "Contact Us" }] },

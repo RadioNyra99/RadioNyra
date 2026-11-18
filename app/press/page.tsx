@@ -89,19 +89,14 @@ export default function PressPage() {
                                 </div>
 
                                 <div className="p-6 bg-gray-50 border border-gray-200 rounded-xl space-y-3">
-                                    <span className="text-[10px] font-bold text-primary uppercase tracking-widest">Radio Nyra Events</span>
-                                    <h3 className="font-bold text-gray-900 text-lg uppercase tracking-tight">Official Radio Nyra Diwali Event Highlights</h3>
+                                    <span className="text-[10px] font-bold text-primary uppercase tracking-widest">Community Calendar</span>
+                                    <h3 className="font-bold text-gray-900 text-lg uppercase tracking-tight">Upcoming Radio Nyra Community Events</h3>
                                     <p className="text-xs text-gray-600 leading-relaxed">
-                                        Coverage detailing the annual Diwali festivals, ticket booking guidelines, and live cultural stages broadcasted by Radio Nyra.
+                                        Browse current community events and cultural gatherings featured by Radio Nyra.
                                     </p>
-                                    <a 
-                                        href="https://www.radionyra.com/event/radio-nyra-diwali/" 
-                                        target="_blank" 
-                                        rel="noopener noreferrer" 
-                                        className="inline-flex items-center text-xs font-extrabold uppercase tracking-widest text-primary hover:text-gray-900 transition-colors pt-2"
-                                    >
-                                        View Event Details <ChevronRight className="w-3.5 h-3.5 ml-1" />
-                                    </a>
+                                    <Link href="/events" className="inline-flex items-center text-xs font-extrabold uppercase tracking-widest text-primary hover:text-gray-900 transition-colors pt-2">
+                                        View Community Events <ChevronRight className="w-3.5 h-3.5 ml-1" />
+                                    </Link>
                                 </div>
                             </div>
                         </div>

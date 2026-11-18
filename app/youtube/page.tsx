@@ -9,6 +9,7 @@ import { SITE_VIDEOS } from "@/lib/youtube-service"
 export const metadata: Metadata = {
     title: "YouTube Hub | Watch Celeb Interviews, Shorts & Music",
     description: "Explore Radio Nyra YouTube Hub: Watch latest uploads, trending shorts, celebrity interviews, kids stories, and Indian community events.",
+    alternates: { canonical: "/youtube" },
     openGraph: {
         title: "Radio Nyra YouTube Hub | Live Streams, Interviews & Music",
         description: "Watch Bollywood celeb interviews, trending shorts, and Indian Subcontinent community events.",

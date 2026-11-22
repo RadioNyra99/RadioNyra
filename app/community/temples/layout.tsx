@@ -1,7 +1,7 @@
 ﻿import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Hindu Temples in Cary, Raleigh & Durham NC | Community Directory",
+  title: "Hindu Temples in Raleigh-Durham, NC",
   description: "Explore Hindu temples, spiritual centers, and cultural worship places across Raleigh, Cary, and Morrisville, NC with Radio Nyra.",
   alternates: {
     canonical: "/community/temples",

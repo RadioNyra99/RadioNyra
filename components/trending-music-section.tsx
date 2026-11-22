@@ -106,9 +106,9 @@ export function TrendingMusicSection() {
                 Music Discovery
               </span>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-white">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-white">
               Listen to your favorite songs on RadioNyra.
-            </h2>
+            </h1>
             <p className="text-zinc-400 text-xs sm:text-sm font-medium mt-1">
               Curated by RadioNyra music editors for the South Asian diaspora
             </p>

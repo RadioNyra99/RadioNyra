@@ -567,19 +567,31 @@ async function fetchFromRSSJson(rssUrl: string, maxResults: number): Promise<You
                 const title = decodeHtmlEntities(item.title || "");
                 const description = stripHtml(decodeHtmlEntities(item.description || item.content || ""));
 
+                let pubDateIso = ""
+                try {
+                    const rawDate = item.pubDate || ""
+                    pubDateIso = rawDate ? new Date(rawDate.includes("T") ? rawDate : rawDate.replace(" ", "T") + "Z").toISOString() : ""
+                } catch {
+                    pubDateIso = item.pubDate || ""
+                }
+
+                const isShort = title.toLowerCase().includes("#short") || 
+                                title.toLowerCase().includes("shorts") || 
+                                (typeof item.link === "string" && item.link.includes("/shorts/"));
+
                 return {
                     id,
                     title,
                     description: description.substring(0, 200),
                     thumbnail: item.thumbnail || `https://i.ytimg.com/vi/${id}/mqdefault.jpg`,
                     thumbnailHigh: `https://i.ytimg.com/vi/${id}/hqdefault.jpg`,
-                    publishedAt: item.pubDate ? new Date(item.pubDate).toISOString() : "",
+                    publishedAt: pubDateIso,
                     channelTitle: "Radio Nyra USA",
                     duration: "",
                     viewCount: "0 views",
                     viewCountNum: 0,
                     likeCount: "0",
-                    isShort: title.toLowerCase().includes("#short") || title.toLowerCase().includes("shorts"),
+                    isShort,
                     isLive: false,
                     youtubeUrl: `https://www.youtube.com/watch?v=${id}`,
                     embedUrl: `https://www.youtube.com/embed/${id}`,
@@ -642,9 +654,14 @@ function extractVideoId(value: string): string {
 
     try {
         const url = new URL(value);
-        return url.searchParams.get("v") || "";
-    } catch {
+        const v = url.searchParams.get("v");
+        if (v) return v;
+        const shortsMatch = url.pathname.match(/\/shorts\/([a-zA-Z0-9_-]+)/);
+        if (shortsMatch) return shortsMatch[1];
         return "";
+    } catch {
+        const directMatch = value.match(/(?:v=|shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+        return directMatch ? directMatch[1] : "";
     }
 }
 

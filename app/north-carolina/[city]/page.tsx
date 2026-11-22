@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
   }
 
   return {
-    title: `${city.name}, NC Indian Community Radio, Events & Directory | Radio Nyra 99.9 FM`,
+    title: `Indian Radio & Events in ${city.name}, NC`,
     description: `Comprehensive South Asian guide for ${city.name}, North Carolina. Listen to Radio Nyra 99.9 FM HD4 (Hindi) & HD3 (Telugu/RTV News). Discover top Indian restaurants, temples, grocery stores, and local community events in ${city.name}.`,
     alternates: {
       canonical: `https://www.radionyra.com/north-carolina/${city.slug}`,

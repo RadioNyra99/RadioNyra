@@ -1,54 +1,9 @@
-"use client"
-
-import { useState, useEffect } from 'react';
-import { BLOG_POSTS, BlogPost } from '@/lib/blog-data';
+import type { BlogPost } from '@/lib/blog-data';
 import Image from 'next/image';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
-import { notFound } from 'next/navigation';
 
-export default function BlogPostClientView({ slug }: { slug: string }) {
-    const [post, setPost] = useState<BlogPost | null>(null);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        // Find in static posts
-        let found = BLOG_POSTS.find(p => p.slug === slug);
-        
-        if (!found) {
-            // Find in localStorage custom posts
-            try {
-                const saved = localStorage.getItem('custom_blog_posts');
-                if (saved) {
-                    const customPosts = JSON.parse(saved) as BlogPost[];
-                    found = customPosts.find(p => p.slug === slug);
-                }
-            } catch (e) {
-                console.error("Error reading custom post from localStorage:", e);
-            }
-        }
-        
-        if (found) {
-            setPost(found);
-        }
-        setLoading(false);
-    }, [slug]);
-
-    if (loading) {
-        return (
-            <div className="min-h-screen bg-background flex items-center justify-center font-sans">
-                <div className="flex flex-col items-center gap-4">
-                    <div className="w-10 h-10 border-4 border-primary/30 border-t-primary rounded-full animate-spin" />
-                    <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Loading Post...</p>
-                </div>
-            </div>
-        );
-    }
-
-    if (!post) {
-        notFound();
-    }
-
+export default function BlogPostView({ post }: { post: BlogPost }) {
     return (
         <div className="min-h-screen bg-background font-sans">
             <Navigation />

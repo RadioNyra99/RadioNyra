@@ -1,17 +1,59 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { ExternalLink, Play, Youtube } from "lucide-react"
-import type { PodcastEpisode } from "@/lib/content-discovery"
+import { toPodcastEpisode, type PodcastEpisode } from "@/lib/content-discovery"
+import { fetchLatestVideos } from "@/lib/youtube-service"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 
 export function FeaturedVideoGrid({ videos }: { videos: PodcastEpisode[] }) {
+  const [episodeList, setEpisodeList] = useState<PodcastEpisode[]>(videos)
   const [activeVideo, setActiveVideo] = useState<PodcastEpisode | null>(null)
   const publishedDate = activeVideo?.publishedAt && !Number.isNaN(Date.parse(activeVideo.publishedAt))
     ? new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(activeVideo.publishedAt))
     : null
+
+  useEffect(() => {
+    if (videos && videos.length > 0) {
+      setEpisodeList(videos)
+    }
+  }, [videos])
+
+  useEffect(() => {
+    let isMounted = true
+
+    try {
+      const cached = sessionStorage.getItem("nyra_fresh_yt_videos")
+      if (cached) {
+        const parsed = JSON.parse(cached)
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setEpisodeList(parsed)
+        }
+      }
+    } catch {}
+
+    async function checkFreshVideos() {
+      try {
+        const latest = await fetchLatestVideos(8)
+        if (latest && latest.length > 0 && isMounted) {
+          const mapped = latest.slice(0, 4).map(toPodcastEpisode)
+          setEpisodeList(mapped)
+          try {
+            sessionStorage.setItem("nyra_fresh_yt_videos", JSON.stringify(mapped))
+          } catch {}
+        }
+      } catch {
+        // Silently keep existing videos
+      }
+    }
+
+    checkFreshVideos()
+    return () => {
+      isMounted = false
+    }
+  }, [])
 
   return (
     <section className="bg-[#0b1631] py-12 text-white sm:py-16">
@@ -33,7 +75,7 @@ export function FeaturedVideoGrid({ videos }: { videos: PodcastEpisode[] }) {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {videos.map((video) => (
+          {episodeList.map((video) => (
             <article key={video.id} className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[.045] transition-colors hover:border-white/25">
               <button type="button" onClick={() => setActiveVideo(video)} aria-label={`Play ${video.title}`} className="relative block aspect-video w-full overflow-hidden bg-black text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400">
                 <img src={video.thumbnail || `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`} alt={`Video thumbnail: ${video.title}`} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />

@@ -103,8 +103,8 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
     const isRdu = slug === "raleigh-durham";
     const title = isRdu
-        ? "Top Radio Stations in Raleigh-Durham NC | Listen Free - Radio Nyra 99.9 FM"
-        : `Radio Nyra ${market.name} | ${market.frequency}`;
+        ? "Hindi & Telugu Radio in Raleigh-Durham, NC | 99.9 FM"
+        : `Indian Radio in ${market.name}`;
     const description = isRdu
         ? "Listen to top radio stations in Raleigh-Durham, NC for free. Stream Radio Nyra on 99.9 FM HD4 & HD3 for Bollywood, Telugu hits, talk shows & local Triangle events."
         : `Listen live to Radio Nyra in ${market.name} on ${market.frequency}. Connecting the Indian Subcontinent community with premium music, events, and marketing.`;

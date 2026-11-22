@@ -1,14 +1,14 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Schedule",
-  description: "View the Radio Nyra daily schedule for Hindi, Telugu, Bollywood, community, weekend, and live-hosted shows.",
+  title: "Hindi & Telugu Radio Schedule",
+  description: "Browse the Radio Nyra weekly Hindi HD4 and Telugu HD3 radio schedule, including program times, hosts, and recurring shows in Eastern Time.",
   alternates: {
     canonical: "/schedule",
   },
   openGraph: {
-    title: "Schedule | Radio Nyra",
-    description: "View the Radio Nyra daily schedule for Hindi, Telugu, Bollywood, community, and live-hosted shows.",
+    title: "Hindi & Telugu Radio Schedule | Radio Nyra",
+    description: "Browse the Radio Nyra weekly Hindi HD4 and Telugu HD3 schedule, with program times and hosts in Eastern Time.",
     url: "https://www.radionyra.com/schedule",
   },
 }

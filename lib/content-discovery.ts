@@ -351,7 +351,7 @@ function normalizeDuration(duration: string) {
   return duration
 }
 
-function toPodcastEpisode(video: YouTubeVideoItem): PodcastEpisode {
+export function toPodcastEpisode(video: YouTubeVideoItem): PodcastEpisode {
   return {
     id: video.id,
     title: video.title,

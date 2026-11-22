@@ -59,9 +59,9 @@ export function SocialHub() {
                     <span className="px-3.5 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-extrabold uppercase tracking-widest inline-block mb-3">
                         Official Social Media Hub
                     </span>
-                    <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight italic">
+                    <h1 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight italic">
                         Connect With Radio Nyra Across Channels
-                    </h2>
+                    </h1>
                     <p className="text-muted-foreground text-sm md:text-base font-medium mt-3">
                         Stay connected with real-time updates from our official YouTube, Instagram, Facebook, LinkedIn, WhatsApp, and Telegram platforms.
                     </p>

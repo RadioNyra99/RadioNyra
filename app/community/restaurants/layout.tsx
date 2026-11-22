@@ -1,7 +1,7 @@
 ﻿import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Indian Restaurants in Raleigh, Cary & Morrisville NC | Food Guide",
+  title: "Indian Restaurants in Raleigh-Durham, NC",
   description: "Curated guide to premier Indian restaurants, sweets shops, and South Asian dining in Cary, Morrisville, and Raleigh, NC from Radio Nyra.",
   alternates: {
     canonical: "/community/restaurants",

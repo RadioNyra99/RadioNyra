@@ -2,6 +2,19 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Radio Nyra Broadcasting Heritage Collection",
+    description: "Explore archival photographs and documents from Radio Nyra's broadcasting heritage, including studio, equipment, and station history images.",
+    alternates: { canonical: "/gallery/heritage" },
+    openGraph: {
+        title: "Radio Nyra Broadcasting Heritage Collection",
+        description: "Archival photographs and documents from Radio Nyra's broadcasting heritage.",
+        url: "https://www.radionyra.com/gallery/heritage",
+        type: "website",
+    },
+}
 
 const heritageImages = [
     { src: "/OLD Images/P0105_1-01-45-018_0001.jpg", alt: "Radio Nyra Heritage 1963 - Studio A" },

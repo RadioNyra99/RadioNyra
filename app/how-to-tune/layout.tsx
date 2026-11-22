@@ -1,7 +1,7 @@
 ﻿import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "How to Tune to Radio Nyra | In-Car HD Radio, Mobile & Alexa Guide",
+  title: "Tune In with HD Radio, Mobile & Alexa",
   description: "Step-by-step guide to tuning Radio Nyra on car HD radios (Honda, Toyota, BMW, Tesla, Mercedes), mobile apps, online web players, and Alexa smart speakers.",
   alternates: {
     canonical: "/how-to-tune",

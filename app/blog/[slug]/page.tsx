@@ -1,6 +1,7 @@
-import BlogPostClientView from './blog-post-client';
+import BlogPostView from './blog-post-client';
 import { BLOG_POSTS } from '@/lib/blog-data';
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 // Generate static paths for all blog posts
 export async function generateStaticParams() {
@@ -35,7 +36,9 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 export default async function BlogPostPage({ params }: { params: Params }) {
     const { slug } = await params;
     const post = BLOG_POSTS.find((item) => item.slug === slug);
-    const articleSchema = post ? {
+    if (!post) notFound();
+
+    const articleSchema = {
         "@context": "https://schema.org",
         "@type": "Article",
         headline: post.title,
@@ -59,17 +62,15 @@ export default async function BlogPostPage({ params }: { params: Params }) {
             "@type": "WebPage",
             "@id": `https://www.radionyra.com/blog/${post.slug}`,
         },
-    } : null;
+    };
 
     return (
         <>
-            {articleSchema && (
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-                />
-            )}
-            <BlogPostClientView slug={slug} />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+            />
+            <BlogPostView post={post} />
         </>
     );
 }

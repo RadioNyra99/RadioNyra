@@ -14,7 +14,7 @@ import { Footer } from "@/components/footer"
 import { RADIO_NYRA_PRESS_STORIES } from "@/lib/press-coverage"
 
 export const metadata: Metadata = {
-  title: "About Radio Nyra | The Indian Subcontinent Community Media Network",
+  title: "About Our Community Radio Network",
   description:
     "Pioneering since 2014, Radio Nyra is North Carolina's only 24/7 Indian Subcontinent community media network — and the Triangle's most trusted cultural platform.",
   alternates: { canonical: "/about" },

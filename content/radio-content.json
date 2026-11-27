@@ -212,7 +212,7 @@
     }
   ],
   "audienceStats": [
-    { "value": "100K+", "label": "weekly listeners" },
+    { "value": "100,000+", "label": "weekly listeners", "source": "Radio Nyra (company-reported)" },
     { "value": "60K+", "label": "email subscribers" },
     { "value": "12K+", "label": "WhatsApp members" },
     { "value": "500K+", "label": "monthly Instagram reach" },

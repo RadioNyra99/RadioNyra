@@ -110,7 +110,7 @@ export function TrendingMusicSection() {
               Listen to your favorite songs on RadioNyra.
             </h1>
             <p className="text-zinc-400 text-xs sm:text-sm font-medium mt-1">
-              Curated by RadioNyra music editors for the South Asian diaspora
+              Curated by RadioNyra music editors for the Indian Subcontinent diaspora
             </p>
           </div>
 

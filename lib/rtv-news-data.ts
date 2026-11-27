@@ -321,7 +321,7 @@ export const RTV_TELUGU_NEWS_EPISODES: RtvNewsEpisode[] = [
       "India signs multilateral renewable energy pacts at international summit.",
       "Irrigation and drinking water project approvals in Godavari basin.",
       "Health care reforms announced for rural healthcare networks.",
-      "South Asian diaspora community cultural events across North Carolina."
+      "Indian Subcontinent diaspora community cultural events across North Carolina."
     ],
     transcriptSummary: "Day 3 Bulletin: Antarjathiya energy agreements lo India bhagaswamhyam. Godavari jala parivahana mariyu thagitneeru projects. Carolinas lo Telugu sanskritika karyakramalu."
   },

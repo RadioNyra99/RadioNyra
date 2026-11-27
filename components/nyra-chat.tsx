@@ -19,7 +19,7 @@ const INITIAL_MESSAGES: Message[] = [
   {
     id: "1",
     role: "assistant",
-    content: "Namaste! I'm Nyra AI, your personal discovery assistant for South Asian music, live shows, podcasts, and community events on Radio Nyra. What would you like to explore?",
+    content: "Namaste! I'm Nyra AI, your personal discovery assistant for Indian Subcontinent music, live shows, podcasts, and community events on Radio Nyra. What would you like to explore?",
     timestamp: new Date(),
   },
 ]
@@ -122,7 +122,7 @@ export function NyraChat() {
       },
       {
         keywords: ["directory", "list business", "add business", "submit business", "restaurants", "dining"],
-        response: "🏪 Radio Nyra Business Directory:\nDiscover South Asian restaurants, grocery stores, real estate agents, and immigration attorneys at /directory. Local business owners can submit a free listing at /directory/submit!"
+        response: "🏪 Radio Nyra Business Directory:\nDiscover Indian Subcontinent restaurants, grocery stores, real estate agents, and immigration attorneys at /directory. Local business owners can submit a free listing at /directory/submit!"
       },
       {
         keywords: ["submit event", "post event", "add event", "promote event"],

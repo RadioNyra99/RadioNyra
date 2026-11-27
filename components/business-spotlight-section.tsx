@@ -17,7 +17,7 @@ export function BusinessSpotlightSection() {
               <Building2 className="w-3.5 h-3.5" /> Local Business Spotlight
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight italic">
-              Trusted <span className="text-primary">South Asian Partners</span> in NC
+              Trusted <span className="text-primary">Indian Subcontinent Partners</span> in NC
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
               Support verified Indian restaurants, supermarkets, immigration attorneys, and temples serving the Triangle.

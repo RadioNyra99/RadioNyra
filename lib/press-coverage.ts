@@ -14,7 +14,7 @@ export const RADIO_NYRA_PRESS_STORIES = [
   {
     publication: "Radio & Music",
     date: "March 6, 2019",
-    title: "South Asia’s No. 1 radio station Radio Mirchi marches into four new American cities",
+    title: "Radio Mirchi expands into four new U.S. cities",
     href: "https://radioandmusic.com/press_releases/south-asias-number-one-radio-station-radio-mirchi-marches-into-four-new-american-cities/",
   },
 ]

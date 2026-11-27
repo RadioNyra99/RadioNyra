@@ -59,7 +59,7 @@ export const BUSINESS_DIRECTORY: BusinessListing[] = [
     reviewCount: 382,
     shortDescription: "The Triangle's premier Indian supermarket offering regional groceries, fresh produce, and festive treats.",
     fullDescription:
-      "Patel Brothers in Cary is the cornerstone Indian grocery destination for families across Cary, Morrisville, Apex, and Raleigh. Offering an unparalleled collection of premium flours, lentils, fresh South Asian vegetables, frozen foods, spices, and puja accessories.",
+      "Patel Brothers in Cary is the cornerstone Indian grocery destination for families across Cary, Morrisville, Apex, and Raleigh. Offering an unparalleled collection of premium flours, lentils, fresh Indian Subcontinent vegetables, frozen foods, spices, and puja accessories.",
     services: ["Fresh Produce", "Imported Spices", "Frozen Indian Meals", "Pooja Supplies", "Snacks & Sweets"],
     offer: "Special Diwali and festival offers available every weekend",
   },
@@ -165,7 +165,7 @@ export const BUSINESS_DIRECTORY: BusinessListing[] = [
     reviewCount: 195,
     shortDescription: "Convenient neighborhood grocery market for fresh rotis, dairy, seasonal mangoes, and regional snacks.",
     fullDescription:
-      "Family-owned South Asian grocery store stocked with rice varieties, dals, fresh herbs, imported snacks, and daily household puja items.",
+      "Family-owned Indian Subcontinent grocery store stocked with rice varieties, dals, fresh herbs, imported snacks, and daily household puja items.",
     services: ["Indian Groceries", "Fresh Dairy & Paneer", "Seasonal Fruit Imports", "Household Pooja Needs"],
   },
   {
@@ -218,7 +218,7 @@ export const BUSINESS_DIRECTORY: BusinessListing[] = [
     reviewCount: 540,
     shortDescription: "Premier Hindu temple hosting Shiva, Vishnu, and Subramanya shrines with daily puja and cultural programs.",
     fullDescription:
-      "The Hindu Temple & Cultural Center serves as the spiritual anchor for the Raleigh-Cary South Asian community. Daily abhishekams, weekly Sahasranama chanting, Navratri celebrations, and annual Brahmotsavam draw thousands from across the Triangle.",
+      "The Hindu Temple & Cultural Center serves as the spiritual anchor for the Raleigh-Cary Indian Subcontinent community. Daily abhishekams, weekly Sahasranama chanting, Navratri celebrations, and annual Brahmotsavam draw thousands from across the Triangle.",
     services: ["Daily Puja & Abhishekam", "Cultural Classes", "Sanskrit School", "Annadanam", "Wedding Venue"],
   },
   {
@@ -267,7 +267,7 @@ export const BUSINESS_DIRECTORY: BusinessListing[] = [
     phone: "(919) 363-5959",
     rating: 4.6,
     reviewCount: 175,
-    shortDescription: "Family-run grocery store in Apex serving South Asian pantry staples, fresh produce, and imported sweets.",
+    shortDescription: "Family-run grocery store in Apex serving Indian Subcontinent pantry staples, fresh produce, and imported sweets.",
     fullDescription:
       "A neighbourhood staple for Apex families, stocking South Indian, North Indian, and Pakistani specialties including fresh dosas-ready batter, homemade pickles, regional snack imports, and monthly festival sweets.",
     services: ["South Indian Staples", "Homemade Pickles & Chutneys", "Festival Sweets", "Monthly Import Boxes"],

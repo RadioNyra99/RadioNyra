@@ -80,7 +80,7 @@ export default function SubmitBusinessPage() {
                     List Your Business on Radio Nyra
                   </h1>
                   <p className="text-xs sm:text-sm text-muted-foreground mt-1">
-                    Connect with over 100,000 South Asian community members across Raleigh, Cary, Morrisville, Durham, and the Research Triangle.
+                    Connect with Indian Subcontinent businesses and community organizations across Raleigh, Cary, Morrisville, Durham, and the Research Triangle.
                   </p>
                 </div>
 

@@ -104,7 +104,7 @@ export default async function CityRadioPage({ params }: { params: Params }) {
                 Radio Nyra {market.city} Indian Radio
               </h1>
               <p className="mt-6 max-w-3xl text-base font-medium leading-8 text-muted-foreground md:text-lg">
-                {market.description} Listeners tune in for Hindi music, South Asian community updates, artist interviews, event coverage, and local sponsor messages built for the {market.regionLabel} audience.
+                {market.description} Listeners tune in for Hindi music, Indian Subcontinent community updates, artist interviews, event coverage, and local sponsor messages built for the {market.regionLabel} audience.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button asChild className="rounded-none bg-primary px-8 py-6 text-xs font-extrabold uppercase tracking-widest text-white">
@@ -143,7 +143,7 @@ export default async function CityRadioPage({ params }: { params: Params }) {
             <div className="mx-auto max-w-4xl">
               <h2 className="text-3xl font-extrabold uppercase tracking-tight">Coverage Across {market.regionLabel}</h2>
               <p className="mt-4 text-sm leading-7 text-muted-foreground">
-                This landing page targets the search phrase "{market.searchPhrase}" with useful local listening and advertising information. Radio Nyra supports community groups, cultural organizers, small businesses, artists, and families looking for a trusted South Asian media connection in {market.city}, {market.state}.
+                This landing page targets the search phrase "{market.searchPhrase}" with useful local listening and advertising information. Radio Nyra supports community groups, cultural organizers, small businesses, artists, and families looking for a trusted Indian Subcontinent media connection in {market.city}, {market.state}.
               </p>
               <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {market.coverage.map((place) => (

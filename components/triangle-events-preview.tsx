@@ -17,7 +17,7 @@ export function TriangleEventsPreview() {
               <Calendar className="w-3.5 h-3.5" /> What's Happening in the Triangle
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight italic">
-              South Asian <span className="text-primary">Events &amp; Festivals</span>
+              Indian Subcontinent <span className="text-primary">Events &amp; Festivals</span>
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
               Top gatherings, temple celebrations, cricket matches, and concerts across Cary, Morrisville &amp; Raleigh.

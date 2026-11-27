@@ -18,7 +18,7 @@ const ecosystemChannels = [
     num: "01",
     title: "LIVE RADIO",
     desc: "24/7 Hindi and Telugu across Raleigh-Durham on FM, HD Radio, AM and online.",
-    metric: "~100,000 weekly listens",
+    metric: "Hindi & Telugu programming",
   },
   {
     num: "02",
@@ -82,7 +82,7 @@ export default function AdvertisePage() {
 
         <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14">
           <div className="mb-7 max-w-3xl"><p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-primary">A connected audience</p><h2 className="mt-2 text-2xl font-black tracking-tight sm:text-4xl">Community reach across media.</h2><p className="mt-3 text-sm leading-relaxed text-muted-foreground">Reach listeners and families through broadcast radio, WhatsApp, social media, email, in-store screens, and live events. Contact our team for current campaign details and placement availability.</p></div>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">{AUDIENCE_STATS.map((stat) => <div key={stat.label} className="rounded-2xl border border-border bg-card p-4 sm:p-5"><p className="text-2xl font-black text-primary sm:text-3xl">{stat.value}</p><p className="mt-1 text-[10px] font-extrabold uppercase tracking-[.1em] text-muted-foreground sm:text-xs">{stat.label}</p></div>)}</div>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">{AUDIENCE_STATS.map((stat) => <div key={stat.label} className="rounded-2xl border border-border bg-card p-4 sm:p-5"><p className="text-2xl font-black text-primary sm:text-3xl">{stat.value}</p><p className="mt-1 text-[10px] font-extrabold uppercase tracking-[.1em] text-muted-foreground sm:text-xs">{stat.label}</p>{"source" in stat && stat.source && <p className="mt-1 text-[10px] text-muted-foreground">Source: {stat.source}</p>}</div>)}</div>
           <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">{YOUTUBE_STATS.map((stat) => <div key={stat.label} className="rounded-2xl border border-border bg-muted/30 p-4"><p className="text-xl font-black sm:text-2xl">{stat.value}</p><p className="mt-1 text-[9px] font-extrabold uppercase tracking-[.1em] text-muted-foreground">YouTube {stat.label}</p></div>)}</div>
         </section>
 

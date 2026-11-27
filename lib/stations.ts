@@ -126,5 +126,5 @@ export const getStationsList = () =>
 export const NETWORK_STATS = {
     stations: "76",
     cities: "63",
-    headline: "America's Largest Indian Radio Network",
+    headline: "Indian Subcontinent Radio Network",
 }

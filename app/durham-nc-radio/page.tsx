@@ -66,7 +66,7 @@ export default function DurhamNcRadioPage() {
         <div className="p-4 rounded-2xl bg-primary/10 border border-primary/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
           <div>
             <span className="font-bold text-foreground block">Looking for Durham Indian community events, restaurants &amp; directory?</span>
-            <span className="text-muted-foreground">Visit our full Durham South Asian Community Hub with local directory and guides.</span>
+            <span className="text-muted-foreground">Visit our full Durham Indian Subcontinent Community Hub with local directory and guides.</span>
           </div>
           <Button asChild size="sm" className="rounded-full font-bold uppercase tracking-wider text-[11px] shrink-0">
             <Link href="/north-carolina/durham">Visit Durham Hub &rarr;</Link>

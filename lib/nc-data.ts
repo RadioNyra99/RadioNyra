@@ -38,11 +38,11 @@ export const NC_CITIES: NCCity[] = [
     slug: "morrisville",
     name: "Morrisville",
     county: "Wake County",
-    tagline: "The Vibrant Heart of the Triangle's South Asian Community",
+    tagline: "An Indian Subcontinent Community Hub in the Triangle",
     description:
-      "Morrisville is home to a diverse South Asian community, local cultural events, places of worship, and technology employers.",
+      "Morrisville is home to a diverse Indian Subcontinent community, local cultural events, places of worship, and technology employers.",
     population: "31,000+",
-    indianPopulationShare: "Large South Asian community",
+    indianPopulationShare: "Indian Subcontinent community",
     listenDetails: {
       frequency: "99.9 FM",
       hdChannelHindi: "99.9 HD4 (Hindi - Radio Nyra)",
@@ -61,7 +61,7 @@ export const NC_CITIES: NCCity[] = [
         name: "Grand India Mart & Spices",
         type: "Grocery",
         address: "10283 Chapel Hill Rd, Morrisville, NC",
-        description: "Full-service Indian grocery featuring fresh vegetables, snacks, South Asian cookware, and festive sweets.",
+        description: "Full-service Indian grocery featuring fresh vegetables, snacks, cookware for Indian home cooking, and festive sweets.",
       },
       {
         name: "Tower Indian Restaurant",
@@ -122,9 +122,9 @@ export const NC_CITIES: NCCity[] = [
     county: "Wake & Chatham Counties",
     tagline: "Premier Culture, Indian Dining, and Family Celebrations",
     description:
-      "Cary is renowned for exceptional schools, scenic parks, and a deep-rooted South Asian diaspora. With premier landmark institutions like Sri Venkateswara Temple of North Carolina and a bustling culinary row along High House and Maynard Roads.",
+      "Cary has schools, parks, Indian Subcontinent community organizations, and restaurants along High House and Maynard Roads, as well as Sri Venkateswara Temple of North Carolina.",
     population: "176,000+",
-    indianPopulationShare: "12%+ South Asian",
+    indianPopulationShare: "Indian Subcontinent community",
     listenDetails: {
       frequency: "99.9 FM",
       hdChannelHindi: "99.9 HD4 (Hindi - Radio Nyra)",
@@ -137,13 +137,13 @@ export const NC_CITIES: NCCity[] = [
         name: "Sri Venkateswara Temple of North Carolina (SV Temple)",
         type: "Temple",
         address: "121 Balaji Pl, Cary, NC",
-        description: "One of the most visited and venerated South Indian Hindu temples on the East Coast, honoring Lord Balaji.",
+        description: "Hindu temple honoring Lord Balaji, with worship services and cultural programs.",
       },
       {
         name: "Patel Brothers Cary",
         type: "Grocery",
         address: "770 Maynard Rd, Cary, NC",
-        description: "The Triangle's benchmark South Asian supermarket stocking regional Indian produce, lentils, and festive puja supplies.",
+        description: "Indian grocery stocking regional produce, lentils, and puja supplies.",
       },
       {
         name: "Nazara Indian Bistro",
@@ -155,7 +155,7 @@ export const NC_CITIES: NCCity[] = [
         name: "Koka Booth Amphitheatre",
         type: "Cultural",
         address: "8003 Regent Pkwy, Cary, NC",
-        description: "Premier outdoor venue hosting mega Diwali festivals, Bollywood concerts, and community celebrations.",
+        description: "Outdoor venue hosting Diwali festivals, Bollywood concerts, and community celebrations.",
       },
     ],
     communityHighlights: [
@@ -217,15 +217,15 @@ export const NC_CITIES: NCCity[] = [
         description: "North Raleigh favorite for North Indian street food, Mughlai gravies, and fresh tandoor breads.",
       },
       {
-        name: "NC State South Asian Student Association",
+        name: "NC State cultural student organization",
         type: "Cultural",
         address: "NC State University, Raleigh, NC",
-        description: "Active student organization hosting Garba nights, fusion dance competitions, and cultural showcases.",
+        description: "Student organization hosting Garba nights, fusion dance competitions, and Indian Subcontinent cultural showcases.",
       },
     ],
     communityHighlights: [
       "India Fest Raleigh at the Jim Graham Building / State Fairgrounds",
-      "Major state-level South Asian business networking and TiE Carolinas events",
+      "TiE Carolinas business networking and community events",
       "Vibrant university student organizations across engineering and technology",
     ],
     keyResources: [
@@ -251,7 +251,7 @@ export const NC_CITIES: NCCity[] = [
     county: "Durham County",
     tagline: "Home of Radio Nyra Studios, Duke University, and Healthcare Innovation",
     description:
-      "Durham is the creative and broadcast heart of Radio Nyra, with our primary broadcasting headquarters located on Emperor Blvd. Durham blends world-class medical and academic prowess with a progressive South Asian diaspora.",
+      "Durham is the creative and broadcast home of Radio Nyra, with our broadcasting headquarters on Emperor Blvd. The city is also home to medical, academic, and Indian Subcontinent community organizations.",
     population: "290,000+",
     indianPopulationShare: "Key Medical & Academic Community",
     listenDetails: {
@@ -275,10 +275,10 @@ export const NC_CITIES: NCCity[] = [
         description: "Beloved Durham institution offering traditional North Indian and South Indian lunch buffets and dinner specialties.",
       },
       {
-        name: "Duke University Diya (South Asian Association)",
+        name: "Duke University Diya student organization",
         type: "Cultural",
         address: "Duke University, Durham, NC",
-        description: "Hub for undergraduate and graduate South Asian scholars, cultural showcases, and professional mentorship.",
+        description: "Student organization with Indian Subcontinent cultural showcases and professional mentorship.",
       },
     ],
     communityHighlights: [
@@ -308,7 +308,7 @@ export const NC_CITIES: NCCity[] = [
     county: "Wake County",
     tagline: "The Peak of Good Living for Families, Sports, and Culture",
     description:
-      "Apex continues to be celebrated as one of North Carolina's top family towns. With peaceful suburban neighborhoods, expanding cricket facilities, and a tight-knit South Asian family community.",
+      "Apex has suburban neighborhoods, cricket facilities, and an active Indian Subcontinent family community.",
     population: "75,000+",
     indianPopulationShare: "Rapidly expanding family diaspora",
     listenDetails: {
@@ -357,7 +357,7 @@ export const NC_CITIES: NCCity[] = [
     county: "Orange County",
     tagline: "Academic Excellence, Student Culture, and Carolina Spirit",
     description:
-      "Home to the University of North Carolina at Chapel Hill, Chapel Hill is a vibrant college town with vibrant South Asian student societies, faculty, and intellectual life.",
+      "Home to the University of North Carolina at Chapel Hill, Chapel Hill has student societies, faculty, and community programs connected to the Indian Subcontinent.",
     population: "62,000+",
     indianPopulationShare: "Strong university student & academic presence",
     listenDetails: {
@@ -371,7 +371,7 @@ export const NC_CITIES: NCCity[] = [
         name: "UNC Sangam",
         type: "Cultural",
         address: "UNC Chapel Hill, Chapel Hill, NC",
-        description: "South Asian student organization hosting philanthropic events, cultural dance, and charity formals.",
+        description: "Student organization hosting philanthropic events, cultural dance, and charity formals.",
       },
       {
         name: "Vimala's Curryblossom Cafe",
@@ -381,12 +381,12 @@ export const NC_CITIES: NCCity[] = [
       },
     ],
     communityHighlights: [
-      "UNC South Asian Film Festival and campus cultural showcases",
+      "Indian Subcontinent films and campus cultural showcases at UNC",
       "Active alumni network in North Carolina medicine, law, and business",
     ],
     keyResources: [
       {
-        title: "UNC South Asian Student Guide",
+        title: "UNC Indian Subcontinent Student Guide",
         description: "Student resources, roommate finding, and local campus associations.",
         href: "/community",
         linkText: "Community Guide",
@@ -406,7 +406,7 @@ export const NC_CITIES: NCCity[] = [
     county: "Wake County",
     tagline: "Serene Suburban Living for Growing Diaspora Families",
     description:
-      "Wake Forest offers tranquil historic charm coupled with fast-growing residential communities that attract young South Asian tech professionals looking for spacious family living.",
+      "Wake Forest combines historic neighborhoods with residential communities, including families and Indian Subcontinent tech professionals.",
     population: "52,000+",
     indianPopulationShare: "Growing northern Triangle hub",
     listenDetails: {
@@ -447,9 +447,9 @@ export const NC_CITIES: NCCity[] = [
     slug: "rtp",
     name: "RTP (Research Triangle Park)",
     county: "Durham & Wake Counties",
-    tagline: "The Innovation Engine for South Asian Tech & Life Sciences Leaders",
+    tagline: "Research, Technology, and Life Sciences in the Triangle",
     description:
-      "Research Triangle Park is North America's largest research park, powered by thousands of South Asian software engineers, data scientists, biotech innovators, and executives.",
+      "Research Triangle Park is a research and technology center with software, biotech, and life sciences employers.",
     population: "50,000+ daily workforce",
     indianPopulationShare: "Major tech & corporate demographic",
     listenDetails: {
@@ -489,7 +489,7 @@ export const NC_CITIES: NCCity[] = [
       {
         question: "Why advertise to the RTP community on Radio Nyra?",
         answer:
-          "Radio Nyra captures peak commuter drive time (morning and evening) with high-earning South Asian tech leaders traveling to and from RTP.",
+          "Radio Nyra captures peak commuter drive time (morning and evening) with high-earning Indian Subcontinent tech leaders traveling to and from RTP.",
       },
     ],
   },

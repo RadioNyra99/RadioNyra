@@ -93,8 +93,8 @@ First and foremost is the annual Cary Diwali Celebration held at the Koka Booth 
 Following closely is the Spring Holi celebration in Morrisville, where colors fly and local families enjoy community picnics. Furthermore, local cultural organizations like Hum Sub organize multiple galas throughout the year to celebrate youth achievement and arts.
 
 Radio Nyra has been proud to sponsor and broadcast live from these events. By tuning into 99.9 FM HD3 and HD4, Raleigh-Durham residents stay connected to local venue schedules, ticketing details, and live weather conditions.`,
-        faqs: `Q1: Where are the largest Indian events in NC?
-A1: The largest festivals take place in Cary (Koka Booth Amphitheatre) and Morrisville Town Parks.
+        faqs: `Q1: Where can I find Indian Subcontinent community events in North Carolina?
+A1: Check event listings from Cary, Morrisville, and local community organizers for current dates and venues.
 
 Q2: How do I get tickets for upcoming concerts?
 A2: Radio Nyra regularly broadcasts exclusive pre-sale codes and organizes ticket giveaway contests on-air.

@@ -109,6 +109,7 @@ export function AudienceReachSection() {
                   <span className="flex h-11 w-11 items-center justify-center rounded-full bg-primary/10 text-primary"><Icon className="h-5 w-5" aria-hidden /></span>
                   <p className="mt-3 text-2xl font-black tracking-tight text-foreground sm:text-3xl">{stat.value}</p>
                   <p className="mt-1 max-w-36 text-[9px] font-extrabold uppercase leading-snug tracking-[.08em] text-muted-foreground sm:text-[10px]">{stat.label}</p>
+                  {"source" in stat && stat.source && <p className="mt-1 text-[10px] text-muted-foreground">Source: {stat.source}</p>}
                 </article>
               )
             })}
@@ -158,7 +159,7 @@ export function YoutubeAnalyticsSection() {
           })}
         </div>
 
-        <p className="mt-6 text-sm text-white/65">Radio Nyra USA: Bollywood and South Asian radio, music, and stories from India to America.</p>
+        <p className="mt-6 text-sm text-white/65">Radio Nyra USA: Bollywood and Indian Subcontinent radio, music, and stories from India to America.</p>
         <a href="https://www.youtube.com/@RadioNyraUSA?sub_confirmation=1" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex h-10 items-center gap-2 rounded-full bg-red-700/30 px-5 text-xs font-extrabold uppercase tracking-wide text-red-300 transition-colors hover:bg-red-700/45 hover:text-white"><Youtube className="h-4 w-4" />Subscribe</a>
       </div>
     </section>

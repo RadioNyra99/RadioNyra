@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Business Directory — Indian Businesses & Services",
-  description: "Browse the Radio Nyra directory of Indian and South Asian businesses and services across Raleigh-Durham and North Carolina.",
+  description: "Browse the Radio Nyra directory of Indian Subcontinent businesses and services across Raleigh-Durham and North Carolina.",
   alternates: { canonical: "/directory" },
 }
 

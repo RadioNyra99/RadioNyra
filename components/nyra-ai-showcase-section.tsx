@@ -73,7 +73,7 @@ export function NyraAIShowcaseSection() {
             Meet Nyra AI
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base font-medium mt-2 max-w-xl mx-auto">
-            Your personal digital audio concierge for South Asian music lookups, live schedules, immigration podcasts, and Triangle diaspora events.
+            Your personal digital audio concierge for Indian Subcontinent music lookups, live schedules, immigration podcasts, and Triangle diaspora events.
           </p>
 
           {/* Interactive input bar */}

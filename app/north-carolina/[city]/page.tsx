@@ -33,12 +33,12 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
 
   return {
     title: `Indian Radio & Events in ${city.name}, NC`,
-    description: `Comprehensive South Asian guide for ${city.name}, North Carolina. Listen to Radio Nyra 99.9 FM HD4 (Hindi) & HD3 (Telugu/RTV News). Discover top Indian restaurants, temples, grocery stores, and local community events in ${city.name}.`,
+    description: `Comprehensive Indian Subcontinent guide for ${city.name}, North Carolina. Listen to Radio Nyra 99.9 FM HD4 (Hindi) & HD3 (Telugu/RTV News). Discover top Indian restaurants, temples, grocery stores, and local community events in ${city.name}.`,
     alternates: {
       canonical: `https://www.radionyra.com/north-carolina/${city.slug}`,
     },
     openGraph: {
-      title: `${city.name}, NC South Asian Community Guide & Radio | Radio Nyra`,
+      title: `${city.name}, NC Indian Subcontinent Community Guide & Radio | Radio Nyra`,
       description: `Tune in to Radio Nyra 99.9 FM in ${city.name}, NC. Connect with local Indian events, groceries, temples, and daily Telugu & Hindi broadcasting.`,
       url: `https://www.radionyra.com/north-carolina/${city.slug}`,
     },
@@ -108,7 +108,7 @@ export default async function CityHubPage({ params }: CityPageProps) {
               <MapPin className="w-3.5 h-3.5" /> {city.county}, North Carolina
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight italic mb-3">
-              {city.name} <span className="text-primary">South Asian Community</span> Hub
+              {city.name} <span className="text-primary">Indian Subcontinent Community</span> Hub
             </h1>
             <p className="text-base sm:text-lg text-primary font-bold mb-4">{city.tagline}</p>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
@@ -168,7 +168,7 @@ export default async function CityHubPage({ params }: CityPageProps) {
               <div className="mb-8">
                 <p className="text-xs font-extrabold uppercase tracking-widest text-primary mb-1">Local Landmarks</p>
                 <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight">
-                  South Asian Hotspots in {city.name}
+                  Indian Subcontinent Hotspots in {city.name}
                 </h2>
               </div>
 
@@ -201,7 +201,7 @@ export default async function CityHubPage({ params }: CityPageProps) {
                   Community Directory
                 </p>
                 <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight">
-                  South Asian Businesses in {city.name}
+                  Indian Subcontinent Businesses in {city.name}
                 </h2>
                 <p className="text-xs text-muted-foreground mt-1">
                   Verified restaurants, groceries, temples, legal services &amp; contractors serving {city.name}.
@@ -261,9 +261,9 @@ export default async function CityHubPage({ params }: CityPageProps) {
             ) : (
               <div className="p-8 rounded-2xl bg-card border border-dashed border-border text-center mb-6">
                 <Building2 className="w-8 h-8 text-muted-foreground mx-auto mb-2 opacity-50" />
-                <h3 className="text-sm font-bold text-foreground mb-1">Own a South Asian business in {city.name}?</h3>
+                <h3 className="text-sm font-bold text-foreground mb-1">Own an Indian Subcontinent business in {city.name}?</h3>
                 <p className="text-xs text-muted-foreground max-w-md mx-auto mb-4">
-                  Share your business with the South Asian community in {city.name}. Add your listing to the community directory for review.
+                  Share your business with the Indian Subcontinent community in {city.name}. Add your listing to the community directory for review.
                 </p>
                 <Button asChild size="sm" className="rounded-full text-xs font-bold">
                   <Link href="/directory/submit">Submit Free Business Listing</Link>
@@ -291,7 +291,7 @@ export default async function CityHubPage({ params }: CityPageProps) {
                   <Building2 className="w-5 h-5 text-primary mb-2" />
                   <h4 className="text-xs font-extrabold uppercase text-foreground mb-1">Grow Your Business</h4>
                   <p className="text-[11px] text-muted-foreground mb-3">
-                    Feature your brand to South Asian families across {city.name}.
+                    Feature your brand to Indian Subcontinent families across {city.name}.
                   </p>
                 </div>
                 <Button asChild variant="outline" size="sm" className="rounded-full text-xs font-bold w-full">

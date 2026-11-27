@@ -57,7 +57,7 @@ export default function DirectoryPage() {
         <section className="bg-gradient-to-b from-primary/10 via-background to-background py-12 md:py-16 border-b border-border/50">
           <div className="container mx-auto px-4 text-center max-w-4xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-extrabold uppercase tracking-widest mb-3">
-              <Building2 className="w-3.5 h-3.5" /> Triangle South Asian Business Directory
+              <Building2 className="w-3.5 h-3.5" /> Triangle Indian Subcontinent Business Directory
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-3">
               Discover Local <span className="text-primary">Indian Businesses</span> &amp; Services

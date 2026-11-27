@@ -55,7 +55,7 @@ export default function CaryNcRadioPage() {
   return (
     <SeoPageLayout
       title="Cary NC Indian Radio"
-      subtitle="99.9 FM HD4 (Hindi) & HD3 (Telugu) Serving Cary's Premier South Asian Community"
+      subtitle="99.9 FM HD4 (Hindi) & HD3 (Telugu) Serving Cary's Indian Subcontinent Community"
       stationKey="Hindi"
     >
       <script
@@ -66,7 +66,7 @@ export default function CaryNcRadioPage() {
         <div className="p-4 rounded-2xl bg-primary/10 border border-primary/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
           <div>
             <span className="font-bold text-foreground block">Looking for Cary Indian community events, restaurants &amp; directory?</span>
-            <span className="text-muted-foreground">Visit our full Cary South Asian Community Hub with local directory and guides.</span>
+            <span className="text-muted-foreground">Visit our full Cary Indian Subcontinent Community Hub with local directory and guides.</span>
           </div>
           <Button asChild size="sm" className="rounded-full font-bold uppercase tracking-wider text-[11px] shrink-0">
             <Link href="/north-carolina/cary">Visit Cary Hub &rarr;</Link>
@@ -81,7 +81,7 @@ export default function CaryNcRadioPage() {
             The Voice of Cary's Indian Subcontinent Community
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            Cary, North Carolina is home to one of the most vibrant, educated, and fast-growing Indian and South Asian communities on the East Coast. From neighborhoods like Preston, Highcroft, and Amberly to community gatherings at the Sri Venkateswara Temple and Cary Diwali at Koka Booth Amphitheatre, Radio Nyra connects Cary families with 24/7 premium audio.
+            Cary, North Carolina has Indian Subcontinent community organizations, neighborhoods including Preston, Highcroft, and Amberly, and gatherings at Sri Venkateswara Temple and Cary Diwali at Koka Booth Amphitheatre. Radio Nyra connects local families through Hindi and Telugu programming.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-border/50">
             <div className="bg-muted/40 p-4 rounded-2xl">
@@ -129,7 +129,7 @@ export default function CaryNcRadioPage() {
           <div>
             <h3 className="text-2xl font-extrabold uppercase tracking-tight mb-2">Reach Cary Indian Consumers</h3>
             <p className="opacity-90 text-sm max-w-xl">
-              Promote your Cary business, restaurant, healthcare clinic, or service to high-income South Asian professionals across Wake County.
+              Promote your Cary business, restaurant, healthcare clinic, or service to high-income Indian Subcontinent professionals across Wake County.
             </p>
           </div>
           <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100 rounded-full font-bold uppercase tracking-widest text-xs px-6 py-5 shrink-0">

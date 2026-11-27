@@ -20,7 +20,7 @@ export const BLOG_POSTS: BlogPost[] = [
         id: "0",
         title: "Raleigh-Durham FM Radio Stations Guide: Frequencies, Hip Hop, and Indian Subcontinent Hits",
         slug: "raleigh-durham-fm-radio-stations-guide",
-        excerpt: "Looking for local FM radio stations in Raleigh-Durham, NC? Find the best frequencies for hip-hop, rap, alternative indie, and premier Bollywood/Telugu hits on Radio Nyra.",
+        excerpt: "Looking for local FM radio stations in Raleigh-Durham, NC? Find frequencies for hip-hop, rap, alternative indie, and Bollywood/Telugu music on Radio Nyra.",
         content: `
       <p>Whether you're commuting down I-40 or driving through the heart of the Research Triangle, finding the right FM radio station to match your vibe is essential. Raleigh-Durham, North Carolina boasts a diverse and vibrant radio landscape, spanning commercial giants, college stations, hip-hop streams, and premium multicultural channels.</p>
       
@@ -37,10 +37,10 @@ export const BLOG_POSTS: BlogPost[] = [
       </ul>
 
       <h2>What is Raleigh's Hip-Hop and Rap Station?</h2>
-      <p>If you are looking for local rap and hip-hop, the premier frequency in Raleigh-Durham is <strong>K97.5 FM (WQOK)</strong>. Known for playing contemporary hip-hop, trap, and R&B hits, K97.5 FM is a staple of the local music scene. You can also tune to <strong>103.9 FM</strong> (Light FM / urban contemporary) for a mix of classic and modern R&B. Another popular hip-hop station in neighboring North Carolina areas is <strong>100.3 The Beat</strong>, playing non-stop hip-hop and R&B hits.</p>
+      <p>For local rap and hip-hop, tune to <strong>K97.5 FM (WQOK)</strong>, which plays contemporary hip-hop, trap, and R&amp;B. You can also tune to <strong>103.9 FM</strong> (Light FM / urban contemporary) for a mix of classic and modern R&amp;B. Another station in neighboring North Carolina areas is <strong>100.3 The Beat</strong>, which plays hip-hop and R&amp;B.</p>
 
       <h2>How Can I Listen to Radio Nyra?</h2>
-      <p>For Indian Subcontinent, Bollywood, and Telugu music lovers, Radio Nyra is the ultimate choice. We broadcast digitally on <strong>99.9 FM HD4</strong> (Hindi) and <strong>99.9 FM HD3</strong> (Telugu) in Raleigh-Durham. In addition, we serve Atlanta on 107.5 FM HD3, Philadelphia on 103.9 FM HD2, and other US markets.</p>
+      <p>Radio Nyra serves listeners looking for music from the Indian Subcontinent, including Bollywood and Telugu programming. We broadcast on <strong>99.9 FM HD4</strong> (Hindi) and <strong>99.9 FM HD3</strong> (Telugu) in Raleigh-Durham. We also serve Atlanta on 107.5 FM HD3, Philadelphia on 103.9 FM HD2, and other U.S. markets.</p>
       <p>You can listen to us on your phone anywhere in the world by downloading the official <strong>Radio Nyra app</strong> from the iOS App Store or Google Play Store, or by saying <em>"Alexa, play Radio Nyra Hindi"</em> to your smart assistant.</p>
 
       <h2>Common Radio FAQs</h2>
@@ -61,7 +61,7 @@ export const BLOG_POSTS: BlogPost[] = [
         id: "1",
         title: "The Voice of India in the USA: Radio Nyra's Journey",
         slug: "radio-nyra-voice-of-india",
-        excerpt: "Discover how Radio Nyra became the leading Bollywood radio station in Raleigh-Durham, connecting the community through music and culture.",
+        excerpt: "Explore Radio Nyra's Bollywood radio programming in Raleigh-Durham and its role in local community life.",
         content: `
       <p>Radio Nyra has always been about more than just music; it's about connection. Since our inception, we've strived to bring the vibrant culture, timeless melodies, and energetic beats of India to the heart of the USA.</p>
       <p>From the soulful classics of Kishore Kumar to the latest chart-busters by Arijit Singh, our playlist is curated to evoke nostalgia and celebrate the new. But beyond the music, it's our community that makes us who we are.</p>

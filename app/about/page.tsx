@@ -16,7 +16,7 @@ import { RADIO_NYRA_PRESS_STORIES } from "@/lib/press-coverage"
 export const metadata: Metadata = {
   title: "About Our Community Radio Network",
   description:
-    "Pioneering since 2014, Radio Nyra is North Carolina's only 24/7 Indian Subcontinent community media network — and the Triangle's most trusted cultural platform.",
+    "Since 2014, Radio Nyra has shared Indian Subcontinent music, news, and community programming across North Carolina.",
   alternates: { canonical: "/about" },
 }
 
@@ -51,7 +51,7 @@ export default function AboutPage() {
             {/* Left Column: Brand Story */}
             <div className="space-y-6 text-zinc-700 text-sm sm:text-base leading-relaxed dark:text-zinc-300">
               <p>
-                <strong className="font-extrabold text-zinc-950 dark:text-white">Pioneering since 2014</strong>, Radio Nyra is North Carolina's only 24/7 Indian Subcontinent community media network — and the Triangle's most trusted cultural platform for over a decade. We were built to serve a community, not to sell ads. That distinction is what makes every campaign work.
+                <strong className="font-extrabold text-zinc-950 dark:text-white">Since 2014</strong>, Radio Nyra has shared Indian Subcontinent music, news, and community programming across North Carolina. We were built to serve a community, not to sell ads.
               </p>
               <p>
                 From temples to grocery stores, from Diwali celebrations to cricket events — Radio Nyra is woven into the daily life of Indian Subcontinent families across Raleigh-Durham. We don't just broadcast to our community.
@@ -67,7 +67,7 @@ export default function AboutPage() {
                 OUR HERITAGE IN THE PRESS
               </h2>
               <p className="mt-1 text-xs text-zinc-600 font-medium dark:text-zinc-400">
-                A legacy of community trust recognized for decades.
+                Coverage of Radio Nyra and Arohi Media in the press.
               </p>
 
               <div className="mt-4 rounded-lg border border-zinc-300 bg-[#fffdf7] p-3 text-left shadow-inner dark:border-zinc-700 dark:bg-zinc-900">
@@ -259,18 +259,18 @@ export default function AboutPage() {
               </h2>
 
               <p>
-                Ravi Cherukuri is the founder of Radio Nyra, a South Asian radio network operated by Arohi Media LLC in North Carolina’s Research Triangle. His work in broadcasting began in 2014, when Arohi Media acquired Durham’s WDUR 1490 AM and returned it to the air on July 9 with a 24-hour format featuring Hindi news, talk shows, and Bollywood music. The station gave Indian and South Asian listeners in the Triangle a local radio home.
+                Ravi Cherukuri is the founder of Radio Nyra, an Indian Subcontinent radio network operated by Arohi Media LLC in North Carolina’s Research Triangle. His work in broadcasting began in 2014, when Arohi Media acquired Durham’s WDUR 1490 AM and returned it to the air on July 9 with a 24-hour format featuring Hindi news, talk shows, and Bollywood music. The station gave Indian Subcontinent listeners in the Triangle a local radio home.
               </p>
 
               <p>
-                Arohi Media expanded from AM to 101.9 FM and 99.9 FM HD4, later adding Telugu programming on 99.9 FM HD3. In 2019, The Economic Times identified Cherukuri as CEO of Arohi Media when reporting on its U.S. partnership with Radio Mirchi. Cherukuri described his goal as bringing South Asian communities together through a shared platform for news, conversation, and music. Radio Nyra now also features podcasts and live events.
+                Arohi Media expanded from AM to 101.9 FM and 99.9 FM HD4, later adding Telugu programming on 99.9 FM HD3. In 2019, The Economic Times identified Cherukuri as CEO of Arohi Media when reporting on its U.S. partnership with Radio Mirchi. Cherukuri described his goal as bringing Indian Subcontinent communities together through a shared platform for news, conversation, and music. Radio Nyra now also features podcasts and live events.
               </p>
 
-              {/* Founder's Vision Quote */}
+              {/* Founder's Vision */}
               <div className="mt-6 rounded-2xl border-l-4 border-[#A81822] bg-zinc-50 p-5 sm:p-6 shadow-sm dark:bg-zinc-950/60">
-                <blockquote className="text-sm sm:text-base italic leading-relaxed text-zinc-800 dark:text-zinc-200">
-                  &ldquo;At RadioNyra, our vision has always been to bring South Asian communities closer by creating a shared platform that celebrates our culture, connects our people, and keeps them informed and entertained. Through the power of music, news, conversations, and community engagement, we strive to create meaningful connections across borders.&rdquo;
-                </blockquote>
+                <p className="text-sm sm:text-base italic leading-relaxed text-zinc-800 dark:text-zinc-200">
+                  Cherukuri’s vision is to bring Indian Subcontinent communities closer through a shared platform for culture, news, conversation, music, and community engagement.
+                </p>
                 <p className="mt-3 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#A81822]">
                   — Ravi Cherukuri, CEO, Arohi Media
                 </p>

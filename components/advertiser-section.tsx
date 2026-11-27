@@ -47,7 +47,7 @@ const AD_BENEFITS = [
     {
         icon: Target,
         title: "Hindi and Telugu Programming",
-        desc: "Plan messages for listeners exploring South Asian music, news, culture, and community stories."
+        desc: "Plan messages for listeners exploring Indian Subcontinent music, news, culture, and community stories."
     },
     {
         icon: ShieldCheck,

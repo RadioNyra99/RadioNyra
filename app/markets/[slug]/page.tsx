@@ -35,7 +35,7 @@ const MARKET_DATA: Record<string, {
     "atlanta": {
         name: "Atlanta",
         frequency: "107.5 FM HD3 (WAMJ) & 24/7 Digital Stream",
-        description: "Our Atlanta presence connects with one of the most vibrant and affluent Indian Subcontinent diaspora populations in the Southeast. Tuning in connects you to local Georgia community highlights, major Bollywood and Tollywood event coverage, and local businesses.",
+        description: "Our Atlanta presence connects Indian Subcontinent audiences with local Georgia community highlights, Bollywood and Tollywood event coverage, and local businesses.",
         coverage: "Atlanta Metro Area, Alpharetta, Johns Creek, Cumming, Duluth, Marietta, and surrounding Georgia counties.",
         keywords: ["Atlanta Indian Radio", "Telugu Radio Atlanta", "Hindi FM Georgia", "Indian Community Atlanta", "Alpharetta Indian Events"],
         localContact: "+1 (919) 294-4800",
@@ -218,7 +218,7 @@ export default async function MarketPage({ params }: { params: Params }) {
                     },
                     {
                         "@type": "Question",
-                        "name": "What is the premier Indian and South Asian radio station in North Carolina?",
+                        "name": "Which Indian Subcontinent radio station serves North Carolina?",
                         "acceptedAnswer": {
                             "@type": "Answer",
                             "text": "Radio Nyra shares Hindi and Telugu radio programming online and on 99.9 FM HD4 (Hindi) and HD3 (Telugu) in the Raleigh-Durham area."
@@ -450,7 +450,7 @@ export default async function MarketPage({ params }: { params: Params }) {
                             <div className="bg-muted/40 p-5 rounded-2xl border border-border/50 space-y-2">
                                 <h4 className="font-bold text-base text-foreground">What station is 99.9 HD4 in Raleigh?</h4>
                                 <p className="text-sm text-muted-foreground leading-relaxed">
-                                    99.9 FM HD4 is Radio Nyra Hindi, the premier Indian Subcontinent community station in North Carolina, featuring non-stop Bollywood hits, morning and evening drive-time talk shows, community updates, and local news.
+                                    Radio Nyra Hindi broadcasts on 99.9 FM HD4, with Bollywood music, morning and evening drive-time talk shows, community updates, and local news.
                                 </p>
                             </div>
                             <div className="bg-muted/40 p-5 rounded-2xl border border-border/50 space-y-2">

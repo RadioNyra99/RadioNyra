@@ -55,7 +55,7 @@ export default function MorrisvilleNcRadioPage() {
   return (
     <SeoPageLayout
       title="Morrisville NC Indian Radio"
-      subtitle="The Cultural Heart of North Carolina's South Asian Community on 99.9 FM HD4 & HD3"
+      subtitle="The Cultural Heart of North Carolina's Indian Subcontinent Community on 99.9 FM HD4 & HD3"
       stationKey="Hindi"
     >
       <script
@@ -66,7 +66,7 @@ export default function MorrisvilleNcRadioPage() {
         <div className="p-4 rounded-2xl bg-primary/10 border border-primary/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
           <div>
             <span className="font-bold text-foreground block">Looking for Morrisville Indian community events, restaurants &amp; directory?</span>
-            <span className="text-muted-foreground">Visit our full Morrisville South Asian Community Hub with local directory and guides.</span>
+            <span className="text-muted-foreground">Visit our full Morrisville Indian Subcontinent Community Hub with local directory and guides.</span>
           </div>
           <Button asChild size="sm" className="rounded-full font-bold uppercase tracking-wider text-[11px] shrink-0">
             <Link href="/north-carolina/morrisville">Visit Morrisville Hub &rarr;</Link>
@@ -78,10 +78,10 @@ export default function MorrisvilleNcRadioPage() {
             <MapPin className="w-3.5 h-3.5" /> Morrisville, North Carolina Hub
           </div>
           <h2 className="text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-foreground">
-            North Carolina's Premier South Asian Broadcaster
+            North Carolina Radio for Indian Subcontinent Communities
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            Morrisville is home to a diverse South Asian community. Radio Nyra broadcasts Hindi on 99.9 FM HD4 and Telugu on HD3, with online streams available to listeners outside the local broadcast area.
+            Morrisville is home to a diverse Indian Subcontinent community. Radio Nyra broadcasts Hindi on 99.9 FM HD4 and Telugu on HD3, with online streams available to listeners outside the local broadcast area.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-border/50">
             <div className="bg-muted/40 p-4 rounded-2xl">

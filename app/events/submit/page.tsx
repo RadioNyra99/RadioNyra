@@ -78,7 +78,7 @@ export default function SubmitEventPage() {
                     <Calendar className="w-3.5 h-3.5" /> Community Calendar
                   </div>
                   <h1 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight">
-                    Submit a South Asian Event
+                    Submit an Indian Subcontinent event
                   </h1>
                   <p className="text-xs sm:text-sm text-muted-foreground mt-1">
                     Promote your cultural festival, temple celebration, concert, sports tournament, or fundraiser to Triangle listeners.

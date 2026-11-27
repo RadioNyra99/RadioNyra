@@ -93,7 +93,7 @@ const ALL_SHOWS: ShowItem[] = [
     stationLabel: "99.9 FM-HD4",
     time: "Saturdays 12:00 PM – 2:00 PM ET",
     tag: "Evening Commute",
-    description: "The Triangle's premier evening drive-time show featuring Chai Pe Charcha, business leader spotlights, and great tracks.",
+    description: "An evening drive-time show featuring Chai Pe Charcha, business leader spotlights, and music.",
   },
   {
     id: "show-hello-vaishnavi",

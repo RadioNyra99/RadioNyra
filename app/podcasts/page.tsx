@@ -9,7 +9,7 @@ import { FeaturedPodcastsSection } from "@/components/featured-podcasts-section"
 export const metadata: Metadata = {
   title: "Indian Podcasts & Interviews",
   description:
-    "Watch Radio Nyra video podcasts, interviews, and community conversations featuring Indian and South Asian voices in the USA.",
+    "Watch Radio Nyra video podcasts, interviews, and community conversations featuring Indian Subcontinent voices in the USA.",
   alternates: { canonical: "/podcasts" },
   openGraph: {
     type: "website",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "Radio Nyra",
     title: "Indian Podcasts & Interviews | Radio Nyra",
     description:
-      "Watch Radio Nyra video podcasts, interviews, and community conversations featuring Indian and South Asian voices in the USA.",
+      "Watch Radio Nyra video podcasts, interviews, and community conversations featuring Indian Subcontinent voices in the USA.",
     images: ["/og-image.png"],
   },
 }
@@ -37,7 +37,7 @@ export default function PodcastsPage() {
               Indian Podcasts, Interviews &amp; Community Stories
             </h1>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">
-              Watch video conversations with Indian and South Asian artists, community leaders, and local voices. Explore recent interviews and stories from Radio Nyra.
+              Watch video conversations with Indian Subcontinent artists, community leaders, and local voices. Explore recent interviews and stories from Radio Nyra.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/youtube" className="inline-flex h-11 items-center gap-2 rounded-full bg-red-600 px-5 text-sm font-bold text-white transition-colors hover:bg-red-500">

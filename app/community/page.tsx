@@ -24,7 +24,6 @@ const communityStats = [
   { value: "17", label: "organizations we work alongside" },
   { value: "50+", label: "major events supported each year" },
   { value: "250K+", label: "combined annual event attendees" },
-  { value: "100K+", label: "community members impacted" },
 ]
 
 const partnerGroups = [

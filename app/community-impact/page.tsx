@@ -8,7 +8,6 @@ const stats = [
   { number: "17", label: "organizations we work alongside" },
   { number: "50+", label: "major events supported each year" },
   { number: "250K+", label: "combined annual event attendees" },
-  { number: "100K+", label: "community members impacted" },
 ]
 
 const categories = [

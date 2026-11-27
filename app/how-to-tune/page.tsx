@@ -121,7 +121,7 @@ const DIRECTORY_LINKS = [
         link: "http://radio.net/search?q=radionyra",
         domain: "radio.net",
         featured: true,
-        desc: "Stream Radio Nyra live on Europe and America's premier web & mobile radio directory."
+        desc: "Stream Radio Nyra live on web and mobile radio directories."
     },
     {
         name: "Get Me Radio!",

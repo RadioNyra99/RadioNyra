@@ -43,7 +43,7 @@ export const COMMUNITY_EVENTS: CommunityEvent[] = [
         location: "Koka Booth Amphitheatre, Cary, NC",
         category: "Festival",
         image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
-        description: "Join North Carolina's largest Diwali festival presented by Radio Nyra! Live music, Bollywood dances, authentic Indian street food, craft vendors, and grand fireworks display.",
+        description: "Join Radio Nyra's Diwali festival in North Carolina for live music, Bollywood dance, Indian food, craft vendors, and fireworks.",
         organizer: "Radio Nyra & Triangle Cultural Association"
     },
     {

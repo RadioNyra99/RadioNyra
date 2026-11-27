@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Blog',
-  description: 'Read Radio Nyra news, event guides, community stories, music updates, and cultural insights for Indian and South Asian audiences.',
+  description: 'Read Radio Nyra news, event guides, community stories, music updates, and cultural insights for Indian Subcontinent audiences.',
   alternates: { canonical: '/blog' },
   openGraph: {
     title: 'Blog | Radio Nyra',

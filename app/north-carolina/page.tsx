@@ -8,7 +8,7 @@ import { NC_CITIES } from "@/lib/nc-data"
 import { MapPin, Radio, Users, Building, ArrowRight, ShieldCheck, Sparkles } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "North Carolina South Asian Community Hubs",
+  title: "North Carolina Indian Subcontinent Community Hubs",
   description:
     "Explore Radio Nyra's dedicated hubs across the Research Triangle: Morrisville, Cary, Raleigh, Durham, Apex, Chapel Hill, Wake Forest, and RTP. 99.9 FM HD4/HD3 radio coverage, local events, dining, and community resources.",
   alternates: { canonical: "/north-carolina" },
@@ -28,10 +28,10 @@ export default function NorthCarolinaHubPage() {
               <MapPin className="w-3.5 h-3.5" /> North Carolina Community Network
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight italic mb-4">
-              Connecting North Carolina's <span className="text-primary">South Asian Diaspora</span>
+              Connecting Indian Subcontinent communities across North Carolina
             </h1>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-8 font-medium">
-              Over 100,000 South Asian residents call the Research Triangle home. Radio Nyra broadcasts on 99.9 FM HD4 (Hindi) & HD3 (Telugu) across all eight premier Triangle cities.
+              Radio Nyra broadcasts Hindi on 99.9 FM HD4 and Telugu on HD3 across the Research Triangle, with local events and resources for Indian Subcontinent communities.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <Button asChild className="rounded-full px-6 font-bold uppercase tracking-wide">
